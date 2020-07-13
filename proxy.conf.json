@@ -1,6 +1,6 @@
 {
-    "/api": {
-        "target": "smartacademy.specialnext.com/elearning",
+    "/elearning/api": {
+        "target": "http://smartacademy.specialnext.com",
         "secure": false
     }
 }

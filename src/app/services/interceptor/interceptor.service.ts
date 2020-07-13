@@ -1,8 +1,9 @@
+import { HandleGlobalHttpErrorsService } from './../handleGlobalHttpErrors/handle-global-http-errors.service';
 // import { ToastControllerService } from './../toastController/toast-controller.service';
 
 import { Injectable, ErrorHandler } from '@angular/core';
 import { Observable, of, from } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, map } from 'rxjs/operators';
 import {
   HttpEvent,
   HttpInterceptor,
@@ -14,31 +15,30 @@ import {
 
 import { throwError } from 'rxjs';
 
-import { Router } from '@angular/router';
-import { AuthService } from '../auth/auth.service';
-
 @Injectable({
   providedIn: 'root'
 })
 export class InterceptorService implements HttpInterceptor {
-  
+
   constructor(
-    private router: Router, 
-    // private _toastService: ToastControllerService,
-    private _authService : AuthService,
+    private _handleGlobalHttpErrorService: HandleGlobalHttpErrorsService
   ) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const modified = req.clone({setHeaders: {'oam_userid': 'hadeerInterceptor:)' , 'oam_BillProfileId':"hadeer2:)" , "oam_CustAccId" : "hadeer3"}});
+    console.log("interceptor", req);
+
+    const modified = req.clone({ setHeaders: { authenticationToken: localStorage.getItem('authenticationToken'), refreshToken: localStorage.getItem('refreshToken') } });
     return next.handle(modified).pipe(
-            retry(0),
-            catchError((error: HttpErrorResponse) => {
-              if(error.status == 401)
-              {
-                // this._authService.setUserUnAuthenticated();
-                // this.router.navigateByUrl('auth');
-              }
-              return throwError(error.message);
-            })
-          );
-}
+      map((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) {
+          console.log('event--->>>', event);
+        }
+        return event;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        //global error handling
+        this._handleGlobalHttpErrorService.handleError(error)
+        return throwError(error);
+      }));
+  }
+
 }
