@@ -1,77 +1,96 @@
-	<!-- Signup Start -->
-	<div class="sign_in_up_bg">
-		<div class="container">
-			<div class="row justify-content-lg-center justify-content-md-center">
-				<div class="col-lg-12">
-					<div class="main_logo25" id="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""></a>
-						<a href="index.html"><img class="logo-inverse" src="images/ct_logo.svg" alt=""></a>
-					</div>
+<!-- Signup Start -->
+<div class="sign_in_up_bg">
+	<div class="container">
+		<div class="row justify-content-lg-center justify-content-md-center">
+			<div class="col-lg-12">
+				<div class="main_logo25" id="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>
+					<a href="index.html"><img class="logo-inverse" src="images/ct_logo.svg" alt=""></a>
 				</div>
-			
-				<div class="col-lg-6 col-md-8">
-					<div class="sign_form">
-						<h2>Welcome to Smart Academy</h2>
-						<p>Sign Up and Start Learning!</p>
-						<form>
-							<div class="ui search focus">
-								<label>full Name</label>
-								<div class="ui left icon input swdh11 swdh19">
-									<input class="prompt srch_explore" type="text" name="fullname" value="" id="id_fullname" required="" maxlength="64" placeholder="example: john smith">															
-								</div>
-							</div>
-							<div class="ui search focus mt-15">
-								<label>email</label>
-								<div class="ui left icon input swdh11 swdh19">
-									<input class="prompt srch_explore" type="email" name="emailaddress" value="" id="id_email" required="">															
-								</div>
-							</div>
-							<div class="ui search focus mt-15">
-								<label>phone number</label>
-								<div class="ui left icon input swdh11 swdh19">
-									<input class="prompt srch_explore" type="text" name="phonenumber" value="" id="id_phonenumber" required="">															
-								</div>
-							</div>
-							<div class="ui search focus mt-15">
-								<label>password</label>
-								<div class="ui left icon input swdh11 swdh19">
-									<input class="prompt srch_explore" type="password" name="password" value="" id="id_password" required="">															
-								</div>
-							</div>
-							
-							<div class="ui search focus mt-15">
-								<label>Address</label>
-								<div class="ui left icon input swdh11 swdh19">
-									<input class="prompt srch_explore" type="text" name="Address" value="" id="id_Address">															
-								</div>
-							</div>
-							<div class="ui search focus mt-15">
-								<label>city</label>
-								<div class="ui left icon input swdh11 swdh19">
-									<input class="prompt srch_explore" type="text" name="city" value="" id="id_city">															
-								</div>
-							</div>
-							<div class="ui grouped fields mt-15">										
-								<div class="field">
-									<label>sign Up as</label>
-									<div class="ui radio checkbox">
-										<input type="radio" name="signas" class="hidden">
-										<label>student</label>
-									</div>
-									<div class="ui radio checkbox">
-										<input type="radio" name="signas" class="hidden">
-										<label>instractor</label>
-									</div>
-								</div>
-							</div>
-							<button class="login-btn" type="submit">sign Up</button>
-						</form>
-						<p class="sgntrm145">By signing up, you agree to our <a href="terms_of_use.html">Terms of Use</a> and <a href="terms_of_use.html">Privacy Policy</a>.</p>
-						<p class="mb-0 mt-30">Already have an account? <a href="sign_in.html">Log In</a></p>
+			</div>
+
+			<div class="col-lg-6 col-md-8">
+				<div class="sign_form">
+					<h2>Welcome to Smart Academy</h2>
+					<p>Sign Up and Start Learning!</p>
+					<div class="alert alert-danger" role="alert" *ngIf="showErrors">
+						<span *ngIf="registrationForm.get('fullName').invalid"> *Please enter a valid full name (ex. Hossam Ahmed)</span><br>
+						<span *ngIf="registrationForm.get('email').invalid"> *Please enter a valid Email (ex. example@gmail.com</span><br>
+						<span *ngIf="registrationForm.get('mobile').invalid"> *Please enter a valid Mobile (ex. 01xxxxxxxxx)</span><br>
+						<!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
+						<span *ngIf="registrationForm.get('password').invalid"> *Please enter a valid password (minimum length = 8 characters)</span><br>
+						<span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br>
+						<span *ngIf="registrationForm.get('signAs').invalid"> *Please enter select your account type (student, instructor?)</span><br>
 					</div>
-					<div class="sign_footer"><img src="images/sign_logo.png" alt="">© 2020 <strong>Cursus</strong>. All Rights Reserved.</div>
-				</div>				
-			</div>				
-		</div>				
+					<form [formGroup]="registrationForm">
+						<div class="ui search focus">
+							<label>full Name</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="text" formControlName="fullName" value=""
+									id="id_fullname" required="" maxlength="64" placeholder="example: john smith">
+							</div>
+						</div>
+						<div class="ui search focus mt-15">
+							<label>email</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="email" formControlName="email" value=""
+									id="id_email" required="">
+							</div>
+						</div>
+						<div class="ui search focus mt-15">
+							<label>phone number</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="text" formControlName="mobile" value=""
+									id="id_phonenumber" required="">
+							</div>
+						</div>
+						<div class="ui search focus mt-15">
+							<label>password</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="password" formControlName="password" value=""
+									id="id_password" required="">
+							</div>
+						</div>
+
+						<!-- <div class="ui search focus mt-15">
+							<label>Address</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="text" formControlName="address" value=""
+									id="id_Address">
+							</div>
+						</div> -->
+						<div class="ui search focus mt-15">
+							<label>city</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="text" formControlName="city" value=""
+									id="id_city">
+							</div>
+						</div>
+						<div class="ui grouped fields mt-15">
+							<div class="field">
+								<label>sign Up as</label>
+
+								<input value="1" type="radio" formControlName="signAs"
+									(click)="onSignUpAsClick($event)">
+								<label>student</label>
+
+								<input value="2" type="radio" formControlName="signAs"
+									(click)="onSignUpAsClick($event)">
+								<label>instructor</label>
+
+							</div>
+						</div>
+						<button class="login-btn" (click)="onSignUpClick($event)">sign Up</button>
+						<ngx-loading [show]="loading"></ngx-loading>
+					</form>
+					<p class="sgntrm145">By signing up, you agree to our <a href="terms_of_use.html">Terms of Use</a>
+						and <a href="terms_of_use.html">Privacy Policy</a>.</p>
+					<p class="mb-0 mt-30">Already have an account? <a href="sign_in.html">Log In</a></p>
+				</div>
+				<div class="sign_footer"><img src="images/sign_logo.png" alt="">© 2020 <strong>Cursus</strong>. All
+					Rights Reserved.</div>
+			</div>
+		</div>
 	</div>
-	<!-- Signup End -->	
+</div>
+<!-- Signup End -->

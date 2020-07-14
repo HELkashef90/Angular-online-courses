@@ -19,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { RouterModule } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
 import { NgxLoadingModule } from 'ngx-loading';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,6 +35,8 @@ export function createTranslateLoader(http: HttpClient) {
     RouterModule ,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     // environment.production
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
     NgxSpinnerModule,
