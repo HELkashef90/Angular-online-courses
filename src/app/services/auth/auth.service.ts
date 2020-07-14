@@ -1,17 +1,26 @@
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SpinnerService } from '../spinner/spinner.service';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
 
+
   isLoggedIn: boolean = false;
 
-  constructor(
-
-  ) { }
+  constructor(private httpClient: HttpClient,
+    private _spinnerService: SpinnerService, private router: Router) {
+  }
 
   authUser() {
+    this._spinnerService.showFullScreenSpinner();
+    this.httpClient.get(environment._isLoggedIn).subscribe(res => {
+      this.setUserAuthenticated(res)
+    })
   }
 
   setUserAuthenticated(authData: Object) {
@@ -22,11 +31,24 @@ export class AuthService {
     localStorage.setItem('usertype', authData['usertype'])
     localStorage.setItem('role', JSON.stringify(authData['role']))
     this.isLoggedIn = true;
+    this._spinnerService.hideFullScreenSpinner()
   }
 
   setUserUnAuthenticated() {
     localStorage.clear();
     this.isLoggedIn = false;
+    this.router.navigateByUrl("")
+    this._spinnerService.hideFullScreenSpinner()
+  }
+  refreshToken() {
+    this._spinnerService.showFullScreenSpinner();
+    let refreshToken = localStorage.getItem('refreshToken') || "";
+    let userName = localStorage.getItem('username') || "";
+    this.httpClient.post(environment._refreshToken, { refreshToken: refreshToken, username: userName }).subscribe(res => {
+      this.setUserAuthenticated(res)
+    }, err => {
+      this.setUserUnAuthenticated();
+    })
   }
 }
 

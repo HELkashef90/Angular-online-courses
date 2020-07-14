@@ -25,12 +25,8 @@ export class InterceptorService implements HttpInterceptor {
   ) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("interceptor", req);
-    let authenticationToken = ''
-    let refreshToken = ''
-    if (localStorage.getItem('authenticationToken') && localStorage.getItem('refreshToken')) {
-      authenticationToken = localStorage.getItem('authenticationToken');
-      refreshToken = localStorage.getItem('refreshToken');
-    }
+    let authenticationToken = localStorage.getItem('authenticationToken') || "";
+    let refreshToken = localStorage.getItem('refreshToken') || "";
     const modified = req.clone({ setHeaders: { authenticationToken, refreshToken } });
     return next.handle(modified).pipe(
       map((event: HttpEvent<any>) => {

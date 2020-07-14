@@ -1,6 +1,7 @@
-const serverUrl = 'https://smartacademy.specialnext.com/elearning'
+const serverUrl = 'http://smartacademy.specialnext.com/elearning/api/v1/'
 export const environment = {
   production: true,
-  _loginAPI: `${serverUrl}/api/v1/auth/login`,
-  _signUp: `${serverUrl}/api/v1/auth/signup`
-};
+  _loginAPI: `${serverUrl}auth/login`,
+  _signUp: `${serverUrl}auth/signup`,
+  _refreshToken : `${serverUrl}auth/refresh/token`
+}
