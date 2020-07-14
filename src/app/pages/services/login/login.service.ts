@@ -10,10 +10,7 @@ export class LoginService {
 
   constructor(private httpClint: HttpClient) { }
 
-  login(userName: string, password: string) {
-    return this.httpClint.post(environment._loginAPI, {
-      "username": userName,
-      "password": password
-    })
+  login(userData: Object) {
+    return this.httpClint.post(environment._loginAPI, userData)
   }
 }
