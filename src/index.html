@@ -2,18 +2,22 @@
 <html lang="en">
 
 <head>
-  <!-- landing -->
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <!-- Ionicons CSS-->
-  <link rel="stylesheet" href="assets/css/ionicons.min.css">
-  <!-- Google fonts - Source Sans Pro-->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700,500">
-  <!-- theme stylesheet-->
-  <link rel="stylesheet" href="assets/css/landing-style.css" id="theme-stylesheet">
-  <!-- landing -->
-
-
+   <!-- Stylesheets -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet'>
+   <link href='assets/css/unicons.css' rel='stylesheet'>
+   <link rel="stylesheet" href="assets/css/ionicons.min.css">
+   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+   <link href="assets/css/datepicker.min.css" rel="stylesheet">
+   <link href="assets/css/vertical-responsive-menu.min.css" rel="stylesheet">
+   <link href="assets/css/instructor-dashboard.css" rel="stylesheet">
+   <link href="assets/css/instructor-responsive.css" rel="stylesheet">
+   <link href="assets/css/jquery-steps.css" rel="stylesheet">
+   <link href="assets/css/style.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">	
+   <link rel="stylesheet" href="assets/css/landing-style.css" id="theme-stylesheet">
+   <link href="assets/css/night-mode.css" rel="stylesheet">
+   <!-- theme stylesheet-->
 
   <meta charset="utf-8">
   <title>Smart Academy</title>
@@ -24,17 +28,33 @@
   <meta name="theme-color" content="#1976d2">
 </head>
 
-<body class='animate__animated animate__fadeIn '>
+<body class='home rtl'>
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 
-  <!-- landing  -->
-  <!-- JavaScript files-->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js//popper.min.js"> </script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/front.js"></script>
-  <!-- landing -->
+    <!-- JavaScript files-->
+
+    <script src="assets/js/vertical-responsive-menu.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/popper.min.js"> </script>
+      <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.cookie.js"> </script>
+    <script src="assets/js/swiper.min.js"> </script>
+    <script src="assets/js/semantic.min.js"></script>
+    <script src="assets/js/front.js"></script>
+    <script src="assets/js/custom.js"></script>	
+    <script src="assets/js/custom1.js"></script>
+    <script src="assets/js/night-mode.js"></script>	
+    <!-- <script src="js/datepicker.min.js"></script>
+    <script src="js/i18n/datepicker.en.js"></script> -->
+    <script src="assets/js/jquery-steps.min.js"></script>
+    <script>
+      $('#add-course-tab').steps({
+        onFinish: function () {
+        alert('Wizard Completed');
+        }
+      });		
+    </script>
 </body>
 
 </html>

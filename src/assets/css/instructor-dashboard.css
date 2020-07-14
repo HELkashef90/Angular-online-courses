@@ -98,7 +98,7 @@ body.rtl {
 	border-bottom: 0;
 }
 
-.rtl header {
+.rtl header.db-header {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
@@ -112,6 +112,8 @@ body.rtl {
 .rtl .main_logo {
 	float: right;
 	margin-right: 20px;
+	display: flex;
+    align-items: center;
 }
 
 .rtl .main_logo span {
@@ -4219,7 +4221,7 @@ input[type=text] {
 
 /*--- Header ---*/
 
-header {
+header.db-header {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
@@ -4233,7 +4235,9 @@ header {
 .main_logo {
     float: left;
     /* width: 135px; */
-    margin-left: 20px;
+	margin-left: 20px;
+	display: flex;
+    align-items: center;
 }
 .main_logo span{
 font-size: 18px;

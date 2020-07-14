@@ -1,7 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const serverUrl = 'http://smartacademy.specialnext.com/elearning/api/v1/'
+const serverUrl = 'https://smartacademy.specialnext.com/elearning/api/v1/'
 export const environment = {
   production: false,
   _loginAPI: `${serverUrl}auth/login`,

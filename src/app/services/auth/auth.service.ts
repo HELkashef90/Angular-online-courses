@@ -37,7 +37,6 @@ export class AuthService {
   setUserUnAuthenticated() {
     localStorage.clear();
     this.isLoggedIn = false;
-    this.router.navigateByUrl("")
     this._spinnerService.hideFullScreenSpinner()
   }
   refreshToken() {
@@ -48,6 +47,7 @@ export class AuthService {
       this.setUserAuthenticated(res)
     }, err => {
       this.setUserUnAuthenticated();
+      this.router.navigateByUrl("")
     })
   }
 }

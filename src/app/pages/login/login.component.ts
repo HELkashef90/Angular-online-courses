@@ -62,11 +62,8 @@ export class LoginComponent implements OnInit {
       if (err.status === 403) {
         this._authService.setUserUnAuthenticated();
         this._toastService.showToast("User Name or Password incorrect, please try again", 'error')
-        this.loading = false;
-      } else {
-        this._handleGlobalErrorService.handleUnexpectedError();
-        this.loading = false;
       }
+      this.loading = false;
 
     })
   }

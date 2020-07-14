@@ -9,7 +9,7 @@ import { LocalizationService } from './services/localization/localization.servic
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   appInit: boolean = false

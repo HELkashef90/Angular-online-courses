@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
     // console.log(this.registrationForm);
     if (!this.registrationForm.valid) {
       this.showErrors = true;
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
       return
     }
     let userData = {
@@ -66,8 +66,6 @@ export class SignupComponent implements OnInit {
       console.log(err);
       if (err.status === 409) {
         this._toastService.showToast(err.error.message, 'error')
-      } else {
-        this._handleGlobalErrorService.handleUnexpectedError();
       }
       this.loading = false;
 

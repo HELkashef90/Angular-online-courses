@@ -402,7 +402,7 @@ rtl style
 	border-bottom: 1px solid #e5e5e5;
 }
 
-.rtl header {
+.rtl header.db-header {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
@@ -410,13 +410,13 @@ rtl style
 	background: #fff;
 	display: flex !important;
 	align-items: center;
-	flex-direction: row-reverse;
+	/* flex-direction: row-reverse; */
 	box-shadow: 0px 0.05208in 11.25pt -9px rgba(0, 0, 0, 0.1);
 }
 
 .rtl .main_logo {
 	float: right;
-	width: 135px;
+	/* width: 135px; */
 	margin-right: 20px;
 }
 
@@ -1878,7 +1878,7 @@ rtl style
 }
 
 .rtl .footer {
-	background: #29334e;
+	/* background: #29334e; */
 	width: 100%;
 	padding: 0;
 	float: right;
@@ -1893,7 +1893,7 @@ rtl style
 	font-size: 14px;
 	font-weight: 400;
 	font-family: 'helvetica', sans-serif;
-	display: block;
+	/* display: block; */
 	padding-bottom: 10px;
 	color: #fff;
 }
@@ -4709,7 +4709,7 @@ rtl style
 
 .rtl .main_logo15 {
 	float: none;
-	width: 135px;
+	/* width: 135px; */
 	text-align: center;
 	margin: auto !important;
 }
@@ -8333,7 +8333,7 @@ input[type=text] {
 
 /*--- Header ---*/
 
-header {
+header.db-header  {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
@@ -8346,7 +8346,7 @@ header {
 
 .main_logo {
     float: left;
-    width: 135px;
+    /* width: 135px; */
     margin-left: 20px;
 }
 
@@ -9790,7 +9790,7 @@ i.icon1 {
 }
 
 .footer {
-	background: #29334e;
+	/* background: #29334e; */
 	width: 100%;
 	padding: 0;
 	float: left;
@@ -9804,7 +9804,7 @@ i.icon1 {
     font-size: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
-    display: block;
+    /* display: block; */
     padding-bottom: 10px;
     color: #fff;
 }
@@ -12556,7 +12556,7 @@ a.rmv-btn i {
 
 .main_logo15 {
 	float: none;
-    width: 135px;
+    /* width: 135px; */
     text-align: center;
     margin: auto !important;
 }
