@@ -1,7 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-# /dist
+/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -45,7 +45,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#
-/git commands.txt
-/.firebase
-/firebase.json
+
+git commands.txt
+.firebase
+firebase.json
+todo.txt
+database.rules.json
