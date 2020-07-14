@@ -1,3 +1,4 @@
+import { CreateCourseComponent } from './pages/instructor/create-course/create-course.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LandingComponent } from './pages/landing/landing.component';
@@ -31,14 +32,17 @@ const routes: Routes = [{
 },
 {
   path: "admin",
-  children: [{
-    //routed here
-
-    //default route
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  }],
+  children: [
+    {
+      path: 'home',
+      component: CreateCourseComponent
+    },
+    {
+      //default route
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full'
+    }],
 
 },
 {

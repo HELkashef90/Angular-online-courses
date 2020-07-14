@@ -9,14 +9,18 @@ export class LazyLoadScriptsService {
 
   scripts = {
 
-    'owl.carousel.min.js': 'assets/js/owl.carousel.min.js',
-    'slick.min.js': 'assets/js/slick.min.js',
-    'plugin_accordion.js': 'assets/js/plugin_accordion.js',
-    'main.js': 'assets/js/main.js',
-    'velocity.js' : 'assets/js/wheel/js/velocity.js',
-    'index.js' : 'assets/js/wheel/js/index.js',
-    'home.tab.js' : 'assets/js/home.tab.js',
-    'splash-animation.js':'assets/ng-js/splash-animation.js'
+    'vertical-responsive-menu.min.js': "assets/js/vertical-responsive-menu.min.js",
+    "assets/js/popper.min.js":"assets/js/popper.min.js",
+    "assets/js/jquery.cookie.js":"assets/js/jquery.cookie.js",
+    'assets/js/swiper.min.js': "assets/js/swiper.min.js",
+    "assets/js/semantic.min.js": "assets/js/semantic.min.js",
+    "assets/js/front.js": "assets/js/front.js",
+    "assets/js/custom.js": "assets/js/custom.js",
+    "assets/js/custom1.js": "assets/js/custom1.js",
+    "assets/js/night-mode.js": "assets/js/night-mode.js",
+    "assets/js/datepicker.min.js": "assets/js/datepicker.min.js",
+    "assets/js/i18n/datepicker.en.js": "assets/js/i18n/datepicker.en.js",
+    "assets/js/jquery-steps.min.js": "assets/js/jquery-steps.min.js"
   }
   loadedScripts = {};
 
@@ -29,6 +33,8 @@ export class LazyLoadScriptsService {
       newScript.defer = true;
       await body.appendChild(newScript)
       this.loadedScripts[name] = newScript
+      // console.log(newScript);
+
     } else {
       this.removeScript(name);
       this.loadScript(name);
@@ -36,8 +42,13 @@ export class LazyLoadScriptsService {
   }
 
   removeScript(name) {
-    document.body.removeChild(this.loadedScripts[name])
+    document.body.removeChild(this.loadedScripts[name]);
+    delete this.loadedScripts[name]
   }
 
-
+  loadAllScripts() {
+    for (let script in this.scripts) {
+      this.loadScript(script)
+    }
+  }
 }
