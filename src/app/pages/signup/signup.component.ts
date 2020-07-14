@@ -38,6 +38,7 @@ export class SignupComponent implements OnInit {
     // console.log(this.registrationForm);
     if (!this.registrationForm.valid) {
       this.showErrors = true;
+      window.scrollTo(0,0);
       return
     }
     let userData = {
