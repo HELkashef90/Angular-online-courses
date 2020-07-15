@@ -1,4 +1,4 @@
-import { LazyLoadScriptsService } from './../../../services/lazyLoadScripts/lazy-load-scripts.service';
+import { LazyLoadScriptsService } from './../../../../services/lazyLoadScripts/lazy-load-scripts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,8 +13,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(){
-    this._lazyLoadScript.loadAllScripts()
-  }
+  // ngAfterViewInit(){
+  //   this._lazyLoadScript.loadAllScripts()
+  // }
   ngOnDestroy(){}
 }

@@ -20,9 +20,10 @@ import { RouterModule } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
 import { NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './pages/components/header/header.component';
-import { SidebarComponent } from './pages/components/sidebar/sidebar.component';
+import { HeaderComponent } from './pages/instructor/components/header/header.component';
+import { SidebarComponent } from './pages/instructor/components/sidebar/sidebar.component';
 import { CreateCourseComponent } from './pages/instructor/create-course/create-course.component';
+import { InstructorCoursesComponent } from './pages/instructor/instructor-courses/instructor-courses.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,9 +34,6 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     LandingComponent,
     SignupComponent,
-    HeaderComponent,
-    SidebarComponent,
-    CreateCourseComponent,
   ],
   imports: [
     RouterModule ,
