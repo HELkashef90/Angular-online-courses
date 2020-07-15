@@ -14,24 +14,24 @@ import { LocalizationService } from './services/localization/localization.servic
 export class AppComponent {
   appInit: boolean = false
   title = 'SmartAcademy';
+
   constructor(private _spinnerService: SpinnerService, private _paramService: ParamsService,
     private _authService: AuthService,
     private _localizationService: LocalizationService,
-    private _PWAService : PWAControllerService,
-    private _toastService : ToastService) {
+    private _PWAService: PWAControllerService,
+    private _toastService: ToastService) {
     this._paramService.getParams();
     this._authService.authUser();
     this._localizationService.init();
     // this._PWAService.preventAddToHomeScreen()
-    
+
   }
   ngOnInit() {
-
     // this.testSpinner()
   }
   testSpinner() {
     this._spinnerService.showFullScreenSpinner()
-    this._toastService.showToast("Hello","success")
+    this._toastService.showToast("Hello", "success")
     setTimeout(() => {
       this._spinnerService.hideFullScreenSpinner()
       this.appInit = true

@@ -1,3 +1,4 @@
+import { ConfirmLeaveGuard } from './../../guards/confirmLeave/confirm-leave.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InstructorComponent } from './instructor.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: CreateCourseComponent
+        component: CreateCourseComponent,
+        canDeactivate:[ConfirmLeaveGuard]
       },
 
     ],

@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxLoadingModule } from 'ngx-loading';
 import { TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { ToastrModule } from 'ngx-toastr';
     // HttpClientModule,
     NgxLoadingModule,
     TranslateModule,
-    ToastrModule
+    ToastrModule,
+    MatSliderModule,
+    MatStepperModule
   ]
 })
 export class InstructorModule { }

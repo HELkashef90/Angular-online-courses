@@ -1,3 +1,4 @@
+import { ConfirmLeaveGuard } from './guards/confirmLeave/confirm-leave.guard';
 import { LandingComponent } from './pages/landing/landing.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +25,7 @@ import { HeaderComponent } from './pages/instructor/components/header/header.com
 import { SidebarComponent } from './pages/instructor/components/sidebar/sidebar.component';
 import { CreateCourseComponent } from './pages/instructor/create-course/create-course.component';
 import { InstructorCoursesComponent } from './pages/instructor/instructor-courses/instructor-courses.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,10 +65,13 @@ export function createTranslateLoader(http: HttpClient) {
       },
     ),
     HttpClientModule,
-    NgxLoadingModule.forRoot({})
+    NgxLoadingModule.forRoot({}),
+    MatSliderModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
-    Location, { provide: LocationStrategy, useClass: HashLocationStrategy }],
+    Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ConfirmLeaveGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
