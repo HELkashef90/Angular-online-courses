@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
       console.log(res);
       this._toastService.showToast("you are logged in successfully", 'success')
       this.loading = false;
+      this._authService.redirectUserToDashboard(res['usertype'])
     }, (err) => {
       console.log(err.status);
       if (err.status === 403) {

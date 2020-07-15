@@ -20,7 +20,7 @@ export class AppComponent {
     private _PWAService : PWAControllerService,
     private _toastService : ToastService) {
     this._paramService.getParams();
-    // this._authService.authUser();
+    this._authService.authUser();
     this._localizationService.init();
     // this._PWAService.preventAddToHomeScreen()
     

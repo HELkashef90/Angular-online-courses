@@ -13,6 +13,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   // ngAfterViewInit() {
-  //   this._lazyLoadScript.loadAllScripts()
+  //   this._lazyLoadScript.loadScript("assets/js/popper.min.js")
   // }
 }

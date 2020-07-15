@@ -20,6 +20,7 @@ export class AuthService {
     this._spinnerService.showFullScreenSpinner();
     this.httpClient.get(environment._isLoggedIn).subscribe(res => {
       this.setUserAuthenticated(res)
+      this.redirectUserToDashboard(res['usertype'])
     })
   }
 
@@ -49,6 +50,21 @@ export class AuthService {
       this.setUserUnAuthenticated();
       this.router.navigateByUrl("")
     })
+  }
+  redirectUserToDashboard(userType) {
+    switch (userType) {
+      case 1:
+        //students
+        // this.router.navigateByUrl("")
+        break;
+      case 2:
+        //instructor  
+        this.router.navigateByUrl("instructor", { replaceUrl: true })
+        break;
+      default:
+        this.router.navigateByUrl("", { replaceUrl: true })
+        break;
+    }
   }
 }
 
