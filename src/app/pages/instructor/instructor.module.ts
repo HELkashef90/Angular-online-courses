@@ -19,6 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatStepperModule} from '@angular/material/stepper';
+import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {MatStepperModule} from '@angular/material/stepper';
     HeaderComponent,
     SidebarComponent,
     CreateCourseComponent,
+    InstructorDashboardComponent,
   ],
   imports: [
     CommonModule,

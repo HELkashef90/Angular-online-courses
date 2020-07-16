@@ -1,3 +1,4 @@
+import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
 import { ConfirmLeaveGuard } from './../../guards/confirmLeave/confirm-leave.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,7 +15,7 @@ const routes: Routes = [
       {
         //default route
         path: '',
-        redirectTo: 'courses',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       },
       {
@@ -26,7 +27,10 @@ const routes: Routes = [
         component: CreateCourseComponent,
         canDeactivate:[ConfirmLeaveGuard]
       },
-
+      {
+        path:'dashboard',
+        component:InstructorDashboardComponent
+      }
     ],
 
   }

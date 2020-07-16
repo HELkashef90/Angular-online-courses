@@ -4480,11 +4480,14 @@ rtl style
 }
 
 .rtl .image-upload-wrap {
-	border: 1px solid #efefef;
-	position: relative;
-	border-radius: 3px;
-	background-color: #fff;
-	border-radius: 15px;
+	border: 1px dashed #efefef;
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .rtl .image-dropping,
@@ -12026,7 +12029,8 @@ a.rmv-btn i {
 }
 
 .ui.label.lb12 {
-    background-color: #dedfe !important;
+	/* background-color: #dedfe !important; */
+	background-color: #dedfed !important;
     padding: .9999em 1.2em !important;
     color: #686f7a !important;
     border-top-left-radius: 500rem !important;
@@ -12331,11 +12335,14 @@ a.rmv-btn i {
 }
 
 .image-upload-wrap {
-	border: 1px solid #efefef;
-	position: relative;
-	border-radius:3px;
-	background-color: #fff;
-	border-radius: 15px;
+	border: 1px dashed #efefef;
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .image-dropping,
 .image-upload-wrap:hover {
@@ -15829,4 +15836,55 @@ a.rmv-btn i {
     top: 35%;
     right: 13px;
     position: absolute;
+}
+a.btn_upload {
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+    border: 0;
+    padding: 0 25px;
+    border-radius: 20px;
+    color: #c8302f;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid #c8302f;
+}
+.btn_upload:hover {
+    color: #fff !important;
+    background: #c8302f;
+    border: 1px solid #c8302f;
+}
+.btn-cancel {
+	font-size: 14px;
+    font-weight: 500;
+	color: #686f7a;
+    background: transparent;
+    padding: 0px 30px;
+    border-radius: 25px;
+    border: 0;
+    height: 40px;
+    border: 1px solid #d4d4d5;
+}
+.modal-dialog {
+	min-width: 50%;
+    width: 700px;
+    border-radius: 20px;
+    max-width: 100%;
+}
+.modal-content {
+    border-radius: 10px;
+
+}
+table .table-img {
+	width: 130px;
+    border-radius: 10px;
+}
+.close {
+	margin: ;
+	
+}
+.rtl .close {
+	float: left;
+	
 }
