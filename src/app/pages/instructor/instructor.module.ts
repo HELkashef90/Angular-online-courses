@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatStepperModule} from '@angular/material/stepper';
 import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { InstructorDashboardComponent } from './instructor-dashboard/instructor-
     SidebarComponent,
     CreateCourseComponent,
     InstructorDashboardComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,7 @@ import { InstructorDashboardComponent } from './instructor-dashboard/instructor-
     TranslateModule,
     ToastrModule,
     MatSliderModule,
-    MatStepperModule
+    MatStepperModule,
   ]
 })
 export class InstructorModule { }
