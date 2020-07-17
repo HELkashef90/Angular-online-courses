@@ -1,3 +1,4 @@
+import { LocalizationService } from './../../services/localization/localization.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _localizationService : LocalizationService) { 
+  }
 
   ngOnInit(): void {
   }

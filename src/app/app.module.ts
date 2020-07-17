@@ -72,6 +72,6 @@ export function createTranslateLoader(http: HttpClient) {
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
   ConfirmLeaveGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

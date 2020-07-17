@@ -1,4 +1,5 @@
 {
-  "CONNECTION_ERROR_MSG": "غير متصل بالانترنت"
- 
+	"Course Description*": "وصف الكورس",
+	"General Information": "معلومات عامة",
+	"Login": "تسجيل الدخول"
 }
