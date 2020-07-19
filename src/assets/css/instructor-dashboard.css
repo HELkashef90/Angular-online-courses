@@ -2268,8 +2268,9 @@ body.rtl {
 	border: 0 !important;
 	outline: 0;
 	color: rgba(0, 0, 0, 0.87);
-	border-radius: 1rem !important;
-	padding: 1em 1em !important;
+	border-radius: 0.7rem !important;
+    padding: 1em 1em !important;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1) !important;
 	text-align: right;
 }
 
@@ -6359,8 +6360,9 @@ table {
     border: 0 !important;
     outline: 0;
     color: rgba(0,0,0,.87);
-    border-radius: 1rem !important;
-	padding: 1em 1em !important;
+    border-radius: 0.7rem !important;
+    padding: 1em 1em !important;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 .steps_btn {
@@ -6671,7 +6673,9 @@ table {
     margin-top: 30px;
     text-align: right;
     padding-top: 30px;
-    border-top: 1px solid #efefef;
+	border-top: 1px solid #efefef;
+	/* display: flex;
+    justify-content: space-between; */
 }
 
 .save_content_btn {
