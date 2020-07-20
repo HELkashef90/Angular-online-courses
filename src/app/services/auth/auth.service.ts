@@ -55,7 +55,7 @@ export class AuthService {
     switch (userType) {
       case 1:
         //students
-        // this.router.navigateByUrl("")
+        this.router.navigateByUrl("user", { replaceUrl: true })
         break;
       case 2:
         //instructor  
