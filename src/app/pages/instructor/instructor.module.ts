@@ -21,6 +21,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatStepperModule} from '@angular/material/stepper';
 import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { InstructorAddChapterComponent } from './instructor-add-chapter/instructor-add-chapter.component';
+import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CreateCourseComponent,
     InstructorDashboardComponent,
     FooterComponent,
+    InstructorAddChapterComponent,
+    InstructorAddLectureComponent,
   ],
   imports: [
     CommonModule,

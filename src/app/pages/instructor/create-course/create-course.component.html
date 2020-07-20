@@ -168,12 +168,15 @@
                             </div>
                         </div>
                         <div>
-                            <button mat-button matStepperPrevious class="btn btn-default steps_btn">Back</button>
-                            <button mat-button matStepperNext class="btn btn-default steps_btn">Next</button>
+                            <div class="step-footer step-tab-pager">
+                                <button mat-button matStepperPrevious class="btn btn-default steps_btn">Back</button>
+                                <button mat-button (click)="stepper.reset()" class="btn btn-default steps_btn">Reset</button>
+                                <button class="btn btn-default steps_btn">Submit for Review</button>
+                            </div>
                         </div>
                     </form>
                 </mat-step>
-                <mat-step>
+                <!-- <mat-step>
                     <ng-template matStepLabel>Add chapters</ng-template>
                     <div class="step-tab-panel step-tab-location" id="tab_step3">
                         <div class="tab-from-content">
@@ -465,7 +468,7 @@
                         <button class="btn btn-default steps_btn">Submit for Review</button>
                     </div>
 
-                </mat-step>
+                </mat-step> -->
             </div>
         </mat-horizontal-stepper>
 

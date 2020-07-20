@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 export class ConfirmLeaveGuard implements CanDeactivate<CreateCourseComponent> {
   canDeactivate(component: CreateCourseComponent): boolean {
    
-    if(component.hasUnsavedData()){
-        if (confirm("You have unsaved changes! If you leave, your changes will be lost.")) {
+    // if(component.hasUnsavedData()){
+        // if (confirm("You have unsaved changes! If you leave, your changes will be lost.")) {
             return true;
-        } else {
+        // } else {
             return false;
-        }
-    }
-    return true;
+        // }
+    // }
+    // return true;
   }
 }

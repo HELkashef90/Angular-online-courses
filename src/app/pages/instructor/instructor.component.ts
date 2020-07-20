@@ -20,10 +20,10 @@ export class InstructorComponent implements OnInit {
     // setTimeout(() => {
     //   // this._localizationService.setUserLang('ar')
     // }, 10000);
-    this._spinnerService.showFullScreenSpinner()
-    setTimeout(() => {
-      this._spinnerService.hideFullScreenSpinner()
-    }, 5000);
+    // this._spinnerService.showFullScreenSpinner()
+    // setTimeout(() => {
+    //   this._spinnerService.hideFullScreenSpinner()
+    // }, 5000);
     setTimeout(() => {
       this._lazyLoadScript.loadAllScripts()
     }, 2000);

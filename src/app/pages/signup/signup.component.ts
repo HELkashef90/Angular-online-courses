@@ -59,7 +59,7 @@ export class SignupComponent implements OnInit {
     this.loading = true;
     this._signUpService.signUp(userData).subscribe(res => {
       console.log(res['body']);
-      this._authService.setUserAuthenticated(res['body'])
+      // this._authService.setUserAuthenticated(res['body'])
       this._toastService.showToast("user created", "success")
       this.loading = false;
     }, err => {

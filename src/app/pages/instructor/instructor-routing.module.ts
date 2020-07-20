@@ -1,3 +1,5 @@
+import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
+import { InstructorAddChapterComponent } from './instructor-add-chapter/instructor-add-chapter.component';
 import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
 import { ConfirmLeaveGuard } from './../../guards/confirmLeave/confirm-leave.guard';
 import { NgModule } from '@angular/core';
@@ -24,12 +26,36 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: CreateCourseComponent,
-        canDeactivate:[ConfirmLeaveGuard]
+        // component: CreateCourseComponent,
+        children: [
+          {
+            path: 'course',
+            component: CreateCourseComponent,
+            canDeactivate: [ConfirmLeaveGuard],
+
+          },
+          {
+            path: 'chapter',
+            component: InstructorAddChapterComponent,
+            canDeactivate: [ConfirmLeaveGuard],
+
+          },
+          {
+            path: 'lecture',
+            component: InstructorAddLectureComponent,
+            canDeactivate: [ConfirmLeaveGuard],
+
+          },
+          {
+            path: '',
+            redirectTo: 'course',
+            pathMatch: 'full'
+          }
+        ]
       },
       {
-        path:'dashboard',
-        component:InstructorDashboardComponent
+        path: 'dashboard',
+        component: InstructorDashboardComponent
       }
     ],
 
