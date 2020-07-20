@@ -9,7 +9,7 @@ export class LazyLoadScriptsService {
 
   scripts = {
 
-    'vertical-responsive-menu.min.js': "assets/js/vertical-responsive-menu.min.js",
+    'assets/vertical-responsive-menu.min.js': "assets/js/vertical-responsive-menu.min.js",
     "assets/js/popper.min.js":"assets/js/popper.min.js",
     "assets/js/jquery.cookie.js":"assets/js/jquery.cookie.js",
     'assets/js/swiper.min.js': "assets/js/swiper.min.js",
@@ -20,7 +20,9 @@ export class LazyLoadScriptsService {
     "assets/js/night-mode.js": "assets/js/night-mode.js",
     "assets/js/datepicker.min.js": "assets/js/datepicker.min.js",
     "assets/js/i18n/datepicker.en.js": "assets/js/i18n/datepicker.en.js",
-    "assets/js/jquery-steps.min.js": "assets/js/jquery-steps.min.js"
+    "assets/js/jquery-steps.min.js": "assets/js/jquery-steps.min.js",
+    "assets/js/bootstrap.min.js":"assets/js/bootstrap.min.js",
+    "assets/js/owl.carousel.js":"assets/js/owl.carousel.js"
   }
   loadedScripts = {};
 

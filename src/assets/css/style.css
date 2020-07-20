@@ -1225,7 +1225,7 @@ rtl style
 	color: #fff;
 	position: absolute;
 	top: 40%;
-	right: 40%;
+	right:  calc(50% - 20px);
 	opacity: 0;
 	background: rgba(51, 51, 51, 0.8);
 	-webkit-transition: all 0.3s ease-in-out;
@@ -2551,7 +2551,7 @@ rtl style
 .rtl ._215b01 {
 	float: left;
 	width: 100%;
-	background: #29334e;
+	background: #333333;
 	padding: 30px 0;
 }
 
@@ -6488,10 +6488,10 @@ rtl style
 }
 
 .rtl .chckout_order_dt {
-	margin-top: 34px;
+	/* margin-top: 34px; */
 	width: 100%;
-	border-top: 1px solid #efefef;
-	padding-top: 30px;
+	/* border-top: 1px solid #efefef;
+	padding-top: 30px; */
 }
 
 .rtl .order_dt_section {
@@ -6541,7 +6541,11 @@ rtl style
 	line-height: 24px;
 	margin-bottom: 0;
 }
-
+.rtl .order_title h6 span{
+	font-size: 16px;
+    font-weight: 500;
+    color: #686f7a;
+}
 .rtl .chckot_btn {
 	height: 40px;
 	padding: 0 20px;
@@ -9138,7 +9142,7 @@ i.icon1 {
     color: #fff;
     position: absolute;
     top: 40%;
-    right: 40%;
+    right: calc(50% - 20px);
     opacity: 0;
     background: rgba(51, 51, 51, 0.8);
 	-webkit-transition: all 0.3s ease-in-out;
@@ -10439,7 +10443,7 @@ i.icon2 {
 ._215b01 {
 	float: left;
 	width: 100%;
-	background: #29334e;
+	background: #333333;
 	padding: 30px 0;
 }
 
@@ -14332,10 +14336,10 @@ a.rmv-btn i {
 }
 
 .chckout_order_dt {
-    margin-top: 34px;
+    /* margin-top: 34px; */
     width: 100%;
-	border-top: 1px solid #efefef;
-	padding-top: 30px;
+	/* border-top: 1px solid #efefef;
+	padding-top: 30px; */
 }
 
 .order_dt_section {
@@ -14361,6 +14365,11 @@ a.rmv-btn i {
 	line-height: 24px;
 	width: 70%;
 	text-align: left;
+}
+.order_title h4 span{
+	font-size: 16px;
+    font-weight: 500;
+    color: #686f7a;
 }
 
 .order_title .order_price {

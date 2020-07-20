@@ -23,15 +23,7 @@ const routes: Routes = [
   },
   {
     path: "user",
-    children: [{
-      //routed here
-
-      //default route
-      path: '',
-      redirectTo: '',
-      pathMatch: 'full'
-    }],
-
+    loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule),
   },
   {
     path: "instructor",

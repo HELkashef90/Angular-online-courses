@@ -34,11 +34,7 @@ body.rtl {
     text-align: right;
    font-family: 'helvetica', sans-serif !important;
 }
-@charset "UTF-8";
 
-.rtl {
-	;
-}
 
 .rtl .alrt_dot {
 	position: absolute;
