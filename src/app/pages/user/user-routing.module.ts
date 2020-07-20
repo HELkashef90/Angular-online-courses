@@ -24,12 +24,13 @@ const routes: Routes = [
         path: 'courses',
         component: UserAllCoursesComponent
       },
+      {
+        path: 'viewCourse/:id',
+        component:UserViewCourseComponent
+      }
     ]
   },
-  {
-    path: 'viewCourse/:id',
-    component:UserViewCourseComponent
-  }
+  
 ];
 
 @NgModule({
