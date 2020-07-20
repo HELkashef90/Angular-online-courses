@@ -21,7 +21,7 @@
                         <label>Upload Video or File*</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile06">
+                                <input (change)="onFileChange($event)" type="file" class="custom-file-input" id="inputGroupFile06">
                                 <label class="custom-file-label" for="inputGroupFile06">No
                                     Choose file -
                                     (Pdf, Video)</label>
@@ -144,12 +144,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
+                <!-- <div class="col-lg-12 col-md-12">
                     <div class="save_content">
                         <button class="save_content_btn" type="Submit">Save
                             Course Content</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

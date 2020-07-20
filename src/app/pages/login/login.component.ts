@@ -13,10 +13,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   showInvalidData: boolean = false;
   loading: boolean = false;
-
+  LoadingPercentage = 0
   constructor(private _loginService: LoginService, private _toastService: ToastService, private _authService: AuthService,
     private _handleGlobalErrorService: HandleGlobalErrorService) { }
   ngOnInit(): void {
+    setInterval(() => {
+      this.LoadingPercentage++
+    }, 500)
   }
   onLoginClick(event, userName, password) {
     event.preventDefault()
@@ -24,7 +27,7 @@ export class LoginComponent implements OnInit {
     let isEmail = false;
     let isMobile = false;
     console.log(userName, password);
-    if (new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(userName)&& password.length > 2) {
+    if (new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(userName) && password.length > 2) {
       isEmail = true;
     }
     if (new RegExp("01[0,1,2,5]{1}[0-9]{8}").test(userName) && password.length > 2) {
@@ -48,7 +51,7 @@ export class LoginComponent implements OnInit {
     }
     this.showInvalidData = true
   }
-  
+
   login(userData: Object) {
     console.log(userData);
 

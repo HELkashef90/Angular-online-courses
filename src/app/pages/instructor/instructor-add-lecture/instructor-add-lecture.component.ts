@@ -11,5 +11,8 @@ export class InstructorAddLectureComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onFileChange($event) {
+    console.log($event);
 
+  }
 }

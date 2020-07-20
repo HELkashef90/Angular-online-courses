@@ -7,7 +7,8 @@ export const environment = {
   _loginAPI: `${serverUrl}auth/login`,
   _signUp: `${serverUrl}auth/signup`,
   _refreshToken : `${serverUrl}auth/refresh/token`,
-  _isLoggedIn : `${serverUrl}auth/isLoggedin`
+  _isLoggedIn : `${serverUrl}auth/isLoggedin`,
+  _createCourse : `${serverUrl}course/create`
 }
 /*
  * For easier debugging in development mode, you can import the following file

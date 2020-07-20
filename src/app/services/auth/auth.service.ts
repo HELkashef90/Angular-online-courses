@@ -25,12 +25,13 @@ export class AuthService {
   }
 
   setUserAuthenticated(authData: Object) {
-    localStorage.setItem('authenticationToken', authData['authenticationToken'])
-    localStorage.setItem('refreshToken', authData['refreshToken'])
-    localStorage.setItem('expiresAt', authData['expiresAt'])
-    localStorage.setItem('username', authData['username'])
-    localStorage.setItem('usertype', authData['usertype'])
-    localStorage.setItem('role', JSON.stringify(authData['role']))
+    localStorage.setItem('authenticationToken', authData['authenticationToken'] || "")
+    localStorage.setItem('refreshToken', authData['refreshToken'] || "")
+    localStorage.setItem('expiresAt', authData['expiresAt'] || "")
+    localStorage.setItem('username', authData['username'] || "")
+    localStorage.setItem('usertype', authData['usertype'] || "")
+    localStorage.setItem('email', authData['email'] || "")
+    localStorage.setItem('role', JSON.stringify(authData['role']) || "")
     this.isLoggedIn = true;
     this._spinnerService.hideFullScreenSpinner()
   }
@@ -43,8 +44,8 @@ export class AuthService {
   refreshToken() {
     this._spinnerService.showFullScreenSpinner();
     let refreshToken = localStorage.getItem('refreshToken') || "";
-    let userName = localStorage.getItem('username') || "";
-    this.httpClient.post(environment._refreshToken, { refreshToken: refreshToken, username: userName }).subscribe(res => {
+    let email = localStorage.getItem('email') || "";
+    this.httpClient.post(environment._refreshToken, { refreshToken: refreshToken, email: email }).subscribe(res => {
       this.setUserAuthenticated(res)
     }, err => {
       this.setUserUnAuthenticated();

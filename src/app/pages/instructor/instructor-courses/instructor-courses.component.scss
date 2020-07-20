@@ -1,0 +1,17 @@
+.uploadingTemplate {
+    top: 0;
+    z-index: 2002;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000ba;
+    border-radius: 3px;
+}
+.uploadingTemplate h3, h4 {
+    color: white;
+  }

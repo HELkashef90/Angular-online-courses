@@ -9,7 +9,7 @@ export class LazyLoadScriptsService {
 
   scripts = {
 
-    'assets/vertical-responsive-menu.min.js': "assets/js/vertical-responsive-menu.min.js",
+    // 'assets/vertical-responsive-menu.min.js': "assets/js/vertical-responsive-menu.min.js",
     "assets/js/popper.min.js":"assets/js/popper.min.js",
     "assets/js/jquery.cookie.js":"assets/js/jquery.cookie.js",
     'assets/js/swiper.min.js': "assets/js/swiper.min.js",
