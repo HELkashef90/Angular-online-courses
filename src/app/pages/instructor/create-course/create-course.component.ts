@@ -1,4 +1,4 @@
-import { CreateCourseService } from './../createCourse/create-course.service';
+import { CreateCourseService } from './../services/createCourse/create-course.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/services/toast/toast.service';
@@ -32,7 +32,7 @@ export class CreateCourseComponent implements OnInit {
     this.infoForm = this._formBuilder.group({
       courseTitle: ['', [Validators.required, Validators.maxLength(120)]],
       courseSubTitle: ['', [Validators.required, Validators.maxLength(120)]],
-      courseDescription: ['', [Validators.required, Validators.maxLength(120)]],
+      courseDescription: ['', [Validators.required]],
       language: ['', [Validators.required]],
       grade: ['', [Validators.required]],
       subject: ['', [Validators.required]],
@@ -110,17 +110,6 @@ export class CreateCourseComponent implements OnInit {
     }
   }
   submitData() {
-    // console.log(JSON.stringify(
-    //   {
-    //     "course_title": this.infoForm.get('courseTitle')?.value,
-    //     "course_subtitle": this.infoForm.get('courseSubTitle')?.value,
-    //     "course_description": this.infoForm.get('courseDescription')?.value,
-    //     "languageId": this.infoForm.get('language')?.value,
-    //     "levelId": this.infoForm.get('grade')?.value,
-    //     "subjectNameID": this.infoForm.get('subject')?.value
-    //   })
-    // )
-
     let courseForm = new FormData();
     courseForm.append('course', JSON.stringify(
       {
@@ -134,7 +123,7 @@ export class CreateCourseComponent implements OnInit {
     )
     courseForm.append('coverFile', this.selectedCoverImage)
     courseForm.append('videoFile', this.selectedVideo)
-    console.log(courseForm);
+
     this._createCourse.createCourse(courseForm).subscribe(res => {
       console.log(res);
 

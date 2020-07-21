@@ -4,153 +4,171 @@
             <div class="basic_ptitle">
                 <h4>Add lectures</h4>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="ui search focus mt-30 lbel25">
-                        <label>Lecture Title*</label>
-                        <div class="ui left icon input swdh19">
-                            <input class="prompt srch_explore" type="text" placeholder="Insert your lecture title."
-                                name="title" data-purpose="edit-course-title" maxlength="120" id="lecture[title]"
-                                value="">
-                            <div class="badge_num2">120</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="part_input ui search focus mt-30 lbel25">
-                        <label>Upload Video or File*</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input (change)="onFileChange($event)" type="file" class="custom-file-input" id="inputGroupFile06">
-                                <label class="custom-file-label" for="inputGroupFile06">No
-                                    Choose file -
-                                    (Pdf, Video)</label>
+            <div class="alert alert-danger" role="alert" *ngIf="showInfoErrors && lectureForm.invalid">
+                <span *ngIf="lectureForm.get('lectureTitle').invalid"> *Please enter a valid lecture title</span><br>
+                <span *ngIf="lectureForm.get('lectureFile').invalid"> *Please select lecture File</span><br>
+                <span *ngIf="lectureForm.get('sort').invalid"> *Please enter a valid sort</span><br>
+                <span *ngIf="lectureForm.get('description').invalid"> *Please enter a valid description</span><br>
+                <span *ngIf="lectureForm.get('course').invalid"> *Please select course</span><br>
+                <span *ngIf="lectureForm.get('chapter').invalid"> *Please select chapter</span><br>
+
+            </div>
+            <form [formGroup]="lectureForm">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="ui search focus mt-30 lbel25">
+                            <label>Lecture Title*</label>
+                            <div class="ui left icon input swdh19">
+                                <input formControlName="lectureTitle" class="prompt srch_explore" type="text"
+                                    placeholder="Insert your lecture title." name="title"
+                                    data-purpose="edit-course-title" maxlength="120" id="lecture[title]" value="">
+                                <div class="badge_num2">{{ 120 - lectureForm.get('lectureTitle')?.value?.length}}</div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="ui search focus mt-30 lbel25">
-                        <label>Sort</label>
-                        <div class="ui left icon input swdh19">
-                            <input class="prompt srch_explore" type="number" name="sort" min="0" max="100"
-                                placeholder="0">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="part_input ui search focus mt-30 lbel25">
+                            <label>Upload Video or File*</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input formControlName="lectureFile" (change)="onFileChange($event)" type="file"
+                                        class="custom-file-input" id="inputGroupFile06">
+                                    <label class="custom-file-label" for="inputGroupFile06">No
+                                        Choose file -
+                                        (Pdf, Video)</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="ui search focus mt-30 lbel25">
-                        <label>Lecture Description*</label>
-                        <div class="course_des_bg">
-                            <div class="textarea_dt">
-                                <div class="ui form swdh339">
-                                    <div class="field">
-                                        <textarea rows="5" name="description" id="id_part_description"
-                                            placeholder="Insert description"></textarea>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ui search focus mt-30 lbel25">
+                            <label>Sort</label>
+                            <div class="ui left icon input swdh19">
+                                <input formControlName="sort" class="prompt srch_explore" type="number" name="sort"
+                                    min="0" max="100" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="ui search focus mt-30 lbel25">
+                            <label>Lecture Description*</label>
+                            <div class="course_des_bg">
+                                <div class="textarea_dt">
+                                    <div class="ui form swdh339">
+                                        <div class="field">
+                                            <textarea formControlName="description" rows="5" name="description"
+                                                id="id_part_description" placeholder="Insert description"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="ui search focus mt-30 lbel25">
-                        <label>Duration*</label>
-                        <div class="ui left icon input swdh19 swdh55">
-                            <input class="prompt srch_explore" type="number" min="0" name="duration" required=""
-                                placeholder="0">
-                            <div class="badge_min">Minutes</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="ui search focus mt-30 lbel25">
-                        <label>Course*</label>
-                    </div>
-                    <select>
-                        <option value="">Select Course</option>
-                        <option value="1">Course 1</option>
-                        <option value="2">Course 2</option>
-                        <option value="3">Course 3</option>
-                        <option value="4">Course 4</option>
-                    </select>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="ui search focus mt-30 lbel25">
-                        <label>Chapter*</label>
-                    </div>
-                    <select>
-                        <option value="">Select Chapter</option>
-                        <option value="1">Chapter 1</option>
-                        <option value="2">Chapter 2</option>
-                        <option value="3">Chapter 3</option>
-                        <option value="4">Chapter 4</option>
-                    </select>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <button class="part_btn_save prt-sv" type="submit">Save
-                        Lecture</button>
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#lecture"
-                        aria-expanded="false" aria-controls="lecture">
-                        View Saved Lecture
-                    </button>
-                </div>
-                <div class="col-lg-12">
-                    <div class="accordion  mt-3 " id="saved-Lecture">
-                        <div id="lecture" class="collapse" aria-labelledby="headingTwo" data-parent="#saved-Lecture">
-                            <div class="table-responsive">
-                                <table class="table ucp-table">
-                                    <thead class="thead-s">
-                                        <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Lecture Title</th>
-                                            <th scope="col">videos</th>
-                                            <th class="text-right" scope="col">
-                                                Controls</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="cell-ta">Chapter Content
-                                                Title</td>
-                                            <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
-                                                    class="table-img" alt="" />
-                                            </td>
-                                            <td class="text-right">
-                                                <a href="#" title="Edit" class="gray-s"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="#" title="Delete" class="gray-s"><i
-                                                        class="uil uil-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="cell-ta">Chapter Content
-                                                Title</td>
-                                            <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
-                                                    class="table-img" alt="" />
-                                            </td>
-                                            <td class="text-right">
-                                                <a href="#" title="Edit" class="gray-s"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="#" title="Delete" class="gray-s"><i
-                                                        class="uil uil-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ui search focus mt-30 lbel25">
+                            <label>Duration*</label>
+                            <div class="ui left icon input swdh19 swdh55">
+                                <input disabled value="{{videoDuration}}" class="prompt srch_explore" type="number"
+                                    min="0" name="duration" required="" placeholder="0">
+                                <div class="badge_min">Minutes</div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="ui search focus mt-30 lbel25">
+                            <label>Course*</label>
+                        </div>
+                        <select formControlName="course" (change)="onCourseSelect($event)">
+                            <option value="">Select Course</option>
+                            <option value="1">Course 1</option>
+                            <option value="2">Course 2</option>
+                            <option value="3">Course 3</option>
+                            <option value="4">Course 4</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="ui search focus mt-30 lbel25">
+                            <label>Chapter*</label>
+                        </div>
+                        <select formControlName="chapter">
+                            <option value="">Select Chapter</option>
+                            <option value="1">Chapter 1</option>
+                            <option value="2">Chapter 2</option>
+                            <option value="3">Chapter 3</option>
+                            <option value="4">Chapter 4</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">Save
+                            Lecture</button>
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#lecture" aria-expanded="false" aria-controls="lecture">
+                            View Saved Lecture
+                        </button>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="accordion  mt-3 " id="saved-Lecture">
+                            <div id="lecture" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#saved-Lecture">
+                                <div class="table-responsive">
+                                    <table class="table ucp-table">
+                                        <thead class="thead-s">
+                                            <tr>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Lecture Title</th>
+                                                <th scope="col">videos</th>
+                                                <th class="text-right" scope="col">
+                                                    Controls</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="cell-ta">Chapter Content
+                                                    Title</td>
+                                                <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
+                                                        class="table-img" alt="" />
+                                                </td>
+                                                <td class="text-right">
+                                                    <a href="#" title="Edit" class="gray-s"><i
+                                                            class="uil uil-edit-alt"></i></a>
+                                                    <a href="#" title="Delete" class="gray-s"><i
+                                                            class="uil uil-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td class="cell-ta">Chapter Content
+                                                    Title</td>
+                                                <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
+                                                        class="table-img" alt="" />
+                                                </td>
+                                                <td class="text-right">
+                                                    <a href="#" title="Edit" class="gray-s"><i
+                                                            class="uil uil-edit-alt"></i></a>
+                                                    <a href="#" title="Delete" class="gray-s"><i
+                                                            class="uil uil-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <ngx-loading [show]="loading"></ngx-loading>
+                    <!-- <div class="col-lg-12 col-md-12">
                     <div class="save_content">
                         <button class="save_content_btn" type="Submit">Save
                             Course Content</button>
                     </div>
                 </div> -->
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+<video #video style="display: none;" *ngIf="videoUrl" width="320" height="240" controls [attr.src]="videoUrl"
+    (loadedmetadata)="getDuration($event)">
+</video>
