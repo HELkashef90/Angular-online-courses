@@ -24,8 +24,8 @@ export class InstructorComponent implements OnInit {
     // setTimeout(() => {
     //   this._spinnerService.hideFullScreenSpinner()
     // }, 5000);
-    setTimeout(() => {
-      this._lazyLoadScript.loadAllScripts()
-    }, 2000);
+    // setTimeout(() => {
+    //   this._lazyLoadScript.loadAllScripts()
+    // }, 2000);
   }
 }

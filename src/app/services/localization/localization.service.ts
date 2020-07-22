@@ -6,8 +6,8 @@ import { ParamsService } from '../params/params.service';
   providedIn: 'root'
 })
 export class LocalizationService {
-  userLang: string = 'en';
-  acceptedLangs = ['ar', 'en']
+ private userLang: string = 'en';
+ private acceptedLangs = ['ar', 'en']
 
   constructor(public translate: TranslateService, private _paramService: ParamsService) {
   }

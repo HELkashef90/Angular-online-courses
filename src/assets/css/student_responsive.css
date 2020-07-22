@@ -449,6 +449,7 @@ body {
 
 .hf_img {
     width: 40% !important;
+    max-width: 400px;
 }
 
 .hs_content {

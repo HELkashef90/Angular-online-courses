@@ -25,10 +25,13 @@ export class InstructorAddChapterComponent implements OnInit {
     this.initForm()
   }
   getCourses() {
+    this.loading = true;
     this._courseService.getCourses().subscribe(res => {
-      console.log(res);
-
+      this.loading = false
+      console.log(res['body']);
+      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body'] : null;
     }, err => {
+      this.loading = false
       console.log(err);
 
     })

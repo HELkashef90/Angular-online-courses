@@ -1,0 +1,99 @@
+.tab-input {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+  
+  .tab {
+      width: 100%;
+      color: white;
+      overflow: hidden;
+      position: relative;
+  }
+  .tab-label {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: solid 1px #efefef;
+      cursor: pointer;
+      height: auto;
+      margin-top: 3px;
+      padding: 15px 30px 15px 20px;
+      background: #fff;
+      border-radius: 0px;
+      color: #333333;
+    /* Icon */
+  }
+  .tab-label .title i{
+  float: left;
+  color: #333;
+  }
+  .tab-label .title b{
+  color: #333;
+  font-size: 16px;
+      padding-left: 8px;
+      padding-right: 10px;
+      font-weight: 500;
+  }
+  .tab-label span{
+      display: block;
+      margin-right: 20px;
+      white-space: nowrap;
+      font-size: 16px;
+      color: #686f7a;
+      font-weight: 400;
+      font-family: 'Roboto', sans-serif;
+  }
+  /* .tab-label:hover {
+    background: #1a252f;
+  } */
+  .tab-label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    -webkit-transition: all .35s;
+    transition: all .35s;
+    position: absolute;
+      right: 15px;
+  }
+  .ui-accordion-content {
+    max-height: 0;
+    /* padding: 0 1em; */
+    /* color: #2c3e50; */
+    background: white;
+    -webkit-transition: all .35s;
+    transition: all .35s;
+    /* display: none; */
+    opacity: 0;
+  }
+  .tab-close {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: end;
+      justify-content: flex-end;
+      /* padding: 1em;
+      font-size: 0.75em;
+      background: #2c3e50;
+      */ cursor: pointer;
+  }
+  /* .tab-close:hover {
+    background: #1a252f;
+  } */
+  
+  .tab-input:checked + .tab-label {
+      background: #f7f7f7;
+  }
+  .tab-input:checked + .tab-label::after {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .tab-input:checked ~ .ui-accordion-content {
+    max-height: 100vh;
+    /* padding: 1em; */
+    display: block;
+    opacity: 1;
+  }
+  

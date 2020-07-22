@@ -2,7 +2,9 @@
 	-moz-transition:all .3s ease-out;
 	-webkit-transition:all .3s ease-out;
 	transition:all .3s ease-out}*{box-sizing:border-box}:active,:focus{outline:0;}
-
+#sidekickToggle{
+		display:none;
+}
 .toggle_menu {
 	display: block;
 	float: left;
@@ -45,24 +47,24 @@
     z-index: 995;
 }
 
-.vertical_nav__closed {
+#sidekickToggle:checked ~ .vertical_nav {
 	left: -240px !important;
 }
 
-.vertical_nav__opened {
+#sidekickToggle:not(:checked) ~ .vertical_nav {
 	left: 0 !important;
 	box-shadow: rgba(0,0,0,.2)-30px 0 30px 30px;
 }
 
-.rtl .vertical_nav {
+.rtl #sidekickToggle:checked ~ .vertical_nav{
     right: -240px;
 }
-.rtl .vertical_nav__closed {
+.rtl #sidekickToggle:checked ~ .vertical_nav{
 	right: -240px !important;
 	left: auto !important;
 }
 
-.rtl .vertical_nav__opened {
+.rtl #sidekickToggle:not(:checked) ~ .vertical_nav {
 	right: 0 !important;
 	left: auto !important;
 	box-shadow: rgba(0,0,0,.2)60px 0 80px 60px;
@@ -109,7 +111,8 @@
 	height: 45px;
 	line-height: 45px;
 	font-family: FontAwesome;
-	content: "\f0d7";
+	/* content: "\f0d7"; */
+	content: "\276F";
 }
 .rtl .menu--item__has_sub_menu .menu--link:after {
 	right:auto;
@@ -122,9 +125,22 @@
 .menu--subitens__opened .menu--link {
 	color: #29334e;
 }
-
-.menu--subitens__opened .sub_menu { 
+#menu-collapse {
+	display: none;
+}
+#menu-collapse:checked { 
+	background: #ffecec;
+}
+#menu-collapse:checked ~ .sub_menu { 
+	background: #ffecec;
 	display: block;
+}
+#menu-collapse:checked + .menu--link:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+#menu-collapse:not(:checked) ~ .sub_menu { 
+	display: none;
 }
 
 .menu--link {
@@ -192,11 +208,11 @@
 	font-weight: 500;
 }
 
-.collapse_menu {
+/* .collapse_menu {
 	display: none;
-}
+} */
 
-@media (min-width:992px) {	
+	
 .vertical_nav{
 	left: 0;
 }
@@ -205,9 +221,9 @@
 	left:auto;
 }
 	
-.toggle_menu {
+/* .toggle_menu {
 	display: none;
-}
+} */
 
 .vertical_nav__minify {
 	width: 0;
@@ -265,11 +281,15 @@
     font-size: 30px;
     margin: 0;
     cursor: pointer;
-    float: left;
+	float: left;
+	position: fixed;
+    left: 0;
+    top: 0;
 }
 .rtl .collapse_menu {
-
-        float: right;
+		float: right;
+		left: auto;
+		right: 0;
 }
 
 .collapse_menu:hover {
@@ -290,5 +310,4 @@
 	display: block;
 	height: 40px;
 	line-height: 40px;
-}
 }

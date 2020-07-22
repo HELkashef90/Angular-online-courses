@@ -459,16 +459,18 @@ body {
     .btn_adcart {
         display:none;
     }
-    .accordion-header:hover .btn_adcart{
+    .tab:hover .btn_adcart{
         display:block;
         position: absolute;
+        right:0;
+        z-index: 1;
     }
 }
 @media (max-width: 1199px) {
-    .accordion-header .btn_adcart {
+    .tab .btn_adcart {
         font-size: 0;
     }
-    .accordion-header .btn_adcart i{
+    .tab .btn_adcart i{
         font-size: 20px;
     }
 }

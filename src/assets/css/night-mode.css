@@ -94,7 +94,7 @@ Night Mood
     -webkit-box-shadow: inset -1px -1px 0 rgba(51,51,51,.05), inset 1px 1px 0 rgba(51,51,51,.05);
 }
 
-.night-mode .header {
+.night-mode .db-header {
     background: #242424;
 }
 
@@ -147,7 +147,7 @@ Night Mood
     background: #171717 !important;
 }
 
-.night-mode .menu.dropdown_mn {
+.night-mode .menu.drop-menu {
     width: 300px;
     margin-top: 17px !important;
     border-top: 1px solid #242424 !important;

@@ -14,8 +14,8 @@ export class UserComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    setTimeout(() => {
-      this._lazyLoadScript.loadAllScripts()
-    }, 500);
+    // setTimeout(() => {
+    //   this._lazyLoadScript.loadAllScripts()
+    // }, 500);
   }
 }

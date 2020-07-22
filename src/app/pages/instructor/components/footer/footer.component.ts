@@ -1,3 +1,4 @@
+import { LocalizationService } from './../../../../services/localization/localization.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _localizationService : LocalizationService) { }
 
   ngOnInit(): void {
   }
 
+  changeLanguage(event){
+    this._localizationService.setUserLang(event.target.value)
+  }
 }

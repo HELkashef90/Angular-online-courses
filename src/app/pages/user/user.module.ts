@@ -15,10 +15,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ToastrModule } from 'ngx-toastr';
 import { UserAllCoursesComponent } from './user-all-courses/user-all-courses.component';
 import { UserViewCourseComponent } from './user-view-course/user-view-course.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
-  declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent],
+  declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

@@ -1,3 +1,5 @@
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CartComponent } from './cart/cart.component';
 import { UserViewCourseComponent } from './user-view-course/user-view-course.component';
 import { UserAllCoursesComponent } from './user-all-courses/user-all-courses.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -26,11 +28,19 @@ const routes: Routes = [
       },
       {
         path: 'viewCourse/:id',
-        component:UserViewCourseComponent
+        component: UserViewCourseComponent
+      },
+      {
+        path: 'cart',
+        component: CartComponent
+      },
+      {
+        path: 'checkout',
+        component: CheckoutComponent
       }
     ]
   },
-  
+
 ];
 
 @NgModule({

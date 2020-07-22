@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalizationService } from 'src/app/services/localization/localization.service';
 
 @Component({
   selector: 'app-user-footer',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _localizationService : LocalizationService) { }
 
   ngOnInit(): void {
   }
 
+  changeLanguage(event){
+    this._localizationService.setUserLang(event.target.value)
+  }
 }

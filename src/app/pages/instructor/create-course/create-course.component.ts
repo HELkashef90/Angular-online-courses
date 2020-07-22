@@ -125,7 +125,7 @@ export class CreateCourseComponent implements OnInit {
         "languageId": this.infoForm.get('language')?.value,
         "levelId": this.infoForm.get('grade')?.value,
         "subjectNameID": this.infoForm.get('subject')?.value,
-        "num_of_chapters": 1,
+        // "num_of_chapters": 1,
 
       })
     )

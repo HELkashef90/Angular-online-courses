@@ -9,8 +9,12 @@ $('.ui.modal')
   .modal({
     blurring: true
   })
-  .modal('show')
-;
+  .modal('show');
+  $('#videoModal').on('hidden.bs.modal', function () {
+	// $("#videoModal iframe").attr("src", $("#videoModal iframe").attr("src"));
+	
+	$("#videoModal iframe").attr("pauseVideo", "pauseVideo");
+});
 
 // === Tab === //
 $('.menu .item')

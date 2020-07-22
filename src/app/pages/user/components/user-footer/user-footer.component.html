@@ -8,6 +8,12 @@
                     <a href="terms_of_use.html">Privacy Policy</a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <select (change)='changeLanguage($event)'>
+                    <option value="en" [selected]=" _localizationService.getUserLang() === 'en' ">English</option>
+                    <option value="ar" [selected]=" _localizationService.getUserLang() === 'ar' ">Arabic</option>
+                </select>
+             </div>
             <div class="col-lg-12">
                 <div class="footer_bottm">
                     <div class="row">

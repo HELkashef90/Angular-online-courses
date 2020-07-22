@@ -79,11 +79,10 @@
                             <label>Course*</label>
                         </div>
                         <select formControlName="course" (change)="onCourseSelect($event)">
-                            <option value="">Select Course</option>
-                            <option value="1">Course 1</option>
-                            <option value="2">Course 2</option>
-                            <option value="3">Course 3</option>
-                            <option value="4">Course 4</option>
+                            <option disabled selected value="">Select Course</option>
+                            <option *ngFor="let course of instructorCourses" value="{{course.id}}">
+                                {{course.course_title}}</option>
+
                         </select>
                     </div>
                     <div class="col-lg-4 col-md-4">
@@ -91,11 +90,9 @@
                             <label>Chapter*</label>
                         </div>
                         <select formControlName="chapter">
-                            <option value="">Select Chapter</option>
-                            <option value="1">Chapter 1</option>
-                            <option value="2">Chapter 2</option>
-                            <option value="3">Chapter 3</option>
-                            <option value="4">Chapter 4</option>
+                            <option disabled selected value="">Select Chapter</option>
+                            <option *ngFor="let chapter of chapters" value="{{chapter.id}}">{{chapter.chapter_title}}</option>
+                            
                         </select>
                     </div>
                     <div class="col-lg-4 col-md-12">
@@ -175,12 +172,13 @@
     (loadedmetadata)="getDuration($event)">
 </video>
 
-	
+
 <ng-template #customLoadingTemplate>
-	<div class="uploadingTemplate">
-	  <h3>
-		Loading...
-	  </h3>
-	  <h4>{{uploadingPercentage}} %</h4>
-	</div>
-  </ng-template>
+    <div class="uploadingTemplate">
+        <h3>
+            Loading...
+        </h3>
+        <h4>{{uploadingPercentage}} %</h4>
+      <button  class="btn btn-default steps_btn" (click)="onCancelUploadClick()">cancel</button>
+    </div>
+</ng-template>

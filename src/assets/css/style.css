@@ -412,6 +412,9 @@ rtl style
 	align-items: center;
 	/* flex-direction: row-reverse; */
 	box-shadow: 0px 0.05208in 11.25pt -9px rgba(0, 0, 0, 0.1);
+	width: calc(100% - 60px);
+	right:auto;
+    left: 0;
 }
 
 .rtl .main_logo {
@@ -558,7 +561,7 @@ rtl style
 	border-radius: 3px !important;
 }
 
-.rtl .menu.dropdown_mn {
+.rtl .menu.drop-menu{
 	width: 300px;
 	margin-top: 17px !important;
 	border-top: 1px solid #fff !important;
@@ -8343,12 +8346,14 @@ input[type=text] {
 header.db-header  {
 	position: fixed;
 	z-index: 999;
-	width: 100%;
+	/* width: 100%; */
 	height: 60px;
 	background: #fff;
 	display: flex !important;
 	align-items: center;
 	box-shadow: 0px 0.052083333in 11.25pt -9px rgba(0,0,0,.1);
+	width: calc(100% - 60px);
+    right: 0;
 }
 
 .main_logo {
@@ -8483,7 +8488,7 @@ i.icon1 {
     border-radius: 3px !important;
 }
 
-.menu.dropdown_mn {
+.menu.drop-menu {
     width: 300px;
 	margin-top: 17px !important;
     border-top: 1px solid #fff !important;
@@ -8884,6 +8889,7 @@ i.icon1 {
     border-radius: 10px;
 	border: 1px solid #efefef;
 	transition: all .2s ease-in-out;
+	margin-bottom: 30px;
 }
 
 .fcrse_img {
@@ -8911,7 +8917,7 @@ i.icon1 {
     font-family: 'Roboto', sans-serif;
     color: #29334e;
     text-align: left;
-    margin-bottom: 7px;
+    margin-bottom: 15px 0;
     line-height: 24px;
 }
 
@@ -15928,4 +15934,19 @@ select {
     transition: box-shadow .1s ease,width .1s ease;
     transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
     color: #e5e5e5;
+}
+.menu.drop-menu{
+	display:none;
+}
+.ui .menu {
+	top: 70%;
+    left: auto;
+    right: 0;
+}
+.rtl .ui .menu {
+    left: 0;
+    right: auto;
+}
+#notification-dropdown:hover .menu, #message-dropdown:hover .menu, #account-dropdown:hover .menu{
+	display:block;
 }

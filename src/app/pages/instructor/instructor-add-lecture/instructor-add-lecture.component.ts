@@ -4,6 +4,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { HttpEventType } from '@angular/common/http';
+import { CreateCourseService } from '../services/createCourse/create-course.service';
 
 @Component({
   selector: 'app-instructor-add-lecture',
@@ -21,13 +22,47 @@ export class InstructorAddLectureComponent implements OnInit {
   selectedVideo: any;
   uploading: boolean = false;
   uploadingPercentage = 0;
+  instructorCourses: any;
+  createLecture: any;
+
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
-    private _toastService: ToastService) { }
+    private _toastService: ToastService,
+    private _courseService: CreateCourseService) { }
 
   ngOnInit(): void {
     this.initForm();
     //get courses
+    this.getCourses();
   }
+  getCourses() {
+    this.loading = true;
+    this._courseService.getCourses().subscribe(res => {
+      this.loading = false
+      console.log(res['body']);
+      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body'] : null;
+    }, err => {
+      this.loading = false
+      console.log(err);
+
+
+    })
+  }
+  onCourseSelect($event) {
+    console.log($event.target.value);
+    this.loading = true;
+    this._createLectureService.getChaptersByCourseId($event.target.value).subscribe(res => {
+      console.log(res);
+      this.loading = false;
+      console.log(res['body']);
+      res['statusCodeValue'] === 200 ? this.chapters = res['body'] : null;
+    }, err => {
+      console.log(err);
+      this.loading = false;
+    })
+
+  }
+
+
   initForm() {
     this.lectureForm = this._formBuilder.group({
       lectureTitle: ['', [Validators.required, Validators.maxLength(120)]],
@@ -58,20 +93,7 @@ export class InstructorAddLectureComponent implements OnInit {
   checkVideoEx(type) {
     return this.acceptedVideosEx.includes(type);
   }
-  onCourseSelect($event) {
-    console.log($event.target.value);
-    this.loading = true;
-    this._createLectureService.getChaptersByCourseId($event.target.value).subscribe(res => {
-      console.log(res);
-      this.loading = false;
-      this.chapters = res
-    }, err => {
-      console.log(err);
-      this.loading = false;
 
-    })
-
-  }
   onSaveClick() {
     this.showInfoErrors = false;
     if (this.lectureForm.valid) {
@@ -93,9 +115,9 @@ export class InstructorAddLectureComponent implements OnInit {
       })
     )
     lectureForm.append('videoFile', this.selectedVideo);
-    
+
     this.uploading = true;
-    this._createLectureService.createLecture(lectureForm).subscribe(event => {
+    this.createLecture = this._createLectureService.createLecture(lectureForm).subscribe(event => {
       console.log(event);
       if (event.type === HttpEventType.UploadProgress) {
         this.uploadingPercentage = Math.round(event.loaded / event.total * 100)
@@ -114,5 +136,12 @@ export class InstructorAddLectureComponent implements OnInit {
       console.log(err);
     })
 
+  }
+  onCancelUploadClick() {
+    if (this.createLecture) {
+      this.createLecture.unsubscribe()
+      this.uploading = false;
+      this.uploadingPercentage = 0
+    }
   }
 }
