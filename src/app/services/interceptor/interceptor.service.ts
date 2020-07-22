@@ -27,7 +27,7 @@ export class InterceptorService implements HttpInterceptor {
     console.log("interceptor", req);
     let authenticationToken = localStorage.getItem('authenticationToken') || "";
     let refreshToken = localStorage.getItem('refreshToken') || "";
-    const modified = req.clone({ setHeaders: { authenticationToken, refreshToken } });
+    const modified = req.clone({ setHeaders: { authenticationToken, refreshToken }, withCredentials: true });
     return next.handle(modified).pipe(
       map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {

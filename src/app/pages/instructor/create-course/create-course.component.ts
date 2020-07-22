@@ -1,7 +1,8 @@
 import { CreateCourseService } from './../services/createCourse/create-course.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/services/toast/toast.service';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-course',
@@ -9,6 +10,8 @@ import { ToastService } from 'src/app/services/toast/toast.service';
   styleUrls: ['./create-course.component.scss']
 })
 export class CreateCourseComponent implements OnInit {
+  @ViewChild('stepper') stepper
+
   isLinear = true;
   infoForm: FormGroup;
   promoForm: FormGroup;
@@ -21,6 +24,9 @@ export class CreateCourseComponent implements OnInit {
   selectedVideoPrev: string;
   selectedVideo: any;
   loading: boolean = false;
+  uploading: boolean = false;
+  uploadingPercentage = 0;
+  createCourseReq: any;
   constructor(private _formBuilder: FormBuilder, private _toastService: ToastService,
     private _createCourse: CreateCourseService) { }
 
@@ -118,18 +124,42 @@ export class CreateCourseComponent implements OnInit {
         "course_description": this.infoForm.get('courseDescription')?.value,
         "languageId": this.infoForm.get('language')?.value,
         "levelId": this.infoForm.get('grade')?.value,
-        "subjectNameID": this.infoForm.get('subject')?.value
+        "subjectNameID": this.infoForm.get('subject')?.value,
+        "num_of_chapters": 1,
+
       })
     )
     courseForm.append('coverFile', this.selectedCoverImage)
     courseForm.append('videoFile', this.selectedVideo)
+    this.uploading = true;
+    this.createCourseReq = this._createCourse.createCourse(courseForm)
+      .subscribe(event => {
+        // console.log(event);
+        if (event.type === HttpEventType.UploadProgress) {
+          this.uploadingPercentage = Math.round(event.loaded / event.total * 100)
+        } else if (event.type === HttpEventType.Response) {
+          console.log(event);
 
-    this._createCourse.createCourse(courseForm).subscribe(res => {
-      console.log(res);
+          this.uploading = false;
+          this.infoForm.reset();
+          this.promoForm.reset();
+          this.stepper.reset();
+          this.uploadingPercentage = 0
+          this._toastService.showToast("your course successfully created, congratulations!", 'success')
+        }
+      }, err => {
+        this.uploading = false;
+        this.uploadingPercentage = 0
+        this._toastService.showToast("Error while creating course, please try again", 'error')
+        console.log(err);
+      })
+  }
 
-    }, err => {
-
-      console.log(err);
-    })
+  onCancelUploadClick() {
+    if (this.createCourseReq) {
+      this.createCourseReq.unsubscribe()
+      this.uploading = false;
+      this.uploadingPercentage = 0
+    }
   }
 }

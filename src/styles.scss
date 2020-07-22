@@ -1,8 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~ngx-toastr/toastr';
-a:hover{
+@import "~ngx-toastr/toastr";
+a:hover {
     cursor: pointer;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.uploadingTemplate {
+    top: 0;
+    z-index: 2002;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000ba;
+    border-radius: 3px;
+}
+.uploadingTemplate h3,
+h4 {
+    color: white;
+}
+// .uploadingTemplate button {
+//     border: none;
+//     border-radius: 4px;
+//     padding: 6px;
+//     color: white;
+//     outline: none;
+//     font-weight: bold;
+//     font-size: 1.1em;
+//     margin: 15px 15px 15px 0;
+//     font-family: "Roboto", sans-serif;
+//     cursor: pointer;
+//     background-color: #666666;
+// }

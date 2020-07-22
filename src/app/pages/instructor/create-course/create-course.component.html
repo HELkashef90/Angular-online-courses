@@ -189,6 +189,7 @@
                                                     </div>
                                                 </div>
                                                 <ngx-loading [show]="loading"></ngx-loading>
+                                                <ngx-loading [show]="uploading" [template]="customLoadingTemplate"></ngx-loading>
                                             </div>
                                         </div>
                                     </div>
@@ -214,3 +215,13 @@
     </div>
 
 </div>
+	
+<ng-template #customLoadingTemplate>
+	<div class="uploadingTemplate">
+	  <h3>
+		Loading...
+	  </h3>
+      <h4>{{uploadingPercentage}} %</h4>
+      <button  class="btn btn-default steps_btn" (click)="onCancelUploadClick()">cancel</button>
+	</div>
+  </ng-template>

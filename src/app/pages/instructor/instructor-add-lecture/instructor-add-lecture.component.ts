@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ToastService } from 'src/app/services/toast/toast.service';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-instructor-add-lecture',
@@ -18,7 +19,8 @@ export class InstructorAddLectureComponent implements OnInit {
   videoDuration: any = '';
   chapters: any;
   selectedVideo: any;
-
+  uploading: boolean = false;
+  uploadingPercentage = 0;
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
     private _toastService: ToastService) { }
 
@@ -80,7 +82,7 @@ export class InstructorAddLectureComponent implements OnInit {
     }
   }
   submitData() {
-    this.loading = true;
+
     let lectureForm = new FormData();
     lectureForm.append('chapterContent', JSON.stringify(
       {
@@ -91,15 +93,25 @@ export class InstructorAddLectureComponent implements OnInit {
       })
     )
     lectureForm.append('videoFile', this.selectedVideo);
+    
+    this.uploading = true;
+    this._createLectureService.createLecture(lectureForm).subscribe(event => {
+      console.log(event);
+      if (event.type === HttpEventType.UploadProgress) {
+        this.uploadingPercentage = Math.round(event.loaded / event.total * 100)
+      } else if (event.type === HttpEventType.Response) {
+        console.log(event);
 
-    this._createLectureService.createLecture(lectureForm).subscribe(res => {
-      this.loading = false;
-      console.log(res);
-
+        this.uploading = false;
+        this.lectureForm.reset();
+        this.uploadingPercentage = 0
+        this._toastService.showToast("your lecture successfully created, congratulations!", 'success')
+      }
     }, err => {
-      this.loading = false;
+      this.uploading = false;
+      this.uploadingPercentage = 0
+      this._toastService.showToast("Error while creating lecture, please try again", 'error')
       console.log(err);
-
     })
 
   }

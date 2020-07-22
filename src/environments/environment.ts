@@ -11,7 +11,8 @@ export const environment = {
   _createCourse: `${serverUrl}course/create`,
   _createChapter: `${serverUrl}course-chapter/create`,
   _getChaptersByCourseId: `${serverUrl}course-chapter/by-course/`,
-  _createLecture: `${serverUrl}course-chapter-content/create`
+  _createLecture: `${serverUrl}course-chapter-content/create`,
+  _getCourses : `${serverUrl}course/by-instructor`
 }
 /*
  * For easier debugging in development mode, you can import the following file

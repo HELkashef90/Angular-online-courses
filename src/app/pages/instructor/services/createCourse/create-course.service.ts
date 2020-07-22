@@ -8,8 +8,14 @@ import { environment } from 'src/environments/environment';
 export class CreateCourseService {
 
   constructor(private httpClient: HttpClient) { }
-  
+
   createCourse(courseForm: FormData) {
-    return this.httpClient.post(environment._createCourse, courseForm)
+    return this.httpClient.post(environment._createCourse, courseForm, {
+      reportProgress: true,
+      observe: 'events'
+    })
+  }
+  getCourses() {
+    return this.httpClient.get(environment._getCourses)
   }
 }

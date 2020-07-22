@@ -1,6 +1,8 @@
+import { CreateCourseService } from './../services/createCourse/create-course.service';
 import { CreateChapterService } from './../services/createChapter/create-chapter.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ToastService } from 'src/app/services/toast/toast.service';
 
 @Component({
   selector: 'app-instructor-add-chapter',
@@ -14,11 +16,22 @@ export class InstructorAddChapterComponent implements OnInit {
   showInfoErrors: boolean = false;
 
 
-  constructor(private _formBuilder: FormBuilder, private _createChapterService: CreateChapterService) { }
+  constructor(private _formBuilder: FormBuilder, private _createChapterService: CreateChapterService, private _courseService: CreateCourseService,
+    private _toastService: ToastService) { }
 
   ngOnInit(): void {
     //get instructor courses
+    this.getCourses()
     this.initForm()
+  }
+  getCourses() {
+    this._courseService.getCourses().subscribe(res => {
+      console.log(res);
+
+    }, err => {
+      console.log(err);
+
+    })
   }
   initForm() {
     this.chapterForm = this._formBuilder.group({
@@ -50,11 +63,15 @@ export class InstructorAddChapterComponent implements OnInit {
     }
     this._createChapterService.createChapter(chapterForm).subscribe(res => {
       console.log(res);
+      this._toastService.showToast("your chapter successfully created, congratulations!", 'success')
+
       this.chapterForm.reset()
       this.loading = false;
 
     }, err => {
       console.log(err);
+      this._toastService.showToast("Error while creating chapter, please try again", 'error')
+
       this.loading = false;
 
     })

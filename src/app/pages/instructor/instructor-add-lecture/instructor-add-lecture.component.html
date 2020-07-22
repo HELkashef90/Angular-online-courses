@@ -158,6 +158,8 @@
                         </div>
                     </div>
                     <ngx-loading [show]="loading"></ngx-loading>
+                    <ngx-loading [show]="uploading" [template]="customLoadingTemplate"></ngx-loading>
+
                     <!-- <div class="col-lg-12 col-md-12">
                     <div class="save_content">
                         <button class="save_content_btn" type="Submit">Save
@@ -172,3 +174,13 @@
 <video #video style="display: none;" *ngIf="videoUrl" width="320" height="240" controls [attr.src]="videoUrl"
     (loadedmetadata)="getDuration($event)">
 </video>
+
+	
+<ng-template #customLoadingTemplate>
+	<div class="uploadingTemplate">
+	  <h3>
+		Loading...
+	  </h3>
+	  <h4>{{uploadingPercentage}} %</h4>
+	</div>
+  </ng-template>
