@@ -14,5 +14,7 @@ export const environment = {
   _getChaptersByInstructor: `${serverUrl}course-chapter/by-instructor`,
   _getLecturesByInstructor: `${serverUrl}course-chapter-content/by-instructor`,
   _deleteCourse: `${serverUrl}course/delete/`,
-  _updateCourse: `${serverUrl}course/update`
+  _updateCourse: `${serverUrl}course/update`,
+  _updateChapter: `${serverUrl}course-chapter/update`,
+
 }

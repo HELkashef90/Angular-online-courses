@@ -15,4 +15,7 @@ export class CreateChapterService {
   getChapters() {
     return this.httpClient.get(environment._getChaptersByInstructor)
   }
+  updateChapter(chapterForm) {
+    return this.httpClient.put(environment._updateChapter, chapterForm)
+  }
 }

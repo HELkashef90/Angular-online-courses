@@ -15,6 +15,8 @@ export class InstructorAddChapterComponent implements OnInit {
   chapterForm: FormGroup
   showInfoErrors: boolean = false;
   chapters: any;
+  editMode: boolean;
+  selectedChapterToEdit: any;
 
 
   constructor(private _formBuilder: FormBuilder, private _createChapterService: CreateChapterService, private _courseService: CreateCourseService,
@@ -54,26 +56,22 @@ export class InstructorAddChapterComponent implements OnInit {
 
     })
   }
-  initForm() {
-    this.chapterForm = this._formBuilder.group({
-      course: ['', [Validators.required]],
-      chapterTitle: ['', [Validators.required, Validators.maxLength(120)]],
-      sort: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      price: ['', [Validators.required]],
-    });
-  }
+
   onSaveChapterClick() {
     // console.log(this.infoForm);
     this.showInfoErrors = false;
     if (this.chapterForm.valid) {
       //save chapter
-      confirm('Are you sure?') ? this.createChapter() : null;
+      if (confirm('Are you sure?')) {
+        this.editMode ? this.updateChapter() : this.createChapter()
+      }
+
     } else {
       this.showInfoErrors = true;
       window.scrollTo(0, 0);
     }
   }
+
   createChapter() {
     this.loading = true;
     let chapterForm = {
@@ -96,5 +94,57 @@ export class InstructorAddChapterComponent implements OnInit {
       this.loading = false;
 
     })
+  }
+  updateChapter() {
+    this.loading = true;
+    let chapterForm = {
+      "id": this.selectedChapterToEdit.id,
+      "courseId": this.chapterForm.get('course').value,
+      "chapter_title": this.chapterForm.get('chapterTitle').value,
+      "chapter_description": this.chapterForm.get('description').value,
+      "chapter_fee": this.chapterForm.get('price').value,
+    }
+    this._createChapterService.updateChapter(chapterForm).subscribe(res => {
+      console.log(res);
+      this._toastService.showToast("your chapter successfully updated, congratulations!", 'success')
+
+      this.chapterForm.reset()
+      this.editMode = false;
+      this.getChaptersByInstructor()
+      this.loading = false;
+
+    }, err => {
+      console.log(err);
+      this._toastService.showToast("Error while update chapter, please try again", 'error')
+
+      this.loading = false;
+
+    })
+  }
+  initForm() {
+    this.chapterForm = this._formBuilder.group({
+      course: ['', [Validators.required]],
+      chapterTitle: ['', [Validators.required, Validators.maxLength(120)]],
+      sort: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+    });
+  }
+  onEditChapterClick(chapter) {
+    this.editMode = true;
+    this.selectedChapterToEdit = chapter
+    this.chapterForm.get('course').setValue(chapter.courseId);
+    this.chapterForm.get('chapterTitle').setValue(chapter.chapter_title);
+    this.chapterForm.get('description').setValue(chapter.chapter_description);
+    this.chapterForm.get('price').setValue(chapter.chapter_fee);
+    window.scrollTo(0, 0);
+
+  }
+  onDeleteChapterClick(chapter) {
+
+  }
+  onCancelEditChapterClick() {
+    this.editMode = false;
+    this.chapterForm.reset()
   }
 }
