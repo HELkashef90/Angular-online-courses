@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { LocalizationService } from './../../services/localization/localization.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private _localizationService : LocalizationService) { 
+  constructor(private _localizationService: LocalizationService, public _auth: AuthService) {
+    this._auth.authUser()
+
   }
 
   ngOnInit(): void {
   }
-
+  goToDashboard() {
+    this._auth.redirectUserToDashboard()
+  }
 }

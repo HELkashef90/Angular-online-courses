@@ -4,8 +4,8 @@
 		<div class="row justify-content-lg-center justify-content-md-center">
 			<div class="col-lg-12">
 				<div class="main_logo25" id="logo">
-					<a><img src="assets/dashboard/images/logo.png" alt=""></a>
-					<a><img class="logo-inverse" src="assets/dashboard/images/ct_logo.svg" alt=""></a>
+					<a><img [routerLink]="['']" routerLinkActive="router-link-active"  src="assets/images/logo.png" alt=""></a>
+					<a><img [routerLink]="['']" class="logo-inverse" src="assets/images/ct_logo.svg" alt=""></a>
 				</div>
 			</div>
 
@@ -38,8 +38,8 @@
 							Please enter valid Email or Mobile, and password
 						</div>
 					</form>
-					<p class="sgntrm145">Or <a>Forgot Password</a>.</p>
-					<p class="mb-0 mt-30 hvsng145">Don't have an account? <a>Sign Up</a></p>
+					<p class="sgntrm145">Or <a [routerLink]="['/forgotPassword']" routerLinkActive="router-link-active" >Forgot Password</a>.</p>
+					<p class="mb-0 mt-30 hvsng145">Don't have an account? <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign Up</a></p>
 				</div>
 			</div>
 			<div class="sign_footer"><img src="assets/dashboard/images/sign_logo.png" alt="">© 2020 <strong>Smart

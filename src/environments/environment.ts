@@ -21,7 +21,8 @@ export const environment = {
   _updateChapter: `${serverUrl}course-chapter/update`,
   _deleteChapter:`${serverUrl}course-chapter/delete/`,
   _deleteLecture:`${serverUrl}course-chapter-content/delete/`,
-  _updateLecture:`${serverUrl}course-chapter-content/update`
+  _updateLecture:`${serverUrl}course-chapter-content/update`,
+  _activeAccount:`${serverUrl}auth/accountVerification/`
 }
 /*
  * For easier debugging in development mode, you can import the following file

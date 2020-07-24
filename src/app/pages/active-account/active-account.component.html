@@ -1,0 +1,32 @@
+<!-- Body Start -->
+<div class="coming_soon_style">
+    <div class="wrapper coming_soon_wrapper ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div *ngIf="successActive" class="cmtk_group">
+                        <div class="ct-logo">
+                            <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="images/ct_logo.svg" alt=""></a>
+                        </div>
+                        <div class="cmtk_dt">
+                            <h1 class="thnk_coming_title">Thank You</h1>
+                            <h4 class="thnk_title1">You account has beed activated successfully, please login. </h4>
+                            <button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="plan_link_btn">Log in</button>
+                        </div>
+                    </div>
+                    <div *ngIf="!successActive" class="cmtk_group">
+                        <div class="ct-logo">
+                            <a [routerLink]="['']"><img src="images/ct_logo.svg" alt=""></a>
+                        </div>
+                        <div class="cmtk_dt">
+                            <!-- <h1 class="thnk_coming_title">Thank You</h1> -->
+                            <h4 class="thnk_title1">Sorry your link is expired, please contact the administrator. </h4>
+                            <button [routerLink]="['']" routerLinkActive="router-link-active"  class="plan_link_btn">Go to home</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Body End -->

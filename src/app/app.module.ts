@@ -26,6 +26,8 @@ import { SidebarComponent } from './pages/instructor/components/sidebar/sidebar.
 import { CreateCourseComponent } from './pages/instructor/create-course/create-course.component';
 import { InstructorCoursesComponent } from './pages/instructor/instructor-courses/instructor-courses.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { ActiveAccountComponent } from './pages/active-account/active-account.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,6 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     LandingComponent,
     SignupComponent,
+    ActiveAccountComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     RouterModule ,

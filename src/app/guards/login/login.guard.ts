@@ -11,8 +11,10 @@ export class LoginGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (this._auth.isLoggedIn) {
+        this._auth.redirectUserToDashboard('')
         return false
       }
+      return true;
   
     }
     constructor(private _auth: AuthService) { }

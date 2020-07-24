@@ -1,3 +1,5 @@
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ActiveAccountComponent } from './pages/active-account/active-account.component';
 import { LoginGuard } from './guards/login/login.guard';
 import { InstructorGuard } from './guards/instructor/instructor.guard';
 import { UserGuard } from './guards/user/user.guard';
@@ -17,23 +19,31 @@ const routes: Routes = [
     component: LandingComponent
   },
   {
+    path: 'activeAccount/:token',
+    component: ActiveAccountComponent
+  },
+  {
+    path: 'forgotPassword',
+    component: ForgotPasswordComponent
+  },
+  {
     path: 'login',
-    // canActivate:[LoginGuard],
+    canActivate:[LoginGuard],
     component: LoginComponent
   },
   {
     path: 'signup',
-    // canActivate:[LoginGuard],
+    canActivate:[LoginGuard],
     component: SignupComponent
   },
   {
     path: "user",
-    // canDeactivate:[UserGuard],
+    canActivate:[UserGuard],
     loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule),
   },
   {
     path: "instructor",
-    // canActivate:[InstructorGuard],
+    canActivate:[InstructorGuard],
     loadChildren: () => import('./pages/instructor/instructor.module').then(m => m.InstructorModule),
   },
   {

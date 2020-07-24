@@ -1,3 +1,4 @@
+import { UserStudyCourseComponent } from './user-study-course/user-study-course.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { UserViewCourseComponent } from './user-view-course/user-view-course.component';
@@ -37,10 +38,14 @@ const routes: Routes = [
       {
         path: 'checkout',
         component: CheckoutComponent
-      }
+      },
+
     ]
   },
-
+  {
+    path: 'study/:courseId',
+    component: UserStudyCourseComponent
+  }
 ];
 
 @NgModule({

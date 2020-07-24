@@ -25,15 +25,17 @@ export class AuthService {
       "refreshToken": localStorage.getItem('refreshToken') || ""
     }).subscribe(res => {
       this.setUserAuthenticated(res)
-      this.redirectUserToDashboard(res['usertype'])
+      // this.redirectUserToDashboard(res['usertype'])
     }, err => {
       this._spinnerService.hideFullScreenSpinner()
-      this.redirectUserToDashboard('')
+      // this.redirectUserToDashboard('')
 
     })
   }
   isLoggedInAuth() {
-    return this.httpClient.get(environment._isLoggedIn)
+    return this.httpClient.post(environment._isLoggedIn, {
+      "refreshToken": localStorage.getItem('refreshToken') || ""
+    })
   }
   setUserAuthenticated(authData: Object) {
     localStorage.setItem('authenticationToken', authData['authenticationToken'] || "")
@@ -66,7 +68,7 @@ export class AuthService {
       this.router.navigateByUrl("")
     })
   }
-  redirectUserToDashboard(userType) {
+  redirectUserToDashboard(userType = this.userType) {
     switch (userType) {
       case 1:
         //students
@@ -82,7 +84,7 @@ export class AuthService {
     }
   }
 
-  signOut() {
+  signOut(redirectToLogin = true) {
     let payload = {
       "refreshToken": localStorage.getItem('refreshToken') || "",
       // "username": localStorage.getItem('username') || ""
@@ -95,12 +97,18 @@ export class AuthService {
       // body: payload
     }
     this.httpClient.post(environment._logOut, payload).subscribe(res => {
-      location.reload()
+    redirectToLogin ?  this.router.navigate(['login']) : null;
+      // location.reload()
     }, err => {
+      redirectToLogin ?  this.router.navigate(['login']) : null;
       // location.reload()
     })
+    this.isLoggedIn = false;
     localStorage.clear();
 
+  }
+  activeAccount(token) {
+    return this.httpClient.get(environment._activeAccount + token)
   }
 }
 

@@ -24,10 +24,14 @@
             <!-- Link-->
             <li class="nav-item"> <a href="#" class="nav-link">Contact Us</a></li>
           </ul>
-          <ul class="navbar-nav">
+          <ul *ngIf="!_auth.isLoggedIn" class="navbar-nav">
             <li [routerLink]="['/login']" class="nav-item"><a data-toggle="modal" data-target="#login"
                 class="nav-link font-weight-bold mr-3">{{'Login' | translate}}</a></li>
             <li [routerLink]="['/signup']" class="nav-item"><a class="navbar-btn btn btn-primary">Get Started</a></li>
+          </ul>
+          <ul *ngIf="_auth.isLoggedIn" class="navbar-nav">
+          
+            <li (click)="goToDashboard()" class="nav-item"><a class="navbar-btn btn btn-primary">My Dashboard</a></li>
           </ul>
         </div>
       </div>
@@ -76,7 +80,7 @@
           <li class="list-inline-item"><a href="#" target="_blank" class="social-link"><i
                 class="icon ion-logo-youtube"></i></a></li>
         </ul>
-        <p class="copyrights-text mb-0">Copyright &copy; 2020 All rights reserved to <a href="#" target="_blank"
+        <p class="copyrights-text mb-0">Copyright &copy; 2020 All rights reserved to <a
             class="copyrights-link">smart Academy</a></p>
       </div>
     </div>

@@ -17,10 +17,11 @@ import { UserAllCoursesComponent } from './user-all-courses/user-all-courses.com
 import { UserViewCourseComponent } from './user-view-course/user-view-course.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { UserStudyCourseComponent } from './user-study-course/user-study-course.component';
 
 
 @NgModule({
-  declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent],
+  declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
