@@ -141,7 +141,18 @@ export class InstructorAddChapterComponent implements OnInit {
 
   }
   onDeleteChapterClick(chapter) {
+    if (confirm('Are You Sure?')) {
+      this._createChapterService.deleteChapter(chapter.id).subscribe(res => {
+        console.log(res);
+        this.getChaptersByInstructor()
+      }, err => {
+        console.log(err);
+        if(err.status === 400){
+          this._toastService.showToast("this chapter contains chapters, can't be deleted","warning")
 
+        }
+      })
+    }
   }
   onCancelEditChapterClick() {
     this.editMode = false;

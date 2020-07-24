@@ -25,6 +25,8 @@ export class InstructorAddLectureComponent implements OnInit {
   instructorCourses: any;
   createLecture: any;
   lectures: any;
+  editMode: boolean;
+  selectedLectureToEdit: any;
 
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
     private _toastService: ToastService,
@@ -67,8 +69,13 @@ export class InstructorAddLectureComponent implements OnInit {
   }
   onCourseSelect($event) {
     console.log($event.target.value);
+    this.getChapters($event.target.value)
+
+  }
+  getChapters(courseId) {
     this.loading = true;
-    this._createLectureService.getChaptersByCourseId($event.target.value).subscribe(res => {
+    this.lectureForm.get('chapter').setValue('')
+    this._createLectureService.getChaptersByCourseId(courseId).subscribe(res => {
       console.log(res);
       this.loading = false;
       console.log(res['body']);
@@ -77,9 +84,7 @@ export class InstructorAddLectureComponent implements OnInit {
       console.log(err);
       this.loading = false;
     })
-
   }
-
 
   initForm() {
     this.lectureForm = this._formBuilder.group({
@@ -115,12 +120,15 @@ export class InstructorAddLectureComponent implements OnInit {
   onSaveClick() {
     this.showInfoErrors = false;
     if (this.lectureForm.valid) {
-      confirm("Are YOu Sure?") ?  this.submitData() : null;
+      if (confirm("Are YOu Sure?")) {
+        this.editMode ? this.updateLecture() : this.submitData();
+      }
     } else {
       this.showInfoErrors = true;
       window.scrollTo(0, 0);
     }
   }
+
   submitData() {
 
     let lectureForm = new FormData();
@@ -155,11 +163,73 @@ export class InstructorAddLectureComponent implements OnInit {
     })
 
   }
+  updateLecture() {
+    
+    let lectureForm = new FormData();
+    lectureForm.append('chapterContent', JSON.stringify(
+      {
+        "id": this.selectedLectureToEdit.id,
+        "courseChapter": this.lectureForm.get('chapter').value,
+        "content_title": this.lectureForm.get('lectureTitle').value,
+        "description": this.lectureForm.get('description').value
+      })
+    )
+    // lectureForm.append('videoFile', this.selectedVideo);
+
+    this.uploading = true;
+    this.createLecture = this._createLectureService.updateLecture(lectureForm).subscribe(event => {
+      console.log(event);
+      if (event.type === HttpEventType.UploadProgress) {
+        this.uploadingPercentage = Math.round(event.loaded / event.total * 100)
+      } else if (event.type === HttpEventType.Response) {
+        console.log(event);
+
+        this.uploading = false;
+        this.lectureForm.reset();
+        this.uploadingPercentage = 0
+        this._toastService.showToast("your lecture successfully updated!", 'success')
+      }
+    }, err => {
+      this.uploading = false;
+      this.uploadingPercentage = 0
+      this._toastService.showToast("Error while update lecture, please try again", 'error')
+      console.log(err);
+    })
+  }
   onCancelUploadClick() {
     if (this.createLecture) {
       this.createLecture.unsubscribe()
       this.uploading = false;
       this.uploadingPercentage = 0
     }
+  }
+  onEditLecture(lecture) {
+    this.editMode = true;
+    this.selectedLectureToEdit = lecture
+    this.lectureForm.reset()
+    this.lectureForm.get('lectureFile').clearValidators()
+    this.lectureForm.get('lectureFile').updateValueAndValidity()
+
+    this.lectureForm.get('course').setValue(lecture.courseId)
+    this.getChapters(this.lectureForm.get('course').value)
+    this.lectureForm.get('chapter').setValue('')
+    this.lectureForm.get('lectureTitle').setValue(lecture.content_title)
+    this.lectureForm.get('description').setValue(lecture.description)
+  }
+  onCancelEditChapterClick() {
+    this.editMode = false;
+    this.lectureForm.reset()
+    this.lectureForm.get('lectureFile').setValidators([Validators.required])
+    this.lectureForm.get('lectureFile').updateValueAndValidity()
+  }
+  onDeleteLecture(lecture) {
+    this._createLectureService.deleteLecture(lecture.id).subscribe(res => {
+      console.log(res);
+      this._toastService.showToast("your lecture successfully deleted!", 'success')
+      this.getLectures();
+    }, err => {
+      console.log(err);
+
+    })
   }
 }

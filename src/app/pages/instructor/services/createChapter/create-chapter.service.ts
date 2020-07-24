@@ -18,4 +18,7 @@ export class CreateChapterService {
   updateChapter(chapterForm) {
     return this.httpClient.put(environment._updateChapter, chapterForm)
   }
+  deleteChapter(id) {
+    return this.httpClient.delete(environment._deleteChapter + id)
+  }
 }

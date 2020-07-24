@@ -6,7 +6,7 @@
             </div>
             <div class="alert alert-danger" role="alert" *ngIf="showInfoErrors && lectureForm.invalid">
                 <span *ngIf="lectureForm.get('lectureTitle').invalid"> *Please enter a valid lecture title</span><br>
-                <span *ngIf="lectureForm.get('lectureFile').invalid"> *Please select lecture File</span><br>
+                <span  *ngIf="lectureForm.get('lectureFile').invalid && !editMode"> *Please select lecture File</span><br>
                 <span *ngIf="lectureForm.get('sort').invalid"> *Please enter a valid sort</span><br>
                 <span *ngIf="lectureForm.get('description').invalid"> *Please enter a valid description</span><br>
                 <span *ngIf="lectureForm.get('course').invalid"> *Please select course</span><br>
@@ -26,10 +26,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="part_input ui search focus mt-30 lbel25">
+                    <div [hidden]="editMode" class="col-lg-4 col-md-6">
+                        <div  class="part_input ui search focus mt-30 lbel25">
                             <label>Upload Video or File*</label>
-                            <div class="input-group">
+                            <div  class="input-group">
                                 <div class="custom-file">
                                     <input formControlName="lectureFile" (change)="onFileChange($event)" type="file"
                                         class="custom-file-input" id="inputGroupFile06">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div *ngIf="!editMode" class="col-lg-4 col-md-6">
                         <div class="ui search focus mt-30 lbel25">
                             <label>Duration*</label>
                             <div class="ui left icon input swdh19 swdh55">
@@ -79,7 +79,7 @@
                             <label>Course*</label>
                         </div>
                         <select formControlName="course" (change)="onCourseSelect($event)">
-                            <option disabled selected value="">Select Course</option>
+                            <option disabled  value="">Select Course</option>
                             <option *ngFor="let course of instructorCourses" value="{{course.id}}">
                                 {{course.course_title}}</option>
 
@@ -90,14 +90,16 @@
                             <label>Chapter*</label>
                         </div>
                         <select formControlName="chapter">
-                            <option disabled selected value="">Select Chapter</option>
+                            <option disabled  value="">Select Chapter</option>
                             <option *ngFor="let chapter of chapters" value="{{chapter.id}}">{{chapter.chapter_title}}</option>
                             
                         </select>
                     </div>
                     <div class="col-lg-4 col-md-12">
-                        <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">Save
-                            Lecture</button>
+                        <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">
+                             {{editMode ? 'Save Lecture' : 'Create Lecture'}}</button>
+                             <button *ngIf="editMode" (click)="onCancelEditChapterClick()" class="part_btn_save prt-sv">
+                                cancel edit</button>
                         <button (click)="getLectures()" class="btn btn-link collapsed" type="button" data-toggle="collapse"
                             data-target="#lecture" aria-expanded="false" aria-controls="lecture">
                             View Saved Lecture
@@ -126,9 +128,9 @@
                                                         class="table-img" alt="" />
                                                 </td> -->
                                                 <td class="text-right">
-                                                    <a href="#" title="Edit" class="gray-s"><i
+                                                    <a (click)="onEditLecture(lecture)" title="Edit" class="gray-s"><i
                                                             class="uil uil-edit-alt"></i></a>
-                                                    <a href="#" title="Delete" class="gray-s"><i
+                                                    <a (click)="onDeleteLecture(lecture)" title="Delete" class="gray-s"><i
                                                             class="uil uil-trash-alt"></i></a>
                                                 </td>
                                             </tr>
