@@ -28,6 +28,8 @@ import { InstructorCoursesComponent } from './pages/instructor/instructor-course
 import { MatSliderModule } from '@angular/material/slider';
 import { ActiveAccountComponent } from './pages/active-account/active-account.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SaveUrlPipe } from './pipes/saveUrl/save-url.pipe';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -70,7 +72,8 @@ export function createTranslateLoader(http: HttpClient) {
     ),
     HttpClientModule,
     NgxLoadingModule.forRoot({}),
-    MatSliderModule
+    MatSliderModule,
+    InfiniteScrollModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },

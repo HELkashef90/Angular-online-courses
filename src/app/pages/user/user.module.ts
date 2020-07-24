@@ -18,10 +18,13 @@ import { UserViewCourseComponent } from './user-view-course/user-view-course.com
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserStudyCourseComponent } from './user-study-course/user-study-course.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
 
 
 @NgModule({
-  declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent],
+  declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent
+  ,SaveUrlPipe],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -36,6 +39,7 @@ import { UserStudyCourseComponent } from './user-study-course/user-study-course.
     NgxLoadingModule,
     TranslateModule,
     ToastrModule,
+    InfiniteScrollModule
   ]
 })
 export class UserModule { }

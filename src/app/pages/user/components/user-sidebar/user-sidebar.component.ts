@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart/cart.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSidebarComponent implements OnInit {
 
-  constructor(public _auth: AuthService) { }
+  constructor(public _auth: AuthService,
+    public cart : CartService) { }
 
   ngOnInit(): void {
   }
