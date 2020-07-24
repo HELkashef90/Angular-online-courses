@@ -1,3 +1,4 @@
+import { EditCourseComponent } from './edit-course/edit-course.component';
 import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
 import { InstructorAddChapterComponent } from './instructor-add-chapter/instructor-add-chapter.component';
 import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
@@ -59,6 +60,10 @@ const routes: Routes = [
       }
     ],
 
+  },
+  {
+    path: 'editCourse',
+    component: EditCourseComponent
   }
 ];
 

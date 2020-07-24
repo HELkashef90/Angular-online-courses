@@ -16,25 +16,28 @@
 										<th class="text-center" scope="col">Item No.</th>
 										<th>Title</th>
 										<th class="text-center" scope="col">Publish Date</th>
-										<th class="text-center" scope="col">Sales</th>
+										<!-- <th class="text-center" scope="col">Sales</th> -->
 										<th class="text-center" scope="col">chapters</th>
-										<th class="text-center" scope="col">Category</th>
+										<!-- <th class="text-center" scope="col">Category</th> -->
 										<th class="text-center" scope="col">Status</th>
 										<th class="text-center" scope="col">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr *ngFor="let course of instructorCourses">
-										<td class="text-center">{{course.id}}</td>
+									<tr *ngFor="let course of instructorCourses; let index = index">
+										<td class="text-center">{{index + 1}}</td>
 										<td>{{course.course_title}}</td>
 										<td class="text-center">{{course.createdDate | date : 'medium'}}</td>
-										<td class="text-center">{{course.sales}}</td>
+										<!-- <td class="text-center">{{course.sales}}</td> -->
 										<td class="text-center">{{course.num_of_chapters}}</td>
-										<td class="text-center"><a href="#">{{course.category}}</a></td>
-										<td class="text-center"><b class="course_active">{{course.course_status}}</b></td>
+										<!-- <td class="text-center"><a href="#">{{course.category}}</a></td> -->
+										<td *ngIf="course.course_status === 0" class="text-center"><b class="">Draft</b></td>
+										<td *ngIf="course.course_status === 1" class="text-center"><b class="">Pending</b></td>
+										<td *ngIf="course.course_status === 2" class="text-center"><b class="">Approved</b></td>
+										<td *ngIf="course.course_status === 3" class="text-center"><b class="">Rejected</b></td>
 										<td class="text-center">
-											<a href="#" title="Edit" class="gray-s"><i class="uil uil-edit-alt"></i></a>
-											<a href="#" title="Delete" class="gray-s"><i class="uil uil-trash-alt"></i></a>
+											<a (click)="onEditClick(course)" title="Edit" class="gray-s"><i class="uil uil-edit-alt"></i></a>
+											<a (click)="ocDeleteClick(course)" title="Delete" class="gray-s"><i class="uil uil-trash-alt"></i></a>
 										</td>
 									</tr>
 								
@@ -48,41 +51,7 @@
 			</div>
 		</div>
 	
-			<div class="container-fluid">
-				<div class="row">					
-					<div class="col-lg-12">
-						<div class="item_f1">
-							<a href="terms_of_use.html">Copyright Policy</a>
-							<a href="terms_of_use.html">Terms</a>
-							<a href="terms_of_use.html">Privacy Policy</a>
-						</div>
-					</div>
-					<div class="col-lg-12">
-						<div class="footer_bottm">
-							<div class="row">
-								<div class="col-md-6">
-									<ul class="fotb_left">
-										<li>
-											<p>© 2020 <strong>Smart Academy</strong>. All Rights Reserved.</p>
-										</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<div class="edu_social_links">
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-google-plus-g"></i></a>
-										<a href="#"><i class="fab fa-linkedin-in"></i></a>
-										<a href="#"><i class="fab fa-instagram"></i></a>
-										<a href="#"><i class="fab fa-youtube"></i></a>
-										<a href="#"><i class="fab fa-pinterest-p"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 		
 	</div>
 	<!-- Body End -->

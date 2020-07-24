@@ -1,5 +1,6 @@
 import { LazyLoadScriptsService } from './../../../../services/lazyLoadScripts/lazy-load-scripts.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private _lazyLoadScript : LazyLoadScriptsService) { }
+  constructor(private _lazyLoadScript : LazyLoadScriptsService,public _auth: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +18,7 @@ export class SidebarComponent implements OnInit {
   //   this._lazyLoadScript.loadAllScripts()
   // }
   ngOnDestroy(){}
+  logOut() {
+    this._auth.signOut()
+  }
 }

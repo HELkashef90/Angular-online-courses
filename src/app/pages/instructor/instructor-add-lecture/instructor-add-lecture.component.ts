@@ -24,6 +24,7 @@ export class InstructorAddLectureComponent implements OnInit {
   uploadingPercentage = 0;
   instructorCourses: any;
   createLecture: any;
+  lectures: any;
 
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
     private _toastService: ToastService,
@@ -44,6 +45,23 @@ export class InstructorAddLectureComponent implements OnInit {
       this.loading = false
       console.log(err);
 
+
+    })
+  }
+  getLectures() {
+    this.loading = true
+
+    this._createLectureService.getLectures().subscribe(res => {
+      this.loading = false
+
+      console.log(res);
+      res['statusCodeValue'] === 200 ? this.lectures = res['body'] : null;
+
+
+    }, err => {
+      this.loading = false
+
+      console.log(err);
 
     })
   }
@@ -97,7 +115,7 @@ export class InstructorAddLectureComponent implements OnInit {
   onSaveClick() {
     this.showInfoErrors = false;
     if (this.lectureForm.valid) {
-      this.submitData()
+      confirm("Are YOu Sure?") ?  this.submitData() : null;
     } else {
       this.showInfoErrors = true;
       window.scrollTo(0, 0);

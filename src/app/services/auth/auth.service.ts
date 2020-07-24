@@ -1,8 +1,9 @@
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SpinnerService } from '../spinner/spinner.service';
 import { Router } from '@angular/router';
+import { env } from 'process';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class AuthService {
 
 
   isLoggedIn: boolean = false;
+  userType: any;
 
   constructor(private httpClient: HttpClient,
     private _spinnerService: SpinnerService, private router: Router) {
@@ -18,12 +20,21 @@ export class AuthService {
 
   authUser() {
     this._spinnerService.showFullScreenSpinner();
-    this.httpClient.get(environment._isLoggedIn).subscribe(res => {
+
+    this.httpClient.post(environment._isLoggedIn, {
+      "refreshToken": localStorage.getItem('refreshToken') || ""
+    }).subscribe(res => {
       this.setUserAuthenticated(res)
       this.redirectUserToDashboard(res['usertype'])
+    }, err => {
+      this._spinnerService.hideFullScreenSpinner()
+      this.redirectUserToDashboard('')
+
     })
   }
-
+  isLoggedInAuth() {
+    return this.httpClient.get(environment._isLoggedIn)
+  }
   setUserAuthenticated(authData: Object) {
     localStorage.setItem('authenticationToken', authData['authenticationToken'] || "")
     localStorage.setItem('refreshToken', authData['refreshToken'] || "")
@@ -32,6 +43,7 @@ export class AuthService {
     localStorage.setItem('usertype', authData['usertype'] || "")
     localStorage.setItem('email', authData['email'] || "")
     localStorage.setItem('role', JSON.stringify(authData['role']) || "")
+    this.userType = authData['usertype'] || ""
     this.isLoggedIn = true;
     this._spinnerService.hideFullScreenSpinner()
   }
@@ -39,6 +51,7 @@ export class AuthService {
   setUserUnAuthenticated() {
     localStorage.clear();
     this.isLoggedIn = false;
+    this.userType = ""
     this._spinnerService.hideFullScreenSpinner()
   }
   refreshToken() {
@@ -46,6 +59,7 @@ export class AuthService {
     let refreshToken = localStorage.getItem('refreshToken') || "";
     let email = localStorage.getItem('email') || "";
     this.httpClient.post(environment._refreshToken, { refreshToken: refreshToken, email: email }).subscribe(res => {
+      this.redirectUserToDashboard(res['usertype'])
       this.setUserAuthenticated(res)
     }, err => {
       this.setUserUnAuthenticated();
@@ -66,6 +80,27 @@ export class AuthService {
         this.router.navigateByUrl("", { replaceUrl: true })
         break;
     }
+  }
+
+  signOut() {
+    let payload = {
+      "refreshToken": localStorage.getItem('refreshToken') || "",
+      // "username": localStorage.getItem('username') || ""
+    }
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'body': JSON.stringify(payload)
+      }),
+      // body: payload
+    }
+    this.httpClient.post(environment._logOut, payload).subscribe(res => {
+      location.reload()
+    }, err => {
+      // location.reload()
+    })
+    localStorage.clear();
+
   }
 }
 

@@ -1,3 +1,6 @@
+import { LoginGuard } from './guards/login/login.guard';
+import { InstructorGuard } from './guards/instructor/instructor.guard';
+import { UserGuard } from './guards/user/user.guard';
 import { InstructorCoursesComponent } from './pages/instructor/instructor-courses/instructor-courses.component';
 import { InstructorComponent } from './pages/instructor/instructor.component';
 import { CreateCourseComponent } from './pages/instructor/create-course/create-course.component';
@@ -15,18 +18,22 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    // canActivate:[LoginGuard],
     component: LoginComponent
   },
   {
     path: 'signup',
+    // canActivate:[LoginGuard],
     component: SignupComponent
   },
   {
     path: "user",
+    // canDeactivate:[UserGuard],
     loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule),
   },
   {
     path: "instructor",
+    // canActivate:[InstructorGuard],
     loadChildren: () => import('./pages/instructor/instructor.module').then(m => m.InstructorModule),
   },
   {

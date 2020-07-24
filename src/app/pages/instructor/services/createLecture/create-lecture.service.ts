@@ -13,9 +13,12 @@ export class CreateLectureService {
     return this.httpClient.get(environment._getChaptersByCourseId + courseId)
   }
   createLecture(lectureForm: FormData) {
-    return this.httpClient.post(environment._createLecture, lectureForm , {
+    return this.httpClient.post(environment._createLecture, lectureForm, {
       reportProgress: true,
       observe: 'events'
     })
+  }
+  getLectures() {
+    return this.httpClient.get(environment._getLecturesByInstructor)
   }
 }

@@ -14,6 +14,7 @@ export class InstructorAddChapterComponent implements OnInit {
   instructorCourses: any;
   chapterForm: FormGroup
   showInfoErrors: boolean = false;
+  chapters: any;
 
 
   constructor(private _formBuilder: FormBuilder, private _createChapterService: CreateChapterService, private _courseService: CreateCourseService,
@@ -22,7 +23,24 @@ export class InstructorAddChapterComponent implements OnInit {
   ngOnInit(): void {
     //get instructor courses
     this.getCourses()
+    // this.getChaptersByInstructor()
     this.initForm()
+  }
+  getChaptersByInstructor() {
+    this.loading = true;
+    this._createChapterService.getChapters().subscribe(res => {
+      this.loading = false
+
+      console.log(res);
+      res['statusCodeValue'] === 200 ? this.chapters = res['body'] : null;
+
+
+    }, err => {
+      this.loading = false
+
+      console.log(err);
+
+    })
   }
   getCourses() {
     this.loading = true;
@@ -50,7 +68,7 @@ export class InstructorAddChapterComponent implements OnInit {
     this.showInfoErrors = false;
     if (this.chapterForm.valid) {
       //save chapter
-      this.createChapter()
+      confirm('Are you sure?') ? this.createChapter() : null;
     } else {
       this.showInfoErrors = true;
       window.scrollTo(0, 0);

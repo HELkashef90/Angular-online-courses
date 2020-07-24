@@ -98,7 +98,7 @@
                     <div class="col-lg-4 col-md-12">
                         <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">Save
                             Lecture</button>
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        <button (click)="getLectures()" class="btn btn-link collapsed" type="button" data-toggle="collapse"
                             data-target="#lecture" aria-expanded="false" aria-controls="lecture">
                             View Saved Lecture
                         </button>
@@ -113,19 +113,18 @@
                                             <tr>
                                                 <th scope="col">No</th>
                                                 <th scope="col">Lecture Title</th>
-                                                <th scope="col">videos</th>
+                                                <!-- <th scope="col">videos</th> -->
                                                 <th class="text-right" scope="col">
                                                     Controls</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="cell-ta">Chapter Content
-                                                    Title</td>
-                                                <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
+                                            <tr *ngFor="let lecture of lectures; let index = index">
+                                                <td>{{index + 1}}</td>
+                                                <td class="cell-ta">{{lecture.content_title}}</td>
+                                                <!-- <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
                                                         class="table-img" alt="" />
-                                                </td>
+                                                </td> -->
                                                 <td class="text-right">
                                                     <a href="#" title="Edit" class="gray-s"><i
                                                             class="uil uil-edit-alt"></i></a>
@@ -133,20 +132,7 @@
                                                             class="uil uil-trash-alt"></i></a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="cell-ta">Chapter Content
-                                                    Title</td>
-                                                <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
-                                                        class="table-img" alt="" />
-                                                </td>
-                                                <td class="text-right">
-                                                    <a href="#" title="Edit" class="gray-s"><i
-                                                            class="uil uil-edit-alt"></i></a>
-                                                    <a href="#" title="Delete" class="gray-s"><i
-                                                            class="uil uil-trash-alt"></i></a>
-                                                </td>
-                                            </tr>
+                                           
                                         </tbody>
                                     </table>
                                 </div>

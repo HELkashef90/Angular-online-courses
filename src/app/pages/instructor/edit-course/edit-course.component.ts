@@ -1,16 +1,20 @@
 import { CreateCourseService } from './../services/createCourse/create-course.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/services/toast/toast.service';
+import Player from '@vimeo/player';
 import { HttpEventType } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-course',
-  templateUrl: './create-course.component.html',
-  styleUrls: ['./create-course.component.scss']
+  selector: 'app-edit-course',
+  templateUrl: './edit-course.component.html',
+  styleUrls: ['./edit-course.component.scss']
 })
-export class CreateCourseComponent implements OnInit {
+export class EditCourseComponent implements OnInit {
   @ViewChild('stepper') stepper
+  @ViewChild('prevPromoVideo') prevPromoVideo
+
 
   isLinear = true;
   infoForm: FormGroup;
@@ -27,30 +31,45 @@ export class CreateCourseComponent implements OnInit {
   uploading: boolean = false;
   uploadingPercentage = 0;
   createCourseReq: any;
-  constructor(private _formBuilder: FormBuilder, private _toastService: ToastService,
-    private _createCourse: CreateCourseService) { }
+  selectedCourseToEdit: any;
+  player: any;
 
+  constructor(private _courseService: CreateCourseService, private _formBuilder: FormBuilder, private _toastService: ToastService,private router :Router) {
+    this.selectedCourseToEdit = _courseService.selectedCourseToEdit
+    _courseService.selectedCourseToEdit = ""
+    console.log(this.selectedCourseToEdit);
+  }
 
   ngOnInit() {
     this.initForms()
+
+
   }
+  ngAfterViewInit() {
+    this.initVimeoPromoVid()
+  }
+  initVimeoPromoVid() {
+    let options = {
+      id: this.selectedCourseToEdit.promotional_video_id
+    }
+    this.player = new Player(this.prevPromoVideo.nativeElement, options);
+  }
+
   initForms() {
     this.infoForm = this._formBuilder.group({
-      courseTitle: ['', [Validators.required, Validators.maxLength(120)]],
-      courseSubTitle: ['', [Validators.required, Validators.maxLength(120)]],
-      courseDescription: ['', [Validators.required]],
-      language: ['', [Validators.required]],
-      grade: ['', [Validators.required]],
-      subject: ['', [Validators.required]],
+      courseTitle: [this.selectedCourseToEdit.course_title, [Validators.required, Validators.maxLength(120)]],
+      courseSubTitle: [this.selectedCourseToEdit.course_subtitle, [Validators.required, Validators.maxLength(120)]],
+      courseDescription: [this.selectedCourseToEdit.course_description, [Validators.required]],
+      // language: [this.selectedCourseToEdit, [Validators.required]],
+      grade: [this.selectedCourseToEdit.level, [Validators.required]],
+      subject: [this.selectedCourseToEdit.subjectName, [Validators.required]],
     });
     this.promoForm = this._formBuilder.group({
-      coverImage: ['', Validators.required],
-      promoVideo: ['', Validators.required],
+      coverImage: [''],
+      promoVideo: [''],
     });
   }
-  hasUnsavedData() {
-    return true;
-  }
+
   coverImageChange($event) {
     // console.log($event.target.files);
     this.selectedCoverImage = null;
@@ -87,7 +106,8 @@ export class CreateCourseComponent implements OnInit {
       this.selectedVideo = $event.target.files[0]
       return
     }
-    this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast('File not supported', 'error')
+    this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast('Video not supported', 'error')
+    this.initVimeoPromoVid()
   }
   checkVideoEx(type) {
     return this.acceptedVideosEx.includes(type);
@@ -108,8 +128,8 @@ export class CreateCourseComponent implements OnInit {
   onSubmitForm(stepper) {
     // console.log(this.promoForm);
     this.showPromoErrors = false;
-    if (this.promoForm.valid && this.infoForm.valid) {
-      confirm("Are YOu Sure?") ?  this.submitData() : null;
+    if (this.infoForm.valid) {
+      confirm("Are YOu Sure?") ? this.submitData() : null;
     } else {
       this.showPromoErrors = true;
       window.scrollTo(0, 0);
@@ -119,6 +139,7 @@ export class CreateCourseComponent implements OnInit {
     let courseForm = new FormData();
     courseForm.append('course', JSON.stringify(
       {
+        "id": this.selectedCourseToEdit.id,
         "course_title": this.infoForm.get('courseTitle')?.value,
         "course_subtitle": this.infoForm.get('courseSubTitle')?.value,
         "course_description": this.infoForm.get('courseDescription')?.value,
@@ -129,10 +150,11 @@ export class CreateCourseComponent implements OnInit {
 
       })
     )
-    courseForm.append('coverFile', this.selectedCoverImage)
-    courseForm.append('videoFile', this.selectedVideo)
+    this.selectedCoverImage ? courseForm.append('coverFile', this.selectedCoverImage) : null;
+    this.selectedVideo ? courseForm.append('videoFile', this.selectedVideo) : null;
+
     this.uploading = true;
-    this.createCourseReq = this._createCourse.createCourse(courseForm)
+    this.createCourseReq = this._courseService.updateCourse(courseForm)
       .subscribe(event => {
         // console.log(event);
         if (event.type === HttpEventType.UploadProgress) {
@@ -145,16 +167,16 @@ export class CreateCourseComponent implements OnInit {
           this.promoForm.reset();
           this.stepper.reset();
           this.uploadingPercentage = 0
-          this._toastService.showToast("your course successfully created, congratulations!", 'success')
+          this._toastService.showToast("your course successfully updated, congratulations!", 'success')
+          this.router.navigate(['/instructor/courses'])
         }
       }, err => {
         this.uploading = false;
         this.uploadingPercentage = 0
-        this._toastService.showToast("Error while creating course, please try again", 'error')
+        this._toastService.showToast("Error while update course, please try again", 'error')
         console.log(err);
       })
   }
-
   onCancelUploadClick() {
     if (this.createCourseReq) {
       this.createCourseReq.unsubscribe()

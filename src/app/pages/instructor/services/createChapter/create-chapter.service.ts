@@ -12,4 +12,7 @@ export class CreateChapterService {
   createChapter(chapterForm: Object) {
     return this.httpClient.post(environment._createChapter, chapterForm)
   }
+  getChapters() {
+    return this.httpClient.get(environment._getChaptersByInstructor)
+  }
 }
