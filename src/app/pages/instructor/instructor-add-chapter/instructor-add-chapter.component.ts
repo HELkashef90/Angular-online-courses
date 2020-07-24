@@ -83,7 +83,7 @@ export class InstructorAddChapterComponent implements OnInit {
     this._createChapterService.createChapter(chapterForm).subscribe(res => {
       console.log(res);
       this._toastService.showToast("your chapter successfully created, congratulations!", 'success')
-
+      this.getChaptersByInstructor()
       this.chapterForm.reset()
       this.loading = false;
 
@@ -148,7 +148,7 @@ export class InstructorAddChapterComponent implements OnInit {
       }, err => {
         console.log(err);
         if(err.status === 400){
-          this._toastService.showToast("this chapter contains chapters, can't be deleted","warning")
+          this._toastService.showToast("this chapter contains lectures, can't be deleted","warning")
 
         }
       })

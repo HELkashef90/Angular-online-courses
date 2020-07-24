@@ -149,7 +149,7 @@ export class InstructorAddLectureComponent implements OnInit {
         this.uploadingPercentage = Math.round(event.loaded / event.total * 100)
       } else if (event.type === HttpEventType.Response) {
         console.log(event);
-
+        this.getLectures();
         this.uploading = false;
         this.lectureForm.reset();
         this.uploadingPercentage = 0
@@ -164,7 +164,7 @@ export class InstructorAddLectureComponent implements OnInit {
 
   }
   updateLecture() {
-    
+
     let lectureForm = new FormData();
     lectureForm.append('chapterContent', JSON.stringify(
       {
@@ -183,6 +183,7 @@ export class InstructorAddLectureComponent implements OnInit {
         this.uploadingPercentage = Math.round(event.loaded / event.total * 100)
       } else if (event.type === HttpEventType.Response) {
         console.log(event);
+        this.getLectures();
 
         this.uploading = false;
         this.lectureForm.reset();
@@ -223,13 +224,16 @@ export class InstructorAddLectureComponent implements OnInit {
     this.lectureForm.get('lectureFile').updateValueAndValidity()
   }
   onDeleteLecture(lecture) {
-    this._createLectureService.deleteLecture(lecture.id).subscribe(res => {
-      console.log(res);
-      this._toastService.showToast("your lecture successfully deleted!", 'success')
-      this.getLectures();
-    }, err => {
-      console.log(err);
+    if (confirm('Are You sure?')) {
+      this._createLectureService.deleteLecture(lecture.id).subscribe(res => {
+        console.log(res);
+        this._toastService.showToast("your lecture successfully deleted!", 'success')
+        this.getLectures();
+      }, err => {
+        console.log(err);
 
-    })
+      })
+    }
+
   }
 }

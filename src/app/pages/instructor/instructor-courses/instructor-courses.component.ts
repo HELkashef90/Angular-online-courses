@@ -35,6 +35,7 @@ export class InstructorCoursesComponent implements OnInit {
     if (confirm('Are you Sure?')) {
       this._courseService.deleteCourse(course.id).subscribe(res => {
         console.log(res);
+        this._toastService.showToast("Course deleted","info")
         this.getCourses()
       }, err => {
         console.log(err);
