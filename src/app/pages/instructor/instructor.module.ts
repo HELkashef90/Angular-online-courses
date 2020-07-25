@@ -24,6 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InstructorAddChapterComponent } from './instructor-add-chapter/instructor-add-chapter.component';
 import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
+import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     ToastrModule,
     MatSliderModule,
     MatStepperModule,
+    NgxConfirmBoxModule
   ]
 })
 export class InstructorModule { }

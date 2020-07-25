@@ -9,7 +9,7 @@
                             <div class="ttl121">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">{{'Home' | translate}}</a></li>
+                                        <!-- <li class="breadcrumb-item"><a href="index.html">{{'Home' | translate}}</a></li> -->
                                         <li class="breadcrumb-item active" aria-current="page">{{'Checkout' | translate}}</li>
                                     </ol>
                                 </nav>
@@ -27,7 +27,7 @@
         <div class="container">			
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="membership_chk_bg">
+                    <!-- <div class="membership_chk_bg">
                         <div class="checkout_title">
                             <h4>{{'Student Information' | translate}}</h4>
                             <img src="assets/images/line.svg" alt="">
@@ -91,7 +91,7 @@
                             IsraaSayed@gm.com<br>
                             0192848473839
                         </div>
-                    </div>
+                    </div> -->
                     <div class="membership_chk_bg">
                         <div class="chckout_order_dt">
                             <div class="checkout_title">
@@ -99,19 +99,17 @@
                                 <img src="assets/images/line.svg" alt="">
                             </div>
                             <div class="order_dt_section">
-                                <div class="order_title">
-                                    <h4>Physics  <span>  / Chapter1 } </span></h4>
-                                    <div class="order_price">49 {{'EGP' | translate}}</div>
+                                <!-- / {{cart.getNumOfChaptersBySubject(1)}} {{'chapter' | translate}} -->
+                                <div *ngFor="let chapter of cart.cart" class="order_title">
+                                    <h4> <span> {{chapter.course_title}} / {{chapter.chapter_title}} </span></h4>
+                                    <div class="order_price">{{chapter.chapter_fee}} {{'EGP' | translate}}</div>
                                 </div>
-                                <div class="order_title">
-                                    <h4>sceince} <span>  / Chapter1 </span></h4>
-                                    <div class="order_price">49  {{'EGP' | translate}}</div>
-                                </div>
-                                
-                               
-                                <button class="chckot_btn" type="submit">{{'Confirm Checkout' | translate}}</button>
+
+                                <button [ngStyle]="{'background-color':!cart.cart.length ? 'darkgray' : null}" [disabled]="!cart.cart.length" class="chckot_btn" (click)="onConfirmCheckOut()">{{'Confirm Checkout' | translate}}</button>
                             </div>
                         </div>
+                        <ngx-loading [show]="loading"></ngx-loading>
+
                     </div>									
                 </div>
                 <div class="col-lg-4">
@@ -123,19 +121,19 @@
                             <div class="order_dt_section">
                                 <div class="order_title">
                                     <h4>{{'Total Chapters' | translate}}</h4>
-                                    <div class="order_price">4 </div>
+                                    <div class="order_price">{{cart.cart.length}}</div>
                                 </div>
                                 <div class="order_title">
                                     <h2>{{'Total Cost' |  translate}}</h2>
-                                    <div class="order_price5">200  {{ 'EGP'| translate}}</div>
+                                    <div class="order_price5">{{cart.getCartTotalPrice()}}  {{ 'EGP'| translate}}</div>
                                 </div>
                                 <div class="scr_text"><i class="uil uil-lock-alt"></i>{{'Secure checkout' | translate}}</div>
                             </div>	
-                        
-                    </div>
-                </div>								
-            </div>				
-        </div>
+                            
+                        </div>
+                    </div>								
+                </div>				
+            </div>
     </div>
 
 <!-- </div> -->

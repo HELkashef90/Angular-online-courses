@@ -15,7 +15,7 @@ export class HandleGlobalHttpErrorsService {
       //refresh token
       // this._authService.refreshToken()
       this._authService.setUserUnAuthenticated()
-      this._authService.signOut(false);
+      this._authService.signOut();
       return
     } else if (error.status !== 403 && error.status !== 409 && error.status !== 400) {
       this._handleGlobalErrorService.handleUnexpectedError();

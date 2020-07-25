@@ -113,18 +113,19 @@
                                 </div>
                                 <div class="tabs">
 
-                                    <div class="tab">
-                                        <input type="checkbox" class="tab-input" id="chck1">
-                                        <label class="tab-label" for="chck1">
+                                    <div *ngFor="let chapter of chapters" class="tab">
+                                        <input type="checkbox" class="tab-input" id="{{chapter.id}}">
+                                        <label class="tab-label" for="{{chapter.id}}">
                                             <span class="title">
                                                 <i class='uil uil-presentation-play crse_icon'></i>
-                                                <b>{{'Introduction to this Course' | translate}}</b>
+                                                <b>{{chapter.chapter_title}}</b>
                                             </span>
-                                            <span>8 {{'lectures' | translate}}</span>
-                                            <span>22:08</span>
-                                            <button [hidden]="cart.cart.includes('hossam')" (click)="cart.addToCart('hossam')" class="btn_adcart"><i
+                                            <span>{{chapter.chapter_num_of_video}} {{'lectures' | translate}}</span>
+                                            <span>{{chapter.chapter_fee}} {{'LE' | translate}}</span>
+                                            <button *ngIf="!checkChapterOnCart(chapter)" (click)="cart.addToCart(chapter)" class="btn_adcart"><i
                                                     class="uil uil-shopping-cart-alt"></i>{{'Add to Cart' | translate}}</button>
                                         </label>
+
                                         <!-- <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
                                                 <div class="lecture-container">
                                                     <div class="left-content">
@@ -160,7 +161,8 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                    </div>
+                                    
+                                        </div>
 
                                 </div>
                                 <!-- <a class="btn1458" >20 More Sections</a> -->

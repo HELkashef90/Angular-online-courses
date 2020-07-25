@@ -25,7 +25,7 @@ export class UserAllCoursesComponent implements OnInit {
 
   getAllCourses() {
     // console.log(this.reqPageNum, this.totalPages, this.lastPage);
-    if (this.lastPage) {
+    if (this.lastPage || this.loading) {
       return false;
     }
     this.loading = true
@@ -36,7 +36,7 @@ export class UserAllCoursesComponent implements OnInit {
         console.log(this.approvedCoursesArray);
         return
       } else {
-        // console.log(res);
+        console.log(res);
         this.reqPageNum += 1;
         this.totalPages = res['body']['totalPages']
         this.totalApprovedCourses = res['body']['totalElements']

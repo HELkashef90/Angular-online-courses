@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private _lazyLoadScript : LazyLoadScriptsService,public _auth: AuthService) { }
+  constructor(private _lazyLoadScript: LazyLoadScriptsService, public _auth: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -17,8 +17,14 @@ export class SidebarComponent implements OnInit {
   // ngAfterViewInit(){
   //   this._lazyLoadScript.loadAllScripts()
   // }
-  ngOnDestroy(){}
+  ngOnDestroy() { }
   logOut() {
     this._auth.signOut()
+  }
+  getName() {
+    return localStorage.getItem('username')
+  }
+  getEmail() {
+    return localStorage.getItem('email')
   }
 }

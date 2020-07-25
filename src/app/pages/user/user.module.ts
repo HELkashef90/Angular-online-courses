@@ -20,11 +20,13 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { UserStudyCourseComponent } from './user-study-course/user-study-course.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
+import { NgxConfirmBoxModule } from 'ngx-confirm-box';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 
 @NgModule({
   declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent
-  ,SaveUrlPipe],
+  ,SaveUrlPipe, ConfirmComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -39,7 +41,8 @@ import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
     NgxLoadingModule,
     TranslateModule,
     ToastrModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgxConfirmBoxModule
   ]
 })
 export class UserModule { }

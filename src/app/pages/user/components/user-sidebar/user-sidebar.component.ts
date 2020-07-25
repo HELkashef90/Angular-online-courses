@@ -17,4 +17,10 @@ export class UserSidebarComponent implements OnInit {
   logOut() {
     this._auth.signOut()
   }
+  getName() {
+    return localStorage.getItem('username')
+  }
+  getEmail() {
+    return localStorage.getItem('email')
+  }
 }

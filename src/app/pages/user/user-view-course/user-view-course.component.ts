@@ -16,10 +16,11 @@ export class UserViewCourseComponent implements OnInit {
   courseId: string;
   course: any;
   loading = false;
+  chapters = [];
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService,
     private _courseService: CourseService,
-    public cart : CartService) {
+    public cart: CartService) {
     _spinner.showFullScreenSpinner()
   }
 
@@ -43,7 +44,7 @@ export class UserViewCourseComponent implements OnInit {
     this._courseService.getChaptersByCourseId(this.course.id).subscribe(res => {
       this.loading = false
       console.log(res);
-
+      this.chapters = res['body']
     }, err => {
       this.loading = false
 
@@ -51,5 +52,7 @@ export class UserViewCourseComponent implements OnInit {
 
     })
   }
- 
+  checkChapterOnCart(chapter) {
+    return this.cart.isChapterExistInCart(chapter)
+  }
 }

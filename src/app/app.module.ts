@@ -30,6 +30,7 @@ import { ActiveAccountComponent } from './pages/active-account/active-account.co
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SaveUrlPipe } from './pipes/saveUrl/save-url.pipe';
+import { NgxConfirmBoxModule, NgxConfirmBoxService } from 'ngx-confirm-box';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,7 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
     ForgotPasswordComponent,
   ],
   imports: [
-    RouterModule ,
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -73,11 +74,13 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     NgxLoadingModule.forRoot({}),
     MatSliderModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgxConfirmBoxModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
-  ConfirmLeaveGuard
+    ConfirmLeaveGuard,
+    NgxConfirmBoxService
   ],
   bootstrap: [AppComponent],
 })

@@ -23,8 +23,10 @@ export const environment = {
   _deleteLecture: `${serverUrl}course-chapter-content/delete/`,
   _updateLecture: `${serverUrl}course-chapter-content/update`,
   _activeAccount: `${serverUrl}auth/accountVerification/`,
-  _getAllApprovedCourses: `${serverUrl}course/approved`,
-  _getCourseById: `${serverUrl}course/`
+  _getAllApprovedCourses: `${serverUrl}student-view/courses/published`,
+  _getCourseById: `${serverUrl}course/`,
+  _getCourseChaptersByCourseIdStudent:`${serverUrl}student-view/course-chapter/`,
+  _checkOut:`${serverUrl}enrollment-request/checkout`
 }
 /*
  * For easier debugging in development mode, you can import the following file
