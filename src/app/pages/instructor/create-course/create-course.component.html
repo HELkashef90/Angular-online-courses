@@ -3,21 +3,21 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="st_title"><i class="uil uil-plus-circle"></i> Create New Course</h2>
+                <h2 class="st_title"><i class="uil uil-plus-circle"></i> {{'Create New Course' | translate}}</h2>
             </div>
         </div>
         <div class="alert alert-danger" role="alert" *ngIf="showInfoErrors && infoForm.invalid">
-            <span *ngIf="infoForm.get('courseTitle').invalid"> *Please enter a valid Course Title</span><br>
-            <span *ngIf="infoForm.get('courseSubTitle').invalid"> *Please enter a valid course title</span><br>
-            <span *ngIf="infoForm.get('courseDescription').invalid"> *Please enter a valid course description</span><br>
+            <span *ngIf="infoForm.get('courseTitle').invalid"> {{'*Please enter a valid Course Title' | translate}}</span><br>
+            <span *ngIf="infoForm.get('courseSubTitle').invalid"> {{'*Please enter a valid course title' | translate}}</span><br>
+            <span *ngIf="infoForm.get('courseDescription').invalid"> {{'*Please enter a valid course description' | translate}}</span><br>
             <!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
-            <span *ngIf="infoForm.get('language').invalid"> *Please select language</span><br>
-            <span *ngIf="infoForm.get('grade').invalid"> *Please select grade</span><br>
-            <span *ngIf="infoForm.get('subject').invalid"> *Please select subject</span><br>
+            <span *ngIf="infoForm.get('language').invalid"> {{'*Please select language' | translate}}</span><br>
+            <span *ngIf="infoForm.get('grade').invalid"> {{'*Please select grade' | translate}}</span><br>
+            <span *ngIf="infoForm.get('subject').invalid"> {{'*Please select subject' | translate}}</span><br>
         </div>
         <div class="alert alert-danger" role="alert" *ngIf="showPromoErrors && promoForm.invalid">
-            <span *ngIf="promoForm.get('coverImage').invalid"> *Please select cover image</span><br>
-            <span *ngIf="promoForm.get('promoVideo').invalid"> *Please select promo video</span><br>
+            <span *ngIf="promoForm.get('coverImage').invalid"> {{'*Please select cover image' | translate}}</span><br>
+            <span *ngIf="promoForm.get('promoVideo').invalid"> {{'*Please select promo video' | translate}}</span><br>
         </div>
         <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
         {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
@@ -35,7 +35,7 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Course Title*</label>
+                                                    <label>{{'Course Title*' | translate}}</label>
                                                     <div class="ui left icon input swdh19">
                                                         <input formControlName="courseTitle" class="prompt srch_explore"
                                                             type="text" placeholder="Insert your course title."
@@ -48,7 +48,7 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Course Subtitle*</label>
+                                                    <label>{{'Course Subtitle*' | translate}}</label>
                                                     <div class="ui left icon input swdh19">
                                                         <input formControlName="courseSubTitle"
                                                             class="prompt srch_explore" type="text"
@@ -62,7 +62,7 @@
                                             </div>
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Course Description*</label>
+                                                    <label>{{'Course Description*' | translate}}</label>
                                                     <div class="course_des_bg">
                                                         <div class="textarea_dt">
                                                             <div class="ui form swdh339">
@@ -79,35 +79,35 @@
                                             </div>
                                             <div class="col-lg-4 col-md-12">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Language*</label>
+                                                    <label>{{'Language*' | translate}}</label>
                                                 </div>
                                                 <select formControlName="language">
-                                                    <option disabled selected value="">Select Language</option>
-                                                    <option value="1">Arabic</option>
-                                                    <option value="2">English</option>
+                                                    <option disabled selected value="">{{'Select Language' | translate}}</option>
+                                                    <option value="1">{{'Arabic' | translate}}</option>
+                                                    <option value="2">{{'English' | translate}}</option>
 
                                                 </select>
                                             </div>
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Grades*</label>
+                                                    <label>{{'Grades*' | translate}}</label>
                                                 </div>
                                                 <select formControlName="grade">
-                                                    <option disabled selected value="">Select Grade</option>
-                                                    <option value="1">Grade 1</option>
-                                                    <option value="2">Grade 2</option>
-                                                    <option value="2">Grade 3</option>
+                                                    <option disabled selected value="">{{'Select Grade' | translate}}</option>
+                                                    <option value="1">{{'Grade 1' | translate}}</option>
+                                                    <option value="2">{{'Grade 2' | translate}}</option>
+                                                    <option value="2">{{'Grade 3' | translate}}</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Subjects*</label>
+                                                    <label>{{'Subjects*' | translate}}</label>
                                                 </div>
                                                 <select formControlName="subject">
-                                                    <option disabled selected value="">Select Subjects</option>
-                                                    <option value="1">Physics</option>
-                                                    <option value="2">Math</option>
-                                                    <option value="3">Science</option>
+                                                    <option disabled selected value="">{{'Select Subjects' | translate}}</option>
+                                                    <option value="1">{{'Physics' | translate}}</option>
+                                                    <option value="2">{{'Math' | translate}}</option>
+                                                    <option value="3">{{'Science' | translate}}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -118,13 +118,13 @@
                         </div>
                         <div>
                             <button mat-button (click)="onInfoFormNext(stepper)"
-                                class="btn btn-default steps_btn">Next</button>
+                                class="btn btn-default steps_btn">{{'Next' | translate}}</button>
                         </div>
                     </form>
                 </mat-step>
                 <mat-step>
                     <form [formGroup]="promoForm">
-                        <ng-template matStepLabel>Promotional Video</ng-template>
+                        <ng-template matStepLabel>{{'Promotional Video' | translate}}</ng-template>
                         <div class="step-tab-panel step-tab-gallery" id="tab_step2">
                             <div class="tab-from-content">
                                 <div class="course__form">
@@ -139,11 +139,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="view_img_right">
-                                                        <h4>Cover Image</h4>
-                                                        <p>Upload your course image here. It must meet our course image
+                                                        <h4>{{'Cover Image' | translate}}</h4>
+                                                        <p>{{"'Upload your course image here. It must meet our course image
                                                             quality standards to be accepted. Important guidelines:
                                                             750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the
-                                                            image.</p>
+                                                            image.'" | translate}}</p>
                                                         <div class="upload__input">
                                                             <div class="input-group">
                                                                 <div class="custom-file">
@@ -165,16 +165,16 @@
                                                         <div *ngIf="selectedVideoPrev" class="view__img">
                                                             <video class="view__img" controls>
                                                                 <source src="{{selectedVideoPrev}}">
-                                                                Your browser does not support the video tag.
+                                                                {{'Your browser does not support the video tag.' | translate}}
                                                             </video>
                                                         </div>
                                                     </div>
                                                     <div class="view_img_right">
-                                                        <h4>Promotional Video</h4>
-                                                        <p>Students who watch a well-made promo video are 5X more likely
+                                                        <h4>{{'Promotional Video' | translate}}</h4>
+                                                        <p>{{"'Students who watch a well-made promo video are 5X more likely
                                                             to enroll in your course. We've seen that statistic go up to
                                                             10X for exceptionally awesome videos. Learn how to make
-                                                            yours awesome!</p>
+                                                            yours awesome!'" | translate}}</p>
                                                         <div class="upload__input">
                                                             <div class="input-group">
                                                                 <div class="custom-file">
@@ -198,11 +198,11 @@
                         </div>
                         <div>
                             <div class="step-footer step-tab-pager">
-                                <button mat-button matStepperPrevious class="btn btn-default steps_btn">Back</button>
+                                <button mat-button matStepperPrevious class="btn btn-default steps_btn">{{'Back' | translate}}</button>
                                 <!-- <button mat-button (click)="stepper.reset()"
                                     class="btn btn-default steps_btn">Reset</button> -->
-                                <button class="btn btn-default steps_btn" (click)="onSubmitForm(stepper)">Submit for
-                                    Review</button>
+                                <button class="btn btn-default steps_btn" (click)="onSubmitForm(stepper)">{{'Submit for
+                                    Review' | translate}}</button>
                             </div>
                         </div>
 
@@ -219,9 +219,9 @@
 <ng-template #customLoadingTemplate>
 	<div class="uploadingTemplate">
 	  <h3>
-		Loading...
+		{{'Loading...' | translate}}
 	  </h3>
       <h4>{{uploadingPercentage}} %</h4>
-      <button  class="btn btn-default steps_btn" (click)="onCancelUploadClick()">cancel</button>
+      <button  class="btn btn-default steps_btn" (click)="onCancelUploadClick()">{{'cancel' | translate}}</button>
 	</div>
   </ng-template>

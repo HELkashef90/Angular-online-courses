@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { CreateCourseService } from './../services/createCourse/create-course.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -34,7 +35,8 @@ export class EditCourseComponent implements OnInit {
   selectedCourseToEdit: any;
   player: any;
 
-  constructor(private _courseService: CreateCourseService, private _formBuilder: FormBuilder, private _toastService: ToastService,private router :Router) {
+  constructor(private _courseService: CreateCourseService, private _formBuilder: FormBuilder, private _toastService: ToastService,private router :Router,
+    private translate : TranslateService) {
     this.selectedCourseToEdit = _courseService.selectedCourseToEdit
     _courseService.selectedCourseToEdit = ""
     console.log(this.selectedCourseToEdit);
@@ -85,7 +87,7 @@ export class EditCourseComponent implements OnInit {
       this.selectedCoverImage = $event.target.files[0]
       return
     }
-    this.checkImageEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast('File not supported', 'error')
+    this.checkImageEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast(this.translate.instant('File not supported'), 'error')
 
   }
   checkImageEx(type) {
@@ -106,7 +108,7 @@ export class EditCourseComponent implements OnInit {
       this.selectedVideo = $event.target.files[0]
       return
     }
-    this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast('Video not supported', 'error')
+    this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast(this.translate.instant('File not supported'), 'error')
     this.initVimeoPromoVid()
   }
   checkVideoEx(type) {
@@ -167,13 +169,13 @@ export class EditCourseComponent implements OnInit {
           this.promoForm.reset();
           this.stepper.reset();
           this.uploadingPercentage = 0
-          this._toastService.showToast("your course successfully updated, congratulations!", 'success')
+          this._toastService.showToast(this.translate.instant("your course successfully updated, congratulations!"), 'success')
           this.router.navigate(['/instructor/courses'])
         }
       }, err => {
         this.uploading = false;
         this.uploadingPercentage = 0
-        this._toastService.showToast("Error while update course, please try again", 'error')
+        this._toastService.showToast(this.translate.instant("Error while update course, please try again"), 'error')
         console.log(err);
       })
   }

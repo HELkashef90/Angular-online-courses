@@ -11,30 +11,30 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="basic_ptitle mt-30">
-                                                <h4>Add Chapter</h4>
+                                                <h4>{{"Add Chapter" | translate}}</h4>
                                             </div>
                                             <div class="alert alert-danger" role="alert"
                                                 *ngIf="showInfoErrors && chapterForm.invalid">
-                                                <span *ngIf="chapterForm.get('course').invalid"> *Please select a course</span><br>
-                                                <span *ngIf="chapterForm.get('chapterTitle').invalid"> *Please enter chapter Title</span><br>
-                                                <span *ngIf="chapterForm.get('sort').invalid"> *Please enter sort</span><br>
-                                                <span *ngIf="chapterForm.get('description').invalid"> *Please enter description</span><br>
-                                                <span *ngIf="chapterForm.get('price').invalid"> *Please enter price</span><br>
+                                                <span *ngIf="chapterForm.get('course').invalid"> {{"*Please select a course" | translate}}</span><br>
+                                                <span *ngIf="chapterForm.get('chapterTitle').invalid"> {{"*Please enter chapter Title" | translate}}</span><br>
+                                                <span *ngIf="chapterForm.get('sort').invalid"> {{"*Please enter sort" | translate}}</span><br>
+                                                <span *ngIf="chapterForm.get('description').invalid"> {{"*Please enter description" | translate}}</span><br>
+                                                <span *ngIf="chapterForm.get('price').invalid"> {{"*Please enter price" | translate}}</span><br>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="ui search focus mt-30 lbel25">
-                                                <label>Course*</label>
+                                                <label>{{"Course*" | translate}}</label>
                                             </div>
                                             <select formControlName="course">
-                                                <option disabled selected value="">Select Course</option>
+                                                <option disabled selected value="">{{"Select Course" | translate}}</option>
                                                 <option *ngFor="let course of instructorCourses" value="{{course.id}}">{{course.course_title}}</option>
                                                 
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="ui search focus mt-30 lbel25">
-                                                <label>Chapter Title*</label>
+                                                <label>{{"Chapter Title*" | translate}}</label>
                                                 <div class="ui left icon input swdh19">
                                                     <input formControlName="chapterTitle" class="prompt srch_explore"
                                                         type="text" placeholder="Insert your Chapter title."
@@ -47,7 +47,7 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="ui search focus mt-30 lbel25">
-                                                <label>Sort</label>
+                                                <label>{{"Sort" | translate}}</label>
                                                 <div class="ui left icon input swdh19">
                                                     <input formControlName="sort" class="prompt srch_explore"
                                                         type="number" name="sort" min="0" max="100" placeholder="0">
@@ -57,7 +57,7 @@
 
                                         <div class="col-lg-12 col-md-12">
                                             <div class="ui search focus mt-30 lbel25">
-                                                <label>Chapter Description*</label>
+                                                <label>{{"Chapter Description*" | translate}}</label>
                                                 <div class="course_des_bg">
                                                     <div class="textarea_dt">
                                                         <div class="ui form swdh339">
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="ui search focus mt-30 lbel25">
-                                                <label><i class="uil uil-dollar-sign-alt"></i> Price</label>
+                                                <label><i class="uil uil-dollar-sign-alt"></i>{{" Price" | translate}}</label>
                                                 <div class="ui left icon input swdh19">
                                                     <input formControlName="price" class="prompt srch_explore"
                                                         type="number" name="sort" min="0" max="100" placeholder="0">
@@ -84,10 +84,10 @@
                                             <button (click)="onSaveChapterClick()" class="part_btn_save prt-sv">
                                                {{editMode? 'Save Chapter' : 'Create Chapter'}}</button>
                                                <button *ngIf="editMode" (click)="onCancelEditChapterClick()" class="part_btn_save prt-sv">
-                                                cancel edit</button>
+                                                {{"cancel edit" | translate}}</button>
                                             <button (click)="getChaptersByInstructor()" class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                                 data-target="#chapter" aria-expanded="false" aria-controls="chapter">
-                                                View Saved Chapters
+                                                {{"View Saved Chapters" | translate}}
                                             </button>
                                         </div>
                                         <div class="col-lg-12">
@@ -98,14 +98,14 @@
                                                         <table class="table ucp-table">
                                                             <thead class="thead-s">
                                                                 <tr>
-                                                                    <th class="text-center" scope="col">Chapters
+                                                                    <th class="text-center" scope="col">{{"Chapters" | translate}}
                                                                     </th>
-                                                                    <th class="cell-ta">Title</th>
+                                                                    <th class="cell-ta">{{"Title" | translate}}</th>
                                                                     <!-- <th class="text-center" scope="col">videos
                                                                     </th> -->
                                                                     <!-- <th class="text-center" scope="col">File
                                                                     </th> -->
-                                                                    <th class="text-center" scope="col">Controls
+                                                                    <th class="text-center" scope="col">{{"Controls" | translate}}
                                                                     </th>
                                                                 </tr>
                                                             </thead>

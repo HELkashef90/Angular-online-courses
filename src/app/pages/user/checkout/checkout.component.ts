@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { CartService } from './../services/cart/cart.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   loading = false;
-  constructor(public cart: CartService, private toast: ToastService, private router: Router) { }
+  constructor(public cart: CartService, private toast: ToastService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit(): void {
   }
@@ -18,14 +19,14 @@ export class CheckoutComponent implements OnInit {
     this.loading = true;
     this.cart.checkOut().subscribe(res => {
       this.loading = false;
-      this.toast.showToast('Your order submitted successfully', 'success')
+      this.toast.showToast( this.translate.instant('Your order submitted successfully'), 'success')
       this.cart.clearCart()
       this.router.navigateByUrl('/user/courses')
       console.log(res);
 
     }, err => {
       this.loading = false;
-      this.toast.showToast('Error while submitting your order, please try again', 'error')
+      this.toast.showToast(this.translate.instant('Error while submitting your order, please try again'), 'error')
       console.log(err);
 
     })

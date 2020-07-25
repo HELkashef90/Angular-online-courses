@@ -4,7 +4,7 @@
 			<div class="container-fluid">			
 				<div class="row">
 					<div class="col-lg-12">	
-						<h2 class="st_title"><i class="uil uil-book-alt"></i>Courses</h2>
+						<h2 class="st_title"><i class="uil uil-book-alt"></i>{{"Courses" | translate}}</h2>
 					</div>				
 				</div>
 				<div class="row">
@@ -13,14 +13,14 @@
 							<table class="table ucp-table">
 								<thead class="thead-s">
 									<tr>
-										<th class="text-center" scope="col">Item No.</th>
-										<th>Title</th>
-										<th class="text-center" scope="col">Publish Date</th>
+										<th class="text-center" scope="col">{{"Item No." | translate}}</th>
+										<th>{{"Title" | translate}}</th>
+										<th class="text-center" scope="col">{{"Publish Date" | translate}}</th>
 										<!-- <th class="text-center" scope="col">Sales</th> -->
-										<th class="text-center" scope="col">chapters</th>
+										<th class="text-center" scope="col">{{"chapters" | translate}}</th>
 										<!-- <th class="text-center" scope="col">Category</th> -->
-										<th class="text-center" scope="col">Status</th>
-										<th class="text-center" scope="col">Action</th>
+										<th class="text-center" scope="col">{{"Status" | translate}}</th>
+										<th class="text-center" scope="col">{{"Action" | translate}}</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -31,10 +31,10 @@
 										<!-- <td class="text-center">{{course.sales}}</td> -->
 										<td class="text-center">{{course.num_of_chapters}}</td>
 										<!-- <td class="text-center"><a href="#">{{course.category}}</a></td> -->
-										<td *ngIf="course.course_status === 0" class="text-center"><b class="">Draft</b></td>
-										<td *ngIf="course.course_status === 1" class="text-center"><b class="">Pending</b></td>
-										<td *ngIf="course.course_status === 2" class="text-center"><b class="">Approved</b></td>
-										<td *ngIf="course.course_status === 3" class="text-center"><b class="">Rejected</b></td>
+										<td *ngIf="course.course_status === 0" class="text-center"><b class="">{{"Draft" | translate}}</b></td>
+										<td *ngIf="course.course_status === 1" class="text-center"><b class="">{{"Pending" | translate}}</b></td>
+										<td *ngIf="course.course_status === 2" class="text-center"><b class="">{{"Approved" | translate}}</b></td>
+										<td *ngIf="course.course_status === 3" class="text-center"><b class="">{{"Rejected" | translate}}</b></td>
 										<td class="text-center">
 											<a (click)="onEditClick(course)" title="Edit" class="gray-s"><i class="uil uil-edit-alt"></i></a>
 											<a (click)="ocDeleteClick(course)" title="Delete" class="gray-s"><i class="uil uil-trash-alt"></i></a>

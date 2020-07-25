@@ -9,9 +9,9 @@
                             <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="images/ct_logo.svg" alt=""></a>
                         </div>
                         <div class="cmtk_dt">
-                            <h1 class="thnk_coming_title">Thank You</h1>
-                            <h4 class="thnk_title1">You account has beed activated successfully, please login. </h4>
-                            <button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="plan_link_btn">Log in</button>
+                            <h1 class="thnk_coming_title">{{'Thank You' | translate}}</h1>
+                            <h4 class="thnk_title1">{{'You account has beed activated successfully, please login.' | translate}} </h4>
+                            <button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="plan_link_btn">{{'Log in' | translate}}</button>
                         </div>
                     </div>
                     <div *ngIf="!successActive" class="cmtk_group">
@@ -20,8 +20,8 @@
                         </div>
                         <div class="cmtk_dt">
                             <!-- <h1 class="thnk_coming_title">Thank You</h1> -->
-                            <h4 class="thnk_title1">Sorry your link is expired, please contact the administrator. </h4>
-                            <button [routerLink]="['']" routerLinkActive="router-link-active"  class="plan_link_btn">Go to home</button>
+                            <h4 class="thnk_title1">{{'Sorry your link is expired, please contact the administrator.' | translate}} </h4>
+                            <button [routerLink]="['']" routerLinkActive="router-link-active"  class="plan_link_btn">{{'Go to home' | translate}}</button>
                         </div>
                     </div>
                 </div>

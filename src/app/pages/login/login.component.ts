@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { HandleGlobalErrorService } from './../../services/handleGlobalError/handle-global-error.service';
 import { AuthService } from './../../services/auth/auth.service';
 import { ToastService } from './../../services/toast/toast.service';
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   loading: boolean = false;
   LoadingPercentage = 0
   constructor(private _loginService: LoginService, private _toastService: ToastService, private _authService: AuthService,
-    private _handleGlobalErrorService: HandleGlobalErrorService) { }
+    private _handleGlobalErrorService: HandleGlobalErrorService,
+    private translate : TranslateService) { }
   ngOnInit(): void {
     setInterval(() => {
       this.LoadingPercentage++
@@ -59,14 +61,14 @@ export class LoginComponent implements OnInit {
     this._loginService.login(userData).subscribe((res) => {
       this._authService.setUserAuthenticated(res)
       console.log(res);
-      this._toastService.showToast("you are logged in successfully", 'success')
+      this._toastService.showToast(this.translate.instant("you are logged in successfully"), 'success')
       this.loading = false;
       this._authService.redirectUserToDashboard(res['usertype'])
     }, (err) => {
       console.log(err.status);
       if (err.status === 403) {
         this._authService.setUserUnAuthenticated();
-        this._toastService.showToast("User Name or Password incorrect, please try again", 'error')
+        this._toastService.showToast(this.translate.instant("User Name or Password incorrect, please try again"), 'error')
       }
       this.loading = false;
 

@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { CreateLectureService } from './../services/createLecture/create-lecture.service';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
@@ -30,7 +31,8 @@ export class InstructorAddLectureComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
     private _toastService: ToastService,
-    private _courseService: CreateCourseService) { }
+    private _courseService: CreateCourseService,
+    private translate : TranslateService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -103,7 +105,7 @@ export class InstructorAddLectureComponent implements OnInit {
       this.readVideoUrl($event.target.files[0])
       this.selectedVideo = $event.target.files[0]
     } else {
-      this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast('File not supported', 'error')
+      this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast(this.translate.instant('File not supported'), 'error')
 
     }
   }
@@ -153,12 +155,12 @@ export class InstructorAddLectureComponent implements OnInit {
         this.uploading = false;
         this.lectureForm.reset();
         this.uploadingPercentage = 0
-        this._toastService.showToast("your lecture successfully created, congratulations!", 'success')
+        this._toastService.showToast(this.translate.instant("your lecture successfully created, congratulations!"), 'success')
       }
     }, err => {
       this.uploading = false;
       this.uploadingPercentage = 0
-      this._toastService.showToast("Error while creating lecture, please try again", 'error')
+      this._toastService.showToast(this.translate.instant("Error while creating lecture, please try again"), 'error')
       console.log(err);
     })
 
@@ -188,12 +190,12 @@ export class InstructorAddLectureComponent implements OnInit {
         this.uploading = false;
         this.lectureForm.reset();
         this.uploadingPercentage = 0
-        this._toastService.showToast("your lecture successfully updated!", 'success')
+        this._toastService.showToast(this.translate.instant("your lecture successfully updated!"), 'success')
       }
     }, err => {
       this.uploading = false;
       this.uploadingPercentage = 0
-      this._toastService.showToast("Error while update lecture, please try again", 'error')
+      this._toastService.showToast(this.translate.instant("Error while update lecture, please try again"), 'error')
       console.log(err);
     })
   }
@@ -227,7 +229,7 @@ export class InstructorAddLectureComponent implements OnInit {
     if (confirm('Are You sure?')) {
       this._createLectureService.deleteLecture(lecture.id).subscribe(res => {
         console.log(res);
-        this._toastService.showToast("your lecture successfully deleted!", 'success')
+        this._toastService.showToast(this.translate.instant("your lecture successfully deleted!"), 'success')
         this.getLectures();
       }, err => {
         console.log(err);

@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ToastService } from './../../../../services/toast/toast.service';
@@ -10,7 +11,8 @@ export class CartService {
 
   cart = []
   constructor(private _toast: ToastService,
-    private httpClient: HttpClient) { }
+    private httpClient: HttpClient,
+    private translate : TranslateService) { }
 
 
   checkOut() {
@@ -28,7 +30,7 @@ export class CartService {
 
   addToCart(chapter) {
     this.cart.push(chapter)
-    this._toast.showToast("Added to cart", 'success')
+    this._toast.showToast(this.translate.instant("Added to cart"), 'success')
   }
   removeFromCart(chapter) {
    

@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { CreateCourseService } from './../services/createCourse/create-course.service';
 import { CreateChapterService } from './../services/createChapter/create-chapter.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -20,7 +21,8 @@ export class InstructorAddChapterComponent implements OnInit {
 
 
   constructor(private _formBuilder: FormBuilder, private _createChapterService: CreateChapterService, private _courseService: CreateCourseService,
-    private _toastService: ToastService) { }
+    private _toastService: ToastService,
+    private translate : TranslateService) { }
 
   ngOnInit(): void {
     //get instructor courses
@@ -82,14 +84,14 @@ export class InstructorAddChapterComponent implements OnInit {
     }
     this._createChapterService.createChapter(chapterForm).subscribe(res => {
       console.log(res);
-      this._toastService.showToast("your chapter successfully created, congratulations!", 'success')
+      this._toastService.showToast(this.translate.instant("your chapter successfully created, congratulations!"), 'success')
       this.getChaptersByInstructor()
       this.chapterForm.reset()
       this.loading = false;
 
     }, err => {
       console.log(err);
-      this._toastService.showToast("Error while creating chapter, please try again", 'error')
+      this._toastService.showToast(this.translate.instant("Error while creating chapter, please try again"), 'error')
 
       this.loading = false;
 
@@ -106,7 +108,7 @@ export class InstructorAddChapterComponent implements OnInit {
     }
     this._createChapterService.updateChapter(chapterForm).subscribe(res => {
       console.log(res);
-      this._toastService.showToast("your chapter successfully updated, congratulations!", 'success')
+      this._toastService.showToast(this.translate.instant("your chapter successfully updated, congratulations!"), 'success')
 
       this.chapterForm.reset()
       this.editMode = false;
@@ -115,7 +117,7 @@ export class InstructorAddChapterComponent implements OnInit {
 
     }, err => {
       console.log(err);
-      this._toastService.showToast("Error while update chapter, please try again", 'error')
+      this._toastService.showToast(this.translate.instant("Error while update chapter, please try again"), 'error')
 
       this.loading = false;
 
@@ -148,7 +150,7 @@ export class InstructorAddChapterComponent implements OnInit {
       }, err => {
         console.log(err);
         if(err.status === 400){
-          this._toastService.showToast("this chapter contains lectures, can't be deleted","warning")
+          this._toastService.showToast(this.translate.instant("this chapter contains lectures, can't be deleted"),"warning")
 
         }
       })

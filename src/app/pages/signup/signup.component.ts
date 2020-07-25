@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { SignupService } from './../services/signup/signup.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastService } from 'src/app/services/toast/toast.service';
@@ -17,7 +18,8 @@ export class SignupComponent implements OnInit {
   loading: boolean;
   constructor(private _signUpService: SignupService, private _toastService: ToastService,
     private _handleGlobalErrorService: HandleGlobalErrorService,
-    private _authService: AuthService,) { }
+    private _authService: AuthService,
+    private translate : TranslateService) { }
   userData = {
     "email": "abdelrahm.osama.awad52@gmail.com",
     "mobile": "01008323444",
@@ -60,7 +62,7 @@ export class SignupComponent implements OnInit {
     this._signUpService.signUp(userData).subscribe(res => {
       console.log(res['body']);
       // this._authService.setUserAuthenticated(res['body'])
-      this._toastService.showToast("user created", "success")
+      this._toastService.showToast(this.translate.instant("user created"), "success")
       this.loading = false;
     }, err => {
       console.log(err);
@@ -78,7 +80,7 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.registrationForm = new FormGroup({
-      fullName: new FormControl(null, [Validators.required, Validators.pattern("^[a-z]([-']?[a-z]+)*( [a-z]([-']?[a-z]+)*)+$")]),
+      fullName: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
       mobile: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern("01[0,1,2,5]{1}[0-9]{8}")]),
       // address: new FormControl(null, [Validators.required, Validators.minLength(11)]),

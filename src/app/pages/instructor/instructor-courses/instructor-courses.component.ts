@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 import { CreateCourseService } from '../services/createCourse/create-course.service';
 import { Router } from '@angular/router';
@@ -14,7 +15,8 @@ export class InstructorCoursesComponent implements OnInit {
 
   constructor(private _courseService: CreateCourseService,
     private router : Router,
-    private _toastService: ToastService) { }
+    private _toastService: ToastService,
+    private translate : TranslateService) { }
 
   ngOnInit(): void {
     this.getCourses()
@@ -35,12 +37,12 @@ export class InstructorCoursesComponent implements OnInit {
     if (confirm('Are you Sure?')) {
       this._courseService.deleteCourse(course.id).subscribe(res => {
         console.log(res);
-        this._toastService.showToast("Course deleted","info")
+        this._toastService.showToast(this.translate.instant("Course deleted"),"info")
         this.getCourses()
       }, err => {
         console.log(err);
         if(err.status === 400 ){
-          this._toastService.showToast("this course contains chapters, can't be deleted","warning")
+          this._toastService.showToast(this.translate.instant("this course contains chapters, can't be deleted"),"warning")
         }
       })
     }

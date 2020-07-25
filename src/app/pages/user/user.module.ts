@@ -22,6 +22,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
 import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     TranslateModule,
     ToastrModule,
     InfiniteScrollModule,
-    NgxConfirmBoxModule
+    NgxConfirmBoxModule,
+    ModalModule
   ]
 })
 export class UserModule { }

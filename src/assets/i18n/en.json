@@ -1,3 +1,217 @@
 {
-	"General Information": "General Information"
+	" *Please enter a valid description": " *Please enter a valid description",
+	" *Please enter a valid sort": " *Please enter a valid sort",
+	" Choose file - (Pdf, Video)": " Choose file - (Pdf, Video)",
+	" Price": " Price",
+	"'Students who watch a well-made promo video are 5X more likely to enroll in your course": {
+		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
+			" Learn how to make yours awesome!'": "'Students who watch a well-made promo video are 5X more likely to enroll in your course. We've seen that statistic go up to 10X for exceptionally awesome videos. Learn how to make yours awesome!'"
+		}
+	},
+	"'Upload your course image here": {
+		" It must meet our course image quality standards to be accepted": {
+			" Important guidelines: 750x422 pixels; ": {
+				"jpg, ": {
+					"jpeg,": {
+						" gif, or ": {
+							"png": {
+								" no text on the image": {
+									"'": "'Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"*Please enter a valid Course Title": "*Please enter a valid Course Title",
+	"*Please enter a valid course description": "*Please enter a valid course description",
+	"*Please enter a valid course title": "*Please enter a valid course title",
+	"*Please enter a valid lecture title": "*Please enter a valid lecture title",
+	"*Please enter chapter Title": "*Please enter chapter Title",
+	"*Please enter description": "*Please enter description",
+	"*Please enter price": "*Please enter price",
+	"*Please enter sort": "*Please enter sort",
+	"*Please select a course": "*Please select a course",
+	"*Please select chapter": "*Please select chapter",
+	"*Please select course": "*Please select course",
+	"*Please select cover image": "*Please select cover image",
+	"*Please select grade": "*Please select grade",
+	"*Please select language": "*Please select language",
+	"*Please select lecture File": "*Please select lecture File",
+	"*Please select promo video": "*Please select promo video",
+	"*Please select subject": "*Please select subject",
+	"About": "About",
+	"Action": "Action",
+	"Active Courses": "Active Courses",
+	"Add Chapter": "Add Chapter",
+	"Add Course": "Add Course",
+	"Add Lecture": "Add Lecture",
+	"Add New Course": "Add New Course",
+	"Add lectures": "Add lectures",
+	"Add to Cart": "Add to Cart",
+	"Added to cart": "Added to cart",
+	"All Courses": "All Courses",
+	"Another Courses": "Another Courses",
+	"Approved": "Approved",
+	"Arabic": "Arabic",
+	"Are You Sure?": "Are You Sure?",
+	"Are you sure you want to delete this chapter?": "Are you sure you want to delete this chapter?",
+	"Are you sure you want to remove all chapters?": "Are you sure you want to remove all chapters?",
+	"Back": "Back",
+	"Back to courses": "Back to courses",
+	"By": "By",
+	"Cancel": "Cancel",
+	"Chapter": "Chapter",
+	"Chapter Description*": "Chapter Description*",
+	"Chapter Title*": "Chapter Title*",
+	"Chapters": "Chapters",
+	"Checkout": "Checkout",
+	"Confirm": "Confirm",
+	"Confirm Checkout": "Confirm Checkout",
+	"Controls": "Controls",
+	"Course": "Course",
+	"Course Description*": "Course Description*",
+	"Course Subtitle*": "Course Subtitle*",
+	"Course Title*": "Course Title*",
+	"Course content": "Course content",
+	"Course deleted": "Course deleted",
+	"Course*": "Course*",
+	"Courses": "Courses",
+	"Courses Content": "Courses Content",
+	"Cover Image": "Cover Image",
+	"Create New Course": "Create New Course",
+	"Dashboard": "Dashboard",
+	"Description": "Description",
+	"Draft": "Draft",
+	"Duration": "Duration",
+	"EGP": "EGP",
+	"Edit Course ": "Edit Course ",
+	"English": "English",
+	"Error while creating chapter, please try again": "Error while creating chapter, please try again",
+	"Error while creating course, please try again": "Error while creating course, please try again",
+	"Error while creating lecture, please try again": "Error while creating lecture, please try again",
+	"Error while submitting your order, please try again": "Error while submitting your order, please try again",
+	"Error while update chapter, please try again": "Error while update chapter, please try again",
+	"Error while update course, please try again": "Error while update course, please try again",
+	"Error while update lecture, please try again": "Error while update lecture, please try again",
+	"Explore our schools to find your perfect course": "Explore our schools to find your perfect course",
+	"File not supported": "File not supported",
+	"General Information": "General Information",
+	"Go to home": "Go to home",
+	"Grade 1": "Grade 1",
+	"Grade 2": "Grade 2",
+	"Grade 3": "Grade 3",
+	"Grades*": "Grades*",
+	"Item No": {
+		"": "Item No."
+	},
+	"LE": "LE",
+	"Language*": "Language*",
+	"Last updated ": "Last updated ",
+	"Lecture Description*": "Lecture Description*",
+	"Lecture Title": "Lecture Title",
+	"Lecture Title*": "Lecture Title*",
+	"Loading": {
+		"": {
+			"": {
+				"": "Loading..."
+			}
+		}
+	},
+	"Log in": "Log in",
+	"Login": "Login",
+	"Math": "Math",
+	"Minutes": "Minutes",
+	"Newest Courses": "Newest Courses",
+	"Next": "Next",
+	"No": "No",
+	"Order Details": "Order Details",
+	"Order Summary": "Order Summary",
+	"Pending": "Pending",
+	"Pending Courses": "Pending Courses",
+	"Physics": "Physics",
+	"Please select subject": "Please select subject",
+	"Preview this course": "Preview this course",
+	"Promotional Video": "Promotional Video",
+	"Publish Date": "Publish Date",
+	"Rejected": "Rejected",
+	"Remove All": "Remove All",
+	"Request a Password Reset": "Request a Password Reset",
+	"Reset Password": "Reset Password",
+	"Science": "Science",
+	"Secure checkout": "Secure checkout",
+	"See all": "See all",
+	"Select Chapter": "Select Chapter",
+	"Select Course": "Select Course",
+	"Select Grade": "Select Grade",
+	"Select Language": "Select Language",
+	"Select Subjects": "Select Subjects",
+	"Shopping cart": "Shopping cart",
+	"Sign In": "Sign In",
+	"Sign Out": "Sign Out",
+	"Sorry your link is expired, please contact the administrator": {
+		"": "Sorry your link is expired, please contact the administrator."
+	},
+	"Sort": "Sort",
+	"Status": "Status",
+	"Student Dashboard": "Student Dashboard",
+	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
+		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
+			" Learn how to make yours awesome!": "Students who watch a well-made promo video are 5X more likely to enroll in your course. We've seen that statistic go up to 10X for exceptionally awesome videos. Learn how to make yours awesome!"
+		}
+	},
+	"Subjects*": "Subjects*",
+	"Submit for Review": "Submit for Review",
+	"Thank You": "Thank You",
+	"Title": "Title",
+	"Total Chapters": "Total Chapters",
+	"Total Cost": "Total Cost",
+	"Unexpected error occurred, please try again": "Unexpected error occurred, please try again",
+	"Upload Video or File*": "Upload Video or File*",
+	"Upload your course image here": {
+		" It must meet our course image quality standards to be accepted": {
+			" Important guidelines: 750x422 pixels; ": {
+				"jpg, ": {
+					"jpeg,": {
+						" gif, or ": {
+							"png": {
+								" no text on the image": {
+									"": "Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the image."
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"User Name or Password incorrect, please try again": "User Name or Password incorrect, please try again",
+	"View Saved Chapters": "View Saved Chapters",
+	"View Saved Lecture": "View Saved Lecture",
+	"You account has beed activated successfully, please login": {
+		"": "You account has beed activated successfully, please login."
+	},
+	"Your browser does not support the video tag": {
+		"": "Your browser does not support the video tag."
+	},
+	"Your order submitted successfully": "Your order submitted successfully",
+	"cancel": "cancel",
+	"cancel edit": "cancel edit",
+	"chapters": "chapters",
+	"hours": "hours",
+	"lecture": "lecture",
+	"lectures": "lectures",
+	"this chapter contains lectures, can't be deleted": "this chapter contains lectures, can't be deleted",
+	"this course contains chapters, can't be deleted": "this course contains chapters, can't be deleted",
+	"user created": "user created",
+	"you are logged in successfully": "you are logged in successfully",
+	"your chapter successfully created, congratulations!": "your chapter successfully created, congratulations!",
+	"your chapter successfully updated, congratulations!": "your chapter successfully updated, congratulations!",
+	"your course successfully created, congratulations!": "your course successfully created, congratulations!",
+	"your course successfully updated, congratulations!": "your course successfully updated, congratulations!",
+	"your lecture successfully created, congratulations!": "your lecture successfully created, congratulations!",
+	"your lecture successfully deleted!": "your lecture successfully deleted!",
+	"your lecture successfully updated!": "your lecture successfully updated!"
 }

@@ -168,7 +168,7 @@
                     </div> -->
                     <!-- <a href="help.html" class="item channel_item">Help</a>
                     <a href="feedback.html" class="item channel_item">Send Feedback</a> -->
-                    <a (click)="logOut()" class="item channel_item">Sign Out</a>
+                    <a (click)="logOut()" class="item channel_item">{{'Sign Out' | translate}}</a>
                 </div>
             </li>
         </ul>
@@ -185,33 +185,33 @@
                     <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true"
                         class="menu--link active" title="Dashboard">
                         <i class='uil uil-home-alt menu--icon'></i>
-                        <span class="menu--label">Dashboard</span>
+                        <span class="menu--label">{{'Dashboard' | translate}}</span>
                     </a>
                 </li>
                 <li class="menu--item">
                     <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
                         <i class="uil uil-book-alt menu--icon"></i>
-                        <span class="menu--label">Courses</span>
+                        <span class="menu--label">{{'Courses' | translate}}</span>
                     </a>
                 </li>
                 <li class="menu--item  menu--item__has_sub_menu">
                     <input type="checkbox" id="menu-collapse" class="menu-collapse">
                     <label class="menu--link" for="menu-collapse">
                         <i class="uil uil-plus-circle menu--icon"></i>
-                        <span class="menu--label">Add New Course</span>
+                        <span class="menu--label">{{'Add New Course' | translate}}</span>
                     </label>
                     <ul class="sub_menu">
                         <li class="sub_menu--item">
-                            <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">Add
-                                Course</a>
+                            <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">{{'Add
+                                Course' | translate}}</a>
                         </li>
                         <li class="sub_menu--item">
-                            <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">Add
-                                Chapter</a>
+                            <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">{{'Add
+                                Chapter' | translate}}</a>
                         </li>
                         <li class="sub_menu--item">
-                            <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">Add
-                                Lecture</a>
+                            <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">{{'Add
+                                Lecture' | translate}}</a>
                         </li>
                     </ul>
                 </li>
