@@ -6,13 +6,13 @@ import { ParamsService } from '../params/params.service';
   providedIn: 'root'
 })
 export class LocalizationService {
- private userLang: string = 'en';
- private acceptedLangs = ['ar', 'en']
+  private userLang: string = 'en';
+  private acceptedLangs = ['ar', 'en']
 
   constructor(public translate: TranslateService, private _paramService: ParamsService) {
   }
   init() {
-    this.setUserLang(this._paramService.userLang)
+    this.setUserLang(this._paramService.userLang || localStorage.getItem('lang'))
   }
   setUserLang(lang) {
 
@@ -23,6 +23,7 @@ export class LocalizationService {
     this.translate.use(lang)
     this.userLang = lang;
     lang === 'ar' ? document.body.classList.add('rtl') : document.body.classList.remove('rtl');
+    localStorage.setItem('lang', lang);
   }
   getUserLang(): string {
     return this.userLang

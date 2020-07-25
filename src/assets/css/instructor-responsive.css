@@ -141,6 +141,9 @@
     width: 65.5%;
     float: left;
 }
+.thnk_coming_title {
+    font-size: 5em !important;
+}
 }
  
 /* Small devices (landscape phones, 576px and up) */
@@ -318,6 +321,9 @@
 .input__msg {
     width: 83%;
     float: left;
+}
+.thnk_coming_title {
+    font-size: 5em !important;
 }
 }
 

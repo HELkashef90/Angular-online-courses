@@ -1975,7 +1975,7 @@ body.rtl {
 	height: 8px;
 	right: 50%;
 	top: 18px;
-	width: 150%;
+	width: 300%;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
@@ -2039,7 +2039,7 @@ body.rtl {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	border: 0px solid;
 	border-radius: 0px;
-	padding-top: 60px;
+	padding-top: 30px;
 }
 
 .rtl #add-course-tab > .step-content .title-icon {
@@ -6065,7 +6065,7 @@ table {
     height: 8px;
     left: 50%;
     top: 18px;
-    width: 150%;
+    width: 300%;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
@@ -6132,7 +6132,7 @@ table {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	border: 0px solid;
 	border-radius: 0px;
-	padding-top: 60px;
+	padding-top: 30px;
 }
 
 #add-course-tab > .step-content .title-icon {

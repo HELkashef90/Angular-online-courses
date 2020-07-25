@@ -2591,6 +2591,7 @@ STYLE SWITCHER FOR DEMO
 	font-weight: 700;
 	color: #212529;
 	border-bottom: 1px solid #eeeeee;
+	text-transform: capitalize;
 }
 
 .home .dropdown-item:hover, .home .dropdown-item:focus {

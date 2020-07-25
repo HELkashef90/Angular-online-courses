@@ -362,9 +362,9 @@
 	left: -400px;
 	right: auto;
 }
-.collapse {
+/* .collapse {
 	display: none;
-}
+} */
 .chapter-list .menu--item {
 min-height: auto;
 line-height: initial;

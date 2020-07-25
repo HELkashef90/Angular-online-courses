@@ -1,3 +1,4 @@
+import { LocalizationService } from './../../../../services/localization/localization.service';
 import { CartService } from './../../services/cart/cart.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class UserSidebarComponent implements OnInit {
 
   constructor(public _auth: AuthService,
-    public cart : CartService) { }
+    public cart : CartService,
+   public _local : LocalizationService) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +24,8 @@ export class UserSidebarComponent implements OnInit {
   }
   getEmail() {
     return localStorage.getItem('email')
+  }
+  changeLang(lang){
+    this._local.setUserLang(lang)
   }
 }

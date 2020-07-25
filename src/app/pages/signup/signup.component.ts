@@ -5,6 +5,7 @@ import { ToastService } from 'src/app/services/toast/toast.service';
 import { HandleGlobalErrorService } from 'src/app/services/handleGlobalError/handle-global-error.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,8 @@ export class SignupComponent implements OnInit {
   constructor(private _signUpService: SignupService, private _toastService: ToastService,
     private _handleGlobalErrorService: HandleGlobalErrorService,
     private _authService: AuthService,
-    private translate : TranslateService) { }
+    private translate: TranslateService,
+    private router:Router) { }
   userData = {
     "email": "abdelrahm.osama.awad52@gmail.com",
     "mobile": "01008323444",
@@ -30,6 +32,7 @@ export class SignupComponent implements OnInit {
     "usertype": "2"
   }
   ngOnInit(): void {
+    // this._authService.authUser()
     // this.signUp(this.userData)
     this.initForm();
   }
@@ -62,7 +65,8 @@ export class SignupComponent implements OnInit {
     this._signUpService.signUp(userData).subscribe(res => {
       console.log(res['body']);
       // this._authService.setUserAuthenticated(res['body'])
-      this._toastService.showToast(this.translate.instant("user created"), "success")
+      this._toastService.showToast(this.translate.instant("Account created"), "success");
+      this.router.navigate(['afterSingUp'])
       this.loading = false;
     }, err => {
       console.log(err);

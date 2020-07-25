@@ -1,3 +1,5 @@
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { AfterSignupComponent } from './pages/after-signup/after-signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ActiveAccountComponent } from './pages/active-account/active-account.component';
 import { LoginGuard } from './guards/login/login.guard';
@@ -35,6 +37,14 @@ const routes: Routes = [
     path: 'signup',
     canActivate:[LoginGuard],
     component: SignupComponent
+  },
+  {
+    path:'afterSingUp',
+    component:AfterSignupComponent
+  },
+  {
+    path:'resetPassword/:token',
+    component:ResetPasswordComponent
   },
   {
     path: "user",

@@ -47,8 +47,8 @@
         <span class="collapse_menu--label"></span>
     </button> -->
     <div class="main_logo" id="logo">
-        <a href="index.html"><img src="assets/images/logo-inner.png" alt=""></a>
-        <a href="index.html"><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="assets/images/logo-inner.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
         <span>Smart Academy</span>
     </div>
     <div class="search120">
@@ -138,6 +138,17 @@
                             class='uil uil-arrow-right'></i></a>
                 </div>
             </li> -->
+            
+            <li>
+                <a [routerLink]="['create/course']" routerLinkActive="router-link-active"  class="upload_btn">{{"Create New Course" | translate}}</a>
+            </li>
+            <li id="language" class="ui">
+                <a  class="option_links"><i class="uil uil-globe"></i></a>
+                <div class="menu drop-menu">
+                    <a (click)="changeLang('en')" class="item channel_item">{{"English" | translate}}</a>
+                    <a (click)="changeLang('ar')" class="item channel_item">{{"Arabic" | translate}}</a>
+                </div>
+            </li>
             <li id="account-dropdown" class="ui">
                 <a class="opts_account">
                     <img src="assets/images/hd_dp.jpg" alt="">
@@ -183,7 +194,7 @@
             <ul>
                 <li class="menu--item">
                     <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true"
-                        class="menu--link active" title="Dashboard">
+                        class="menu--link " title="Dashboard">
                         <i class='uil uil-home-alt menu--icon'></i>
                         <span class="menu--label">{{'Dashboard' | translate}}</span>
                     </a>
@@ -202,15 +213,19 @@
                     </label>
                     <ul class="sub_menu">
                         <li class="sub_menu--item">
-                            <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">{{'Add
-                                Course' | translate}}</a>
+                            <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
+                                <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
                         </li>
                         <li class="sub_menu--item">
-                            <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">{{'Add
+                            <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
+                                <i class="uil uil-swatchbook"></i>
+                                {{'Add
                                 Chapter' | translate}}</a>
                         </li>
                         <li class="sub_menu--item">
-                            <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">{{'Add
+                            <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
+                                <i class="uil uil-file-plus-alt"></i>
+                                {{'Add
                                 Lecture' | translate}}</a>
                         </li>
                     </ul>

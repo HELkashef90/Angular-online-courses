@@ -342,7 +342,7 @@ rtl style
 	.rtl .wrapper {
 		margin-right: 240px;
 	}
-	.rtl #sidekickToggle:checked ~ .wrapper {
+	.rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
 		margin-right: 0;
 	}
 	.rtl .chapter-list ~ .wrapper {
@@ -356,7 +356,7 @@ rtl style
 	}
 
 
-	.rtl #sidekickToggle:checked ~ .wrapper {
+	.rtl #sidekickToggle:checked ~ .ng-star-inserted wrapper {
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -8254,6 +8254,7 @@ body::-webkit-scrollbar-thumb {
 
 html {
    font-size: 14px;
+   height: 100%;
 }
 
 body {
@@ -8263,6 +8264,7 @@ body {
 	line-height: 1.42857143;
 	color: #29334e;
 	background: #f7f7f7 !important;
+	height: 100%;
 }
 
 .menu_left::-webkit-scrollbar {
@@ -8301,7 +8303,7 @@ input[type=text] {
 		margin-left: 240px;
 	}
 
-	.chapter-list ~ .wrapper {
+	.chapter-list ~ .ng-star-inserted .wrapper {
 		margin-left: 0;
 		margin-right: 400px;
 	}
@@ -8315,7 +8317,7 @@ input[type=text] {
 		font-size: 30px !important;
 	}
 
-	#sidekickToggle:checked ~ .wrapper {
+	#sidekickToggle:checked ~ .ng-star-inserted .wrapper {
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -14562,6 +14564,11 @@ a.rmv-btn i {
 }
 
 .coming_soon_style {
+	width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #29334e !important;
     background-image: -moz-radial-gradient(center center, circle cover, #29334e, #0d1218 100%) !important;
     background-image: -webkit-radial-gradient(center center, circle cover, #29334e, #0d1218 100%) !important;
@@ -15911,32 +15918,23 @@ a.btn_upload {
     background: transparent;
     border: 1px solid #c8302f;
 }
-.btn_upload:hover {
+/* .btn_upload:hover {
     color: #fff !important;
     background: #c8302f;
     border: 1px solid #c8302f;
-}
-.btn-cancel {
-	font-size: 14px;
-    font-weight: 500;
-	color: #686f7a;
-    background: transparent;
-    padding: 0px 30px;
-    border-radius: 25px;
-    border: 0;
-    height: 40px;
-    border: 1px solid #d4d4d5;
-}
-.modal-dialog {
-	min-width: 50%;
-    width: 700px;
+} */
+
+/* .modal-dialog {
+	/* min-width: 50%; */
+    /* width: 700px;
     border-radius: 20px;
     max-width: 100%;
-}
-.modal-content {
+} */
+/* .modal-content {
     border-radius: 10px;
 
-}
+}  */
+
 table .table-img {
 	width: 130px;
     border-radius: 10px;
@@ -15978,9 +15976,10 @@ select {
     -webkit-transition: width .1s ease,-webkit-box-shadow .1s ease;
     transition: width .1s ease,-webkit-box-shadow .1s ease;
     transition: box-shadow .1s ease,width .1s ease;
-    transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
-    color: #e5e5e5;
+	transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease; 
 }
+select:invalid { color: #e5e5e5; }
+
 .menu.drop-menu{
 	display:none;
 }
@@ -15993,13 +15992,13 @@ select {
     left: 0;
     right: auto;
 }
-#notification-dropdown:hover .menu, #message-dropdown:hover .menu, #account-dropdown:hover .menu{
+#notification-dropdown:hover .menu, #message-dropdown:hover .menu, #account-dropdown:hover .menu , #language:hover .menu{
 	display:block;
 }
 
 
 @media (min-width: 1600px){
-.col {
+.col-bg {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
     -ms-flex-positive: 1;
@@ -16106,4 +16105,66 @@ select {
 	/* padding: 1em; */
 	display: block;
 	opacity: 1;
+	}
+	.accept-btn {
+		color: #28a745;
+		background-color: #f7f7f7;
+		padding: 10px;
+		border: 1px solid #3ca745;
+		border-radius: 20px;
+	}
+	.reject-btn {
+		color: #c8302f;
+		background-color: #ffeced2e;
+		padding: 10px;
+		border: 1px solid #c8302f;
+		border-radius: 20px;
+	}
+	.accept-btn i , .reject-btn i {
+		font-size: 22px;
+		vertical-align: middle;
+	}
+
+	/* //modal */
+	
+	.modal-backdrop.show {
+		opacity: .1;
+		opacity: 0;
+	}
+	
+	.confirm .modal-content {
+		border:none;
+		border-radius: 1rem;
+		outline: 0;
+		text-align: left;
+		padding: 1.5rem;
+		box-shadow: 0 0 34px 0 rgba(0,0,0,0.08);
+	}
+	.confirm .modal-content  h2 {
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	.confirm .modal-content .close {
+		position: absolute;
+		top:0;
+		right:0;
+	}
+	.confirm .modal-footer {
+		padding: 1rem 0 0;
+	}
+	.confirm .btn-cancel {
+		font-size: 14px;
+		font-weight: 500;
+		color: #686f7a;
+		background: transparent;
+		padding: 0px 30px;
+		border-radius: 25px;
+		border: 0;
+		height: 40px;
+		border: 1px solid #d4d4d5;
+	}
+	@media (min-width: 576px){
+		.confirm .modal-dialog {
+			width: 400px;
+		}
 	}

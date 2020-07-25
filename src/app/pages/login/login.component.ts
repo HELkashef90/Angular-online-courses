@@ -14,14 +14,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   showInvalidData: boolean = false;
   loading: boolean = false;
-  LoadingPercentage = 0
   constructor(private _loginService: LoginService, private _toastService: ToastService, private _authService: AuthService,
     private _handleGlobalErrorService: HandleGlobalErrorService,
     private translate : TranslateService) { }
   ngOnInit(): void {
-    setInterval(() => {
-      this.LoadingPercentage++
-    }, 500)
+  //  this._authService.authUser()
   }
   onLoginClick(event, userName, password) {
     event.preventDefault()

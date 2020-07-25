@@ -14,8 +14,8 @@
         <span class="collapse_menu--label"></span>
     </button> -->
     <div class="main_logo" id="logo">
-        <a href="index.html"><img src="assets/images/logo-inner.png" alt=""></a>
-        <a href="index.html"><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="assets/images/logo-inner.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
         <span>Smart Academy</span>
     </div>
     <div class="search120">
@@ -105,6 +105,14 @@
                             class='uil uil-arrow-right'></i></a>
                 </div>
             </li> -->
+            
+            <li id="language" class="ui">
+                <a  class="option_links"><i class="uil uil-globe"></i></a>
+                <div class="menu drop-menu">
+                    <a (click)="changeLang('en')" class="item channel_item">{{"English" | translate}}</a>
+                    <a (click)="changeLang('ar')" class="item channel_item">{{"Arabic" | translate}}</a>
+                </div>
+            </li>
             <li id="account-dropdown" class="ui">
                 <a  class="opts_account">
                     <img src="assets/images/hd_dp.jpg" alt="">

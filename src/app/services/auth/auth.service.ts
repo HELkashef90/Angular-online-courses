@@ -51,7 +51,9 @@ export class AuthService {
   }
 
   setUserUnAuthenticated() {
+    let lang = localStorage.getItem('lang')
     localStorage.clear();
+    localStorage.setItem('lang', lang)
     this.isLoggedIn = false;
     this.userType = ""
     this._spinnerService.hideFullScreenSpinner()
@@ -97,14 +99,13 @@ export class AuthService {
       // body: payload
     }
     this.httpClient.post(environment._logOut, payload).subscribe(res => {
-    redirectToLogin ?  this.router.navigate(['login']) : null;
+      redirectToLogin ? this.router.navigate(['login']) : null;
       // location.reload()
     }, err => {
-      redirectToLogin ?  this.router.navigate(['login']) : null;
+      redirectToLogin ? this.router.navigate(['login']) : null;
       // location.reload()
     })
-    this.isLoggedIn = false;
-    localStorage.clear();
+    this.setUserUnAuthenticated()
 
   }
   activeAccount(token) {

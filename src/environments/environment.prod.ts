@@ -23,5 +23,9 @@ export const environment = {
   _getAllApprovedCourses: `${serverUrl}student-view/courses/published`,
   _getCourseById: `${serverUrl}course/`,
   _getCourseChaptersByCourseIdStudent: `${serverUrl}student-view/course-chapter/`,
-  _checkOut: `${serverUrl}enrollment-request/checkout`
+  _checkOut: `${serverUrl}enrollment-request/checkout`,
+  _forgotPassword: `${serverUrl}auth/forgot-password`,
+  _confirmResetPass: `${serverUrl}auth/confirm-reset`,
+  _resetReq: `${serverUrl}auth/reset-password`
+
 }

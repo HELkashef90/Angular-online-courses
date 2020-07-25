@@ -1,30 +1,30 @@
 // === Dropdown === //
 
-$('.ui.dropdown')
-  .dropdown()
-;
+// $('.ui.dropdown')
+//   .dropdown()
+// ;
 
 // === Model === //
-$('.ui.modal')
-  .modal({
-    blurring: true
-  })
-  .modal('show');
-  $('#videoModal').on('hidden.bs.modal', function () {
-	// $("#videoModal iframe").attr("src", $("#videoModal iframe").attr("src"));
+// $('.ui.modal')
+//   .modal({
+//     blurring: true
+//   })
+//   .modal('show');
+//   $('#videoModal').on('hidden.bs.modal', function () {
+// 	// $("#videoModal iframe").attr("src", $("#videoModal iframe").attr("src"));
 	
-	$("#videoModal iframe").attr("pauseVideo", "pauseVideo");
-});
+// 	$("#videoModal iframe").attr("pauseVideo", "pauseVideo");
+// });
 
 // === Tab === //
-$('.menu .item')
-  .tab()
-;
+// $('.menu .item')
+//   .tab()
+// ;
 
 // === checkbox Toggle === //
-$('.ui.checkbox')
-  .checkbox()
-;
+// $('.ui.checkbox')
+//   .checkbox()
+// ;
 
 // === Toggle === //
 $('.enable.button')
@@ -33,8 +33,7 @@ $('.enable.button')
       .nextAll('.checkbox')
         .checkbox('enable')
     ;
-  })
-;
+  });
 
 
 // Home Live Stream
@@ -65,31 +64,31 @@ $('.enable.button')
 // })
 
 // Featured Courses home
-$('.featured_courses').owlCarousel({
-	items:10,
-	loop:false,
-	margin:20,
-	nav:true,
-	dots:false,
-	navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-	responsive:{
-		0:{
-			items:1
-		},
-		600:{
-			items:2
-		},
-		1000:{
-			items:1
-		},
-		1200:{
-			items:2
-		},
-		1400:{
-			items:4
-		}
-	}
-})
+// $('.featured_courses').owlCarousel({
+// 	items:10,
+// 	loop:false,
+// 	margin:20,
+// 	nav:true,
+// 	dots:false,
+// 	navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+// 	responsive:{
+// 		0:{
+// 			items:1
+// 		},
+// 		600:{
+// 			items:2
+// 		},
+// 		1000:{
+// 			items:1
+// 		},
+// 		1200:{
+// 			items:2
+// 		},
+// 		1400:{
+// 			items:4
+// 		}
+// 	}
+// })
 
 // Featured Courses home
 // $('.top_instrutors').owlCarousel({

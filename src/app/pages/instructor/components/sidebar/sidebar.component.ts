@@ -1,3 +1,4 @@
+import { LocalizationService } from './../../../../services/localization/localization.service';
 import { LazyLoadScriptsService } from './../../../../services/lazyLoadScripts/lazy-load-scripts.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -9,7 +10,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private _lazyLoadScript: LazyLoadScriptsService, public _auth: AuthService) { }
+  constructor(private _lazyLoadScript: LazyLoadScriptsService, public _auth: AuthService,
+    public _local : LocalizationService) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +28,8 @@ export class SidebarComponent implements OnInit {
   }
   getEmail() {
     return localStorage.getItem('email')
+  }
+  changeLang(lang){
+    this._local.setUserLang(lang)
   }
 }
