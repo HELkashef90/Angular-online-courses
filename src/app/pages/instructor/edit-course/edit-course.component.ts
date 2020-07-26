@@ -6,6 +6,7 @@ import { ToastService } from 'src/app/services/toast/toast.service';
 import Player from '@vimeo/player';
 import { HttpEventType } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-edit-course',
@@ -36,10 +37,11 @@ export class EditCourseComponent implements OnInit {
   player: any;
 
   constructor(private _courseService: CreateCourseService, private _formBuilder: FormBuilder, private _toastService: ToastService,private router :Router,
-    private translate : TranslateService) {
-    this.selectedCourseToEdit = _courseService.selectedCourseToEdit
-    _courseService.selectedCourseToEdit = ""
-    console.log(this.selectedCourseToEdit);
+    private translate : TranslateService,
+    public bsModalRef: BsModalRef) {
+    // this.selectedCourseToEdit = _courseService.selectedCourseToEdit
+    // _courseService.selectedCourseToEdit = ""
+    // console.log(this.selectedCourseToEdit);
   }
 
   ngOnInit() {
@@ -185,5 +187,12 @@ export class EditCourseComponent implements OnInit {
       this.uploading = false;
       this.uploadingPercentage = 0
     }
+  }
+
+  decline() {
+    
+  
+      this.bsModalRef.hide();
+    
   }
 }

@@ -11,7 +11,7 @@ export class UserAllCoursesComponent implements OnInit {
   totalApprovedCourses: any;
   approvedCoursesArray = [];
   reqPageNum = 0;
-  pageSize = 4
+  pageSize = 8
   loading: boolean;
   lastPage = false;
 
