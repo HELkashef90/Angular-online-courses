@@ -11,9 +11,9 @@ export class SpinnerService {
   
   }
   showFullScreenSpinner() {
-    this.spinner.show();
+   return this.spinner.show();
   }
   hideFullScreenSpinner() {
-    this.spinner.hide();
+   return this.spinner.hide();
   }
 }

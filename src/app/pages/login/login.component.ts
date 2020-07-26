@@ -5,6 +5,7 @@ import { ToastService } from './../../services/toast/toast.service';
 import { LoginService } from './../services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,11 +15,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   showInvalidData: boolean = false;
   loading: boolean = false;
+  redirectUrl: any;
   constructor(private _loginService: LoginService, private _toastService: ToastService, private _authService: AuthService,
-    private _handleGlobalErrorService: HandleGlobalErrorService,
-    private translate : TranslateService) { }
+    private _handleGlobalErrorService: HandleGlobalErrorService, private route: ActivatedRoute, private router: Router,
+    private translate: TranslateService) { }
   ngOnInit(): void {
-  //  this._authService.authUser()
+    //  this._authService.authUser()
+    
+
   }
   onLoginClick(event, userName, password) {
     event.preventDefault()
@@ -60,12 +64,18 @@ export class LoginComponent implements OnInit {
       console.log(res);
       this._toastService.showToast(this.translate.instant("you are logged in successfully"), 'success')
       this.loading = false;
-      this._authService.redirectUserToDashboard(res['usertype'])
+      if (this.route.snapshot.queryParams['redirectUrl']) {
+        this.router.navigateByUrl(this.route.snapshot.queryParams['redirectUrl'])
+
+      } else {
+
+        this._authService.redirectUserToDashboard(res['usertype'])
+      }
     }, (err) => {
       console.log(err.status);
       if (err.status === 403) {
         this._authService.setUserUnAuthenticated();
-        this._toastService.showToast(this.translate.instant("User Name or Password incorrect, please try again"), 'error')
+        // this._toastService.showToast(this.translate.instant("User Name or Password incorrect, please try again"), 'error')
       }
       this.loading = false;
 

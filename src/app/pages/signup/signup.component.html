@@ -13,28 +13,36 @@
 				<div class="sign_form">
 					<h2>Welcome to Smart Academy</h2>
 					<p>Sign Up and Start Learning!</p>
-					<div class="alert alert-danger" role="alert" *ngIf="showErrors">
-						<span *ngIf="registrationForm.get('fullName').invalid"> *Please enter a valid full name (ex. Hossam Elkashef)</span><br>
+					<div class="alert alert-danger" role="alert" *ngIf="showErrors && registrationForm.invalid">
+						<span *ngIf="registrationForm.get('firstName').invalid"> *Please enter a valid first name (ex. Hossam)</span><br>
+						<span *ngIf="registrationForm.get('lastName').invalid"> *Please enter a valid last name (ex.  Elkashef)</span><br>
 						<span *ngIf="registrationForm.get('email').invalid"> *Please enter a valid Email (ex. example@gmail.com</span><br>
 						<span *ngIf="registrationForm.get('mobile').invalid"> *Please enter a valid Mobile (ex. 01xxxxxxxxx)</span><br>
 						<!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
 						<span *ngIf="registrationForm.get('password').invalid"> *Please enter a valid password (minimum length = 8 characters)</span><br>
-						<span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br>
+						<!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
 						<span *ngIf="registrationForm.get('signAs').invalid"> *Please enter select your account type (student, instructor?)</span><br>
 					</div>
 					<form [formGroup]="registrationForm">
 						<div class="ui search focus">
-							<label>full Name</label>
+							<label>first Name</label>
 							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="text" formControlName="fullName" value=""
-									id="id_fullname" required="" maxlength="64" placeholder="example: john smith">
+								<input class="prompt srch_explore" type="text" formControlName="firstName" value=""
+									id="id_fullname" required="" maxlength="64" placeholder="example: Hossam">
+							</div>
+						</div>
+						<div class="ui search focus mt-15">
+							<label>last Name</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="text" formControlName="lastName" value=""
+									id="id_fullname" required="" maxlength="64" placeholder="example: Elkashef">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
 							<label>email</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="email" formControlName="email" value=""
-									id="id_email" required="">
+									id="id_email" required="" maxlength="64">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
@@ -48,7 +56,7 @@
 							<label>password</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="password" formControlName="password" value=""
-									id="id_password" required="">
+									id="id_password" >
 							</div>
 						</div>
 
@@ -59,13 +67,13 @@
 									id="id_Address">
 							</div>
 						</div> -->
-						<div class="ui search focus mt-15">
+						<!-- <div class="ui search focus mt-15">
 							<label>city</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="text" formControlName="city" value=""
 									id="id_city">
 							</div>
-						</div>
+						</div> -->
 						<div class="ui grouped fields mt-15">
 							<div class="field">
 								<label>sign Up as</label>

@@ -60,7 +60,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 10000,
-      positionClass: 'toast-top-right',
+      positionClass: 'toast-bottom-right',
       closeButton: true,
       progressBar: true,
 

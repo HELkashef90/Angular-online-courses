@@ -49,10 +49,11 @@ export class SignupComponent implements OnInit {
     let userData = {
       "email": this.registrationForm.value.email,
       "mobile": this.registrationForm.value.mobile,
-      "username": this.registrationForm.value.fullName,
+      "username": this.registrationForm.value.firstName + ' ' + this.registrationForm.value.lastName,
       "password": this.registrationForm.value.password,
-      "firstname": this.registrationForm.value.fullName,
-      "usertype": this.registrationForm.value.signAs
+      "usertype": this.registrationForm.value.signAs,
+      "firstname": this.registrationForm.value.firstName,
+      "lastname": this.registrationForm.value.lastName,
     }
     this.signUp(userData)
   }
@@ -71,7 +72,7 @@ export class SignupComponent implements OnInit {
     }, err => {
       console.log(err);
       if (err.status === 409) {
-        this._toastService.showToast(err.error.message, 'error')
+        // this._toastService.showToast(err.error.message, 'error')
       }
       this.loading = false;
 
@@ -84,12 +85,13 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.registrationForm = new FormGroup({
-      fullName: new FormControl(null, [Validators.required]),
+      firstName: new FormControl(null, [Validators.required]),
+      lastName: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
       mobile: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern("01[0,1,2,5]{1}[0-9]{8}")]),
       // address: new FormControl(null, [Validators.required, Validators.minLength(11)]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      city: new FormControl(null, [Validators.required]),
+      // city: new FormControl(null, [Validators.required]),
       signAs: new FormControl(null, [Validators.required]),
     });
   }

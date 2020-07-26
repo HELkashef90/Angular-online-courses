@@ -86,7 +86,7 @@ export class AuthService {
     }
   }
 
-  signOut(redirectToLogin = true) {
+  signOut(redirectUrl?) {
     let payload = {
       "refreshToken": localStorage.getItem('refreshToken') || "",
       // "username": localStorage.getItem('username') || ""
@@ -99,12 +99,12 @@ export class AuthService {
       // body: payload
     }
     this.httpClient.post(environment._logOut, payload).subscribe(res => {
-      redirectToLogin ? this.router.navigate(['login']) : null;
+      // this.router.navigate(['login'], { queryParams: { redirectUrl } })
       // location.reload()
     }, err => {
-      redirectToLogin ? this.router.navigate(['login']) : null;
       // location.reload()
     })
+    this.router.navigate(['login'], { queryParams: { redirectUrl } })
     this.setUserUnAuthenticated()
 
   }
