@@ -29,4 +29,10 @@ export class CreateCourseService {
       observe: 'events'
     })
   }
+  getCourse(id) {
+    return this.httpClient.get(environment._getCourseById + id)
+  }
+  getChaptersByCourseId(courseId: string) {
+    return this.httpClient.get(environment._getCourseChaptersByCourseIdStudent + courseId)
+  }
 }

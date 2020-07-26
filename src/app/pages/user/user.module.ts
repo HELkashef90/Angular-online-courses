@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -23,11 +24,12 @@ import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
 import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
 
 
 @NgModule({
   declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent
-  ,SaveUrlPipe, ConfirmComponent],
+  , ConfirmComponent, MyCoursesComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -44,7 +46,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ToastrModule,
     InfiniteScrollModule,
     NgxConfirmBoxModule,
-    ModalModule
+    ModalModule,
+    SharedModule
   ]
 })
 export class UserModule { }

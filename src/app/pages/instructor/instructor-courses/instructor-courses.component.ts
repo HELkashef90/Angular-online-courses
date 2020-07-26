@@ -59,7 +59,7 @@ export class InstructorCoursesComponent implements OnInit {
       initialState: {
         selectedCourseToEdit: course
       },
-      class:'modal-lg'
+      class: 'modal-lg'
     });
 
 
@@ -69,5 +69,8 @@ export class InstructorCoursesComponent implements OnInit {
 
     // this._courseService.selectedCourseToEdit = course;
     // this.router.navigate(['/instructor/editCourse'])
+  }
+  ocViewCourseClick(course) {
+    this.router.navigate(['/instructor/viewCourse', course.id])
   }
 }

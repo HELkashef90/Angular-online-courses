@@ -1,3 +1,4 @@
+import { ViewCourseComponent } from './view-course/view-course.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
 import { InstructorAddChapterComponent } from './instructor-add-chapter/instructor-add-chapter.component';
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: 'courses',
         component: InstructorCoursesComponent,
+      },
+      {
+        path: 'viewCourse/:id',
+        component:ViewCourseComponent
       },
       {
         path: 'create',

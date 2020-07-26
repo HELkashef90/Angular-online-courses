@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -25,6 +26,7 @@ import { InstructorAddChapterComponent } from './instructor-add-chapter/instruct
 import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { NgxConfirmBoxModule } from 'ngx-confirm-box';
+import { ViewCourseComponent } from './view-course/view-course.component';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { NgxConfirmBoxModule } from 'ngx-confirm-box';
     InstructorAddChapterComponent,
     InstructorAddLectureComponent,
     EditCourseComponent,
+    ViewCourseComponent,
   ],
   imports: [
     CommonModule,
@@ -56,7 +59,8 @@ import { NgxConfirmBoxModule } from 'ngx-confirm-box';
     ToastrModule,
     MatSliderModule,
     MatStepperModule,
-    NgxConfirmBoxModule
+    NgxConfirmBoxModule,
+    SharedModule
   ]
 })
 export class InstructorModule { }

@@ -1,3 +1,4 @@
+import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { UserStudyCourseComponent } from './user-study-course/user-study-course.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
@@ -39,6 +40,10 @@ const routes: Routes = [
         path: 'checkout',
         component: CheckoutComponent
       },
+      {
+        path:'myCourses',
+        component:MyCoursesComponent
+      }
 
     ]
   },
