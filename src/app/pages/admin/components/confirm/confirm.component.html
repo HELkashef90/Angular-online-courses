@@ -1,0 +1,16 @@
+<div class="modal-body">
+  <button type="button" class="close" (click)="decline()" aria-label="Close">
+    <i class="uil uil-times"></i>
+  </button>
+  <h3>{{prompt}}</h3>
+  <!-- <p><strong>{{prompt}}</strong></p> -->
+  <br>
+  <p *ngFor="let item of list">
+    {{item}}
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-cancel" data-dismiss="modal"
+    (click)="decline()">{{"cancel" | translate}}</button>
+  <button type="button" class="btn Get_btn" (click)="confirm()">{{"confirm" | translate}}</button>
+</div>

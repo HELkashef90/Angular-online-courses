@@ -80,6 +80,10 @@ export class AuthService {
         //instructor  
         this.router.navigateByUrl("instructor", { replaceUrl: true })
         break;
+      case 3:
+        //instructor  
+        this.router.navigateByUrl("admin", { replaceUrl: true })
+        break;
       default:
         this.router.navigateByUrl("", { replaceUrl: true })
         break;

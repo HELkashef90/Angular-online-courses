@@ -26,6 +26,12 @@ export const environment = {
   _checkOut: `${serverUrl}enrollment-request/checkout`,
   _forgotPassword: `${serverUrl}auth/forgot-password`,
   _confirmResetPass: `${serverUrl}auth/confirm-reset`,
-  _resetReq: `${serverUrl}auth/reset-password`
+  _resetReq: `${serverUrl}auth/reset-password`,
+  _getEnrollmentStudents: `${serverUrl}enrollment-request/all`,
+  _activeEnrollment: `${serverUrl}enrollment-request/activate/`,
+  _rejectEnrollment: `${serverUrl}enrollment-request/deactivate/`
+
+
+
 
 }

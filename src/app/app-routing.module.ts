@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuard } from './guards/admin/admin.guard';
 
 
 const routes: Routes = [
@@ -58,15 +59,8 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    children: [{
-      //routed here
-
-      //default route
-      path: '',
-      redirectTo: '',
-      pathMatch: 'full'
-    }],
-
+    canActivate:[AdminGuard],
+    loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
   },
   {
     path: '**',
