@@ -12,7 +12,7 @@
     <div class="main_logo" id="logo">
         <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="assets/images/logo-inner.png" alt=""></a>
         <a [routerLink]="['']" routerLinkActive="router-link-active" ><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
-        <span>Smart Academy</span>
+        <span>{{"Smart Academy" | translate}}</span>
     </div>
     <!-- <div class="search120">
         <div class="ui search">
@@ -98,8 +98,8 @@
             <li id="language" class="ui">
                 <a  class="option_links"><i class="uil uil-globe"></i></a>
                 <div class="menu drop-menu">
-                    <a (click)="changeLang('en')" class="item channel_item">English</a>
-                    <a (click)="changeLang('ar')" class="item channel_item">Arabic</a>
+                    <a (click)="changeLang('en')" class="item channel_item">{{"English" | translate}}</a>
+                    <a (click)="changeLang('ar')" class="item channel_item">{{"Arabic" | translate}}</a>
                 </div>
             </li>
             <li id="account-dropdown" class="ui">
@@ -133,7 +133,7 @@
                     </div>
                     <a  class="item channel_item">Help</a>
                     <a  class="item channel_item">Send Feedback</a> -->
-                    <a (click)="signOut()" class="item channel_item">Sign Out</a>
+                    <a (click)="signOut()" class="item channel_item">{{"Sign Out" | translate}}</a>
                
                 </div>
             </li>
@@ -149,19 +149,19 @@
                 <li class="menu--item">
                     <a [routerLink]="['instructors']" routerLinkActive="active"  class="menu--link " title="Instructors Request List">
                         <i class="uil uil-user-check menu--icon"></i>
-                        <span class="menu--label">Instructors Request List</span>
+                        <span class="menu--label">I{{"nstructors Request List" | translate}}</span>
                     </a>
                 </li>
                 <li class="menu--item">
                     <a [routerLink]="['students']" routerLinkActive="active"  class="menu--link " title="Student Payment">
                         <i class="uil uil-money-withdrawal menu--icon"></i>
-                        <span class="menu--label">Student Payment</span>
+                        <span class="menu--label">{{"Student Payment" | translate}}</span>
                     </a>
                 </li>
                 <li class="menu--item">
                     <a [routerLink]="['courses']" routerLinkActive="active"  class="menu--link" title="Student Payment">
                         <i class="uil uil-check-circle menu--icon"></i>
-                        <span class="menu--label">Course Confirmation</span>
+                        <span class="menu--label">{{"Course Confirmation" | translate}}</span>
                     </a>
                 </li>
             </ul>

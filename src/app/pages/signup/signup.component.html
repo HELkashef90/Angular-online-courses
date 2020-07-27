@@ -11,49 +11,49 @@
 
 			<div class="col-lg-6 col-md-8">
 				<div class="sign_form">
-					<h2>Welcome to Smart Academy</h2>
-					<p>Sign Up and Start Learning!</p>
+					<h2> {{"Welcome to Smart Academy" | translate}} </h2>
+					<p>{{"Sign Up and Start Learning!" | translate}} </p>
 					<div class="alert alert-danger" role="alert" *ngIf="showErrors && registrationForm.invalid">
-						<span *ngIf="registrationForm.get('firstName').invalid"> *Please enter a valid first name (ex. Hossam)</span><br>
-						<span *ngIf="registrationForm.get('lastName').invalid"> *Please enter a valid last name (ex.  Elkashef)</span><br>
-						<span *ngIf="registrationForm.get('email').invalid"> *Please enter a valid Email (ex. example@gmail.com</span><br>
-						<span *ngIf="registrationForm.get('mobile').invalid"> *Please enter a valid Mobile (ex. 01xxxxxxxxx)</span><br>
+						<span *ngIf="registrationForm.get('firstName').invalid"> {{"*Please enter a valid first name (ex. Hossam)" | translate}} </span><br>
+						<span *ngIf="registrationForm.get('lastName').invalid"> {{"*Please enter a valid last name (ex.  Elkashef)" | translate}} </span><br>
+						<span *ngIf="registrationForm.get('email').invalid"> {{"*Please enter a valid Email (ex. example@gmail.com" | translate}} </span><br>
+						<span *ngIf="registrationForm.get('mobile').invalid"> {{"*Please enter a valid Mobile (ex. 01xxxxxxxxx)" | translate}} </span><br>
 						<!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
-						<span *ngIf="registrationForm.get('password').invalid"> *Please enter a valid password (minimum length = 8 characters)</span><br>
+						<span *ngIf="registrationForm.get('password').invalid"> {{"*Please enter a valid password (minimum length = 8 characters)" | translate}} </span><br>
 						<!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
-						<span *ngIf="registrationForm.get('signAs').invalid"> *Please enter select your account type (student, instructor?)</span><br>
+						<span *ngIf="registrationForm.get('signAs').invalid"> {{"*Please enter select your account type (student, instructor?)" | translate}} </span><br>
 					</div>
 					<form [formGroup]="registrationForm">
 						<div class="ui search focus">
-							<label>first Name</label>
+							<label>{{"first Name" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="text" formControlName="firstName" value=""
 									id="id_fullname" required="" maxlength="64" placeholder="example: Hossam">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
-							<label>last Name</label>
+							<label>{{"last Name" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="text" formControlName="lastName" value=""
 									id="id_fullname" required="" maxlength="64" placeholder="example: Elkashef">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
-							<label>email</label>
+							<label>{{"email" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="email" formControlName="email" value=""
 									id="id_email" required="" maxlength="64">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
-							<label>phone number</label>
+							<label>{{"phone number" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="text" formControlName="mobile" value=""
 									id="id_phonenumber" required="">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
-							<label>password</label>
+							<label>{{"password" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="password" formControlName="password" value=""
 									id="id_password" >
@@ -76,27 +76,27 @@
 						</div> -->
 						<div class="ui grouped fields mt-15">
 							<div class="field">
-								<label>sign Up as</label>
+								<label> {{"sign Up as" | translate}} </label>
 
 								<input value="1" type="radio" formControlName="signAs"
-									(click)="onSignUpAsClick($event)">
-								<label>student</label>
+									(click)="onSignUpAsClick($event)" checked>
+								<label> {{"student" | translate}} </label>
 
 								<input value="2" type="radio" formControlName="signAs"
 									(click)="onSignUpAsClick($event)">
-								<label>instructor</label>
+								<label> {{"instructor" | translate}} </label>
 
 							</div>
 						</div>
-						<button class="login-btn" (click)="onSignUpClick($event)">sign Up</button>
+						<button class="login-btn" (click)="onSignUpClick($event)">{{"sign Up" | translate}}</button>
 						<ngx-loading [show]="loading"></ngx-loading>
 					</form>
-					<p class="sgntrm145">By signing up, you agree to our <a >Terms of Use</a>
-						and <a >Privacy Policy</a>.</p>
-					<p class="mb-0 mt-30">Already have an account? <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Log In</a></p>
+					<p class="sgntrm145">{{"By signing up, you agree to our" | translate}} <a >{{"Terms of Use" | translate}}</a>
+						{{"and" | translate}} <a >{{"Privacy Policy" | translate}}</a>.</p>
+					<p class="mb-0 mt-30">{{"Already have an account?" | translate}} <a [routerLink]="['/login']" routerLinkActive="router-link-active" >{{"Log In" | translate}}</a></p>
 				</div>
-				<div class="sign_footer"><img src="images/sign_logo.png" alt="">© 2020 <strong>Cursus</strong>. All
-					Rights Reserved.</div>
+				<div class="sign_footer"><img src="images/sign_logo.png" alt="">© 2020 <strong>{{"Cursus" | translate}}</strong>. {{"All
+					Rights Reserved" | translate}}.</div>
 			</div>
 		</div>
 	</div>

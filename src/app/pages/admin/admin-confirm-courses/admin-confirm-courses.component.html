@@ -2,7 +2,7 @@
     <div class="container-fluid">			
         <div class="row">
             <div class="col-lg-12">	
-                <h2 class="st_title"><i class="uil uil-check-circle"></i>Course Confirmation</h2>
+                <h2 class="st_title"><i class="uil uil-check-circle"></i>{{"Course Confirmation" | translate}}</h2>
             </div>				
         </div>
         <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
@@ -12,10 +12,10 @@
                     <table class="table ucp-table">
                         <thead class="thead-s">
                             <tr>
-                                <th class="text-center" scope="col"> No.</th>
-                                <th class="text-center" >Course Name</th>
-                                <th>Instractor Name</th>
-                                <th class="text-center" scope="col">Action</th>
+                                <th class="text-center" scope="col"> {{"No." | translate}}</th>
+                                <th class="text-center" >{{"Course Name" | translate}}</th>
+                                <th>{{"Instractor Name" | translate}}</th>
+                                <th class="text-center" scope="col">{{"Action" | translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,8 +24,8 @@
                                 <td class="text-center">{{course.course_title}}</td>
                                 <td>{{course.first_name}}</td>
                                 <td class="text-center">
-                                    <a (click)="onApproveClick(course) " title="Approved" class="accept-btn mx-2" *ngIf="course.course_status !== 2"><i class="uil uil-check" ></i>Approve</a>
-                                    <a (click)="onRejectClick(course)" title="Reject" class="reject-btn  mx-2" *ngIf="course.course_status === 2"><i class="uil uil-times" ></i>Reject</a>
+                                    <a (click)="onApproveClick(course) " title="Approved" class="accept-btn mx-2" *ngIf="course.course_status !== 2"><i class="uil uil-check" ></i>{{"Approve" | translate}}</a>
+                                    <a (click)="onRejectClick(course)" title="Reject" class="reject-btn  mx-2" *ngIf="course.course_status === 2"><i class="uil uil-times" ></i>{{"Reject" | translate}}</a>
                                 </td>
                             </tr>
                          

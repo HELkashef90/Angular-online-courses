@@ -2,23 +2,24 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="st_title"><i class="uil uil-money-withdrawal"></i>Student Payment</h2>
+                <h2 class="st_title"><i class="uil uil-money-withdrawal"></i>{{"Student Payment" |translate}}</h2>
             </div>
         </div>
         <form class="row">
             <div class="col-xl-3 col-md-4 col-sm-6 ">
                 <div class="ui search focus mt-30">
                     <div class="ui left icon input swdh11 swdh19">
-                        <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text" name="Search by Email or Phone Number"
-                            value="" id="id_Search" required="" placeholder="Search by Email or Phone Number">
+                        <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text"
+                            name="Search by Email or Phone Number" value="" id="id_Search" required=""
+                            placeholder="Search by Email or Phone Number">
                     </div>
                 </div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 ">
-                <button class="login-btn" (click)="onSearchClick($event,search.value)">Search</button>
+                <button class="login-btn" (click)="onSearchClick($event,search.value)">{{"Search" |translate}}</button>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 ">
-                <button class="login-btn" (click)="clearSearch(search)">Refresh table</button>
+                <button class="login-btn" (click)="clearSearch(search)">{{"Refresh table" |translate}}</button>
             </div>
         </form>
         <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
@@ -28,14 +29,14 @@
                     <table class="table ucp-table">
                         <thead class="thead-s">
                             <tr>
-                                <th class="text-center" scope="col"> No.</th>
-                                <th>Student Name</th>
-                                <th class="text-center" scope="col">Phone No</th>
-                                <th class="text-center" scope="col">Email</th>
-                                <th class="text-center" scope="col">Course Name</th>
-                                <th class="text-center" scope="col">Chapter Name</th>
-                                <th class="text-center" scope="col">Price</th>
-                                <th class="text-center" scope="col">Action</th>
+                                <th class="text-center" scope="col"> {{"No." |translate}}</th>
+                                <th>{{"Student Name" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Phone No" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Email" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Course Name" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Chapter Name" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Price" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Action" |translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,10 +51,10 @@
                                 <td class="text-center">
                                     <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student)"
                                         title="Approved" class="accept-btn mx-2"><i class="uil uil-check"></i>
-                                        Approved</a>
+                                        {{"Approved" |translate}}</a>
                                     <a *ngIf="student.is_active_subscription" (click)="onRejectClick(student)"
                                         title="Reject" class="reject-btn  mx-2"><i class="uil uil-times"></i>
-                                        Reject</a>
+                                        {{"Reject" |translate}}</a>
                                 </td>
                             </tr>
 

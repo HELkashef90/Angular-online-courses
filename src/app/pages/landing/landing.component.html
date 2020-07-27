@@ -8,30 +8,30 @@
         <!-- Navbar toggler button-->
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-          class="navbar-toggler navbar-toggler-right">Menu<i class="icon ion-md-list ml-2"></i></button>
+          class="navbar-toggler navbar-toggler-right">{{"Menu" | translate}}<i class="icon ion-md-list ml-2"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
           <ul class="navbar-nav mx-auto ml-auto">
             <!-- Link-->
-            <li class="nav-item"> <a href="schedule.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"> <a  class="nav-link">{{"About Us" | translate}}</a></li>
 
-            <li class="nav-item dropdown"><a id="pages" href="#" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false" class="nav-link dropdown-toggle">departments</a>
+            <li class="nav-item dropdown"><a id="pages"  data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false" class="nav-link dropdown-toggle">{{"departments" | translate}}</a>
               <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">arabic</a>
-                <a href="#" class="dropdown-item">English</a>
-                <a href="#" class="dropdown-item">math</a></div>
+                <a  class="dropdown-item">{{"arabic" | translate}}</a>
+                <a  class="dropdown-item">{{"English" | translate}}</a>
+                <a  class="dropdown-item">{{"math" | translate}}</a></div>
             </li>
             <!-- Link-->
-            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"  class="nav-link">Contact Us</a></li>
+            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"  class="nav-link">{{"Contact Us" | translate}}</a></li>
           </ul>
           <ul *ngIf="!_auth.isLoggedIn" class="navbar-nav">
             <li [routerLink]="['/login']" class="nav-item"><a data-toggle="modal" data-target="#login"
                 class="nav-link font-weight-bold mr-3">{{'Login' | translate}}</a></li>
-            <li [routerLink]="['/signup']" class="nav-item"><a class="navbar-btn btn btn-primary">Get Started</a></li>
+            <li [routerLink]="['/signup']" class="nav-item"><a class="navbar-btn btn btn-primary">{{"Get Started" | translate}}</a></li>
           </ul>
           <ul *ngIf="_auth.isLoggedIn" class="navbar-nav">
           
-            <li (click)="goToDashboard()" class="nav-item"><a class="navbar-btn btn btn-primary">My Dashboard</a></li>
+            <li (click)="goToDashboard()" class="nav-item"><a class="navbar-btn btn btn-primary">{{"My Dashboard" | translate}}</a></li>
           </ul>
         </div>
       </div>
@@ -46,13 +46,13 @@
           <div class="col-lg-6">
             <h1 class="hero-heading">{{'Explore our schools to find your perfect course' | translate}}
             </h1>
-            <p class="lead mt-5 font-weight-light">Match your goals to our classes, explore your options, and map out
-              your path to success.</p>
+            <p class="lead mt-5 font-weight-light">{{"Match your goals to our classes, explore your options, and map out
+              your path to success." | translate}}</p>
             <!-- Subscription form-->
             <form action="#" class="subscription-form mt-5">
               <div class="form-group">
                 <input type="search" name="seaech" placeholder="what do you want to learn?" class="form-control">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">{{"Search" | translate}}</button>
               </div>
             </form>
           </div>
@@ -73,11 +73,11 @@
       <div class="copyrights">
         <!-- Social menu-->
         <ul class="social list-inline-item">
-          <li class="list-inline-item"><a href="#" target="_blank" class="social-link"><i
+          <li class="list-inline-item"><a  target="_blank" class="social-link"><i
                 class="icon ion-logo-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#" target="_blank" class="social-link"><i
+          <li class="list-inline-item"><a  target="_blank" class="social-link"><i
                 class="icon ion-logo-facebook"></i></a></li>
-          <li class="list-inline-item"><a href="#" target="_blank" class="social-link"><i
+          <li class="list-inline-item"><a  target="_blank" class="social-link"><i
                 class="icon ion-logo-youtube"></i></a></li>
         </ul>
         <p class="copyrights-text mb-0">Copyright &copy; 2020 All rights reserved to <a

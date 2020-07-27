@@ -140,7 +140,7 @@
                     </div> -->
                     <!-- <a href="help.html" class="item channel_item">Help</a>
                     <a href="feedback.html" class="item channel_item">Send Feedback</a> -->
-                    <a (click)="logOut()" class="item channel_item">Sign Out</a>
+                    <a (click)="logOut()" class="item channel_item">{{"Sign Out" | translate}}</a>
                 </div>
             </li>
         </ul>
@@ -155,19 +155,19 @@
                 <li class="menu--item">
                     <a [routerLink]="['dashboard']" routerLinkActive="active"  class="menu--link" title="Dashboard">
                         <i class='uil uil-home-alt menu--icon'></i>
-                        <span class="menu--label">Dashboard</span>
+                        <span class="menu--label">{{"Dashboard" | translate}}</span>
                     </a>
                 </li>
                 <li class="menu--item">
                     <a [routerLink]="['courses']" routerLinkActive="active"  class="menu--link" title="Dashboard">
                         <i class="uil uil-book-alt menu--icon"></i>
-                        <span class="menu--label">All Courses</span>
+                        <span class="menu--label">{{"All Courses" | translate}}</span>
                     </a>
                 </li>
                 <li class="menu--item">
                     <a [routerLink]="['myCourses']" routerLinkActive="active"  class="menu--link" title="My Courses">
                         <i class="uil uil-heart-alt menu--icon"></i>
-                        <span class="menu--label">My Courses</span>
+                        <span class="menu--label">{{"My Courses" | translate}}</span>
                     </a>
                 </li>
               <!--   <li class="menu--item  menu--item__has_sub_menu">

@@ -11,8 +11,8 @@
 
 			<div class="col-lg-6 col-md-8">
 				<div class="sign_form">
-					<h2>Welcome Back</h2>
-					<p>Log In to Your Account</p>
+					<h2>{{"Welcome Back" | translate}}</h2>
+					<p>{{"Log In to Your Account" | translate}}</p>
 					<form>
 						<div class="ui search focus mt-15">
 							<div class="ui left icon input swdh95">
@@ -31,15 +31,15 @@
 						</div>
 
 						<ngx-loading [show]="loading"></ngx-loading>
-						<button class="login-btn" (click)="onLoginClick($event,userName.value, password.value)">Sign
-							In</button>
+						<button class="login-btn" (click)="onLoginClick($event,userName.value, password.value)">{{"Sign
+							In" | translate}}</button>
 							<br>
 						<div *ngIf="showInvalidData" class="alert alert-danger" role="alert">
-							Please enter valid Email or Mobile, and password
+							{{"Please enter valid Email or Mobile, and password" | translate}}
 						</div>
 					</form>
-					<p class="sgntrm145">Or <a [routerLink]="['/forgotPassword']" routerLinkActive="router-link-active" >Forgot Password</a>.</p>
-					<p class="mb-0 mt-30 hvsng145">Don't have an account? <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign Up</a></p>
+					<p class="sgntrm145">Or <a [routerLink]="['/forgotPassword']" routerLinkActive="router-link-active" >{{"Forgot Password" | translate}}</a>.</p>
+					<p class="mb-0 mt-30 hvsng145">{{"Don't have an account?" | translate}} <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >{{"Sign Up" | translate}}</a></p>
 				</div>
 			</div>
 			<div class="sign_footer"><img src="assets/dashboard/images/sign_logo.png" alt="">© 2020 <strong>Smart
