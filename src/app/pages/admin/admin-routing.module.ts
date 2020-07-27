@@ -1,3 +1,5 @@
+import { AdminConfirmCoursesComponent } from './admin-confirm-courses/admin-confirm-courses.component';
+import { AdminInstructorsListComponent } from './admin-instructors-list/admin-instructors-list.component';
 import { AdminStudentsAllCoursesComponent } from './admin-students-all-courses/admin-students-all-courses.component';
 import { AdminComponent } from './admin.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +14,14 @@ const routes: Routes = [
       {
         path: 'students',
         component: AdminStudentsAllCoursesComponent
+      },
+      {
+        path: 'instructors',
+        component: AdminInstructorsListComponent
+      },
+      {
+        path: "courses",
+        component: AdminConfirmCoursesComponent
       },
       {
         path: '',

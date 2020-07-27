@@ -29,9 +29,13 @@ export const environment = {
   _resetReq: `${serverUrl}auth/reset-password`,
   _getEnrollmentStudents: `${serverUrl}enrollment-request/all`,
   _activeEnrollment: `${serverUrl}enrollment-request/activate/`,
-  _rejectEnrollment: `${serverUrl}enrollment-request/deactivate/`
-
-
-
+  _rejectEnrollment: `${serverUrl}enrollment-request/deactivate/`,
+  _getAllInstructors: `${serverUrl}instructor/all`,
+  _getPendingCourses: `${serverUrl}course/all-with-instrcutor`,
+  _approveInstructor: `${serverUrl}instructor/activate/`,
+  _rejectInstructor: `${serverUrl}instructor/deactivate/`,
+  _approveCourse: `${serverUrl}course/activate/`,
+  _rejectCourse : `${serverUrl}course/deactivate/`,
+  _getEnrollmentCourses: `${serverUrl}student-enrolled/all-courses`
 
 }

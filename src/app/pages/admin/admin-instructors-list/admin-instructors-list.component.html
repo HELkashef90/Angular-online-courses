@@ -1,0 +1,56 @@
+<div class="sa4d25">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="st_title"><i class="uil uil-book-alt"></i>Instractors Request List</h2>
+            </div>
+        </div>
+        <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+        [infiniteScrollDisabled]="lastPage || disableScroll">
+            <div class="col-md-12">
+                <div class="table-responsive mt-30">
+                    <table class="table ucp-table">
+                        <thead class="thead-s">
+                            <tr>
+                                <th class="text-center" scope="col"> No.</th>
+                                <th>Instractor Name</th>
+                                <th class="text-center" scope="col">Phone No</th>
+                                <th class="text-center" scope="col">Email</th>
+                                <th class="text-center" scope="col">Status</th>
+                                <th class="text-center" scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let instructor of instructorsArray; let index = index">
+                                <td class="text-center">{{index + 1}}</td>
+                                <td>{{instructor.first_name}}</td>
+                                <td class="text-center">{{instructor.mobile}}</td>
+                                <td class="text-center">{{instructor.email}}</td>
+                                <td class="text-center" *ngIf="instructor.enabled">{{'Active' | translate}}</td>
+                                <td class="text-center" *ngIf="!instructor.enabled">{{'Pending' | translate}}</td>
+                                <td class="text-center">
+                                    <a (click)="onApproveClick(instructor)" title="Accept" class="accept-btn mx-2" *ngIf="!instructor.enabled"><i
+                                            class="uil uil-user-check"></i> Accept</a>
+                                    <a (click)="onRejectClick(instructor)" title="Reject" class="reject-btn  mx-2" *ngIf="instructor.enabled"><i
+                                            class="uil uil-user-times"></i> Reject</a>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" class="col-md-12">
+                        <div class="main-loader mt-20">
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

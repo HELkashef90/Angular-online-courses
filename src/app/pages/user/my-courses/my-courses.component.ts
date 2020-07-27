@@ -29,14 +29,14 @@ export class MyCoursesComponent implements OnInit {
       return false;
     }
     this.loading = true
-    this._courseService.getAllApproved(this.reqPageNum, this.pageSize).subscribe(res => {
+    this._courseService.getEnrollmentCourse().subscribe(res => {
+      console.log(res);
       if (res['statusCodeValue'] === 204) {
         this.lastPage = true
         this.loading = false
         console.log(this.approvedCoursesArray);
         return
       } else {
-        console.log(res);
         this.reqPageNum += 1;
         this.totalPages = res['body']['totalPages']
         this.totalApprovedCourses = res['body']['totalElements']

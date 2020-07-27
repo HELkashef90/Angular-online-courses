@@ -34,6 +34,7 @@ import { NgxConfirmBoxModule, NgxConfirmBoxService } from 'ngx-confirm-box';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AfterSignupComponent } from './pages/after-signup/after-signup.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
     ForgotPasswordComponent,
     AfterSignupComponent,
     ResetPasswordComponent,
+    ContactUsComponent,
   ],
   imports: [
     RouterModule,

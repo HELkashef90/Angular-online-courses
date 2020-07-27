@@ -1,0 +1,48 @@
+<div class="sa4d25">
+    <div class="container-fluid">			
+        <div class="row">
+            <div class="col-lg-12">	
+                <h2 class="st_title"><i class="uil uil-check-circle"></i>Course Confirmation</h2>
+            </div>				
+        </div>
+        <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+        [infiniteScrollDisabled]="lastPage || disableScroll">
+            <div class="col-md-12">
+                <div class="table-responsive mt-30">
+                    <table class="table ucp-table">
+                        <thead class="thead-s">
+                            <tr>
+                                <th class="text-center" scope="col"> No.</th>
+                                <th class="text-center" >Course Name</th>
+                                <th>Instractor Name</th>
+                                <th class="text-center" scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let course of coursesArray; let index = index">
+                                <td class="text-center">{{index +1 }}</td>
+                                <td class="text-center">{{course.course_title}}</td>
+                                <td>{{course.first_name}}</td>
+                                <td class="text-center">
+                                    <a (click)="onApproveClick(course) " title="Approved" class="accept-btn mx-2" *ngIf="course.course_status !== 2"><i class="uil uil-check" ></i>Approve</a>
+                                    <a (click)="onRejectClick(course)" title="Reject" class="reject-btn  mx-2" *ngIf="course.course_status === 2"><i class="uil uil-times" ></i>Reject</a>
+                                </td>
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading" class="col-md-12">
+                        <div class="main-loader mt-20">
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

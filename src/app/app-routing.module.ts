@@ -1,3 +1,4 @@
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { AfterSignupComponent } from './pages/after-signup/after-signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
     component: LandingComponent
   },
   {
+    path: 'contactUs',
+    component: ContactUsComponent
+  },
+  {
     path: 'activeAccount/:token',
     component: ActiveAccountComponent
   },
@@ -31,35 +36,35 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    canActivate:[LoginGuard],
+    canActivate: [LoginGuard],
     component: LoginComponent
   },
   {
     path: 'signup',
-    canActivate:[LoginGuard],
+    canActivate: [LoginGuard],
     component: SignupComponent
   },
   {
-    path:'afterSingUp',
-    component:AfterSignupComponent
+    path: 'afterSingUp',
+    component: AfterSignupComponent
   },
   {
-    path:'resetPassword/:token',
-    component:ResetPasswordComponent
+    path: 'resetPassword/:token',
+    component: ResetPasswordComponent
   },
   {
     path: "user",
-    canActivate:[UserGuard],
+    canActivate: [UserGuard],
     loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule),
   },
   {
     path: "instructor",
-    canActivate:[InstructorGuard],
+    canActivate: [InstructorGuard],
     loadChildren: () => import('./pages/instructor/instructor.module').then(m => m.InstructorModule),
   },
   {
     path: "admin",
-    canActivate:[AdminGuard],
+    canActivate: [AdminGuard],
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
   },
   {

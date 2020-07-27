@@ -17,10 +17,12 @@ import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.
 import { AdminFooterComponent } from './components/admin-footer/admin-footer.component';
 import { AdminStudentsAllCoursesComponent } from './admin-students-all-courses/admin-students-all-courses.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { AdminInstructorsListComponent } from './admin-instructors-list/admin-instructors-list.component';
+import { AdminConfirmCoursesComponent } from './admin-confirm-courses/admin-confirm-courses.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent],
+  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -34,7 +34,15 @@ $('.enable.button')
         .checkbox('enable')
     ;
   });
+  // === sidebar === //
+  var sidebarBtn = document.getElementById('collapse_menu');
 
+  sidebarBtn.onclick = function menuAnimation() {
+	  var verticalSideBar = document.querySelector(".vertical_nav");
+		  verticalSideBar.classList.toggle("vertical_nav__minify");
+	  var wrapper = document.querySelector(".wrapper");
+		  wrapper.classList.toggle("wrapper__minify");
+  }
 
 // Home Live Stream
 // $('.live_stream').owlCarousel({

@@ -28,7 +28,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEnrollment()
   }
-  onLoginClick(event, search) {
+  onSearchClick(event, search) {
     event.preventDefault()
     // this.showInvalidData = false;
     let isEmail = false;

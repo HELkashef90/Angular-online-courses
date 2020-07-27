@@ -65,7 +65,11 @@ rtl style
 	background-color: #cce2ff;
 	color: rgba(0, 0, 0, 0.87);
 }
-
+.btn-primary {
+    color: #fff;
+    background-color: #cc2d37;
+    border-color: #cc2d37;
+}
 .rtl ol, .rtl ul {
 	list-style: none;
 	margin-bottom: 0 !important;
@@ -100,6 +104,9 @@ rtl style
 	margin: 0;
 	padding: 0;
 } */
+.rtl .row{
+direction: rtl;
+}
 
 .rtl a:focus {
 	text-decoration: none;
@@ -328,6 +335,9 @@ rtl style
 }
 
 @media (min-width: 992px) {
+	.rtl .offset-lg-2 {
+		margin-right: 16.666667%;
+	}
 	.rtl body {
 		overflow-y: scroll;
 	}
@@ -342,6 +352,10 @@ rtl style
 	.rtl .wrapper {
 		margin-right: 240px;
 	}
+	.rtl .wrapper.course-content {
+		margin-right: 0;
+		margin-left: 400px;
+	}
 	.rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
 		margin-right: 0;
 	}
@@ -354,9 +368,12 @@ rtl style
 		right: auto;
 		left: 400px;
 	}
+	.rtl .minify {
+		left:0;
+	}
 
 
-	.rtl #sidekickToggle:checked ~ .ng-star-inserted wrapper {
+	.rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -366,7 +383,8 @@ rtl style
 		right:auto;
 	}
 	.rtl .wrapper__minify {
-		margin-right: 0;
+		margin-right: 0 !important;
+		margin-left: 0 !important;
 	}
 }
 
@@ -517,7 +535,7 @@ rtl style
 .rtl .noti_count {
 	font-size: 11px;
 	position: absolute;
-	top: 3px;
+	top: 12px;
 	right: 8px;
 	background: #c8302f;
 	color: #fff;
@@ -2012,7 +2030,7 @@ rtl style
 }
 
 .rtl .edu_social_links {
-	text-align: right;
+	text-align: left;
 	direction: rtl;
 }
 
@@ -4711,15 +4729,15 @@ rtl style
 }
 
 .rtl .back_link a {
-	color: #29334e;
+	/* color: #29334e; */
 	float: right;
-	height: 38px;
+	/* height: 38px;
 	background: #fff;
 	border: 1px solid #efefef;
 	border-radius: 20px;
 	padding: 8px 20px;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 400; */
 	font-family: 'helvetica', sans-serif;
 }
 
@@ -4760,7 +4778,7 @@ rtl style
 }
 
 .rtl .ttl121 .breadcrumb {
-	background-color: #fff !important;
+	background-color: transparent !important;
 	padding: 0 !important;
 	direction: rtl;
 }
@@ -7032,6 +7050,7 @@ rtl style
 	width: 100%;
 	margin-top: 64px;
 	text-align: center;
+	overflow: hidden;
 }
 
 .rtl .contact_map #map {
@@ -8288,6 +8307,7 @@ input[type=text] {
 /* Medium devices (desktops)
 ==========================*/
 @media (min-width: 992px) {
+	
 	body {
 	overflow-y: scroll;
 	}
@@ -8301,6 +8321,10 @@ input[type=text] {
 
 	.wrapper {
 		margin-left: 240px;
+	}
+	.course-content {
+		margin-right: 400px;
+		margin-left: 0;
 	}
 
 	.chapter-list ~ .ng-star-inserted .wrapper {
@@ -8325,9 +8349,12 @@ input[type=text] {
 	#sidekickToggle:checked ~ .chapterListToggle {
 		right: 0;
 	}
-
+.minify {
+	right:0;
+}
 	.wrapper__minify {
 		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
@@ -12644,7 +12671,7 @@ a.rmv-btn i {
 }
 
 .ttl121 .breadcrumb {
-    background-color: #fff !important;
+    background-color: transparent !important;
 	padding: 0 !important;
 }
 
@@ -14925,7 +14952,11 @@ a.rmv-btn i {
     box-shadow: none;
     width: 100%;
     margin-top: 64px;
-    text-align: center;
+	text-align: center;
+	overflow: hidden;
+}
+.contact_map iframe{
+max-width: 100%;
 }
 
 .contact_map #map {
@@ -15995,16 +16026,19 @@ select:invalid { color: #e5e5e5; }
 #notification-dropdown:hover .menu, #message-dropdown:hover .menu, #account-dropdown:hover .menu , #language:hover .menu{
 	display:block;
 }
+.rtl .uil-angle-right.collapse_menu--icon {
+    transform: rotateY(180deg);
+}
 
 
 @media (min-width: 1600px){
 .col-bg {
-    -ms-flex-preferred-size: 0;
-    flex-basis: 0;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    min-width: 0;
-    max-width: 100%;
+    -ms-flex-preferred-size: 0 !important;
+    flex-basis: 0 !important;
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 }
 }
 
@@ -16109,20 +16143,20 @@ select:invalid { color: #e5e5e5; }
 	.accept-btn {
 		color: #28a745;
 		background-color: #f7f7f7;
-		padding: 10px;
+		padding: 7px 15px;
 		border: 1px solid #3ca745;
-		border-radius: 20px;
+		border-radius: 30px;
 	}
 	.reject-btn {
 		color: #c8302f;
 		background-color: #ffeced2e;
-		padding: 10px;
+		padding: 7px 15px;
 		border: 1px solid #c8302f;
-		border-radius: 20px;
+		border-radius: 30px;
 	}
 	.accept-btn i , .reject-btn i {
-		font-size: 22px;
-		vertical-align: middle;
+		font-size: 17px;
+		/* vertical-align: middle; */
 	}
 
 	/* //modal */
@@ -16167,4 +16201,13 @@ select:invalid { color: #e5e5e5; }
 		.confirm .modal-dialog {
 			width: 400px;
 		}
+	}
+	.step-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		
+	}
+	.steps_btn {
+		margin-top: 30px;
 	}

@@ -1,29 +1,33 @@
 <!-- Header Start -->
-<input type="checkbox" id="sidekickToggle">
+<!-- <input type="checkbox" id="sidekickToggle">
 <label class="sidekick-toggle collapse_menu" for="sidekickToggle">
     <i class="uil uil-bars collapse_menu--icon "></i>
     <span class="collapse_menu--label"></span>
-</label>
+</label> -->
 <header class="db-header clearfix">
+    <button id="collapse_menu" class="collapse_menu">
+        <i class="uil uil-bars collapse_menu--icon "></i>
+        <span class="collapse_menu--label"></span>
+    </button>
     <div class="main_logo" id="logo">
-        <a href="index.html"><img src="assets/images/logo-inner.png" alt=""></a>
-        <a href="index.html"><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="assets/images/logo-inner.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
         <span>Smart Academy</span>
     </div>
-    <div class="search120">
+    <!-- <div class="search120">
         <div class="ui search">
           <div class="ui left icon input swdh10">
             <input class="prompt srch10" type="text" placeholder="Search for Courses, Students, Tests and more..">
             <i class='uil uil-search-alt icon icon1'></i>
           </div>
         </div>
-    </div>
+    </div> -->
     <div class="header_right">
         <ul>
-            <li id="message-dropdown" class="ui">
-                <a href="#" class="option_links"><i class='uil uil-envelope-alt'></i><span class="noti_count">3</span></a>
+            <!-- <li id="message-dropdown" class="ui">
+                <a  class="option_links"><i class='uil uil-envelope-alt'></i><span class="noti_count">3</span></a>
                 <div class="menu drop-menu">
-                    <a href="#" class="channel_my item">
+                    <a  class="channel_my item">
                         <div class="profile_link">
                             <img src="assets/images/left-imgs/img-6.jpg" alt="">
                             <div class="pd_content">
@@ -33,7 +37,7 @@
                             </div>							
                         </div>							
                     </a>
-                    <a href="#" class="channel_my item">
+                    <a  class="channel_my item">
                         <div class="profile_link">
                             <img src="assets/images/left-imgs/img-5.jpg" alt="">
                             <div class="pd_content">
@@ -43,7 +47,7 @@
                             </div>							
                         </div>							
                     </a>
-                    <a href="#" class="channel_my item">
+                    <a  class="channel_my item">
                         <div class="profile_link">
                             <img src="assets/images/left-imgs/img-8.jpg" alt="">
                             <div class="pd_content">
@@ -57,9 +61,9 @@
                 </div>
             </li>
             <li id="notification-dropdown" class="ui">
-                <a href="#"  class="option_links"><i class='uil uil-bell'></i><span class="noti_count">3</span></a>
+                <a   class="option_links"><i class='uil uil-bell'></i><span class="noti_count">3</span></a>
                 <div class="menu drop-menu">
-                    <a href="#" class="channel_my item">
+                    <a  class="channel_my item">
                         <div class="profile_link">
                             <img src="assets/images/left-imgs/img-1.jpg" alt="">
                             <div class="pd_content">
@@ -69,7 +73,7 @@
                             </div>							
                         </div>							
                     </a>
-                    <a href="#" class="channel_my item">
+                    <a  class="channel_my item">
                         <div class="profile_link">
                             <img src="assets/images/left-imgs/img-2.jpg" alt="">
                             <div class="pd_content">
@@ -79,7 +83,7 @@
                             </div>							
                         </div>							
                     </a>
-                    <a href="#" class="channel_my item">
+                    <a  class="channel_my item">
                         <div class="profile_link">
                             <img src="assets/images/left-imgs/img-9.jpg" alt="">
                             <div class="pd_content">
@@ -90,36 +94,37 @@
                     </a>
                     <a class="vbm_btn" href="instructor_notifications.html">View All <i class='uil uil-arrow-right'></i></a>
                 </div>
-            </li>
+            </li> -->
             <li id="language" class="ui">
-                <a href="#" class="option_links"><i class="uil uil-globe"></i></a>
+                <a  class="option_links"><i class="uil uil-globe"></i></a>
                 <div class="menu drop-menu">
-                    <a href="/" class="item channel_item">English</a>
-                    <a href="/" class="item channel_item">Arabic</a>
+                    <a (click)="changeLang('en')" class="item channel_item">English</a>
+                    <a (click)="changeLang('ar')" class="item channel_item">Arabic</a>
                 </div>
             </li>
             <li id="account-dropdown" class="ui">
-                <a href="#" class="opts_account">
+                <a  class="opts_account">
                     <img src="assets/images/hd_dp.jpg" alt="">
                 </a>
                 <div class="menu drop-menu">
                     <div class="channel_my">
                         <div class="profile_link">
-                            <img src="assets/images/hd_dp.jpg" alt="">
+                            <!-- <img src="assets/images/hd_dp.jpg" alt=""> -->
                             <div class="pd_content">
                                 <div class="rhte85">
-                                    <h6>Joginder Singh</h6>
+                                    <h6>{{getName() || ""}}</h6>
                                     <div class="mef78" title="Verify">
                                         <i class='uil uil-check-circle'></i>
                                     </div>
                                 </div>
-                                <span>gambol943@gmail.com</span>
-                            </div>							
+                                <span>{{getEmail() || ""}}</span>
+                            </div>
                         </div>
-                        <a href="my_instructor_profile_view.html" class="dp_link_12">View Instructor Profile</a>						
+                        <!-- <a href="my_instructor_profile_view.html" class="dp_link_12">View Instructor Profile</a>						 -->
                     </div>
-                    <div class="night_mode_switch__btn">
-                        <a href="#" id="night-mode" class="btn-night-mode">
+
+                    <!-- <div class="night_mode_switch__btn">
+                        <a  id="night-mode" class="btn-night-mode">
                             <i class="uil uil-moon"></i> Night mode
                             <span class="btn-night-mode-switch">
                                 <span class="uk-switch-button"></span>
@@ -127,8 +132,9 @@
                         </a>
                     </div>
                     <a  class="item channel_item">Help</a>
-                    <a  class="item channel_item">Send Feedback</a>
+                    <a  class="item channel_item">Send Feedback</a> -->
                     <a (click)="signOut()" class="item channel_item">Sign Out</a>
+               
                 </div>
             </li>
         </ul>
@@ -141,19 +147,19 @@
         <div class="left_section">
             <ul>
                 <li class="menu--item">
-                    <a href="admin_instructor_list.html" class="menu--link " title="Instractors Request List">
+                    <a [routerLink]="['instructors']" routerLinkActive="active"  class="menu--link " title="Instructors Request List">
                         <i class="uil uil-user-check menu--icon"></i>
-                        <span class="menu--label"> Instractors Request List</span>
+                        <span class="menu--label">Instructors Request List</span>
                     </a>
                 </li>
                 <li class="menu--item">
-                    <a href="admin_student_courses.html" class="menu--link active" title="Student Payment">
+                    <a [routerLink]="['students']" routerLinkActive="active"  class="menu--link " title="Student Payment">
                         <i class="uil uil-money-withdrawal menu--icon"></i>
                         <span class="menu--label">Student Payment</span>
                     </a>
                 </li>
                 <li class="menu--item">
-                    <a href="admin_confirm_courses.html" class="menu--link" title="Student Payment">
+                    <a [routerLink]="['courses']" routerLinkActive="active"  class="menu--link" title="Student Payment">
                         <i class="uil uil-check-circle menu--icon"></i>
                         <span class="menu--label">Course Confirmation</span>
                     </a>

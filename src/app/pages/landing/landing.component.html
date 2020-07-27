@@ -22,7 +22,7 @@
                 <a href="#" class="dropdown-item">math</a></div>
             </li>
             <!-- Link-->
-            <li class="nav-item"> <a href="#" class="nav-link">Contact Us</a></li>
+            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"  class="nav-link">Contact Us</a></li>
           </ul>
           <ul *ngIf="!_auth.isLoggedIn" class="navbar-nav">
             <li [routerLink]="['/login']" class="nav-item"><a data-toggle="modal" data-target="#login"

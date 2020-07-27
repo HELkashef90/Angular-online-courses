@@ -6425,7 +6425,12 @@ table {
 
 .view__img {
     width: 100%;
-    float: left;
+	float: left;
+	overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .view__img img {
@@ -7928,4 +7933,16 @@ i.icon8 {
     top: 35%;
     right: 13px;
     position: absolute;
+}
+
+/* steper angular version*/
+.mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: transparent;
+}
+.mat-horizontal-content-container {
+    padding: 0;
+}
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: #c8302f;
+    color: #fff;
 }
