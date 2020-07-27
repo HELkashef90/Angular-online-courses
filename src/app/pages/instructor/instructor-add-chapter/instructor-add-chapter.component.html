@@ -30,7 +30,7 @@
                                             </div>
                                             <select formControlName="course">
                                                 <option disabled selected value="">{{"Select Course" | translate}}</option>
-                                                <option *ngFor="let course of instructorCourses" value="{{course.id}}">{{course.course_title}}</option>
+                                                <option *ngFor="let course of instructorCourses" value="{{course.course_id}}">{{course.course_title}}</option>
                                                 
                                             </select>
                                         </div>
@@ -103,6 +103,11 @@
                                                                     <th class="text-center" scope="col">{{"Chapters" | translate}}
                                                                     </th>
                                                                     <th class="cell-ta">{{"Title" | translate}}</th>
+                                                                    <th class="cell-ta">{{"Course" | translate}}</th>
+                                                                    <th class="cell-ta">{{"lectures" | translate}}</th>
+                                                                    <th class="cell-ta">{{"sort" | translate}}</th>
+                                                                    <th class="cell-ta">{{"count" | translate}}</th>
+                                                                    <th class="cell-ta">{{"fee" | translate}}</th>
                                                                     <!-- <th class="text-center" scope="col">videos
                                                                     </th> -->
                                                                     <!-- <th class="text-center" scope="col">File
@@ -114,8 +119,13 @@
                                                             <tbody>
                                                                 <tr *ngFor="let chapter of chapters; let index = index">
                                                                     <td class="text-center">{{index + 1}}</td>
-                                                                    <td class="cell-ta">{{chapter.chapter_title}}
-                                                                    </td>
+                                                                    <td class="cell-ta">{{chapter.chapter_title}}</td>
+
+                                                                    <td class="cell-ta">{{chapter.course_title}}</td>
+                                                                    <td class="cell-ta">{{chapter.chapter_num_of_video}}</td>
+                                                                    <td class="cell-ta">{{chapter.chapter_sort_number}}</td>
+                                                                    <td class="cell-ta">{{chapter.content_count}}</td>
+                                                                    <td class="cell-ta">{{chapter.chapter_fee}}</td>
                                                                     <!-- <td class="text-center">{{chapter.num_of_video || 'null'}}</td> -->
                                                                     <!-- <td class="text-center">0</td> -->
                                                                     <td class="text-center">

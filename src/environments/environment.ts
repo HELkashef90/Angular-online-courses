@@ -12,7 +12,7 @@ export const environment = {
   _createChapter: `${serverUrl}course-chapter/create`,
   _getChaptersByCourseId: `${serverUrl}course-chapter/by-course/`,
   _createLecture: `${serverUrl}course-chapter-content/create`,
-  _getCourses: `${serverUrl}course/by-instructor`,
+  _getCourses: `${serverUrl}course/instructor`,
   _logOut: `${serverUrl}auth/logout`,
   _getChaptersByInstructor: `${serverUrl}course-chapter/by-instructor`,
   _getLecturesByInstructor: `${serverUrl}course-chapter-content/by-instructor`,
@@ -39,7 +39,9 @@ export const environment = {
   _rejectInstructor: `${serverUrl}instructor/deactivate/`,
   _approveCourse: `${serverUrl}course/activate/`,
   _rejectCourse : `${serverUrl}course/deactivate/`,
-  _getEnrollmentCourses: `${serverUrl}student-enrolled/all-courses`
+  _getEnrollmentCourses: `${serverUrl}student-enrolled/all-courses`,
+  _getStudyCourse: `${serverUrl}student-enrolled/all-chapters-contents/`
+
 }
 /*
  * For easier debugging in development mode, you can import the following file

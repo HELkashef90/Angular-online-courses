@@ -22,4 +22,9 @@ export class CourseService {
   getEnrollmentCourse() {
     return this.httpClient.get(environment._getEnrollmentCourses)
   }
+
+  getStudyCourse(id) {
+    return this.httpClient.get(environment._getStudyCourse + id)
+  }
+
 }

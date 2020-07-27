@@ -15,9 +15,11 @@
 									<tr>
 										<th class="text-center" scope="col">{{"Item No." | translate}}</th>
 										<th>{{"Title" | translate}}</th>
-										<th class="text-center" scope="col">{{"Publish Date" | translate}}</th>
+										<th class="text-center" scope="col">{{"create Date" | translate}}</th>
 										<!-- <th class="text-center" scope="col">Sales</th> -->
 										<th class="text-center" scope="col">{{"chapters" | translate}}</th>
+										<th class="text-center" scope="col">{{"level" | translate}}</th>
+										<th class="text-center" scope="col">{{"language" | translate}}</th>
 										<!-- <th class="text-center" scope="col">Category</th> -->
 										<th class="text-center" scope="col">{{"Status" | translate}}</th>
 										<th class="text-center" scope="col">{{"Action" | translate}}</th>
@@ -27,9 +29,14 @@
 									<tr *ngFor="let course of instructorCourses; let index = index">
 										<td class="text-center">{{index + 1}}</td>
 										<td>{{course.course_title}}</td>
-										<td class="text-center">{{course.createdDate | date : 'medium'}}</td>
+										<td class="text-center">{{course.course_created_date | date : 'medium'}}</td>
 										<!-- <td class="text-center">{{course.sales}}</td> -->
-										<td class="text-center">{{course.num_of_chapters}}</td>
+										<td class="text-center">{{course.chapter_count}}</td>
+										<td class="text-center" *ngIf="course.level === 1">{{"1st" | translate}}</td>
+										<td class="text-center" *ngIf="course.level === 2">{{"2nd" | translate}}</td>
+										<td class="text-center" *ngIf="course.level === 3">{{"3rd" | translate}}</td>
+										<td class="text-center" *ngIf="course.langauge === 1">{{"Arabic" | translate}}</td>
+										<td class="text-center" *ngIf="course.langauge === 2">{{"English" | translate}}</td>
 										<!-- <td class="text-center"><a href="#">{{course.category}}</a></td> -->
 										<td *ngIf="course.course_status === 0" class="text-center"><b class="">{{"Draft" | translate}}</b></td>
 										<td *ngIf="course.course_status === 1" class="text-center"><b class="">{{"Pending" | translate}}</b></td>

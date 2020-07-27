@@ -80,7 +80,7 @@
                         </div>
                         <select formControlName="course" (change)="onCourseSelect($event)">
                             <option disabled  value="">{{"Select Course" | translate}}</option>
-                            <option *ngFor="let course of instructorCourses" value="{{course.id}}">
+                            <option *ngFor="let course of instructorCourses" value="{{course.course_id}}">
                                 {{course.course_title}}</option>
 
                         </select>

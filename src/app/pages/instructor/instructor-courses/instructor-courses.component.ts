@@ -13,7 +13,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class InstructorCoursesComponent implements OnInit {
   loading: boolean;
-  instructorCourses: any;
+  instructorCourses = [];
   modalRef: BsModalRef;
 
   constructor(private _courseService: CreateCourseService,
@@ -30,7 +30,7 @@ export class InstructorCoursesComponent implements OnInit {
     this._courseService.getCourses().subscribe(res => {
       this.loading = false
       console.log(res['body']);
-      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body'] : null;
+      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
     }, err => {
       this.loading = false
       console.log(err);
@@ -39,8 +39,8 @@ export class InstructorCoursesComponent implements OnInit {
   }
 
   ocDeleteClick(course) {
-    if (confirm('Are you Sure?')) {
-      this._courseService.deleteCourse(course.id).subscribe(res => {
+    if (confirm('Are you Sure?')) { 
+      this._courseService.deleteCourse(course.course_id).subscribe(res => {
         console.log(res);
         this._toastService.showToast(this.translate.instant("Course deleted"), "info")
         this.getCourses()
@@ -71,6 +71,6 @@ export class InstructorCoursesComponent implements OnInit {
     // this.router.navigate(['/instructor/editCourse'])
   }
   ocViewCourseClick(course) {
-    this.router.navigate(['/instructor/viewCourse', course.id])
+    this.router.navigate(['/instructor/viewCourse', course.course_id])
   }
 }

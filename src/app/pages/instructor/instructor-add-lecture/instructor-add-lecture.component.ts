@@ -23,7 +23,7 @@ export class InstructorAddLectureComponent implements OnInit {
   selectedVideo: any;
   uploading: boolean = false;
   uploadingPercentage = 0;
-  instructorCourses: any;
+  instructorCourses = [];
   createLecture: any;
   lectures: any;
   editMode: boolean;
@@ -32,7 +32,7 @@ export class InstructorAddLectureComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
     private _toastService: ToastService,
     private _courseService: CreateCourseService,
-    private translate : TranslateService) { }
+    private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -44,7 +44,7 @@ export class InstructorAddLectureComponent implements OnInit {
     this._courseService.getCourses().subscribe(res => {
       this.loading = false
       console.log(res['body']);
-      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body'] : null;
+      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
     }, err => {
       this.loading = false
       console.log(err);
@@ -137,9 +137,11 @@ export class InstructorAddLectureComponent implements OnInit {
     lectureForm.append('chapterContent', JSON.stringify(
       {
         "courseChapter": this.lectureForm.get('chapter').value,
-        "time_required_in_sec": this.videoDuration * 60,
+        "content_time_required_in_sec": this.videoDuration * 60,
         "content_title": this.lectureForm.get('lectureTitle').value,
-        "description": this.lectureForm.get('description').value
+        "content_description": this.lectureForm.get('description').value,
+        "content_sort_number": this.lectureForm.get('sort').value,
+
       })
     )
     lectureForm.append('videoFile', this.selectedVideo);
@@ -173,7 +175,9 @@ export class InstructorAddLectureComponent implements OnInit {
         "id": this.selectedLectureToEdit.id,
         "courseChapter": this.lectureForm.get('chapter').value,
         "content_title": this.lectureForm.get('lectureTitle').value,
-        "description": this.lectureForm.get('description').value
+        "content_description": this.lectureForm.get('description').value,
+        "content_sort_number": this.lectureForm.get('sort').value,
+
       })
     )
     // lectureForm.append('videoFile', this.selectedVideo);

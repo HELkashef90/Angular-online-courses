@@ -14,84 +14,39 @@
 <!-- Left Sidebar Start -->
 <nav class="vertical_nav chapter-list">
     <div class="left_section menu_left" id="js-menu">
-        <h4 class=header>{{"table of content " | translate}}<span class="right">2h :20m</span></h4>
+        <h4 class=header>{{"table of content" | translate}}<span class="right"></span></h4>
         <div class="left_section">
             <ul>
-                <li class="menu--item  menu--item__has_sub_menu">
-                    <input type="checkbox" id="chapter1" class="menu-collapse collapse">
-                    <label class="menu--link collapse-title" for="chapter1">
-                        Chapter 1
-                        <span>Chapter Name Chapter Name Chapter Name</span>
+                <li *ngFor="let chapter of chaptersArray; let index = index"
+                    class="menu--item  menu--item__has_sub_menu">
+                    <input type="checkbox" id="{{chapter.studentEnrolledChapter.chapter_Id}}"
+                        class="menu-collapse collapse">
+                    <label class="menu--link collapse-title" for="{{chapter.studentEnrolledChapter.chapter_Id}}">
+                        {{"Chapter" | translate}} {{index +1 }}
+                        <span> {{chapter.studentEnrolledChapter.chapter_title}}
+                        </span>
                     </label>
                     <ul class="sub_menu">
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
+                        <li (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,'LectureName','lectureDesc',441884767)"
+                            class="sub_menu--item">
+                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
                                 lectus eget, gravida elit. <span>4h 30m</span></a>
                         </li>
                         <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
+                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
                                 lectus eget, gravida elit. <span>4h 30m</span></a>
                         </li>
                         <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
+                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
                                 lectus eget, gravida elit. <span>4h 30m</span></a>
                         </li>
                         <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
+                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
                                 lectus eget, gravida elit. <span>4h 30m</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu--item  menu--item__has_sub_menu">
-                    <input type="checkbox" id="chapter2" class="menu-collapse collapse">
-                    <label class="menu--link collapse-title" for="chapter2">
-                        Chapter 2
-                        <span>Chapter Name Chapter Name Chapter Name</span>
-                    </label>
-                    <ul class="sub_menu">
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu--item  menu--item__has_sub_menu">
-                    <input type="checkbox" id="chapter3" class="menu-collapse collapse">
-                    <label class="menu--link collapse-title" for="chapter3">
-                        Chapter 3
-                        <span>Chapter Name Chapter Name Chapter Name</span>
-                    </label>
-                    <ul class="sub_menu">
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a  class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
         </div>
 
@@ -103,11 +58,12 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="video-player-container">
-                <video width="100%" controls>
+                <video [hidden]="showPlayer" width="100%" controls>
                     <source src="mov_bbb.mp4" type="video/mp4">
                     <source src="mov_bbb.ogg" type="video/ogg">
                     Your browser does not support HTML video.
                 </video>
+                <div class="vimeoContainer" [hidden]="!showPlayer" id="lectureContainer"></div>
             </div>
         </div>
         <div class="container-fluid">
@@ -115,8 +71,8 @@
             <div class="row">
                 <div class="col-12 col-lg-8 offset-lg-2">
                     <div class="grp_titles">
-                        <h2 class="">Chapter Name Chapter Name</h2>
-                        <span>Course NAme / Lecture Name</span>
+                        <h2 class="">{{chapterName}}</h2>
+                        <span>{{courseName}} {{lectureName}} </span>
                     </div>
                     <p>Aliquam imperdiet faucibus mauris sed finibus. Nam rhoncus laoreet rutrum. Mauris pharetra
                         laoreet pulvinar. Morbi quis sagittis libero, nec pharetra dui. Mauris mattis aliquam malesuada.
@@ -126,44 +82,7 @@
                         blandit maximus augue. Suspendisse facilisis laoreet
                         odio sodales maximus. Donec posuere vel nulla vel dapibus. Etiam blandit et nunc quis ultrices.
                     </p>
-                    <h5>Vivamus et neque aliquam, sodales turpis vitae, rutrum quam.</h5>
-                    <p>Quisque at malesuada enim, non elementum sem. Duis a finibus nulla. Aenean non vulputate tortor.
-                        Nam vitae eros erat. Integer egestas tempus leo ut ornare. Nam at malesuada urna. Sed felis
-                        neque, commodo sit amet magna quis, varius dictum
-                        velit. Integer sit amet est mi. Vestibulum vitae ante porta, pharetra arcu sit amet, accumsan
-                        nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut
-                        nibh felis, porta et ultrices vel, tincidunt a
-                        tortor. Pellentesque suscipit, sem id luctus scelerisque, risus lacus lacinia risus, ac dapibus
-                        neque tortor eu ante. Curabitur accumsan sem nibh, vel feugiat ante pellentesque in. Class
-                        aptent taciti sociosqu ad litora torquent per conubia
-                        nostra, per inceptos himenaeos. Cras dictum in turpis eu suscipit. Duis eu fringilla risus, et
-                        gravida ipsum.</p>
-                    <ul>
-                        <li>Etiam in dolor quis neque interdum hendrerit non non ex.</li>
-                        <li>Maecenas ac erat aliquam urna semper consectetur.</li>
-                        <li>Morbi quis nisl sit amet lectus feugiat placerat.</li>
-                        <li>In sed arcu eu mi efficitur mattis ut non nulla.</li>
-                    </ul>
-                    <p>Aliquam imperdiet faucibus mauris sed finibus. Nam rhoncus laoreet rutrum. Mauris pharetra
-                        laoreet pulvinar. Morbi quis sagittis libero, nec pharetra dui. Mauris mattis aliquam malesuada.
-                        Pellentesque habitant morbi tristique senectus et netus
-                        et malesuada fames ac turpis egestas. Nulla facilisi. Curabitur in molestie lectus, bibendum
-                        molestie elit. Morbi porttitor posuere nunc eget gravida. Ut odio risus, congue sed dolor vitae,
-                        blandit maximus augue. Suspendisse facilisis laoreet
-                        odio sodales maximus. Donec posuere vel nulla vel dapibus. Etiam blandit et nunc quis ultrices.
-                    </p>
-                    <h5>Vivamus et neque aliquam, sodales turpis vitae, rutrum quam.</h5>
-                    <p>Quisque at malesuada enim, non elementum sem. Duis a finibus nulla. Aenean non vulputate tortor.
-                        Nam vitae eros erat. Integer egestas tempus leo ut ornare. Nam at malesuada urna. Sed felis
-                        neque, commodo sit amet magna quis, varius dictum
-                        velit. Integer sit amet est mi. Vestibulum vitae ante porta, pharetra arcu sit amet, accumsan
-                        nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut
-                        nibh felis, porta et ultrices vel, tincidunt a
-                        tortor. Pellentesque suscipit, sem id luctus scelerisque, risus lacus lacinia risus, ac dapibus
-                        neque tortor eu ante. Curabitur accumsan sem nibh, vel feugiat ante pellentesque in. Class
-                        aptent taciti sociosqu ad litora torquent per conubia
-                        nostra, per inceptos himenaeos. Cras dictum in turpis eu suscipit. Duis eu fringilla risus, et
-                        gravida ipsum.</p>
+
                 </div>
 
             </div>

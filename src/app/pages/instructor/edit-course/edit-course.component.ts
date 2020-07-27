@@ -66,7 +66,7 @@ export class EditCourseComponent implements OnInit {
       courseDescription: [this.selectedCourseToEdit.course_description, [Validators.required]],
       // language: [this.selectedCourseToEdit, [Validators.required]],
       grade: [this.selectedCourseToEdit.level, [Validators.required]],
-      subject: [this.selectedCourseToEdit.subjectName, [Validators.required]],
+      subject: [this.selectedCourseToEdit.subject_name, [Validators.required]],
     });
     this.promoForm = this._formBuilder.group({
       coverImage: [''],

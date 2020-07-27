@@ -15,7 +15,7 @@ export class InstructorAddChapterComponent implements OnInit {
   instructorCourses: any;
   chapterForm: FormGroup
   showInfoErrors: boolean = false;
-  chapters: any;
+  chapters = [];
   editMode: boolean;
   selectedChapterToEdit: any;
 
@@ -51,7 +51,7 @@ export class InstructorAddChapterComponent implements OnInit {
     this._courseService.getCourses().subscribe(res => {
       this.loading = false
       console.log(res['body']);
-      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body'] : null;
+      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
     }, err => {
       this.loading = false
       console.log(err);
@@ -81,6 +81,8 @@ export class InstructorAddChapterComponent implements OnInit {
       "chapter_title": this.chapterForm.get('chapterTitle').value,
       "chapter_description": this.chapterForm.get('description').value,
       "chapter_fee": this.chapterForm.get('price').value,
+      "chapter_sort_number" : this.chapterForm.get('sort').value
+
     }
     this._createChapterService.createChapter(chapterForm).subscribe(res => {
       console.log(res);
@@ -105,6 +107,7 @@ export class InstructorAddChapterComponent implements OnInit {
       "chapter_title": this.chapterForm.get('chapterTitle').value,
       "chapter_description": this.chapterForm.get('description').value,
       "chapter_fee": this.chapterForm.get('price').value,
+      "chapter_sort_number" : this.chapterForm.get('sort').value
     }
     this._createChapterService.updateChapter(chapterForm).subscribe(res => {
       console.log(res);
