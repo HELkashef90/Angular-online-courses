@@ -101,16 +101,25 @@ export class UserStudyCourseComponent implements OnInit {
 
 
     //sidebar
-    var sidebarBtn = document.getElementById('collapse_menu');
+    // var sidebarBtn = document.getElementById('collapse_menu');
 
-    sidebarBtn.onclick = function menuAnimation() {
-      //alert('working')
-      var verticalSideBar = document.querySelector(".vertical_nav");
-      verticalSideBar.classList.toggle("vertical_nav__minify");
-      var wrapper = document.querySelector(".wrapper");
-      wrapper.classList.toggle("wrapper__minify");
-      var sidekickToggle = document.querySelector(".chapterListToggle");
+    // sidebarBtn.onclick = function menuAnimation() {
+    //   //alert('working')
+    //   var verticalSideBar = document.querySelector(".vertical_nav");
+    //   verticalSideBar.classList.toggle("vertical_nav__minify");
+    //   var wrapper = document.querySelector(".wrapper");
+    //   wrapper.classList.toggle("wrapper__minify");
+    //   var sidekickToggle = document.querySelector(".chapterListToggle");
+    //   sidekickToggle.classList.toggle("minify");
+    // }
+  }
+
+  collapse(){
+    var verticalSideBar = document.querySelector(".vertical_nav");
+    verticalSideBar.classList.toggle("vertical_nav__minify");
+    var wrapper = document.querySelector(".wrapper");
+    wrapper.classList.toggle("wrapper__minify");
+    var sidekickToggle = document.querySelector(".chapterListToggle");
       sidekickToggle.classList.toggle("minify");
-    }
   }
 }
