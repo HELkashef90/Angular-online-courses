@@ -9,7 +9,7 @@ import { RouterStateSnapshot, Router, ActivatedRoute, NavigationEnd } from '@ang
   providedIn: 'root'
 })
 export class HandleGlobalHttpErrorsService {
-
+  unRedirectRoutes = ['/signup', '/login']
   constructor(private _authService: AuthService, private _handleGlobalErrorService: HandleGlobalErrorService, private _toast: ToastService, private router: Router, private route: ActivatedRoute) { }
   handleError(error: HttpErrorResponse) {
 
@@ -20,12 +20,16 @@ export class HandleGlobalHttpErrorsService {
       //refresh token
       // this._authService.refreshToken()
       this._authService.setUserUnAuthenticated()
+      if (this.unRedirectRoutes.includes(location.href.split('#')[1])) {
+        this._authService.signOut();
+        return
+      }
       this._authService.signOut(location.href.split('#')[1]);
       return
 
     } else if (error.error.message) {
       this._toast.showToast(error.error.message, "error")
-    } else if (error.status >= 500) {
+    } else if (error.status >= 500 || error.status < 400) {
       this._handleGlobalErrorService.handleUnexpectedError();
     }
   }

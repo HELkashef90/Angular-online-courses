@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private translate: TranslateService) { }
   ngOnInit(): void {
     //  this._authService.authUser()
-    
+
 
   }
   onLoginClick(event, userName, password) {
@@ -66,11 +66,10 @@ export class LoginComponent implements OnInit {
       this.loading = false;
       if (this.route.snapshot.queryParams['redirectUrl']) {
         this.router.navigateByUrl(this.route.snapshot.queryParams['redirectUrl'])
-
-      } else {
-
-        this._authService.redirectUserToDashboard(res['usertype'])
+        return
       }
+      this._authService.redirectUserToDashboard(res['usertype'])
+      
     }, (err) => {
       console.log(err.status);
       if (err.status === 403) {

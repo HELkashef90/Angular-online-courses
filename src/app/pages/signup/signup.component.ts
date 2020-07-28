@@ -92,7 +92,7 @@ export class SignupComponent implements OnInit {
       // address: new FormControl(null, [Validators.required, Validators.minLength(11)]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       // city: new FormControl(null, [Validators.required]),
-      signAs: new FormControl(null, [Validators.required]),
+      signAs: new FormControl('1', [Validators.required]),
     });
   }
   ngAfterViewInit() { }
