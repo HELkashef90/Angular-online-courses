@@ -14,7 +14,7 @@
 <!-- Left Sidebar Start -->
 <nav class="vertical_nav chapter-list">
     <div class="left_section menu_left" id="js-menu">
-        <h4 class=header>{{"table of content" | translate}}<span class="right"></span></h4>
+        <h4 class=header>{{"Table of content" | translate}}<span class="right"></span></h4>
         <div class="left_section">
             <ul>
                 <li *ngFor="let chapter of chaptersArray; let index = index"
@@ -27,22 +27,11 @@
                         </span>
                     </label>
                     <ul class="sub_menu">
-                        <li (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,'LectureName','lectureDesc',441884767)"
+                        <li *ngFor="let lecture of chapter.studentEnrolledContent"
+                            (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
                             class="sub_menu--item">
-                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a class="sub_menu--link">Etiam eu nibh vehicula, rhoncus
-                                lectus eget, gravida elit. <span>4h 30m</span></a>
+                            <a
+                                class="sub_menu--link">{{lecture.content_title}}<span>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span></a>
                         </li>
                     </ul>
                 </li>
@@ -74,13 +63,7 @@
                         <h2 class="">{{chapterName}}</h2>
                         <span>{{courseName}} {{lectureName}} </span>
                     </div>
-                    <p>Aliquam imperdiet faucibus mauris sed finibus. Nam rhoncus laoreet rutrum. Mauris pharetra
-                        laoreet pulvinar. Morbi quis sagittis libero, nec pharetra dui. Mauris mattis aliquam malesuada.
-                        Pellentesque habitant morbi tristique senectus et netus
-                        et malesuada fames ac turpis egestas. Nulla facilisi. Curabitur in molestie lectus, bibendum
-                        molestie elit. Morbi porttitor posuere nunc eget gravida. Ut odio risus, congue sed dolor vitae,
-                        blandit maximus augue. Suspendisse facilisis laoreet
-                        odio sodales maximus. Donec posuere vel nulla vel dapibus. Etiam blandit et nunc quis ultrices.
+                    <p>{{lectureDesc}}
                     </p>
 
                 </div>

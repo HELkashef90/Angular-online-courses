@@ -15,7 +15,7 @@ import { CourseService } from '../services/course/course.service';
 export class UserStudyCourseComponent implements OnInit {
   courseId: string;
   chaptersArray = [];
-  chapterName = this.translate.instant('please select lecture');
+  chapterName = this.translate.instant('Please select a lecture');
   courseName: any;
   lectureName: any;
   lectureDesc: any;
@@ -46,7 +46,7 @@ export class UserStudyCourseComponent implements OnInit {
     this.chapterName = chapterName;
     this.courseName = courseName + '/';
     this.lectureName = lectureName;
-    this.lectureDesc = lectureDesc
+    this.lectureDesc = lectureDesc || "No Description"
 
     console.log(lectureVimeoId);
 
