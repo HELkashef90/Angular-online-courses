@@ -142,7 +142,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
       initialState: {
         prompt: this.translate.instant('Are you sure you want to Reject this payment of ') + student.chapter_fee + this.translate.instant(" EGP?"),
         list: [
-          `${this.translate.instant('student name:')} ${student.first_name} ${student.last_name}`,
+          `${this.translate.instant('student name:')} ${student.first_name} ${student?.last_name || ""}`,
           `${this.translate.instant('student mobile number:')} ${student.mobile_no}`,
           `${this.translate.instant('course name:')} ${student.course_title}`,
           `${this.translate.instant('chapter name:')} ${student.chapter_title}`

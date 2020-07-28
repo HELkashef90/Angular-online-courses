@@ -55,8 +55,7 @@ rtl style
 	display: block;
 }
 
-.rtl ::-moz-selection {
-    /* Code for Firefox */
+/* .rtl ::-moz-selection {
 	background-color: #cce2ff;
 	color: rgba(0, 0, 0, 0.87);
 }
@@ -64,11 +63,16 @@ rtl style
 .rtl ::selection {
 	background-color: #cce2ff;
 	color: rgba(0, 0, 0, 0.87);
-}
+} */
 .btn-primary {
     color: #fff;
-    background-color: #cc2d37;
-    border-color: #cc2d37;
+	background-color: #cc2d37 !important;
+    border-color: #cc2d37 !important;
+}
+.btn-:hover {
+    color: #fff !important;
+    background-color: #29334e !important;
+    border-color: #29334e !important;
 }
 .rtl ol, .rtl ul {
 	list-style: none;
@@ -356,9 +360,9 @@ direction: rtl;
 		margin-right: 0;
 		margin-left: 400px;
 	}
-	.rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
+	/* .rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
 		margin-right: 0;
-	}
+	} */
 	.rtl .chapter-list ~ .wrapper {
 		margin-right: 0;
 		margin-left: 400px;
@@ -373,7 +377,7 @@ direction: rtl;
 	}
 
 
-	.rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
+	/* .rtl #sidekickToggle:checked ~ .ng-star-inserted .wrapper {
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -381,7 +385,7 @@ direction: rtl;
 	.rtl #sidekickToggle:checked ~ .chapterListToggle {
 		left: 0;
 		right:auto;
-	}
+	} */
 	.rtl .wrapper__minify {
 		margin-right: 0 !important;
 		margin-left: 0 !important;
@@ -1244,7 +1248,8 @@ direction: rtl;
 	bottom: 0;
 	position: absolute;
 	margin-bottom: 10px;
-	left: 0;
+	right: 0;
+	left:auto;
 	margin-left: 10px;
 	color: #fff;
 	background: rgba(51, 51, 51, 0.8);
@@ -1263,7 +1268,7 @@ direction: rtl;
 	float: left;
 	text-align: center;
 	border-radius: 100%;
-	padding: 15px 13px;
+	padding: 15px 10px;
 	font-size: 20px;
 	color: #fff;
 	position: absolute;
@@ -1507,7 +1512,7 @@ direction: rtl;
 	border-radius: 100%;
 	text-align: center;
 	padding: 9px 0;
-	color: #fff;
+	color: #fff !important;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
@@ -1938,7 +1943,7 @@ direction: rtl;
 	font-family: 'helvetica', sans-serif;
 	/* display: block; */
 	padding-bottom: 10px;
-	color: #fff;
+	color: #fff ;
 }
 
 .rtl .item_f1 a:hover {
@@ -8048,7 +8053,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-::-moz-selection { /* Code for Firefox */
+/* ::-moz-selection { /* Code for Firefox */
 	background-color: #cce2ff;
     color: rgba(0,0,0,.87);
 }
@@ -8056,7 +8061,7 @@ footer, header, hgroup, menu, nav, section {
 ::selection {
 	background-color: #cce2ff;
     color: rgba(0,0,0,.87);
-}
+} */
 
 ol, ul {
 	list-style: none;
@@ -8274,6 +8279,7 @@ body::-webkit-scrollbar-thumb {
 html {
    font-size: 14px;
    height: 100%;
+   width: 100%;
 }
 
 body {
@@ -8284,6 +8290,7 @@ body {
 	color: #29334e;
 	background: #f7f7f7 !important;
 	height: 100%;
+	width:100%;
 }
 
 .menu_left::-webkit-scrollbar {
@@ -8297,7 +8304,10 @@ body {
 input[type=text] {
 	color: #29334e !important;
 }
+.chapterListToggle {
+	position: absolute;
 
+}
 /* --- Preloader --- */
 
 
@@ -8318,7 +8328,9 @@ input[type=text] {
 		margin-top: 10px;
 		float: none;
 	}
-
+	router-outlet {
+		display: none;
+	}
 	.wrapper {
 		margin-left: 240px;
 	}
@@ -8703,7 +8715,13 @@ i.icon1 {
 
 .wrapper {
 	padding: 90px 0 0;
-    transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	min-height: 100%;
+	/* width:100%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
 }
 
 .clearfix:after {
@@ -9894,7 +9912,7 @@ i.icon1 {
     font-family: 'Roboto', sans-serif;
     /* display: block; */
     padding-bottom: 10px;
-    color: #fff;
+    color: #fff !important;
 }
 
 .item_f1 a:hover {
@@ -16197,6 +16215,9 @@ select:invalid { color: #e5e5e5; }
 		height: 40px;
 		border: 1px solid #d4d4d5;
 	}
+	.ui label {
+		margin-bottom: 10px;
+	}
 	@media (min-width: 576px){
 		.confirm .modal-dialog {
 			width: 400px;
@@ -16211,3 +16232,15 @@ select:invalid { color: #e5e5e5; }
 	.steps_btn {
 		margin-top: 30px;
 	}
+	@media (max-width: 991px) {
+		.chapterListToggle {
+			left: auto;
+			right: 0;
+		}
+		.rtl .chapterListToggle {
+			left: 0;
+			right: auto;
+		}
+		
+	}
+	

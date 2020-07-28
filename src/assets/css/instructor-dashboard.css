@@ -1552,6 +1552,7 @@ body.rtl {
 	vertical-align: middle;
 	font-family: 'helvetica', sans-serif;
 	font-weight: 400;
+	
 }
 
 .rtl .gray-s {
@@ -5650,6 +5651,7 @@ table {
     vertical-align: middle;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
+	white-space: nowrap;
 }
 
 .gray-s {

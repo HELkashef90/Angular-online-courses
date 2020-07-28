@@ -1,172 +1,199 @@
 <div class="wrapper">
     <div class="container">
-        <div class="col-lg-12 col-md-12 price_course">
-            <div class="basic_ptitle">
-                <h4>{{"Add lectures" | translate}}</h4>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="st_title"><i class="uil uil-file-plus-alt"></i> Add New Lecture</h2>
             </div>
-            <div class="alert alert-danger" role="alert" *ngIf="showInfoErrors && lectureForm.invalid">
-                <span *ngIf="lectureForm.get('lectureTitle').invalid"> {{"*Please enter a valid lecture title" | translate}}</span><br>
-                <span  *ngIf="lectureForm.get('lectureFile').invalid && !editMode"> {{"*Please select lecture File" | translate}}</span><br>
-                <span *ngIf="lectureForm.get('sort').invalid">{{" *Please enter a valid sort" | translate}}</span><br>
-                <span *ngIf="lectureForm.get('description').invalid">{{" *Please enter a valid description" | translate}}</span><br>
-                <span *ngIf="lectureForm.get('course').invalid"> {{"*Please select course" | translate}}</span><br>
-                <span *ngIf="lectureForm.get('chapter').invalid"> {{"*Please select chapter" | translate}}</span><br>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="course__form">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="view_info10">
+                                <div class="alert alert-danger" role="alert"
+                                    *ngIf="showInfoErrors && lectureForm.invalid">
+                                    <span *ngIf="lectureForm.get('lectureTitle').invalid">
+                                        {{"*Please enter a valid lecture title" | translate}}</span><br>
+                                    <span *ngIf="lectureForm.get('lectureFile').invalid && !editMode">
+                                        {{"*Please select lecture File" | translate}}</span><br>
+                                    <span
+                                        *ngIf="lectureForm.get('sort').invalid">{{" *Please enter a valid sort" | translate}}</span><br>
+                                    <span
+                                        *ngIf="lectureForm.get('description').invalid">{{" *Please enter a valid description" | translate}}</span><br>
+                                    <span *ngIf="lectureForm.get('course').invalid">
+                                        {{"*Please select course" | translate}}</span><br>
+                                    <span *ngIf="lectureForm.get('chapter').invalid">
+                                        {{"*Please select chapter" | translate}}</span><br>
 
-            </div>
-            <form [formGroup]="lectureForm">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="ui search focus mt-30 lbel25">
-                            <label>{{"Lecture Title*" | translate}}</label>
-                            <div class="ui left icon input swdh19">
-                                <input formControlName="lectureTitle" class="prompt srch_explore" type="text"
-                                    placeholder="Insert your lecture title." name="title"
-                                    data-purpose="edit-course-title" maxlength="120" id="lecture[title]" value="">
-                                <div class="badge_num2">{{ 120 - lectureForm.get('lectureTitle')?.value?.length}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div [hidden]="editMode" class="col-lg-4 col-md-6">
-                        <div  class="part_input ui search focus mt-30 lbel25">
-                            <label>{{"Upload Video or File*" | translate}}</label>
-                            <div  class="input-group">
-                                <div class="custom-file">
-                                    <input formControlName="lectureFile" (change)="onFileChange($event)" type="file"
-                                        class="custom-file-input" id="inputGroupFile06">
-                                    <label class="custom-file-label" for="inputGroupFile06">No
-                                       {{" Choose file -
-                                        (Pdf, Video)" | translate}}</label>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="ui search focus mt-30 lbel25">
-                            <label>{{"Sort" | translate}}</label>
-                            <div class="ui left icon input swdh19">
-                                <input formControlName="sort" class="prompt srch_explore" type="number" name="sort"
-                                    min="0" max="100" placeholder="0">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="ui search focus mt-30 lbel25">
-                            <label>{{"Lecture Description*" | translate}}</label>
-                            <div class="course_des_bg">
-                                <div class="textarea_dt">
-                                    <div class="ui form swdh339">
-                                        <div class="field">
-                                            <textarea formControlName="description" rows="5" name="description"
-                                                id="id_part_description" placeholder="Insert description"></textarea>
+                                <form [formGroup]="lectureForm">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-12">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{"Lecture Title*" | translate}}</label>
+                                                <div class="ui left icon input swdh19">
+                                                    <input formControlName="lectureTitle" class="prompt srch_explore"
+                                                        type="text" placeholder="Insert your lecture title."
+                                                        name="title" data-purpose="edit-course-title" maxlength="120"
+                                                        id="lecture[title]" value="">
+                                                    <div class="badge_num2">
+                                                        {{ 120 - lectureForm.get('lectureTitle')?.value?.length}}</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div *ngIf="!editMode" class="col-lg-4 col-md-6">
-                        <div class="ui search focus mt-30 lbel25">
-                            <label>{{"Duration" | translate}}*</label>
-                            <div class="ui left icon input swdh19 swdh55">
-                                <input disabled value="{{videoDuration}}" class="prompt srch_explore" type="number"
-                                    min="0" name="duration" required="" placeholder="0">
-                                <div class="badge_min">{{"Minutes" | translate}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="ui search focus mt-30 lbel25">
-                            <label>{{"Course" | translate}}*</label>
-                        </div>
-                        <select formControlName="course" (change)="onCourseSelect($event)">
-                            <option disabled  value="">{{"Select Course" | translate}}</option>
-                            <option *ngFor="let course of instructorCourses" value="{{course.course_id}}">
-                                {{course.course_title}}</option>
+                                        <div [hidden]="editMode" class="col-lg-4 col-md-6">
+                                            <div class="part_input ui search focus mt-30 lbel25">
+                                                <label>{{"Upload Video or File*" | translate}}</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input formControlName="lectureFile"
+                                                            (change)="onFileChange($event)" type="file"
+                                                            class="custom-file-input" id="inputGroupFile06">
+                                                        <label class="custom-file-label" for="inputGroupFile06">No
+                                                            {{" Choose file -
+                                        (Pdf, Video)" | translate}}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{"Sort" | translate}}</label>
+                                                <div class="ui left icon input swdh19">
+                                                    <input formControlName="sort" class="prompt srch_explore"
+                                                        type="number" name="sort" min="0" max="100" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{"Lecture Description*" | translate}}</label>
+                                                <div class="course_des_bg">
+                                                    <div class="textarea_dt">
+                                                        <div class="ui form swdh339">
+                                                            <div class="field">
+                                                                <textarea formControlName="description" rows="5"
+                                                                    name="description" id="id_part_description"
+                                                                    placeholder="Insert description"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="!editMode" class="col-lg-4 col-md-6">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{"Duration" | translate}}*</label>
+                                                <div class="ui left icon input swdh19 swdh55">
+                                                    <input disabled value="{{videoDuration}}"
+                                                        class="prompt srch_explore" type="number" min="0"
+                                                        name="duration" required="" placeholder="0">
+                                                    <div class="badge_min">{{"Minutes" | translate}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{"Course" | translate}}*</label>
+                                            </div>
+                                            <select formControlName="course" (change)="onCourseSelect($event)">
+                                                <option disabled value="">{{"Select Course" | translate}}</option>
+                                                <option *ngFor="let course of instructorCourses"
+                                                    value="{{course.course_id}}">
+                                                    {{course.course_title}}</option>
 
-                        </select>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="ui search focus mt-30 lbel25">
-                            <label>{{"Chapter" | translate}}*</label>
-                        </div>
-                        <select formControlName="chapter">
-                            <option disabled  value="">{{"Select Chapter" | translate}}</option>
-                            <option *ngFor="let chapter of chapters" value="{{chapter.id}}">{{chapter.chapter_title}}</option>
-                            
-                        </select>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">
-                             {{editMode ? 'Save Lecture' : 'Create Lecture'}}</button>
-                             <button *ngIf="editMode" (click)="onCancelEditChapterClick()" class="part_btn_save prt-sv">
-                                {{"cancel edit" | translate}}</button>
-                        <button (click)="getLectures()" class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#lecture" aria-expanded="false" aria-controls="lecture">
-                            {{"View Saved Lecture" | translate}}
-                        </button>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="accordion  mt-3 " id="saved-Lecture">
-                            <div id="lecture" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#saved-Lecture">
-                                <div class="table-responsive">
-                                    <table class="table ucp-table">
-                                        <thead class="thead-s">
-                                            <tr>
-                                                <th scope="col">{{"No" | translate}}</th>
-                                                <th scope="col">{{"Lecture Title" | translate}}</th>
-                                                <!-- <th scope="col">videos</th> -->
-                                                <th class="text-right" scope="col">
-                                                    {{"Controls" | translate}}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let lecture of lectures; let index = index">
-                                                <td>{{index + 1}}</td>
-                                                <td class="cell-ta">{{lecture.content_title}}</td>
-                                                <!-- <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{"Chapter" | translate}}*</label>
+                                            </div>
+                                            <select formControlName="chapter">
+                                                <option disabled value="">{{"Select Chapter" | translate}}</option>
+                                                <option *ngFor="let chapter of chapters" value="{{chapter.id}}">
+                                                    {{chapter.chapter_title}}</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">
+                                                {{editMode ? 'Save Lecture' : 'Create Lecture'}}</button>
+                                            <button *ngIf="editMode" (click)="onCancelEditChapterClick()"
+                                                class="part_btn_save prt-sv">
+                                                {{"cancel edit" | translate}}</button>
+                                            <button (click)="getLectures()" class="btn btn-link collapsed" type="button"
+                                                data-toggle="collapse" data-target="#lecture" aria-expanded="false"
+                                                aria-controls="lecture">
+                                                {{"View Saved Lecture" | translate}}
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="accordion  mt-3 " id="saved-Lecture">
+                                                <div id="lecture" class="collapse" aria-labelledby="headingTwo"
+                                                    data-parent="#saved-Lecture">
+                                                    <div class="table-responsive">
+                                                        <table class="table ucp-table">
+                                                            <thead class="thead-s">
+                                                                <tr>
+                                                                    <th scope="col">{{"No" | translate}}</th>
+                                                                    <th scope="col">{{"Lecture Title" | translate}}</th>
+                                                                    <!-- <th scope="col">videos</th> -->
+                                                                    <th class="text-right" scope="col">
+                                                                        {{"Controls" | translate}}</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let lecture of lectures; let index = index">
+                                                                    <td>{{index + 1}}</td>
+                                                                    <td class="cell-ta">{{lecture.content_title}}</td>
+                                                                    <!-- <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
                                                         class="table-img" alt="" />
                                                 </td> -->
-                                                <td class="text-right">
-                                                    <a (click)="onEditLecture(lecture)" title="Edit" class="gray-s"><i
-                                                            class="uil uil-edit-alt"></i></a>
-                                                    <a (click)="onDeleteLecture(lecture)" title="Delete" class="gray-s"><i
-                                                            class="uil uil-trash-alt"></i></a>
-                                                </td>
-                                            </tr>
-                                           
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                                    <td class="text-right">
+                                                                        <a (click)="onEditLecture(lecture)" title="Edit"
+                                                                            class="gray-s"><i
+                                                                                class="uil uil-edit-alt"></i></a>
+                                                                        <a (click)="onDeleteLecture(lecture)"
+                                                                            title="Delete" class="gray-s"><i
+                                                                                class="uil uil-trash-alt"></i></a>
+                                                                    </td>
+                                                                </tr>
 
-                            </div>
-                        </div>
-                    </div>
-                    <ngx-loading [show]="loading"></ngx-loading>
-                    <ngx-loading [show]="uploading" [template]="customLoadingTemplate"></ngx-loading>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
 
-                    <!-- <div class="col-lg-12 col-md-12">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ngx-loading [show]="loading"></ngx-loading>
+                                        <ngx-loading [show]="uploading" [template]="customLoadingTemplate">
+                                        </ngx-loading>
+
+                                        <!-- <div class="col-lg-12 col-md-12">
                     <div class="save_content">
                         <button class="save_content_btn" type="Submit">Save
                             Course Content</button>
                     </div>
                 </div> -->
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<video #video style="display: none;" *ngIf="videoUrl" width="320" height="240" controls [attr.src]="videoUrl"
-    (loadedmetadata)="getDuration($event)">
-</video>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <video #video style="display: none;" *ngIf="videoUrl" width="320" height="240" controls
+                        [attr.src]="videoUrl" (loadedmetadata)="getDuration($event)">
+                    </video>
 
 
-<ng-template #customLoadingTemplate>
-    <div class="uploadingTemplate">
-        <h3>
-            {{"Loading..." | translate}}
-        </h3>
-        <h4>{{uploadingPercentage}} %</h4>
-      <button  class="btn btn-default steps_btn" (click)="onCancelUploadClick()">{{"cancel" | translate}}</button>
-    </div>
-</ng-template>
+                    <ng-template #customLoadingTemplate>
+                        <div class="uploadingTemplate">
+                            <h3>
+                                {{"Loading..." | translate}}
+                            </h3>
+                            <h4>{{uploadingPercentage}} %</h4>
+                            <button class="btn btn-default steps_btn"
+                                (click)="onCancelUploadClick()">{{"cancel" | translate}}</button>
+                        </div>
+                    </ng-template>

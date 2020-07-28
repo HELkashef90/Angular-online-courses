@@ -809,7 +809,7 @@ STYLE SWITCHER FOR DEMO
 }
 
 .home .social-link {
-	color: #aaa;
+	color: #aaa !important;
 	margin: 0 0.5rem;
 	font-size: 1.2rem;
 }
