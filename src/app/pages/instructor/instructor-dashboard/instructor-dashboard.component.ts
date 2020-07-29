@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./instructor-dashboard.component.scss']
 })
 export class InstructorDashboardComponent implements OnInit {
-  dashboard = [];
+  dashboardArray = {
+    total_active_courses: 0,
+    total_courses: 0,
+    total_pending_courses: 0,
+    total_sales: 0,
+    total_students: 0
+  };
 
   constructor(private _dashboard: DashboardService, private _spinner: SpinnerService) { }
 
@@ -19,7 +25,7 @@ export class InstructorDashboardComponent implements OnInit {
     this._spinner.showFullScreenSpinner()
     this._dashboard.getDashboardDta().subscribe(res => {
       console.log(res);
-      this.dashboard = res['body'] || []
+      this.dashboardArray = res['body'] || []
       this._spinner.hideFullScreenSpinner()
     }, err => {
       this._spinner.hideFullScreenSpinner()

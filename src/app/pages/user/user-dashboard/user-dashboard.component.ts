@@ -13,7 +13,10 @@ import { forkJoin } from 'rxjs';
 export class UserDashboardComponent implements OnInit {
 
 
-  dashboard = [];
+  dashboardArray = {
+    total_active_courses: 0,
+    total_pending_courses: 0
+  };
   approvedCoursesArray = []
   constructor(private _dashboard: DashboardService, private _spinner: SpinnerService, private _course: CourseService) { }
 
@@ -26,7 +29,7 @@ export class UserDashboardComponent implements OnInit {
     forkJoin([this._dashboard.getDashboardDta(), this._course.getAllApproved(1, 4)]).subscribe(res => {
       console.log(res[0]);
       console.log(res[1]);
-      this.dashboard = res[0]['body'] || []
+      this.dashboardArray = res[0]['body'] || []
       this.approvedCoursesArray = res[1]['body']['content'] || []
       this._spinner.hideFullScreenSpinner()
 
