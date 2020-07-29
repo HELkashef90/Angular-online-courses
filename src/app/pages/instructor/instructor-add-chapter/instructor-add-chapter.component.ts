@@ -130,7 +130,7 @@ export class InstructorAddChapterComponent implements OnInit {
     this.chapterForm = this._formBuilder.group({
       course: ['', [Validators.required]],
       chapterTitle: ['', [Validators.required, Validators.maxLength(120)]],
-      sort: ['', [Validators.required]],
+      sort: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
       description: ['', [Validators.required]],
       price: ['', [Validators.required]],
     });

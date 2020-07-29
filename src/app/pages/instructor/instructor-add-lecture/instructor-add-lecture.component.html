@@ -18,7 +18,7 @@
                                     <span *ngIf="lectureForm.get('lectureFile').invalid && !editMode">
                                         {{"*Please select lecture File" | translate}}</span><br>
                                     <span
-                                        *ngIf="lectureForm.get('sort').invalid">{{" *Please enter a valid sort" | translate}}</span><br>
+                                        *ngIf="lectureForm.get('sort').invalid">{{" *Please enter a valid sort (1-100)" | translate}}</span><br>
                                     <span
                                         *ngIf="lectureForm.get('description').invalid">{{" *Please enter a valid description" | translate}}</span><br>
                                     <span *ngIf="lectureForm.get('course').invalid">
@@ -50,9 +50,10 @@
                                                         <input formControlName="lectureFile"
                                                             (change)="onFileChange($event)" type="file"
                                                             class="custom-file-input" id="inputGroupFile06">
-                                                        <label class="custom-file-label" for="inputGroupFile06">No
-                                                            {{" Choose file -
-                                        (Pdf, Video)" | translate}}</label>
+                                                        <label class="custom-file-label" for="inputGroupFile06">
+                                                            {{ selectedVideo?.name ||  "No Choose file - (Video)" | translate}}
+                                                            
+                                                            </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,6 +139,10 @@
                                                                 <tr>
                                                                     <th scope="col">{{"No" | translate}}</th>
                                                                     <th scope="col">{{"Lecture Title" | translate}}</th>
+                                                                    <th scope="col">{{"Chapter Title" | translate}}</th>
+                                                                    <th scope="col">{{"course Title" | translate}}</th>
+                                                                    <th scope="col">{{"sort " | translate}}</th>
+                                                                    <th scope="col">{{"time m" | translate}}</th>
                                                                     <!-- <th scope="col">videos</th> -->
                                                                     <th class="text-right" scope="col">
                                                                         {{"Controls" | translate}}</th>
@@ -147,6 +152,10 @@
                                                                 <tr *ngFor="let lecture of lectures; let index = index">
                                                                     <td>{{index + 1}}</td>
                                                                     <td class="cell-ta">{{lecture.content_title}}</td>
+                                                                    <td class="cell-ta">{{lecture.chapter_title}}</td>
+                                                                    <td class="cell-ta">{{lecture.course_title}}</td>
+                                                                    <td class="cell-ta">{{lecture.content_sort_number}}</td>
+                                                                    <td class="cell-ta">{{lecture.content_time_required_in_sec / 60}}</td>
                                                                     <!-- <td class="cell-ta"><img src="assets/images/courses/add_video.jpg"
                                                         class="table-img" alt="" />
                                                 </td> -->

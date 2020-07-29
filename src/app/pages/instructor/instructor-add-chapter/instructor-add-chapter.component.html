@@ -19,7 +19,7 @@
                                                 *ngIf="showInfoErrors && chapterForm.invalid">
                                                 <span *ngIf="chapterForm.get('course').invalid"> {{"*Please select a course" | translate}}</span><br>
                                                 <span *ngIf="chapterForm.get('chapterTitle').invalid"> {{"*Please enter chapter Title" | translate}}</span><br>
-                                                <span *ngIf="chapterForm.get('sort').invalid"> {{"*Please enter sort" | translate}}</span><br>
+                                                <span *ngIf="chapterForm.get('sort').invalid"> {{"*Please enter sort (1-100)" | translate}}</span><br>
                                                 <span *ngIf="chapterForm.get('description').invalid"> {{"*Please enter description" | translate}}</span><br>
                                                 <span *ngIf="chapterForm.get('price').invalid"> {{"*Please enter price" | translate}}</span><br>
                                             </div>

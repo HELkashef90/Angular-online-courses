@@ -92,7 +92,7 @@ export class InstructorAddLectureComponent implements OnInit {
     this.lectureForm = this._formBuilder.group({
       lectureTitle: ['', [Validators.required, Validators.maxLength(120)]],
       lectureFile: ['', [Validators.required]],
-      sort: ['', [Validators.required]],
+      sort: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
       description: ['', [Validators.required]],
       course: ['', [Validators.required]],
       chapter: ['', [Validators.required]],
@@ -100,6 +100,8 @@ export class InstructorAddLectureComponent implements OnInit {
     });
   }
   onFileChange($event) {
+    this.selectedVideo = null
+    this.videoDuration = 0
     console.log($event.target.files[0]);
     if ($event.target.files.length > 0 && this.checkVideoEx($event.target.files[0]?.type.toLowerCase())) {
       this.readVideoUrl($event.target.files[0])
