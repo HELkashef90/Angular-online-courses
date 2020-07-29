@@ -36,8 +36,8 @@ export class EditCourseComponent implements OnInit {
   selectedCourseToEdit: any;
   player: any;
 
-  constructor(private _courseService: CreateCourseService, private _formBuilder: FormBuilder, private _toastService: ToastService,private router :Router,
-    private translate : TranslateService,
+  constructor(private _courseService: CreateCourseService, private _formBuilder: FormBuilder, private _toastService: ToastService, private router: Router,
+    private translate: TranslateService,
     public bsModalRef: BsModalRef) {
     // this.selectedCourseToEdit = _courseService.selectedCourseToEdit
     // _courseService.selectedCourseToEdit = ""
@@ -50,7 +50,7 @@ export class EditCourseComponent implements OnInit {
 
   }
   ngAfterViewInit() {
-    this.initVimeoPromoVid()
+    this.selectedCourseToEdit.promotional_video_id ? this.initVimeoPromoVid() : this.selectedVideoPrev = "temp";
   }
   initVimeoPromoVid() {
     let options = {
@@ -111,7 +111,14 @@ export class EditCourseComponent implements OnInit {
       return
     }
     this.checkVideoEx($event.target.files[0]?.type.toLowerCase()) ? null : this._toastService.showToast(this.translate.instant('File not supported'), 'error')
-    this.initVimeoPromoVid()
+    if (this.selectedCourseToEdit.promotional_video_id) {
+      this.initVimeoPromoVid()
+      return
+    }
+    this.selectedVideoPrev = null;
+    setTimeout(() => {
+      this.selectedVideoPrev = "temp"
+    }, 100);
   }
   checkVideoEx(type) {
     return this.acceptedVideosEx.includes(type);
@@ -190,9 +197,9 @@ export class EditCourseComponent implements OnInit {
   }
 
   decline() {
-    
-  
-      this.bsModalRef.hide();
-    
+
+
+    this.bsModalRef.hide();
+
   }
 }

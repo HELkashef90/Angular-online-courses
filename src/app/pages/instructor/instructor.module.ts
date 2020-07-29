@@ -27,6 +27,7 @@ import { InstructorAddLectureComponent } from './instructor-add-lecture/instruct
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 import { ViewCourseComponent } from './view-course/view-course.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { ViewCourseComponent } from './view-course/view-course.component';
     ToastrModule,
     MatSliderModule,
     MatStepperModule,
+    MatIconModule,
     NgxConfirmBoxModule,
     SharedModule
   ]

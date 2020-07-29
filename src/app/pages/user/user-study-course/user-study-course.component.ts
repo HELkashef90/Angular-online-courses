@@ -1,7 +1,7 @@
 import Player from '@vimeo/player';
 import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
@@ -23,7 +23,7 @@ export class UserStudyCourseComponent implements OnInit {
   player: any;
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService, private translate: TranslateService,
-    private _courses: CourseService) { }
+    private _courses: CourseService, private router: Router) { }
 
   ngOnInit(): void {
     this.courseId = this.activatedRoute.snapshot.paramMap.get('courseId');
@@ -31,10 +31,17 @@ export class UserStudyCourseComponent implements OnInit {
     this.getStudyCourse(this.courseId)
   }
   getStudyCourse(id) {
+    this._spinner.showFullScreenSpinner()
     this._courses.getStudyCourse(id).subscribe(res => {
       console.log(res);
       this.chaptersArray = res['body']
+      if (res['body'].length === 0 || res['body']['status'] === "204") {
+        this._toastService.showToast(this.translate.instant("you Don't have any chapters in this course to view"), 'warning')
+        this.router.navigate(['/user/courses'])
+      }
+      this._spinner.hideFullScreenSpinner()
     }, err => {
+      this._spinner.hideFullScreenSpinner()
       console.log(err);
     }
     )
@@ -49,15 +56,18 @@ export class UserStudyCourseComponent implements OnInit {
     this.lectureDesc = lectureDesc || "No Description"
 
     console.log(lectureVimeoId);
+    this._spinner.showFullScreenSpinner()
 
     this.player.loadVideo(lectureVimeoId).then((id) => {
       // the video successfully loaded
       this.showPlayer = true;
+      this._spinner.hideFullScreenSpinner()
     }).catch((error) => {
       switch (error.name) {
         case 'TypeError':
           // the id was not a number
           // this._toastService.showToast(this.translate.instant("You are not allowed to view this video"))
+          this._spinner.hideFullScreenSpinner()
 
           break;
 
@@ -65,17 +75,21 @@ export class UserStudyCourseComponent implements OnInit {
           // the video is password-protected and the viewer needs to enter the
           // password first
           // this._toastService.showToast(this.translate.instant("You are not allowed to view this video"))
+          this._spinner.hideFullScreenSpinner()
 
           break;
 
         case 'PrivacyError':
           // the video is password-protected or private
           // this._toastService.showToast(this.translate.instant("You are not allowed to view this video"))
+          this._spinner.hideFullScreenSpinner()
+
           break;
 
         default:
           // some other error occurred
           this._toastService.showToast(this.translate.instant("You are not allowed to view this video or an error occurred, please try again"))
+          this._spinner.hideFullScreenSpinner()
 
           break;
       }
@@ -114,12 +128,12 @@ export class UserStudyCourseComponent implements OnInit {
     // }
   }
 
-  collapse(){
+  collapse() {
     var verticalSideBar = document.querySelector(".vertical_nav");
     verticalSideBar.classList.toggle("vertical_nav__minify");
     var wrapper = document.querySelector(".wrapper");
     wrapper.classList.toggle("wrapper__minify");
     var sidekickToggle = document.querySelector(".chapterListToggle");
-      sidekickToggle.classList.toggle("minify");
+    sidekickToggle.classList.toggle("minify");
   }
 }

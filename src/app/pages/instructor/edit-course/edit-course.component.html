@@ -34,7 +34,7 @@
         <div class="step-content">
             <mat-step [stepControl]="infoForm">
 
-                <ng-template matStepLabel>{{'General Information' | translate}}</ng-template>
+                <ng-template matStepLabel>{{'General Information' | translate}} </ng-template>
                 <form [formGroup]="infoForm">
                     <div class="step-tab-panel step-tab-info active" id="tab_step1">
                         <div class="tab-from-content">
@@ -175,7 +175,7 @@
                                                         </div> -->
                                                     <div *ngIf="selectedVideoPrev" class="view__img">
                                                         <video class="view__img" controls>
-                                                            <source src="{{selectedVideoPrev}}">
+                                                            <source src="{{selectedVideoPrev || 'temp'}}">
                                                             {{"Your browser does not support the video tag." | translate}}
                                                         </video>
                                                     </div>

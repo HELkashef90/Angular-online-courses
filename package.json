@@ -6,7 +6,7 @@
     "start": "ng serve --base-href / --proxy-config proxy.conf.json",
     "start:prod": "ng serve --prod --base-href / ",
     "build:stg": "ng build --source-map --base-href /",
-    "build:prod": "ng build --prod  --source-map --base-href / && firebase deploy",
+    "build:prod": "ng build --prod  --base-href / && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

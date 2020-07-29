@@ -58,7 +58,7 @@ export class ResetPasswordComponent implements OnInit {
     if (this.token) {
       this._resetPass.confirmReset(this.token).subscribe(res => {
         console.log(res);
-        this.email = res['email']
+        this.email = res['message']
         this.confirmReset = true;
         this._spinner.hideFullScreenSpinner()
       }, err => {
