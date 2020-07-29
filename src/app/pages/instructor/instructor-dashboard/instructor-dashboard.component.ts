@@ -1,3 +1,5 @@
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
+import { DashboardService } from './../services/dashboard/dashboard.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./instructor-dashboard.component.scss']
 })
 export class InstructorDashboardComponent implements OnInit {
+  dashboard = [];
 
-  constructor() { }
+  constructor(private _dashboard: DashboardService, private _spinner: SpinnerService) { }
 
   ngOnInit(): void {
+    this.getDashboardData()
+  }
+  getDashboardData() {
+    this._spinner.showFullScreenSpinner()
+    this._dashboard.getDashboardDta().subscribe(res => {
+      console.log(res);
+      this.dashboard = res['body'] || []
+      this._spinner.hideFullScreenSpinner()
+    }, err => {
+      this._spinner.hideFullScreenSpinner()
+      console.log(err);
+
+    })
   }
 
 }

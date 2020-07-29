@@ -40,7 +40,9 @@ export const environment = {
   _approveCourse: `${serverUrl}course/activate/`,
   _rejectCourse : `${serverUrl}course/deactivate/`,
   _getEnrollmentCourses: `${serverUrl}student-enrolled/all-courses`,
-  _getStudyCourse: `${serverUrl}student-enrolled/all-chapters-contents/`
+  _getStudyCourse: `${serverUrl}student-enrolled/all-chapters-contents/`,
+  _getStudentDashboard: `${serverUrl}student-view/dashboard`,
+  _getInstructorDashboard: `${serverUrl}instructor/dashboard`
 
 }
 /*
