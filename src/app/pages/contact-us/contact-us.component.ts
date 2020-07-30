@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _auth : AuthService) { }
 
   ngOnInit(): void {
   }
-
+  goToDashboard(){
+    this._auth.redirectUserToDashboard()
+  }
 }

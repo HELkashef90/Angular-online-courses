@@ -19,9 +19,14 @@
             <!-- Link-->
             <!-- <li class="nav-item"> <a [routerLink]="['']" routerLinkActive="router-link-active"  class="nav-link">{{"Home" | translate}}</a></li> -->
           </ul>
-          <ul class="navbar-nav">
+          <ul class="navbar-nav" *ngIf="!_auth.isLoggedIn">
             <li [routerLink]="['/login']" routerLinkActive="router-link-active"  class="nav-item"><a  data-toggle="modal" data-target="#login" class="nav-link font-weight-bold mr-3">{{"Login" | translate}}</a></li>
             <li [routerLink]="['/signup']" routerLinkActive="router-link-active"  class="nav-item"><a  class="navbar-btn btn btn-primary">{{"Get Started" | translate}}</a></li>
+          </ul>
+          <ul class="navbar-nav" *ngIf="_auth.isLoggedIn">
+            <li (click)="goToDashboard()" class="nav-item"><a
+                class="navbar-btn btn btn-primary">{{"My Dashboard" | translate}}</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -59,11 +64,11 @@
     </div>
     <div class="container">
         <div class="row">					
-            
             <div class="col-lg-8">
                 <div class="contact_map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109179.94648102134!2d29.88484661559832!3d31.224238671493772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2sAlexandria%2C%20Alexandria%20Governorate!5e0!3m2!1sen!2seg!4v1595815185573!5m2!1sen!2seg" width="748" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>						</div>												
-            </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3435.358054333779!2d31.009402315127502!3d30.567436181695086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM0JzAyLjgiTiAzMcKwMDAnNDEuNyJF!5e0!3m2!1sen!2seg!4v1596052716019!5m2!1sen!2seg" width="748" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
             <div class="col-lg-4">
                 <div class="contact_info">
                     <div class="checkout_title">
@@ -71,18 +76,16 @@
                         <img src="images/line.svg" alt="">
                     </div>
                     <ul class="contact_list_info">
-                        <li><div class="txt_cntct"><span class="cntct_895"><i class="uil uil-location-point"></i>Main Address :</span><p> Elhoreya Road, main street, Alexandria, Egypt</p></div></li>
-                        <li><div class="txt_cntct"><span class="cntct_895"><i class="uil uil-envelope"></i>Email Address :</span><p>Info@smart-academy@gmail.com</p></div></li>
-                        <li><div class="txt_cntct"><span class="cntct_895"><i class="uil uil-mobile-android-alt"></i>Phone Number :</span><p>+211234567890, 01010000000</p></div></li>
+                        <li><div class="txt_cntct"><span class="cntct_895"><i class="uil uil-location-point"></i>{{"Main Address :" | translate}}</span><p>شارع جمال عبد الناصر, بجوار نادي الجمهورية, شبين الكوم, المنوفية</p></div></li>
+                        <li><div class="txt_cntct"><span class="cntct_895"><i class="uil uil-envelope"></i>{{"Email Address :" | translate}}</span><p>ask@smartacademy.center</p></div></li>
+                        <li><div class="txt_cntct"><span class="cntct_895"><i class="uil uil-mobile-android-alt"></i>{{"Phone Number :" | translate}}</span><p>01093013498, 01093418694</p></div></li>
                     </ul>
-                    <!-- <div class="edututs_links_social">
+                    <div class="edututs_links_social">
+                        
                         <ul class="tutor_social_links">
-                            <li><a  class="fb"><i class="uil uil-facebook-f"></i></a></li>
-                            <li><a  class="tw"><i class="uil uil-twitter"></i></a></li>
-                            <li><a  class="ln"><i class="uil uil-linkedin"></i></a></li>
-                            <li><a  class="yu"><i class="uil uil-youtube"></i></a></li>
+                            <li><a href="https://www.facebook.com/smartacademymnf/" class="fb"><i class="uil uil-facebook-f"></i></a></li>
                         </ul>
-                    </div> -->
+                    </div>
                 </div>												
             </div>
         </div>

@@ -139,6 +139,7 @@
 	"Edit Course ": "Edit Course ",
 	"Email": "Email",
 	"Email Address": "Email Address",
+	"Email Address :": "Email Address :",
 	"English": "English",
 	"Error while creating chapter, please try again": "Error while creating chapter, please try again",
 	"Error while creating course, please try again": "Error while creating course, please try again",
@@ -182,6 +183,7 @@
 	"Log In to Your Account": "Log In to Your Account",
 	"Log in": "Log in",
 	"Login": "تسجيل الدخول",
+	"Main Address :": "Main Address :",
 	"Match your goals to our classes, explore your options, and map out your path to success": {
 		"": "Match your goals to our classes, explore your options, and map out your path to success."
 	},
@@ -201,6 +203,7 @@
 	"Pending Course": "Pending Course",
 	"Pending Courses": "Pending Courses",
 	"Phone No": "Phone No",
+	"Phone Number :": "Phone Number :",
 	"Physics": "Physics",
 	"Please Confirm?": "Please Confirm?",
 	"Please enter a valid mobile number or email": "Please enter a valid mobile number or email",
