@@ -46,10 +46,12 @@ export class UserSidebarComponent implements OnInit {
     //   // sidekickToggle.classList.toggle("minify");
     // }
   }
-  collapse(){
+  collapse() {
     var verticalSideBar = document.querySelector(".vertical_nav");
     verticalSideBar.classList.toggle("vertical_nav__minify");
     var wrapper = document.querySelector(".wrapper");
     wrapper.classList.toggle("wrapper__minify");
+    var footer = document.querySelector(".footer");
+    footer.classList.toggle("wrapper__minify");
   }
 }

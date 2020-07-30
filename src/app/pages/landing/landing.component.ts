@@ -21,4 +21,8 @@ export class LandingComponent implements OnInit {
   goToDashboard() {
     this._auth.redirectUserToDashboard()
   }
+
+  changeLang(lang){
+    this._localizationService.setUserLang(lang);
+  }
 }

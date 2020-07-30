@@ -3,35 +3,60 @@
   <header class="lp-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <!-- Navbar brand--><a class="navbar-brand font-weight-bold"><img
-            src="assets/images/logo.jpeg" alt="..." class="img-fluid"></a>
+        <!-- Navbar brand--><a class="navbar-brand font-weight-bold"><img src="assets/images/logo.jpeg" alt="..."
+            class="img-fluid"></a>
         <!-- Navbar toggler button-->
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-          class="navbar-toggler navbar-toggler-right">{{"Menu" | translate}}<i class="icon ion-md-list ml-2"></i></button>
+          class="navbar-toggler navbar-toggler-right">{{"Menu" | translate}}<i
+            class="icon ion-md-list ml-2"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
           <ul class="navbar-nav mx-auto ml-auto">
             <!-- Link-->
-            <li class="nav-item"> <a  class="nav-link">{{"About Us" | translate}}</a></li>
-
+            <!-- <li class="nav-item"> <a  class="nav-link">{{"About Us" | translate}}</a></li> -->
+            <!-- 
             <li class="nav-item dropdown"><a id="pages"  data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false" class="nav-link dropdown-toggle">{{"departments" | translate}}</a>
               <div class="dropdown-menu">
                 <a  class="dropdown-item">{{"arabic" | translate}}</a>
                 <a  class="dropdown-item">{{"English" | translate}}</a>
                 <a  class="dropdown-item">{{"math" | translate}}</a></div>
-            </li>
+            </li> -->
             <!-- Link-->
-            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"  class="nav-link">{{"Contact Us" | translate}}</a></li>
+            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Contact Us" | translate}}</a></li>
           </ul>
           <ul *ngIf="!_auth.isLoggedIn" class="navbar-nav">
+
+            <li class="nav-item dropdown"><a id="pages" href="#" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false" class="nav-link dropdown-toggle"><i class="uil uil-globe"></i></a>
+              <div class="dropdown-menu">
+                <a (click)="changeLang('ar')" class="dropdown-item">{{"Arabic" | translate}}</a>
+                <a (click)="changeLang('en')" class="dropdown-item">{{"English" | translate}}</a>
+              </div>
+            </li>
+
             <li [routerLink]="['/login']" class="nav-item"><a data-toggle="modal" data-target="#login"
                 class="nav-link font-weight-bold mr-3">{{'Login' | translate}}</a></li>
-            <li [routerLink]="['/signup']" class="nav-item"><a class="navbar-btn btn btn-primary">{{"Get Started" | translate}}</a></li>
+            <li [routerLink]="['/signup']" class="nav-item"><a
+                class="navbar-btn btn btn-primary">{{"Get Started" | translate}}</a></li>
+
           </ul>
+
           <ul *ngIf="_auth.isLoggedIn" class="navbar-nav">
+
+            <li class="nav-item dropdown"><a id="pages" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" class="nav-link dropdown-toggle"><i class="uil uil-globe"></i></a>
+            <div class="dropdown-menu">
+              <a (click)="changeLang('ar')" class="dropdown-item">{{"Arabic" | translate}}</a>
+              <a (click)="changeLang('en')" class="dropdown-item">{{"English" | translate}}</a>
+            </div>
+          </li>
           
-            <li (click)="goToDashboard()" class="nav-item"><a class="navbar-btn btn btn-primary">{{"My Dashboard" | translate}}</a></li>
+            <li (click)="goToDashboard()" class="nav-item"><a
+                class="navbar-btn btn btn-primary">{{"My Dashboard" | translate}}</a>
+            </li>
+
           </ul>
         </div>
       </div>
@@ -73,15 +98,15 @@
       <div class="copyrights">
         <!-- Social menu-->
         <ul class="social list-inline-item">
-          <li class="list-inline-item"><a  target="_blank" class="social-link"><i
-                class="icon ion-logo-twitter"></i></a></li>
-          <li class="list-inline-item"><a  target="_blank" class="social-link"><i
-                class="icon ion-logo-facebook"></i></a></li>
-          <li class="list-inline-item"><a  target="_blank" class="social-link"><i
-                class="icon ion-logo-youtube"></i></a></li>
+          <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-twitter"></i></a>
+          </li>
+          <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-facebook"></i></a>
+          </li>
+          <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-youtube"></i></a>
+          </li>
         </ul>
-        <p class="copyrights-text mb-0">Copyright &copy; 2020 All rights reserved to <a
-            class="copyrights-link">smart Academy</a></p>
+        <p class="copyrights-text mb-0">Copyright &copy; 2020 All rights reserved to <a class="copyrights-link">smart
+            Academy</a></p>
       </div>
     </div>
   </footer>

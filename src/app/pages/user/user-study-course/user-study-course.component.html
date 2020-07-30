@@ -14,7 +14,7 @@
 <!-- Left Sidebar Start -->
 <nav class="vertical_nav chapter-list">
     <div class="left_section menu_left" id="js-menu">
-        <h4 class=header>{{"Table of content" | translate}}<span class="right"></span></h4>
+        <h4 class=header>{{"Table of content" | translate}}<a class="right"><i [routerLink]="['/user/dashboard']" routerLinkActive="router-link-active"  class="uil uil-home-alt"></i></a></h4>
         <div class="left_section">
             <ul>
                 <li *ngFor="let chapter of chaptersArray; let index = index"
@@ -58,7 +58,7 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="col-12 col-lg-11">
                     <div class="grp_titles">
                         <h2 class="">{{chapterName}}</h2>
                         <span>{{courseName}} {{lectureName}} </span>

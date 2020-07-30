@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class SidebarComponent implements OnInit {
 
   constructor(private _lazyLoadScript: LazyLoadScriptsService, public _auth: AuthService,
-    public _local : LocalizationService) { }
+    public _local: LocalizationService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +29,7 @@ export class SidebarComponent implements OnInit {
   getEmail() {
     return localStorage.getItem('email')
   }
-  changeLang(lang){
+  changeLang(lang) {
     this._local.setUserLang(lang)
   }
   ngAfterViewInit() {
@@ -47,10 +47,12 @@ export class SidebarComponent implements OnInit {
     //   // sidekickToggle.classList.toggle("minify");
     // }
   }
-  collapse(){
+  collapse() {
     var verticalSideBar = document.querySelector(".vertical_nav");
     verticalSideBar.classList.toggle("vertical_nav__minify");
     var wrapper = document.querySelector(".wrapper");
     wrapper.classList.toggle("wrapper__minify");
+    var footer = document.querySelector(".footer");
+    footer.classList.toggle("wrapper__minify");
   }
 }

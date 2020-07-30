@@ -16,7 +16,7 @@ export class InstructorGuard implements CanActivate {
   }
   ngOnInit() {
 
-    this._spinner.showFullScreenSpinner()
+    // this._spinner.showFullScreenSpinner()
   }
   canActivate(
     next: ActivatedRouteSnapshot,
