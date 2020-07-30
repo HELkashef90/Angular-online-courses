@@ -2238,6 +2238,14 @@ body.rtl {
 	font-size: 12px;
 	padding: 9px 10px;
 }
+.rtl textarea ~ .badge_num2 {
+	bottom: 5px;
+	left: 5px;
+	right:auto;
+    top: auto;
+    background-color: #f7f7f76b;
+    color: #c7c7c7;
+}
 
 .rtl .course_des_bg {
 	border: 1px solid #efefef;
@@ -6331,6 +6339,13 @@ table {
     font-size: 12px;
     padding: 9px 10px;
 }
+textarea ~ .badge_num2 {
+	bottom: 5px;
+	right: 5px;
+    top: auto;
+    background-color: #f7f7f76b;
+    color: #c7c7c7;
+}
 
 .course_des_bg {
     border: 1px solid #efefef;
@@ -7939,12 +7954,12 @@ i.icon8 {
 
 /* steper angular version*/
 .mat-stepper-horizontal, .mat-stepper-vertical {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 .mat-horizontal-content-container {
-    padding: 0;
+    padding: 0 !important;
 }
 .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-    background-color: #c8302f;
-    color: #fff;
+    background-color: #c8302f !important;
+    color: #fff !important;
 }

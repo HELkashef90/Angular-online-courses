@@ -42,6 +42,9 @@ $('.enable.button')
 		  verticalSideBar.classList.toggle("vertical_nav__minify");
 	  var wrapper = document.querySelector(".wrapper");
 		  wrapper.classList.toggle("wrapper__minify");
+		  var footer = document.querySelector(".footer");
+		  footer.classList.toggle("wrapper__minify");
+		  
   }
 
 // Home Live Stream

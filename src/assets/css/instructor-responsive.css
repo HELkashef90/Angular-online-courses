@@ -4,6 +4,12 @@
     margin-left: 5px !important;
 	width: 110px !important;
 }
+.main_logo25 {
+    padding: 10px 0 !important;
+}
+.main_logo25 img {
+    width: 120px !important;
+}
 
 .search120 {
     display: none;
