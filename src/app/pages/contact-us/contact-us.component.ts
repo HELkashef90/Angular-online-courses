@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor(public _auth : AuthService) { }
+  constructor(public _auth : AuthService) {
+    if (localStorage.getItem("authenticationToken")) {
+      this._auth.authUser()
+    }
+   }
 
   ngOnInit(): void {
   }
