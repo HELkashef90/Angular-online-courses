@@ -24,8 +24,8 @@
                                 <td class="text-center">{{course.course_title}}</td>
                                 <td>{{course.first_name}}</td>
                                 <td class="text-center">
-                                    <a (click)="onApproveClick(course) " title="Approved" class="accept-btn mx-2" *ngIf="course.course_status !== 2"><i class="uil uil-check" ></i>{{"Approve" | translate}}</a>
-                                    <a (click)="onRejectClick(course)" title="Reject" class="reject-btn  mx-2" *ngIf="course.course_status === 2"><i class="uil uil-times" ></i>{{"Reject" | translate}}</a>
+                                    <a (click)="onApproveClick(course) " title="Approved" class="accept-btn mx-2" *ngIf="course.course_status !== 1"><i class="uil uil-check" ></i>{{"Approve" | translate}}</a>
+                                    <a (click)="onRejectClick(course)" title="Reject" class="reject-btn  mx-2" *ngIf="course.course_status === 1"><i class="uil uil-times" ></i>{{"Reject" | translate}}</a>
                                 </td>
                             </tr>
                          
