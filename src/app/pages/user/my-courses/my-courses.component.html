@@ -15,7 +15,7 @@
                     <div class="fcrse_1 mb-20">
                         <a [routerLink]="['/user/study',course.course_id]" routerLinkActive="router-link-active"
                             class="fcrse_img">
-                            <img src="assets/images/courses/img-14.jpg" alt="">
+                            <img src="{{ course.cover_image_path || 'assets/images/courses/img-14.jpg'}}" alt="">
                             <div class="course-overlay">
                                 <span class="play_btn1"><i class="uil uil-play"></i></span>
                                 <!-- <div class="crse_timer">
