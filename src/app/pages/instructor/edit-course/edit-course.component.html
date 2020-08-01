@@ -46,7 +46,7 @@
                                                 <label>{{"Course Title*" | translate}}</label>
                                                 <div class="ui left icon input swdh19">
                                                     <input formControlName="courseTitle" class="prompt srch_explore"
-                                                        type="text" placeholder="Insert your course title." name="title"
+                                                        type="text" placeholder="{{'Insert your course title.' | translate}}" name="title"
                                                         data-purpose="edit-course-title" maxlength="120"
                                                         id="main[title]" value="">
                                                     <div class="badge_num2">
@@ -59,7 +59,7 @@
                                                 <label>{{"Course Subtitle*" | translate}}</label>
                                                 <div class="ui left icon input swdh19">
                                                     <input formControlName="courseSubTitle" class="prompt srch_explore"
-                                                        type="text" placeholder="Insert your course Subtitle."
+                                                        type="text" placeholder="{{'Insert your course Subtitle.' | translate}}"
                                                         name="subtitle" data-purpose="edit-course-title" maxlength="120"
                                                         id="sub[title]" value="">
                                                     <div class="badge_num2">
@@ -77,7 +77,7 @@
                                                             <div class="field">
                                                                 <textarea maxlength="500" formControlName="courseDescription" rows="5"
                                                                     name="description" id="id_course_description"
-                                                                    placeholder="Insert your course description"></textarea>
+                                                                    placeholder="{{'Insert your course description' | translate}}"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -112,11 +112,21 @@
                                                 <label>{{"Subjects*" | translate}}</label>
                                             </div>
                                             <select formControlName="subject">
-                                                <option disabled selected value="">{{"Select Subjects" | translate}}
-                                                </option>
-                                                <option value="1">{{"Physics" | translate}}</option>
-                                                <option value="2">{{"Math" | translate}}</option>
-                                                <option value="3">{{"Science" | translate}}</option>
+                                                <option disabled selected value="">{{'Select Subjects' | translate}}</option>
+                                                <option value="1">{{'Physics' | translate}}</option>
+                                                <option value="2">{{'Math' | translate}}</option>
+                                                <option value="3">{{'Science' | translate}}</option>
+                                                <option value="4">{{'Arabic Language' | translate}}</option>
+                                                <option value="5">{{'English Language' | translate}}</option>
+                                                <option value="6">{{'Chemistry' | translate}}</option>
+                                                <option value="7">{{'Italian' | translate}}</option>
+                                                <option value="8">{{'French' | translate}}</option>
+                                                <option value="9">{{'Philosophy' | translate}}</option>
+                                                <option value="10">{{'Psychology' | translate}}</option>
+                                                <option value="11">{{'History' | translate}}</option>
+                                                <option value="12">{{'Geography' | translate}}</option>
+                                                <option value="13">{{'German' | translate}}</option>
+                                                <option value="14">{{'Geology' | translate}}</option>
                                             </select>
                                         </div>
                                     </div>

@@ -142,6 +142,7 @@ export class InstructorAddChapterComponent implements OnInit {
     this.chapterForm.get('chapterTitle').setValue(chapter.chapter_title);
     this.chapterForm.get('description').setValue(chapter.chapter_description);
     this.chapterForm.get('price').setValue(chapter.chapter_fee);
+    this.chapterForm.get('sort').setValue(chapter.chapter_sort_number);
     window.scrollTo(0, 0);
 
   }

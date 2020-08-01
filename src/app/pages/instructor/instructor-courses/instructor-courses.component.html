@@ -39,9 +39,8 @@
 										<td class="text-center" *ngIf="course.langauge === 2">{{"English" | translate}}</td>
 										<!-- <td class="text-center"><a href="#">{{course.category}}</a></td> -->
 										<td *ngIf="course.course_status === 0" class="text-center"><b class="">{{"Draft" | translate}}</b></td>
-										<td *ngIf="course.course_status === 1" class="text-center"><b class="">{{"Pending" | translate}}</b></td>
-										<td *ngIf="course.course_status === 2" class="text-center"><b class="">{{"Approved" | translate}}</b></td>
-										<td *ngIf="course.course_status === 3" class="text-center"><b class="">{{"Rejected" | translate}}</b></td>
+										<td *ngIf="course.course_status === 1" class="text-center"><b class="">{{"Approved" | translate}}</b></td>
+										<td *ngIf="course.course_status === 2" class="text-center"><b class="">{{"Rejected" | translate}}</b></td>
 										<td class="text-center">
 											<a (click)="onEditClick(course)" title="Edit" class="gray-s"><i class="uil uil-edit-alt"></i></a>
 											<a (click)="ocDeleteClick(course)" title="Delete" class="gray-s"><i class="uil uil-trash-alt"></i></a>

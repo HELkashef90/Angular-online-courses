@@ -223,7 +223,8 @@ export class InstructorAddLectureComponent implements OnInit {
     this.getChapters(this.lectureForm.get('course').value)
     this.lectureForm.get('chapter').setValue('')
     this.lectureForm.get('lectureTitle').setValue(lecture.content_title)
-    this.lectureForm.get('description').setValue(lecture.description)
+    this.lectureForm.get('description').setValue(lecture.content_description)
+    this.lectureForm.get('sort').setValue(lecture.content_sort_number)
   }
   onCancelEditChapterClick() {
     this.editMode = false;
