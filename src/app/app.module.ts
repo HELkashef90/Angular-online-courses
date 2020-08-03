@@ -35,6 +35,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AfterSignupComponent } from './pages/after-signup/after-signup.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
+
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -56,6 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCaptchaModule,
     // environment.production
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
     NgxSpinnerModule,
@@ -82,7 +86,8 @@ export function createTranslateLoader(http: HttpClient) {
     MatSliderModule,
     InfiniteScrollModule,
     NgxConfirmBoxModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },

@@ -4,7 +4,8 @@
 		<div class="row justify-content-lg-center justify-content-md-center">
 			<div class="col-lg-12">
 				<div class="main_logo25" id="logo">
-					<a><img [routerLink]="['']" routerLinkActive="router-link-active"  src="assets/images/logo.png" alt=""></a>
+					<a><img [routerLink]="['']" routerLinkActive="router-link-active" src="assets/images/logo.png"
+							alt=""></a>
 					<a><img [routerLink]="['']" class="logo-inverse" src="assets/images/ct_logo.svg" alt=""></a>
 				</div>
 			</div>
@@ -13,36 +14,47 @@
 				<div class="sign_form">
 					<h2>{{"Welcome Back" | translate}}</h2>
 					<p>{{"Log In to Your Account" | translate}}</p>
-					<form>
+					<form [formGroup]="loginForm">
 						<div class="ui search focus mt-15">
 							<div class="ui left icon input swdh95">
 								<input #userName class="prompt srch_explore" type="text" name="emailaddress" value=""
-									id="id_email" required="" maxlength="64" placeholder="{{'Email or phone' | translate}}">
+									id="id_email" required="" maxlength="64"
+									placeholder="{{'Email or phone' | translate}}">
 								<i class="uil uil-envelope icon icon2"></i>
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
 							<div class="ui left icon input swdh95">
 								<input #password class="prompt srch_explore" type="password" name="password" value=""
-									id="id_password" required="" maxlength="64" placeholder="{{'Password' | translate}}">
+									id="id_password" required="" maxlength="64"
+									placeholder="{{'Password' | translate}}">
 								<i class="uil uil-key-skeleton-alt icon icon2"></i>
 							</div>
 
 						</div>
-
+						<div class="ui search focus mt-15">
+							<ngx-recaptcha2 formControlName="reCaptcha" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
+								(success)="handleReCapSuccess($event)"
+								(reset)="handleReCapReset()"
+								></ngx-recaptcha2>
+						</div>
 						<ngx-loading [show]="loading"></ngx-loading>
 						<button class="login-btn" (click)="onLoginClick($event,userName.value, password.value)">{{"Sign
 							In" | translate}}</button>
-							<br>
+						<br>
 						<div *ngIf="showInvalidData" class="alert alert-danger" role="alert">
-							{{"Please enter valid Email or Mobile, and password" | translate}}
+							{{"Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box" | translate}}
 						</div>
 					</form>
-					<p class="sgntrm145">{{"Or" | translate}} <a [routerLink]="['/forgotPassword']" routerLinkActive="router-link-active" >{{"Forgot Password" | translate}}</a>.</p>
-					<p class="mb-0 mt-30 hvsng145">{{"Don't have an account?" | translate}} <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >{{"Sign Up" | translate}}</a></p>
+					<p class="sgntrm145">{{"Or" | translate}} <a [routerLink]="['/forgotPassword']"
+							routerLinkActive="router-link-active">{{"Forgot Password" | translate}}</a>.</p>
+					<p class="mb-0 mt-30 hvsng145">{{"Don't have an account?" | translate}} <a
+							[routerLink]="['/signup']"
+							routerLinkActive="router-link-active">{{"Sign Up" | translate}}</a></p>
 				</div>
 			</div>
-			<div class="sign_footer"><img src="assets/dashboard/images/sign_logo.png" alt="">© 2020 <strong>{{"Smart Academy" | translate}}</strong>. {{"All
+			<div class="sign_footer"><img src="assets/dashboard/images/sign_logo.png" alt="">© 2020
+				<strong>{{"Smart Academy" | translate}}</strong>. {{"All
 				Rights Reserved" | translate}}.</div>
 		</div>
 	</div>

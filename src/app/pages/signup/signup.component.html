@@ -28,20 +28,24 @@
 						<!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
 						<span *ngIf="registrationForm.get('signAs').invalid">
 							{{"*Please enter select your account type (student, instructor?)" | translate}} </span><br>
+						<span *ngIf="registrationForm.get('reCaptcha').invalid">
+							{{"*Please check the reCaptcha box" | translate}} </span><br>
 					</div>
 					<form [formGroup]="registrationForm">
 						<div class="ui search focus">
 							<label>{{"first Name" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="text" formControlName="firstName" value=""
-									id="id_fullname" required="" maxlength="64" placeholder="{{'example: Hossam' | translate}}">
+									id="id_fullname" required="" maxlength="64"
+									placeholder="{{'example: Hossam' | translate}}">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
 							<label>{{"last Name" | translate}}</label>
 							<div class="ui left icon input swdh11 swdh19">
 								<input class="prompt srch_explore" type="text" formControlName="lastName" value=""
-									id="id_fullname" required="" maxlength="64" placeholder="{{'example: Elkashef' | translate}}">
+									id="id_fullname" required="" maxlength="64"
+									placeholder="{{'example: Elkashef' | translate}}">
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
@@ -94,6 +98,11 @@
 									<label> {{"instructor" | translate}} </label>
 								</div>
 							</div>
+						</div>
+						<div class="ui search focus mt-15">
+							<ngx-recaptcha2 [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
+								
+								formControlName="reCaptcha"></ngx-recaptcha2>
 						</div>
 						<button class="login-btn" (click)="onSignUpClick($event)">{{"sign Up" | translate}}</button>
 						<ngx-loading [show]="loading"></ngx-loading>

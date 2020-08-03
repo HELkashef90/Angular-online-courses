@@ -25,6 +25,7 @@
 			}
 		}
 	},
+	"*Please check the reCaptcha box": "*Please check the reCaptcha box",
 	"*Please enter a valid Course Title": "*Please enter a valid Course Title",
 	"*Please enter a valid Email (ex": {
 		" example@gmail": {
@@ -233,7 +234,7 @@
 	"Physics": "Physics",
 	"Please Confirm?": "Please Confirm?",
 	"Please enter a valid mobile number or email": "Please enter a valid mobile number or email",
-	"Please enter valid Email or Mobile, and password": "Please enter valid Email or Mobile, and password",
+	"Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box": "Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box",
 	"Please select a lecture": "Please select a lecture",
 	"Please select subject": "Please select subject",
 	"Please try again": "Please try again",

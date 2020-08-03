@@ -42,7 +42,8 @@ export const environment = {
   _getEnrollmentCourses: `${serverUrl}student-enrolled/all-courses`,
   _getStudyCourse: `${serverUrl}student-enrolled/all-chapters-contents/`,
   _getStudentDashboard: `${serverUrl}student-view/dashboard`,
-  _getInstructorDashboard: `${serverUrl}instructor/dashboard`
+  _getInstructorDashboard: `${serverUrl}instructor/dashboard`,
+  _reCaptchaKey:`6LcGAroZAAAAAKFVrSJvh398TDUfB-pWPNRY5XM8`
 
 }
 /*

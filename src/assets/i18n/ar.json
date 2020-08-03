@@ -25,6 +25,7 @@
 			}
 		}
 	},
+	"*Please check the reCaptcha box": "*Please check the reCaptcha box",
 	"*Please enter a valid Course Title": "*يرجى إدخال عنوان كورس  صحيح",
 	"*Please enter a valid Email (ex": {
 		" example@gmail": {
@@ -233,7 +234,7 @@
 	"Physics": "الفيزياء",
 	"Please Confirm?": "يرجى التاكيد?",
 	"Please enter a valid mobile number or email": "يرجى إدخال رقم موبايل صحيح او ايميل",
-	"Please enter valid Email or Mobile, and password": "يرجى إدخال ايميل او رقم موبايل صحيح, و كلمة المرور",
+	"Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box": "Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box",
 	"Please select a lecture": "يرجى اختيار محاضرة",
 	"Please select subject": "يرجى اختيار مادة",
 	"Please try again": "يرجى إعادة المحاولة",

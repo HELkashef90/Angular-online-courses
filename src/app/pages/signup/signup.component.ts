@@ -6,6 +6,7 @@ import { HandleGlobalErrorService } from 'src/app/services/handleGlobalError/han
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-signup',
@@ -17,11 +18,15 @@ export class SignupComponent implements OnInit {
   registrationForm: FormGroup;
   showErrors: boolean;
   loading: boolean;
+  reCaptchaResponse: String = null;
+  reCaptchaKey: string;
   constructor(private _signUpService: SignupService, private _toastService: ToastService,
     private _handleGlobalErrorService: HandleGlobalErrorService,
     private _authService: AuthService,
     private translate: TranslateService,
-    private router:Router) { }
+    private router: Router) {
+    this.reCaptchaKey = environment._reCaptchaKey
+  }
   userData = {
     "email": "abdelrahm.osama.awad52@gmail.com",
     "mobile": "01008323444",
@@ -34,7 +39,13 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     // this._authService.authUser()
     // this.signUp(this.userData)
+    this.loading = true;
     this.initForm();
+  }
+  onReCapLoad() {
+    setTimeout(() => {
+      this.loading = false
+    }, 500);
   }
 
   onSignUpClick(event) {
@@ -54,6 +65,7 @@ export class SignupComponent implements OnInit {
       "usertype": this.registrationForm.value.signAs,
       "firstname": this.registrationForm.value.firstName,
       "lastname": this.registrationForm.value.lastName,
+      "recaptchaResponse": this.registrationForm.value.reCaptcha,
     }
     this.signUp(userData)
   }
@@ -93,6 +105,7 @@ export class SignupComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       // city: new FormControl(null, [Validators.required]),
       signAs: new FormControl('1', [Validators.required]),
+      reCaptcha: new FormControl('', [Validators.required])
     });
   }
   ngAfterViewInit() { }
