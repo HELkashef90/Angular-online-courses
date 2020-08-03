@@ -58,11 +58,6 @@
 	"*Please select lecture File": "*Please select lecture File",
 	"*Please select promo video": "*Please select promo video",
 	"*Please select subject": "*Please select subject",
-	"": {
-		" All Rights Reserved": {
-			"": ". All Rights Reserved."
-		}
-	},
 	"1st": "First grade secondary",
 	"2nd": "Second grade secondary",
 	"3rd": "Third grade secondary",
@@ -130,6 +125,7 @@
 	"Courses": "Courses",
 	"Courses Content": "Courses Content",
 	"Cover Image": "Cover Image",
+	"Create Chapter": "Create Chapter",
 	"Create Lecture": "Create Lecture",
 	"Create New Course": "Create New Course",
 	"Dashboard": "Dashboard",
@@ -223,6 +219,7 @@
 	"Next": "Next",
 	"No": "No",
 	"No result found": "No result found",
+	"Or": "Or",
 	"Order Details": "Order Details",
 	"Order Summary": "Order Summary",
 	"Password": "Password",
@@ -254,6 +251,7 @@
 	"Reset Password": "Reset Password",
 	"Reset Your Password": "Reset Your Password",
 	"Reset link Sent, Please Check Your mail": "Reset link Sent, Please Check Your mail",
+	"Save Chapter": "Save Chapter",
 	"Save Lecture": "Save Lecture",
 	"Science": "Science",
 	"Search": "Search",

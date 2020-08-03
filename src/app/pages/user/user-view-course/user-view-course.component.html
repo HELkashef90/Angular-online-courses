@@ -116,14 +116,15 @@
                                     <div *ngFor="let chapter of chapters" class="tab">
                                         <input type="checkbox" class="tab-input" id="{{chapter.id}}">
                                         <label class="tab-label" for="{{chapter.id}}">
+                                            <button *ngIf="!checkChapterOnCart(chapter)" (click)="cart.addToCart(chapter)" class="btn_adcart"><i
+                                                class="uil uil-shopping-cart-alt"></i>{{'Add to Cart' | translate}}</button>
                                             <span class="title">
                                                 <i class='uil uil-presentation-play crse_icon'></i>
                                                 <b>{{chapter.chapter_title}}</b>
                                             </span>
-                                            <span>{{chapter.chapter_num_of_video}} {{'lectures' | translate}}</span>
+                                            <!-- <span>{{chapter.chapter_num_of_video}} {{'lectures' | translate}}</span> -->
                                             <span>{{chapter.chapter_fee}} {{'LE' | translate}}</span>
-                                            <button *ngIf="!checkChapterOnCart(chapter)" (click)="cart.addToCart(chapter)" class="btn_adcart"><i
-                                                    class="uil uil-shopping-cart-alt"></i>{{'Add to Cart' | translate}}</button>
+                                            
                                         </label>
 
                                         <!-- <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">

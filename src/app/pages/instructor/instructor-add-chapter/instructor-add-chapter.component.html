@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-lg-4 col-md-12">
                                             <button (click)="onSaveChapterClick()" class="part_btn_save prt-sv">
-                                               {{editMode? 'Save Chapter' : 'Create Chapter'}}</button>
+                                               {{editMode? ('Save Chapter' | translate) : ('Create Chapter' | translate)}}</button>
                                                <button *ngIf="editMode" (click)="onCancelEditChapterClick()" class="part_btn_save prt-sv">
                                                 {{"cancel edit" | translate}}</button>
                                             <button (click)="getChaptersByInstructor()" class="btn btn-link collapsed" type="button" data-toggle="collapse"
