@@ -33,7 +33,7 @@
 
 						</div>
 						<div class="ui search focus mt-15">
-							<ngx-recaptcha2 formControlName="reCaptcha" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
+							<ngx-recaptcha2 #reCaptchaElm formControlName="reCaptcha" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
 								(success)="handleReCapSuccess($event)"
 								(reset)="handleReCapReset()"
 								></ngx-recaptcha2>

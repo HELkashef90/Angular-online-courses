@@ -1,6 +1,6 @@
 import { TranslateService } from '@ngx-translate/core';
 import { SignupService } from './../services/signup/signup.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { HandleGlobalErrorService } from 'src/app/services/handleGlobalError/handle-global-error.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  @ViewChild('reCaptchaElm') reCaptchaElm
   userType: any;
   registrationForm: FormGroup;
   showErrors: boolean;
@@ -87,7 +88,7 @@ export class SignupComponent implements OnInit {
         // this._toastService.showToast(err.error.message, 'error')
       }
       this.loading = false;
-
+      this.resetReCaptcha()
     })
   }
 
@@ -107,6 +108,13 @@ export class SignupComponent implements OnInit {
       signAs: new FormControl('1', [Validators.required]),
       reCaptcha: new FormControl('', [Validators.required])
     });
+  }
+
+  resetReCaptcha() {
+    this.loading = true;
+    this.reCaptchaElm.resetCaptcha()
+    this.reCaptchaResponse = null;
+    this.loading = false;
   }
   ngAfterViewInit() { }
 }

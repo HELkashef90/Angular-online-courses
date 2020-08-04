@@ -1,10 +1,11 @@
+import { LocalizationService } from './../../services/localization/localization.service';
 import { environment } from './../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { HandleGlobalErrorService } from './../../services/handleGlobalError/handle-global-error.service';
 import { AuthService } from './../../services/auth/auth.service';
 import { ToastService } from './../../services/toast/toast.service';
 import { LoginService } from './../services/login/login.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
@@ -13,16 +14,19 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('reCaptchaElm') reCaptchaElm
   showInvalidData: boolean = false;
   loading: boolean = false;
   redirectUrl: any;
   reCaptchaResponse: String = null;
   reCaptchaKey: string;
   loginForm: FormGroup;
+  userLang: string;
   constructor(private _loginService: LoginService, private _toastService: ToastService, private _authService: AuthService,
     private _handleGlobalErrorService: HandleGlobalErrorService, private route: ActivatedRoute, private router: Router,
-    private translate: TranslateService) {
+    private translate: TranslateService, public _local: LocalizationService) {
     this.reCaptchaKey = environment._reCaptchaKey
+    this.userLang = _local.getUserLang()
   }
   ngOnInit(): void {
     this.loading = true;
@@ -31,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
   initForm() {
     this.loginForm = new FormGroup({
-      reCaptcha : new FormControl('', [Validators.required])
+      reCaptcha: new FormControl('', [Validators.required])
     });
   }
   onReCapLoad() {
@@ -46,7 +50,6 @@ export class LoginComponent implements OnInit {
   }
   handleReCapReset() {
     this.reCaptchaResponse = null;
-
   }
   onLoginClick(event, userName, password) {
     event.preventDefault()
@@ -104,8 +107,13 @@ export class LoginComponent implements OnInit {
         // this._toastService.showToast(this.translate.instant("User Name or Password incorrect, please try again"), 'error')
       }
       this.loading = false;
-
+      this.resetReCaptcha()
     })
   }
-
+  resetReCaptcha() {
+    this.loading = true;
+    this.reCaptchaElm.resetCaptcha()
+    this.reCaptchaResponse = null;
+    this.loading = false;
+  }
 }
