@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { ToastService } from './../toast/toast.service';
 import { AuthService } from './../auth/auth.service';
 import { Injectable } from '@angular/core';
@@ -10,12 +11,12 @@ import { RouterStateSnapshot, Router, ActivatedRoute, NavigationEnd } from '@ang
 })
 export class HandleGlobalHttpErrorsService {
   unRedirectRoutes = ['/signup', '/login']
-  constructor(private _authService: AuthService, private _handleGlobalErrorService: HandleGlobalErrorService, private _toast: ToastService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private _authService: AuthService, private _handleGlobalErrorService: HandleGlobalErrorService, private _toast: ToastService, private router: Router, private route: ActivatedRoute, private translate : TranslateService) { }
   handleError(error: HttpErrorResponse) {
 
     // console.error('handle global error >> ', error.status);
     if (error.status === 401) {
-
+      this._toast.showToast(this.translate.instant("You are not authorized, you have been logged out"),'error');
       console.log(location.href.split('#')[1]);
       //refresh token
       // this._authService.refreshToken()

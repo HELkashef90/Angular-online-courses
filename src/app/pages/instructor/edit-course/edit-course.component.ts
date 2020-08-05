@@ -179,7 +179,7 @@ export class EditCourseComponent implements OnInit {
           this.stepper.reset();
           this.uploadingPercentage = 0
           this._toastService.showToast(this.translate.instant("your course successfully updated, congratulations!"), 'success')
-          this.router.navigate(['/instructor/courses'])
+          this.decline()
         }
       }, err => {
         this.uploading = false;
