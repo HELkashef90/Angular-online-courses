@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
     event.preventDefault()
     this.showErrors = false;
     // console.log(this.registrationForm);
-    if (!this.registrationForm.valid) {
+    if (!this.registrationForm.valid || this.registrationForm.get('confirmPassword').invalid || this.registrationForm.get('confirmPassword').value !== this.registrationForm.get('password').value) {
       this.showErrors = true;
       window.scrollTo(0, 0);
       return
@@ -110,7 +110,9 @@ export class SignupComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       // city: new FormControl(null, [Validators.required]),
       signAs: new FormControl('1', [Validators.required]),
-      reCaptcha: new FormControl('', [Validators.required])
+      reCaptcha: new FormControl('', [Validators.required]),
+      confirmPassword: new FormControl(''),
+
     });
   }
 

@@ -13,7 +13,7 @@
 				<div class="sign_form">
 					<h2> {{"Welcome to Smart Academy" | translate}} </h2>
 					<p>{{"Sign Up and Start Learning!" | translate}} </p>
-					<div class="alert alert-danger" role="alert" *ngIf="showErrors && registrationForm.invalid">
+					<div class="alert alert-danger" role="alert" *ngIf="showErrors && (registrationForm.invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value)">
 						<span *ngIf="registrationForm.get('firstName').invalid">
 							{{"*Please enter a valid first name (ex. Hossam)" | translate}} </span><br>
 						<span *ngIf="registrationForm.get('lastName').invalid">
@@ -25,6 +25,9 @@
 						<!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
 						<span *ngIf="registrationForm.get('password').invalid">
 							{{"*Please enter a valid password (minimum length = 8 characters)" | translate}} </span><br>
+							<span
+							*ngIf="registrationForm.get('confirmPassword').invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value">
+							{{"password doesn't match" | translate}}</span><br>
 						<!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
 						<span *ngIf="registrationForm.get('signAs').invalid">
 							{{"*Please enter select your account type (student, instructor?)" | translate}} </span><br>
@@ -69,7 +72,13 @@
 									id="id_password">
 							</div>
 						</div>
-
+						<div class="ui search focus mt-15">
+							<label>{{"confirm password" | translate}}</label>
+							<div class="ui left icon input swdh11 swdh19">
+								<input class="prompt srch_explore" type="password" formControlName="confirmPassword" value=""
+									id="id_password">
+							</div>
+						</div>
 						<!-- <div class="ui search focus mt-15">
 							<label>Address</label>
 							<div class="ui left icon input swdh11 swdh19">
