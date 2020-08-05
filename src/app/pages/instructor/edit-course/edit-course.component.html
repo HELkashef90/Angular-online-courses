@@ -19,7 +19,7 @@
         <span *ngIf="infoForm.get('courseDescription').invalid">
             {{"*Please enter a valid course description" | translate}}</span><br>
         <!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
-        <!-- <span *ngIf="infoForm.get('language').invalid"> *Please select language</span><br> -->
+        <span *ngIf="infoForm.get('language').invalid"> {{"*Please select language" | translate}}</span><br>
         <span *ngIf="infoForm.get('grade').invalid"> {{"*Please select grade" | translate}}</span><br>
         <span *ngIf="infoForm.get('subject').invalid"> *{{"Please select subject" | translate}}</span><br>
     </div>
@@ -84,17 +84,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="col-lg-4 col-md-12">
+                                        <div class="col-lg-4 col-md-12">
                                                 <div class="ui search focus mt-30 lbel25">
-                                                    <label>Language*</label>
+                                                    <label>{{"Language" | translate}}*</label>
                                                 </div>
                                                 <select formControlName="language">
-                                                    <option disabled selected value="">Select Language</option>
-                                                    <option value="1">Arabic</option>
-                                                    <option value="2">English</option>
+                                                    <option disabled selected value="">{{"Select Language" | translate}}</option>
+                                                    <option value="1">{{"Arabic" | translate}}</option>
+                                                    <option value="2">{{"English" | translate}}</option>
 
                                                 </select>
-                                            </div> -->
+                                            </div>
                                         <div class="col-lg-4 col-md-6">
                                             <div class="ui search focus mt-30 lbel25">
                                                 <label>{{"Grades*" | translate}}</label>

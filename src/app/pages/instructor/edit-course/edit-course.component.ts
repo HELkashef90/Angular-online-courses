@@ -64,7 +64,7 @@ export class EditCourseComponent implements OnInit {
       courseTitle: [this.selectedCourseToEdit.course_title, [Validators.required, Validators.maxLength(120)]],
       courseSubTitle: [this.selectedCourseToEdit.course_subtitle, [Validators.required, Validators.maxLength(120)]],
       courseDescription: [this.selectedCourseToEdit.course_description, [Validators.required]],
-      // language: [this.selectedCourseToEdit, [Validators.required]],
+      language: [this.selectedCourseToEdit.langauge, [Validators.required]],
       grade: [this.selectedCourseToEdit.level, [Validators.required]],
       subject: [this.selectedCourseToEdit.subject_name, [Validators.required]],
     });
