@@ -25,7 +25,8 @@
                         <div class="col-xl-3 col-lg-5 col-md-6">
                             <div class="preview_video">
                                 <a class="fcrse_img" data-toggle="modal" data-target="#videoModal">
-                                    <img src="{{ course?.cover_image_path || 'assets/images/courses/img-14.jpg'}}" alt="">
+                                    <img src="{{ course?.cover_image_path || 'assets/images/courses/img-14.jpg'}}"
+                                        alt="">
                                     <div class="course-overlay">
                                         <span class="play_btn1"><i class="uil uil-play"></i></span>
                                         <span class="_215b02">{{'Preview this course' | translate}}</span>
@@ -37,13 +38,15 @@
                             <div class="_215b03">
                                 <h2>{{course?.course_title}}</h2>
                                 <span class="_215b04">{{course?.course_description}} </span>
+
                             </div>
-                            <!-- <div class="_215b06">										
-                                    <div class="_215b07">										
-                                        <span><i class='uil uil-comment'></i></span>
-                                        {{course.}}
-                                    </div>
-                                </div> -->
+                            <div class="_215b06">
+                                <div class="_215b07">
+                                    <a *ngIf="course?.level =='1'">{{"1st" | translate}}</a>
+                                    <a *ngIf="course?.level == '2'">{{"1st" | translate}}</a>
+                                    <a *ngIf="course?.level == '3'">{{"1st" | translate}}</a>
+                                </div>
+                            </div>
                             <div class="_215b05">
                                 {{'Last updated ' | translate}} {{course?.lastModifiedDate | date }}
                             </div>
@@ -116,15 +119,20 @@
                                     <div *ngFor="let chapter of chapters" class="tab">
                                         <input type="checkbox" class="tab-input" id="{{chapter.id}}">
                                         <label class="tab-label" for="{{chapter.id}}">
-                                            <button *ngIf="!checkChapterOnCart(chapter)" (click)="cart.addToCart(chapter)" class="btn_adcart"><i
-                                                class="uil uil-shopping-cart-alt"></i>{{'Add to Cart' | translate}}</button>
+                                            <button *ngIf="!checkChapterOnCart(chapter) && chapter.status === 0"
+                                                (click)="cart.addToCart(chapter)" class="btn_adcart"><i
+                                                    class="uil uil-shopping-cart-alt"></i>{{'Add to Cart' | translate}}</button>
+                                            <button *ngIf="chapter.status === 1"
+                                                class="btn_adcart" style="background-color : blue">{{'Pending' | translate}}</button>
+                                            <button *ngIf="chapter.status === 2"
+                                                class="btn_adcart" style="background-color :green">{{'Enrolled' | translate}}</button>
                                             <span class="title">
                                                 <i class='uil uil-presentation-play crse_icon'></i>
                                                 <b>{{chapter.chapter_title}}</b>
                                             </span>
                                             <!-- <span>{{chapter.chapter_num_of_video}} {{'lectures' | translate}}</span> -->
                                             <span>{{chapter.chapter_fee}} {{'LE' | translate}}</span>
-                                            
+
                                         </label>
 
                                         <!-- <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
@@ -162,8 +170,8 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                    
-                                        </div>
+
+                                    </div>
 
                                 </div>
                                 <!-- <a class="btn1458" >20 More Sections</a> -->
