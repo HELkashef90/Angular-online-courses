@@ -150,7 +150,7 @@ export class EditCourseComponent implements OnInit {
     let courseForm = new FormData();
     courseForm.append('course', JSON.stringify(
       {
-        "id": this.selectedCourseToEdit.id,
+        "id": this.selectedCourseToEdit.course_id,
         "course_title": this.infoForm.get('courseTitle')?.value,
         "course_subtitle": this.infoForm.get('courseSubTitle')?.value,
         "course_description": this.infoForm.get('courseDescription')?.value,
