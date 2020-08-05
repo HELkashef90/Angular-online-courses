@@ -26,10 +26,10 @@ export class LoginComponent implements OnInit {
     private _handleGlobalErrorService: HandleGlobalErrorService, private route: ActivatedRoute, private router: Router,
     private translate: TranslateService, public _local: LocalizationService) {
     this.reCaptchaKey = environment._reCaptchaKey
-    this.userLang = _local.getUserLang()
   }
   ngOnInit(): void {
     this.loading = true;
+    this.userLang = this._local.getUserLang()
     this.initForm()
     //  this._authService.authUser()
   }

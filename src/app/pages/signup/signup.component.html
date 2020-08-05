@@ -100,7 +100,7 @@
 							</div>
 						</div>
 						<div class="ui search focus mt-15">
-							<ngx-recaptcha2 #reCaptchaElm  [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
+							<ngx-recaptcha2 #reCaptchaElm [hl]="userLang" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
 								
 								formControlName="reCaptcha"></ngx-recaptcha2>
 						</div>

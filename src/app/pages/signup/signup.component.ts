@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { LocalizationService } from 'src/app/services/localization/localization.service';
 
 @Component({
   selector: 'app-signup',
@@ -21,11 +22,12 @@ export class SignupComponent implements OnInit {
   loading: boolean;
   reCaptchaResponse: String = null;
   reCaptchaKey: string;
+  userLang: string;
   constructor(private _signUpService: SignupService, private _toastService: ToastService,
     private _handleGlobalErrorService: HandleGlobalErrorService,
     private _authService: AuthService,
     private translate: TranslateService,
-    private router: Router) {
+    private router: Router,public _local: LocalizationService) {
     this.reCaptchaKey = environment._reCaptchaKey
   }
   userData = {
@@ -41,6 +43,8 @@ export class SignupComponent implements OnInit {
     // this._authService.authUser()
     // this.signUp(this.userData)
     this.loading = true;
+    this.userLang = this._local.getUserLang()
+
     this.initForm();
   }
   onReCapLoad() {
