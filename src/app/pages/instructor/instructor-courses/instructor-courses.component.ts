@@ -59,7 +59,9 @@ export class InstructorCoursesComponent implements OnInit {
       initialState: {
         selectedCourseToEdit: course
       },
-      class: 'modal-lg'
+      class: 'modal-lg',
+      backdrop : 'static',
+      keyboard : false
     });
 
 

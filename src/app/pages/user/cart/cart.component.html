@@ -28,9 +28,9 @@
 									</div>
 									<a class="crse-cate">{{chapter.course_title}}</a>
 									<a class="crse14s title900">{{chapter.chapter_title}}</a>
-									<a *ngIf="chapter.subjectId === 1" class="crse-cate">Physics / {{chapter.chapter_num_of_video}} {{'lecture' | translate}}</a>
-									<a *ngIf="chapter.subjectId === 2" class="crse-cate">Math / {{chapter.chapter_num_of_video}} {{'lecture' | translate}}</a>
-									<a *ngIf="chapter.subjectId === 3" class="crse-cate">Science / {{chapter.chapter_num_of_video}} {{'lecture' | translate}}</a>
+									<a *ngIf="chapter.subjectId === 1" class="crse-cate">{{"Physics" | translate}} / {{chapter.chapter_num_of_video}} {{'lecture' | translate}}</a>
+									<a *ngIf="chapter.subjectId === 2" class="crse-cate">{{"Math" | translate}} / {{chapter.chapter_num_of_video}} {{'lecture' | translate}}</a>
+									<a *ngIf="chapter.subjectId === 3" class="crse-cate">{{"Science" | translate}} / {{chapter.chapter_num_of_video}} {{'lecture' | translate}}</a>
 									<div class="auth1lnkprce">
 										<!-- <p class="cr1fot">{{'By' | translate}}<a href="#">John Doe</a></p> -->
 										<div class="prce142">{{chapter.chapter_fee}} {{'EGP' | translate}}</div>
@@ -59,7 +59,7 @@
 							<div class="scr_text"><button [disabled]="!cart.cart.length"
 									[routerLink]="['/user/checkout']" routerLinkActive="router-link-active"
 									[ngStyle]="{'background-color':!cart.cart.length ? 'darkgray' : null}"
-									class="live_link">Check Out</button></div>
+									class="live_link">{{"Check Out" | translate}}</button></div>
 
 						</div>
 						<div class="scr_text"><i class="uil uil-lock-alt"></i>{{'Secure checkout' | translate}}</div>
