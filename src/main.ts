@@ -10,6 +10,6 @@ if (environment.production) {
   console.log = () => { }
   console.error = () => { }
 }
-
+document.addEventListener('contextmenu', event => event.preventDefault());
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

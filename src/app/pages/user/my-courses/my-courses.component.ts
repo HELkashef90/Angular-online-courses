@@ -29,7 +29,7 @@ export class MyCoursesComponent implements OnInit {
       return false;
     }
     this.loading = true
-    this._courseService.getEnrollmentCourse().subscribe(res => {
+    this._courseService.getEnrollmentCourse(this.reqPageNum,this.pageSize).subscribe(res => {
       console.log(res);
       if (res['statusCodeValue'] === 204) {
         this.lastPage = true

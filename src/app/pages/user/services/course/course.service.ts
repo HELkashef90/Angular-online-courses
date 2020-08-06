@@ -19,8 +19,8 @@ export class CourseService {
   getChaptersByCourseId(courseId: string) {
     return this.httpClient.get(environment._getCourseChaptersByCourseIdStudent + courseId)
   }
-  getEnrollmentCourse() {
-    return this.httpClient.get(environment._getEnrollmentCourses)
+  getEnrollmentCourse(page, size) {
+    return this.httpClient.get(environment._getEnrollmentCourses  + '?page=' + page + '&size=' + size)
   }
 
   getStudyCourse(id) {
