@@ -477,6 +477,10 @@ body {
         right:0;
         z-index: 1;
     }
+    .rtl .tab:hover .btn_adcart{
+        right:auto;
+        left: 0;
+    }
 }
 @media (max-width: 1199px) {
     .tab .btn_adcart {

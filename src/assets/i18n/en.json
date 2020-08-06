@@ -10,13 +10,13 @@
 	},
 	"'Upload your course image here": {
 		" It must meet our course image quality standards to be accepted": {
-			" Important guidelines: 750x422 pixels; ": {
+			" Important guidelines: 493*352 pixels; ": {
 				"jpg, ": {
 					"jpeg,": {
 						" gif, or ": {
 							"png": {
 								" no text on the image": {
-									"'": "'Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'"
+									"'": "'Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 493*352 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'"
 								}
 							}
 						}
@@ -298,23 +298,6 @@
 	"Total Students": "Total Students",
 	"Unexpected error occurred, please try again": "Unexpected error occurred, please try again",
 	"Upload Video or File*": "Upload Video or File*",
-	"Upload your course image here": {
-		" It must meet our course image quality standards to be accepted": {
-			" Important guidelines: 750x422 pixels; ": {
-				"jpg, ": {
-					"jpeg,": {
-						" gif, or ": {
-							"png": {
-								" no text on the image": {
-									"": "Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the image."
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	},
 	"View Saved Chapters": "View Saved Chapters",
 	"View Saved Lecture": "View Saved Lecture",
 	"Welcome Back": "Welcome Back",

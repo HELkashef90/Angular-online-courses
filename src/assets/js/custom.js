@@ -46,6 +46,20 @@ $('.enable.button')
 		  footer.classList.toggle("wrapper__minify");
 		  
   }
+//   let menus = document.querySelectorAll('.has-menu');
+//   //console.log(menus)
+
+//   for (let dropdown of menus) {
+// 	//console.log(dropdown);
+// 	dropdown.onclick = () => {
+// 		console.log(dropdown.children[1]);
+// 		let dropdownMenu = document.querySelector('.drop-menu');
+// 		dropdown.children[1].classList.toggle("toggle-menu");
+// 	}
+//   }
+  
+
+
 
 // Home Live Stream
 // $('.live_stream').owlCarousel({

@@ -10,13 +10,13 @@
 	},
 	"'Upload your course image here": {
 		" It must meet our course image quality standards to be accepted": {
-			" Important guidelines: 750x422 pixels; ": {
+			" Important guidelines: 493*352 pixels; ": {
 				"jpg, ": {
 					"jpeg,": {
 						" gif, or ": {
 							"png": {
 								" no text on the image": {
-									"'": "'حمل صورة الكورس هنا.يجب ان توافق الصورة المعيير القياسية لقبولها. إرشادات هامة: 750 x422 pixels; .jpg, .jpeg,. gif, or .png.لا يسمح بنص على الصورة'"
+									"'": "'Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 493*352 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'"
 								}
 							}
 						}
@@ -298,23 +298,6 @@
 	"Total Students": "اجمالى الطلاب",
 	"Unexpected error occurred, please try again": "حدث خطأ غير متوقع, يرجى المحاولة مرة اخرى",
 	"Upload Video or File*": "حمل فيديو / ملف*",
-	"Upload your course image here": {
-		" It must meet our course image quality standards to be accepted": {
-			" Important guidelines: 750x422 pixels; ": {
-				"jpg, ": {
-					"jpeg,": {
-						" gif, or ": {
-							"png": {
-								" no text on the image": {
-									"": "حمل صورة الكورس هنا.يجب ان توافق الصورة المعيير القياسية لقبولها. إرشادات هامة: 750 x422 pixels; .jpg, .jpeg,. gif, or .png.لا يسمح بنص على الصورة."
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	},
 	"View Saved Chapters": "عرض الفصول المسجلة",
 	"View Saved Lecture": "عرض المحاضرات المسجلة",
 	"Welcome Back": "مرحبا بعودتك",

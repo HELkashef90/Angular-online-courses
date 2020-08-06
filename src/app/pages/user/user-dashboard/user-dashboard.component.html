@@ -34,7 +34,7 @@
                     <h4 class="item_title">{{'Newest Courses' | translate}}</h4>
                     <a [routerLink]="['/user/courses']" routerLinkActive="router-link-active"  class="see150">{{'See all' | translate}}</a>
                 </div>
-                <div *ngFor="let course of approvedCoursesArray" [routerLink]="['/user/viewCourse/',course.id]"  class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div *ngFor="let course of approvedCoursesArray" [routerLink]="['/user/viewCourse/',course.id]"  class="col-12 col-md-6 col-xl-4">
                     <div class="fcrse_1 mb-20">
                         <a 
                             class="fcrse_img">
