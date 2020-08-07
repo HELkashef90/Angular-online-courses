@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 ">
-                <button class="login-btn" (click)="onSearchClick($event,search.value)">{{"Search" |translate}}</button>
+                <button #searchElm class="login-btn" (click)="onSearchClick(search.value, $event)">{{"Search" |translate}}</button>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 ">
                 <button class="login-btn" (click)="clearSearch(search)">{{"Refresh table" |translate}}</button>
@@ -49,10 +49,10 @@
                                 <td class="text-center">{{student.chapter_title}}</td>
                                 <td class="text-center">{{student.chapter_fee}}</td>
                                 <td class="text-center">
-                                    <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student)"
+                                    <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student,search.value)"
                                         title="Approved" class="accept-btn mx-2"><i class="uil uil-check"></i>
                                         {{"Approved" |translate}}</a>
-                                    <a *ngIf="student.is_active_subscription" (click)="onRejectClick(student)"
+                                    <a *ngIf="student.is_active_subscription" (click)="onRejectClick(student,search.value)"
                                         title="Reject" class="reject-btn  mx-2"><i class="uil uil-times"></i>
                                         {{"Reject" |translate}}</a>
                                 </td>

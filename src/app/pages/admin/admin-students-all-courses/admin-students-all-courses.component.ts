@@ -1,5 +1,5 @@
 import { StudentsService } from './../services/students/students.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmComponent } from '../components/confirm/confirm.component';
@@ -11,7 +11,7 @@ import { ToastService } from 'src/app/services/toast/toast.service';
   styleUrls: ['./admin-students-all-courses.component.scss']
 })
 export class AdminStudentsAllCoursesComponent implements OnInit {
-
+  @ViewChild('searchElm') searchElm: ElementRef
   totalPages = 0;
   totalStudents: any;
   enrollmentStudentsArray = [];
@@ -28,8 +28,8 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEnrollment()
   }
-  onSearchClick(event, search) {
-    event.preventDefault()
+  onSearchClick(search, event?) {
+    event?.preventDefault()
     // this.showInvalidData = false;
     let isEmail = false;
     let isMobile = false;
@@ -103,7 +103,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
   onScroll() {
     this.getAllEnrollment()
   }
-  onApproveClick(student) {
+  onApproveClick(student, search) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
 
       initialState: {
@@ -116,7 +116,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
         ],
         callback: (result) => {
           if (result) {
-            this.approveStudentPayment(student.enrollment_id)
+            this.approveStudentPayment(student.enrollment_id, search)
           } else {
             console.log('cancel');
 
@@ -125,10 +125,10 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
       }
     });
   }
-  approveStudentPayment(enrollment_id: any) {
+  approveStudentPayment(enrollment_id: any, search) {
     this._students.approveStudentPayment(enrollment_id).subscribe(res => {
       this._toast.showToast(this.translate.instant("Activated Successfully"), 'success');
-      this.resetTable()
+      search ? this.onSearchClick(search) : this.resetTable();
       console.log(res);
 
     }, err => {
@@ -136,7 +136,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
 
     })
   }
-  onRejectClick(student) {
+  onRejectClick(student, search) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
 
       initialState: {
@@ -149,7 +149,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
         ],
         callback: (result) => {
           if (result) {
-            this.rejectEnrolment(student.enrollment_id)
+            this.rejectEnrolment(student.enrollment_id, search)
           } else {
             console.log('cancel');
 
@@ -158,11 +158,11 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
       }
     });
   }
-  rejectEnrolment(enrollment_id: any) {
+  rejectEnrolment(enrollment_id: any, search) {
     this._students.rejectEnrolment(enrollment_id).subscribe(res => {
       this._toast.showToast(this.translate.instant("Deactivated Successfully"), 'success');
-      this.resetTable()
-      console.log(res);
+      search ? this.onSearchClick(search) : this.resetTable();
+
       console.log(res);
 
     }, err => {
