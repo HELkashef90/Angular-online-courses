@@ -35,6 +35,7 @@
                                 <th class="text-center" scope="col">{{"Email" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Course Name" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Chapter Name" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Instructor Name" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Price" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Action" |translate}}</th>
                             </tr>
@@ -47,6 +48,7 @@
                                 <td class="text-center">{{student.email}}</td>
                                 <td class="text-center">{{student.course_title}}</td>
                                 <td class="text-center">{{student.chapter_title}}</td>
+                                <td class="text-center">{{student.instrcutor_name}}</td>
                                 <td class="text-center">{{student.chapter_fee}}</td>
                                 <td class="text-center">
                                     <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student,search.value)"

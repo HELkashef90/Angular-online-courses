@@ -4193,7 +4193,7 @@ input[type=text] {
 .left_footer a {
     font-size: 13px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     line-height: 24px;
     padding: 0 3px;
@@ -4211,7 +4211,7 @@ input[type=text] {
 .left_footer_content p {
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #afafaf;
     text-align: left;
     line-height: 24px;
@@ -4280,7 +4280,7 @@ i.icon1 {
     padding-right: 1em!important;
 	font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .header_right {
@@ -4322,7 +4322,7 @@ i.icon1 {
     line-height: 1.5;
     border-radius: 100%;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .opts_account img {
@@ -4336,7 +4336,7 @@ i.icon1 {
 .upload_btn {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 9px 15px;
@@ -4358,7 +4358,7 @@ i.icon1 {
     padding: 20px 17px 10px;
     font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #afafaf;
     text-align: left;
 	margin-bottom: 0;
@@ -4426,7 +4426,7 @@ i.icon1 {
 .pd_content h6 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 5px;
     color: #333;
     text-align: left;
@@ -4436,7 +4436,7 @@ i.icon1 {
 .pd_content span {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;
     color: #686f7a;
     text-align: left;
@@ -4445,7 +4445,7 @@ i.icon1 {
 .dp_link_12 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     margin-top: 15px;
     display: block;
@@ -4460,7 +4460,7 @@ i.icon1 {
     color: #686f7a !important;
     padding: .78571429rem 1.14285714rem!important;
     font-size: 14px !important;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui.dropdown .menu>.channel_item:hover {
@@ -4481,7 +4481,7 @@ i.icon1 {
 .pd_content p {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 8px;
     color: #686f7a;
     text-align: left;
@@ -4492,7 +4492,7 @@ i.icon1 {
 .pd_content span.nm_time {
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;
     color: #afafaf;
     text-align: left;
@@ -4506,7 +4506,7 @@ i.icon1 {
     background: #ffecec;
     font-size: 14px;
     color: #333 !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
 }
 
@@ -4530,7 +4530,7 @@ i.icon1 {
 .item_f1 a {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	display: inline-block;
     padding-right: 20px;
     color: #fff;
@@ -4554,7 +4554,7 @@ i.icon1 {
     border: 0;
     border-radius: 20px;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: #c8302f;
     font-size: 14px;
     font-weight: 500;
@@ -4576,7 +4576,7 @@ i.icon1 {
     border: 1px solid #fff;
     border-radius: 20px;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: transparent;
     font-size: 14px;
     font-weight: 500;
@@ -4613,7 +4613,7 @@ i.icon1 {
 .fotb_left p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #f7f7f7;
     text-align: left;
     line-height: 24px;
@@ -4646,7 +4646,7 @@ i.icon1 {
 }
 
 .lng_btn .ui.dropdown .menu>.item {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #333 !important;
 }
 
@@ -4677,7 +4677,7 @@ i.icon1 {
 .item_title {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
 	float: left;
@@ -4915,7 +4915,7 @@ i.icon1 {
     margin-top: 0 !important;
     margin-bottom: 8px !important;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
 }
 
@@ -4945,7 +4945,7 @@ i.icon1 {
 .card_dash_left h5 {
     font-size: 16px;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     margin-bottom: 15px;
     text-align: left;
@@ -4954,7 +4954,7 @@ i.icon1 {
 .card_dash_left h2 {
     font-size: 24px;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     margin-bottom: 15px;
     text-align: left;
@@ -4964,7 +4964,7 @@ i.icon1 {
 .card_dash_left span {
     font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: #efefef;
     padding: 5px 10px;
     border-radius: 10px;
@@ -4990,7 +4990,7 @@ i.icon1 {
 .create_btn_dash {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 0px 20px;
@@ -5027,7 +5027,7 @@ i.icon1 {
 .card_dash_left1 h1 {
     font-size: 24px;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     margin-bottom: 0 !important;
     text-align: left;
@@ -5083,7 +5083,7 @@ i.icon1 {
 	display: block;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
     margin-bottom: 7px;
@@ -5094,7 +5094,7 @@ i.icon1 {
     display: block;
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 }
@@ -5103,7 +5103,7 @@ i.icon1 {
     margin-bottom: 0;
     margin-top: 18px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     float: left;
     color: #686f7a;
     text-align: left;
@@ -5132,7 +5132,7 @@ i.icon1 {
     float: right;
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: right;
 }
@@ -5142,7 +5142,7 @@ i.icon1 {
     font-size: 12px;
     margin-top: 5px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     display: block;
@@ -5197,7 +5197,7 @@ i.icon1 {
 	color: #686f7a;
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	padding: 10px;
 	text-decoration: none;
 	display: block;
@@ -5294,7 +5294,7 @@ i.icon1 {
     float: left;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 }
@@ -5303,7 +5303,7 @@ i.icon1 {
     float: right;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 }
@@ -5312,7 +5312,7 @@ i.icon1 {
     display: block;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
     margin-bottom: 0;
@@ -5323,7 +5323,7 @@ i.icon1 {
     padding-bottom: 5px;
     padding-top: 5px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     display: block;
     color: #333;
     text-align: left;
@@ -5408,7 +5408,7 @@ i.icon1 {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     margin-bottom: 0;
@@ -5419,7 +5419,7 @@ i.icon1 {
     display: block;
     font-size: 24px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
     margin-bottom: 0;
@@ -5449,7 +5449,7 @@ i.icon1 {
     display: block;
     padding: 15px 10px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     color: #333;
     text-align: left;
@@ -5484,7 +5484,7 @@ i.icon1 {
     display: block;
     padding: 15px 0 0;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     color: #333;
     text-align: left;
@@ -5497,7 +5497,7 @@ i.icon1 {
 
 .submit-course {
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     margin-top: 15px;
     color: #686f7a;
@@ -5551,7 +5551,7 @@ i.icon1 {
     display: block;
     padding: 1.2rem 1rem;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     color: #333;
     border-radius: 5px !important;
@@ -5583,7 +5583,7 @@ table.table.ucp-table {
     font-weight: 500;
     padding: 14px !important;
     border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333 !important;
 }
 
@@ -5602,7 +5602,7 @@ table.table.ucp-table {
     font-weight: 500;
     padding: 14px !important;
     border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333 !important;
 }
 
@@ -5657,7 +5657,7 @@ table {
 .ucp-table tbody tr td {
     font-size: 14px;
     vertical-align: middle;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	font-weight: 400;
 	white-space: nowrap;
 }
@@ -5699,7 +5699,7 @@ table {
 .panel-body {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     line-height: 26px;
     text-align: left;
@@ -5716,7 +5716,7 @@ table {
     font-size: 16px;
     font-weight: 500;
     color: #333 !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     padding: 15px 0;
     display: block;
     line-height: 26px;
@@ -5730,7 +5730,7 @@ table {
 
 .panel-title > a:before {
     float: right !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     content:"\-";
     padding-right: 0px;
 	font-size: 20px;
@@ -5745,7 +5745,7 @@ table {
 .lbel25 label {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 10px !important;
     color: #333;
     text-align: left;
@@ -5768,7 +5768,7 @@ table {
     height: 40px !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui[class*="left icon"].swdh11.input>input {
@@ -5777,13 +5777,13 @@ table {
     height: 50px;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui.selection.cntry152.dropdown {
     min-width: 100% !important;
     padding: .78571429em 2.1em 0.785714em 2em !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
 }
 
@@ -5803,7 +5803,7 @@ table {
 .ui.selection.cntry152.dropdown {
     min-width: 100% !important;
     padding: .78571429em 2.1em 0.785714em 2em !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
 }
 
@@ -5845,7 +5845,7 @@ table {
     border-radius: 20px;
     border: 0;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
 	width: 100%;
@@ -5874,7 +5874,7 @@ table {
 .promotion_tab h4 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
@@ -5885,7 +5885,7 @@ table {
 .promotion_tab p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: center;
 	line-height: 26px;
@@ -5897,7 +5897,7 @@ table {
     border-radius: 20px;
     border: 0;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
 	text-align: center;
@@ -5922,7 +5922,7 @@ table {
 .analysis_card h2 {
 	font-size: 24px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
     line-height: 26px;
@@ -5932,7 +5932,7 @@ table {
 .analysis_card p {
 	font-size: 16px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 	line-height: 26px;
@@ -5975,7 +5975,7 @@ table {
 }
 
 .analysis_card .nav-link {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
 	color: #686f7a;
 	padding-top: 30px;	
@@ -5991,14 +5991,14 @@ table {
 }
 
 .views_title {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
 }
 
 .ovrvew-1 {
 	font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
 	line-height: 26px;
@@ -6022,7 +6022,7 @@ table {
 .curntusr145 h4 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
     line-height: 26px;
@@ -6104,7 +6104,7 @@ table {
 	font-weight: 500;
 	color: #b2b2b2;
 	font-size: 14px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-top: 20px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -6205,7 +6205,7 @@ table {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	border: 0;	
 	padding: 0;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #333;
 	font-weight: 400;
 	position: relative;
@@ -6287,7 +6287,7 @@ table {
     display: -ms-flexbox;
     display: flex;
     font-size: 18px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	font-weight: 500;
     margin-bottom: 0;
     text-transform: capitalize;
@@ -6314,7 +6314,7 @@ table {
     background: #c8302f;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     position: absolute;
     right: 3px;
     border-radius: 100%;
@@ -6329,7 +6329,7 @@ table {
     background: #c8302f;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     position: absolute;
     right: 3px;
     border-radius: 20px;
@@ -6408,7 +6408,7 @@ textarea ~ .badge_num2 {
 .price_title h4 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
 	text-align: left;
 	margin-bottom: 15px;
@@ -6465,7 +6465,7 @@ textarea ~ .badge_num2 {
 .view_img_right h4 {
     font-size: 18px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #333;
 	line-height: 26px;
 	text-align: left;
@@ -6475,7 +6475,7 @@ textarea ~ .badge_num2 {
 .view_img_right p {
     font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 	line-height: 26px;
 	text-align: left;
@@ -6486,7 +6486,7 @@ textarea ~ .badge_num2 {
 .part__title {
 	font-size: 18px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #333;
 	line-height: 26px;
 	text-align: left;
@@ -6501,7 +6501,7 @@ textarea ~ .badge_num2 {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	border: 0;	
 	padding: 0;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #333;
 	font-weight: 400;
 	position: relative;
@@ -6568,7 +6568,7 @@ textarea ~ .badge_num2 {
     background: #c8302f;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     position: absolute;
     right: 3px;
     border-radius: 100%;
@@ -6585,14 +6585,14 @@ textarea ~ .badge_num2 {
     height: 40px !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .badge_min {
     background: #c8302f;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     position: absolute;
     right: 3px;
     border-radius: 20px;
@@ -6609,7 +6609,7 @@ textarea ~ .badge_num2 {
     height: 40px !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .prt-sv {
@@ -6619,7 +6619,7 @@ textarea ~ .badge_num2 {
 .part_btn_save {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 0px 30px;
@@ -6660,7 +6660,7 @@ textarea ~ .badge_num2 {
 .caption__check {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 }
 
@@ -6681,7 +6681,7 @@ textarea ~ .badge_num2 {
 .lecture_title h4 {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     text-align: left;
     margin-bottom: 15px;
@@ -6699,7 +6699,7 @@ textarea ~ .badge_num2 {
 .save_content_btn {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 0px 30px;
@@ -6733,7 +6733,7 @@ textarea ~ .badge_num2 {
     height: 40px !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 i.icon8 {
@@ -6796,7 +6796,7 @@ i.icon8 {
     color: #fff;
     font-size: 10px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
 }
 
@@ -6804,7 +6804,7 @@ i.icon8 {
 	color: #333;
     font-size: 16px;
     font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 1.4285714286em;
 	text-align: left;
 	padding-left: 65px;
@@ -6816,7 +6816,7 @@ i.icon8 {
     color: #686f7a;
     font-size: 14px;
     font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -6834,7 +6834,7 @@ i.icon8 {
 .user-status .user-status-time {
 	font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;
     color: #afafaf;
 }
@@ -6871,7 +6871,7 @@ i.icon8 {
     display: inline-block;
     height: 20px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     padding: 0 8px;
     border-radius: 200px;
     background-color: #afafaf;
@@ -7026,7 +7026,7 @@ i.icon8 {
     float: left;
     width: 100%;
     margin-top: 7px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
 
 }
@@ -7036,7 +7036,7 @@ i.icon8 {
 	width: 60%;
 	background-color: #c8302f;
 	font-size: 14px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	line-height: 22px;
 	padding: 12px 20px;
 	color: #fff;
@@ -7092,7 +7092,7 @@ i.icon8 {
 	padding: 0 20px;
 	border-radius: 20px;
 	border: 0;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	font-weight: 500;
 	font-size: 18px;
 	color: #fff;
@@ -7110,7 +7110,7 @@ i.icon8 {
 	margin-right: 10px;
     border-radius: 20px;
     border: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     width: 50px;
     font-size: 18px;
@@ -7129,7 +7129,7 @@ i.icon8 {
 
 .crse_bl {
 	font-weight: 600;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 }
 
@@ -7146,7 +7146,7 @@ i.icon8 {
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .setting_noti:hover {
@@ -7185,7 +7185,7 @@ i.icon8 {
 .reviews_left h3 {
     font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 20px;
     color: #333;
@@ -7205,7 +7205,7 @@ i.icon8 {
 ._rate001 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #333;
@@ -7270,7 +7270,7 @@ i.icon8 {
 ._rate002 {
     font-size: 13px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #333;
@@ -7335,7 +7335,7 @@ i.icon8 {
 .review_right_heading h3 {
     font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #333;
@@ -7352,7 +7352,7 @@ i.icon8 {
     height: 30px;
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     padding-left: 15px;
     padding-right: 40px;
@@ -7412,7 +7412,7 @@ i.icon8 {
 .tutor_name1 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333 !important;
     text-align: left;
 	margin-bottom: 0;
@@ -7421,7 +7421,7 @@ i.icon8 {
 .time_145 {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     display: block;
     margin-top: 5px;
@@ -7445,7 +7445,7 @@ i.icon8 {
 .rpt100 span {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
     line-height: 24px;
 	margin-right: 10px;
@@ -7459,7 +7459,7 @@ i.icon8 {
 .review_item_course_title a {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     line-height: 24px;
     margin-bottom: 0;
@@ -7485,7 +7485,7 @@ i.icon8 {
 .earning_steps p {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     line-height: 26px;
     text-align: center;
@@ -7494,7 +7494,7 @@ i.icon8 {
 .earning_steps h2 {
     font-size: 30px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     line-height: 26px;
     margin-top: 20px;
@@ -7512,7 +7512,7 @@ i.icon8 {
 .top_countries_title h2 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #333;
 	border-bottom: 1px solid #efefef;
 	padding: 1.2rem 2rem;
@@ -7554,14 +7554,14 @@ i.icon8 {
     font-size: 14px;
     font-weight: 500;
     color: #686f7a;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .country_item_right span {
     font-size: 14px;
     font-weight: 500;
     color: #686f7a;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .date_selector {
@@ -7578,7 +7578,7 @@ i.icon8 {
 	font-size: 14px;
     font-weight: 400;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui.active.selection.vchrt-dropdown {
@@ -7590,7 +7590,7 @@ i.icon8 {
 .date_list152 a {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin: 0 5px;
 }
 
@@ -7617,7 +7617,7 @@ i.icon8 {
 .payout_content span {
     font-size: 24px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #b2b2b2;
     line-height: 24px;
     margin-bottom: 10px !important;
@@ -7631,7 +7631,7 @@ i.icon8 {
 .payout__via {
 	font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     line-height: 24px;
     margin-bottom: 15px !important;
@@ -7640,7 +7640,7 @@ i.icon8 {
 
 .payout__small-notification {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     color: #686f7a;
     line-height: 26px;
@@ -7649,7 +7649,7 @@ i.icon8 {
 .payout__added {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     line-height: 24px;
     margin-bottom: 20px !important;
@@ -7671,7 +7671,7 @@ i.icon8 {
     border-radius: 20px;
     font-weight: 500;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .payout__btn:hover {
@@ -7690,7 +7690,7 @@ i.icon8 {
 .tt-body {
 	font-weight: 400 !important;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-bottom: 15px;
 	line-height: 26px;
 	color: #686f7a !important;
@@ -7700,7 +7700,7 @@ i.icon8 {
 .t-heading {
     font-weight: 400 !important;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 5px !important;
     line-height: 26px;
     color: #686f7a !important;
@@ -7710,7 +7710,7 @@ i.icon8 {
 .t-currency {
     font-size: 20px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 24px;
     margin-bottom: 10px !important;
 }
@@ -7718,7 +7718,7 @@ i.icon8 {
 .tt__earning {
 	font-size: 20px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-right: 5px;
 }
 
@@ -7773,7 +7773,7 @@ i.icon8 {
 .more_items_14 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     height: 40px;
     border: 0;
@@ -7804,7 +7804,7 @@ i.icon8 {
 .verification_content h4 {
 	font-size: 24px;
 	font-weight: 600;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	color: #333;
 	margin-top: 40px !important;
@@ -7814,7 +7814,7 @@ i.icon8 {
 .verification_content p {
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	color: #686f7a;
 	line-height: 26px;
@@ -7850,7 +7850,7 @@ i.icon8 {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-left: 10px;
     margin-bottom: 8px;
     text-align: left;
@@ -7868,7 +7868,7 @@ i.icon8 {
 .apply_verify_text {
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	color: #686f7a;
 	line-height: 26px;
@@ -7892,7 +7892,7 @@ i.icon8 {
 .verify_submit_btn {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 0px 30px;
@@ -7923,7 +7923,7 @@ i.icon8 {
     font-size: 14px;
     transition: 0.3s;
     font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     border-radius: 10px;
     color: #333;
     padding: 15px;

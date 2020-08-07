@@ -20,9 +20,9 @@
 	display: none;
 }
 
-.header_right ul li:nth-child(2) {
+/* .header_right ul li:nth-child(2) {
 	display: none !important;
-}
+} */
 
 .option_links {
     padding: 10px 3px !important;
@@ -149,6 +149,9 @@
 }
 .thnk_coming_title {
     font-size: 5em !important;
+}
+ .sign_form {
+    padding: 50px 15px 30px !important;
 }
 }
  

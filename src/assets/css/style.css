@@ -28,6 +28,14 @@ rtl style
 	direction: rtl;
 	text-align: right;
 }
+/* .row {
+	display: -ms-flexbox;
+    display: -webkit-inline-box !important; 
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    
+} */
 router-outlet {
 	display: none;
 }
@@ -58,9 +66,9 @@ router-outlet {
 	display: block;
 }
 .table-responsive{
-	display: inline-grid;
-	display: -webkit-inline-grid;
-	display: -moz-inline-grid;
+	display: inline-grid !important;
+	display: -webkit-inline-grid !important;
+	display: -moz-inline-grid !important;
 }
 /* .rtl ::-moz-selection {
 	background-color: #cce2ff;
@@ -2783,7 +2791,7 @@ direction: rtl;
 }
 
 .rtl ._215b15 {
-	float: left;
+	/* float: left; */
 	width: 100%;
 	padding: 20px 0 0;
 	background: #fff;
@@ -8418,7 +8426,7 @@ input[type=text] {
 .left_footer a {
     font-size: 13px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     line-height: 24px;
     padding: 0 3px;
@@ -8436,7 +8444,7 @@ input[type=text] {
 .left_footer_content p {
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #afafaf;
     text-align: left;
     line-height: 24px;
@@ -8496,7 +8504,7 @@ i.icon1 {
     padding-right: 1em!important;
 	font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .header_right {
@@ -8538,7 +8546,7 @@ i.icon1 {
     line-height: 1.5;
     border-radius: 100%;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .opts_account img {
@@ -8552,7 +8560,7 @@ i.icon1 {
 .upload_btn {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 9px 15px;
@@ -8574,7 +8582,7 @@ i.icon1 {
     padding: 20px 17px 10px;
     font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #afafaf;
     text-align: left;
 	margin-bottom: 0;
@@ -8642,7 +8650,7 @@ i.icon1 {
 .pd_content h6 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 5px;
     color: #29334e;
     text-align: left;
@@ -8652,7 +8660,7 @@ i.icon1 {
 .pd_content span {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;
     color: #686f7a;
     text-align: left;
@@ -8661,7 +8669,7 @@ i.icon1 {
 .dp_link_12 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     margin-top: 15px;
     display: block;
@@ -8676,7 +8684,7 @@ i.icon1 {
     color: #686f7a !important;
     padding: .78571429rem 1.14285714rem!important;
     font-size: 14px !important;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui.dropdown .menu>.channel_item:hover {
@@ -8697,7 +8705,7 @@ i.icon1 {
 .pd_content p {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 8px;
     color: #686f7a;
     text-align: left;
@@ -8708,7 +8716,7 @@ i.icon1 {
 .pd_content span.nm_time {
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;
     color: #afafaf;
     text-align: left;
@@ -8722,7 +8730,7 @@ i.icon1 {
     background: #ffecec;
     font-size: 14px;
     color: #29334e !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
 }
 
@@ -8739,6 +8747,8 @@ i.icon1 {
 	min-height: 100%;
 	/* width:100%; */
 	display: flex;
+	display: -moz-box;
+  display: -webkit-flex;
 	flex-direction: column;
 	justify-content: space-between;
 	
@@ -8766,7 +8776,7 @@ i.icon1 {
 .item_title {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
 	float: left;
@@ -8776,7 +8786,7 @@ i.icon1 {
 .see150 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #afafaf;
     text-align: right;
     float: right;
@@ -8823,7 +8833,7 @@ i.icon1 {
     margin-bottom: 5px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
     color: #29334e;
 	text-overflow: ellipsis;
@@ -8832,7 +8842,7 @@ i.icon1 {
 }
 
 .stream_bg p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     color: #686f7a;
     display: inline-block;
@@ -9011,7 +9021,7 @@ i.icon1 {
 	float: left;
 	position: relative;
 	display: inline-flex;
-	min-height: 268px;
+	min-height: 360px;
     height: auto;
 	border-radius: 5px;
     overflow: hidden;
@@ -9035,7 +9045,7 @@ i.icon1 {
 	display: block;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
     margin-bottom: 15px 0;
@@ -9046,7 +9056,7 @@ i.icon1 {
     display: block;
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 	padding-top: 2px;
@@ -9055,7 +9065,7 @@ i.icon1 {
 .purchased_badge {
     font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #29334e;
     display: inline-block;
@@ -9070,7 +9080,7 @@ i.icon1 {
     margin-bottom: 0;
     margin-top: 18px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     float: left;
     color: #686f7a;
     text-align: left;
@@ -9097,7 +9107,7 @@ i.icon1 {
     float: right;
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: right;
 }
@@ -9107,7 +9117,7 @@ i.icon1 {
     font-size: 12px;
     margin-top: 5px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     display: block;
@@ -9157,7 +9167,7 @@ i.icon1 {
 	color: #686f7a;
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	padding: 10px;
 	text-decoration: none;
 	display: block;
@@ -9198,7 +9208,7 @@ i.icon1 {
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .crse_reviews i {
@@ -9213,7 +9223,7 @@ i.icon1 {
     background: #fa8305;
     border: none;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 600;
     line-height: 1.5;
     right: 0;
@@ -9256,7 +9266,7 @@ i.icon1 {
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .play_btn1 {
@@ -9426,14 +9436,14 @@ i.icon1 {
     margin-bottom: 9px;
     display: block;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: center;
 }
 
 .value_content p {
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-size: 14px;
     text-align: left;
     line-height: 26px;
@@ -9469,7 +9479,7 @@ i.icon1 {
 .tutor_name {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e !important;
     text-align: center;
 	position: relative;
@@ -9486,7 +9496,7 @@ i.icon1 {
     font-size: 13px;
     color: #686f7a;
     margin-top: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     margin-bottom: 17px;
 	text-overflow: ellipsis;
@@ -9550,7 +9560,7 @@ i.icon1 {
 .sbbc145 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     border: 0;
@@ -9568,7 +9578,7 @@ i.icon1 {
 .sbbc146 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     background: #e9e9e9;
     border: 0;
@@ -9582,7 +9592,7 @@ i.icon1 {
     font-size: 12px;
     margin-top: 20px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: center;
     display: block;
@@ -9614,7 +9624,7 @@ i.icon1 {
     margin-top: 15px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 }
 
@@ -9639,7 +9649,7 @@ i.icon1 {
     font-size: 18px;
     color: #fff;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 13px;
 }
 
@@ -9647,7 +9657,7 @@ i.icon1 {
     font-size: 14px;
     color: #f9f9f9;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 27px;
 }
 
@@ -9657,7 +9667,7 @@ i.icon1 {
     border: 0;
     border-radius: 20px;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: #c8302f;
     font-size: 14px;
     font-weight: 500;
@@ -9691,7 +9701,7 @@ i.icon1 {
     color: #29334e;
 	float: left;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;	
 }
 
@@ -9711,7 +9721,7 @@ i.icon1 {
     width: 100%;
     padding: 10px 20px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 }
@@ -9763,7 +9773,7 @@ i.icon1 {
 .live-content p {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
     margin-bottom: 20px;
     color: #686f7a;
@@ -9772,7 +9782,7 @@ i.icon1 {
 .livinfo {
 	font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0;
     margin-top: 15px;
     color: #686f7a;
@@ -9812,7 +9822,7 @@ i.icon1 {
 .say_content p {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
     color: #686f7a;
     text-align: left;
@@ -9842,7 +9852,7 @@ i.icon1 {
 .st_group h4 {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e !important;
 	margin-top: 0;
 	margin-bottom: 0 !important;
@@ -9914,7 +9924,7 @@ i.icon1 {
     font-size: 18px;
     color: #29334e;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 13px;
 }
 
@@ -9922,7 +9932,7 @@ i.icon1 {
     font-size: 14px;
     color: #686f7a;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 32px;
 	line-height: 26px;
 }
@@ -9941,7 +9951,7 @@ i.icon1 {
 .item_f1 a {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     /* display: block; */
     padding-bottom: 10px;
     color: #fff !important;
@@ -9965,7 +9975,7 @@ i.icon1 {
     border: 0;
     border-radius: 20px;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: #c8302f;
     font-size: 14px;
     font-weight: 500;
@@ -9987,7 +9997,7 @@ i.icon1 {
     border: 1px solid #fff;
     border-radius: 20px;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: transparent;
     font-size: 14px;
     font-weight: 500;
@@ -10024,7 +10034,7 @@ i.icon1 {
 .fotb_left p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #f7f7f7;
     text-align: left;
     line-height: 24px;
@@ -10057,7 +10067,7 @@ i.icon1 {
 }
 
 .lng_btn .ui.dropdown .menu>.item {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e !important;
 }
 
@@ -10187,7 +10197,7 @@ i.icon1 {
     color: #29334e;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .btn_live {
@@ -10226,7 +10236,7 @@ i.icon1 {
 }
 
 .chat1 p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 24px;
     font-size: 14px;
     color: #686f7a;
@@ -10264,7 +10274,7 @@ i.icon1 {
 .live_user_dt h4 {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e !important;
 	margin-top: 0;
 	margin-bottom: 10px !important;
@@ -10288,7 +10298,7 @@ i.icon1 {
     border-radius: 30px;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-size: 14px;
 }
 
@@ -10313,7 +10323,7 @@ i.icon1 {
     border-radius: 30px;
     color: #fff;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-size: 14px;
 }
 
@@ -10333,7 +10343,7 @@ i.icon1 {
     padding: 8px 15px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     border: 1px solid #efefef;
     border-radius: 10px;
@@ -10371,7 +10381,7 @@ i.icon1 {
 	color: #fff;
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .slive_tabs .nav-link:hover {
@@ -10392,7 +10402,7 @@ i.icon1 {
 .strm_title {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
     color: #29334e;
     line-height: 24px;
@@ -10402,7 +10412,7 @@ i.icon1 {
 .sf475 {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: center;
     margin-top: 5px;
@@ -10421,7 +10431,7 @@ i.icon1 {
 .stm_key {
     font-size: 18px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-top: 30px;
     color: #29334e;
     line-height: 24px;
@@ -10435,7 +10445,7 @@ i.icon1 {
 .group-form label {
 	font-size: 14px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 10px;
     color: #29334e;
     line-height: 24px;
@@ -10448,7 +10458,7 @@ i.icon1 {
     width: 100%;
     padding: 0 100px 0 20px;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     font-size: 13px;
 }
@@ -10465,7 +10475,7 @@ i.icon1 {
     border-radius: 20px;
     font-size: 13px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 ._6tf7s:hover {
@@ -10483,7 +10493,7 @@ i.icon1 {
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 ._145d1:hover {
@@ -10499,7 +10509,7 @@ i.icon1 {
 .strm_title1 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     color: #29334e;
     line-height: 24px;
@@ -10553,7 +10563,7 @@ i.icon1 {
 	height: 50px;
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 i.icon2 {
@@ -10591,7 +10601,7 @@ i.icon2 {
     text-align: center;
     bottom: 0;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     font-size: 14px;
     background: rgba(51,51,51,0.9);
@@ -10605,7 +10615,7 @@ i.icon2 {
 ._215b03 h2 {
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     text-align: left;
     line-height: normal;
@@ -10626,7 +10636,7 @@ i.icon2 {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
 }
 
@@ -10636,7 +10646,7 @@ i.icon2 {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 ._215b07 {
@@ -10670,7 +10680,7 @@ i.icon2 {
 	color: #686f7a;
 	font-size: 12px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	padding: 5px 10px;
 	text-decoration: none;
 	display: block;
@@ -10701,7 +10711,7 @@ i.icon2 {
     color: #f3f3f3;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
 	float: left;
 	margin-right: 30px;
@@ -10716,7 +10726,7 @@ i.icon2 {
     color: #f3f3f3;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
 	float: left;
 }
@@ -10736,12 +10746,17 @@ i.icon2 {
 }
 
 ._215b15 {
-    float: left;
+    /* float: left; */
     width: 100%;
     padding: 20px 0 0;
     background: #fff;
 	margin-bottom: 17px;
 }
+/* ._215b15:after {
+    content: "";
+    display: block;
+    clear: both;
+} */
 
 .course_tabs {
     float: left;
@@ -10791,7 +10806,7 @@ i.icon2 {
 ._df7852 {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e !important;
     margin-top: 0;
 	display: block;
@@ -10819,7 +10834,7 @@ i.icon2 {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: #c8302f;
 	border: 1px solid #c8302f;
 	margin-right: 6px;
@@ -10838,7 +10853,7 @@ i.icon2 {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     background: transparent;
 	border: 1px solid #fff;
 }
@@ -10854,7 +10869,7 @@ i.icon2 {
     color: #fff;
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
 }
 
@@ -10866,7 +10881,7 @@ i.icon2 {
 ._htg452 h3 {
 	font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 15px;
 	color: #29334e;
@@ -10910,7 +10925,7 @@ i.icon2 {
 ._abc123 {
 	display: block;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     color: #29334e;
     text-align: left;
@@ -10918,7 +10933,7 @@ i.icon2 {
 
 ._htg452 p {
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     color: #686f7a;
     text-align: left;
@@ -10941,7 +10956,7 @@ i.icon2 {
 ._htgdrt h3 {
 	font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 15px;
     color: #29334e;
@@ -10986,7 +11001,7 @@ i.icon2 {
 .crse_content h3 {
     font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 15px;
     color: #29334e;
@@ -11011,7 +11026,7 @@ i.icon2 {
 ._d1452 {
 	font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #29334e;
@@ -11025,7 +11040,7 @@ i.icon2 {
 ._fgr123 {
 	font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #686f7a;
@@ -11073,7 +11088,7 @@ i.icon2 {
     padding-right: 10px;
     color: #29334e;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .accordion-header .section-header-right {
@@ -11090,7 +11105,7 @@ i.icon2 {
     font-size: 16px;
     color: #686f7a;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .accordion-header .section-header-length {
@@ -11099,7 +11114,7 @@ i.icon2 {
 	font-size: 16px;
     color: #686f7a;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .crse_icon {
@@ -11125,7 +11140,7 @@ i.icon2 {
     letter-spacing: .3px;
     line-height: 1.33;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui-accordion-content .left-content {
@@ -11174,7 +11189,7 @@ i.icon2 {
 .ui-accordion-content .preview-text {
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 }
 
@@ -11191,7 +11206,7 @@ i.icon2 {
     width: 100%;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 	text-align: center;
     padding: 15px 0;
@@ -11222,7 +11237,7 @@ i.icon2 {
 .reviews_left h3 {
     font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 20px;
     color: #29334e;
@@ -11242,7 +11257,7 @@ i.icon2 {
 ._rate001 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #29334e;
@@ -11307,7 +11322,7 @@ i.icon2 {
 ._rate002 {
     font-size: 13px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #29334e;
@@ -11372,7 +11387,7 @@ i.icon2 {
 .review_right_heading h3 {
     font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     margin-bottom: 0;
     color: #29334e;
@@ -11389,7 +11404,7 @@ i.icon2 {
     height: 30px;
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     padding-left: 15px;
     padding-right: 40px;
@@ -11449,7 +11464,7 @@ i.icon2 {
 .tutor_name1 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e !important;
     text-align: left;
 	margin-bottom: 0;
@@ -11458,7 +11473,7 @@ i.icon2 {
 .time_145 {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     display: block;
     margin-top: 5px;
@@ -11467,7 +11482,7 @@ i.icon2 {
 .rvds10 {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-top: 17px;
     line-height: 26px;
     color: #686f7a;
@@ -11482,7 +11497,7 @@ i.icon2 {
 .rpt100 span {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     line-height: 24px;
 	margin-right: 10px;
@@ -11498,7 +11513,7 @@ i.icon2 {
     text-align: center;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 }
 
@@ -11553,7 +11568,7 @@ i.icon2 {
 .radio-label {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 12px;
 	color: #29334e;
 	margin-bottom: 0;
@@ -11563,7 +11578,7 @@ i.icon2 {
 .report145 {
     font-size: 13px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     line-height: 24px;
     margin-left: 5px;
@@ -11643,7 +11658,7 @@ i.icon2 {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     display: block;
     text-align: center;
@@ -11664,7 +11679,7 @@ i.icon2 {
 	color: #fff;
 	font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-bottom: 10px;
 }
 
@@ -11672,7 +11687,7 @@ i.icon2 {
 	color: #fff;
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .rgt-145 {
@@ -11718,7 +11733,7 @@ i.icon2 {
     text-align: center;
     width: 100%;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
 }
 
@@ -11736,7 +11751,7 @@ i.icon2 {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     display: none;
     text-align: center;
@@ -11784,7 +11799,7 @@ i.icon2 {
     resize: horizontal;
     height: 40px;
 	font-size: 14px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	font-weight: 400;
 	color: #29334e;
 	padding: 12px;
@@ -11797,7 +11812,7 @@ i.icon2 {
     float: right;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     border-radius: 25px;
@@ -11823,7 +11838,7 @@ i.icon2 {
 .report155 {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     line-height: 24px;
     margin-left: 5px;
@@ -11854,7 +11869,7 @@ i.icon2 {
     box-shadow: 0in 0.5pc 1.125pc -7px rgba(25,42,70,.13);
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 	margin-top: 40px;
 }
@@ -11877,7 +11892,7 @@ i.icon2 {
 .cate_521 h4 {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     line-height: 24px;
     text-align: left;
@@ -11896,7 +11911,7 @@ i.icon2 {
 .cate_option li a {
     font-size: 14px;
     color: #686f7a;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     font-weight: 400;
 }
@@ -11915,7 +11930,7 @@ i.icon2 {
 	font-size: 14px;
     color: #29334e;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: left;
 	float: left;
 }
@@ -11925,7 +11940,7 @@ i.icon2 {
 	font-size: 14px;
     color: #29334e;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui[class*="left icon"].swdh15.input>input {
@@ -11934,7 +11949,7 @@ i.icon2 {
     height: 40px !important; 
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .tb_145 {
@@ -11948,7 +11963,7 @@ i.icon2 {
 	font-size: 14px;
     color: #29334e;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	padding: 0.8rem 1.5rem;
 	float: left;
 	width: 100%;
@@ -11984,7 +11999,7 @@ i.icon2 {
 .mhs_title {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 20px;
     margin-top: 0;
     text-align: left;
@@ -11994,7 +12009,7 @@ i.icon2 {
 	font-size: 14px;
     color: #686f7a;
     margin-top: 7px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
 	text-align: center;
 	padding-top: 20px;
@@ -12008,7 +12023,7 @@ i.icon2 {
     font-size: 14px;
     margin-top: 5px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     display: block;
@@ -12028,7 +12043,7 @@ a.rmv-btn {
     font-size: 14px;
     margin-top: 30px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     display: block;
     background: #c8302f;
@@ -12053,7 +12068,7 @@ a.rmv-btn i {
     margin-top: 0;
     margin-bottom: 40px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 }
 
@@ -12069,7 +12084,7 @@ a.rmv-btn i {
 	font-size: 14px;
     margin-top: 0;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 }
 
@@ -12079,7 +12094,7 @@ a.rmv-btn i {
 
 .account_setting h4 {
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 	font-size: 18px;
 	text-align: left;
@@ -12087,7 +12102,7 @@ a.rmv-btn i {
 
 .account_setting p {
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 	font-size: 14px;
 	text-align: left;
@@ -12100,7 +12115,7 @@ a.rmv-btn i {
 
 .basic_ptitle h4 {
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 	font-size: 16px;
 	text-align: left;
@@ -12108,7 +12123,7 @@ a.rmv-btn i {
 
 .basic_ptitle p {
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 	font-size: 14px;
 	text-align: left;
@@ -12121,7 +12136,7 @@ a.rmv-btn i {
     height: 40px !important;
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .form-control-counter {
@@ -12136,7 +12151,7 @@ a.rmv-btn i {
     line-height: 24px;
     text-align: center;
     border-radius: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-size: 14px;
 }
 
@@ -12178,7 +12193,7 @@ a.rmv-btn i {
     height: 40px !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .help-block {
@@ -12188,7 +12203,7 @@ a.rmv-btn i {
     margin-bottom: 0px;
     color: #686f7a;
 	font-size: 12px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: left;
 }
 
@@ -12200,7 +12215,7 @@ a.rmv-btn i {
     margin-bottom: 20px;
     color: #fff;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
 	display: block;
@@ -12239,7 +12254,7 @@ a.rmv-btn i {
     position: relative;
 	font-size: 12px;
     color: #29334e;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	font-weight: 500;
 }
 
@@ -12356,7 +12371,7 @@ a.rmv-btn i {
 .radio-label_1 {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 12px;
 	color: #29334e;
 	margin-bottom: 30px;
@@ -12374,7 +12389,7 @@ a.rmv-btn i {
 
 .pymnt_title h4 {
 	font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     font-size: 16px;
     text-align: left;
@@ -12382,7 +12397,7 @@ a.rmv-btn i {
 
 .pymnt_title p {
 	font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     font-size: 14px;
     text-align: left;
@@ -12392,7 +12407,7 @@ a.rmv-btn i {
 
 .pymnt_title span {
 	font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     font-size: 14px;
     text-align: left;
@@ -12412,7 +12427,7 @@ a.rmv-btn i {
     margin-bottom: 0px;
     color: #fff;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
 }
@@ -12433,7 +12448,7 @@ a.rmv-btn i {
     text-align: center;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .api_btn:hover {
@@ -12445,7 +12460,7 @@ a.rmv-btn i {
 .nt_apt {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
     margin-top: 20px;
@@ -12463,7 +12478,7 @@ a.rmv-btn i {
 
 .form-group1 label {
     color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 14px;
@@ -12498,7 +12513,7 @@ a.rmv-btn i {
 	font-weight: 500;
 	text-transform: none;
 	color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-bottom:5px;
 	margin-top: 0;
 }
@@ -12507,7 +12522,7 @@ a.rmv-btn i {
 	font-weight: 400;
 	text-transform: none;
 	color: #686f7a;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	line-height:12px;
 }
 .drag-text i{
@@ -12536,7 +12551,7 @@ a.rmv-btn i {
 	font-weight: 500;
 	text-transform: none;
 	color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: left;
 	margin-bottom: 20px;
 }
@@ -12546,7 +12561,7 @@ a.rmv-btn i {
 	font-weight: 400;
 	text-transform: none;
 	color: #686f7a;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: left;
 	margin-bottom: 10px;
 	line-height: 26px;
@@ -12555,7 +12570,7 @@ a.rmv-btn i {
 .report_history a {
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: left;
 	line-height: 26px;
 }
@@ -12585,7 +12600,7 @@ a.rmv-btn i {
 	font-weight: 400;
 	text-transform: none;
 	color: #686f7a;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	margin-bottom: 0px;
 	line-height: 26px;
@@ -12618,7 +12633,7 @@ a.rmv-btn i {
 .help_stitle h2 {
     font-size: 30px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     text-align: center;
     margin-bottom: 30px;
@@ -12660,7 +12675,7 @@ a.rmv-btn i {
 	font-size: 14px;
 	line-height: 26px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -12681,7 +12696,7 @@ a.rmv-btn i {
     padding: 8px 20px;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .back_link a:hover {
@@ -12733,7 +12748,7 @@ a.rmv-btn i {
 	font-size: 14px;
 	font-weight: 400;
 	color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	line-height: 24px;
 }
 
@@ -12746,7 +12761,7 @@ a.rmv-btn i {
 .title126 h2 {
     font-size: 24px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-top: 30px !important;
     color: #29334e;
     text-align: left;
@@ -12760,7 +12775,7 @@ a.rmv-btn i {
 .vew120 h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 13px !important;
 	text-align: left;
 	color: #29334e;
@@ -12770,7 +12785,7 @@ a.rmv-btn i {
 .vew121 {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: left;
 	line-height: 26px;
 	color: #29334e;
@@ -12792,7 +12807,7 @@ a.rmv-btn i {
 .rqst152 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     display: block;
@@ -12813,7 +12828,7 @@ a.rmv-btn i {
 .vew120 p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
     color: #686f7a;
     text-align: left;
@@ -12822,7 +12837,7 @@ a.rmv-btn i {
 .mtl145 li {
     list-style: decimal;
     margin-left: 30px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 /* --- About Us Page --- */
@@ -12858,7 +12873,7 @@ a.rmv-btn i {
 .title129 h2 {
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-top: 30px !important;
     color: #29334e;
     text-align: center;
@@ -12874,7 +12889,7 @@ a.rmv-btn i {
 .title589 h2 {
 	font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 17px !important;
 	text-align: center;
 	color: #29334e;
@@ -12884,7 +12899,7 @@ a.rmv-btn i {
 .title589 p {
 	font-size: 16px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
 	text-align: center;
 	color: #686f7a;
@@ -12895,7 +12910,7 @@ a.rmv-btn i {
 .p__metric {
 	font-size: 42px;
     color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 700;
     text-align: center;
 	margin-top: 60px;
@@ -12904,7 +12919,7 @@ a.rmv-btn i {
 .p__metric span {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     margin-top: 20px !important;
 	text-align: center;
@@ -12921,7 +12936,7 @@ a.rmv-btn i {
 .feature125 h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-bottom: 13px;
 	margin-top: 26px;
 	text-align: center;
@@ -12931,7 +12946,7 @@ a.rmv-btn i {
 .feature125 p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-bottom: 0;
 	color: #686f7a;
 	margin-top: 0;
@@ -12960,7 +12975,7 @@ a.rmv-btn i {
 .title478 h2 {
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 4px !important;
     text-align: left;
     color: #29334e;
@@ -12970,7 +12985,7 @@ a.rmv-btn i {
 .title478 p {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     text-align: left;
     color: #686f7a;
@@ -12990,7 +13005,7 @@ a.rmv-btn i {
 .jmio125 p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     margin-top: 50px !important;
     text-align: left;
@@ -13019,7 +13034,7 @@ a.rmv-btn i {
     margin-bottom: 20px;
     color: #fff;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
 	display: inline-block;
@@ -13059,7 +13074,7 @@ a.rmv-btn i {
 	border-top: 1px solid #efefef;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     text-align: left;
     color: #29334e;
@@ -13097,7 +13112,7 @@ a.rmv-btn i {
 	border-bottom: 0;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     text-align: left;
     color: #686f7a;
@@ -13121,7 +13136,7 @@ a.rmv-btn i {
 .twiter158 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     border: 0;
     border-radius: 20px;
@@ -13134,7 +13149,7 @@ a.rmv-btn i {
 .facebook158 {
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     border: 0;
     border-radius: 20px;
@@ -13157,7 +13172,7 @@ a.rmv-btn i {
 .help_link p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 2px !important;
     margin-top: 0 !important;
     color: #686f7a;
@@ -13167,14 +13182,14 @@ a.rmv-btn i {
 .help_link a {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
 }
 
 .blog_des {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
     color: #686f7a;
     text-align: left;
@@ -13238,7 +13253,7 @@ a.rmv-btn i {
     background-color: #fff;
     border: 1px solid #efefef;
     text-align: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .main-p-pagination .pagination .page-link.active {
@@ -13266,7 +13281,7 @@ a.rmv-btn i {
 .blog_link {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 }
 
@@ -13285,7 +13300,7 @@ a.rmv-btn i {
     font-size: 14px;
     margin-top: 30px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     display: block;
@@ -13318,7 +13333,7 @@ a.rmv-btn i {
     align-items: center;
     -ms-flex-align: center;
     z-index: 1;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .bp_left i {
@@ -13334,7 +13349,7 @@ a.rmv-btn i {
     align-items: center;
     -ms-flex-align: center;
     z-index: 1;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .bp_right i {
@@ -13425,7 +13440,7 @@ a.rmv-btn i {
 .title484 h2 {
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 4px !important;
     text-align: left;
     color: #29334e;
@@ -13435,7 +13450,7 @@ a.rmv-btn i {
 .title484 p {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     text-align: left;
     color: #686f7a;
@@ -13471,7 +13486,7 @@ a.rmv-btn i {
     display: block;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
     margin-bottom: 7px;
@@ -13498,7 +13513,7 @@ a.rmv-btn i {
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     padding: 10px 20px;
@@ -13585,7 +13600,7 @@ a.rmv-btn i {
 .career_item h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 17px !important;
     text-align: center;
     color: #29334e;
@@ -13596,7 +13611,7 @@ a.rmv-btn i {
 .career_item p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     text-align: center;
     color: #686f7a;
@@ -13606,7 +13621,7 @@ a.rmv-btn i {
 
 .view-blog-link {
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     color: #29334e;
     text-align: left;
@@ -13632,7 +13647,7 @@ a.rmv-btn i {
 .apply_job_link h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 15px !important;
     text-align: center;
     color: #29334e;
@@ -13642,7 +13657,7 @@ a.rmv-btn i {
 .apply_job_link span {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0 !important;
     text-align: center;
     color: #686f7a;
@@ -13652,7 +13667,7 @@ a.rmv-btn i {
     font-size: 14px;
     color: #fff;
     background: #c8302f;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     padding: 10px 20px;
     border-radius: 20px;
@@ -13669,7 +13684,7 @@ a.rmv-btn i {
     font-size: 14px;
     color: #fff;
     background: #c8302f;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     padding: 10px 20px;
     border-radius: 20px;
@@ -13692,7 +13707,7 @@ a.rmv-btn i {
 .apply_form h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 15px !important;
     text-align: left;
     color: #29334e;
@@ -13704,7 +13719,7 @@ a.rmv-btn i {
 	font-weight: 500;
 	text-transform: none;
 	color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-bottom:5px;
 	margin-top: 0;
 }
@@ -13718,7 +13733,7 @@ a.rmv-btn i {
 .apply_links_sco h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 15px !important;
     text-align: left;
     color: #29334e;
@@ -13728,7 +13743,7 @@ a.rmv-btn i {
 .ui.selection.cntry152.dropdown {
     min-width: 100% !important;
     padding: .78571429em 2.1em 0.785714em 2em !important;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 }
 
@@ -13741,7 +13756,7 @@ a.rmv-btn i {
 .press_news h2 {
 	font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 15px !important;
     text-align: left;
     color: #29334e;
@@ -13751,7 +13766,7 @@ a.rmv-btn i {
 .press_news p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0px !important;
     text-align: left;
     color: #686f7a;
@@ -13768,7 +13783,7 @@ a.rmv-btn i {
 .vdtopress {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 0px !important;
     text-align: left;
     color: #686f7a;
@@ -13779,7 +13794,7 @@ a.rmv-btn i {
     margin-top: 14px;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 }
 
@@ -13788,7 +13803,7 @@ a.rmv-btn i {
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     border-radius: 20px;
 }
@@ -13808,7 +13823,7 @@ a.rmv-btn i {
     text-align: center;
     margin-top: 30px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     color: #29334e;
 }
@@ -13823,7 +13838,7 @@ a.rmv-btn i {
 	margin-top: 15px;
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 	display: block;
 }
@@ -13901,7 +13916,7 @@ a.rmv-btn i {
 	font-size: 14px;
     margin-top: 30px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #c8302f;
     border-radius: 20px;
@@ -13920,7 +13935,7 @@ a.rmv-btn i {
 	font-size: 24px;
     margin-bottom: 17px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 	text-align: center;	
 }
@@ -13929,10 +13944,17 @@ a.rmv-btn i {
 	font-size: 14px;
     margin-bottom: 47px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
+	
 	color: #686f7a;
 	text-align: center;	
 	line-height: 26px;
+}
+.recaptcha  {
+	text-align: center;
+}
+.recaptcha iframe {
+	max-width: 100%;
 }
 
 .sgntrm145 {
@@ -13945,7 +13967,7 @@ a.rmv-btn i {
     font-size: 14px;
     font-weight: 400;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     padding: 50px 0;
     display: block;
@@ -13986,7 +14008,7 @@ a.rmv-btn i {
     height: 40px;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .ui[class*="left icon"].swdh95.input>input:focus {
@@ -13995,13 +14017,13 @@ a.rmv-btn i {
     height: 40px;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .social_lnk_btn {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     background: #efefef;
     border-radius: 20px;
@@ -14072,7 +14094,7 @@ a.rmv-btn i {
 	color:#686f7a;
 	font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height:24px;
 	padding: 15px 10px !important;
 	margin-right: 0;
@@ -14110,7 +14132,7 @@ a.rmv-btn i {
 .membership__left h2 {
 	font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 20px !important;
     color: #29334e;
     text-align: left;
@@ -14120,7 +14142,7 @@ a.rmv-btn i {
 .memmbership_price {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 10px !important;
     color: #c8302f;
     text-align: left;
@@ -14130,7 +14152,7 @@ a.rmv-btn i {
 .save_price {
 	font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     line-height: 26px;
@@ -14161,7 +14183,7 @@ a.rmv-btn i {
 .membership_des p {
 	font-size: 16px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	margin-top: 40px !important;
     color: #686f7a;
     text-align: left;
@@ -14170,7 +14192,7 @@ a.rmv-btn i {
 
 .panel-title > a:before {
     float: right !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     content:"\-";
     padding-right: 0px;
 	font-size: 20px;
@@ -14186,7 +14208,7 @@ a.rmv-btn i {
 	font-size: 18px;
 	font-weight: 500;
 	color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	padding: 15px 0 18px;
     display: block;
 	line-height: 26px;
@@ -14227,7 +14249,7 @@ a.rmv-btn i {
 .panel-body {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     line-height: 26px;
     padding-bottom: 20px;
@@ -14248,7 +14270,7 @@ a.rmv-btn i {
     font-size: 18px;
     font-weight: 500;
     color: #686f7a !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     padding: 15px 0 18px;
     display: block;
     line-height: 26px;
@@ -14270,7 +14292,7 @@ a.rmv-btn i {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 .prmb_btn:hover {
@@ -14296,7 +14318,7 @@ a.rmv-btn i {
     margin-top: 20px;
     margin-bottom: 0;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
 }
 
@@ -14323,7 +14345,7 @@ a.rmv-btn i {
 .checkout_title h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 10px !important;
     color: #29334e;
     text-align: left;
@@ -14371,7 +14393,7 @@ a.rmv-btn i {
 	color:#686f7a;
 	font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height:24px;
 	padding: 15px 10px !important;
 	margin-right: 0;
@@ -14393,7 +14415,7 @@ a.rmv-btn i {
 .lbel25 label {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 10px !important;
     color: #29334e;
     text-align: left;
@@ -14403,7 +14425,7 @@ a.rmv-btn i {
 .t-body {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 30px !important;
     color: #686f7a;
 	line-height: 26px;
@@ -14458,7 +14480,7 @@ a.rmv-btn i {
 .t2-body {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 10px !important;
     color: #686f7a;
 	line-height: 26px;
@@ -14489,7 +14511,7 @@ a.rmv-btn i {
 .order_title h4 {
 	font-size: 16px;
 	font-weight: 600;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
 	float: left;
 	margin-bottom: 0;
@@ -14506,7 +14528,7 @@ a.rmv-btn i {
 .order_title .order_price {
 	font-size: 16px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 	text-align: right;
 	float: right;
@@ -14517,7 +14539,7 @@ a.rmv-btn i {
 .order_title h6 {
 	font-size: 16px;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 	float: left;
 	width: 70%;
@@ -14534,7 +14556,7 @@ a.rmv-btn i {
     float: right;
     color: #fff;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
 	display: block;
@@ -14552,7 +14574,7 @@ a.rmv-btn i {
     margin-top: 30px;
     color: #fff;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
     display: block;
@@ -14566,7 +14588,7 @@ a.rmv-btn i {
 .address_text {
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 	float: left;
 	width: 100%;
@@ -14578,7 +14600,7 @@ a.rmv-btn i {
 .order_title h3 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     float: left;
     width: 70%;
@@ -14590,7 +14612,7 @@ a.rmv-btn i {
 .order_title h2 {
     font-size: 20px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     float: left;
     width: 70%;
@@ -14602,7 +14624,7 @@ a.rmv-btn i {
 .order_title .order_price5 {
     font-size: 20px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: right;
     float: right;
@@ -14613,7 +14635,7 @@ a.rmv-btn i {
 .scr_text {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: center;
     float: left;
@@ -14678,7 +14700,7 @@ a.rmv-btn i {
 	font-size: 10em;
     font-weight: 600;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
     line-height: 1em;
     text-shadow: 1px 10px 6px rgba(0,0,0,0.2);
@@ -14690,7 +14712,7 @@ a.rmv-btn i {
 	font-size: 24px;
 	font-weight: 400;
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	line-height: 26px;
 	margin-top: 0;
@@ -14701,7 +14723,7 @@ a.rmv-btn i {
 	font-size: 16px;
 	font-weight: 400;
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	line-height: 26px;
 	margin-top: 0;
@@ -14744,7 +14766,7 @@ a.rmv-btn i {
 .tc_footer_left a {
     font-size: 12px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     line-height: 24px;
     padding: 10px 10px 0;
@@ -14763,7 +14785,7 @@ a.rmv-btn i {
 .tc_footer_right p {
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     line-height: 24px;
 }
@@ -14825,7 +14847,7 @@ a.rmv-btn i {
     font-size: 16px;
     letter-spacing: normal;
     color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	height: 20px;
     margin: 10px 0 0;
     line-height: 20px;
@@ -14835,7 +14857,7 @@ a.rmv-btn i {
     font-size: 5.5em;
     font-weight: 600;
 	color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     padding: 0 0 38px 0;
     width: 4%;
 }
@@ -14846,7 +14868,7 @@ a.rmv-btn i {
     height: 50px !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	border: 2px solid #fff !important;
 	background: #f1f1f1;
 }
@@ -14859,7 +14881,7 @@ a.rmv-btn i {
 	font-weight: 500;
 	color: #fff;
 	font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	background: #c8302f;
 	border-radius: 20px;
@@ -14877,7 +14899,7 @@ a.rmv-btn i {
     font-size: 14em;
     font-weight: 600;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
     line-height: 1em;
     text-shadow: 1px 10px 6px rgba(0,0,0,0.2);
@@ -14889,7 +14911,7 @@ a.rmv-btn i {
 	font-weight: 500;
 	color: #fff;
 	font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	background: #c8302f;
 	border-radius: 20px;
@@ -14929,7 +14951,7 @@ a.rmv-btn i {
     float: left;
     width: 100%;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
 }
@@ -14937,7 +14959,7 @@ a.rmv-btn i {
 .atlink {
 	font-size: 16px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	font-style: italic;
     line-height: 26px;
     color: #29334e;
@@ -14987,7 +15009,7 @@ a.rmv-btn i {
 .contact_link_step h4 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
     color: #29334e;
     text-align: center;
@@ -15038,7 +15060,7 @@ max-width: 100%;
 .contact_list_info .txt_cntct {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     line-height: 26px;
     color: #686f7a;
     text-align: left;
@@ -15099,7 +15121,7 @@ max-width: 100%;
 .cert_banner_text h1 {
 	font-size: 60px;
     font-weight: 600;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 20px;
 	text-align: center;
 	color: #fff;
@@ -15109,7 +15131,7 @@ max-width: 100%;
 	font-size: 24px;
     margin-bottom: 0;
     font-weight: 400;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	color: #fff;
 }
@@ -15144,7 +15166,7 @@ max-width: 100%;
     padding: 0 100px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     border-radius: 30px;
     background: #c8302f;
@@ -15153,7 +15175,7 @@ max-width: 100%;
 .title889 h2 {
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 7px !important;
     text-align: center;
     color: #29334e;
@@ -15197,7 +15219,7 @@ max-width: 100%;
     font-size: 14px;
     line-height: 26px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-top: 30px;
     text-align: center;
 }
@@ -15231,7 +15253,7 @@ max-width: 100%;
 .titleceti89 h2 {
     font-size: 24px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     margin-bottom: 17px !important;
     text-align: center;
     color: #fff;
@@ -15261,7 +15283,7 @@ max-width: 100%;
 .who_get h4 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     margin-top: 27px;
     text-align: center;
@@ -15290,7 +15312,7 @@ max-width: 100%;
     padding: 0 100px;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     border-radius: 30px;
     background: #c8302f;
@@ -15318,7 +15340,7 @@ max-width: 100%;
 .category_cop h4 {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     margin-top: 35px !important;
     text-align: left;
@@ -15332,7 +15354,7 @@ max-width: 100%;
 
 .panel-title10 > a:before {
     float: right !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     content:"\-";
     padding-right: 0px;
 	font-size: 18px;
@@ -15348,7 +15370,7 @@ max-width: 100%;
 	font-size: 16px;
 	font-weight: 500;
 	color: #29334e;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	padding: 15px 0 18px;
     display: block;
 	line-height: 26px;
@@ -15373,7 +15395,7 @@ max-width: 100%;
     font-size: 14px;
     margin-bottom: 47px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: center;
     line-height: 26px;
@@ -15450,7 +15472,7 @@ max-width: 100%;
 .timer_time h4 {
 	font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     margin-bottom:15px;
     text-align: center;
@@ -15467,7 +15489,7 @@ max-width: 100%;
 .timer_time p {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     margin-top: 0;
     text-align: center;
@@ -15485,7 +15507,7 @@ max-width: 100%;
 .ques_title {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
     line-height: 28px;
@@ -15501,7 +15523,7 @@ max-width: 100%;
 .ques_item label {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #686f7a;
 }
 
@@ -15513,7 +15535,7 @@ max-width: 100%;
     float: left;
     color: #fff;
     border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     background: #c8302f;
     display: block;
@@ -15554,7 +15576,7 @@ max-width: 100%;
 .result_dt h4 {
 	font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     margin-bottom:15px;
     text-align: center;
@@ -15571,7 +15593,7 @@ max-width: 100%;
 .result_dt .right_ans {
 	font-size: 50px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     margin-bottom:15px;
     text-align: center;
@@ -15588,7 +15610,7 @@ max-width: 100%;
 .result_dt .wrong_ans {
 	font-size: 46px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #fff;
     margin-bottom:15px;
     text-align: center;
@@ -15605,7 +15627,7 @@ max-width: 100%;
 .result_dt p {
 	font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     margin-top: 0;
     text-align: center;
@@ -15629,7 +15651,7 @@ max-width: 100%;
 	font-size: 42px;
     font-weight: 600;
     color: #29334e;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
     padding-bottom: 15px;
     margin-top: 0;
@@ -15639,7 +15661,7 @@ max-width: 100%;
     font-size: 20px;
     font-weight: 400;
     color: #686f7a;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: center;
     margin-top: 0;
 }
@@ -15648,7 +15670,7 @@ max-width: 100%;
 	font-weight: 500;
 	color: #fff;
 	font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
 	text-align: center;
 	background: #c8302f;
 	border-radius: 20px;
@@ -15678,7 +15700,7 @@ max-width: 100%;
     font-size: 18px;
     color: #29334e;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     text-align: left;
     float: left;
 }
@@ -15697,14 +15719,14 @@ max-width: 100%;
 .filter_selector {
     float: right;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     font-weight: 400;
 }
 
 .ui.inline.dropdown.flt145>.text {
     font-weight: 500 !important;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 }
 
 /* --- Invoice Page --- */
@@ -15737,7 +15759,7 @@ max-width: 100%;
 
 .invoice_header_item p {
     font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 500;
     color: #fff;
     padding: 5px 0;
@@ -15769,7 +15791,7 @@ max-width: 100%;
 .vdt-list {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     line-height: 24px;
@@ -15803,7 +15825,7 @@ max-width: 100%;
     margin-bottom: 0;
     font-size: 24px;
     font-weight: 600;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
 }
@@ -15817,7 +15839,7 @@ max-width: 100%;
 .vhls140 h4 {
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #29334e;
     text-align: left;
     margin-bottom: 15px;
@@ -15835,7 +15857,7 @@ max-width: 100%;
 .vdt-list {
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     line-height: 24px;
@@ -15859,7 +15881,7 @@ max-width: 100%;
     font-size: 14px;
     font-weight: 500;
     color: #29334e;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     padding: 15px 20px;
 }
 
@@ -15872,7 +15894,7 @@ max-width: 100%;
 .user_dt_trans {
 	font-size: 14px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;
     text-align: left;
     line-height: 24px;
@@ -15885,7 +15907,7 @@ max-width: 100%;
 .jsk1145 .totalinv2 {
 	font-size: 16px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     color: #242424;
     margin-bottom: 0px;
 	margin-bottom: 10px;
@@ -15914,7 +15936,7 @@ max-width: 100%;
 .leftfooter p {
     font-size: 14px;
     color: #757575;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'helvetica',sans-serif;
     font-weight: 400;
     text-align: left;
 }
@@ -15929,7 +15951,7 @@ max-width: 100%;
 	background: #c8302f;
 	padding: 11px 30px;
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
 	font-weight: 500;
 	font-size: 14px;
 	text-align: center;
@@ -15958,7 +15980,7 @@ max-width: 100%;
     font-size: 14px;
     transition: 0.3s;
     font-weight: 500;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'helvetica',sans-serif;
     border-radius: 10px;
     color: #29334e;
     padding: 15px;
@@ -16148,7 +16170,7 @@ select:invalid { color: #e5e5e5; }
 		font-size: 16px;
 		color: #686f7a;
 		font-weight: 400;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Roboto', 'helvetica',sans-serif;
 	}
 
 	.tab-label::after {
