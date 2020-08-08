@@ -1,7 +1,7 @@
 {
 	" *Please enter a valid description": " *يرجى إدخال  وصف توضيحى مناسب",
 	" *Please enter a valid sort (1-100)": " *يرجى ادخال رقم الترتيب من (1-100)",
-	" EGP?": " ج م?",
+	" EGP?": "ج.م ؟",
 	" Price": " السعر",
 	"'Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
@@ -25,7 +25,7 @@
 			}
 		}
 	},
-	"*Please check the reCaptcha box": "*Please check the reCaptcha box",
+	"*Please check the reCaptcha box": "*يرجى التحقق من الصور المطلوبه",
 	"*Please enter a valid Course Title": "*يرجى إدخال عنوان كورس  صحيح",
 	"*Please enter a valid Email (ex": {
 		" example@gmail": {
@@ -38,10 +38,10 @@
 	"*Please enter a valid course description": "*يرجى إدخال وصف توضيحى مناسب",
 	"*Please enter a valid course title": "*يرجى إدخال عنوان كورس مناسب",
 	"*Please enter a valid first name (ex": {
-		" Hossam)": "يرجى إدخال الأسم الأول "
+		" Hossam)": "يرجى إدخال الإسم الأول "
 	},
 	"*Please enter a valid last name (ex": {
-		" Elkashef)": "*يرجى إدخال الأسم الأخير"
+		" Elkashef)": "*يرجى إدخال الإسم الأخير"
 	},
 	"*Please enter a valid lecture title": "*يرجى إدخال عنوان المحاضرة",
 	"*Please enter a valid password (minimum length = 8 characters)": "*يرجى إدخال كلمة المرور  (اقل  8 حروف)",
@@ -83,9 +83,9 @@
 	"Already have an account?": "لديك حساب مسجل بالفعل?",
 	"Approve": "الموافقة",
 	"Approved": "تمت الموافقة",
-	"Arabic": "عربى",
+	"Arabic": "عربي",
 	"Arabic Language": "لغة عربية",
-	"Are You Sure?": "هل انت متأكد?",
+	"Are You Sure?": "هل انت متأكد ؟",
 	"Are you sure you want to Approve this course? ": "هل تريد الموافقة على هذا الكورس؟ ",
 	"Are you sure you want to Approve this instructor? ": "هل تريد الموافقة على هذا المحاضر؟ ",
 	"Are you sure you want to Approve this payment of ": "هل تريد الموافقة على هذا الدفع؟ ",
@@ -106,7 +106,7 @@
 	"Chapter Title": "عنوان الفصل",
 	"Chapter Title*": "عنوان الفصل*",
 	"Chapters": "الفصول",
-	"Check Out": "Check Out",
+	"Check Out": "الشراء الان",
 	"Checkout": "الدفع",
 	"Chemistry": "كيمياء",
 	"Confirm": "التاكيد",
@@ -136,15 +136,15 @@
 	"Don't have an account?": "ليس لديك حساب?",
 	"Draft": "مسودة",
 	"Duration": "الوقت",
-	"EGP": "ج م",
+	"EGP": "ج.م",
 	"Edit Course ": "تعديل الكورس ",
-	"Email": "الأيميل",
+	"Email": "الإيميل",
 	"Email Address": "البريد الإلكترونى",
 	"Email Address :": "البريد الإلكترونى :",
 	"Email or phone": "البريد الإلكتروني او الموبايل",
-	"English": "English",
+	"English": "لغة انجليزية",
 	"English Language": "لغة انجليزية",
-	"Enrolled": "Enrolled",
+	"Enrolled": "تم التسجيل",
 	"Error while creating chapter, please try again": "حدث خطأ خلال الأنشاء , يرجى المحاولة مرة أخرى",
 	"Error while creating course, please try again": "حدث خطأ خلال إنشاء الكورس, يرجى المحاولة مرة اخرى",
 	"Error while creating lecture, please try again": "خدث خطأ خلال إنشاء المحاضرة , يرجى المحاولة مرة اخرى",
@@ -186,15 +186,15 @@
 	"Instractor Name": "اسم المحاضر",
 	"Instractors Request List": "قائمة طلبات المحاضرين",
 	"Instructor Dashboard": "واجهة عرض المحاضر",
-	"Instructor Name": "Instructor Name",
+	"Instructor Name": "إسم المحاضر",
 	"Instructors Request List": "طلبات المدرسين",
 	"Invalid reset password link": "رابط استعادة كلمة المرور غير صحيح",
 	"Italian": "إيطالي",
 	"Item No": {
 		"": "رقم"
 	},
-	"LE": "ج م",
-	"Language": "Language",
+	"LE": "ج.م",
+	"Language": "اللغة",
 	"Language*": "اللغة*",
 	"Last updated ": "التعديل الأخير ",
 	"Lecture Description*": "وصف المحاضرة*",
@@ -233,12 +233,12 @@
 	"Pending Course": "كورس قيد الموافقة ",
 	"Pending Courses": " كورسات قيد الموافقة",
 	"Philosophy": "فلسفة",
-	"Phone No": "رقم هاتف",
-	"Phone Number :": "رقم الهاتف :",
+	"Phone No": "رقم الموبايل",
+	"Phone Number :": "رقم الموبايل",
 	"Physics": "الفيزياء",
-	"Please Confirm?": "يرجى التاكيد?",
-	"Please enter a valid mobile number or email": "يرجى إدخال رقم موبايل صحيح او ايميل",
-	"Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box": "Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box",
+	"Please Confirm?": "يرجى التاكيد ؟",
+	"Please enter a valid mobile number or email": "يرجى إدخال رقم موبايل صحيح او ايميل صحيح",
+	"Please make sure your are entered a valid Email or Mobile, password, and Checked the reCaptcha box": "يرجى التاكد من البريد الإلكتروني أورقم الموبايل والصور المطلوبه  للتحقق",
 	"Please select a lecture": "يرجى اختيار محاضرة",
 	"Please select subject": "يرجى اختيار مادة",
 	"Please try again": "يرجى إعادة المحاولة",
@@ -255,11 +255,12 @@
 	"Reset My Password": "تغيير كلمة المرور",
 	"Reset Password": "تغيير كلمة المرور",
 	"Reset Your Password": "تغيير كلمة المرور",
-	"Reset link Sent, Please Check Your mail": "تم إرسال ايميل  تغيير كلمة المرور, يرجى تفقد البريد الألكترونى",
+	"Reset link Sent, Please Check Your mail": "تم إرسال ايميل  تغيير كلمة المرور, يرجى تفقد البريد الإلكتروني",
 	"Save Chapter": "حفظ الفصل ",
 	"Save Lecture": "حفظ المحاضره",
-	"Science": "العلوم",
+	"Science": "جولوجيا",
 	"Search": "البحث",
+	"Search by Email or Phone Number": "Search by Email or Phone Number",
 	"Secure checkout": "الدفع المؤمن",
 	"See all": "عرض الكل",
 	"Select Chapter": "إختر الفصل",
@@ -272,7 +273,7 @@
 	"Sign Out": "تسجيل الخروج",
 	"Sign Up": "الإشتراك",
 	"Sign Up and Start Learning!": "قم بالإشتراك وابدأ التعلم",
-	"Smart Academy": "سمارت أكاديمى",
+	"Smart Academy": "سمارت أكاديمي",
 	"Sorry your link is expired, please contact the administrator": {
 		"": "نأسف ل انتهاء مدة   العرض لهذا الرابط, يرجى التواصل مع  المسؤل."
 	},
@@ -286,7 +287,7 @@
 			" Learn how to make yours awesome!": "  الطلاب التى تشاهد فيديوهات توضيحية ذات جودة تقوم بالأشتراك 5 أضعاف عن الطلاب الأخرين. تشير الأحصائيات الى زيادة عدد المشاهدات عشر اضعاف . ."
 		}
 	},
-	"Subjects*": "المواضيع*",
+	"Subjects*": "المواد*",
 	"Submit for Review": "التسجيل للمراجعة",
 	"Table of content": "جدول المحتوى",
 	"Terms": "القواعد",
@@ -312,7 +313,7 @@
 	},
 	"You are not allowed to view this video or an error occurred, please try again": "غير مسموح لك بمشاهدة الفيديو حدث خطأ ما, من فضلك حاول مجددا",
 	"You are not authorized to view this Url": "ليس لديك الصلاجية لمشاهدة هذا الرابط",
-	"You are not authorized, you have been logged out": "You are not authorized, you have been logged out",
+	"You are not authorized, you have been logged out": "شاهدة هذا الرابط , تم تسجيل الخروج",
 	"Your browser does not support the video tag": {
 		"": "لا يدعم المتصفح الخاص بك هذا الامتداد."
 	},
@@ -323,7 +324,7 @@
 	"chapter name:": "اسم الفصل:",
 	"chapters": "الفصول",
 	"confirm": "التاكيد",
-	"confirm password": "confirm password",
+	"confirm password": "تأكيد كلمة المرور",
 	"count": "العدد",
 	"course Title": "عنوان الكورس",
 	"course name:": "اسم الكورس:",
@@ -343,8 +344,8 @@
 	"level": "الصف",
 	"m": "د",
 	"password": "كلمة المرور",
-	"password doesn't match": "كلمة المرور غير متظابقة",
-	"phone number": "رقم الهاتف",
+	"password doesn't match": "كلمة المرور غير متطابقة",
+	"phone number": "رقم الموبايل",
 	"please enter a valid mail": "من فضلك ادخل الأيميل صحيح",
 	"please enter a valid password, min 8 characters": "   من فضلك ادخل كلمة مرور صحيحة ,اقل عدد  8حروف ",
 	"sign Up": "الإشتراك",
@@ -357,7 +358,7 @@
 	"this chapter contains lectures, can't be deleted": "يحتوى هذا الفصل على محاضرات,لا يمكن حذفه",
 	"this course contains chapters, can't be deleted": "يحتوى هذا الكورس على فصول , لا يمكن حذفه",
 	"time m": "الوقت د ",
-	"you Don't have any chapters in this course to view": "لايوجد اى فصول فى هذا الكورس اعرضها !",
+	"you Don't have any chapters in this course to view": "لا يوجد أي فصول لهذا الكورس لعرضها!",
 	"you are logged in successfully": "تم تسجيل الدخول بنجاح",
 	"your chapter successfully created, congratulations!": "تم انشاء الفصل بنجاح, تهانينا!",
 	"your chapter successfully updated, congratulations!": "تم تعديل الفصل بنجاح, تهانينا!",

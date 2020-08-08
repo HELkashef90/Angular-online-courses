@@ -11,7 +11,7 @@
                     <div class="ui left icon input swdh11 swdh19">
                         <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text"
                             name="Search by Email or Phone Number" value="" id="id_Search" required=""
-                            placeholder="Search by Email or Phone Number">
+                            placeholder="{{'Search by Email or Phone Number' | translate}}">
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <button class="login-btn" (click)="clearSearch(search)">{{"Refresh table" |translate}}</button>
             </div>
         </form>
-        <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+        <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll(search.value)"
             [infiniteScrollDisabled]="lastPage || disableScroll">
             <div class="col-md-12">
                 <div class="table-responsive mt-30">

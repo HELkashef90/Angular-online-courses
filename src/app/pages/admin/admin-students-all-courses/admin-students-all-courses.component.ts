@@ -28,7 +28,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEnrollment()
   }
-  onSearchClick(search, event?) {
+  onSearchClick(search, event?, resetTable = true) {
     event?.preventDefault()
     // this.showInvalidData = false;
     let isEmail = false;
@@ -37,20 +37,20 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
     if (new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(search)) {
       isEmail = true;
     }
-    if (new RegExp("01[0,1,2,5]{1}[0-9]{8}").test(search)) {
+    if (new RegExp("^01[0,1,2,5]{1}[0-9]{8}$").test(search)) {
       isMobile = true;
     }
     if (isMobile) {
-      this.disableScroll = true;
+      // this.disableScroll = true;
       console.log('mobile');
-      this.resetTable(false)
+      resetTable ? this.resetTable(false) : null;
       this.getAllEnrollment(search)
       return
     }
     else if (isEmail) {
-      this.disableScroll = true;
+      // this.disableScroll = true;
       console.log('isEmail');
-      this.resetTable(false)
+      resetTable ? this.resetTable(false) : null;
       this.getAllEnrollment(null, search)
 
       return
@@ -100,8 +100,8 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
     })
   }
 
-  onScroll() {
-    this.getAllEnrollment()
+  onScroll(search) {
+    search ? this.onSearchClick(search, null, false) : this.getAllEnrollment();
   }
   onApproveClick(student, search) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
