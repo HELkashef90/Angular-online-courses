@@ -38,6 +38,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { IDMPageComponent } from './pages/idmpage/idmpage.component';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -90,7 +91,8 @@ export function createTranslateLoader(http: HttpClient) {
     InfiniteScrollModule,
     NgxConfirmBoxModule,
     ModalModule.forRoot(),
-    NgxLinkifyjsModule.forRoot()
+    NgxLinkifyjsModule.forRoot(),
+    DeviceDetectorModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },

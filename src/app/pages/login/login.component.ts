@@ -116,4 +116,5 @@ export class LoginComponent implements OnInit {
     this.reCaptchaResponse = null;
     this.loading = false;
   }
+
 }

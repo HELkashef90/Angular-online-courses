@@ -1,11 +1,12 @@
 import Player from '@vimeo/player';
 import { TranslateService } from '@ngx-translate/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { CourseService } from '../services/course/course.service';
+import { ProtectVideosService } from 'src/app/services/protectVideos/protect-videos.service';
 
 @Component({
   selector: 'app-user-study-course',
@@ -23,7 +24,11 @@ export class UserStudyCourseComponent implements OnInit {
   player: any;
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService, private translate: TranslateService,
-    private _courses: CourseService, private router: Router) { }
+    private _courses: CourseService, private router: Router, private _protectVideosService : ProtectVideosService) { 
+      console.log('study constructor');
+      
+      // this._protectVideosService.check()
+    }
 
   ngOnInit(): void {
     this.courseId = this.activatedRoute.snapshot.paramMap.get('courseId');
@@ -142,5 +147,9 @@ export class UserStudyCourseComponent implements OnInit {
     sidekickToggle.classList.toggle("minify");
     var footer = document.querySelector(".footer");
     footer.classList.toggle("wrapper__minify");
+  }
+
+  getUserData(){
+   return localStorage.getItem('email')
   }
 }

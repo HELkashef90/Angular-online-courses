@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+import { NgxFeedbackModule } from 'ngx-feedback';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -9,8 +11,10 @@ import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
   declarations: [SaveUrlPipe],
   imports: [
     CommonModule,
-    NgxLinkifyjsModule
+    NgxLinkifyjsModule,
+    NgxFeedbackModule,
+    ModalModule
   ],
-  exports:[SaveUrlPipe,NgxLinkifyjsModule]
+  exports:[SaveUrlPipe,NgxLinkifyjsModule,NgxFeedbackModule]
 })
 export class SharedModule { }
