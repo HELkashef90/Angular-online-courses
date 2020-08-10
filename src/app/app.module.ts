@@ -36,6 +36,7 @@ import { AfterSignupComponent } from './pages/after-signup/after-signup.componen
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -87,7 +88,7 @@ export function createTranslateLoader(http: HttpClient) {
     InfiniteScrollModule,
     NgxConfirmBoxModule,
     ModalModule.forRoot(),
-    
+    NgxLinkifyjsModule.forRoot()
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },

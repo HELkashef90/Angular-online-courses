@@ -35,6 +35,11 @@ export class UserStudyCourseComponent implements OnInit {
     this._courses.getStudyCourse(id).subscribe(res => {
       console.log(res);
       this.chaptersArray = res['body']
+      if (this.chaptersArray.length > 0) {
+        let chapter = this.chaptersArray[0]
+        let lecture = this.chaptersArray[0].studentEnrolledContent[0]
+        this.onLectureClick(chapter.studentEnrolledChapter.chapter_title, chapter.studentEnrolledChapter.course_title, lecture.content_title, lecture.content_description, lecture.content_Id)
+      }
       if (res['body'].length === 0 || res['body']['status'] === "204") {
         this._toastService.showToast(this.translate.instant("you Don't have any chapters in this course to view"), 'warning')
         this.router.navigate(['/user/courses'])
@@ -53,7 +58,7 @@ export class UserStudyCourseComponent implements OnInit {
     this.chapterName = chapterName;
     this.courseName = courseName + '/';
     this.lectureName = lectureName;
-    this.lectureDesc = lectureDesc || "No Description"
+    this.lectureDesc = lectureDesc || this.translate.instant("No Description")
 
     console.log(lectureVimeoId);
     this._spinner.showFullScreenSpinner()
