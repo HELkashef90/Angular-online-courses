@@ -37,6 +37,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+import { IDMPageComponent } from './pages/idmpage/idmpage.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -53,6 +54,7 @@ export function createTranslateLoader(http: HttpClient) {
     AfterSignupComponent,
     ResetPasswordComponent,
     ContactUsComponent,
+    IDMPageComponent,
   ],
   imports: [
     RouterModule,

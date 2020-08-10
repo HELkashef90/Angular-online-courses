@@ -1,3 +1,4 @@
+import { IDMPageComponent } from './pages/idmpage/idmpage.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { AfterSignupComponent } from './pages/after-signup/after-signup.component';
@@ -66,6 +67,10 @@ const routes: Routes = [
     path: "admin",
     canActivate: [AdminGuard],
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
+  },
+  {
+    path:'idm',
+    component:IDMPageComponent
   },
   {
     path: '**',

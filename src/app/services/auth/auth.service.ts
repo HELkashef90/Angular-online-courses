@@ -115,5 +115,34 @@ export class AuthService {
   activeAccount(token) {
     return this.httpClient.get(environment._activeAccount + token)
   }
+
+  check() {
+    let DEMM6ucWUN = setInterval(() => {
+      if (document.querySelectorAll('[__idm_id__]').length > 0 || document.querySelectorAll('[__idm_frm__]').length > 0) {
+        // console.log(document.querySelectorAll('[__idm_id__]'), document.querySelectorAll('[__idm_frm__]'));
+
+        this.setUserUnAuthenticated()
+        this.router.navigate(['idm'])
+      }
+
+    }, 2000);
+    if (!environment.production) {
+
+      document.onkeyup = (e) => {
+        if (e.ctrlKey && e.altKey && e.which == 84) {
+          console.log('enable idm protect');
+
+          this.check()
+        }
+
+        if (e.ctrlKey && e.altKey && e.which == 89) {
+          console.log('disable idm protect');
+
+          clearInterval(DEMM6ucWUN)
+        }
+      }
+    }
+
+  }
 }
 

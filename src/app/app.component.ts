@@ -22,6 +22,7 @@ export class AppComponent {
     private _toastService: ToastService) {
     this._paramService.getParams();
     // this._authService.authUser();
+    this._authService.check()
     this._localizationService.init();
     // this._PWAService.preventAddToHomeScreen()
 
