@@ -6,7 +6,6 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { CourseService } from '../services/course/course.service';
-import { ProtectVideosService } from 'src/app/services/protectVideos/protect-videos.service';
 
 @Component({
   selector: 'app-user-study-course',
@@ -24,10 +23,9 @@ export class UserStudyCourseComponent implements OnInit {
   player: any;
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService, private translate: TranslateService,
-    private _courses: CourseService, private router: Router, private _protectVideosService : ProtectVideosService) { 
+    private _courses: CourseService, private router: Router) {
       console.log('study constructor');
-      
-      // this._protectVideosService.check()
+
     }
 
   ngOnInit(): void {

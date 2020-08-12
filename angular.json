@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "SmartAcademy"
+  "defaultProject": "SmartAcademy",
+  "cli": {
+    "analytics": false
+  }
 }
