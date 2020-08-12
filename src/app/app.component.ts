@@ -1,4 +1,4 @@
-import { ProtectVideosService } from './services/protectVideos/protect-videos.service';
+// import { ProtectVideosService } from './services/protectVideos/protect-videos.service';
 import { ToastService } from './services/toast/toast.service';
 import { PWAControllerService } from './services/PWAController/pwacontroller.service';
 import { ParamsService } from './services/params/params.service';
@@ -20,10 +20,10 @@ export class AppComponent {
     private _authService: AuthService,
     private _localizationService: LocalizationService,
     private _PWAService: PWAControllerService,
-    private _toastService: ToastService, private _protectVideosService : ProtectVideosService) {
+    private _toastService: ToastService) {
     this._paramService.getParams();
     // this._authService.authUser();
-    this._protectVideosService.check()
+    // this._protectVideosService.check()
     this._localizationService.init();
     // this._PWAService.preventAddToHomeScreen()
 

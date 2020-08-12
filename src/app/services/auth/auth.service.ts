@@ -52,8 +52,10 @@ export class AuthService {
 
   setUserUnAuthenticated() {
     let lang = localStorage.getItem('lang')
+    let email = localStorage.getItem('email')
     localStorage.clear();
     localStorage.setItem('lang', lang)
+    localStorage.setItem('email', email)
     this.isLoggedIn = false;
     this.userType = ""
     this._spinnerService.hideFullScreenSpinner()
