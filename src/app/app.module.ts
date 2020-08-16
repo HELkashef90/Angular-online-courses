@@ -38,7 +38,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { IDMPageComponent } from './pages/idmpage/idmpage.component';
-
+import { NgProgressModule } from "ngx-progressbar";
+import { NgProgressHttpModule } from "ngx-progressbar/http";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -91,6 +92,8 @@ export function createTranslateLoader(http: HttpClient) {
     NgxConfirmBoxModule,
     ModalModule.forRoot(),
     NgxLinkifyjsModule.forRoot(),
+    NgProgressModule,
+    NgProgressHttpModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },

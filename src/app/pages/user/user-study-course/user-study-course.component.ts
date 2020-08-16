@@ -41,7 +41,7 @@ export class UserStudyCourseComponent implements OnInit {
       if (this.chaptersArray.length > 0) {
         let chapter = this.chaptersArray[0]
         let lecture = this.chaptersArray[0].studentEnrolledContent[0]
-        this.onLectureClick(chapter.studentEnrolledChapter.chapter_title, chapter.studentEnrolledChapter.course_title, lecture.content_title, lecture.content_description, lecture.content_Id)
+        this.onLectureClick(chapter?.studentEnrolledChapter?.chapter_title, chapter?.studentEnrolledChapter?.course_title, lecture?.content_title, lecture?.content_description, lecture?.content_Id)
       }
       if (res['body'].length === 0 || res['body']['status'] === "204") {
         this._toastService.showToast(this.translate.instant("you Don't have any chapters in this course to view"), 'warning')
