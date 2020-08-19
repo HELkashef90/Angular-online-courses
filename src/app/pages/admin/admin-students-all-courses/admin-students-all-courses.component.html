@@ -16,7 +16,8 @@
                 </div>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 ">
-                <button #searchElm class="login-btn" (click)="onSearchClick(search.value, $event)">{{"Search" |translate}}</button>
+                <button #searchElm class="login-btn"
+                    (click)="onSearchClick(search.value, $event)">{{"Search" |translate}}</button>
             </div>
             <div class="col-xl-2 col-md-4 col-sm-6 ">
                 <button class="login-btn" (click)="clearSearch(search)">{{"Refresh table" |translate}}</button>
@@ -26,7 +27,11 @@
             [infiniteScrollDisabled]="lastPage || disableScroll">
             <div class="col-md-12">
                 <div class="table-responsive mt-30">
-                    <table class="table ucp-table">
+                    <p>All available result {{totalStudents}}, showing result {{enrollmentStudentsArray.length}} <a
+                            style="color: blue;"
+                            (click)="onExportClick('studentsTablePayments','xlsx')">Export({{enrollmentStudentsArray.length}})</a>
+                    </p>
+                    <table class="table ucp-table" id="studentsTablePayments">
                         <thead class="thead-s">
                             <tr>
                                 <th class="text-center" scope="col"> {{"No." |translate}}</th>
@@ -51,11 +56,13 @@
                                 <td class="text-center">{{student.instrcutor_name}}</td>
                                 <td class="text-center">{{student.chapter_fee}}</td>
                                 <td class="text-center">
-                                    <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student,search.value)"
-                                        title="Approved" class="accept-btn mx-2"><i class="uil uil-check"></i>
-                                        {{"Approved" |translate}}</a>
-                                    <a *ngIf="student.is_active_subscription" (click)="onRejectClick(student,search.value)"
-                                        title="Reject" class="reject-btn  mx-2"><i class="uil uil-times"></i>
+                                    <a *ngIf="!student.is_active_subscription"
+                                        (click)="onApproveClick(student,search.value)" title="Approved"
+                                        class="accept-btn mx-2"><i class="uil uil-check"></i>
+                                        {{"Approve" |translate}}</a>
+                                    <a *ngIf="student.is_active_subscription"
+                                        (click)="onRejectClick(student,search.value)" title="Reject"
+                                        class="reject-btn  mx-2"><i class="uil uil-times"></i>
                                         {{"Reject" |translate}}</a>
                                 </td>
                             </tr>
@@ -89,6 +96,8 @@
                                 </td>
                             </tr> -->
                         </tbody>
+                        <button class="float" (click)="onExportClick('studentsTablePayments','xlsx')">Export({{enrollmentStudentsArray.length}})</button>
+
                     </table>
                     <p *ngIf="!enrollmentStudentsArray.length && !loading">{{"No result found" | translate}}</p>
                     <div *ngIf="loading" class="col-md-12">

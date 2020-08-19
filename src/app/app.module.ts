@@ -40,6 +40,8 @@ import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { IDMPageComponent } from './pages/idmpage/idmpage.component';
 import { NgProgressModule } from "ngx-progressbar";
 import { NgProgressHttpModule } from "ngx-progressbar/http";
+import { ExportConfirmationComponent } from './components/export-confirmation/export-confirmation.component';
+import { ExportAsModule } from 'ngx-export-as';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -56,6 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
     ResetPasswordComponent,
     ContactUsComponent,
     IDMPageComponent,
+    ExportConfirmationComponent,
   ],
   imports: [
     RouterModule,
@@ -93,7 +96,8 @@ export function createTranslateLoader(http: HttpClient) {
     ModalModule.forRoot(),
     NgxLinkifyjsModule.forRoot(),
     NgProgressModule,
-    NgProgressHttpModule
+    NgProgressHttpModule,
+    ExportAsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
