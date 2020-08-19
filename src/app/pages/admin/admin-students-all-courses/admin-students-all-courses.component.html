@@ -27,9 +27,11 @@
             [infiniteScrollDisabled]="lastPage || disableScroll">
             <div class="col-md-12">
                 <div class="table-responsive mt-30">
-                    <p>All available result {{totalStudents}}, showing result {{enrollmentStudentsArray.length}} <a
+                    <p>All available result {{totalStudents}}, showing result {{enrollmentStudentsArray.length}} 
+                        <a
+                        *ngIf="enrollmentStudentsArray.length"
                             style="color: blue;"
-                            (click)="onExportClick('studentsTablePayments','xlsx')">Export({{enrollmentStudentsArray.length}})</a>
+                            (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}}({{enrollmentStudentsArray.length}})</a>
                     </p>
                     <table class="table ucp-table" id="studentsTablePayments">
                         <thead class="thead-s">
@@ -96,7 +98,7 @@
                                 </td>
                             </tr> -->
                         </tbody>
-                        <button class="float" (click)="onExportClick('studentsTablePayments','xlsx')">Export({{enrollmentStudentsArray.length}})</button>
+                        <button *ngIf="enrollmentStudentsArray.length" class="float accept-btn mx-2" (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}} {{enrollmentStudentsArray.length}} </button>
 
                     </table>
                     <p *ngIf="!enrollmentStudentsArray.length && !loading">{{"No result found" | translate}}</p>
