@@ -4,6 +4,7 @@
 const serverUrl = 'https://smartacademy.specialnext.com/elearning/api/v1/'
 export const environment = {
   production: false,
+  appVersion: require("../../package.json").version + '-dev',
   _loginAPI: `${serverUrl}auth/login`,
   _signUp: `${serverUrl}auth/signup`,
   _refreshToken: `${serverUrl}auth/refresh/token`,

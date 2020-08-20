@@ -11,7 +11,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   imports: [
     CommonModule,
     NgxLinkifyjsModule,
-    ModalModule
+    ModalModule,
+    
   ],
   exports:[SaveUrlPipe,NgxLinkifyjsModule]
 })

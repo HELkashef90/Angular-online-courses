@@ -1,3 +1,4 @@
+import { ExportService } from './../../../services/exportAs/export-as.service';
 import { StudentsService } from './../services/students/students.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -23,6 +24,7 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
   disableScroll: Boolean;
   constructor(private _students: StudentsService, private modalService: BsModalService,
     private translate: TranslateService, private _toast: ToastService,
+    private _export : ExportService
   ) { }
 
   ngOnInit(): void {
@@ -178,5 +180,11 @@ export class AdminStudentsAllCoursesComponent implements OnInit {
     this.reqPageNum = 0;
     this.lastPage = false;
     getAllEnrollment ? this.getAllEnrollment() : null
+  }
+
+
+
+  onExportClick(id,type){
+    this._export.exportElement(id,type)
   }
 }

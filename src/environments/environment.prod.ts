@@ -2,6 +2,7 @@
 const serverUrl = '/elearning/api/v1/'
 export const environment = {
   production: true,
+  appVersion: require("../../package.json").version,
   _loginAPI: `${serverUrl}auth/login`,
   _signUp: `${serverUrl}auth/signup`,
   _refreshToken: `${serverUrl}auth/refresh/token`,
