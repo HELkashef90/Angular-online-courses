@@ -1,13 +1,13 @@
 {
   "name": "smart-academy",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href / --proxy-config proxy.conf.json",
     "start:prod": "ng serve --prod --base-href / ",
     "build:prod": "npm run extract-ar-translation && npm run extract-en-translation && ng build --prod  --base-href /",
     "build:stg": "npm version",
-    "postbuild:stg":"npm run extract-ar-translation && npm run extract-en-translation && ng build --base-href / && firebase deploy",
+    "postbuild:stg": "npm run extract-ar-translation && npm run extract-en-translation && ng build --base-href / && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
