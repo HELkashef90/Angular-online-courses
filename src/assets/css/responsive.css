@@ -1,5 +1,5 @@
 /* rtl style*/
-  
+
 @media (max-width: 575.98px) {
     .rtl .main_logo {
         margin-left: 5px !important;
@@ -764,7 +764,7 @@
 	float: left !important;
 	width: 100%;
     margin-top: 30px;
-} 
+}
 
 .user_dt_right ul li {
     width: 24.3%;
@@ -968,7 +968,7 @@
     padding: 62px 0 50px !important;
 }
 }
- 
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
 .main_logo {

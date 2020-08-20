@@ -369,5 +369,9 @@
 	"your course successfully updated, congratulations!": "تم تعديل المحاضرةبنجاح, تهانينا!",
 	"your lecture successfully created, congratulations!": "تم انشاء المحاضرة بنجاح, تهانينا!",
 	"your lecture successfully deleted!": "تم حذف المحاضرة بنجاح",
-	"your lecture successfully updated!": "تم تعديل المحاضرة بنجاح!"
+  "your lecture successfully updated!": "تم تعديل المحاضرة بنجاح!",
+  "Teachers": "المدرسين",
+  "Why us": "لماذا نحن"
+
+
 }
