@@ -16,7 +16,7 @@
 @font-face {
   font-family: 'helvetica';
   src:  url('../fonts/helvetica-neue-lt-arabic.ttf');
-  src:  
+  src:
     url('../fonts/helvetica-neue-lt-arabic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -26,7 +26,7 @@
   content: '';
   display: block;
   height: 50rem;
-  width: 50rem; 
+  width: 50rem;
   height: 80rem;
   width: 75rem;
   background: url(../img/design.png) no-repeat;
@@ -653,7 +653,7 @@ STYLE SWITCHER FOR DEMO
 	border-bottom-right-radius: 0;
 	border-top-left-radius:0.25rem;
 	border-bottom-left-radius: 0.25rem;
-  
+
 }
 
 @media (max-width: 991.98px) {
@@ -785,6 +785,7 @@ STYLE SWITCHER FOR DEMO
 	  font-weight: 700;
 	  color: #2c3f5f;
     font-size: 16px;
+    /* padding:12px !important; */
 }
 
 .lp-header .navbar-nav .nav-link:hover, .lp-header .navbar-nav .nav-link:focus {
@@ -1646,7 +1647,7 @@ STYLE SWITCHER FOR DEMO
 .home h1,.home .h1 {
   font-size: 3.75rem;
   color: #2c3f5f;
-  
+
 }
 
 .home h2,
@@ -2597,6 +2598,10 @@ STYLE SWITCHER FOR DEMO
 	background-color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	border-radius: 0.25rem;
+	-webkit-border-radius: 0.25rem;
+	-moz-border-radius: 0.25rem;
+	-ms-border-radius: 0.25rem;
+	-o-border-radius: 0.25rem;
 }
 
 .home .dropdown-item {
@@ -2651,4 +2656,44 @@ STYLE SWITCHER FOR DEMO
 
 .home.rtl .dropdown-menu {
 	text-align: right;
+}
+
+
+
+
+
+
+/*************************** Nourhan ***************************/
+
+
+@media (max-width: 640px) {
+
+  .home h1, .home .h1 {
+    font-size: 3.1rem;
+}
+}
+@media (max-width: 480px) {
+  .home h1, .home .h1 {
+    font-size: 2.75rem;
+}
+.home .lead {
+  font-size: 1.3rem;}
+
+  .lp-header .navbar-brand img {
+    width: 80px;
+}
+}
+@media (max-width: 320px) {
+  .main_logo span {
+    font-size: 13px;
+}
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1200px){
+  .lp-header .navbar-nav .nav-link {
+
+    font-size: 14px;
+  }
 }

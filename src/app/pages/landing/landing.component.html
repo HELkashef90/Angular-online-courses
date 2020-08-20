@@ -14,7 +14,7 @@
           <ul class="navbar-nav mx-auto ml-auto">
             <!-- Link-->
             <!-- <li class="nav-item"> <a  class="nav-link">{{"About Us" | translate}}</a></li> -->
-            <!-- 
+            <!--
             <li class="nav-item dropdown"><a id="pages"  data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false" class="nav-link dropdown-toggle">{{"departments" | translate}}</a>
               <div class="dropdown-menu">
@@ -23,6 +23,21 @@
                 <a  class="dropdown-item">{{"math" | translate}}</a></div>
             </li> -->
             <!-- Link-->
+            <li class="nav-item"> <a #home [routerLink]="['/Home']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Home" | translate}}</a></li>
+
+            <li class="nav-item"> <a #course [routerLink]="['/Courses']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Courses" | translate}}</a></li>
+
+            <li class="nav-item"> <a #Teachers [routerLink]="['/Teachers']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Teachers" | translate}}</a></li>
+
+            <li class="nav-item"> <a [routerLink]="['/WhyUs']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Why us" | translate}}</a></li>
+
+            <li class="nav-item"> <a [routerLink]="['/mission']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Mission / Vision" | translate}}</a></li>
+
             <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"
                 class="nav-link">{{"Contact Us" | translate}}</a></li>
           </ul>
@@ -52,7 +67,7 @@
               <a (click)="changeLang('en')" class="dropdown-item">{{"English" | translate}}</a>
             </div>
           </li>
-          
+
             <li (click)="goToDashboard()" class="nav-item"><a
                 class="navbar-btn btn btn-primary">{{"My Dashboard" | translate}}</a>
             </li>
@@ -63,16 +78,15 @@
     </nav>
   </header>
 
-  <div class="page-holder">
+  <div class="page-holder SlideOfLanding " id="home">
     <!-- intro Section-->
     <section class="hero shape-1">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6">
+          <div class="firstCol col-lg-6  col-sm-6 ">
             <h1 class="hero-heading">{{'Explore our schools to find your perfect course' | translate}}
             </h1>
-            <p class="lead mt-5 font-weight-light">{{"Match your goals to our classes, explore your options, and map out
-              your path to success." | translate}}</p>
+            <p class="lead mt-5 font-weight-light">{{"Match your goals to our classes, explore your options, and map out your path to success." | translate}}</p>
             <!-- Subscription form-->
             <!-- <form action="#" class="subscription-form mt-5">
               <div class="form-group">
@@ -81,7 +95,7 @@
               </div>
             </form> -->
           </div>
-          <div class="col-lg-6 d-none d-lg-block">
+          <div class="SecondCol col-lg-6  col-sm-6 ">
             <div class="wrapper mx-auto">
 
               <div class="img"><img src="assets/images/Image2.png" alt="..." class="img-fluid"></div>
@@ -92,6 +106,113 @@
       </div>
     </section>
   </div>
+
+    <section class="sectionOfCourses" id="course">
+      <h4>{{"Latest Courses"|translate}}</h4>
+      <a>{{"All Courses"|translate}}</a>
+      <div class="row content">
+        <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{"History"|translate}}</h5>
+            <p class="card-text">{{"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."|translate}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{"Mohamed Ahmed"}}</small>
+            <!-- <a>120</a>
+            <a>Add </a> -->
+          </div>
+        </div>
+      </div>
+        <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+        <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </section>
+
+    <section class="sectionOfTeachersList" id="Teachers">
+      <h4>{{"Latest Courses"|translate}}</h4>
+      <a>{{"All Teachers"|translate}}</a>
+      <div class="row content">
+        <div class="col-sm-3 col-6 col-md-2">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
+          </div>
+
+        </div>
+      </div>
+        <div class="col-6 col-sm-3 col-md-2">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{"Mohamed Karim"|translate}}</h5>
+          </div>
+
+        </div>
+      </div>
+        <div class="col-sm-3 col-6 col-md-2">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{"Moazen mohsen"|translate}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-6 col-md-2">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{"Moustafa Ahmed"|translate}}</h5>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </section>
+
+
+
+  <!-- </div> -->
+
   <footer class="landing-footer">
     <div class="container text-center">
       <!-- Copyrights-->

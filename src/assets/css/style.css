@@ -11,7 +11,7 @@ Table Of Content
 =============================================================*/
 
 
-/* ================================================================================== 
+/* ==================================================================================
 rtl style
 ===================================================================================== */
 
@@ -30,11 +30,11 @@ rtl style
 }
 /* .row {
 	display: -ms-flexbox;
-    display: -webkit-inline-box !important; 
+    display: -webkit-inline-box !important;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    
+
 } */
 router-outlet {
 	display: none;
@@ -66,10 +66,20 @@ router-outlet {
 	display: block;
 }
 .table-responsive{
-	display: inline-grid !important;
+	/* display: inline-grid !important;
 	display: -webkit-inline-grid !important;
-	display: -moz-inline-grid !important;
+	display: -moz-inline-grid !important; */
 }
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  position: relative;
+}
+
 /* .rtl ::-moz-selection {
 	background-color: #cce2ff;
 	color: rgba(0, 0, 0, 0.87);
@@ -244,7 +254,7 @@ direction: rtl;
 		font-size: 3em;
       /* 3x body copy size = 48px */
 		line-height: 1.05;
-      /* keep to a multiple of the 20px line height 
+      /* keep to a multiple of the 20px line height
 	and something more appropriate for display headings */;
 	}
 
@@ -372,7 +382,7 @@ direction: rtl;
 	}
 
 	.rtl .wrapper {
-		margin-right: 240px;
+		/* margin-right: 240px; */
 		margin-left: 0;
 	}
 	.rtl .wrapper .footer {
@@ -773,6 +783,10 @@ direction: rtl;
 .rtl .wrapper {
 	padding: 90px 0 0;
 	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
 }
 
 .rtl .clearfix:after {
@@ -8051,7 +8065,7 @@ direction: rtl;
 }
 
 
-/* ================================================================================== 
+/* ==================================================================================
 Reset Css
 ===================================================================================== */
 
@@ -8064,8 +8078,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -8076,11 +8090,11 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-/* ::-moz-selection { /* Code for Firefox */
+ /* ::-moz-selection { Code for Firefox */
 	background-color: #cce2ff;
     color: rgba(0,0,0,.87);
 }
@@ -8217,7 +8231,7 @@ h1 {
 	font-size: 3em;
 	/* 3x body copy size = 48px */
 	line-height: 1.05;
-	/* keep to a multiple of the 20px line height 
+	/* keep to a multiple of the 20px line height
 	and something more appropriate for display headings */
 }
 h2 {
@@ -8344,7 +8358,7 @@ input[type=text] {
 /* Medium devices (desktops)
 ==========================*/
 @media (min-width: 992px) {
-	
+
 	body {
 	overflow-y: scroll;
 	}
@@ -8355,9 +8369,10 @@ input[type=text] {
 		margin-top: 10px;
 		float: none;
 	}
-	
+
 	.wrapper , .footer{
-		margin-left: 240px;
+		margin-left: 0px;
+		/* margin-left: 240px; */
 	}
 	.wrapper .footer {
 		margin:0;
@@ -8751,7 +8766,7 @@ i.icon1 {
   display: -webkit-flex;
 	flex-direction: column;
 	justify-content: space-between;
-	
+
 }
 .footer {
 	transition: all 0.3s ease-out;
@@ -8903,7 +8918,7 @@ i.icon1 {
 	background: #c8302f !important;
 	border: 1px solid #c8302f !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-}	
+}
 
 .live_stream .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -9025,7 +9040,7 @@ i.icon1 {
     height: auto;
 	border-radius: 5px;
     overflow: hidden;
-    
+
 }
 
 .fcrse_img img {
@@ -9335,7 +9350,7 @@ i.icon1 {
 	background: #c8302f !important;
 	border: 1px solid #c8302f !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-}	
+}
 
 .featured_courses .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -9383,7 +9398,7 @@ i.icon1 {
 	background: #c8302f !important;
 	border: 1px solid #c8302f !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-}	
+}
 
 .top_instrutors .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -9538,7 +9553,7 @@ i.icon1 {
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
-	transform: scale(1.1); 
+	transform: scale(1.1);
 }
 
 .fb {
@@ -9702,7 +9717,7 @@ i.icon1 {
 	float: left;
     font-weight: 500;
     font-family: 'Roboto', 'helvetica',sans-serif;
-    margin-bottom: 0;	
+    margin-bottom: 0;
 }
 
 .allcate15 {
@@ -9897,7 +9912,7 @@ i.icon1 {
 	background: #c8302f !important;
 	border: 1px solid #c8302f !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-}	
+}
 
 .Student_says .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -10049,7 +10064,9 @@ i.icon1 {
     padding-left: 15px;
     font-size: 16px;
     display: inline-block;
-    color: #f7f7f7;
+    /* color: #f7f7f7; */
+    color: rgba(0,0,0,.87) !important;
+
 	-webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -10058,12 +10075,14 @@ i.icon1 {
 }
 
 .edu_social_links a:hover {
-    color: #fff !important;
+     color: rgba(0,0,0,.87) !important;
+
+    /* color: #fff !important; */
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
-	transform: scale(1.1); 	
+	transform: scale(1.1);
 }
 
 .lng_btn .ui.dropdown .menu>.item {
@@ -10128,10 +10147,10 @@ i.icon1 {
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
+  } 40% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
@@ -10288,7 +10307,7 @@ i.icon1 {
 
 .user_dt_left {
 	float: left;
-} 
+}
 
 .subscribe-btn {
     border: 0;
@@ -10329,7 +10348,7 @@ i.icon1 {
 
 .user_dt_right {
 	float: right;
-} 
+}
 
 .user_dt_right ul li {
     display: inline-block;
@@ -10543,12 +10562,12 @@ i.icon1 {
 .srch_explore {
     background: #fff !important;
     border: 1px solid #e5e5e5 !important;
-    color: #29334e !important;	
+    color: #29334e !important;
 	box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 .srch_explore:focus {
-    border: 1px solid #29334e !important;	
+    border: 1px solid #29334e !important;
 	box-shadow: none !important;
 }
 
@@ -11331,7 +11350,7 @@ i.icon2 {
 }
 
 ._rate003 {
-	
+
 }
 
 ._rate004 {
@@ -11672,7 +11691,7 @@ i.icon2 {
 }
 
 ._216b12:hover {
-	color: #fafafa !important; 
+	color: #fafafa !important;
 }
 
 .prfledt1 h2 {
@@ -11765,7 +11784,7 @@ i.icon2 {
 }
 
 ._216b22:hover {
-	color: #fafafa !important; 
+	color: #fafafa !important;
 }
 
 .cmmnt_1526{
@@ -11946,7 +11965,7 @@ i.icon2 {
 .ui[class*="left icon"].swdh15.input>input {
     padding-left: 4.2em!important;
     padding-right: 1em!important;
-    height: 40px !important; 
+    height: 40px !important;
 	font-size: 14px;
     font-weight: 400;
     font-family: 'Roboto', 'helvetica',sans-serif;
@@ -13096,7 +13115,7 @@ a.rmv-btn i {
 }
 
 .category-topics.collapsed:after {
-    content: '\f0da'; 
+    content: '\f0da';
     font-size: 14px;
     font-family: "FontAwesome";
     float: right;
@@ -13286,7 +13305,7 @@ a.rmv-btn i {
 }
 
 .blog_link i {
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
 .bg_blog2 img {
@@ -13568,7 +13587,7 @@ a.rmv-btn i {
 	background: #c8302f !important;
 	border: 1px solid #c8302f !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-}	
+}
 
 .feature_careers .owl-nav .owl-next:hover {
 	color: #fff !important;
@@ -13937,7 +13956,7 @@ a.rmv-btn i {
     font-weight: 600;
     font-family: 'Roboto', 'helvetica',sans-serif;
 	color: #29334e;
-	text-align: center;	
+	text-align: center;
 }
 
 .sign_form p {
@@ -13945,9 +13964,9 @@ a.rmv-btn i {
     margin-bottom: 47px;
     font-weight: 400;
 	font-family: 'Roboto', 'helvetica',sans-serif;
-	
+
 	color: #686f7a;
-	text-align: center;	
+	text-align: center;
 	line-height: 26px;
 }
 .recaptcha  {
@@ -14214,8 +14233,8 @@ a.rmv-btn i {
 	line-height: 26px;
 }
 
-.panel-title > a:hover, 
-.panel-title > a:active, 
+.panel-title > a:hover,
+.panel-title > a:active,
 .panel-title > a:focus  {
     text-decoration:none;
 }
@@ -14751,7 +14770,7 @@ a.rmv-btn i {
 	margin-top: 0;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	border-top: 1px solid #29334e; 
+	border-top: 1px solid #29334e;
 }
 
 .tc_footer_left ul li {
@@ -14981,7 +15000,7 @@ a.rmv-btn i {
 	text-decoration: underline !important;
 }
 
- 
+
 
 .contact1256 {
     float: left;
@@ -15376,8 +15395,8 @@ max-width: 100%;
 	line-height: 26px;
 }
 
-.panel-title10 > a:hover, 
-.panel-title10 > a:active, 
+.panel-title10 > a:hover,
+.panel-title10 > a:active,
 .panel-title10 > a:focus  {
     text-decoration:none;
 }
@@ -15512,7 +15531,7 @@ max-width: 100%;
     text-align: left;
     line-height: 28px;
 	margin-top: 0;
-	margin-bottom: 24px;	
+	margin-bottom: 24px;
 }
 
 .ques_title span {
@@ -16045,7 +16064,7 @@ table .table-img {
 
 .rtl .close {
 	float: left;
-	
+
 }
 .btn-link {
 	color: #c8302f;
@@ -16054,7 +16073,7 @@ table .table-img {
 	color: #333;
 }
 select {
-	border: 1px solid #e5e5e5 !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 500rem !important;
     box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
     min-width: 100% !important;
@@ -16076,10 +16095,20 @@ select {
     box-shadow: none;
     border: 1px solid rgba(34,36,38,.15);
     border-radius: .28571429rem;
-    -webkit-transition: width .1s ease,-webkit-box-shadow .1s ease;
+    -webkit-transition: box-shadow .1s ease,width .1s ease;
     transition: width .1s ease,-webkit-box-shadow .1s ease;
     transition: box-shadow .1s ease,width .1s ease;
-	transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease; 
+    transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
+    -webkit-border-radius: .28571429rem;
+    -moz-border-radius: .28571429rem;
+    -ms-border-radius: .28571429rem;
+    -o-border-radius: .28571429rem;
+    -moz-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+    -moz-transition: box-shadow .1s ease,width .1s ease;
+    -ms-transition: box-shadow .1s ease,width .1s ease;
+    -o-transition: box-shadow .1s ease,width .1s ease;
 }
 select:invalid { color: #e5e5e5; }
 
@@ -16095,9 +16124,9 @@ select:invalid { color: #e5e5e5; }
     left: 0;
     right: auto;
 }
-#notification-dropdown:hover .menu,#notification-dropdown:focus-within .menu, 
+#notification-dropdown:hover .menu,#notification-dropdown:focus-within .menu,
 #message-dropdown:hover .menu, #message-dropdown:focus-within .menu,
-#account-dropdown:hover .menu ,#account-dropdown:focus-within .menu , 
+#account-dropdown:hover .menu ,#account-dropdown:focus-within .menu ,
 #language:hover .menu, #language:focus-within .menu{
 	display:block;
 }
@@ -16108,6 +16137,10 @@ select:invalid { color: #e5e5e5; }
 
 .rtl .uil-angle-right.collapse_menu--icon {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
 }
 
 
@@ -16211,9 +16244,12 @@ select:invalid { color: #e5e5e5; }
 		background: #f7f7f7;
 	}
 	.tab-input:checked + .tab-label::after {
-	-webkit-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
 			transform: rotate(90deg);
-	}
+			-moz-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+}
 	.tab-input:checked ~ .ui-accordion-content {
 	max-height: 100vh;
 	/* padding: 1em; */
@@ -16226,7 +16262,11 @@ select:invalid { color: #e5e5e5; }
 		padding: 7px 15px;
 		border: 1px solid #3ca745;
 		border-radius: 30px;
-	}
+		-webkit-border-radius: 30px;
+		-moz-border-radius: 30px;
+		-ms-border-radius: 30px;
+		-o-border-radius: 30px;
+}
 	.reject-btn {
 		color: #c8302f;
 		background-color: #ffeced2e;
@@ -16240,12 +16280,12 @@ select:invalid { color: #e5e5e5; }
 	}
 
 	/* //modal */
-	
+
 	.modal-backdrop.show {
 		opacity: .1;
 		opacity: 0;
 	}
-	
+
 	.confirm .modal-content {
 		border:none;
 		border-radius: 1rem;
@@ -16289,7 +16329,7 @@ select:invalid { color: #e5e5e5; }
 		display: flex;
 		justify-content: space-between;
 		align-items: start;
-		
+
 	}
 	.steps_btn {
 		margin-top: 30px;
@@ -16303,6 +16343,185 @@ select:invalid { color: #e5e5e5; }
 			left: 0;
 			right: auto;
 		}
-		
-	}
-	
+
+  }
+
+/**************************************** PhaseTwoStart ****************************************/
+/**************************************** PhaseTwoEnd ****************************************/
+/**************************************** LandingPageStart ****************************************/
+.sectionOfCourses{
+  background: #ffffff;
+
+}
+.sectionOfCourses ,  .sectionOfTeachersList{
+  padding: 40px 0px;
+
+}
+.sectionOfCourses h4, .sectionOfTeachersList h4{
+  margin: 0px 0px 20px 20px;
+  display: inline-block;
+}
+.rtl .sectionOfCourses h4, .rtl .sectionOfTeachersList h4{
+  margin: 0px 20px 20px 0px;
+}
+.sectionOfCourses a ,  .sectionOfTeachersList a{
+  float: right;
+  position: relative;
+top: 5px;
+  margin: 0px 30px 0px 0px;
+}
+.rtl .sectionOfCourses a ,  .rtl .sectionOfTeachersList a{
+  float: left;
+  margin: 0px 0px 0px 20px;
+}
+.sectionOfCourses .content{
+  margin: 0px;
+}
+.sectionOfTeachersList .card-deck{
+  text-align: center;
+}
+.sectionOfCourses .content div.col-md-3 , .sectionOfTeachersList .content div.card{
+margin-bottom: 20px;
+}
+.sectionOfTeachersList .col-md-2{
+ padding: 0px 15px;}
+
+.sectionOfTeachersList{
+  margin: 0px 5px;
+}
+.sectionOfTeachersList div{
+  text-align: center;
+  padding: 0px;
+}
+.sectionOfTeachersList div h5{
+  font-size: 1.2rem;
+}
+.sectionOfTeachersList .row{
+  margin: 0px;
+}
+/**************************************** LandingPageEnd ****************************************/
+
+
+
+
+
+
+/*************************************** Nourhan ***************************************/
+div.buttn{
+  text-align: center;
+  padding: 20px 0px;
+}
+div.buttn button{
+  margin: 0px;
+}
+.container{
+  margin-bottom: 20px;
+}
+
+div.col-md-6.socialMedia{
+  padding: 0px;
+}
+div.contact1256.contectUs{
+  margin: 0px;
+}
+.edu_social_links {
+  text-align: left;
+}
+.edu_social_links {
+  text-align: right;
+}
+.rtl .user_dt5 ,  .user_dt5 {
+  margin: 20px 0px;
+}
+._byt1458._215b15 div.row{
+  display: block ruby;
+}
+.btn_adcart {
+  height: 33px !important;
+}
+@media (max-width:576px){
+  .SlideOfLanding .container .firstCol{
+    z-index: 2;
+  }
+  .SlideOfLanding .container .SecondCol{
+    position: absolute !important;
+      opacity: 0.4 !important;
+  }
+}
+@media (min-width: 768px)
+{
+
+  div.col-md-6.socialMedia {
+
+    max-width: 100%;
+}}
+@media (max-width: 768px){
+  .home h1, .home .h1 {
+    font-size: 2.75rem;
+}
+}
+@media (max-width: 576px) {
+  .sectionOfTeachersList .col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 33%;
+  }
+  .sectionOfTeachersList .col-md-2{
+    padding: 0px 5px;}
+  }
+  @media (max-width: 575.98px){
+    .thnk_coming_title {
+      font-size: 4em !important;
+  }
+  }
+@media (max-width: 480px) {
+  .home h4, .home .h4 {
+    font-size: 1.5rem;
+}
+.sectionOfCourses h4, .sectionOfTeachersList h4 {
+  margin: 0px 0px 20px 10px;
+}
+.rtl .sectionOfCourses h4, .rtl .sectionOfTeachersList h4 {
+  margin: 0px 10px 20px 0px;
+}
+.sectionOfCourses a, .sectionOfTeachersList a {
+margin: 0px 10px 0px 0px;
+font-size: 12px;
+}
+.rtl .sectionOfCourses a, .rtl .sectionOfTeachersList a {
+margin: 0px 0px 0px 10px;
+}
+.sectionOfTeachersList .col-md-2{
+  padding: 0px 5px;}
+
+
+  .menu--item__has_sub_menu .menu--link::after {
+   
+    right: 50px;}
+}
+
+
+@media (max-width: 400px) {
+  .ui .menu.drop-menu{
+    z-index: 11111;
+}
+}
+@media (max-width: 300px) {
+
+}
+  .recaptcha .rc-anchor-normal .rc-anchor-logo-portrait{
+   margin: 0px !important;
+    /* height: 74px !important;
+    width: 255px !important; */
+}
+/* } */
+@media (max-width: 320px){
+  .rtl .header_right {
+    padding-left: 0px;
+}
+.main_logo span , .rtl .main_logo span{
+  font-size: 16px;
+}
+
+}
+
