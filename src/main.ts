@@ -12,8 +12,8 @@ if (environment.production) {
 }
 document.addEventListener('contextmenu', event => event.preventDefault());
 //disabled console.log
-console.log = () => { }
-console.error = () => { }
+// console.log = () => { }
+// console.error = () => { }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

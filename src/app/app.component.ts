@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+// import { PreventInspectService } from './services/preventInspect/prevent-inspect.service';
 // import { ProtectVideosService } from './services/protectVideos/protect-videos.service';
 import { ToastService } from './services/toast/toast.service';
 import { PWAControllerService } from './services/PWAController/pwacontroller.service';
@@ -13,6 +15,7 @@ import { LocalizationService } from './services/localization/localization.servic
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
   appInit: boolean = false
   title = 'SmartAcademy';
 
@@ -20,24 +23,29 @@ export class AppComponent {
     private _authService: AuthService,
     private _localizationService: LocalizationService,
     private _PWAService: PWAControllerService,
-    private _toastService: ToastService) {
+    private _toastService: ToastService,/* private _protectVideosService: ProtectVideosService, private _preventInspect: PreventInspectService*/) {
     this._paramService.getParams();
     // this._authService.authUser();
-    // this._protectVideosService.check()
+    // this._protectVideosService.init()
+    // this._preventInspect.init()
     this._localizationService.init();
     // this._PWAService.preventAddToHomeScreen()
-
+    // this.clearCache()
+    console.log('version ' + environment.appVersion);
   }
   ngOnInit() {
+
     // this.testSpinner()
   }
-  testSpinner() {
-    this._spinnerService.showFullScreenSpinner()
-    this._toastService.showToast("Hello", "success")
-    setTimeout(() => {
-      this._spinnerService.hideFullScreenSpinner()
-      this.appInit = true
-      // this._PWAService.displayInstallPrompt()
-    }, 5000);
+
+
+  clearCache() {
+    if (localStorage.getItem('cleared')) {
+      localStorage.removeItem('cleared')
+    } else {
+      localStorage.setItem('cleared', 'true')
+      window.location.reload(true)
+    }
   }
+
 }

@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { LocalizationService } from './../../services/localization/localization.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
+  version: string;
 
   constructor(private _localizationService: LocalizationService, public _auth: AuthService) {
     if (localStorage.getItem("authenticationToken")) {
@@ -17,6 +19,7 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.version = environment.appVersion
   }
   goToDashboard() {
     this._auth.redirectUserToDashboard()
