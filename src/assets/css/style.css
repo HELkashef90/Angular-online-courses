@@ -16410,6 +16410,84 @@ margin-bottom: 20px;
   margin: 0px;
 }
 /**************************************** LandingPageEnd ****************************************/
+/**************************************** idmPageStart ****************************************/
+.idmPage{
+  text-align: center;
+  /*background: #333;
+  */margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: fit-content;
+  padding: 0px 25px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+
+}
+.idmPage:before {
+  content: "";
+  background: url(../images/sign.svg) no-repeat center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  background-size: cover;
+  opacity: 0.099;
+}
+.idmPage svg{
+  color:#c8302f;
+  font-size: 90px;
+  /* color:#fff */
+  margin: 20px 0px;
+}
+.idmPage h1,.idmPage h4{
+  color: #333;
+}
+.idmPage a{
+  color:#c8302f;
+}
+.idmPage .logo{
+  width: 25%;
+  /* margin-bottom: 30px; */
+}
+@media (max-width: 640px){
+  .idmPage svg {
+  font-size: 70px;}
+  .idmPage h1{
+    font-size: 2.3rem;
+  }
+  .idmPage .logo{
+    width: 25%;}
+   .idmPage h4{
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 480px){
+  .idmPage h1{
+    font-size: 1.8rem;
+  }
+   .idmPage h4{
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 420px){
+  .idmPage svg {
+    font-size: 60px;
+}
+.idmPage h1 {
+  font-size: 1.5rem;
+}
+.idmPage .logo {
+  width: 35%;
+}
+}
+/**************************************** idmPageEnd ****************************************/
+/**************************************** LandingPageEnd ****************************************/
 
 
 
@@ -16443,9 +16521,9 @@ div.contact1256.contectUs{
 .rtl .user_dt5 ,  .user_dt5 {
   margin: 20px 0px;
 }
-._byt1458._215b15 div.row{
+/* ._byt1458._215b15 div.row{
   display: block ruby;
-}
+} */
 
 .btn_adcart {
   height: 33px !important;
