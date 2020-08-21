@@ -61,4 +61,5 @@ export class SidebarComponent implements OnInit {
     var wrapper = document.querySelector(".wrapper");
     wrapper.classList.toggle("wrapper__minify");
   }
+
 }
