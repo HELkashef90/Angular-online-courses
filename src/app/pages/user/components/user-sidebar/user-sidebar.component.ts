@@ -24,13 +24,9 @@ export class UserSidebarComponent implements OnInit {
   getEmail() {
     return localStorage.getItem('email')
   }
-  displayBlock;
-  displayLogOtDiv;
-  ishideen=false;
+
   changeLang(lang) {
     this._local.setUserLang(lang);
-    this.ishideen=true;
-    console.log("Done")
   }
 
 
@@ -58,15 +54,20 @@ export class UserSidebarComponent implements OnInit {
     var footer = document.querySelector(".footer");
     footer.classList.toggle("wrapper__minify");
   }
-
-  openMenu(){
-    this.displayBlock=true;
-    this.displayLogOtDiv=false;
-
+  close(){
+    var verticalSideBar = document.querySelector(".vertical_nav");
+    verticalSideBar.classList.toggle("vertical_nav__minify");
+    var wrapper = document.querySelector(".wrapper");
+    wrapper.classList.toggle("wrapper__minify");
   }
-  openLogoutDiv(){
-    this.displayLogOtDiv=true;
-    this.displayBlock=false;
+  // openMenu(){
+    // this.displayBlock=true;
+    // this.displayLogOtDiv=false;
 
-  }
+  // }
+  // openLogoutDiv(){
+    // this.displayLogOtDiv=true;
+    // this.displayBlock=false;
+
+  // }
 }

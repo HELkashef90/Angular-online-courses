@@ -146,19 +146,19 @@
     <div class="left_section menu_left" id="js-menu" >
         <div class="left_section">
             <ul>
-                <li class="menu--item">
+                <li class="menu--item" (click)="close()">
                     <a [routerLink]="['instructors']" routerLinkActive="active"  class="menu--link " title="Instructors Request List">
                         <i class="uil uil-user-check menu--icon"></i>
                         <span class="menu--label">{{"Instructors Request List" | translate}}</span>
                     </a>
                 </li>
-                <li class="menu--item">
+                <li class="menu--item" (click)="close()">
                     <a [routerLink]="['students']" routerLinkActive="active"  class="menu--link " title="Student Payment">
                         <i class="uil uil-money-withdrawal menu--icon"></i>
                         <span class="menu--label">{{"Student Payment" | translate}}</span>
                     </a>
                 </li>
-                <li class="menu--item">
+                <li class="menu--item" (click)="close()">
                     <a [routerLink]="['courses']" routerLinkActive="active"  class="menu--link" title="Student Payment">
                         <i class="uil uil-check-circle menu--icon"></i>
                         <span class="menu--label">{{"Course Confirmation" | translate}}</span>
