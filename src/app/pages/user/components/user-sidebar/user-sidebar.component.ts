@@ -13,7 +13,6 @@ export class UserSidebarComponent implements OnInit {
   constructor(public _auth: AuthService,
     public cart: CartService,
     public _local: LocalizationService) { }
-
   ngOnInit(): void {
   }
   logOut() {
@@ -25,8 +24,13 @@ export class UserSidebarComponent implements OnInit {
   getEmail() {
     return localStorage.getItem('email')
   }
+  displayBlock;
+  displayLogOtDiv;
+  ishideen=false;
   changeLang(lang) {
-    this._local.setUserLang(lang)
+    this._local.setUserLang(lang);
+    this.ishideen=true;
+    console.log("Done")
   }
 
 
@@ -53,5 +57,16 @@ export class UserSidebarComponent implements OnInit {
     wrapper.classList.toggle("wrapper__minify");
     var footer = document.querySelector(".footer");
     footer.classList.toggle("wrapper__minify");
+  }
+
+  openMenu(){
+    this.displayBlock=true;
+    this.displayLogOtDiv=false;
+
+  }
+  openLogoutDiv(){
+    this.displayLogOtDiv=true;
+    this.displayBlock=false;
+
   }
 }

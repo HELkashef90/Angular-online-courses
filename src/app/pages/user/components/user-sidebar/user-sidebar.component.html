@@ -103,18 +103,18 @@
                 </div>
             </li> -->
 
-            <li id="language" class="ui">
+            <li id="language" class="ui" (click)="openMenu()">
                 <a  class="option_links"><i class="uil uil-globe"></i></a>
-                <div class="menu drop-menu">
-                    <a (click)="changeLang('en')" class="item channel_item">{{"English" | translate}}</a>
-                    <a (click)="changeLang('ar')" class="item channel_item">{{"Arabic" | translate}}</a>
+                <div class="menu drop-menu " *ngIf="!ishideen" [ngClass]="{'open-menu': displayBlock}" >
+                    <a (click)="changeLang('en')"   class="item channel_item">{{"English" | translate}}</a>
+                    <a (click)="changeLang('ar')"   class="item channel_item">{{"Arabic" | translate}}</a>
                 </div>
             </li>
-            <li id="account-dropdown" class="ui">
+            <li id="account-dropdown" class="ui" (click)="openLogoutDiv()">
                 <a  class="opts_account">
                     <img src="assets/images/hd_dp.jpg" alt="">
                 </a>
-                <div class="menu drop-menu">
+                <div class="menu drop-menu" [ngClass]="{'open-menu': displayLogOtDiv}">
                     <div class="channel_my">
                         <div class="profile_link">
                             <!-- <img src="assets/images/hd_dp.jpg" alt=""> -->
