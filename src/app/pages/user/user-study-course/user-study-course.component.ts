@@ -24,9 +24,9 @@ export class UserStudyCourseComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService, private translate: TranslateService,
     private _courses: CourseService, private router: Router) {
-      console.log('study constructor');
+    console.log('study constructor');
 
-    }
+  }
 
   ngOnInit(): void {
     this.courseId = this.activatedRoute.snapshot.paramMap.get('courseId');
@@ -76,6 +76,9 @@ export class UserStudyCourseComponent implements OnInit {
           // the id was not a number
           // this._toastService.showToast(this.translate.instant("You are not allowed to view this video"))
           this._spinner.hideFullScreenSpinner()
+          this._toastService.showToast(this.translate.instant("You are not allowed to view this video or an error occurred, please try again"))
+
+          console.log('TypeError');
 
           break;
 
@@ -84,6 +87,9 @@ export class UserStudyCourseComponent implements OnInit {
           // password first
           // this._toastService.showToast(this.translate.instant("You are not allowed to view this video"))
           this._spinner.hideFullScreenSpinner()
+          this._toastService.showToast(this.translate.instant("You are not allowed to view this video or an error occurred, please try again"))
+
+          console.log('PasswordError');
 
           break;
 
@@ -91,6 +97,9 @@ export class UserStudyCourseComponent implements OnInit {
           // the video is password-protected or private
           // this._toastService.showToast(this.translate.instant("You are not allowed to view this video"))
           this._spinner.hideFullScreenSpinner()
+          this._toastService.showToast(this.translate.instant("You are not allowed to view this video or an error occurred, please try again"))
+
+          console.log('PrivacyError');
 
           break;
 
@@ -98,6 +107,7 @@ export class UserStudyCourseComponent implements OnInit {
           // some other error occurred
           this._toastService.showToast(this.translate.instant("You are not allowed to view this video or an error occurred, please try again"))
           this._spinner.hideFullScreenSpinner()
+          console.log('default');
 
           break;
       }
@@ -147,7 +157,7 @@ export class UserStudyCourseComponent implements OnInit {
     footer.classList.toggle("wrapper__minify");
   }
 
-  getUserData(){
-   return localStorage.getItem('email')
+  getUserData() {
+    return localStorage.getItem('email')
   }
 }
