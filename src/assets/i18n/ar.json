@@ -80,6 +80,7 @@
 	"Added to cart": "إضافة للسلة",
 	"All Courses": "كل الكورسات",
 	"All Rights Reserved": "كل الحقوق محفوظة",
+	"All Teachers": "All Teachers",
 	"Already have an account?": "لديك حساب مسجل بالفعل?",
 	"Approve": "الموافقة",
 	"Approved": "تمت الموافقة",
@@ -198,6 +199,7 @@
 	"Language": "اللغة",
 	"Language*": "اللغة*",
 	"Last updated ": "التعديل الأخير ",
+	"Latest Courses": "Latest Courses",
 	"Lecture Description*": "وصف المحاضرة*",
 	"Lecture Title": "عنوان المحاضرة",
 	"Lecture Title*": "عنوان المحاضرة*",
@@ -219,6 +221,11 @@
 	"Math": "الرياضيات",
 	"Menu": "القائمة",
 	"Minutes": "الدقائق",
+	"Mission / Vision": "Mission / Vision",
+	"Moazen mohsen": "Moazen mohsen",
+	"Mohamed Ahmed": "Mohamed Ahmed",
+	"Mohamed Karim": "Mohamed Karim",
+	"Moustafa Ahmed": "Moustafa Ahmed",
 	"My Courses": "الكورسات الخاصة بك",
 	"My Dashboard": "الرئيسية",
 	"Newest Courses": "الكورسات الجديد",
@@ -293,9 +300,15 @@
 	"Subjects*": "المواد*",
 	"Submit for Review": "التسجيل للمراجعة",
 	"Table of content": "جدول المحتوى",
+	"Teachers": "المدرسين",
 	"Terms": "القواعد",
 	"Terms of Use": "قواعد الأستحدام",
 	"Thank You": " شكرا لك",
+	"This is a wider card with supporting text below as a natural lead-in to additional content": {
+		" This content is a little bit longer": {
+			"": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+		}
+	},
 	"Title": "العنوان",
 	"Total Chapters": "اجمالى الفصول",
 	"Total Cost": "اجمالى التكلفة",
@@ -308,6 +321,7 @@
 	"View Saved Lecture": "عرض المحاضرات المسجلة",
 	"Welcome Back": "مرحبا بعودتك",
 	"Welcome to Smart Academy": "مرحبا بك فى سمارت اكاديمى",
+	"Why us": "لماذا نحن",
 	"You account has beed activated successfully, please login": {
 		"": "لقد تم تفعيل الحساب بنجاح, يرجى تسجيل الدخول."
 	},
@@ -370,9 +384,5 @@
 	"your course successfully updated, congratulations!": "تم تعديل المحاضرةبنجاح, تهانينا!",
 	"your lecture successfully created, congratulations!": "تم انشاء المحاضرة بنجاح, تهانينا!",
 	"your lecture successfully deleted!": "تم حذف المحاضرة بنجاح",
-  "your lecture successfully updated!": "تم تعديل المحاضرة بنجاح!",
-  "Teachers": "المدرسين",
-  "Why us": "لماذا نحن"
-
-
+	"your lecture successfully updated!": "تم تعديل المحاضرة بنجاح!"
 }

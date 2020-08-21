@@ -80,6 +80,7 @@
 	"Added to cart": "Added to cart",
 	"All Courses": "All Courses",
 	"All Rights Reserved": "All Rights Reserved",
+	"All Teachers": "All Teachers",
 	"Already have an account?": "Already have an account?",
 	"Approve": "Approve",
 	"Approved": "Approved",
@@ -198,6 +199,7 @@
 	"Language": "Language",
 	"Language*": "Language*",
 	"Last updated ": "Last updated ",
+	"Latest Courses": "Latest Courses",
 	"Lecture Description*": "Lecture Description*",
 	"Lecture Title": "Lecture Title",
 	"Lecture Title*": "Lecture Title*",
@@ -219,6 +221,11 @@
 	"Math": "Math",
 	"Menu": "Menu",
 	"Minutes": "Minutes",
+	"Mission / Vision": "Mission / Vision",
+	"Moazen mohsen": "Moazen mohsen",
+	"Mohamed Ahmed": "Mohamed Ahmed",
+	"Mohamed Karim": "Mohamed Karim",
+	"Moustafa Ahmed": "Moustafa Ahmed",
 	"My Courses": "My Courses",
 	"My Dashboard": "My Dashboard",
 	"Newest Courses": "Newest Courses",
@@ -293,9 +300,15 @@
 	"Subjects*": "Subjects*",
 	"Submit for Review": "Submit for Review",
 	"Table of content": "Table of content",
+	"Teachers": "Teachers",
 	"Terms": "Terms",
 	"Terms of Use": "Terms of Use",
 	"Thank You": "Thank You",
+	"This is a wider card with supporting text below as a natural lead-in to additional content": {
+		" This content is a little bit longer": {
+			"": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+		}
+	},
 	"Title": "Title",
 	"Total Chapters": "Total Chapters",
 	"Total Cost": "Total Cost",
@@ -308,6 +321,7 @@
 	"View Saved Lecture": "View Saved Lecture",
 	"Welcome Back": "Welcome Back",
 	"Welcome to Smart Academy": "Welcome to Smart Academy",
+	"Why us": "Why us",
 	"You account has beed activated successfully, please login": {
 		"": "You account has beed activated successfully, please login."
 	},
@@ -370,7 +384,5 @@
 	"your course successfully updated, congratulations!": "Your course successfully updated, congratulations!",
 	"your lecture successfully created, congratulations!": "Your lecture successfully created, congratulations!",
 	"your lecture successfully deleted!": "Your lecture successfully deleted!",
-  "your lecture successfully updated!": "Your lecture successfully updated!",
-  "Teachers": "Teachers",
-  "Why us": "Why us"
+	"your lecture successfully updated!": "Your lecture successfully updated!"
 }
