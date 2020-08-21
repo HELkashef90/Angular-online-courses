@@ -55,4 +55,10 @@ export class SidebarComponent implements OnInit {
     var footer = document.querySelector(".footer");
     footer.classList.toggle("wrapper__minify");
   }
+  close(){
+    var verticalSideBar = document.querySelector(".vertical_nav");
+    verticalSideBar.classList.toggle("vertical_nav__minify");
+    var wrapper = document.querySelector(".wrapper");
+    wrapper.classList.toggle("wrapper__minify");
+  }
 }

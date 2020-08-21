@@ -382,7 +382,7 @@ direction: rtl;
 	}
 
 	.rtl .wrapper {
-		/* margin-right: 240px; */
+		margin-right: 240px;
 		margin-left: 0;
 	}
 	.rtl .wrapper .footer {
@@ -2302,7 +2302,8 @@ direction: rtl;
 	float: left;
 	width: 100%;
 	display: flex;
-	flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
+  /* no */
 }
 
 .rtl .user_img5 {
@@ -8372,7 +8373,7 @@ input[type=text] {
 
 	.wrapper , .footer{
 		margin-left: 0px;
-		/* margin-left: 240px; */
+		margin-left: 240px;
 	}
 	.wrapper .footer {
 		margin:0;
@@ -9036,7 +9037,9 @@ i.icon1 {
 	float: left;
 	position: relative;
 	display: inline-flex;
-	min-height: 360px;
+	/* min-height: 360px; */
+	min-height: 200px;
+	max-height: 240px;
     height: auto;
 	border-radius: 5px;
     overflow: hidden;
@@ -16446,6 +16449,9 @@ div.contact1256.contectUs{
 
 .btn_adcart {
   height: 33px !important;
+}
+ .marginLeft{
+  margin-left: 230px;
 }
 @media (max-width:576px){
   .SlideOfLanding .container .firstCol{

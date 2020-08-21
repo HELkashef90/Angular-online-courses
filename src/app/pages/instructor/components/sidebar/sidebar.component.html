@@ -189,37 +189,37 @@
     <div class="left_section menu_left" id="js-menu">
         <div class="left_section">
             <ul>
-                <li class="menu--item">
+                <li class="menu--item" (click)="close()">
                     <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true"
                         class="menu--link " title="Dashboard">
                         <i class='uil uil-home-alt menu--icon'></i>
                         <span class="menu--label">{{'Dashboard' | translate}}</span>
                     </a>
                 </li>
-                <li class="menu--item">
+                <li class="menu--item" (click)="close()">
                     <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
                         <i class="uil uil-book-alt menu--icon"></i>
                         <span class="menu--label">{{'Courses' | translate}}</span>
                     </a>
                 </li>
-                <li class="menu--item  menu--item__has_sub_menu">
+                <li class="menu--item  menu--item__has_sub_menu" >
                     <input type="checkbox" id="menu-collapse" class="menu-collapse">
                     <label class="menu--link" for="menu-collapse">
                         <i class="uil uil-plus-circle menu--icon"></i>
                         <span class="menu--label">{{'Add New Course' | translate}}</span>
                     </label>
                     <ul class="sub_menu">
-                        <li class="sub_menu--item">
+                        <li class="sub_menu--item" (click)="close()">
                             <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
                                 <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
                         </li>
-                        <li class="sub_menu--item">
+                        <li class="sub_menu--item" (click)="close()">
                             <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
                                 <i class="uil uil-swatchbook"></i>
                                 {{'Add
                                 Chapter' | translate}}</a>
                         </li>
-                        <li class="sub_menu--item">
+                        <li class="sub_menu--item" (click)="close()">
                             <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
                                 <i class="uil uil-file-plus-alt"></i>
                                 {{'Add
