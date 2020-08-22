@@ -164,6 +164,12 @@
                         <span class="menu--label">{{"Course Confirmation" | translate}}</span>
                     </a>
                 </li>
+                <li class="menu--item" (click)="close()">
+                    <a [routerLink]="['restricted']" routerLinkActive="active"  class="menu--link" title="restricted user">
+                        <i class="restricted menu--icon"></i>
+                        <span class="menu--label">{{"Restricted Users" | translate}}</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

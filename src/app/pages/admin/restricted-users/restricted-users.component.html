@@ -1,0 +1,137 @@
+<div class="sa4d25">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <h2 class="st_title"><i class="restricted"></i>{{"Restricted users" | translate}}</h2>
+          </div>
+      </div>
+      <form class="row" [formGroup]="search">
+        <div class="col-xl-4 col-md-4 col-sm-6 ">
+            <div class="ui search focus mt-30">
+                <div class="ui left icon input swdh11 swdh19">
+                    <input #search  class="prompt srch_explore" type="text"
+                        name="Search " value="" id="id_Search" required=""
+                        placeholder="{{'Search ' | translate}}">
+                        <div class="search-field">
+                          <!-- <label>Search By</label> -->
+
+                          <select class="form-control selectpicker" placeholder="Search By" name="search_by">
+                              <option selected="" disabled>{{"Search By"|translate}}</option>
+                              <option value="firstName">{{"First Name"|translate}}</option>
+                              <option value="lastName">{{"Last Name"|translate}}</option>
+                              <option value="mobile">{{"Mobile Number"|translate}}</option>
+                              <option value="email">{{"Email"|translate}}</option>
+                              <option value="advanced">{{"Advanced Search"|translate}}</option>
+                              <!-- <option value="course">{{"Course Name"|translate}}</option>
+                              <option value="chapter">{{"Chapter Name"|translate}}</option>
+                              <option value="instrouctor">{{"Instructor Name"|translate}}</option>
+                              <option value="email">{{"Email"|translate}}</option> -->
+                          </select>
+
+                      </div>
+
+                      </div>
+            </div>
+          </div>
+
+
+
+          <div class="btn-group" dropdown [autoClose]="false" container="body">
+            <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                    aria-controls="dropdown-nested">
+              This dropdown has nested submenu <span class="caret"></span>
+            </button>
+            <ul id="dropdown-nested" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-nested">
+              <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
+
+              <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body">
+                <a dropdownToggle class="dropdown-item dropdown-toggle"
+                   (click)="false">Hover me for nested dropdown <span class="caret"></span></a>
+                <ul *dropdownMenu class="dropdown-menu" role="menu">
+                  <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action1</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action2</a></li>
+                </ul>
+              </li>
+
+              <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body">
+                <a dropdownToggle class="dropdown-item dropdown-toggle"
+                   (click)="false">Hover me for nested dropdown <span class="caret"></span></a>
+                <ul *dropdownMenu class="dropdown-menu" role="menu">
+                  <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action1</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action2</a></li>
+                </ul>
+              </li>
+
+              <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Something else here</a></li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Separated link</a></li>
+            </ul>
+          </div>
+
+
+
+
+
+
+        <div class="col-xl-2 col-md-4 col-sm-6 ">
+            <button #searchElm class="login-btn">{{"Search" |translate}}</button>
+        </div>
+        <div class="col-xl-2 col-md-4 col-sm-6 ">
+            <button class="login-btn" >{{"Refresh table" |translate}}</button>
+        </div>
+    </form>
+
+
+
+      <div class="row" infiniteScroll [infiniteScrollDistance]="1"
+  >
+          <div class="col-md-12">
+              <div class="table-responsive mt-30">
+                  <table class="table ucp-table">
+                      <thead class="thead-s">
+                          <tr>
+                              <th class="text-center" scope="col"> {{"No." | translate}}</th>
+                              <th>{{"User Name" | translate}}</th>
+                              <th class="text-center" scope="col">{{"Phone No" | translate}}</th>
+                              <th class="text-center" scope="col">{{"Email" | translate}}</th>
+                              <th class="text-center" scope="col">{{"Action" | translate}}</th>
+                              <!-- <th class="text-center" scope="col">{{"Unblock" | translate}}</th> -->
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr >
+                              <td class="text-center">{{1}}</td>
+                              <td>{{"mohamed ahmed"|translate}}</td>
+                              <td class="text-center">{{"0111107715"|translate}}</td>
+                              <td class="text-center">{{"abdelrahm.osama.awad500@gmail.com	"|translate}}</td>
+
+                              <td class="text-center">
+                                <a  title="block" class="reject-btn  mx-2" ><i class="uil uil-times" ></i>{{"block" | translate}}</a>
+<a>or</a>
+                              <!-- </td> -->
+                              <!-- <td class="text-center"> -->
+                                <a  title="Unblock" class="accept-btn mx-2"><i class="uil uil-check" ></i>{{"Unblock" | translate}}</a>
+                              </td>
+                          </tr>
+
+
+                      </tbody>
+                  </table>
+                  <!-- <div *ngIf="loading" class="col-md-12">
+                      <div class="main-loader mt-20">
+                          <div class="spinner">
+                              <div class="bounce1"></div>
+                              <div class="bounce2"></div>
+                              <div class="bounce3"></div>
+                          </div>
+                      </div>
+                  </div> -->
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>

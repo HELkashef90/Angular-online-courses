@@ -23,6 +23,16 @@ rtl style
 		font-style: normal;
 }
 
+@font-face {
+  font-family: 'icons';
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.ttf") format("truetype");
+  src: url("fonts/icomoon.svg") format("truetype");
+  src: url("fonts/icomoon.woff") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
  body.rtl {
 	font-family: 'helvetica', sans-serif !important;
 	direction: rtl;
@@ -16475,6 +16485,7 @@ margin-bottom: 20px;
     font-size: 1.1rem;
   }
 }
+
 @media (max-width: 420px){
   .idmPage svg {
     font-size: 60px;
@@ -16617,3 +16628,37 @@ margin: 0px 0px 0px 10px;
 
 }
 
+/* icons */
+.restricted:before{
+  content: "\e974";
+  font-family: "icons";
+  font-size: 25px;
+  margin: 10px;
+}
+.menu--icon.restricted:before{
+  font-size: 20px;
+}
+
+
+
+.search-field{
+  position: absolute;
+  right: 0px;
+  top: 1px;
+}
+.search-field select{
+  background: transparent;
+    /* box-shadow: none !important; */
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    padding:0px 0px 0px 5px !important;
+}
+.search-field select option:checked,.search-field select option:hover,
+.search-field select .option_links:hover,.search-field select option:focus
+{
+  background: #ffecec;
+  color: #c8302f;
+}
+.search-field select option:last-child{
+  font-weight: 900;
+}
