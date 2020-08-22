@@ -8105,10 +8105,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
- /* ::-moz-selection { Code for Firefox */
+ /* ::-moz-selection { Code for Firefox
 	background-color: #cce2ff;
     color: rgba(0,0,0,.87);
-}
+} */
 
 ::selection {
 	background-color: #cce2ff;
@@ -16635,17 +16635,68 @@ margin: 0px 0px 0px 10px;
   font-size: 25px;
   margin: 10px;
 }
+.rtl .restricted{
+  float: right;
+}
+.unlock:before{
+  content: "\e990";
+  font-family: "icons";
+  font-size: 20px;
+  /* margin: 10px; */
+  bottom: 6px;
+  position: relative;
+}
+.lock:before{
+  content: "\e98f";
+  font-family: "icons";
+  font-size: 20px;
+  /* margin: 10px; */
+  bottom: 6px;
+  position: relative;
+}
 .menu--icon.restricted:before{
   font-size: 20px;
 }
 
 
 
-.search-field{
-  position: absolute;
-  right: 0px;
-  top: 1px;
+.searchField{
+  position: absolute !important;
+  right: 3px !important;
+  top: 2px !important;
 }
+.searchField button{
+  border-radius: 17px;
+  height: 35px;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  -ms-border-radius: 17px;
+  -o-border-radius: 17px;
+}
+.rtl .searchField{
+  display: block !important;
+    /* float: unset; */
+    left: 3px !important;
+}
+.rtl .searchField button{
+  float: left !important;
+}
+.rtl .checkbox{
+  float: right !important;
+}
+.rtl .drop{
+  float: right !important;
+}
+.rtl .dropdown-menu{
+  left: -136px !important;
+}
+.dropdown-menu{
+  padding: 20px !important;
+}
+input[type=radio], input[type=checkbox] {
+margin: 0px 10px !important;
+}
+
 .search-field select{
   background: transparent;
     /* box-shadow: none !important; */
@@ -16661,4 +16712,118 @@ margin: 0px 0px 0px 10px;
 }
 .search-field select option:last-child{
   font-weight: 900;
+}
+
+.searchSection{
+  background: #fff;
+    margin: 20px;
+    padding: 20px;
+}
+.shoow{
+  display: none;
+  /* visibility: hidden; */
+}
+.SearchBox select {
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 0px !important;
+  box-shadow:none !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  /* width: 60px;
+  height: 34px; */
+  /* width: 40px;
+    height: 15px; */
+    width: 40px;
+    height: 15px;
+}
+label.switch{
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+.mat-horizontal-stepper-header .mat-step-icon {
+  /* margin-right: 8px; */
+  margin: 8px;}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffecec;
+  -webkit-transition: .4s;
+  transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  /* height: 14px;
+  width: 14px;
+  left: 14px;
+  bottom: 1px; */
+  /* height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px; */
+  height: 13px;
+    width: 13px;
+    left: 0px;
+    right: 26px;
+    bottom: 1.2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #c8302f;
+}
+.theme-green .bs-datepicker-head {
+  background-color: #c8302f !important;
+}
+
+.theme-green .bs-datepicker-body table td.week span {
+  color: #c8302f !important;
+}
+.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+  background-color: #c8302f !important;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #ffecec;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  -moz-transform: translateX(26px);
+  -o-transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../services/course/course.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { TranslateService } from '@ngx-translate/core';
+import { ConfirmComponent } from '../components/confirm/confirm.component';
 
 @Component({
   selector: 'app-my-courses',
@@ -14,12 +17,14 @@ export class MyCoursesComponent implements OnInit {
   pageSize = 8
   loading: boolean;
   lastPage = false;
+  modalRef: BsModalRef;
 
-  constructor(private _courseService: CourseService) { }
+  constructor(private _courseService: CourseService , private modalService: BsModalService,
+    private translate: TranslateService) { }
 
   ngOnInit(): void {
     console.log('on init');
-    
+
     this.getAllCourses()
   }
 
@@ -57,5 +62,23 @@ export class MyCoursesComponent implements OnInit {
   onScroll() {
     this.getAllCourses()
   }
+  ConfirmPopup(){
+    this.modalRef = this.modalService.show(ConfirmComponent, {
 
+      initialState: {
+        prompt: this.translate.instant('Do you want to play the from this browser') ,
+
+        callback: (result) => {
+          if (result) {
+            console.log('true');
+
+          } else {
+            console.log('cancel');
+
+          }
+        }
+      }
+
+    });
+  }
 }
