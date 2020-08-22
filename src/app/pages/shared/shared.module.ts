@@ -12,7 +12,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     CommonModule,
     NgxLinkifyjsModule,
     ModalModule,
-    BsDropdownModule
+    BsDropdownModule.forRoot()
 
   ],
   exports:[SaveUrlPipe,NgxLinkifyjsModule,BsDropdownModule]
