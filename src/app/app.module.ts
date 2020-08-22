@@ -42,6 +42,7 @@ import { NgProgressModule } from "ngx-progressbar";
 import { NgProgressHttpModule } from "ngx-progressbar/http";
 import { ExportConfirmationComponent } from './components/export-confirmation/export-confirmation.component';
 import { ExportAsModule } from 'ngx-export-as';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -97,7 +98,8 @@ export function createTranslateLoader(http: HttpClient) {
     NgxLinkifyjsModule.forRoot(),
     NgProgressModule,
     NgProgressHttpModule,
-    ExportAsModule
+    ExportAsModule,
+    NgbModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
