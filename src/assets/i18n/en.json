@@ -134,7 +134,6 @@
 	"Create Lecture": "Create Lecture",
 	"Create New Course": "Create New Course",
 	"Dashboard": "Dashboard",
-	"Date": "Date",
 	"Deactivated Successfully": "Deactivated Successfully",
 	"Description": "Description",
 	"Do you want to play the from this browser": "Do you want to play the from this browser",
@@ -385,6 +384,7 @@
 	"phone number": "Phone Number",
 	"please enter a valid mail": "Please enter a valid mail",
 	"please enter a valid password, min 8 characters": "Please enter a valid password, min 8 characters",
+	"please try again!": "please try again!",
 	"sign Up": "Sign Up",
 	"sign Up as": "Sign Up as",
 	"sort": "Sort",
@@ -402,7 +402,9 @@
 	"your chapter successfully updated, congratulations!": "Your chapter successfully updated, congratulations!",
 	"your course successfully created, congratulations!": "Your course successfully created, congratulations!",
 	"your course successfully updated, congratulations!": "Your course successfully updated, congratulations!",
+	"your lecture successfully activated!": "your lecture successfully activated!",
 	"your lecture successfully created, congratulations!": "Your lecture successfully created, congratulations!",
 	"your lecture successfully deleted!": "Your lecture successfully deleted!",
+	"your lecture successfully disabled!": "your lecture successfully disabled!",
 	"your lecture successfully updated!": "Your lecture successfully updated!"
 }

@@ -134,7 +134,6 @@
 	"Create Lecture": "إنشاء محاضرة",
 	"Create New Course": "أنشئ كورس جديد",
 	"Dashboard": "واجهة العرض",
-	"Date": "Date",
 	"Deactivated Successfully": "تم الإلغاء بنجاح",
 	"Description": "الوصف",
 	"Do you want to play the from this browser": "Do you want to play the from this browser",
@@ -385,6 +384,7 @@
 	"phone number": "رقم الموبايل",
 	"please enter a valid mail": "من فضلك ادخل الأيميل صحيح",
 	"please enter a valid password, min 8 characters": "   من فضلك ادخل كلمة مرور صحيحة ,اقل عدد  8حروف ",
+	"please try again!": "please try again!",
 	"sign Up": "الإشتراك",
 	"sign Up as": "الإشتراك كـ",
 	"sort": "الترتيب",
@@ -402,7 +402,9 @@
 	"your chapter successfully updated, congratulations!": "تم تعديل الفصل بنجاح, تهانينا!",
 	"your course successfully created, congratulations!": "تم انشاء الكورس بنجاح, تهانينا!",
 	"your course successfully updated, congratulations!": "تم تعديل المحاضرةبنجاح, تهانينا!",
+	"your lecture successfully activated!": "your lecture successfully activated!",
 	"your lecture successfully created, congratulations!": "تم انشاء المحاضرة بنجاح, تهانينا!",
 	"your lecture successfully deleted!": "تم حذف المحاضرة بنجاح",
+	"your lecture successfully disabled!": "your lecture successfully disabled!",
 	"your lecture successfully updated!": "تم تعديل المحاضرة بنجاح!"
 }

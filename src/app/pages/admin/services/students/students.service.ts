@@ -27,7 +27,11 @@ export class StudentsService {
     return this.httpClient.put(environment._rejectEnrollment + id, {})
   }
 
-  getRestrictedUsers(body) {
-    return this.httpClient.post(environment._getRestrictedUsers, body)
+  getRestrictedUsers(page, size,body = {}) {
+    return this.httpClient.post(environment._getRestrictedUsers + '?page=' + page + '&size=' + size , body)
+  }
+  
+  unlockUSer(id){
+    return this.httpClient.put(environment._unlockUSer + id,{})
   }
 }

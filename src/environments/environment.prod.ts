@@ -46,7 +46,9 @@ export const environment = {
   _restrictUser: `${serverUrl}restricted-user/restrict`,
   _getRestrictedUsers : `${serverUrl}restricted-user/search`,
   _activeLecture: `${serverUrl}course-chapter-content/activate/`,
-  _disableLecture : `${serverUrl}course-chapter-content/deactivate/`
+  _disableLecture : `${serverUrl}course-chapter-content/deactivate/`,
+  _unlockUSer: `${serverUrl}restricted-user/unblock/`
+
 
 
 }
