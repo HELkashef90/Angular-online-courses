@@ -59,7 +59,6 @@
 	"*Please select lecture File": "*يرجى إختيار ملف المحاضرة",
 	"*Please select promo video": "*يرجى إختيار الفيديو التوضيحى",
 	"*Please select subject": "*يرجى إختيار المادة",
-	"0111107715": "0111107715",
 	"1st": "الصف الأول الثانوي",
 	"2nd": "الصف الثاني الثانوي",
 	"3rd": "الصف الثالث الثانوي",
@@ -79,10 +78,8 @@
 	"Add New Lecture": "إضافة محاضره جديده",
 	"Add to Cart": "إضافة للسلة",
 	"Added to cart": "إضافة للسلة",
-	"Advanced Search": "Advanced Search",
 	"All Courses": "كل الكورسات",
 	"All Rights Reserved": "كل الحقوق محفوظة",
-	"All Teachers": "All Teachers",
 	"Already have an account?": "لديك حساب مسجل بالفعل?",
 	"Approve": "الموافقة",
 	"Approved": "تمت الموافقة",
@@ -202,7 +199,6 @@
 	"Language": "اللغة",
 	"Language*": "اللغة*",
 	"Last updated ": "التعديل الأخير ",
-	"Latest Courses": "Latest Courses",
 	"Lecture Description*": "وصف المحاضرة*",
 	"Lecture Title": "عنوان المحاضرة",
 	"Lecture Title*": "عنوان المحاضرة*",
@@ -224,11 +220,6 @@
 	"Math": "الرياضيات",
 	"Menu": "القائمة",
 	"Minutes": "الدقائق",
-	"Mission / Vision": "Mission / Vision",
-	"Moazen mohsen": "Moazen mohsen",
-	"Mohamed Ahmed": "Mohamed Ahmed",
-	"Mohamed Karim": "Mohamed Karim",
-	"Moustafa Ahmed": "Moustafa Ahmed",
 	"My Courses": "الكورسات الخاصة بك",
 	"My Dashboard": "الرئيسية",
 	"Newest Courses": "الكورسات الجديد",
@@ -275,7 +266,6 @@
 	"Save Lecture": "حفظ المحاضره",
 	"Science": "جولوجيا",
 	"Search": "البحث",
-	"Search ": "Search ",
 	"Search By": "Search By",
 	"Search by Email or Phone Number": "البحث بواسطه رقم الموبايل او الإيميل",
 	"Secure checkout": "الدفع المؤمن",
@@ -308,15 +298,9 @@
 	"Subjects*": "المواد*",
 	"Submit for Review": "التسجيل للمراجعة",
 	"Table of content": "جدول المحتوى",
-	"Teachers": "المدرسين",
 	"Terms": "القواعد",
 	"Terms of Use": "قواعد الأستحدام",
 	"Thank You": " شكرا لك",
-	"This is a wider card with supporting text below as a natural lead-in to additional content": {
-		" This content is a little bit longer": {
-			"": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-		}
-	},
 	"Title": "العنوان",
 	"Total Chapters": "اجمالى الفصول",
 	"Total Cost": "اجمالى التكلفة",
@@ -331,7 +315,6 @@
 	"View Saved Lecture": "عرض المحاضرات المسجلة",
 	"Welcome Back": "مرحبا بعودتك",
 	"Welcome to Smart Academy": "مرحبا بك فى سمارت اكاديمى",
-	"Why us": "لماذا نحن",
 	"You account has beed activated successfully, please login": {
 		"": "لقد تم تفعيل الحساب بنجاح, يرجى تسجيل الدخول."
 	},
@@ -345,15 +328,7 @@
 		"": "لا يدعم المتصفح الخاص بك هذا الامتداد."
 	},
 	"Your order submitted successfully": "لقد تم تسجيل طلبك بنجاح",
-	"abdelrahm": {
-		"osama": {
-			"awad500@gmail": {
-				"com\t": "abdelrahm.osama.awad500@gmail.com\t"
-			}
-		}
-	},
 	"and": "و",
-	"block": "حظر",
 	"cancel": "إلغاء",
 	"cancel edit": "إلغاء التعديل",
 	"chapter name:": "اسم الفصل:",
@@ -378,12 +353,12 @@
 	"lectures": "المحاضرات",
 	"level": "الصف",
 	"m": "د",
-	"mohamed ahmed": "mohamed ahmed",
 	"password": "كلمة المرور",
 	"password doesn't match": "كلمة المرور غير متطابقة",
 	"phone number": "رقم الموبايل",
 	"please enter a valid mail": "من فضلك ادخل الأيميل صحيح",
 	"please enter a valid password, min 8 characters": "   من فضلك ادخل كلمة مرور صحيحة ,اقل عدد  8حروف ",
+	"please try again": "please try again",
 	"please try again!": "please try again!",
 	"sign Up": "الإشتراك",
 	"sign Up as": "الإشتراك كـ",
@@ -395,6 +370,7 @@
 	"this chapter contains lectures, can't be deleted": "يحتوى هذا الفصل على محاضرات,لا يمكن حذفه",
 	"this course contains chapters, can't be deleted": "يحتوى هذا الكورس على فصول , لا يمكن حذفه",
 	"time m": "الوقت د ",
+	"unblocked Successfully": "unblocked Successfully",
 	"you Don't have any chapters in this course to view": "لا يوجد أي فصول لهذا الكورس لعرضها!",
 	"you are logged in successfully": "تم تسجيل الدخول بنجاح",
 	"you have been reported, and your account has been disabled for violating our terms": "you have been reported, and your account has been disabled for violating our terms",

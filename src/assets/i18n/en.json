@@ -59,7 +59,6 @@
 	"*Please select lecture File": "*Please select lecture File",
 	"*Please select promo video": "*Please select promo video",
 	"*Please select subject": "*Please select subject",
-	"0111107715": "0111107715",
 	"1st": "First grade secondary",
 	"2nd": "Second grade secondary",
 	"3rd": "Third grade secondary",
@@ -79,10 +78,8 @@
 	"Add New Lecture": "Add New Lecture",
 	"Add to Cart": "Add to Cart",
 	"Added to cart": "Added to cart",
-	"Advanced Search": "Advanced Search",
 	"All Courses": "All Courses",
 	"All Rights Reserved": "All Rights Reserved",
-	"All Teachers": "All Teachers",
 	"Already have an account?": "Already have an account?",
 	"Approve": "Approve",
 	"Approved": "Approved",
@@ -202,7 +199,6 @@
 	"Language": "Language",
 	"Language*": "Language*",
 	"Last updated ": "Last updated ",
-	"Latest Courses": "Latest Courses",
 	"Lecture Description*": "Lecture Description*",
 	"Lecture Title": "Lecture Title",
 	"Lecture Title*": "Lecture Title*",
@@ -224,11 +220,6 @@
 	"Math": "Math",
 	"Menu": "Menu",
 	"Minutes": "Minutes",
-	"Mission / Vision": "Mission / Vision",
-	"Moazen mohsen": "Moazen mohsen",
-	"Mohamed Ahmed": "Mohamed Ahmed",
-	"Mohamed Karim": "Mohamed Karim",
-	"Moustafa Ahmed": "Moustafa Ahmed",
 	"My Courses": "My Courses",
 	"My Dashboard": "My Dashboard",
 	"Newest Courses": "Newest Courses",
@@ -275,7 +266,6 @@
 	"Save Lecture": "Save Lecture",
 	"Science": "Science",
 	"Search": "Search",
-	"Search ": "Search ",
 	"Search By": "Search By",
 	"Search by Email or Phone Number": "Search by Email or Phone Number",
 	"Secure checkout": "Secure checkout",
@@ -308,15 +298,9 @@
 	"Subjects*": "Subjects*",
 	"Submit for Review": "Submit for Review",
 	"Table of content": "Table of content",
-	"Teachers": "Teachers",
 	"Terms": "Terms",
 	"Terms of Use": "Terms of Use",
 	"Thank You": "Thank You",
-	"This is a wider card with supporting text below as a natural lead-in to additional content": {
-		" This content is a little bit longer": {
-			"": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-		}
-	},
 	"Title": "Title",
 	"Total Chapters": "Total Chapters",
 	"Total Cost": "Total Cost",
@@ -331,7 +315,6 @@
 	"View Saved Lecture": "View Saved Lecture",
 	"Welcome Back": "Welcome Back",
 	"Welcome to Smart Academy": "Welcome to Smart Academy",
-	"Why us": "Why us",
 	"You account has beed activated successfully, please login": {
 		"": "You account has beed activated successfully, please login."
 	},
@@ -345,15 +328,7 @@
 		"": "Your browser does not support the video tag."
 	},
 	"Your order submitted successfully": "Your order submitted successfully",
-	"abdelrahm": {
-		"osama": {
-			"awad500@gmail": {
-				"com\t": "abdelrahm.osama.awad500@gmail.com\t"
-			}
-		}
-	},
 	"and": "and",
-	"block": "block",
 	"cancel": "Cancel",
 	"cancel edit": "Cancel Edit",
 	"chapter name:": "Chapter Name:",
@@ -378,12 +353,12 @@
 	"lectures": "Lectures",
 	"level": "Level",
 	"m": "m",
-	"mohamed ahmed": "mohamed ahmed",
 	"password": "Password",
 	"password doesn't match": "Password doesn't match",
 	"phone number": "Phone Number",
 	"please enter a valid mail": "Please enter a valid mail",
 	"please enter a valid password, min 8 characters": "Please enter a valid password, min 8 characters",
+	"please try again": "please try again",
 	"please try again!": "please try again!",
 	"sign Up": "Sign Up",
 	"sign Up as": "Sign Up as",
@@ -395,6 +370,7 @@
 	"this chapter contains lectures, can't be deleted": "This chapter contains lectures, can't be deleted",
 	"this course contains chapters, can't be deleted": "This course contains chapters, can't be deleted",
 	"time m": "Time m",
+	"unblocked Successfully": "unblocked Successfully",
 	"you Don't have any chapters in this course to view": "you Don't have any chapters in this course to view",
 	"you are logged in successfully": "You are logged in successfully",
 	"you have been reported, and your account has been disabled for violating our terms": "you have been reported, and your account has been disabled for violating our terms",
