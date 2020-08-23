@@ -12,12 +12,7 @@ export class RestrictedUsersComponent implements OnInit {
   constructor(private _student: StudentsService) { }
 
   ngOnInit(): void {
-    this._student.getRestrictedUsers({
-      "mobile_no":"01009305067",
-      "email":"",
-      "first_name":"",
-      "last_name":""
-  }).subscribe(res => {
+    this._student.getRestrictedUsers({}).subscribe(res => {
       console.log(res);
 
     }, err => {

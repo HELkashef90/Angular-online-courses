@@ -31,4 +31,11 @@ export class CreateLectureService {
         observe: 'events'
       })
   }
+
+  activeLecture(id){
+    return this.httpClient.put(environment._activeLecture + id,{})
+  }
+  disableLecture(id){
+    return this.httpClient.put(environment._disableLecture + id,{})
+  }
 }

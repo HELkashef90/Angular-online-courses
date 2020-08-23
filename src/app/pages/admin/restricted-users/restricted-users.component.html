@@ -1,18 +1,17 @@
 <div class="sa4d25">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-lg-12">
-              <h2 class="st_title"><i class="restricted"></i>{{"Restricted users" | translate}}</h2>
-          </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="st_title"><i class="restricted"></i>{{"Restricted users" | translate}}</h2>
       </div>
-      <form class="row" >
-        <div class="col-xl-4 col-md-4 col-sm-6 ">
-            <div class="ui search focus mt-30">
-                <div class="ui left icon input swdh11 swdh19">
-                    <input #search   class="prompt srch_explore" type="text"
-                        name="Search " value="" id="id_Search" required=""
-                        placeholder="{{'Search ' | translate}}">
-                        <!-- <div class="btn-group searchField"  dropdown [autoClose]="false" container="body">
+    </div>
+    <form class="row">
+      <div class="col-xl-4 col-md-4 col-sm-6 ">
+        <div class="ui search focus mt-30">
+          <div class="ui left icon input swdh11 swdh19">
+            <input #search class="prompt srch_explore" type="text" name="Search " value="" id="id_Search" required=""
+              placeholder="{{'Search ' | translate}}">
+            <!-- <div class="btn-group searchField"  dropdown [autoClose]="false" container="body">
                           <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                                   aria-controls="dropdown-nested">
                           {{"Search By"|translate}} <span class="caret"></span>
@@ -73,140 +72,141 @@
 
                           </ul>
                         </div> -->
-                        <div class="btn-group searchField"  dropdown (click)="displaySearchSeaction()" [autoClose]="false" container="body">
-                          <button id="button-nested"  dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                                  aria-controls="dropdown-nested">
-                          {{"Search By"|translate}} <span class="caret"></span>
-                          </button>
-                          </div>
-
-
-
-
-                      </div>
+            <div class="btn-group searchField" dropdown (click)="displaySearchSeaction()" [autoClose]="false"
+              container="body">
+              <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                aria-controls="dropdown-nested">
+                {{"Search By"|translate}} <span class="caret"></span>
+              </button>
             </div>
+
+
+
+
           </div>
-
-
-
-
-
-
-
-
-
-        <div class="col-xl-2 col-md-4 col-sm-6 ">
-            <button #searchElm class="login-btn">{{"Search" |translate}}</button>
         </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 ">
-            <button class="login-btn" >{{"Refresh table" |translate}}</button>
-        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="col-xl-2 col-md-4 col-sm-6 ">
+        <button #searchElm class="login-btn">{{"Search" |translate}}</button>
+      </div>
+      <div class="col-xl-2 col-md-4 col-sm-6 ">
+        <button class="login-btn">{{"Refresh table" |translate}}</button>
+      </div>
     </form>
 
-    <div class="searchSection shoow" >
+    <div class="searchSection shoow">
       <form>
         <div class="form-group">
-          <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter First Name">
+          <input type="string" class="form-control" id="exampleInputName" placeholder="Enter First Name">
         </div>
         <div class="form-group">
-          <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter Last Name">
+          <input type="string" class="form-control" id="exampleInputName" placeholder="Enter Last Name">
         </div>
         <div class="form-group">
-          <input type="phone" class="form-control" id="exampleInputnumber"  placeholder="Enter Mobile Number">
+          <input type="phone" class="form-control" id="exampleInputnumber" placeholder="Enter Mobile Number">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter Email" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email"
+            aria-describedby="emailHelp">
+        </div>
+<!-- 
+        <div class="form-group">
+          <div class="SearchBox">
+            <select class="selectpicker" placeholder="Course Name">
+              <option disabled selected>Instructor Name</option>
+              <option>Mohamed Ahmed</option>
+              <option>Tamer Essam</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="SearchBox">
+            <select class="selectpicker" placeholder="Course Name">
+              <option disabled selected>Course Name</option>
+              <option>Math</option>
+              <option>English</option>
+            </select>
+          </div>
         </div>
 
         <div class="form-group">
           <div class="SearchBox">
-          <select class="selectpicker" placeholder="Course Name">
-            <option disabled selected>Instructor Name</option>
-            <option>Mohamed Ahmed</option>
-            <option>Tamer Essam</option>
-          </select>
-         </div>
+            <select class="selectpicker" placeholder="Course Name">
+              <option disabled selected>Chapter Name</option>
+              <option>algebra</option>
+              <option>science</option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
           <div class="SearchBox">
-          <select class="selectpicker" placeholder="Course Name">
-            <option disabled selected>Course Name</option>
-            <option>Math</option>
-            <option>English</option>
-          </select>
-         </div>
-        </div>
-
-        <div class="form-group">
-          <div class="SearchBox">
-          <select class="selectpicker" placeholder="Course Name">
-            <option disabled selected>Chapter Name</option>
-            <option>algebra</option>
-            <option>science</option>
-          </select>
-         </div>
+            <select class="selectpicker" placeholder="Chapter Name">
+              <option disabled selected>Lecture Name</option>
+              <option>lec 1</option>
+              <option>lec 2</option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
           <div class="SearchBox">
-          <select class="selectpicker" placeholder="Chapter Name">
-            <option disabled selected>Lecture Name</option>
-            <option>lec 1</option>
-            <option>lec 2</option>
-          </select>
-         </div>
-        </div>
-        <div class="form-group">
-          <div class="SearchBox">
-          <select class="selectpicker" placeholder="Course Name">
-            <option disabled selected>Level</option>
-            <option>1st</option>
-            <option>2nd</option>
-          </select>
-         </div>
+            <select class="selectpicker" placeholder="Course Name">
+              <option disabled selected>Level</option>
+              <option>1st</option>
+              <option>2nd</option>
+            </select>
+          </div>
         </div>
         <div class=" form-group">
-          <input type="text" placeholder="Date range"  class="form-control"  bsDaterangepicker>
+          <input type="text" placeholder="Date range" class="form-control" bsDaterangepicker>
 
-        </div>
+        </div> -->
         <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button>
       </form>
     </div>
 
-      <div class="row" infiniteScroll [infiniteScrollDistance]="1"
-  >
-          <div class="col-md-12">
-              <div class="table-responsive mt-30">
-                  <table class="table ucp-table">
-                      <thead class="thead-s">
-                          <tr>
-                              <th class="text-center" scope="col"> {{"No." | translate}}</th>
-                              <th>{{"User Name" | translate}}</th>
-                              <th class="text-center" scope="col">{{"Phone No" | translate}}</th>
-                              <th class="text-center" scope="col">{{"Email" | translate}}</th>
-                              <th class="text-center" scope="col">{{"Action" | translate}}</th>
-                              <!-- <th class="text-center" scope="col">{{"Unblock" | translate}}</th> -->
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr >
-                              <td class="text-center">{{1}}</td>
-                              <td>{{"mohamed ahmed"|translate}}</td>
-                              <td class="text-center">{{"0111107715"|translate}}</td>
-                              <td class="text-center">{{"abdelrahm.osama.awad500@gmail.com	"|translate}}</td>
+    <div class="row" infiniteScroll [infiniteScrollDistance]="1">
+      <div class="col-md-12">
+        <div class="table-responsive mt-30">
+          <table class="table ucp-table">
+            <thead class="thead-s">
+              <tr>
+                <th class="text-center" scope="col"> {{"No." | translate}}</th>
+                <th>{{"User Name" | translate}}</th>
+                <th class="text-center" scope="col">{{"Phone No" | translate}}</th>
+                <th class="text-center" scope="col">{{"Email" | translate}}</th>
+                <th class="text-center" scope="col">{{"Action" | translate}}</th>
+                <!-- <th class="text-center" scope="col">{{"Unblock" | translate}}</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">{{1}}</td>
+                <td>{{"mohamed ahmed"|translate}}</td>
+                <td class="text-center">{{"0111107715"|translate}}</td>
+                <td class="text-center">{{"abdelrahm.osama.awad500@gmail.com	"|translate}}</td>
 
-                              <td class="text-center">
-                                <a  title="block" class="reject-btn  mx-2" ><i class="uil uil-times" ></i>{{"block" | translate}}</a>
-<a>or</a>
-                              <!-- </td> -->
-                              <!-- <td class="text-center"> -->
-                                <a  title="Unblock" class="accept-btn mx-2"><i class="uil uil-check" ></i>{{"Unblock" | translate}}</a>
-                              </td>
-                          </tr>
+                <td class="text-center">
+                  <a title="block" class="reject-btn  mx-2"><i class="uil uil-times"></i>{{"block" | translate}}</a>
+                  <a>or</a>
+                  <!-- </td> -->
+                  <!-- <td class="text-center"> -->
+                  <a title="Unblock" class="accept-btn mx-2"><i class="uil uil-check"></i>{{"Unblock" | translate}}</a>
+                </td>
+              </tr>
 
 
-                      </tbody>
-                  </table>
-                  <!-- <div *ngIf="loading" class="col-md-12">
+            </tbody>
+          </table>
+          <!-- <div *ngIf="loading" class="col-md-12">
                       <div class="main-loader mt-20">
                           <div class="spinner">
                               <div class="bounce1"></div>
@@ -215,9 +215,9 @@
                           </div>
                       </div>
                   </div> -->
-              </div>
+        </div>
 
-          </div>
       </div>
+    </div>
   </div>
 </div>

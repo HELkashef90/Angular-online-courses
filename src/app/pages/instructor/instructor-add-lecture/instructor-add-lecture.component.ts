@@ -245,4 +245,35 @@ export class InstructorAddLectureComponent implements OnInit {
     }
 
   }
+
+
+  onOffLectureClick(ev, lecture) {
+    console.log(ev.target.checked);
+    //true activate
+    if (ev.target.checked) {
+      this._createLectureService.activeLecture(lecture.id).subscribe(res => {
+        console.log(res);
+        this._toastService.showToast(this.translate.instant("your lecture successfully activated!"), 'success')
+
+      },
+        err => {
+          console.log(err);
+          this._toastService.showToast(this.translate.instant("please try again!"), 'error')
+          ev.target.checked = false
+        })
+    }
+    //false deactivate
+    if (!ev.target.checked) {
+      this._createLectureService.disableLecture(lecture.id).subscribe(res => {
+        console.log(res);
+        this._toastService.showToast(this.translate.instant("your lecture successfully disabled!"), 'success')
+
+      },
+        err => {
+          console.log(err);
+          this._toastService.showToast(this.translate.instant("please try again!"), 'error')
+          ev.target.checked = true
+        })
+    }
+  }
 }
