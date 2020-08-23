@@ -118,6 +118,8 @@ export class AuthService {
     return this.httpClient.get(environment._activeAccount + token)
   }
 
- 
+  restrictUser() {
+    return this.httpClient.post(environment._restrictUser, {})
+  }
 }
 
