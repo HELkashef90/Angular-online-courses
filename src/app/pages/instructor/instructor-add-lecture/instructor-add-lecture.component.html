@@ -52,7 +52,7 @@
                                                             class="custom-file-input" id="inputGroupFile06">
                                                         <label class="custom-file-label" for="inputGroupFile06">
                                                             {{ selectedVideo?.name ||  "No Choose file - (Video)" | translate}}
-                                                            
+
                                                             </label>
                                                     </div>
                                                 </div>
@@ -166,6 +166,12 @@
                                                                         <a (click)="onDeleteLecture(lecture)"
                                                                             title="Delete" class="gray-s"><i
                                                                                 class="uil uil-trash-alt"></i></a>
+
+
+                                                                                <label class="switch">
+                                                                                  <input type="checkbox" checked>
+                                                                                  <span class="slider round"></span>
+                                                                                </label>
                                                                     </td>
                                                                 </tr>
 

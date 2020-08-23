@@ -9,12 +9,10 @@
         <div class="col-xl-4 col-md-4 col-sm-6 ">
             <div class="ui search focus mt-30">
                 <div class="ui left icon input swdh11 swdh19">
-                    <input #search  #dp="bsDatepicker"
-                    bsDatepicker
-                    [bsValue]="bsValue" class="prompt srch_explore" type="text"
+                    <input #search   class="prompt srch_explore" type="text"
                         name="Search " value="" id="id_Search" required=""
                         placeholder="{{'Search ' | translate}}">
-                        <div class="btn-group searchField"  dropdown [autoClose]="false" container="body">
+                        <!-- <div class="btn-group searchField"  dropdown [autoClose]="false" container="body">
                           <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                                   aria-controls="dropdown-nested">
                           {{"Search By"|translate}} <span class="caret"></span>
@@ -74,7 +72,17 @@
                             <li role="menuitem" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen" class="drop" ><a class="dropdown-item" >{{"Date"|translate}}</a></li>
 
                           </ul>
-                        </div>
+                        </div> -->
+                        <div class="btn-group searchField"  dropdown (click)="displaySearchSeaction()" [autoClose]="false" container="body">
+                          <button id="button-nested"  dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                                  aria-controls="dropdown-nested">
+                          {{"Search By"|translate}} <span class="caret"></span>
+                          </button>
+                          </div>
+
+
+
+
                       </div>
             </div>
           </div>
@@ -95,7 +103,74 @@
         </div>
     </form>
 
+    <div class="searchSection shoow" >
+      <form>
+        <div class="form-group">
+          <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter First Name">
+        </div>
+        <div class="form-group">
+          <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter Last Name">
+        </div>
+        <div class="form-group">
+          <input type="phone" class="form-control" id="exampleInputnumber"  placeholder="Enter Mobile Number">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter Email" aria-describedby="emailHelp">
+        </div>
 
+        <div class="form-group">
+          <div class="SearchBox">
+          <select class="selectpicker" placeholder="Course Name">
+            <option disabled selected>Instructor Name</option>
+            <option>Mohamed Ahmed</option>
+            <option>Tamer Essam</option>
+          </select>
+         </div>
+        </div>
+        <div class="form-group">
+          <div class="SearchBox">
+          <select class="selectpicker" placeholder="Course Name">
+            <option disabled selected>Course Name</option>
+            <option>Math</option>
+            <option>English</option>
+          </select>
+         </div>
+        </div>
+
+        <div class="form-group">
+          <div class="SearchBox">
+          <select class="selectpicker" placeholder="Course Name">
+            <option disabled selected>Chapter Name</option>
+            <option>algebra</option>
+            <option>science</option>
+          </select>
+         </div>
+        </div>
+        <div class="form-group">
+          <div class="SearchBox">
+          <select class="selectpicker" placeholder="Chapter Name">
+            <option disabled selected>Lecture Name</option>
+            <option>lec 1</option>
+            <option>lec 2</option>
+          </select>
+         </div>
+        </div>
+        <div class="form-group">
+          <div class="SearchBox">
+          <select class="selectpicker" placeholder="Course Name">
+            <option disabled selected>Level</option>
+            <option>1st</option>
+            <option>2nd</option>
+          </select>
+         </div>
+        </div>
+        <div class=" form-group">
+          <input type="text" placeholder="Date range"  class="form-control"  bsDaterangepicker>
+
+        </div>
+        <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button>
+      </form>
+    </div>
 
       <div class="row" infiniteScroll [infiniteScrollDistance]="1"
   >

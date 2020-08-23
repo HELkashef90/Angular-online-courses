@@ -41,10 +41,17 @@
             <input type="phone" class="form-control" id="exampleInputnumber"  placeholder="Enter Mobile Number">
           </div>
           <div class="form-group">
-            <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter First Name">
-          </div>
-          <div class="form-group">
             <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter Email" aria-describedby="emailHelp">
+          </div>
+
+          <div class="form-group">
+            <div class="SearchBox">
+            <select class="selectpicker" placeholder="Course Name">
+              <option disabled selected>Instructor Name</option>
+              <option>Mohamed Ahmed</option>
+              <option>Tamer Essam</option>
+            </select>
+           </div>
           </div>
           <div class="form-group">
             <div class="SearchBox">
@@ -55,26 +62,37 @@
             </select>
            </div>
           </div>
+
+          <div class="form-group">
+            <div class="SearchBox">
+            <select class="selectpicker" placeholder="Course Name">
+              <option disabled selected>Chapter Name</option>
+              <option>algebra</option>
+              <option>science</option>
+            </select>
+           </div>
+          </div>
           <div class="form-group">
             <div class="SearchBox">
             <select class="selectpicker" placeholder="Chapter Name">
-              <option disabled selected>Course Name</option>
-              <option>chapter 1</option>
-              <option>chapter 2</option>
+              <option disabled selected>Lecture Name</option>
+              <option>lec 1</option>
+              <option>lec 2</option>
             </select>
            </div>
           </div>
           <div class="form-group">
             <div class="SearchBox">
             <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Instructor Name</option>
-              <option>Mohamed Ahmed</option>
-              <option>Tamer Essam</option>
+              <option disabled selected>Level</option>
+              <option>1st</option>
+              <option>2nd</option>
             </select>
            </div>
           </div>
           <div class=" form-group">
-            <input type="text" placeholder="Datepicker"  class="form-control" bsDatepicker>
+            <input type="text" placeholder="Date range"  class="form-control"  bsDaterangepicker>
+
           </div>
           <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button>
         </form>

@@ -5,12 +5,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restricted-users.component.scss']
 })
 export class RestrictedUsersComponent implements OnInit {
-  disableScroll: Boolean;
-  bsValue ;
+  // disableScroll: Boolean;
+  // bsValue ;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  Search(){
+    var verticalSideBar = document.querySelector(".searchSection");
+    verticalSideBar.classList.toggle("shoow");
+      }
+  displaySearchSeaction(){
+    var verticalSideBar = document.querySelector(".searchSection");
+    verticalSideBar.classList.toggle("shoow");
+  }
 
 }
