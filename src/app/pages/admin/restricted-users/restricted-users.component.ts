@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestrictedUsersComponent implements OnInit {
   disableScroll: Boolean;
-
+  bsValue ;
   constructor() { }
 
   ngOnInit(): void {

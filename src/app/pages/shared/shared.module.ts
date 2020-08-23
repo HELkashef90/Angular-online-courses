@@ -4,6 +4,7 @@ import { SaveUrlPipe } from 'src/app/pipes/saveUrl/save-url.pipe';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -12,9 +13,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     CommonModule,
     NgxLinkifyjsModule,
     ModalModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot()
 
   ],
-  exports:[SaveUrlPipe,NgxLinkifyjsModule,BsDropdownModule]
+  exports:[SaveUrlPipe,NgxLinkifyjsModule,BsDropdownModule,BsDatepickerModule]
 })
 export class SharedModule { }

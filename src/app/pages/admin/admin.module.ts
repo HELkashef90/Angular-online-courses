@@ -20,10 +20,11 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { AdminInstructorsListComponent } from './admin-instructors-list/admin-instructors-list.component';
 import { AdminConfirmCoursesComponent } from './admin-confirm-courses/admin-confirm-courses.component';
 import { RestrictedUsersComponent } from './restricted-users/restricted-users.component';
+import { AdvancedSearchPaymentStudentComponent } from './advanced-search-payment-student/advanced-search-payment-student.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent, RestrictedUsersComponent],
+  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent, RestrictedUsersComponent, AdvancedSearchPaymentStudentComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
