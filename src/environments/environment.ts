@@ -44,7 +44,9 @@ export const environment = {
   _getStudyCourse: `${serverUrl}student-enrolled/all-chapters-contents/`,
   _getStudentDashboard: `${serverUrl}student-view/dashboard`,
   _getInstructorDashboard: `${serverUrl}instructor/dashboard`,
-  _reCaptchaKey:`6LcGAroZAAAAAKFVrSJvh398TDUfB-pWPNRY5XM8`
+  _reCaptchaKey:`6LcGAroZAAAAAKFVrSJvh398TDUfB-pWPNRY5XM8`,
+  _restrictUser: `${serverUrl}restricted-user/restrict`,
+  _getRestrictedUsers : `${serverUrl}restricted-user/search`
 
 }
 /*

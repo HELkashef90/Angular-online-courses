@@ -26,4 +26,8 @@ export class StudentsService {
   rejectEnrolment(id) {
     return this.httpClient.put(environment._rejectEnrollment + id, {})
   }
+
+  getRestrictedUsers(body) {
+    return this.httpClient.post(environment._getRestrictedUsers, body)
+  }
 }
