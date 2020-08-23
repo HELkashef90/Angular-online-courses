@@ -1,3 +1,4 @@
+import { StudentsService } from './../services/students/students.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-restricted-users',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestrictedUsersComponent implements OnInit {
   disableScroll: Boolean;
-  bsValue ;
-  constructor() { }
+  bsValue;
+  constructor(private _student: StudentsService) { }
 
   ngOnInit(): void {
+    this._student.getRestrictedUsers({
+      "mobile_no":"01009305067",
+      "email":"",
+      "first_name":"",
+      "last_name":""
+  }).subscribe(res => {
+      console.log(res);
+
+    }, err => {
+      console.log(err);
+
+    })
   }
 
 

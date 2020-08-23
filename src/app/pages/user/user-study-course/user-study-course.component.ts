@@ -121,9 +121,6 @@ export class UserStudyCourseComponent implements OnInit {
   ngAfterViewInit() {
     let options = {
       id: 76979871,
-      // controls: false,
-      // width: 1000,
-      // autoplay:true,
       responsive: true,
     }
     this.player = new Player('lectureContainer', options)

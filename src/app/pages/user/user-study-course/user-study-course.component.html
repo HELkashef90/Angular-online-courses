@@ -30,8 +30,10 @@
                     <ul class="sub_menu">
                         <li *ngFor="let lecture of chapter.studentEnrolledContent"
                             (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
-                            class="sub_menu--item">
-                            <a class="sub_menu--link">{{lecture.content_title}}<span>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span> <p class="lock"></p></a>
+                            class="sub_menu--item "
+                            [ngClass]="{'disabled': !lecture.is_Active}"
+                            >
+                            <a class="sub_menu--link">{{lecture.content_title}}<span>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span> <p *ngIf="!lecture.is_Active" class="lock"></p></a>
                             <!-- <p class="lock"></p>
                             <p class="unlock"></p> -->
                         </li>
