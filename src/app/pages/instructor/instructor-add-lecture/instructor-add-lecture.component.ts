@@ -96,7 +96,8 @@ export class InstructorAddLectureComponent implements OnInit {
       description: ['', [Validators.required]],
       course: ['', [Validators.required]],
       chapter: ['', [Validators.required]],
-
+      active: [true, [Validators.required]],
+      
     });
   }
   onFileChange($event) {
@@ -143,6 +144,7 @@ export class InstructorAddLectureComponent implements OnInit {
         "content_title": this.lectureForm.get('lectureTitle').value,
         "content_description": this.lectureForm.get('description').value,
         "content_sort_number": this.lectureForm.get('sort').value,
+        "is_active": this.lectureForm.get('active').value,
 
       })
     )
@@ -179,6 +181,7 @@ export class InstructorAddLectureComponent implements OnInit {
         "content_title": this.lectureForm.get('lectureTitle').value,
         "content_description": this.lectureForm.get('description').value,
         "content_sort_number": this.lectureForm.get('sort').value,
+        "is_active": this.lectureForm.get('active').value,
 
       })
     )
@@ -225,6 +228,7 @@ export class InstructorAddLectureComponent implements OnInit {
     this.lectureForm.get('lectureTitle').setValue(lecture.content_title)
     this.lectureForm.get('description').setValue(lecture.content_description)
     this.lectureForm.get('sort').setValue(lecture.content_sort_number)
+    this.lectureForm.get('active').setValue(lecture.is_active)
   }
   onCancelEditChapterClick() {
     this.editMode = false;

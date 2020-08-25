@@ -31,6 +31,8 @@
                          
                         </tbody>
                     </table>
+                    <a *ngIf="coursesArray.length < totalCourses" (click)="onScroll()" style="color: blue;">{{"load more..." | translate}}</a>
+
                     <div *ngIf="loading" class="col-md-12">
                         <div class="main-loader mt-20">
                             <div class="spinner">

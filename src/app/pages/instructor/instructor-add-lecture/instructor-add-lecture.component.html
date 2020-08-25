@@ -115,6 +115,18 @@
 
                                         </select>
                                     </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="ui search focus mt-30 lbel25">
+                                            <label>{{"Availability" | translate}}*</label>
+                                        </div>
+                                        <select formControlName="active">
+                                            <option disabled value="">{{"Select status" | translate}}</option>
+                                            <option  value=true>{{"Active" | translate}}</option>
+                                            <option  value=false>{{"Disabled" | translate}}</option>
+                                            
+
+                                        </select>
+                                    </div>
                                     <div class="col-lg-4 col-md-12">
                                         <button (click)="onSaveClick()" class="part_btn_save prt-sv" type="submit">
                                             {{editMode ? ('Save Lecture' | translate) : ('Create Lecture' | translate) }}</button>

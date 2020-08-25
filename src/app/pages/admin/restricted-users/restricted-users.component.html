@@ -80,6 +80,7 @@
 
             </tbody>
           </table>
+          <a *ngIf="restrictedUsersArray.length < totalUsers" (click)="onScroll(searchForm)" style="color: blue;">{{"load more..." | translate}}</a>
           <p *ngIf="!restrictedUsersArray.length && !loading">{{"No result found" | translate}}</p>
           <div *ngIf="loading" class="col-md-12">
               <div class="main-loader mt-20">
