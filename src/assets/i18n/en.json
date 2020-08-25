@@ -97,6 +97,7 @@
 	"Are you sure you want to reject this instructor? ": "Are you sure you want to reject this instructor? ",
 	"Are you sure you want to remove all chapters?": "Are you sure you want to remove all chapters?",
 	"Are you sure you want to unblock this user? ": "Are you sure you want to unblock this user? ",
+	"Availability": "Availability",
 	"Back": "Back",
 	"Back to Home": "Back to Home",
 	"Back to home": "Back to home",
@@ -137,6 +138,7 @@
 	"Dashboard": "Dashboard",
 	"Deactivated Successfully": "Deactivated Successfully",
 	"Description": "Description",
+	"Disabled": "Disabled",
 	"Do you want to play the from this browser": "Do you want to play the from this browser",
 	"Don't have an account?": "Don't have an account?",
 	"Draft": "Draft",
@@ -283,6 +285,7 @@
 	"Select Grade": "Select Grade",
 	"Select Language": "Select Language",
 	"Select Subjects": "Select Subjects",
+	"Select status": "Select status",
 	"Shopping cart": "Shopping cart",
 	"Sign In": "Sign In",
 	"Sign Out": "Sign Out",
@@ -362,6 +365,13 @@
 	"lecture": "Lecture",
 	"lectures": "Lectures",
 	"level": "Level",
+	"load more": {
+		"": {
+			"": {
+				"": "load more..."
+			}
+		}
+	},
 	"m": "m",
 	"password": "Password",
 	"password doesn't match": "Password doesn't match",

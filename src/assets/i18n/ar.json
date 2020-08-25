@@ -97,6 +97,7 @@
 	"Are you sure you want to reject this instructor? ": "هل تريد إلغاء هذا المحاضر ؟ ",
 	"Are you sure you want to remove all chapters?": "هل تريد حذف كل الفصول ؟",
 	"Are you sure you want to unblock this user? ": "Are you sure you want to unblock this user? ",
+	"Availability": "Availability",
 	"Back": "العودة",
 	"Back to Home": "العودة للرئيسية",
 	"Back to home": "العودة للرئيسية",
@@ -137,6 +138,7 @@
 	"Dashboard": "واجهة العرض",
 	"Deactivated Successfully": "تم الإلغاء بنجاح",
 	"Description": "الوصف",
+	"Disabled": "Disabled",
 	"Do you want to play the from this browser": "Do you want to play the from this browser",
 	"Don't have an account?": "ليس لديك حساب?",
 	"Draft": "مسودة",
@@ -283,6 +285,7 @@
 	"Select Grade": "إختر الصف",
 	"Select Language": "إختر اللغة",
 	"Select Subjects": "إختر المواد",
+	"Select status": "Select status",
 	"Shopping cart": "كارت التسوق",
 	"Sign In": "تسجيل الدخول",
 	"Sign Out": "تسجيل الخروج",
@@ -362,6 +365,13 @@
 	"lecture": "المحاضرة",
 	"lectures": "المحاضرات",
 	"level": "الصف",
+	"load more": {
+		"": {
+			"": {
+				"": "load more..."
+			}
+		}
+	},
 	"m": "د",
 	"password": "كلمة المرور",
 	"password doesn't match": "كلمة المرور غير متطابقة",
