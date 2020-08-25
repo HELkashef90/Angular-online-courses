@@ -31,7 +31,11 @@ export class StudentsService {
     return this.httpClient.post(environment._getRestrictedUsers + '?page=' + page + '&size=' + size , body)
   }
   
-  unlockUSer(id){
-    return this.httpClient.put(environment._unlockUSer + id,{})
+  unblockUSer(id){
+    return this.httpClient.put(environment._unblockUSer + id,{})
   }
+  blockUSer(id){
+    return this.httpClient.put(environment._blockUSer + id,{})
+  }
+  
 }

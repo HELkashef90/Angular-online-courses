@@ -5,177 +5,48 @@
         <h2 class="st_title"><i class="restricted"></i>{{"Restricted users" | translate}}</h2>
       </div>
     </div>
-    <!-- <form class="row">
+    <form  class="row">
       <div class="col-xl-4 col-md-4 col-sm-6 ">
         <div class="ui search focus mt-30">
           <div class="ui left icon input swdh11 swdh19">
-            <input #search class="prompt srch_explore" type="text" name="Search " value="" id="id_Search" required=""
-              placeholder="{{'Search ' | translate}}"> -->
-            <!-- <div class="btn-group searchField"  dropdown [autoClose]="false" container="body">
-                          <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                                  aria-controls="dropdown-nested">
-                          {{"Search By"|translate}} <span class="caret"></span>
-                          </button>
-                          <ul id="dropdown-nested" *dropdownMenu class="dropdown-menu"
-                              role="menu" aria-labelledby="button-nested">
-                            <li role="menuitem" class="drop">
-                              <div class="checkbox">
-                              <label><input type="checkbox" value="firstName">FirstName</label>
-                            </div>
-                          </li>
-                            <li role="menuitem" class="drop">
-                              <div class="checkbox">
-                              <label><input type="checkbox" value="lastName">LastName</label>
-                            </div>
-                          </li>
-                            <li role="menuitem" class="drop">
-                              <div class="checkbox">
-                              <label><input type="checkbox" value="mobile">Mobile Number</label>
-                            </div>
-                          </li>
-                            <li role="menuitem" class="drop">
-                              <div class="checkbox">
-                              <label><input type="checkbox" value="email">Email</label>
-                            </div>
-                          </li>
-
-                            <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body" class="drop">
-                              <a dropdownToggle class="dropdown-item dropdown-toggle"
-                                 (click)="false">{{"Course Name"}} <span class="caret"></span></a>
-                              <ul *dropdownMenu class="dropdown-menu" role="menu">
-                                <li role="menuitem"><a class="dropdown-item">Action</a></li>
-                                <li role="menuitem"><a class="dropdown-item">Action1</a></li>
-                                <li role="menuitem"><a class="dropdown-item">Action2</a></li>
-                              </ul>
-                            </li>
-
-                            <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body" class="drop">
-                              <a dropdownToggle class="dropdown-item dropdown-toggle"
-                                 (click)="false">{{"Chapter Name"}}<span class="caret"></span></a>
-                              <ul *dropdownMenu class="dropdown-menu" role="menu">
-                                <li role="menuitem"><a class="dropdown-item">Action</a></li>
-                                <li role="menuitem"><a class="dropdown-item">Action1</a></li>
-                                <li role="menuitem"><a class="dropdown-item">Action2</a></li>
-                              </ul>
-                            </li>
-                            <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body" class="drop">
-                              <a dropdownToggle class="dropdown-item dropdown-toggle"
-                                 (click)="false">{{"instructor Name"}}<span class="caret"></span></a>
-                              <ul *dropdownMenu class="dropdown-menu" role="menu">
-                                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action</a></li>
-                                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action1</a></li>
-                                <li role="menuitem"><a class="dropdown-item" href="#/dropdowns#nested-dropdowns">Action2</a></li>
-                              </ul>
-                            </li>
-
-                            <li role="menuitem" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen" class="drop" ><a class="dropdown-item" >{{"Date"|translate}}</a></li>
-
-                          </ul>
-                        </div> -->
-
-                        
-            <!-- <div class="btn-group searchField" dropdown (click)="displaySearchSeaction()" [autoClose]="false"
+            <div class="btn-group searchField" dropdown (click)="openSearchSection()" [autoClose]="false"
               container="body">
               <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                 aria-controls="dropdown-nested">
                 {{"Search By"|translate}} <span class="caret"></span>
               </button>
             </div>
-
-
-
-
           </div>
         </div>
       </div>
 
-
-
-
-
-
-
-
-
       <div class="col-xl-2 col-md-4 col-sm-6 ">
-        <button #searchElm class="login-btn">{{"Search" |translate}}</button>
+        <button (click)="resetTable()" class="login-btn">{{"Refresh table" |translate}}</button>
       </div>
-      <div class="col-xl-2 col-md-4 col-sm-6 ">
-        <button class="login-btn">{{"Refresh table" |translate}}</button>
-      </div>
-    </form> -->
+    </form>
 
     <div class="searchSection shoow">
-      <form>
+      <form [formGroup]="searchForm">
         <div class="form-group">
-          <input type="string" class="form-control" id="exampleInputName" placeholder="Enter First Name">
+          <input type="string" formControlName="first_name" class="form-control"  placeholder="{{'Enter First Name'| translate}}">
         </div>
         <div class="form-group">
-          <input type="string" class="form-control" id="exampleInputName" placeholder="Enter Last Name">
+          <input type="string" formControlName="last_name" class="form-control" placeholder="{{'Enter Last Name' | translate}}">
         </div>
         <div class="form-group">
-          <input type="phone" class="form-control" id="exampleInputnumber" placeholder="Enter Mobile Number">
+          <input type="phone" formControlName="mobile_no" class="form-control" placeholder="{{'Enter Mobile Number' | translate}}">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email"
+          <input type="email" formControlName="email" class="form-control" placeholder="{{'Enter Email' | translate}}"
             aria-describedby="emailHelp">
         </div>
-<!-- 
-        <div class="form-group">
-          <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Instructor Name</option>
-              <option>Mohamed Ahmed</option>
-              <option>Tamer Essam</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Course Name</option>
-              <option>Math</option>
-              <option>English</option>
-            </select>
-          </div>
-        </div>
 
-        <div class="form-group">
-          <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Chapter Name</option>
-              <option>algebra</option>
-              <option>science</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="SearchBox">
-            <select class="selectpicker" placeholder="Chapter Name">
-              <option disabled selected>Lecture Name</option>
-              <option>lec 1</option>
-              <option>lec 2</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Level</option>
-              <option>1st</option>
-              <option>2nd</option>
-            </select>
-          </div>
-        </div>
-        <div class=" form-group">
-          <input type="text" placeholder="Date range" class="form-control" bsDaterangepicker>
-
-        </div> -->
-        <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button>
+        <button type="submit" (click)="onSearchClick(searchForm)" class="btn btn-primary">{{"Search"|translate}}</button>
+        <button type="submit" (click)="closeSearchSection()" class="btn btn-primary">{{"cancel"|translate}}</button>
       </form>
     </div>
 
-    <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+    <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll(searchForm)"
     [infiniteScrollDisabled]="lastPage || disableScroll">
       <div class="col-md-12">
         <div class="table-responsive mt-30">
@@ -186,6 +57,7 @@
                 <th>{{"User Name" | translate}}</th>
                 <th class="text-center" scope="col">{{"Phone No" | translate}}</th>
                 <th class="text-center" scope="col">{{"Email" | translate}}</th>
+                <th class="text-center" scope="col">{{"Status" | translate}}</th>
                 <th class="text-center" scope="col">{{"Action" | translate}}</th>
                 <!-- <th class="text-center" scope="col">{{"Unblock" | translate}}</th> -->
               </tr>
@@ -196,13 +68,12 @@
                 <td>{{user.first_name + ' ' + user.last_name}}</td>
                 <td class="text-center">{{user.mobile_no}}</td>
                 <td class="text-center">{{user.email}}</td>
+                <td *ngIf="!user._blocked" class="text-center" style="color: green;">{{"Active" | translate}}</td>
+                <td *ngIf="user._blocked" class="text-center" style="color: red;">{{"Blocked" | translate}}</td>
 
                 <td class="text-center">
-                  <!-- <a title="block" class="reject-btn  mx-2"><i class="uil uil-times"></i>{{"block" | translate}}</a> -->
-                  <!-- <a>or</a> -->
-                  <!-- </td> -->
-                  <!-- <td class="text-center"> -->
-                  <a (click)="onUnlockClick(user.user_id)" title="Unblock" class="accept-btn mx-2"><i class="uil uil-check"></i>{{"Unblock" | translate}}</a>
+                  <a *ngIf="!user._blocked" (click)="onBlockClick(user)" title="block" class="reject-btn  mx-2"><i class="uil uil-times"></i>{{"block" | translate}}</a>
+                  <a *ngIf="user._blocked" (click)="onUnblockClick(user)" title="Unblock" class="accept-btn mx-2"><i class="uil uil-check"></i>{{"Unblock" | translate}}</a>
                 </td>
               </tr>
 
@@ -219,15 +90,6 @@
                   </div>
               </div>
           </div>
-          <!-- <div *ngIf="loading" class="col-md-12">
-                      <div class="main-loader mt-20">
-                          <div class="spinner">
-                              <div class="bounce1"></div>
-                              <div class="bounce2"></div>
-                              <div class="bounce3"></div>
-                          </div>
-                      </div>
-                  </div> -->
         </div>
 
       </div>
