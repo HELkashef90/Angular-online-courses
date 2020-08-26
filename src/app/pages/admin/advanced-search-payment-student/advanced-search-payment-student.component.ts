@@ -122,7 +122,10 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     let body = searchForm.value
     body.enrollment_request_date_from = new Date(searchForm.value.enrollment_request_date_from).getTime()
     body.enrollment_request_date_to = new Date(searchForm.value.enrollment_request_date_to).getTime()
-    this.getAllEnrollment(body)
+    this.getAllEnrollment(body);
+    var verticalSideBar = document.querySelector(".searchSection");
+    verticalSideBar.classList.add("shoow");
+
   }
   searchChange(search) {
     if (!search.value) {

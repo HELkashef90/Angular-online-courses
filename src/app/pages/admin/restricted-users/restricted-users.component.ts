@@ -36,7 +36,7 @@ export class RestrictedUsersComponent implements OnInit {
       first_name: [''],
       last_name: [''],
     });
- 
+
   }
   getRestrictedUsers(body = {}) {
     // console.log(this.reqPageNum, this.totalPages, this.lastPage);
@@ -71,7 +71,9 @@ export class RestrictedUsersComponent implements OnInit {
   onSearchClick(searchForm){
     console.log(searchForm.value);
     this.resetTable(false,false)
-    this.getRestrictedUsers(searchForm.value)
+    this.getRestrictedUsers(searchForm.value);
+    var verticalSideBar = document.querySelector(".searchSection");
+    verticalSideBar.classList.add("shoow");
   }
 
   onScroll(searchForm?) {
