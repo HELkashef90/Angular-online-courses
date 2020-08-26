@@ -7,7 +7,8 @@
 						<h2 class="st_title"><i class="uil uil-book-alt"></i>{{"Courses" | translate}}</h2>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+				[infiniteScrollDisabled]="lastPage || disableScroll">
 					<div class="col-md-12">
 						<div class="table-responsive mt-30">
 							<table class="table ucp-table">
@@ -52,6 +53,8 @@
 
 								</tbody>
 							</table>
+							<a *ngIf="instructorCourses.length < totalCourses" (click)="onScroll()" style="color: blue;">{{"load more..." | translate}}</a>
+
 						</div>
 						<ngx-loading [show]="loading"></ngx-loading>
 

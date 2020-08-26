@@ -58,14 +58,17 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     })
   }
   onCourseChange(id) {
-    this._student.advancedSearchGetChaptersByCourse(id).subscribe(res => {
-      console.log(res);
-      this.chaptersArray = res
-    },
-      err => {
-        console.log(err);
+    if (id) {
+      this._student.advancedSearchGetChaptersByCourse(id).subscribe(res => {
+        console.log(res);
+        this.chaptersArray = res
+      },
+        err => {
+          console.log(err);
 
-      })
+        })
+    }
+
   }
   initForms() {
     this.searchForm = this._formBuilder.group({

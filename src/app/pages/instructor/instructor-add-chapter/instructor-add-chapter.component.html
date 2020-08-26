@@ -30,7 +30,7 @@
                                             </div>
                                             <select formControlName="course">
                                                 <option disabled selected value="">{{"Select Course" | translate}}</option>
-                                                <option *ngFor="let course of instructorCourses" value="{{course.course_id}}">{{course.course_title}}</option>
+                                                <option *ngFor="let course of instructorCourses" value="{{course.id}}">{{course.name}}</option>
                                                 
                                             </select>
                                         </div>

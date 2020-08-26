@@ -5,6 +5,7 @@ import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -14,9 +15,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     NgxLinkifyjsModule,
     ModalModule,
     BsDropdownModule.forRoot(),
-    BsDatepickerModule.forRoot()
-
+    BsDatepickerModule.forRoot(),
+    InfiniteScrollModule,
   ],
-  exports:[SaveUrlPipe,NgxLinkifyjsModule,BsDropdownModule,BsDatepickerModule]
+  exports:[SaveUrlPipe,NgxLinkifyjsModule,BsDropdownModule,BsDatepickerModule,InfiniteScrollModule]
 })
 export class SharedModule { }
