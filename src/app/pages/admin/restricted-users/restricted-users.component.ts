@@ -18,7 +18,7 @@ export class RestrictedUsersComponent implements OnInit {
   totalUsers: any;
   restrictedUsersArray = [];
   reqPageNum = 0;
-  pageSize = 2
+  pageSize = 8
   loading: boolean;
   lastPage = false;
   modalRef: BsModalRef;
