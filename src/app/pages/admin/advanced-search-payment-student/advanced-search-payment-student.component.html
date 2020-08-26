@@ -6,13 +6,14 @@
           </div>
       </div>
       <form class="row">
-          <div class="col-xl-3 col-md-4 col-sm-6 ">
-              <div class="ui search focus mt-30">
+          <!-- <div class="col-xl-3 col-md-4 col-sm-6 "> -->
+            <div class="col-6 col-sm-3 col-md-3">
+              <div class="ui search searchDiv focus mt-30">
                   <div class="ui left icon input swdh11 swdh19">
-                      <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text"
+                      <!-- <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text"
                           name="Search by Email or Phone Number" value="" id="id_Search" required=""
-                          placeholder="{{'Search' | translate}}">
-                          <div class="btn-group searchField"  dropdown (click)="displaySearchSeaction()" [autoClose]="false" container="body">
+                          placeholder="{{'Search' | translate}}"> -->
+                          <div class="btn-group searchField"  dropdown (click)="openSearchSection()" [autoClose]="false" container="body">
                             <button id="button-nested"  dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                                     aria-controls="dropdown-nested">
                             {{"Search By"|translate}} <span class="caret"></span>
@@ -21,30 +22,30 @@
                   </div>
               </div>
           </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 ">
+          <!-- <div class="col-6 col-md-3 col-sm-3 ">
               <button #searchElm class="login-btn"
                   (click)="onSearchClick(search.value, $event)">{{"Search" |translate}}</button>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 ">
-              <button class="login-btn" (click)="clearSearch(search)">{{"Refresh table" |translate}}</button>
+          </div> -->
+          <div class="col-6 col-md-3 col-sm-3 ">
+              <button class="login-btn"(click)="resetTable()" class="refreshbutt login-btn" >{{"Refresh table" |translate}}</button>
           </div>
       </form>
       <div class="searchSection shoow" >
         <form>
-          <div class="form-group">
+          <div class="form-group 	col-sm-6">
             <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter First Name">
           </div>
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter Last Name">
           </div>
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <input type="phone" class="form-control" id="exampleInputnumber"  placeholder="Enter Mobile Number">
           </div>
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter Email" aria-describedby="emailHelp">
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <div class="SearchBox">
             <select class="selectpicker" placeholder="Course Name">
               <option disabled selected>Instructor Name</option>
@@ -53,7 +54,7 @@
             </select>
            </div>
           </div>
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <div class="SearchBox">
             <select class="selectpicker" placeholder="Course Name">
               <option disabled selected>Course Name</option>
@@ -63,7 +64,7 @@
            </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <div class="SearchBox">
             <select class="selectpicker" placeholder="Course Name">
               <option disabled selected>Chapter Name</option>
@@ -72,16 +73,8 @@
             </select>
            </div>
           </div>
-          <div class="form-group">
-            <div class="SearchBox">
-            <select class="selectpicker" placeholder="Chapter Name">
-              <option disabled selected>Lecture Name</option>
-              <option>lec 1</option>
-              <option>lec 2</option>
-            </select>
-           </div>
-          </div>
-          <div class="form-group">
+
+          <div class="form-group col-sm-6">
             <div class="SearchBox">
             <select class="selectpicker" placeholder="Course Name">
               <option disabled selected>Level</option>
@@ -90,11 +83,16 @@
             </select>
            </div>
           </div>
-          <div class=" form-group">
+          <div class="form-group range">
             <input type="text" placeholder="Date range"  class="form-control"  bsDaterangepicker>
 
           </div>
-          <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button>
+          <div class="formButtn">
+            <button type="submit" (click)="onSearchClick(searchForm)" class="btn btn-primary">{{"Search"|translate}}</button>
+            <button type="submit" (click)="closeSearchSection()" class="btn btn-primary">{{"cancel"|translate}}</button>
+
+            <!-- <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button> -->
+          </div>
         </form>
       </div>
       <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll(search.value)"

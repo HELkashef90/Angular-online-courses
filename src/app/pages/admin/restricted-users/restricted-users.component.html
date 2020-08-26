@@ -6,9 +6,13 @@
       </div>
     </div>
     <form  class="row">
-      <div class="col-xl-4 col-md-4 col-sm-6 ">
-        <div class="ui search focus mt-30">
+      <div class="col-6 col-sm-3 col-md-3">
+      <!-- <div class="col-xl-4 col-md-4 col-sm-6 "> -->
+        <div class="ui search searchDiv focus mt-30">
           <div class="ui left icon input swdh11 swdh19">
+            <!-- <input disabled  class="prompt srch_explore" type="text"
+            name="Search by " value="" id="id_Search" required=""
+            placeholder="{{'Search by' | translate}}"> -->
             <div class="btn-group searchField" dropdown (click)="openSearchSection()" [autoClose]="false"
               container="body">
               <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
@@ -20,29 +24,32 @@
         </div>
       </div>
 
-      <div class="col-xl-2 col-md-4 col-sm-6 ">
-        <button (click)="resetTable()" class="login-btn">{{"Refresh table" |translate}}</button>
+      <!-- <div class="col-xl-2 col-md-4 col-sm-6 "> -->
+      <div class="col-6 col-sm-3 col-md-3">
+        <button (click)="resetTable()" class="refreshbutt login-btn">{{"Refresh table" |translate}}</button>
       </div>
     </form>
 
     <div class="searchSection shoow">
       <form [formGroup]="searchForm">
-        <div class="form-group">
+        <div class="form-group col-sm-6">
           <input type="string" formControlName="first_name" class="form-control"  placeholder="{{'Enter First Name'| translate}}">
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-6">
           <input type="string" formControlName="last_name" class="form-control" placeholder="{{'Enter Last Name' | translate}}">
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-6">
           <input type="phone" formControlName="mobile_no" class="form-control" placeholder="{{'Enter Mobile Number' | translate}}">
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-6">
           <input type="email" formControlName="email" class="form-control" placeholder="{{'Enter Email' | translate}}"
             aria-describedby="emailHelp">
         </div>
-
+<div class="formButtn">
         <button type="submit" (click)="onSearchClick(searchForm)" class="btn btn-primary">{{"Search"|translate}}</button>
         <button type="submit" (click)="closeSearchSection()" class="btn btn-primary">{{"cancel"|translate}}</button>
+
+      </div>
       </form>
     </div>
 

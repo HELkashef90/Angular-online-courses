@@ -186,16 +186,17 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
   onExportClick(id,type){
     this._export.exportElement(id,type)
   }
-searchSeaction
+// searchSeaction
 
   Search(){
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.toggle("shoow");
       }
-  displaySearchSeaction(){
+      openSearchSection(){
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.toggle("shoow");
   }
+
 }
 
 

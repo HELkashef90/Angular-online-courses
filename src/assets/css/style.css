@@ -16437,7 +16437,7 @@ margin-bottom: 20px;
   -o-transform: translate(-50%, -50%);
 
 }
-.idmPage:before {
+.bg {
   content: "";
   background: url(../images/sign.svg) no-repeat center;
   left: 0;
@@ -16618,6 +16618,7 @@ margin: 0px 0px 0px 10px;
     width: 255px !important; */
 }
 /* } */
+
 @media (max-width: 320px){
   .rtl .header_right {
     padding-left: 0px;
@@ -16664,6 +16665,8 @@ margin: 0px 0px 0px 10px;
   position: absolute !important;
   right: 3px !important;
   top: 2px !important;
+  width: 100%;
+
 }
 .searchField button{
   border-radius: 17px;
@@ -16704,6 +16707,10 @@ margin: 0px 10px !important;
     border-top-left-radius: 0px !important;
     padding:0px 0px 0px 5px !important;
 }
+.refreshbutt{
+  height: 34px;
+margin-top: 35px;
+}
 .search-field select option:checked,.search-field select option:hover,
 .search-field select .option_links:hover,.search-field select option:focus
 {
@@ -16713,12 +16720,61 @@ margin: 0px 10px !important;
 .search-field select option:last-child{
   font-weight: 900;
 }
-
 .searchSection{
-  background: #fff;
+  /* background: #fff; */
+  background: url(../images/design.png) center;
+  padding: 20px;
     margin: 20px;
-    padding: 20px;
+    background-size: cover;
+  }
+.searchSection:before{
+  /* background: #fff; */
+    /* margin: 20px; */
+    /* padding: 20px; */
+    /* background:url(../images/sign.svg) no-repeat center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-size: cover; */
+  }
+.searchSection form .form-group{
+  display: inline-block;
+  /* margin-right: 20px; */
 }
+.searchSection form .range{
+  display: block !important;
+  margin: 0px 1rem 1rem 1rem;
+}
+.searchSection form .formButtn{
+  text-align: center;
+}
+.searchSection form .formButtn button{
+  width: 20% !important;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.searchSection form .formButtn button:last-child{
+  background-color: #fff !important;
+    color: rgb(204, 45, 55);
+}
+.searchDiv{
+  display: flex;
+}
+/*
+.searchSection{
+  background-image:url(../images/sign.svg) no-repeat center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  background-size: cover;
+  /* opacity: 0.099; */
+/* }  */
 .shoow{
   display: none;
   /* visibility: hidden; */
@@ -16826,4 +16882,12 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+@media (max-width: 576px){
+  .searchSection{
+  margin: 20px 0px !important;
+  padding:0px;
+  }
+  .searchSection form .formButtn button {
+    width: 25% !important;}
 }
