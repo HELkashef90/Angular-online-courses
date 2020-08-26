@@ -1,6 +1,6 @@
 import { environment } from 'src/environments/environment';
-// import { PreventInspectService } from './services/preventInspect/prevent-inspect.service';
-// import { ProtectVideosService } from './services/protectVideos/protect-videos.service';
+import { PreventInspectService } from './services/preventInspect/prevent-inspect.service';
+import { ProtectVideosService } from './services/protectVideos/protect-videos.service';
 import { ToastService } from './services/toast/toast.service';
 import { PWAControllerService } from './services/PWAController/pwacontroller.service';
 import { ParamsService } from './services/params/params.service';
@@ -23,12 +23,12 @@ export class AppComponent {
     private _authService: AuthService,
     private _localizationService: LocalizationService,
     private _PWAService: PWAControllerService,
-    private _toastService: ToastService,/*private _protectVideosService: ProtectVideosService, private _preventInspect: PreventInspectService*/) {
+    private _toastService: ToastService,private _protectVideosService: ProtectVideosService, private _preventInspect: PreventInspectService) {
     this._paramService.getParams();
     this._localizationService.init();
-    // if (localStorage.getItem("authenticationToken")) {
-    //   this._protectVideosService.check()
-    // }
+    if (localStorage.getItem("authenticationToken")) {
+      this._protectVideosService.check()
+    }
     // this._preventInspect.init()
     // this._authService.authUser();
     // this._PWAService.preventAddToHomeScreen()
