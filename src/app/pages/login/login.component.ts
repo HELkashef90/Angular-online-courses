@@ -1,4 +1,4 @@
-import { ProtectVideosService } from './../../services/protectVideos/protect-videos.service';
+// import { ProtectVideosService } from './../../services/protectVideos/protect-videos.service';
 import { LocalizationService } from './../../services/localization/localization.service';
 import { environment } from './../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     private _handleGlobalErrorService: HandleGlobalErrorService, private route: ActivatedRoute, private router: Router,
     private translate: TranslateService, public _local: LocalizationService,
 
-    private _protect : ProtectVideosService
+    // private _protect : ProtectVideosService
     
     ) {
     this.reCaptchaKey = environment._reCaptchaKey
@@ -98,9 +98,9 @@ export class LoginComponent implements OnInit {
       this._authService.setUserAuthenticated(res)
       this.loading = false;
 
-      if(this._protect.check()){
-        return
-      }
+      // if(this._protect.check()){
+      //   return
+      // }
 
       console.log(res);
       this._toastService.showToast(this.translate.instant("you are logged in successfully"), 'success')

@@ -136,6 +136,8 @@
 	"Create Lecture": "إنشاء محاضرة",
 	"Create New Course": "أنشئ كورس جديد",
 	"Dashboard": "واجهة العرض",
+	"Date from": "Date from",
+	"Date to": "Date to",
 	"Deactivated Successfully": "تم الإلغاء بنجاح",
 	"Description": "الوصف",
 	"Disabled": "Disabled",
@@ -212,6 +214,7 @@
 	"Lecture Description*": "وصف المحاضرة*",
 	"Lecture Title": "عنوان المحاضرة",
 	"Lecture Title*": "عنوان المحاضرة*",
+	"Level": "Level",
 	"Loading": {
 		"": {
 			"": {
@@ -301,6 +304,7 @@
 	"Student Dashboard": "لوحة العرض",
 	"Student Name": "اسم الطالب",
 	"Student Payment": "دفع الطالب",
+	"Student Payment Advanced Search": "Student Payment Advanced Search",
 	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
 			" Learn how to make yours awesome!": "  الطلاب التى تشاهد فيديوهات توضيحية ذات جودة تقوم بالأشتراك 5 أضعاف عن الطلاب الأخرين. تشير الأحصائيات الى زيادة عدد المشاهدات عشر اضعاف . ."

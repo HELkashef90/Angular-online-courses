@@ -136,6 +136,8 @@
 	"Create Lecture": "Create Lecture",
 	"Create New Course": "Create New Course",
 	"Dashboard": "Dashboard",
+	"Date from": "Date from",
+	"Date to": "Date to",
 	"Deactivated Successfully": "Deactivated Successfully",
 	"Description": "Description",
 	"Disabled": "Disabled",
@@ -212,6 +214,7 @@
 	"Lecture Description*": "Lecture Description*",
 	"Lecture Title": "Lecture Title",
 	"Lecture Title*": "Lecture Title*",
+	"Level": "Level",
 	"Loading": {
 		"": {
 			"": {
@@ -301,6 +304,7 @@
 	"Student Dashboard": "Student Dashboard",
 	"Student Name": "Student Name",
 	"Student Payment": "Student Payment",
+	"Student Payment Advanced Search": "Student Payment Advanced Search",
 	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
 			" Learn how to make yours awesome!": "Students who watch a well-made promo video are 5X more likely to enroll in your course. We've seen that statistic go up to 10X for exceptionally awesome videos. Learn how to make yours awesome!"
