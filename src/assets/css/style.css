@@ -16779,6 +16779,9 @@ margin-top: 35px;
   display: none;
   /* visibility: hidden; */
 }
+.searchSection form{
+  overflow: hidden;
+}
 .SearchBox select {
   border: 1px solid #e5e5e5 !important;
   border-radius: 0px !important;
@@ -16786,6 +16789,7 @@ margin-top: 35px;
   -webkit-border-radius: 0px !important;
   -moz-border-radius: 0px !important;
   -ms-border-radius: 0px !important;
+  width: 10%;
   -o-border-radius: 0px !important;
 }
 
