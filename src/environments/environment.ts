@@ -51,7 +51,10 @@ export const environment = {
   _disableLecture : `${serverUrl}course-chapter-content/deactivate/`,
   _unblockUSer: `${serverUrl}restricted-user/unblock/`,
   _blockUSer: `${serverUrl}restricted-user/block/`,
-  
+  _advancedSearchEnrollment: `${serverUrl}enrollment-request/search`,
+  _advancedSearchGetCourses : `${serverUrl}course/all/lookup`,
+  _advancedSearchGetInstructors : `${serverUrl}instructor/all/lookup`,
+  _advancedSearchGetChaptersByCourse : `${serverUrl}course-chapter/all/lookup/`
 
 }
 /*

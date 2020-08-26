@@ -37,5 +37,16 @@ export class StudentsService {
   blockUSer(id){
     return this.httpClient.put(environment._blockUSer + id,{})
   }
-  
+  advancedSearchEnrollment(page, size,body = {}) {
+    return this.httpClient.post(environment._advancedSearchEnrollment + '?page=' + page + '&size=' + size , body)
+  }
+  advancedSearchGetCourses(){
+    return this.httpClient.get(environment._advancedSearchGetCourses)
+  }
+  advancedSearchGetInstructors(){
+    return this.httpClient.get(environment._advancedSearchGetInstructors)
+  }
+  advancedSearchGetChaptersByCourse(id){
+    return this.httpClient.get(environment._advancedSearchGetChaptersByCourse + id)
+  }
 }

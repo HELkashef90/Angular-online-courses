@@ -5,6 +5,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmComponent } from '../components/confirm/confirm.component';
 import { ToastService } from 'src/app/services/toast/toast.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-advanced-search-payment-student',
@@ -22,61 +23,73 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
   lastPage = false;
   modalRef: BsModalRef;
   disableScroll: Boolean;
-  constructor(private _students: StudentsService, private modalService: BsModalService,
+  searchForm: FormGroup;
+  coursesArray: Object;
+  chaptersArray: Object;
+  instructorsArray: Object;
+
+  constructor(private _student: StudentsService, private modalService: BsModalService,
     private translate: TranslateService, private _toast: ToastService,
-    private _export : ExportService) { }
+    private _export: ExportService, private _formBuilder: FormBuilder,) { }
 
   ngOnInit(): void {
     this.getAllEnrollment()
+    this.initForms()
+    this.getCourses()
+    this.getInstructors()
   }
-  onSearchClick(search, event?, resetTable = true) {
-    event?.preventDefault()
-    // this.showInvalidData = false;
-    let isEmail = false;
-    let isMobile = false;
-    console.log(search);
-    if (new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(search)) {
-      isEmail = true;
-    }
-    if (new RegExp("^01[0,1,2,5]{1}[0-9]{8}$").test(search)) {
-      isMobile = true;
-    }
-    if (isMobile) {
-      // this.disableScroll = true;
-      console.log('mobile');
-      resetTable ? this.resetTable(false) : null;
-      this.getAllEnrollment(search)
-      return
-    }
-    else if (isEmail) {
-      // this.disableScroll = true;
-      console.log('isEmail');
-      resetTable ? this.resetTable(false) : null;
-      this.getAllEnrollment(null, search)
+  getInstructors() {
+    this._student.advancedSearchGetInstructors().subscribe(res => {
+      console.log(res);
+      this.instructorsArray = res
+    },
+      err => {
+        console.log(err);
 
-      return
-    }
-    // this.showInvalidData = true
-    this._toast.showToast(this.translate.instant('Please enter a valid mobile number or email', 'warning'))
+      })
   }
-  searchChange(search) {
-    if (!search.value) {
-      this.disableScroll = false;
-      this.resetTable()
-    }
+  getCourses() {
+    this._student.advancedSearchGetCourses().subscribe(res => {
+      console.log(res);
+      this.coursesArray = res
+    }, err => {
+      console.log(err);
+
+    })
   }
-  clearSearch(search) {
-    search.value = "";
-    this.disableScroll = false;
-    this.resetTable()
+  onCourseChange(id) {
+    this._student.advancedSearchGetChaptersByCourse(id).subscribe(res => {
+      console.log(res);
+      this.chaptersArray = res
+    },
+      err => {
+        console.log(err);
+
+      })
   }
-  getAllEnrollment(mobile?, email?) {
+  initForms() {
+    this.searchForm = this._formBuilder.group({
+      mobile_no: [''],
+      email: [''],
+      first_name: [''],
+      last_name: [''],
+      instructor_id: [''],
+      course_id: [''],
+      chapter_id: [''],
+      level_id: [''],
+      enrollment_request_date_from: [''],
+      enrollment_request_date_to: [''],
+
+    });
+
+  }
+  getAllEnrollment(body = {}) {
     // console.log(this.reqPageNum, this.totalPages, this.lastPage);
     if (this.lastPage || this.loading) {
       return false;
     }
     this.loading = true
-    this._students.getEnrollmentStudents(this.reqPageNum, this.pageSize, mobile, email).subscribe(res => {
+    this._student.advancedSearchEnrollment(this.reqPageNum, this.pageSize, body).subscribe(res => {
       if (res['statusCodeValue'] === 204) {
         this.lastPage = true
         this.loading = false
@@ -100,10 +113,31 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
 
     })
   }
-
-  onScroll(search) {
-    search ? this.onSearchClick(search, null, false) : this.getAllEnrollment();
+  onSearchClick(searchForm) {
+    console.log(searchForm.value);
+    this.resetTable(false, false)
+    let body = searchForm.value
+    body.enrollment_request_date_from = new Date(searchForm.value.enrollment_request_date_from).getTime()
+    body.enrollment_request_date_to = new Date(searchForm.value.enrollment_request_date_to).getTime()
+    this.getAllEnrollment(body)
   }
+  searchChange(search) {
+    if (!search.value) {
+      this.disableScroll = false;
+      this.resetTable()
+    }
+  }
+  clearSearch(search) {
+    search.value = "";
+    this.disableScroll = false;
+    this.resetTable()
+  }
+
+  onScroll(searchForm?) {
+    this.getAllEnrollment(searchForm.value)
+    // search ? this.onSearchClick(search, null, false) : this.getAllEnrollment();
+  }
+
   onApproveClick(student, search) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
 
@@ -127,7 +161,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     });
   }
   approveStudentPayment(enrollment_id: any, search) {
-    this._students.approveStudentPayment(enrollment_id).subscribe(res => {
+    this._student.approveStudentPayment(enrollment_id).subscribe(res => {
       this._toast.showToast(this.translate.instant("Activated Successfully"), 'success');
       search ? this.onSearchClick(search) : this.resetTable();
       console.log(res);
@@ -160,7 +194,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     });
   }
   rejectEnrolment(enrollment_id: any, search) {
-    this._students.rejectEnrolment(enrollment_id).subscribe(res => {
+    this._student.rejectEnrolment(enrollment_id).subscribe(res => {
       this._toast.showToast(this.translate.instant("Deactivated Successfully"), 'success');
       search ? this.onSearchClick(search) : this.resetTable();
 
@@ -172,31 +206,32 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     })
   }
 
-  resetTable(getAllEnrollment = true) {
+
+  resetTable(getAllEnrollment = true, closeSearchSection = true) {
     this.totalPages = 0;
     this.totalStudents = 0
     this.enrollmentStudentsArray = [];
     this.reqPageNum = 0;
     this.lastPage = false;
+    closeSearchSection ? this.closeSearchSection(true) : null;
     getAllEnrollment ? this.getAllEnrollment() : null
   }
 
 
 
-  onExportClick(id,type){
-    this._export.exportElement(id,type)
+  onExportClick(id, type) {
+    this._export.exportElement(id, type)
   }
-// searchSeaction
-
-  Search(){
-    var verticalSideBar = document.querySelector(".searchSection");
-    verticalSideBar.classList.toggle("shoow");
-      }
-      openSearchSection(){
+  // searchSeaction
+  openSearchSection() {
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.toggle("shoow");
   }
-
+  closeSearchSection(clear = false) {
+    var verticalSideBar = document.querySelector(".searchSection");
+    verticalSideBar.classList.add("shoow");
+    clear ? this.searchForm.reset() : null;
+  }
 }
 
 

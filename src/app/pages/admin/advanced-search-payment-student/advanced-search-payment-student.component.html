@@ -1,149 +1,166 @@
 <div class="sa4d25">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-lg-12">
-              <h2 class="st_title"><i class="uil uil-money-withdrawal"></i>{{"Student Payment" |translate}}</h2>
-          </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="st_title"><i class="uil uil-money-withdrawal"></i>{{"Student Payment Advanced Search" |translate}}
+        </h2>
       </div>
-      <form class="row">
-          <!-- <div class="col-xl-3 col-md-4 col-sm-6 "> -->
-            <div class="col-6 col-sm-3 col-md-3">
-              <div class="ui search searchDiv focus mt-30">
-                  <div class="ui left icon input swdh11 swdh19">
-                      <!-- <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text"
+    </div>
+    <form class="row">
+      <!-- <div class="col-xl-3 col-md-4 col-sm-6 "> -->
+      <div class="col-6 col-sm-3 col-md-3">
+        <div class="ui search searchDiv focus mt-30">
+          <div class="ui left icon input swdh11 swdh19">
+            <!-- <input (change)="searchChange(search)" #search class="prompt srch_explore" type="text"
                           name="Search by Email or Phone Number" value="" id="id_Search" required=""
                           placeholder="{{'Search' | translate}}"> -->
-                          <div class="btn-group searchField"  dropdown (click)="openSearchSection()" [autoClose]="false" container="body">
-                            <button id="button-nested"  dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                                    aria-controls="dropdown-nested">
-                            {{"Search By"|translate}} <span class="caret"></span>
-                            </button>
-                            </div>
-                  </div>
-              </div>
+            <div class="btn-group searchField" dropdown (click)="openSearchSection()" [autoClose]="false"
+              container="body">
+              <button id="button-nested" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                aria-controls="dropdown-nested">
+                {{"Search By"|translate}} <span class="caret"></span>
+              </button>
+            </div>
           </div>
-          <!-- <div class="col-6 col-md-3 col-sm-3 ">
+        </div>
+      </div>
+      <!-- <div class="col-6 col-md-3 col-sm-3 ">
               <button #searchElm class="login-btn"
                   (click)="onSearchClick(search.value, $event)">{{"Search" |translate}}</button>
           </div> -->
-          <div class="col-6 col-md-3 col-sm-3 ">
-              <button class="login-btn"(click)="resetTable()" class="refreshbutt login-btn" >{{"Refresh table" |translate}}</button>
-          </div>
-      </form>
-      <div class="searchSection shoow" >
-        <form>
-          <div class="form-group 	col-sm-6">
-            <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter First Name">
-          </div>
-          <div class="form-group col-sm-6">
-            <input type="string" class="form-control" id="exampleInputName"  placeholder="Enter Last Name">
-          </div>
-          <div class="form-group col-sm-6">
-            <input type="phone" class="form-control" id="exampleInputnumber"  placeholder="Enter Mobile Number">
-          </div>
-          <div class="form-group col-sm-6">
-            <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter Email" aria-describedby="emailHelp">
-          </div>
-
-          <div class="form-group col-sm-6">
-            <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Instructor Name</option>
-              <option>Mohamed Ahmed</option>
-              <option>Tamer Essam</option>
-            </select>
-           </div>
-          </div>
-          <div class="form-group col-sm-6">
-            <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Course Name</option>
-              <option>Math</option>
-              <option>English</option>
-            </select>
-           </div>
-          </div>
-
-          <div class="form-group col-sm-6">
-            <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Chapter Name</option>
-              <option>algebra</option>
-              <option>science</option>
-            </select>
-           </div>
-          </div>
-
-          <div class="form-group col-sm-6">
-            <div class="SearchBox">
-            <select class="selectpicker" placeholder="Course Name">
-              <option disabled selected>Level</option>
-              <option>1st</option>
-              <option>2nd</option>
-            </select>
-           </div>
-          </div>
-          <div class="form-group range">
-            <input type="text" placeholder="Date range"  class="form-control"  bsDaterangepicker>
-
-          </div>
-          <div class="formButtn">
-            <button type="submit" (click)="onSearchClick(searchForm)" class="btn btn-primary">{{"Search"|translate}}</button>
-            <button type="submit" (click)="closeSearchSection()" class="btn btn-primary">{{"cancel"|translate}}</button>
-
-            <!-- <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button> -->
-          </div>
-        </form>
+      <div class="col-6 col-md-3 col-sm-3 ">
+        <button class="login-btn" (click)="resetTable()"
+          class="refreshbutt login-btn">{{"Refresh table" |translate}}</button>
       </div>
-      <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll(search.value)"
-          [infiniteScrollDisabled]="lastPage || disableScroll">
-          <div class="col-md-12">
-              <div class="table-responsive mt-30">
-                  <p>All available result {{totalStudents}}, showing result {{enrollmentStudentsArray.length}}
-                      <a
-                      *ngIf="enrollmentStudentsArray.length"
-                          style="color: blue;"
-                          (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}}({{enrollmentStudentsArray.length}})</a>
-                  </p>
-                  <table class="table ucp-table" id="studentsTablePayments">
-                      <thead class="thead-s">
-                          <tr>
-                              <th class="text-center" scope="col"> {{"No." |translate}}</th>
-                              <th>{{"Student Name" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Phone No" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Email" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Course Name" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Chapter Name" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Instructor Name" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Price" |translate}}</th>
-                              <th class="text-center" scope="col">{{"Action" |translate}}</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let student of enrollmentStudentsArray; let index = index">
-                              <td class="text-center">{{index + 1}}</td>
-                              <td>{{student.first_name}} {{student.last_name}}</td>
-                              <td class="text-center">{{student.mobile_no}}</td>
-                              <td class="text-center">{{student.email}}</td>
-                              <td class="text-center">{{student.course_title}}</td>
-                              <td class="text-center">{{student.chapter_title}}</td>
-                              <td class="text-center">{{student.instrcutor_name}}</td>
-                              <td class="text-center">{{student.chapter_fee}}</td>
-                              <td class="text-center">
-                                  <a *ngIf="!student.is_active_subscription"
-                                      (click)="onApproveClick(student,search.value)" title="Approved"
-                                      class="accept-btn mx-2"><i class="uil uil-check"></i>
-                                      {{"Approve" |translate}}</a>
-                                  <a *ngIf="student.is_active_subscription"
-                                      (click)="onRejectClick(student,search.value)" title="Reject"
-                                      class="reject-btn  mx-2"><i class="uil uil-times"></i>
-                                      {{"Reject" |translate}}</a>
-                              </td>
-                          </tr>
+    </form>
+    <div class="searchSection shoow">
+      <form [formGroup]="searchForm">
+        <div class="form-group 	col-sm-6">
+          <input type="string" class="form-control" formControlName="first_name"
+            placeholder="{{'Enter First Name' | translate}}">
+        </div>
+        <div class="form-group col-sm-6">
+          <input type="string" class="form-control" formControlName="last_name"
+            placeholder="{{'Enter Last Name' | translate}}">
+        </div>
+        <div class="form-group col-sm-6">
+          <input type="phone" class="form-control" formControlName="mobile_no"
+            placeholder="{{'Enter Mobile Number' | translate}}">
+        </div>
+        <div class="form-group col-sm-6">
+          <input type="email" class="form-control" formControlName="email" placeholder="{{'Enter Email' | translate}}"
+            aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="SearchBox">
+            <select (change)="onCourseChange(searchForm.value.course_id)" formControlName="course_id" class="selectpicker" placeholder="Course Name">
+              <option disabled value=''>{{'Course Name' | translate}}</option>
+              <option *ngFor="let course of coursesArray" value="{{course.id}}">{{course.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="SearchBox">
+            <select formControlName="instructor_id" class="selectpicker" placeholder="Course Name">
+              <option disabled value="">{{"Instructor Name" | translate}}</option>
+              <option *ngFor="let instructor of instructorsArray" value="{{instructor.id}}">{{instructor.name}}</option>
+
+            </select>
+          </div>
+        </div>
+      
+
+        <div class="form-group col-sm-6">
+          <div class="SearchBox">
+            <select formControlName="chapter_id" class="selectpicker" placeholder="Course Name">
+              <option disabled value="">{{'Chapter Name' | translate}}</option>
+              <option *ngFor="let chapter of chaptersArray" value="{{chapter.id}}">{{chapter.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="SearchBox">
+            <select formControlName="level_id" class="selectpicker" placeholder="Course Name">
+              <option disabled selected>{{'Level' | translate}}</option>
+              <option value=1>{{'1st' | translate}}</option>
+              <option value=2>{{'2nd' | translate}}</option>
+              <option value=3>{{'3rd' | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <div class="SearchBox">
+            <input type="text" placeholder="{{'Date from' | translate}}" class="form-control" bsDatepicker
+              [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" formControlName="enrollment_request_date_from">
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <div class="SearchBox">
+            <input type="text" placeholder="{{'Date to' | translate}}" class="form-control" bsDatepicker
+              [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" formControlName="enrollment_request_date_to">
+          </div>
+        </div>
+
+        <div class="formButtn">
+          <!-- searchForm -->
+          <button type="submit" (click)="onSearchClick(searchForm)" class="btn btn-primary">{{"Search"|translate}}</button>
+          <button type="submit" (click)="closeSearchSection()" class="btn btn-primary">{{"cancel"|translate}}</button>
+
+          <!-- <button type="submit" (click)="Search()" class="btn btn-primary">{{"Search"|translate}}</button> -->
+        </div>
+      </form>
+    </div>
+    <!-- search.value -->
+    <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+      [infiniteScrollDisabled]="lastPage || disableScroll">
+      <div class="col-md-12">
+        <div class="table-responsive mt-30">
+          <p>All available result {{totalStudents}}, showing result {{enrollmentStudentsArray.length}}
+            <a *ngIf="enrollmentStudentsArray.length" style="color: blue;"
+              (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}}({{enrollmentStudentsArray.length}})</a>
+          </p>
+          <table class="table ucp-table" id="studentsTablePayments">
+            <thead class="thead-s">
+              <tr>
+                <th class="text-center" scope="col"> {{"No." |translate}}</th>
+                <th>{{"Student Name" |translate}}</th>
+                <th class="text-center" scope="col">{{"Phone No" |translate}}</th>
+                <th class="text-center" scope="col">{{"Email" |translate}}</th>
+                <th class="text-center" scope="col">{{"Course Name" |translate}}</th>
+                <th class="text-center" scope="col">{{"Chapter Name" |translate}}</th>
+                <th class="text-center" scope="col">{{"Instructor Name" |translate}}</th>
+                <th class="text-center" scope="col">{{"Price" |translate}}</th>
+                <th class="text-center" scope="col">{{"Action" |translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of enrollmentStudentsArray; let index = index">
+                <td class="text-center">{{index + 1}}</td>
+                <td>{{student.first_name}} {{student.last_name}}</td>
+                <td class="text-center">{{student.mobile_no}}</td>
+                <td class="text-center">{{student.email}}</td>
+                <td class="text-center">{{student.course_title}}</td>
+                <td class="text-center">{{student.chapter_title}}</td>
+                <td class="text-center">{{student.instrcutor_name}}</td>
+                <td class="text-center">{{student.chapter_fee}}</td>
+                <td class="text-center">
+                  <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student,'')" title="Approved"
+                    class="accept-btn mx-2"><i class="uil uil-check"></i>
+                    {{"Approve" |translate}}</a>
+                  <!-- search.value -->
+
+                  <a *ngIf="student.is_active_subscription" (click)="onRejectClick(student,'')" title="Reject"
+                    class="reject-btn  mx-2"><i class="uil uil-times"></i>
+                    {{"Reject" |translate}}</a>
+                </td>
+              </tr>
 
 
 
-                          <!-- <tr>
+              <!-- <tr>
                               <td class="text-center">2</td>
                               <td>Student Name Student Name</td>
                               <td class="text-center">010992829729</td>
@@ -169,23 +186,25 @@
                                   <a href="#" title="Reject" class="reject-btn  mx-2"><i class="uil uil-times"></i> Reject</a>
                               </td>
                           </tr> -->
-                      </tbody>
-                      <button *ngIf="enrollmentStudentsArray.length" class="float accept-btn mx-2" (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}} {{enrollmentStudentsArray.length}} </button>
+            </tbody>
+            <button *ngIf="enrollmentStudentsArray.length" class="float accept-btn mx-2"
+              (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}}
+              {{enrollmentStudentsArray.length}} </button>
 
-                  </table>
-                  <p *ngIf="!enrollmentStudentsArray.length && !loading">{{"No result found" | translate}}</p>
-                  <div *ngIf="loading" class="col-md-12">
-                      <div class="main-loader mt-20">
-                          <div class="spinner">
-                              <div class="bounce1"></div>
-                              <div class="bounce2"></div>
-                              <div class="bounce3"></div>
-                          </div>
-                      </div>
-                  </div>
+          </table>
+          <p *ngIf="!enrollmentStudentsArray.length && !loading">{{"No result found" | translate}}</p>
+          <div *ngIf="loading" class="col-md-12">
+            <div class="main-loader mt-20">
+              <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
               </div>
-
+            </div>
           </div>
+        </div>
+
       </div>
+    </div>
   </div>
 </div>
