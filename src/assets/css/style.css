@@ -8368,6 +8368,9 @@ input[type=text] {
 
 /* Medium devices (desktops)
 ==========================*/
+@media (max-width: 992px) {
+
+}
 @media (min-width: 992px) {
 
 	body {
