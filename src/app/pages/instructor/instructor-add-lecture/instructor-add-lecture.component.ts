@@ -23,7 +23,7 @@ export class InstructorAddLectureComponent implements OnInit {
   selectedVideo: any;
   uploading: boolean = false;
   uploadingPercentage = 0;
-  instructorCourses = [];
+  instructorCourses :any
   createLecture: any;
   lectures: any;
   editMode: boolean;
@@ -41,14 +41,14 @@ export class InstructorAddLectureComponent implements OnInit {
   }
   getCourses() {
     this.loading = true;
-    this._courseService.getCourses(0,8).subscribe(res => {
+    this._courseService.getCoursesByInstructor().subscribe(res => {
       this.loading = false
-      console.log(res['body']);
-      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
+      this.instructorCourses = res
+      console.log(res);
+      // res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
     }, err => {
       this.loading = false
       console.log(err);
-
 
     })
   }
