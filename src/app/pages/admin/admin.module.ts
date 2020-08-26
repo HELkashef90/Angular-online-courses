@@ -40,7 +40,6 @@ import { AdvancedSearchPaymentStudentComponent } from './advanced-search-payment
     NgxLoadingModule,
     TranslateModule,
     ToastrModule,
-    InfiniteScrollModule,
     NgxConfirmBoxModule,
     ModalModule,
     SharedModule

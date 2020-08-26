@@ -13,7 +13,7 @@ export const environment = {
   _createChapter: `${serverUrl}course-chapter/create`,
   _getChaptersByCourseId: `${serverUrl}course-chapter/by-course/`,
   _createLecture: `${serverUrl}course-chapter-content/create`,
-  _getCourses: `${serverUrl}course/instructor`,
+  _getCourses: `${serverUrl}course/instructor/`,
   _logOut: `${serverUrl}auth/logout`,
   _getChaptersByInstructor: `${serverUrl}course-chapter/by-instructor`,
   _getLecturesByInstructor: `${serverUrl}course-chapter-content/by-instructor`,
@@ -54,7 +54,8 @@ export const environment = {
   _advancedSearchEnrollment: `${serverUrl}enrollment-request/search`,
   _advancedSearchGetCourses : `${serverUrl}course/all/lookup`,
   _advancedSearchGetInstructors : `${serverUrl}instructor/all/lookup`,
-  _advancedSearchGetChaptersByCourse : `${serverUrl}course-chapter/all/lookup/`
+  _advancedSearchGetChaptersByCourse : `${serverUrl}course-chapter/all/lookup/`,
+  _getCoursesByInstructor: `${serverUrl}course/all/lookup/by-instructor`
 
 }
 /*

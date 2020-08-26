@@ -41,7 +41,7 @@ export class InstructorAddLectureComponent implements OnInit {
   }
   getCourses() {
     this.loading = true;
-    this._courseService.getCourses().subscribe(res => {
+    this._courseService.getCourses(0,8).subscribe(res => {
       this.loading = false
       console.log(res['body']);
       res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;

@@ -16,6 +16,13 @@ export class InstructorCoursesComponent implements OnInit {
   instructorCourses = [];
   modalRef: BsModalRef;
 
+  totalPages = 0;
+  totalCourses: any;
+  reqPageNum = 0;
+  pageSize = 8
+  lastPage = false;
+  disableScroll: Boolean;
+
   constructor(private _courseService: CreateCourseService,
     private router: Router,
     private _toastService: ToastService,
@@ -26,18 +33,48 @@ export class InstructorCoursesComponent implements OnInit {
     this.getCourses()
   }
   getCourses() {
-    this.loading = true;
-    this._courseService.getCourses().subscribe(res => {
-      this.loading = false
-      console.log(res['body']);
-      res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
+    // console.log(this.reqPageNum, this.totalPages, this.lastPage);
+    if (this.lastPage || this.loading) {
+      return false;
+    }
+    this.loading = true
+    this._courseService.getCourses(this.reqPageNum, this.pageSize).subscribe(res => {
+      if (res['statusCodeValue'] === 204) {
+        this.lastPage = true
+        this.loading = false
+        console.log(this.instructorCourses);
+        return
+      } else {
+        console.log(res);
+        this.reqPageNum += 1;
+        this.totalPages = res['body']['totalPages']
+        this.totalCourses = res['body']['totalElements']
+        this.instructorCourses.push(...res['body']['content'])
+        this.loading = false
+        this.lastPage = res['body']['last']
+      }
+
+      // console.log(this.totalApprovedCourses);
+      // console.log(this.approvedCoursesArray);
     }, err => {
       this.loading = false
       console.log(err);
 
     })
-  }
+    // this.loading = true;
+    // this._courseService.getCourses().subscribe(res => {
+    //   this.loading = false
+    //   console.log(res['body']);
+    //   res['statusCodeValue'] === 200 ? this.instructorCourses = res['body']['content'] : null;
+    // }, err => {
+    //   this.loading = false
+    //   console.log(err);
 
+    // })
+  }
+  onScroll() {
+    this.getCourses()
+  }
   ocDeleteClick(course) {
     if (confirm('Are you Sure?')) { 
       this._courseService.deleteCourse(course.course_id).subscribe(res => {

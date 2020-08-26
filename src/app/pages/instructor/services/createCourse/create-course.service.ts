@@ -16,8 +16,8 @@ export class CreateCourseService {
       observe: 'events'
     })
   }
-  getCourses() {
-    return this.httpClient.get(environment._getCourses)
+  getCourses(page, size) {
+    return this.httpClient.get(environment._getCourses  + '?page=' + page + '&size=' + size)
   }
 
   deleteCourse(id: any) {
@@ -34,5 +34,9 @@ export class CreateCourseService {
   }
   getChaptersByCourseId(courseId: string) {
     return this.httpClient.get(environment._getCourseChaptersByCourseIdStudent + courseId)
+  }
+
+  getCoursesByInstructor(){
+    return this.httpClient.get(environment._getCoursesByInstructor)
   }
 }
