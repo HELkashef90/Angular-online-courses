@@ -55,8 +55,8 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select (change)="onCourseChange(searchForm.value.course_id)" formControlName="course_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value=''>{{'Course Name' | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
+              <option disabled value=0 >{{'Course Name' | translate}}</option>
+              <option  value=0 >{{'---All---' | translate}}</option>
               <option *ngFor="let course of coursesArray" value="{{course.id}}">{{course.name}}</option>
             </select>
           </div>
@@ -65,8 +65,8 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select formControlName="instructor_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value="">{{"Instructor Name" | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
+              <option disabled value=0>{{"Instructor Name" | translate}}</option>
+              <option  value=0 >{{'---All---' | translate}}</option>
               <option *ngFor="let instructor of instructorsArray" value="{{instructor.id}}">{{instructor.name}}</option>
 
             </select>
@@ -77,8 +77,8 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select formControlName="chapter_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value="">{{'Chapter Name' | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
+              <option disabled value=0>{{'Chapter Name' | translate}}</option>
+              <option  value=0 >{{'---All---' | translate}}</option>
               <option *ngFor="let chapter of chaptersArray" value="{{chapter.id}}">{{chapter.name}}</option>
             </select>
           </div>
@@ -87,8 +87,8 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select formControlName="level_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value="">{{'Level' | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
+              <option disabled value=0>{{'Level' | translate}}</option>
+              <option  value=0 >{{'---All---' | translate}}</option>
               <option value=1>{{'1st' | translate}}</option>
               <option value=2>{{'2nd' | translate}}</option>
               <option value=3>{{'3rd' | translate}}</option>
