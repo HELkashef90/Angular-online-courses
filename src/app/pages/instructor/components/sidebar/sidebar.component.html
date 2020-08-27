@@ -185,7 +185,7 @@
 <!-- Header End -->
 <!-- Left Sidebar Start -->
 <!-- Left Sidebar Start -->
-<nav class="vertical_nav vertical_nav__minify">
+<nav class=" vertical_nav vertical_nav__minify">
     <div class="left_section menu_left" id="js-menu">
         <div class="left_section">
             <ul>
@@ -203,13 +203,13 @@
                     </a>
                 </li>
                 <li class="menu--item  menu--item__has_sub_menu" >
-                    <input type="checkbox" id="menu-collapse" class="menu-collapse">
-                    <label class="menu--link" for="menu-collapse">
+                    <input type="checkbox" id="menu-collapses" class="menu-collapse menu-collapses">
+                    <label class="menu--link" for="menu-collapses">
                         <i class="uil uil-plus-circle menu--icon"></i>
                         <span class="menu--label">{{'Add New Course' | translate}}</span>
                     </label>
 
-                    <ul class="sub_menu">
+                    <ul class="sub_menu show">
                         <li class="sub_menu--item" (click)="close()">
                             <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
                                 <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
@@ -231,5 +231,52 @@
             </ul>
         </div>
     </div>
+</nav>
+<nav id="mySidebar"  class="  vertical_nav vertical_nav__minify">
+  <div class="left_section menu_left" id="js-menu">
+      <div class="left_section">
+          <ul>
+              <li class="menu--item" >
+                  <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true"
+                      class="menu--link " title="Dashboard">
+                      <i class='uil uil-home-alt menu--icon'></i>
+                      <span class="menu--label">{{'Dashboard' | translate}}</span>
+                  </a>
+              </li>
+              <li class="menu--item" >
+                  <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
+                      <i class="uil uil-book-alt menu--icon"></i>
+                      <span class="menu--label">{{'Courses' | translate}}</span>
+                  </a>
+              </li>
+              <li class="menu--item  menu--item__has_sub_menu" >
+                  <input type="checkbox" id="menu-collapse" class="menu-collapse">
+                  <label class="menu--link" for="menu-collapse" >
+                      <i class="uil uil-plus-circle menu--icon"></i>
+                      <span class="menu--label">{{'Add New Course' | translate}}</span>
+                  </label>
+
+                  <ul class="sub_menu show">
+                      <li class="sub_menu--item">
+                          <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
+                      </li>
+                      <li class="sub_menu--item">
+                          <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-swatchbook"></i>
+                              {{'Add
+                              Chapter' | translate}}</a>
+                      </li>
+                      <li class="sub_menu--item">
+                          <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-file-plus-alt"></i>
+                              {{'Add
+                              Lecture' | translate}}</a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </div>
 </nav>
 <!-- Left Sidebar End -->

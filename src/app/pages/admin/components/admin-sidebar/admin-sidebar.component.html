@@ -142,7 +142,7 @@
 </header>
 <!-- Header End -->
 <!-- Left Sidebar Start -->
-<nav class="vertical_nav vertical_nav__minify">
+<nav id="mySidebar" class="vertical_nav vertical_nav__minify">
     <div class="left_section menu_left" id="js-menu" >
         <div class="left_section">
             <ul>
@@ -171,6 +171,44 @@
                     </a>
                 </li>
                 <li class="menu--item" (click)="close()">
+                    <a [routerLink]="['advancedSearch']" routerLinkActive="active"  class="menu--link" title="restricted user">
+                        <i class="uil uil-money-withdrawal menu--icon"></i>
+                        <span class="menu--label">{{"Advanced Search" | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="vertical_nav vertical_nav__minify">
+    <div class="left_section menu_left" id="js-menu" >
+        <div class="left_section">
+            <ul>
+                <li class="menu--item">
+                    <a [routerLink]="['instructors']" routerLinkActive="active"  class="menu--link " title="Instructors Request List">
+                        <i class="uil uil-user-check menu--icon"></i>
+                        <span class="menu--label">{{"Instructors Request List" | translate}}</span>
+                    </a>
+                </li>
+                <li class="menu--item" >
+                    <a [routerLink]="['students']" routerLinkActive="active"  class="menu--link " title="Student Payment">
+                        <i class="uil uil-money-withdrawal menu--icon"></i>
+                        <span class="menu--label">{{"Student Payment" | translate}}</span>
+                    </a>
+                </li>
+                <li class="menu--item">
+                    <a [routerLink]="['courses']" routerLinkActive="active"  class="menu--link" title="Student Payment">
+                        <i class="uil uil-check-circle menu--icon"></i>
+                        <span class="menu--label">{{"Course Confirmation" | translate}}</span>
+                    </a>
+                </li>
+                <li class="menu--item" >
+                    <a [routerLink]="['restricted']" routerLinkActive="active"  class="menu--link" title="restricted user">
+                        <i class="restricted menu--icon"></i>
+                        <span class="menu--label">{{"Restricted Users" | translate}}</span>
+                    </a>
+                </li>
+                <li class="menu--item" >
                     <a [routerLink]="['advancedSearch']" routerLinkActive="active"  class="menu--link" title="restricted user">
                         <i class="uil uil-money-withdrawal menu--icon"></i>
                         <span class="menu--label">{{"Advanced Search" | translate}}</span>

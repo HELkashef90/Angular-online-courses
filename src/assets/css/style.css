@@ -16903,6 +16903,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 @media (max-width: 576px){
   .searchSection{
@@ -16912,62 +16916,17 @@ input:checked + .slider:before {
   .searchSection form .formButtn button {
     width: 25% !important;}
 }
-
-
-@media (min-width: 750px){
-  .rtl .course-content.wrapper.wrapper__minify{
-    margin-right: 0 !important;
-    margin-left: 400px !important;
-}
-  .rtl .course-content.wrapper{
-    margin-right: 0 !important;
-    margin-left: 0px !important;
-}
-  .course-content.wrapper.wrapper__minify{
-    margin-left: 0 !important;
-    margin-right:400px !important;
-}
-  .course-content.wrapper{
-    margin-left: 0 !important;
-    margin-right:0px !important;
-}
-.rtl .chapterListToggle.minify {
-  right: auto ;
-  left: 400px;
-}
-.rtl .chapterListToggle {
-  right: auto ;
-  left: 0px;
-}
-.chapter-list.vertical_nav {
-  position: fixed;
-  /* left: -240px; */
-  top: 0px !important;
-  width: 0px;
-  }
-  .chapter-list.vertical_nav.vertical_nav__minify{
-    position: fixed;
-    /* left: -240px; */
-    top: 0px !important;
-    width: 400px;
-  }
- .chapterListToggle.minify {
-    left: auto;
-    right: 400px;
-}
- .chapterListToggle {
-    left: auto;
-    right: 0px;
+select{
+  width: 10% !important;
+  padding: 0px !important;
 }
 
+@media (min-width: 992px){
+/* .show{
+  display: block;
+} */
 
-  .vertical_nav__minify .menu--item__has_sub_menu .menu--link:after {
-    content: "\276F";
-}
-
-
-
-  .wrapper.wrapper__minify{
+  .wrapper.wrapper__minify,.wrapper{
     margin-right: 0px !important;
     margin-left: 240px !important;
 }
@@ -16981,7 +16940,7 @@ input:checked + .slider:before {
     margin-right: 240px !important;
 }
 .vertical_nav {
-  position: absolute;
+  position: fixed;
   /* left: -240px ; */
   top: 60px;
   bottom: 0;
@@ -17007,24 +16966,88 @@ input:checked + .slider:before {
   position: initial;
   background: transparent;
 }
-.vertical_nav .menu--label {
+.vertical_nav__minify  .menu--label {
   display: none;
   position: initial;
   background: transparent;
 }
-.vertical_nav .menu-collapse:checked ~ .sub_menu {
+.vertical_nav__minify  .menu-collapse:checked ~ .sub_menu {
   background: #ffecec;
-  display: block;
+  display: block !important;
 }
-.vertical_nav .sub_menu {
+
+.vertical_nav__minify .sub_menu {
   position: initial;
   width: 100%;
- }
+  background: #ffecec;
 
+}
+.menu-collapse:not(:checked) ~ .sub_menu {
+  display: none;
+  /* background: #ffecec; */
+}
  /* .rtl .chapter-list.vertical_nav {
   right: 0;
   left: auto;
 } */
+
+ .rtl .course-content.wrapper.wrapper__minify{
+  margin-right: 0 !important;
+  margin-left: 400px !important;
+}
+ .rtl .course-content.wrapper{
+  margin-right: 0 !important;
+  margin-left: 0px !important;
+}
+ .course-content.wrapper.wrapper__minify{
+  margin-left: 0 !important;
+  margin-right:400px !important;
+}
+
+.course-content.wrapper{
+  margin-left: 0 !important;
+  margin-right:0px !important;
+}
+
+ .chapterListToggle {
+right: auto ;
+left: 0px;
+}
+.rtl .chapterListToggle {
+right: auto ;
+left: 0px;
+}
+
+.rtl .chapter-list.vertical_nav {
+left: 0px;
+}
+.chapter-list.vertical_nav {
+position: fixed;
+left: auto;
+top: 0px !important;
+width: 0px;
+
+}
+.chapter-list.vertical_nav.vertical_nav__minify{
+  position: fixed;
+  /* left: -240px; */
+  top: 0px !important;
+  width: 400px;
+}
+/* .chapterListToggle.minify {
+  left: auto;
+  right: 400px;
+} */
+.chapterListToggle {
+  left: auto;
+  right: 0px;
+}
+
+
+
+.vertical_nav__minify .menu--item__has_sub_menu .menu--link:after {
+  content: "\276F";
+}
 
 
 
