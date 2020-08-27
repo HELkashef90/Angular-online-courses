@@ -110,7 +110,7 @@ export class RestrictedUsersComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("unblocked Successfully"), 'success');
 
-      this.resetTable()
+      this.resetTable(true,false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -145,7 +145,7 @@ export class RestrictedUsersComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("blocked Successfully"), 'success');
 
-      this.resetTable()
+      this.resetTable(true,false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -162,7 +162,7 @@ export class RestrictedUsersComponent implements OnInit {
     this.reqPageNum = 0;
     this.lastPage = false;
    closeSearchSection ? this.closeSearchSection(true) : null;
-    getAllEnrollment ? this.getRestrictedUsers() : null
+    getAllEnrollment ? this.getRestrictedUsers(this.searchForm.value) : null
   }
 
 
