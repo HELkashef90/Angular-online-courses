@@ -196,6 +196,7 @@
               {{enrollmentStudentsArray.length}} </button>
 
           </table>
+          <a *ngIf="enrollmentStudentsArray.length < totalStudents" (click)="onScroll(searchForm)" style="color: blue;">{{"load more..." | translate}}</a>
           <p *ngIf="!enrollmentStudentsArray.length && !loading">{{"No result found" | translate}}</p>
           <div *ngIf="loading" class="col-md-12">
             <div class="main-loader mt-20">
