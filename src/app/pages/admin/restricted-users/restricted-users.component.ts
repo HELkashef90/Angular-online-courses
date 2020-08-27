@@ -27,9 +27,9 @@ export class RestrictedUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRestrictedUsers()
-    this.initForms()
+    this.initForm()
   }
-  initForms() {
+  initForm() {
     this.searchForm = this._formBuilder.group({
       mobile_no: [''],
       email: [''],
@@ -170,7 +170,7 @@ export class RestrictedUsersComponent implements OnInit {
 closeSearchSection(clear = false){
   var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
-    clear ? this.searchForm.reset() : null;
+    clear ? this.initForm()  : null;
 }
 openSearchSection(){
   var verticalSideBar = document.querySelector(".searchSection");

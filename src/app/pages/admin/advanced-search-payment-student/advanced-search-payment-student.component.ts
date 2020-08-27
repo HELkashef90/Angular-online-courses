@@ -34,7 +34,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllEnrollment()
-    this.initForms()
+    this.initForm()
     this.getCourses()
     this.getInstructors()
   }
@@ -70,7 +70,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     }
 
   }
-  initForms() {
+  initForm() {
     this.searchForm = this._formBuilder.group({
       mobile_no: [''],
       email: [''],
@@ -236,7 +236,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
   closeSearchSection(clear = false) {
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
-    clear ? this.searchForm.reset() : null;
+    clear ? this.initForm() : null;
   }
 }
 
