@@ -54,13 +54,15 @@ export class UserSidebarComponent implements OnInit {
     var footer = document.querySelector(".footer");
     footer.classList.toggle("wrapper__minify");
   }
-  // if(w)
-  close(){
+
+
+close(){
     var verticalSideBar = document.querySelector(".vertical_nav");
     verticalSideBar.classList.toggle("vertical_nav__minify");
     var wrapper = document.querySelector(".wrapper");
     wrapper.classList.toggle("wrapper__minify");
   }
+// }
   // openMenu(){
     // this.displayBlock=true;
     // this.displayLogOtDiv=false;
@@ -71,4 +73,5 @@ export class UserSidebarComponent implements OnInit {
     // this.displayBlock=false;
 
   // }
+
 }

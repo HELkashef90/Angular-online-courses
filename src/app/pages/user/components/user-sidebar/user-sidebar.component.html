@@ -152,19 +152,19 @@
   <div class="left_section menu_left" id="js-menu">
       <div class="  left_section">
           <ul>
-              <li class="menu--item" (click)="close()">
+              <li class="menu--item" onclick="close()">
                   <a [routerLink]="['dashboard']" routerLinkActive="active" data-toggle="collapse" class="menu--link" title="Dashboard">
                       <i class='uil uil-home-alt menu--icon'></i>
                       <span class="menu--label">{{"Dashboard" | translate}}</span>
                   </a>
               </li>
-              <li class="menu--item" (click)="close()">
+              <li class="menu--item" onclick="close()">
                   <a [routerLink]="['courses']" routerLinkActive="active" data-toggle="collapse"  class="menu--link" title="Dashboard">
                       <i class="uil uil-book-alt menu--icon"></i>
                       <span class="menu--label">{{"All Courses" | translate}}</span>
                   </a>
               </li>
-              <li class="menu--item" (click)="close()">
+              <li class="menu--item"onclick="close()">
                   <a [routerLink]="['myCourses']" routerLinkActive="active"  class="menu--link" data-toggle="collapse" title="My Courses">
                       <i class="uil uil-heart-alt menu--icon"></i>
                       <span class="menu--label">{{"My Courses" | translate}}</span>

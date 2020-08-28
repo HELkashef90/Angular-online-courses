@@ -16899,6 +16899,10 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  -webkit-border-radius: 34px;
+  -moz-border-radius: 34px;
+  -ms-border-radius: 34px;
+  -o-border-radius: 34px;
 }
 
 .slider.round:before {
@@ -16934,8 +16938,20 @@ select{
     margin-right: 0px !important;
     margin-left: 0px !important;
 } */
+.rtl .vertical_nav__minify {
+  right: 0px !important;
+  left: auto !important;
+}
+/* .rtl .vertical_nav {
+  right: -240px !important;
+  left: auto !important;
+} */
 
-  .rtl .wrapper {
+/* .rtl .wrapper{
+  margin-left: 0px !important;
+    margin-right: 0px !important;
+} */
+  .rtl .wrapper{
     margin-left: 0px !important;
     margin-right: 240px !important;
 }
@@ -17052,3 +17068,77 @@ width: 0px;
 
 
 }
+.activeVideo{
+  background: #ffecec;
+    color: #c8302f;
+}
+.rtl .tab-label .title i{
+  float: right !important;
+}
+.rtl .tab-label span{
+  margin-left: 20px;
+  margin-right:0px ;
+}
+.rtl .nav-item .nav-link {
+  margin-right: 0px !important;
+}
+.navbar-nav.ng-star-inserted .dropdown{
+  padding-right:1rem !important ;
+  padding-left:1rem !important;
+}
+.navbar-nav .nav-item:first-child .nav-link{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+ .navbar-nav .nav-item:last-child{
+  padding: 0px 1rem;
+}
+.rtl .tab-label::after{
+  left: 15px !important;
+  right:0px !important;
+  position: relative !important;
+  height: 1.3em !important;
+}
+.rtl .tab-label{
+  padding: 15px 5px 15px 30px !important;
+
+}
+@media (max-width: 375px){
+  .rtl .btn_adcart {
+    height: 45px !important;}
+}
+@media (max-width: 330px){
+  ._df7852,.rtl ._df7852 {
+    font-size: 14px;
+}
+.rtl .tab-label span.title {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.rtl .btn_adcart{
+  font-size: 11px;
+}
+.rtl .tab-label span:last-child{
+  margin-left: 10px;
+  margin-right: 37px !important;
+}
+/* .tab-label span{
+overflow: hidden;
+scroll
+} */
+.tab-label {
+  display: block;}
+  .tab{
+    overflow:auto !important;
+  }
+}
+/* @media (max-width: 330px){
+  .rtl header.db-header {
+    right: auto;
+    left: 23px;
+}
+.rtl .vertical_nav {
+  right: auto;
+  left: 23px;
+}
+} */
