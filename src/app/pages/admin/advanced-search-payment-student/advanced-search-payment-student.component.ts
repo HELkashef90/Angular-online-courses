@@ -34,7 +34,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllEnrollment()
-    this.initForms()
+    this.initForm()
     this.getCourses()
     this.getInstructors()
   }
@@ -70,16 +70,16 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     }
 
   }
-  initForms() {
+  initForm() {
     this.searchForm = this._formBuilder.group({
       mobile_no: [''],
       email: [''],
       first_name: [''],
       last_name: [''],
-      instructor_id: [''],
-      course_id: [''],
-      chapter_id: [''],
-      level_id: [''],
+      instructor_id: [0],
+      course_id: [0],
+      chapter_id: [0],
+      level_id: [0],
       enrollment_request_date_from: [''],
       enrollment_request_date_to: [''],
 
@@ -169,7 +169,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
   approveStudentPayment(enrollment_id: any, search) {
     this._student.approveStudentPayment(enrollment_id).subscribe(res => {
       this._toast.showToast(this.translate.instant("Activated Successfully"), 'success');
-      search ? this.onSearchClick(search) : this.resetTable();
+      this.resetTable(true,false)
       console.log(res);
 
     }, err => {
@@ -202,7 +202,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
   rejectEnrolment(enrollment_id: any, search) {
     this._student.rejectEnrolment(enrollment_id).subscribe(res => {
       this._toast.showToast(this.translate.instant("Deactivated Successfully"), 'success');
-      search ? this.onSearchClick(search) : this.resetTable();
+      this.resetTable(true,false)
 
       console.log(res);
 
@@ -220,7 +220,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
     this.reqPageNum = 0;
     this.lastPage = false;
     closeSearchSection ? this.closeSearchSection(true) : null;
-    getAllEnrollment ? this.getAllEnrollment() : null
+    getAllEnrollment ? this.getAllEnrollment(this.searchForm.value) : null
   }
 
 
@@ -236,7 +236,7 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
   closeSearchSection(clear = false) {
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
-    clear ? this.searchForm.reset() : null;
+    clear ? this.initForm() : null;
   }
 }
 

@@ -55,9 +55,9 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select (change)="onCourseChange(searchForm.value.course_id)" formControlName="course_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value=''>{{'Course Name' | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
-              <option *ngFor="let course of coursesArray" value="{{course.id}}">{{course.name}}</option>
+              <option disabled [ngValue]=0 >{{'Course Name' | translate}}</option>
+              <option  [ngValue]=0 >{{'---All---' | translate}}</option>
+              <option *ngFor="let course of coursesArray"  [ngValue]="course.id">{{course.name}}</option>
             </select>
           </div>
         </div>
@@ -65,9 +65,9 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select formControlName="instructor_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value="">{{"Instructor Name" | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
-              <option *ngFor="let instructor of instructorsArray" value="{{instructor.id}}">{{instructor.name}}</option>
+              <option disabled [ngValue]=0>{{"Instructor Name" | translate}}</option>
+              <option  [ngValue]=0 >{{'---All---' | translate}}</option>
+              <option *ngFor="let instructor of instructorsArray" [ngValue]="instructor.id">{{instructor.name}}</option>
 
             </select>
           </div>
@@ -77,9 +77,9 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select formControlName="chapter_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value="">{{'Chapter Name' | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
-              <option *ngFor="let chapter of chaptersArray" value="{{chapter.id}}">{{chapter.name}}</option>
+              <option disabled [ngValue]=0>{{'Chapter Name' | translate}}</option>
+              <option  [ngValue]=0 >{{'---All---' | translate}}</option>
+              <option *ngFor="let chapter of chaptersArray" [ngValue]="chapter.id">{{chapter.name}}</option>
             </select>
           </div>
         </div>
@@ -87,11 +87,11 @@
         <div class="form-group col-sm-6">
           <div class="SearchBox">
             <select formControlName="level_id" class="selectpicker" placeholder="Course Name">
-              <option disabled value="">{{'Level' | translate}}</option>
-              <option  value="">{{'---All---' | translate}}</option>
-              <option value=1>{{'1st' | translate}}</option>
-              <option value=2>{{'2nd' | translate}}</option>
-              <option value=3>{{'3rd' | translate}}</option>
+              <option disabled [ngValue]=0>{{'Level' | translate}}</option>
+              <option  [ngValue]=0 >{{'---All---' | translate}}</option>
+              <option [ngValue]=1>{{'1st' | translate}}</option>
+              <option [ngValue]=2>{{'2nd' | translate}}</option>
+              <option [ngValue]=3>{{'3rd' | translate}}</option>
             </select>
           </div>
         </div>

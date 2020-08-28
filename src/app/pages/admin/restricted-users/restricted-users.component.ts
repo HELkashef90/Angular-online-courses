@@ -27,9 +27,9 @@ export class RestrictedUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRestrictedUsers()
-    this.initForms()
+    this.initForm()
   }
-  initForms() {
+  initForm() {
     this.searchForm = this._formBuilder.group({
       mobile_no: [''],
       email: [''],
@@ -110,7 +110,7 @@ export class RestrictedUsersComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("unblocked Successfully"), 'success');
 
-      this.resetTable()
+      this.resetTable(true,false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -145,7 +145,7 @@ export class RestrictedUsersComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("blocked Successfully"), 'success');
 
-      this.resetTable()
+      this.resetTable(true,false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -162,7 +162,7 @@ export class RestrictedUsersComponent implements OnInit {
     this.reqPageNum = 0;
     this.lastPage = false;
    closeSearchSection ? this.closeSearchSection(true) : null;
-    getAllEnrollment ? this.getRestrictedUsers() : null
+    getAllEnrollment ? this.getRestrictedUsers(this.searchForm.value) : null
   }
 
 
@@ -170,7 +170,7 @@ export class RestrictedUsersComponent implements OnInit {
 closeSearchSection(clear = false){
   var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
-    clear ? this.searchForm.reset() : null;
+    clear ? this.initForm()  : null;
 }
 openSearchSection(){
   var verticalSideBar = document.querySelector(".searchSection");
