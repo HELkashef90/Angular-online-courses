@@ -57,9 +57,11 @@ export class SidebarComponent implements OnInit {
   }
   close(){
     var verticalSideBar = document.querySelector(".vertical_nav");
-    verticalSideBar.classList.toggle("vertical_nav__minify");
     var wrapper = document.querySelector(".wrapper");
-    wrapper.classList.toggle("wrapper__minify");
+    if (window.matchMedia("(max-width: 992px)").matches) {
+      verticalSideBar.classList.toggle("vertical_nav__minify");
+      wrapper.classList.toggle("wrapper__minify");
+  }
   }
 
 }
