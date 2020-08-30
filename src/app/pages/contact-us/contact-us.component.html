@@ -21,7 +21,7 @@
           </ul>
           <ul class="navbar-nav" *ngIf="!_auth.isLoggedIn">
             <li [routerLink]="['/login']" routerLinkActive="router-link-active"  class="nav-item"><a  data-toggle="modal" data-target="#login" class="nav-link font-weight-bold mr-3">{{"Login" | translate}}</a></li>
-            <li [routerLink]="['/signup']" routerLinkActive="router-link-active"  class="nav-item"><a  class="navbar-btn btn btn-primary">{{"Get Started" | translate}}</a></li>
+            <li [routerLink]="['/signup']" routerLinkActive="router-link-active"  class="nav-item"><a  class="signupbutton navbar-btn btn btn-primary">{{"Get Started" | translate}}</a></li>
           </ul>
           <ul class="navbar-nav" *ngIf="_auth.isLoggedIn">
             <li (click)="goToDashboard()" class="nav-item"><a

@@ -16553,6 +16553,9 @@ margin-bottom: 20px;
 
 
 /*************************************** Nourhan ***************************************/
+.signupbutton{
+  color:#ffffff !important;
+}
 div.buttn{
   text-align: center;
   padding: 20px 0px;
@@ -16588,6 +16591,61 @@ div.contact1256.contectUs{
 }
  .marginLeft{
   margin-left: 230px;
+}
+
+.morebuttn{
+  text-align: inherit;
+padding: 0px 10px;
+}
+.rtl .morebuttn{
+  text-align: center;
+}
+.morebuttn i{
+  font-size: 12px !important;
+font-weight: 700;
+}
+.morebuttn i.uil-angle-right::before {
+  content: '\e830';
+  left: 26px;
+  position: absolute;
+  top: 16px;
+  font-size: 32px;
+}
+/* .rtl .morebuttn i.uil-angle-right::before {
+  right: 26px;
+
+} */
+
+
+
+
+
+.morebuttn.minify{
+  right: 400px;
+}
+.rtl .morebuttn.minify{
+  left: 400px;
+  /* right: 0px; */
+}
+@media (max-width: 992px){
+  .rtl .morebuttn.minify
+  {  left: 0 !important;
+    right: auto !important;
+  }
+  .rtl .chapterListToggle {
+    left: 400px;
+    right: auto;
+}
+.morebuttn.minify
+{ left: auto !important;
+  right: 0px;
+
+}
+ .chapterListToggle {
+  left: auto;
+  right: 400px;
+
+}
 }
 @media (max-width:576px){
   .SlideOfLanding .container .firstCol{
@@ -17206,6 +17264,21 @@ width: 0px;
 
 
 }
+@media (max-width: 1199px)
+{
+	.tab .btn_adcart {
+    font-size: 0;
+}
+.rtl .tab .btn_adcart {
+    font-size: 0;
+}
+}
+@media (min-width: 1200px){
+	.tab .btn_adcart {
+		position: initial !important;
+		display: block !important;
+	}
+}
 @media (max-width: 576px){
   .searchSection{
   margin: 20px 0px !important;
@@ -17221,8 +17294,10 @@ width: 0px;
 }
 
 @media (max-width: 375px){
-  .rtl .btn_adcart {
-    height: 45px !important;}
+  /* .rtl .btn_adcart {
+    height: 45px !important;
+    padding: 0px !important;
+  } */
 }
 @media (max-width: 330px){
   ._df7852,.rtl ._df7852 {

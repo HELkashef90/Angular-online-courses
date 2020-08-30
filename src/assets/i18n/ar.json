@@ -369,7 +369,9 @@
 	"language": "language",
 	"last Name": "last Name",
 	"lecture": "lecture",
-	"lectures": "lectures",
+  "lectures": "lectures",
+  "More": "More",
+
 	"level": "level",
 	"load more": {
 		"": {
