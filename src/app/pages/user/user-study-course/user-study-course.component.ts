@@ -171,5 +171,9 @@ export class UserStudyCourseComponent implements OnInit {
 
   getUserData() {
     return localStorage.getItem('email')
+ }
+  openListOfLec(){
+    var verticalSideBar = document.querySelector(".contentOfChapter");
+    verticalSideBar.classList.toggle("all");
   }
 }
