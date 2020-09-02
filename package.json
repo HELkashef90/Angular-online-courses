@@ -1,6 +1,6 @@
 {
   "name": "smart-academy",
-  "version": "1.14.7",
+  "version": "1.15.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href / --proxy-config proxy.conf.json",
