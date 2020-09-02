@@ -1,5 +1,5 @@
 <div class="back_link float-btn ">
-    <a (click)="back()" class="hde151">{{"Back" | translate}}</a>
+  <a (click)="back()" class="hde151">{{"Back" | translate}}</a>
 </div>
 <!-- Header Start -->
 <!-- <input type="checkbox" id="sidekickToggle">
@@ -8,145 +8,114 @@
     <span class="collapse_menu--label"></span>
 </label> -->
 <button (click)="collapse()" id="collapse_menu" class="collapse_menu chapterListToggle minify morebuttn">
-    <i class="uil uil-angle-right collapse_menu--icon ">    {{"More"|translate}}</i>
-    <span class="collapse_menu--label"></span>
+  <i class="uil uil-angle-right collapse_menu--icon "> {{"More"|translate}}</i>
+  <span class="collapse_menu--label"></span>
 
 </button>
 <!-- <p class="moreButton"  (click)="collapse()" ></p> -->
 <!-- Left Sidebar Start -->
 <!-- <nav class="vertical_nav chapter-list "> -->
 <nav class="vertical_nav chapter-list vertical_nav__minify">
-    <div class="left_section menu_left" id="js-menu">
-        <h4 class=header>{{"Table of content" | translate}}<a class="right"><i [routerLink]="['/user/dashboard']"
-                    routerLinkActive="router-link-active" class="uil uil-home-alt"></i></a></h4>
-        <div class="left_section">
-            <ul>
-                <li *ngFor="let chapter of chaptersArray; let index = index"
-                    class="menu--item  menu--item__has_sub_menu">
-                    <input type="checkbox" id="{{chapter.studentEnrolledChapter.chapter_Id}}"
-                        class="menu-collapse collapse">
-                    <label class="menu--link collapse-title" for="{{chapter.studentEnrolledChapter.chapter_Id}}">
-                        {{"Chapter" | translate}} {{index +1 }}
-                        <span> {{chapter.studentEnrolledChapter.chapter_title}}
-                        </span>
-                    </label>
-                    <ul class="sub_menu">
-                        <li *ngFor="let lecture of chapter.studentEnrolledContent"
-                            (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
-                            class="sub_menu--item "
-                            [ngClass]="{'disabled': !lecture.is_Active}"
-                            >
-                            <a class="sub_menu--link">{{lecture.content_title}}<span>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span> <p *ngIf="!lecture.is_Active" class="lock"></p></a>
-                            <!-- <p class="lock"></p>
+  <div class="left_section menu_left" id="js-menu">
+    <h4 class=header>{{"Table of content" | translate}}<a class="right"><i [routerLink]="['/user/dashboard']"
+          routerLinkActive="router-link-active" class="uil uil-home-alt"></i></a></h4>
+    <div class="left_section">
+      <ul>
+        <li *ngFor="let chapter of chaptersArray; let index = index" class="menu--item  menu--item__has_sub_menu">
+          <input type="checkbox" id="{{chapter.studentEnrolledChapter.chapter_Id}}" class="menu-collapse collapse">
+          <label class="menu--link collapse-title" for="{{chapter.studentEnrolledChapter.chapter_Id}}">
+            {{"Chapter" | translate}} {{index +1 }}
+            <span> {{chapter.studentEnrolledChapter.chapter_title}}
+            </span>
+          </label>
+          <ul class="sub_menu">
+            <li *ngFor="let lecture of chapter.studentEnrolledContent"
+              (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
+              class="sub_menu--item " [ngClass]="{'disabled': !lecture.is_Active}">
+              <a class="sub_menu--link">{{lecture.content_title}}<span>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span>
+                <p *ngIf="!lecture.is_Active" class="lock"></p>
+              </a>
+              <!-- <p class="lock"></p>
                             <p class="unlock"></p> -->
-                        </li>
-                    </ul>
-                </li>
+            </li>
+          </ul>
+        </li>
 
-            </ul>
-        </div>
-
+      </ul>
     </div>
+
+  </div>
 </nav>
 <!-- Left Sidebar End -->
 <!-- Body Start -->
 <div class="wrapper pt-0 course-content wrapper__minify">
-    <div class="row">
-        <div class="col-lg-12 video">
-            <div class="video-player-container">
-                <video  width="100%" controls >
-                    <source src="mov_bbb.mp4" type="video/mp4">
-                     <source src="mov_bbb.ogg" type="video/ogg">
-                    <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
-                    Your browser does not support HTML video.
-                </video>
-                <div class="vimeoContainer" [hidden]="!showPlayer" id="lectureContainer"></div>
+  <div class="row">
+    <div class="col-lg-12 video">
+      <div class="video-player-container">
+        <video width="100%" controls>
+          <source src="mov_bbb.mp4" type="video/mp4">
+          <source src="mov_bbb.ogg" type="video/ogg">
+          <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+          Your browser does not support HTML video.
+        </video>
+        <div class="vimeoContainer" [hidden]="!showPlayer" id="lectureContainer"></div>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="row description">
+        <div class="col-12 col-lg-11">
+          <div class="grp_titles">
+            <h2 class="">{{chapterName}}</h2>
+            <span>{{courseName}} {{lectureName}} </span>
+          </div>
+          <p [innerHTML]="lectureDesc | linkify">
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="contentList">
+        <h4 class=header>{{"Course content" | translate}}</h4>
+        <div class="accordion" id="accordionExample">
+
+          <div class="card" *ngFor="let chapter of chaptersArray; let index = index">
+            <div class="card-header" id="heading{{chapter.studentEnrolledChapter.chapter_Id}}">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{chapter.studentEnrolledChapter.chapter_Id}}"
+                  aria-expanded="true" attr.aria-controls="{{chapter.studentEnrolledChapter.chapter_Id}}">
+                  {{chapter.studentEnrolledChapter.chapter_title}}
+                </button>
+               
+              </h2>
             </div>
-        </div>
-        <div class="container-fluid">
 
-            <div class="row description">
-                <div class="col-12 col-lg-11">
-                    <div class="grp_titles">
-                        <h2 class="">{{chapterName}}</h2>
-                        <span>{{courseName}} {{lectureName}} </span>
-                    </div>
-                    <p [innerHTML]="lectureDesc | linkify">
-                    </p>
-
-                </div>
-
+            <div id="collapse{{chapter.studentEnrolledChapter.chapter_Id}}" attr.aria-labelledby="heading{{chapter.studentEnrolledChapter.chapter_Id}}" class="collapse show"  data-parent="#accordionExample">
+              <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let lecture of chapter.studentEnrolledContent"
+                  (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
+                  [ngClass]="{'disabled': !lecture.is_Active}"
+                  >{{lecture.content_title}}<a>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}} <span *ngIf="!lecture.is_Active" class="lock"></span> </a></li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-
-<div class="contentList ">
-  <h4 class=header>{{"Course content" | translate}}</h4>
-  <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-Chapter one
-          </button>
-        </h2>
-      </div>
-
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
-          <ul class="list-group">
-            <li class="list-group-item ">Lec 1  <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 2 <a href="">22 min</a></li>
-            <li class="list-group-item active">Lec 3 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 4 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 5 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 6 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 7 <a href="">22 min</a></li>
-          </ul>
+  
+     
         </div>
       </div>
+      <!-- <div  class=""></div> -->
+
+
+
     </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-Chapter two
-          </button>
-        </h2>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <div class="card-body">
-          <ul class="list-group">
-            <li class="list-group-item">Lec 1 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 2 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 3 <a href="">22 min</a></li>
-            <li class="list-group-item">Lec 4 <a href="">22 min</a></li>
-          </ul>        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-Chapter three
-          </button>
-        </h2>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-        <div class="card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </div>
-      </div>
-    </div>
+
   </div>
-</div>
-<!-- <div  class=""></div> -->
-
-
-
-        </div>
-
-    </div>
-    <app-user-footer></app-user-footer>
+  <app-user-footer></app-user-footer>
 
 </div>
 <!-- Body End -->
