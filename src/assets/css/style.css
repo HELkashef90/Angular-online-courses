@@ -16330,8 +16330,8 @@ select:invalid { color: #e5e5e5; }
 	.accept-btn {
 		color: #28a745;
 		background-color: #f7f7f7;
-		padding: 10px 9px;
-		/* padding: 7px 15px; */
+		/* padding: 10px 0px; */
+		padding: 7px 15px;
 		border: 1px solid #3ca745;
 		border-radius: 30px;
 		-webkit-border-radius: 30px;
@@ -16342,20 +16342,27 @@ select:invalid { color: #e5e5e5; }
 	.reject-btn {
 		color: #c8302f;
 		background-color: #ffeced2e;
+		/* padding: 10px 0px; */
 		padding: 10px 9px;
-		/* padding: 7px 15px; */
-		border: 1px solid #c8302f;
+		/*padding: 7px 15px;
+    */
+    border: 1px solid #c8302f;
 		border-radius: 30px;
-	}
-	/* .delete-btn {
-		color: #c8302f;
-		background-color: #ffeced2e;
-		padding: 7px 15px;
-		border: 1px solid #c8302f;
-		border-radius: 30px;
-  } */
+}
+.noborder{
+  background-color: transparent;
+  padding: 10px 0px;
+  border: 0px !important;
+
+}
+	.delete-btn {
+		color: #000000;
+		background-color: transparent;
+
+  }
   .delete-btn:before{
   content: "\e9ad";
+  font-size: 15px;
   color: #c8302f;
   font-family: "icons";
   }

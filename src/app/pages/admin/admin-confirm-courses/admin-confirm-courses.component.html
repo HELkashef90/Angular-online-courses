@@ -1,9 +1,9 @@
 <div class="sa4d25">
-    <div class="container-fluid">			
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">	
+            <div class="col-lg-12">
                 <h2 class="st_title"><i class="uil uil-check-circle"></i>{{"Course Confirmation" | translate}}</h2>
-            </div>				
+            </div>
         </div>
         <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
         [infiniteScrollDisabled]="lastPage || disableScroll">
@@ -28,7 +28,7 @@
                                     <a (click)="onRejectClick(course)" title="Reject" class="reject-btn  mx-2" *ngIf="course.course_status === 1"><i class="uil uil-times" ></i>{{"Reject" | translate}}</a>
                                 </td>
                             </tr>
-                         
+
                         </tbody>
                     </table>
                     <a *ngIf="coursesArray.length < totalCourses" (click)="onScroll()" style="color: blue;">{{"load more..." | translate}}</a>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

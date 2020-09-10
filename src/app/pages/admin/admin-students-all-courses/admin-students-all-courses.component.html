@@ -60,15 +60,15 @@
                                 <td class="text-center">
                                     <a *ngIf="!student.is_active_subscription"
                                         (click)="onApproveClick(student,search.value)" title="{{'Approved'|translate}}"
-                                        class="accept-btn mx-2"><i class="uil uil-check"></i>
+                                        class="accept-btn noborder mx-2"><i class="uil uil-check"></i>
                                         </a>
                                     <a *ngIf="student.is_active_subscription"
                                         (click)="onRejectClick(student,search.value)" title="{{'Reject'|translate}}"
-                                        class="reject-btn  mx-2"><i class="uil uil-times"></i>
+                                        class="reject-btn noborder mx-2"><i class="uil uil-times"></i>
                                        </a>
 <!-- deleteEnrollment request -->
                                    <a title="{{'delete enrollment request'|translate}}"
-                                       class="reject-btn mx-2"><i class="uil delete-btn"></i>
+                                       class="reject-btn noborder mx-2"><i class="uil delete-btn"></i>
                                       </a>
                                 </td>
                             </tr>
