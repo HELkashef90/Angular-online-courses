@@ -176,6 +176,12 @@
                         <span class="menu--label">{{"Advanced Search" | translate}}</span>
                     </a>
                 </li>
+                <li class="menu--item" (click)="close()">
+                    <a [routerLink]="['Management']" routerLinkActive="active"  class="menu--link" title="Management User">
+                        <i class="uil managementUser menu--icon"></i>
+                        <span class="menu--label">{{"Management Users" | translate}}</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -212,6 +218,12 @@
                     <a [routerLink]="['advancedSearch']" routerLinkActive="active"  class="menu--link" title="restricted user">
                         <i class="uil uil-money-withdrawal menu--icon"></i>
                         <span class="menu--label">{{"Advanced Search" | translate}}</span>
+                    </a>
+                </li>
+                <li class="menu--item" >
+                    <a [routerLink]="['Management']" routerLinkActive="active"  class="menu--link" title="Management user">
+                        <i class="uil managementUser menu--icon"></i>
+                        <span class="menu--label">{{"Management Users" | translate}}</span>
                     </a>
                 </li>
             </ul>

@@ -3,9 +3,9 @@
     <div class="_215b15">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">						
-                    <div class="title125">						
-                        <div class="titleleft">					
+                <div class="col-lg-12">
+                    <div class="title125">
+                        <div class="titleleft">
                             <div class="ttl121">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -16,7 +16,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="title126">	
+                    <div class="title126">
                         <h2>{{'Checkout' | translate}}</h2>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="mb4d25">
-        <div class="container">			
+        <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <!-- <div class="membership_chk_bg">
@@ -49,7 +49,7 @@
                                                     <div class="ui search focus mt-30 lbel25">
                                                         <label>{{'First Name*' | translate}}</label>
                                                         <div class="ui left icon input swdh11 swdh19">
-                                                            <input class="prompt srch_explore" type="text" name="name" value="Joginder" id="id_name" required="" maxlength="64" placeholder="First Name">															
+                                                            <input class="prompt srch_explore" type="text" name="name" value="Joginder" id="id_name" required="" maxlength="64" placeholder="First Name">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -57,7 +57,7 @@
                                                     <div class="ui search focus mt-30 lbel25">
                                                         <label>{{'Last Name*' | translate}}</label>
                                                         <div class="ui left icon input swdh11 swdh19">
-                                                            <input class="prompt srch_explore" type="text" name="surname" value="Singh" id="id_surname" required="" maxlength="64" placeholder="Last Name">															
+                                                            <input class="prompt srch_explore" type="text" name="surname" value="Singh" id="id_surname" required="" maxlength="64" placeholder="Last Name">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -65,21 +65,21 @@
                                                     <div class="ui search focus mt-30 lbel25">
                                                         <label>{{'Email' | translate}}</label>
                                                         <div class="ui left icon input swdh11 swdh19">
-                                                            <input class="prompt srch_explore" type="email" name="city" value="Ludhiana" id="id_email" required="" maxlength="64" placeholder="Email Address">															
-                                                        </div>							
+                                                            <input class="prompt srch_explore" type="email" name="city" value="Ludhiana" id="id_email" required="" maxlength="64" placeholder="Email Address">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="ui search focus mt-30 lbel25">
                                                         <label>{{'Phone Number*' | translate}}</label>
                                                         <div class="ui left icon input swdh11 swdh19">
-                                                            <input class="prompt srch_explore" type="text" name="phone" value="+91123456789" id="id_phone" required="" maxlength="12" placeholder="Phone Number">															
+                                                            <input class="prompt srch_explore" type="text" name="phone" value="+91123456789" id="id_phone" required="" maxlength="12" placeholder="Phone Number">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <button class="save_address_btn" type="submit">{{'Save Changes' | translate}}</button>
-                                                </div>												
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -92,7 +92,141 @@
                             0192848473839
                         </div>
                     </div> -->
-                    <div class="membership_chk_bg">
+                    <div class="membership_chk_bg paymentMethod">
+                      <div class="checkout_title">
+                          <h4>{{"Select Payment Method" | translate}}</h4>
+                          <img src="assets/images/line.svg" alt="">
+                      </div>
+                      <div class="order_dt_section">
+                        <div>
+                          <tabset class="tabs">
+                            <tab heading="Credit/Debit Card" id="tab1">
+
+                              <form>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <label>{{"Holder Name"|translate}}</label>
+                                    <input type="text" class="form-control" placeholder="Holder Name">
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label>{{"Card Name"|translate}}</label>
+
+                                    <input type="text" class="form-control" placeholder="Card Name">
+                                  </div>
+                                  <div class="col-md-4">
+                                    <label>{{"Expiration Month"|translate}}</label>
+                                    <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                                  <select>
+                                    <option value="{{'Expiration Month'|translate}}" disabled>{{"Expiration Month"|translate}}</option>
+                                    <option value="{{'saturday'|translate}}">{{"saturday"|translate}}</option>
+                                    <option value="{{'sunday'|translate}}">{{"sunday"|translate}}</option>
+                                    <option value="{{'Monday'|translate}}">{{"Monday"|translate}}</option>
+                                    <option value="{{'Tuesday'|translate}}">{{"Tuesday"|translate}}</option>
+                                    <option value="{{'Wednesday'|translate}}">{{"Wednesday"|translate}}</option>
+                                    <option value="{{'Thursday'|translate}}">{{"Thursday"|translate}}</option>
+                                  </select>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <label>{{"Expiration Year"|translate}}
+                                    </label>
+
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                  </div>
+                                  <div class="col-md-4">
+                                    <label>Expiration Year
+                                     </label>
+
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                  </div>
+                                </div>
+                              </form>
+
+
+                            </tab>
+
+
+
+
+                            <tab heading="Fawery">
+                              <form>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <label>{{"Holder Name"|translate}}</label>
+                                    <input type="text" class="form-control" placeholder="Holder Name">
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label>{{"Card Name"|translate}}</label>
+
+                                    <input type="text" class="form-control" placeholder="Card Name">
+                                  </div>
+                                  <div class="col-md-4">
+                                    <label>{{"Expiration Month"|translate}}</label>
+                                    <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                                  <select>
+                                    <option value="{{'Expiration Month'|translate}}" disabled>{{"Expiration Month"|translate}}</option>
+                                    <option value="{{'saturday'|translate}}">{{"saturday"|translate}}</option>
+                                    <option value="{{'sunday'|translate}}">{{"sunday"|translate}}</option>
+                                    <option value="{{'Monday'|translate}}">{{"Monday"|translate}}</option>
+                                    <option value="{{'Tuesday'|translate}}">{{"Tuesday"|translate}}</option>
+                                    <option value="{{'Wednesday'|translate}}">{{"Wednesday"|translate}}</option>
+                                    <option value="{{'Thursday'|translate}}">{{"Thursday"|translate}}</option>
+                                  </select>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <label>{{"Expiration Year"|translate}}
+                                    </label>
+
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                  </div>
+                                  <div class="col-md-4">
+                                    <label>Expiration Year
+                                     </label>
+
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                  </div>
+                                </div>
+                              </form>
+
+                            </tab>
+                            <tab heading="offline Payment">                              <form>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label>{{"Holder Name"|translate}}</label>
+                                  <input type="text" class="form-control" placeholder="Holder Name">
+                                </div>
+                                <div class="col-md-6">
+                                  <label>{{"Card Name"|translate}}</label>
+
+                                  <input type="text" class="form-control" placeholder="Card Name">
+                                </div>
+                                <div class="col-md-4">
+                                  <label>{{"Expiration Month"|translate}}</label>
+                                  <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                                <select>
+                                  <option value="{{'Expiration Month'|translate}}" disabled>{{"Expiration Month"|translate}}</option>
+                                  <option value="{{'saturday'|translate}}">{{"saturday"|translate}}</option>
+                                  <option value="{{'sunday'|translate}}">{{"sunday"|translate}}</option>
+                                  <option value="{{'Monday'|translate}}">{{"Monday"|translate}}</option>
+                                  <option value="{{'Tuesday'|translate}}">{{"Tuesday"|translate}}</option>
+                                  <option value="{{'Wednesday'|translate}}">{{"Wednesday"|translate}}</option>
+                                  <option value="{{'Thursday'|translate}}">{{"Thursday"|translate}}</option>
+                                </select>
+                                </div>
+                                <div class="col-md-4">
+                                  <label>{{"Expiration Year"|translate}}
+                                  </label>
+
+                                  <input type="text" class="form-control" placeholder="Last name">
+                                </div>
+
+                              </div>
+                            </form></tab>
+                          </tabset>
+                        </div>
+                      </div>
+
+                  </div>
+                    <div class="membership_chk_bg orderDetails">
                         <div class="chckout_order_dt">
                             <div class="checkout_title">
                                 <h4>{{'Order Details' | translate}}</h4>
@@ -110,8 +244,12 @@
                         </div>
                         <ngx-loading [show]="loading"></ngx-loading>
 
-                    </div>									
+                    </div>
+
+
+
                 </div>
+
                 <div class="col-lg-4">
                     <div class="membership_chk_bg rght1528">
                             <div class="checkout_title">
@@ -128,11 +266,13 @@
                                     <div class="order_price5">{{cart.getCartTotalPrice()}}  {{ 'EGP'| translate}}</div>
                                 </div>
                                 <div class="scr_text"><i class="uil uil-lock-alt"></i>{{'Secure checkout' | translate}}</div>
-                            </div>	
-                            
+                            </div>
+
                         </div>
-                    </div>								
-                </div>				
+                    </div>
+                </div>
+
+
             </div>
     </div>
 

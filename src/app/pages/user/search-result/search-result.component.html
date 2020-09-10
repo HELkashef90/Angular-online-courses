@@ -1,0 +1,123 @@
+
+ <div class="sideBarFilter">
+  <div class="filter showFilter">
+    <h5 class="">Filter</h5>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{"Level"|translate}}
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+<div>
+  <label class="radio-inline"><input type="radio" name="optradio" checked>{{"first"|translate}}</label>
+</div>
+<div><label class="radio-inline"><input type="radio" name="optradio">{{"Second"|translate}}</label>
+</div>
+</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              {{"language"|translate}}
+
+
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <div>
+              <label class="radio-inline"><input type="radio" name="optradio" checked>{{"English"|translate}}</label>
+            </div>
+            <div>
+              <label class="radio-inline"><input type="radio" name="optradio">{{"arabic"|translate}}</label>
+            </div>
+            <div>
+              <label class="radio-inline"><input type="radio" name="optradio">{{"All"|translate}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="sa4d25 searchResultPage">
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <h2 class="st_title"><i class="uil uil-apps"></i> {{ 'All Courses' | translate}}</h2>
+
+  <form class="form-inline StudentSearch mr-auto">
+    <input class="form-control" type="text" placeholder="{{'Search'|translate}}" aria-label="Search">
+    <button class="btn  btn-primary" type="submit" >{{"Search"|translate}}</button>
+  </form>
+
+          </div>
+      </div>
+
+
+      <div class="section3125 mt-30">
+          <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+              [infiniteScrollDisabled]="lastPage">
+
+
+
+              <div *ngFor="let course of approvedCoursesArray" [routerLink]="['/user/viewCourse/',course.id]"
+                  routerLinkActive="router-link-active" class="col-12 col-md-6 col-xl-4">
+                  <div class="fcrse_1 mb-20">
+                      <a class="fcrse_img">
+                          <img src="{{ course.cover_image_path || 'assets/images/courses/img-14.jpg'}}" alt="">
+                          <div class="course-overlay">
+                              <span class="play_btn1"><i class="uil uil-play"></i></span>
+                              <!-- <div class="crse_timer">
+                                  12 {{ 'hours' | translate}}
+                              </div> -->
+                          </div>
+                      </a>
+                      <div class="fcrse_content">
+                          <a class="crse14s">{{course.course_title}}
+                          </a>
+                          <a class="crse-cate" *ngIf="course.level === '1'">{{"1st" | translate}}</a>
+                          <a class="crse-cate" *ngIf="course.level === '2'">{{"2nd" | translate}}</a>
+                          <a class="crse-cate" *ngIf="course.level === '3'">{{"3rd" | translate}}</a>
+
+                          <a class="crse-cate" *ngIf="course.language === '1'">{{"Arabic" | translate}}</a>
+                          <a class="crse-cate" *ngIf="course.language === '2'">{{"English" | translate}}</a>
+                          <div class="auth1lnkprce">
+                              <p class="cr1fot">{{ 'By' | translate}} <a>{{course.first_name}}</a></p>
+                              <!-- <div class="prce142">$4</div> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+
+
+              <div *ngIf="loading" class="col-md-12">
+                  <div class="main-loader mt-20">
+                      <div class="spinner">
+                          <div class="bounce1"></div>
+                          <div class="bounce2"></div>
+                          <div class="bounce3"></div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+</div>

@@ -25,15 +25,18 @@ import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 @NgModule({
   declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent
-  , ConfirmComponent, MyCoursesComponent],
+  , ConfirmComponent, MyCoursesComponent, SearchResultComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
     RouterModule ,
+    TabsModule.forRoot(),
     // BrowserModule,
     // AppRoutingModule,
     FormsModule,

@@ -1,12 +1,12 @@
-import { CourseService } from './../services/course/course.service';
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from './../services/course/course.service';
 
 @Component({
-  selector: 'app-user-all-courses',
-  templateUrl: './user-all-courses.component.html',
-  styleUrls: ['./user-all-courses.component.scss']
+  selector: 'app-search-result',
+  templateUrl: './search-result.component.html',
+  styleUrls: ['./search-result.component.scss']
 })
-export class UserAllCoursesComponent implements OnInit {
+export class SearchResultComponent implements OnInit {
   totalPages = 0;
   totalApprovedCourses: any;
   approvedCoursesArray = [];
@@ -22,7 +22,6 @@ export class UserAllCoursesComponent implements OnInit {
 
     this.getAllCourses()
   }
-
   getAllCourses() {
     // console.log(this.reqPageNum, this.totalPages, this.lastPage);
     if (this.lastPage || this.loading) {

@@ -87,12 +87,14 @@
                 <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{chapter.studentEnrolledChapter.chapter_Id}}"
                   aria-expanded="true" attr.aria-controls="{{chapter.studentEnrolledChapter.chapter_Id}}">
                   {{chapter.studentEnrolledChapter.chapter_title}}
+                  <span class="arrowDown"></span>
+                  <!-- <span class="arrowRight"></span> -->
                 </button>
-               
               </h2>
             </div>
+            <div id="collapse{{chapter.studentEnrolledChapter.chapter_Id}}" attr.aria-labelledby="heading{{chapter.studentEnrolledChapter.chapter_Id}}" class="collapse "  data-parent="#accordionExample">
 
-            <div id="collapse{{chapter.studentEnrolledChapter.chapter_Id}}" attr.aria-labelledby="heading{{chapter.studentEnrolledChapter.chapter_Id}}" class="collapse show"  data-parent="#accordionExample">
+
               <div class="card-body">
                 <ul class="list-group">
                   <li class="list-group-item" *ngFor="let lecture of chapter.studentEnrolledContent"
@@ -104,8 +106,8 @@
             </div>
           </div>
 
-  
-     
+
+
         </div>
       </div>
       <!-- <div  class=""></div> -->

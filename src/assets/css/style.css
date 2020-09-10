@@ -9935,7 +9935,7 @@ i.icon1 {
 }
 
 .Student_says .owl-nav .owl-prev {
-	left: -20px;
+    left: -20px;
     font-size: 20px !important;
     position: absolute;
     top: 38%;
@@ -9948,6 +9948,10 @@ i.icon1 {
     border-radius: 100% !important;
     border: 1px solid #e5e5e5 !important;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
 }
 
 .Student_says .owl-nav .owl-next {
@@ -16159,20 +16163,20 @@ select {
     box-shadow: none;
     border: 1px solid rgba(34,36,38,.15);
     border-radius: .28571429rem;
-    -webkit-transition: box-shadow .1s ease,width .1s ease;
+    -webkit-transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
     transition: width .1s ease,-webkit-box-shadow .1s ease;
     transition: box-shadow .1s ease,width .1s ease;
     transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
-    -webkit-border-radius: 500rem !important;
-    -moz-border-radius: 500rem !important;
-    -ms-border-radius: 500rem !important;
-    -o-border-radius: 500rem !important;
+    -webkit-border-radius: .28571429rem;
+    -moz-border-radius: .28571429rem;
+    -ms-border-radius: .28571429rem;
+    -o-border-radius: .28571429rem;
     -moz-transform: rotateZ(0);
     -ms-transform: rotateZ(0);
     -o-transform: rotateZ(0);
-    -moz-transition: box-shadow .1s ease,width .1s ease;
-    -ms-transition: box-shadow .1s ease,width .1s ease;
-    -o-transition: box-shadow .1s ease,width .1s ease;
+    -moz-transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
+    -ms-transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
+    -o-transition: box-shadow .1s ease,width .1s ease,-webkit-box-shadow .1s ease;
 }
 select:invalid { color: #e5e5e5; }
 
@@ -16326,7 +16330,8 @@ select:invalid { color: #e5e5e5; }
 	.accept-btn {
 		color: #28a745;
 		background-color: #f7f7f7;
-		padding: 7px 15px;
+		padding: 10px 9px;
+		/* padding: 7px 15px; */
 		border: 1px solid #3ca745;
 		border-radius: 30px;
 		-webkit-border-radius: 30px;
@@ -16337,11 +16342,24 @@ select:invalid { color: #e5e5e5; }
 	.reject-btn {
 		color: #c8302f;
 		background-color: #ffeced2e;
-		padding: 7px 15px;
+		padding: 10px 9px;
+		/* padding: 7px 15px; */
 		border: 1px solid #c8302f;
 		border-radius: 30px;
 	}
-	.accept-btn i , .reject-btn i {
+	/* .delete-btn {
+		color: #c8302f;
+		background-color: #ffeced2e;
+		padding: 7px 15px;
+		border: 1px solid #c8302f;
+		border-radius: 30px;
+  } */
+  .delete-btn:before{
+  content: "\e9ad";
+  color: #c8302f;
+  font-family: "icons";
+  }
+	.accept-btn i , .reject-btn i , .delete-btn{
 		font-size: 17px;
 		/* vertical-align: middle; */
 	}
@@ -16547,12 +16565,180 @@ margin-bottom: 20px;
 /**************************************** idmPageEnd ****************************************/
 /**************************************** LandingPageEnd ****************************************/
 
+.SearchOption{
+  min-width: max-content !important;
+}
 
+.StudentSearch .search-panel{
+  position: relative;
+  right: 102px;
 
+}
+/* .rtl .StudentSearch .search-panel{
+  position: relative;
+  left: 105px;
+right: auto;
+} */
+.StudentSearch .form-control{
+  display: inline-block;
+  border-radius: 500rem;
+  -webkit-border-radius: 500rem;
+  -moz-border-radius: 500rem;
+  -ms-border-radius: 500rem;
+  -o-border-radius: 500rem;
+}
+.StudentSearch select{
+  background: #fff;
+  border-radius: 0px !important;
+  border-bottom-right-radius: 500rem !important;
+  border-top-right-radius: 500rem !important;
+  min-height: auto;
+  padding: 4.7px 0px !important;
+  position: relative;
+  /*right: 102px;
+  bottom: 2px;
+  */
+  right: 103px;
+  bottom: 2.2px;
+  min-width: max-content !important;
+  /*min-width: fit-content !important;
+  */margin-right: 0px;
+  box-shadow: unset !important;
+  border-left: 1px solid #ced4da !important;
+  /*-webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+  *//*:;
+  *//*-webkit-border-radius: 0px !important;
+   */
+  /* -webkit-border-radius: 0px !important; */
+}
+.StudentSearch .formButtn{
+  display: contents;
 
+}
+.rtl .StudentSearch .form-control{
+  height: calc(1.7em + 0.75rem + 2px);
+}
+.rtl .StudentSearch select{
+ border-bottom-left-radius: 17px !important;
+ border-top-left-radius: 17px !important;
+ border-top-right-radius: 0px !important;
+ border-bottom-right-radius: 0px !important;
+margin-left: 0px;
+right: auto;
+    /* left: 112px; */
+    left: 105px;
+    bottom: 3px;
+ border-right: 1px solid #ced4da !important;
+ /* height: 33px; */
+ padding:0px !important;
 
+}
+.StudentSearch select:after{
+  background-color: transparent;
+  content: "";
+
+}
+.managementUser:before{
+  content:"\e972";
+  font-family: "icons";
+}
+@media (max-width: 570px){
+
+.StudentSearch select{
+  float: right;
+    bottom: 32.5px;
+    right: 1px;
+}
+.rtl .StudentSearch select{
+  float:left;
+    bottom: 35.5px;
+    right: 0px;
+    left: 0px;
+}
+.StudentSearch .formButtn {
+  position: relative;
+}
+.StudentSearch .formButtn button{
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+}
 
 /*************************************** Nourhan ***************************************/
+/*************************************** paymentMethod Start ***************************************/
+.paymentMethod .tabs .nav-tabs{
+  border: 1px solid #efefef;
+    background: #f7f7f7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.paymentMethod .tabs .nav-tabs .nav-item .nav-link {
+  background: transparent;
+  color: #686f7a;
+  font-weight: 500;
+  padding: 15px 10px !important;
+  margin-right: 0;
+  border: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.paymentMethod .tabs .nav-tabs .nav-link.active {
+  color: #ed2a26 !important;
+  background-color: none !important;
+  border-bottom: 2px solid #ed2a26 !important;
+}
+.paymentMethod .tabs .nav-tabs .nav-item {
+  width: 33.333%;
+  text-align: center;
+  border-right: 1px solid #efefef;
+}
+.paymentMethod .tabs .nav-tabs .nav-item:last-child {
+  border-right: 0;
+}
+.paymentMethod .tabs form .row div{
+  margin-top: 30px;
+}
+.paymentMethod .tabs form .ui[class*="left icon"].swdh19.input>input {
+  padding-left: 2em!important;
+  padding-right: 2em!important;
+}
+.paymentMethod .tabs form input{
+  border: 1px solid #e5e5e5 !important;
+  height: 40px !important;
+    color: #333 !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 500rem;
+   -webkit-border-radius: 500rem;
+   -moz-border-radius: 500rem;
+   -ms-border-radius: 500rem;
+    -o-border-radius: 500rem;
+}
+.paymentMethod{
+  margin: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.orderDetails{
+  border-top-left-radius: 0px;
+    border-top: 0px;
+    border-top-right-radius: 0px;
+}
+/*************************************** userSearcEnd ***************************************/
+
+
+
+
 .signupbutton{
   color:#ffffff !important;
 }
@@ -16690,10 +16876,10 @@ font-weight: 700;
 }
 .contentList div .card .card-body .list-group li:last-child{
   border-radius: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  -ms-border-radius:0px;
+  -o-border-radius:0px;
 }
 .contentList div .card .card-body .list-group li a{
   float: right;
@@ -16726,6 +16912,129 @@ font-weight: 700;
 .contentList{
   display: none;
 }
+.footer.userStudentCourse {
+  z-index: 2222 !important;
+}
+/* .arrowRight:before{
+content: "";
+}
+.collapse .arrowRight:before{
+  display: block;
+  }
+  .collapse .arrowDown:before{
+  display: none;
+  }
+  .collapse.show .arrowRight:before{
+  display: none;
+  }
+  .collapse.show .arrowDown:before{
+  display: block;
+  } */
+/* .arrowRight:before{
+  content: "\e901";
+  font-family: "icons";
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+} */
+.arrowDown:before{
+  content: "\e902";
+  font-family: "icons";
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+.rtl .arrowDown:before{
+  float: left !important;
+  right: auto;
+  left: 10px;
+  top: 12px;
+}
+form.StudentSearch.form-inline input.form-control{
+    width: 50%;
+   /*margin: 0px 10px 0px 0px;
+   */
+   border-radius: 500rem;
+   -webkit-border-radius:500rem;
+   -moz-border-radius:500rem;
+   -ms-border-radius:500rem;
+   -o-border-radius:500rem;
+   padding: 0px 10px;
+}
+form.StudentSearch.form-inline button.btn{ /*width: 50%; */margin: 0px 10px ; border-radius: 500rem; -webkit-border-radius: 500rem; -moz-border-radius: 500rem; -ms-border-radius: 500rem; -o-border-radius: 500rem;
+}
+.filter {
+  margin-top: 10px;
+}
+.showFilter{
+  display: none;
+}
+filter h5{
+  font-weight: 700;
+}
+.icon-filter:before {
+  content: "\ea5b";
+  font-family: "icons";
+  padding: 0px 10px;
+font-size: 15px;
+}
+.icon-filter{
+  cursor: pointer;
+margin:  10px 0px;
+}
+.filter .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #000000;
+  background-color: transparent;
+  border-bottom: 2px solid #cc2d37 ;
+  border-radius: 0px;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
+}
+
+.searchResultPage{
+  margin-right:135px !important;
+}
+.rtl .searchResultPage{
+  margin-left:135px !important;
+  margin-right:0px !important;
+}
+.sideBarFilter{
+  width: 130px;
+position: absolute;
+/* position: fixed; */
+z-index: 1;
+top: 175px;
+/* background: #eee; */
+/* overflow-x: hidden; */
+/* padding: 8px 0; */
+right: 5px;
+}
+.sideBarFilter .showFilter{
+  display: block;
+}
+.sideBarFilter .showFilter h5{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.sideBarFilter .showFilter .card .card-header h5 button{
+  color: #000;
+}
+.sideBarFilter .showFilter .card .card-header,.sideBarFilter .showFilter .card .card-header h5{
+  border-bottom: 0px;
+}
+.sideBarFilter .showFilter .card .card-header{
+  background: transparent;
+  padding: 0px;
+}
+
+.sideBarFilter .showFilter .card{
+  border: 0px;
+  background-color: transparent;
+}
+
 @media (max-width:640px){
 .morebuttn{
   display: none;
@@ -16736,11 +17045,14 @@ nav.chapter-list{
 .contentList{
   display: block;
 }
+
+
 }
 @media (max-width: 992px){
   .chapter-list {
     position: absolute !important;
-    height: 105.4% !important;
+    height: 170% !important;
+    /* height: 105.4% !important; */
 }
 }
 @media (max-width: 992px){
@@ -17414,6 +17726,9 @@ width: 0px;
     height: 45px !important;
     padding: 0px !important;
   } */
+  .paymentMethod .tabs .nav-tabs .nav-item .nav-link{
+    font-size: 10px;
+  }
 }
 @media (max-width: 330px){
   ._df7852,.rtl ._df7852 {
