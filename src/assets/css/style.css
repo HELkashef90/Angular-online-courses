@@ -9948,10 +9948,10 @@ i.icon1 {
     border-radius: 100% !important;
     border: 1px solid #e5e5e5 !important;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius: 100% !important;;
+    -moz-border-radius: 100% !important;;
+    -ms-border-radius: 100% !important;;
+    -o-border-radius: 100% !important;;
 }
 
 .Student_says .owl-nav .owl-next {
@@ -16486,7 +16486,7 @@ margin-bottom: 20px;
 }
 /**************************************** LandingPageEnd ****************************************/
 /**************************************** idmPageStart ****************************************/
-.idmPage{
+.idmPage , .success , .failed{
   text-align: center;
   /*background: #333;
   */margin: 0;
@@ -16520,10 +16520,10 @@ margin-bottom: 20px;
   /* color:#fff */
   margin: 20px 0px;
 }
-.idmPage h1,.idmPage h4{
+.idmPage h1,.idmPage h4 ,.success h1,.success h4 , .failed h1, .failed h4{
   color: #333;
 }
-.idmPage a{
+.idmPage a, .success a,.failed a{
   color:#c8302f;
 }
 .idmPage .logo{
@@ -16533,20 +16533,20 @@ margin-bottom: 20px;
 @media (max-width: 640px){
   .idmPage svg {
   font-size: 70px;}
-  .idmPage h1{
+  .idmPage h1 , .success h1 ,.failed h1{
     font-size: 2.3rem;
   }
   .idmPage .logo{
     width: 25%;}
-   .idmPage h4{
+   .idmPage h4 ,.success h4 ,.failed h4{
     font-size: 1.3rem;
   }
 }
 @media (max-width: 480px){
-  .idmPage h1{
+  .idmPage h1, .success h1 ,.failed h1{
     font-size: 1.8rem;
   }
-   .idmPage h4{
+   .idmPage h4 , .success h4, .failed h4{
     font-size: 1.1rem;
   }
 }
@@ -16555,7 +16555,7 @@ margin-bottom: 20px;
   .idmPage svg {
     font-size: 60px;
 }
-.idmPage h1 {
+.idmPage h1 ,.success h1 ,.failed h1{
   font-size: 1.5rem;
 }
 .idmPage .logo {
@@ -16582,10 +16582,10 @@ right: auto;
 .StudentSearch .form-control{
   display: inline-block;
   border-radius: 500rem;
-  -webkit-border-radius: 500rem;
-  -moz-border-radius: 500rem;
-  -ms-border-radius: 500rem;
-  -o-border-radius: 500rem;
+  -webkit-border-radius:500rem;
+  -moz-border-radius:500rem;
+  -ms-border-radius:500rem;
+  -o-border-radius:500rem;
 }
 .StudentSearch select{
   background: #fff;
@@ -16597,8 +16597,7 @@ right: auto;
   position: relative;
   /*right: 102px;
   bottom: 2px;
-  */
-  right: 103px;
+  */right: 103px;
   bottom: 2.2px;
   min-width: max-content !important;
   /*min-width: fit-content !important;
@@ -16606,13 +16605,10 @@ right: auto;
   box-shadow: unset !important;
   border-left: 1px solid #ced4da !important;
   /*-webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  -ms-border-radius: 0px !important;
-  -o-border-radius: 0px !important;
-  *//*:;
-  *//*-webkit-border-radius: 0px !important;
-   */
-  /* -webkit-border-radius: 0px !important; */
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
+  */-webkit-border-bottom-right-radius: 500rem !important;
 }
 .StudentSearch .formButtn{
   display: contents;
@@ -16983,17 +16979,34 @@ font-size: 15px;
 .icon-filter{
   cursor: pointer;
 margin:  10px 0px;
+display: inline-block;
 }
 .filter .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #000000;
   background-color: transparent;
   border-bottom: 2px solid #cc2d37 ;
   border-radius: 0px;
-  -webkit-border-radius:;
-  -moz-border-radius:;
-  -ms-border-radius:;
-  -o-border-radius:;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
+
+.check:before {
+  content: "\e903";
+  font-family: "icons";
+
+  font-size: 75px;
+  color: green;
+}
+.icon-close:before {
+  content: "\e906";
+  font-family: "icons";
+  font-size: 75px;
+  color: red;
+
+}
+
 
 .searchResultPage{
   margin-right:135px !important;

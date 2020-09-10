@@ -44,12 +44,12 @@ const routes: Routes = [
       {
         path:'myCourses',
         component:MyCoursesComponent
-      }
-      ,
+      }      ,
       {
         path:'searchResult',
         component:SearchResultComponent
-      }
+      },
+
     ]
   },
   {

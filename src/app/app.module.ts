@@ -43,6 +43,8 @@ import { NgProgressHttpModule } from "ngx-progressbar/http";
 import { ExportConfirmationComponent } from './components/export-confirmation/export-confirmation.component';
 import { ExportAsModule } from 'ngx-export-as';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SuccessComponent } from './pages/success/success.component';
+import { FailedPageComponent } from './pages/failed-page/failed-page.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -60,6 +62,8 @@ export function createTranslateLoader(http: HttpClient) {
     ContactUsComponent,
     IDMPageComponent,
     ExportConfirmationComponent,
+    SuccessComponent,
+    FailedPageComponent,
   ],
   imports: [
     RouterModule,

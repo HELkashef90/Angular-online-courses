@@ -1,3 +1,4 @@
+import { SuccessComponent } from './pages/success/success.component';
 import { IDMPageComponent } from './pages/idmpage/idmpage.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
@@ -16,6 +17,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminGuard } from './guards/admin/admin.guard';
+import { FailedPageComponent } from './pages/failed-page/failed-page.component';
 
 
 const routes: Routes = [
@@ -71,6 +73,14 @@ const routes: Routes = [
   {
     path:'idm',
     component:IDMPageComponent
+  },
+  {
+    path:'success',
+    component:SuccessComponent
+  },
+  {
+    path:'failed',
+    component:FailedPageComponent
   },
   {
     path: '**',
