@@ -55,8 +55,8 @@ export const environment = {
   _advancedSearchGetCourses : `${serverUrl}course/all/lookup`,
   _advancedSearchGetInstructors : `${serverUrl}instructor/all/lookup`,
   _advancedSearchGetChaptersByCourse : `${serverUrl}course-chapter/all/lookup/`,
-  _getCoursesByInstructor: `${serverUrl}course/all/lookup/by-instructor`
-
+  _getCoursesByInstructor: `${serverUrl}course/all/lookup/by-instructor`,
+  _deleteEnrolmentRequest: `${serverUrl}enrollment-request/delete/`,
 }
 /*
  * For easier debugging in development mode, you can import the following file

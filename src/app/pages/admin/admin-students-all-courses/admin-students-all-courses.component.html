@@ -59,7 +59,7 @@
                                 <td class="text-center">{{student.chapter_fee}}</td>
                                 <td class="text-center">
                                     <a *ngIf="!student.is_active_subscription"
-                                        (click)="onApproveClick(student,search.value)" title="{{'Approved'|translate}}"
+                                        (click)="onApproveClick(student,search.value)" title="{{'Approve'|translate}}"
                                         class="accept-btn noborder mx-2"><i class="uil uil-check"></i>
                                         </a>
                                     <a *ngIf="student.is_active_subscription"
@@ -67,7 +67,7 @@
                                         class="reject-btn noborder mx-2"><i class="uil uil-times"></i>
                                        </a>
 <!-- deleteEnrollment request -->
-                                   <a title="{{'delete enrollment request'|translate}}"
+                                   <a (click)="onDeleteClick(student,search.value)" title="{{'delete enrollment request'|translate}}"
                                        class="reject-btn noborder mx-2"><i class="uil delete-btn"></i>
                                       </a>
                                 </td>

@@ -177,6 +177,41 @@ export class AdvancedSearchPaymentStudentComponent implements OnInit {
 
     })
   }
+  
+  onDeleteClick(student, search){
+    this.modalRef = this.modalService.show(ConfirmComponent, {
+
+      initialState: {
+        prompt: this.translate.instant('Are you sure you want to delete this request'),
+        list: [
+          `${this.translate.instant('student name:')} ${student.first_name} ${student.last_name}`,
+          `${this.translate.instant('student mobile number:')} ${student.mobile_no}`,
+          `${this.translate.instant('course name:')} ${student.course_title}`,
+          `${this.translate.instant('chapter name:')} ${student.chapter_title}`
+        ],
+        callback: (result) => {
+          if (result) {
+            this.deleteEnrolmentRequest(student.enrollment_id, search)
+          } else {
+            console.log('cancel');
+
+          }
+        }
+      }
+    });
+  }
+  deleteEnrolmentRequest(enrollment_id: any, search) {
+    this._student.deleteEnrollmentRequest(enrollment_id).subscribe(res => {
+      this._toast.showToast(this.translate.instant("Deleted Successfully"), 'success');
+      this.resetTable(true,false)
+      console.log(res);
+
+    }, err => {
+      console.log(err);
+
+    })
+  }
+  
   onRejectClick(student, search) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
 

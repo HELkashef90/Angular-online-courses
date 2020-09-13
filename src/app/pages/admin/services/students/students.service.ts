@@ -49,4 +49,7 @@ export class StudentsService {
   advancedSearchGetChaptersByCourse(id){
     return this.httpClient.get(environment._advancedSearchGetChaptersByCourse + id)
   }
+  deleteEnrollmentRequest(id){
+    return this.httpClient.delete(environment._deleteEnrolmentRequest + id)
+  }
 }
