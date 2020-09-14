@@ -25,7 +25,7 @@ export class ManagmentUserComponent implements OnInit {
   lastPage = false;
   modalRef: BsModalRef;
   constructor(private _student: StudentsService, private _toast: ToastService, private translate: TranslateService
-    , private modalService: BsModalService,private _formBuilder: FormBuilder,) { }
+    , private modalService: BsModalService, private _formBuilder: FormBuilder,) { }
 
   ngOnInit(): void {
     this.getAllUsers()
@@ -70,9 +70,9 @@ export class ManagmentUserComponent implements OnInit {
 
     })
   }
-  onSearchClick(searchForm){
+  onSearchClick(searchForm) {
     console.log(searchForm.value);
-    this.resetTable(false,false)
+    this.resetTable(false, false)
     this.getAllUsers(searchForm.value);
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
@@ -84,7 +84,7 @@ export class ManagmentUserComponent implements OnInit {
   }
 
 
-//actions
+  //actions
   onUnblockClick(user) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
 
@@ -92,7 +92,7 @@ export class ManagmentUserComponent implements OnInit {
         prompt: this.translate.instant('Are you sure you want to unblock this user? '),
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
-          `${this.translate.instant('user mobile number:')} ${user.mobile_no}`,
+          `${this.translate.instant('user mobile number:')} ${user.mobile}`,
           // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
@@ -112,7 +112,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("unblocked Successfully"), 'success');
 
-      this.resetTable(true,false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -147,7 +147,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("blocked Successfully"), 'success');
 
-      this.resetTable(true,false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -168,7 +168,7 @@ export class ManagmentUserComponent implements OnInit {
         ],
         callback: (result) => {
           if (result) {
-            this.activeUser(user.user_id)
+            // this.activeUser(user.user_id)
           } else {
             console.log('cancel');
 
@@ -177,14 +177,15 @@ export class ManagmentUserComponent implements OnInit {
       }
     });
   }
-  activeUser(id: any) {
+  activeUser(ev, id: any) {
     this._student.activeUser(id).subscribe(res => {
       console.log(res);
       this._toast.showToast(this.translate.instant("activated Successfully"), 'success');
 
-      this.resetTable(true,false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
+      ev.target.checked = false
 
       console.log(err);
 
@@ -203,7 +204,7 @@ export class ManagmentUserComponent implements OnInit {
         ],
         callback: (result) => {
           if (result) {
-            this.deactivateUser(user.user_id)
+            // this.deactivateUser(user.user_id)
           } else {
             console.log('cancel');
 
@@ -212,14 +213,15 @@ export class ManagmentUserComponent implements OnInit {
       }
     });
   }
-  deactivateUser(id: any) {
+  deactivateUser(ev, id: any) {
     this._student.deActivateUser(id).subscribe(res => {
       console.log(res);
       this._toast.showToast(this.translate.instant("deactivated Successfully"), 'success');
 
-      this.resetTable(true,false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
+      ev.target.checked = true
 
       console.log(err);
 
@@ -252,7 +254,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("Reset Email sent Successfully"), 'success');
 
-      this.resetTable(true,false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -287,7 +289,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("Device reset Successfully"), 'success');
 
-      this.resetTable(true,false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -295,7 +297,7 @@ export class ManagmentUserComponent implements OnInit {
 
     })
   }
-//end of actions
+  //end of actions
 
   resetTable(getAllEnrollment = true, closeSearchSection = true) {
     this.totalPages = 0;
@@ -303,31 +305,42 @@ export class ManagmentUserComponent implements OnInit {
     this.restrictedUsersArray = [];
     this.reqPageNum = 0;
     this.lastPage = false;
-   closeSearchSection ? this.closeSearchSection(true) : null;
+    closeSearchSection ? this.closeSearchSection(true) : null;
     getAllEnrollment ? this.getAllUsers(this.searchForm.value) : null
   }
 
 
 
-closeSearchSection(clear = false){
-  var verticalSideBar = document.querySelector(".searchSection");
+  closeSearchSection(clear = false) {
+    var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
-    clear ? this.initForm()  : null;
-}
-openSearchSection(){
-  var verticalSideBar = document.querySelector(".searchSection");
-  verticalSideBar.classList.toggle("shoow");
-}
-onEditClick() {
+    clear ? this.initForm() : null;
+  }
+  openSearchSection() {
+    var verticalSideBar = document.querySelector(".searchSection");
+    verticalSideBar.classList.toggle("shoow");
+  }
+  activeDeactivateUserClick(ev, user) {
+    console.log(ev.target.checked);
+    //true activate
+    if (ev.target.checked) {
+      this.activeUser(ev, user.user_id)
+    }
+    //false deactivate
+    if (!ev.target.checked) {
+      this.deactivateUser(ev, user.user_id)
+    }
+  }
+  onEditClick(user) {
 
-  this.modalRef = this.modalService.show(EditUserComponent, {
-    // initialState: {
-    //   selectedCourseToEdit: course
-    // },
-    class: 'modal-lg',
-    backdrop : 'static',
-    keyboard : false
-  });
+    this.modalRef = this.modalService.show(EditUserComponent, {
+      // initialState: {
+      //   selectedCourseToEdit: course
+      // },
+      class: 'modal-lg',
+      backdrop: 'static',
+      keyboard: false
+    });
 
-}
+  }
 }

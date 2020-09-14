@@ -57,10 +57,10 @@ export class StudentsService {
     return this.httpClient.post(environment._userManagementSearchUsers + '?page=' + page + '&size=' + size, body)
   }
   activeUser(id) {
-    return this.httpClient.get(environment._userManagementActiveUser + id)
+    return this.httpClient.put(environment._userManagementActiveUser + id , {})
   }
   deActivateUser(id) {
-    return this.httpClient.get(environment._userManagementDeactivateUser + id)
+    return this.httpClient.put(environment._userManagementDeactivateUser + id , {})
   }
   blockUser(id) {
     return this.httpClient.get(environment._userManagementBlockUser + id)
@@ -69,10 +69,10 @@ export class StudentsService {
     return this.httpClient.get(environment._userManagementUnBlockUser + id)
   }
   resetPassword(id) {
-    return this.httpClient.get(environment._userManagementResetPassword + id)
+    return this.httpClient.post(environment._userManagementResetPassword + id,{})
   }
   resetDevice(id) {
-    return this.httpClient.get(environment._userManagementResetDevice + id)
+    return this.httpClient.put(environment._userManagementResetDevice + id,{})
   }
   updateUserInfo(body) {
     return this.httpClient.put(environment._userManagementUpdateInfo, body)
