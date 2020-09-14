@@ -16339,6 +16339,7 @@ select:invalid { color: #e5e5e5; }
 		-ms-border-radius: 30px;
 		-o-border-radius: 30px;
 }
+
 	.reject-btn {
 		color: #c8302f;
 		background-color: #ffeced2e;
@@ -16370,9 +16371,29 @@ select:invalid { color: #e5e5e5; }
 		font-size: 17px;
 		/* vertical-align: middle; */
 	}
-
+.icon-resetPassword:before {
+  content: "\e907";
+  font-family:"icons";
+  font-size: 16px;
+    color: #000000;
+}
+.icon-resetDevice:before {
+  content: "\e908";
+  font-family:"icons";
+  font-size: 16px;
+    color: #000000;
+}
+.Dassh{
+  /* color:#FFFFFF !important; */
+}
 	/* //modal */
+.edit-user .course__form{
+  margin: 30px 25px;
+}
+.edit-user .first{
+  justify-content: center;
 
+}
 	.modal-backdrop.show {
 		opacity: .1;
 		opacity: 0;

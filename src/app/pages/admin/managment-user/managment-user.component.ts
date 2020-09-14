@@ -5,6 +5,8 @@ import { ToastService } from 'src/app/services/toast/toast.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmComponent } from '../components/confirm/confirm.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EditUserComponent } from './../edit-user/edit-user.component';
+
 @Component({
   selector: 'app-managment-user',
   templateUrl: './managment-user.component.html',
@@ -175,5 +177,17 @@ closeSearchSection(clear = false){
 openSearchSection(){
   var verticalSideBar = document.querySelector(".searchSection");
   verticalSideBar.classList.toggle("shoow");
+}
+onEditClick() {
+
+  this.modalRef = this.modalService.show(EditUserComponent, {
+    // initialState: {
+    //   selectedCourseToEdit: course
+    // },
+    class: 'modal-lg',
+    backdrop : 'static',
+    keyboard : false
+  });
+
 }
 }
