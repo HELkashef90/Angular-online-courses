@@ -73,7 +73,7 @@
               <tr *ngFor="let user of restrictedUsersArray; let i = index">
                 <td class="text-center">{{i + 1}}</td>
                 <td>{{user.first_name + ' ' + user.last_name}}</td>
-                <td class="text-center">{{user.mobile_no}}</td>
+                <td class="text-center">{{user.mobile}}</td>
                 <td class="text-center">{{user.email}}</td>
                 <td *ngIf="!user._blocked" class="text-center" style="color: green;">{{"Active" | translate}}</td>
                 <td *ngIf="user._blocked" class="text-center" style="color: red;">{{"Blocked" | translate}}</td>

@@ -26,7 +26,7 @@ export class ManagmentUserComponent implements OnInit {
     , private modalService: BsModalService,private _formBuilder: FormBuilder,) { }
 
   ngOnInit(): void {
-    this.getRestrictedUsers()
+    this.getAllUsers()
     this.initForm()
   }
   initForm() {
@@ -38,13 +38,13 @@ export class ManagmentUserComponent implements OnInit {
     });
 
   }
-  getRestrictedUsers(body = {}) {
+  getAllUsers(body = {}) {
     // console.log(this.reqPageNum, this.totalPages, this.lastPage);
     if (this.lastPage || this.loading) {
       return false;
     }
     this.loading = true
-    this._student.getRestrictedUsers(this.reqPageNum, this.pageSize, body).subscribe(res => {
+    this._student.searchUsers(this.reqPageNum, this.pageSize, body).subscribe(res => {
       if (res['statusCodeValue'] === 204) {
         this.lastPage = true
         this.loading = false
@@ -71,13 +71,13 @@ export class ManagmentUserComponent implements OnInit {
   onSearchClick(searchForm){
     console.log(searchForm.value);
     this.resetTable(false,false)
-    this.getRestrictedUsers(searchForm.value);
+    this.getAllUsers(searchForm.value);
     var verticalSideBar = document.querySelector(".searchSection");
     verticalSideBar.classList.add("shoow");
   }
 
   onScroll(searchForm?) {
-    this.getRestrictedUsers(searchForm.value)
+    this.getAllUsers(searchForm.value)
     // search ? this.onSearchClick(search, null, false) : this.getAllEnrollment();
   }
 
@@ -162,7 +162,7 @@ export class ManagmentUserComponent implements OnInit {
     this.reqPageNum = 0;
     this.lastPage = false;
    closeSearchSection ? this.closeSearchSection(true) : null;
-    getAllEnrollment ? this.getRestrictedUsers(this.searchForm.value) : null
+    getAllEnrollment ? this.getAllUsers(this.searchForm.value) : null
   }
 
 

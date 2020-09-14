@@ -27,29 +27,54 @@ export class StudentsService {
     return this.httpClient.put(environment._rejectEnrollment + id, {})
   }
 
-  getRestrictedUsers(page, size,body = {}) {
-    return this.httpClient.post(environment._getRestrictedUsers + '?page=' + page + '&size=' + size , body)
+  getRestrictedUsers(page, size, body = {}) {
+    return this.httpClient.post(environment._getRestrictedUsers + '?page=' + page + '&size=' + size, body)
   }
-  
-  unblockUSer(id){
-    return this.httpClient.put(environment._unblockUSer + id,{})
+
+  unblockUSer(id) {
+    return this.httpClient.put(environment._unblockUSer + id, {})
   }
-  blockUSer(id){
-    return this.httpClient.put(environment._blockUSer + id,{})
+  blockUSer(id) {
+    return this.httpClient.put(environment._blockUSer + id, {})
   }
-  advancedSearchEnrollment(page, size,body = {}) {
-    return this.httpClient.post(environment._advancedSearchEnrollment + '?page=' + page + '&size=' + size , body)
+  advancedSearchEnrollment(page, size, body = {}) {
+    return this.httpClient.post(environment._advancedSearchEnrollment + '?page=' + page + '&size=' + size, body)
   }
-  advancedSearchGetCourses(){
+  advancedSearchGetCourses() {
     return this.httpClient.get(environment._advancedSearchGetCourses)
   }
-  advancedSearchGetInstructors(){
+  advancedSearchGetInstructors() {
     return this.httpClient.get(environment._advancedSearchGetInstructors)
   }
-  advancedSearchGetChaptersByCourse(id){
+  advancedSearchGetChaptersByCourse(id) {
     return this.httpClient.get(environment._advancedSearchGetChaptersByCourse + id)
   }
-  deleteEnrollmentRequest(id){
+  deleteEnrollmentRequest(id) {
     return this.httpClient.delete(environment._deleteEnrolmentRequest + id)
+  }
+
+  searchUsers(page, size, body = {}) {
+    return this.httpClient.post(environment._userManagementSearchUsers + '?page=' + page + '&size=' + size, body)
+  }
+  activeUser(id) {
+    return this.httpClient.get(environment._userManagementActiveUser + id)
+  }
+  deActivateUser(id) {
+    return this.httpClient.get(environment._userManagementDeactivateUser + id)
+  }
+  blockUser(id) {
+    return this.httpClient.get(environment._userManagementBlockUser + id)
+  }
+  unBlockUser(id) {
+    return this.httpClient.get(environment._userManagementUnBlockUser + id)
+  }
+  resetPassword(id) {
+    return this.httpClient.get(environment._userManagementResetPassword + id)
+  }
+  resetDevice(id) {
+    return this.httpClient.get(environment._userManagementResetDevice + id)
+  }
+  updateUserInfo(body) {
+    return this.httpClient.put(environment._userManagementUpdateInfo, body)
   }
 }

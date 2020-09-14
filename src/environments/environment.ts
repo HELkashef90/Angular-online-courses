@@ -57,7 +57,18 @@ export const environment = {
   _advancedSearchGetChaptersByCourse : `${serverUrl}course-chapter/all/lookup/`,
   _getCoursesByInstructor: `${serverUrl}course/all/lookup/by-instructor`,
   _deleteEnrolmentRequest: `${serverUrl}enrollment-request/delete/`,
-  _getAllCourses:`${serverUrl}student-view/courses/published/search`
+  _getAllCourses:`${serverUrl}student-view/courses/published/search`,
+
+  _userManagementSearchUsers:`${serverUrl}user/search`,
+  _userManagementActiveUser:`${serverUrl}user/activate/`,
+  _userManagementDeactivateUser:`${serverUrl}user/deactivate/`,
+  _userManagementBlockUser:`${serverUrl}user/block/`,
+  _userManagementUnBlockUser:`${serverUrl}user/unblock/`,
+  _userManagementResetPassword:`${serverUrl}user/resetpassword/`,
+  _userManagementResetDevice:`${serverUrl}student/resetdevice/`,
+  _userManagementUpdateInfo:`${serverUrl}user/update`,
+
+
 }
 /*
  * For easier debugging in development mode, you can import the following file
