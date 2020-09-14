@@ -4,49 +4,67 @@
             <div class="col-lg-12">
                 <h2 class="st_title"><i class="uil uil-apps"></i> {{ 'All Courses' | translate}}</h2>
 
-    <form class="StudentSearch">
-      <input class="col-12 col-sm-6 form-control" type="text" placeholder="{{'Search'|translate}}" aria-label="Search">
+                <form [formGroup]="searchForm" class="StudentSearch">
+                    <input formControlName="course_name" class="col-6 col-sm-3 form-control" type="text"
+                        placeholder="{{'Course Name'|translate}}" aria-label="Search">
+                    <input formControlName="instructor_name" class="col-6 col-sm-3 form-control" type="text"
+                        placeholder="{{'Instructor Name'|translate}}" aria-label="Search">
 
-
-        <select value="all" name="search_param" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <!-- <select value="all" name="search_param" id="search_param" class="btn btn-default dropdown-toggle" >
             <option value="all" disabled>{{"Search by"|translate}}</option>
             <option value="instructor">{{"instructor"|translate}}</option>
             <option value="subject">{{"subject Name"|translate}}</option>
-        </select>
-        <div class="formButtn">
+        </select> -->
+                    <div class="formButtn">
 
-    <button class="btn  btn-primary" type="submit" >{{"Search"|translate}}</button>
-</div>
-  </form>
+                        <button class="btn  btn-primary" (click)="onSearchClick(searchForm)">{{"Search"|translate}}</button>
 
+                    </div>
+                </form>
+
+        <h5 class="icon-filter" (click)="onFilterClick()">{{"Filter"|translate}}</h5>
+        <form [formGroup]="searchForm">
+            <div class="filter showFilter">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-lang-tab" data-toggle="pill" href="#pills-lang" role="tab"
+                        aria-controls="pills-lang" aria-selected="false">{{"Language"|translate}}</a>
+                </li>
+                  <li class="nav-item">
+                        <a class="nav-link " id="pills-grade-tab" data-toggle="pill" href="#pills-grade" role="tab"
+                            aria-controls="pills-grade" aria-selected="true">{{"Grade"|translate}}</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade active show" id="pills-lang" role="tabpanel" aria-labelledby="pills-lang-tab">
+                    <label class="radio-inline">
+                        <input type="radio" [value]=1 formControlName="language_id">{{"Arabic"|translate}}</label>
+                    <label class="radio-inline">
+                        <input type="radio" [value]=2 formControlName="language_id">{{"English"|translate}}</label>
+                    <label class="radio-inline">
+                        <input type="radio" [value]=0 formControlName="language_id">{{"both"|translate}}</label>
+                </div>
+                    <div class="tab-pane fade " id="pills-grade" role="tabpanel" aria-labelledby="pills-grade-tab">
+                        <label class="radio-inline">
+                            <input type="radio"  [value]=1
+                                formControlName="level_id">{{"first"|translate}}</label>
+                        <label class="radio-inline">
+                            <input type="radio"  [value]=2
+                                formControlName="level_id">{{"Second"|translate}}</label>
+                        <label class="radio-inline">
+                            <input type="radio"  [value]=3
+                                formControlName="level_id">{{"Third"|translate}}</label>
+                        <label class="radio-inline">
+                            <input type="radio"  [value]=0
+                                formControlName="level_id">{{"All"|translate}}</label>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        <h5 class="icon-filter" (click)="onSearchClick()">{{"Filter"|translate}}</h5>
-        <div class="filter showFilter">
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link" id="pills-lang-tab" data-toggle="pill" href="#pills-lang" role="tab" aria-controls="pills-lang" aria-selected="false">{{"Language"|translate}}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " id="pills-grade-tab" data-toggle="pill" href="#pills-grade" role="tab" aria-controls="pills-grade" aria-selected="true">{{"Grade"|translate}}</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade active show" id="pills-lang" role="tabpanel" aria-labelledby="pills-lang-tab">
-              <label class="radio-inline"><input type="radio" name="optradio" checked>{{"Both"|translate}}</label>
-              <label class="radio-inline"><input type="radio" name="optradio" >{{"English"|translate}}</label>
-              <label class="radio-inline"><input type="radio" name="optradio">{{"Arabic"|translate}}</label>
-            </div>
-            <div class="tab-pane fade " id="pills-grade" role="tabpanel" aria-labelledby="pills-grade-tab">
-              <label class="radio-inline"><input type="radio" name="optradio" >{{"All"|translate}}</label>
-              <label class="radio-inline"><input type="radio" name="optradio" >{{"First"|translate}}</label>
-              <label class="radio-inline"><input type="radio" name="optradio">{{"Second"|translate}}</label>
-              <label class="radio-inline"><input type="radio" name="optradio">{{"Third"|translate}}</label>
-            </div>
-          </div>
-        </div>
+        </form>
         <div class="section3125  mt-10">
-            <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()"
+            <div class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll(searchForm)"
                 [infiniteScrollDisabled]="lastPage">
 
 
@@ -66,12 +84,12 @@
                         <div class="fcrse_content">
                             <a class="crse14s">{{course.course_title}}
                             </a>
-                            <a class="crse-cate" *ngIf="course.level === '1'">{{"1st" | translate}}</a>
-                            <a class="crse-cate" *ngIf="course.level === '2'">{{"2nd" | translate}}</a>
-                            <a class="crse-cate" *ngIf="course.level === '3'">{{"3rd" | translate}}</a>
+                            <a class="crse-cate" *ngIf="course.level === 1">{{"1st" | translate}}</a>
+                            <a class="crse-cate" *ngIf="course.level === 2">{{"2nd" | translate}}</a>
+                            <a class="crse-cate" *ngIf="course.level === 3">{{"3rd" | translate}}</a>
 
-                            <a class="crse-cate" *ngIf="course.language === '1'">{{"Arabic" | translate}}</a>
-                            <a class="crse-cate" *ngIf="course.language === '2'">{{"English" | translate}}</a>
+                            <a class="crse-cate" *ngIf="course.language === 1">{{"Arabic" | translate}}</a>
+                            <a class="crse-cate" *ngIf="course.language === 2">{{"English" | translate}}</a>
                             <div class="auth1lnkprce">
                                 <p class="cr1fot">{{ 'By' | translate}} <a>{{course.first_name}}</a></p>
                                 <!-- <div class="prce142">$4</div> -->
@@ -94,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-
+                <h2 *ngIf="approvedCoursesArray.length <= 0 && !loading">{{"No Results Found" | translate}}</h2>
             </div>
 
         </div>
