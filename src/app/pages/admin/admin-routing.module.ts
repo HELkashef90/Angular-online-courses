@@ -5,6 +5,7 @@ import { AdminStudentsAllCoursesComponent } from './admin-students-all-courses/a
 import{RestrictedUsersComponent}from './restricted-users/restricted-users.component'
 import{AdvancedSearchPaymentStudentComponent}from './advanced-search-payment-student/advanced-search-payment-student.component'
 import{ManagmentUserComponent}from './managment-user/managment-user.component'
+import{EditUserComponent}from './edit-user/edit-user.component'
 import { AdminComponent } from './admin.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path:"Management",
         component:ManagmentUserComponent
+      },
+      {
+        path:"EditUser",
+        component:EditUserComponent
       },
       {
         path: '',

@@ -19,26 +19,33 @@
                     <div class="formButtn">
 
                         <button class="btn  btn-primary" (click)="onSearchClick(searchForm)">{{"Search"|translate}}</button>
-                        
+
                     </div>
                 </form>
 
-            </div>
-        </div>
-        <h5 class="icon-filter" (click)="onFilterClick()">filter</h5>
+        <h5 class="icon-filter" (click)="onFilterClick()">{{"Filter"|translate}}</h5>
         <form [formGroup]="searchForm">
             <div class="filter showFilter">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item">
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-lang-tab" data-toggle="pill" href="#pills-lang" role="tab"
+                        aria-controls="pills-lang" aria-selected="false">{{"Language"|translate}}</a>
+                </li>
+                  <li class="nav-item">
                         <a class="nav-link " id="pills-grade-tab" data-toggle="pill" href="#pills-grade" role="tab"
-                            aria-controls="pills-grade" aria-selected="true">{{"grade"|translate}}</a>
+                            aria-controls="pills-grade" aria-selected="true">{{"Grade"|translate}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-lang-tab" data-toggle="pill" href="#pills-lang" role="tab"
-                            aria-controls="pills-lang" aria-selected="false">{{"language"|translate}}</a>
-                    </li>
+
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade active show" id="pills-lang" role="tabpanel" aria-labelledby="pills-lang-tab">
+                    <label class="radio-inline">
+                        <input type="radio" [value]=1 formControlName="language_id">{{"Arabic"|translate}}</label>
+                    <label class="radio-inline">
+                        <input type="radio" [value]=2 formControlName="language_id">{{"English"|translate}}</label>
+                    <label class="radio-inline">
+                        <input type="radio" [value]=0 formControlName="language_id">{{"both"|translate}}</label>
+                </div>
                     <div class="tab-pane fade " id="pills-grade" role="tabpanel" aria-labelledby="pills-grade-tab">
                         <label class="radio-inline">
                             <input type="radio"  [value]=1
@@ -53,14 +60,7 @@
                             <input type="radio"  [value]=0
                                 formControlName="level_id">{{"All"|translate}}</label>
                     </div>
-                    <div class="tab-pane fade" id="pills-lang" role="tabpanel" aria-labelledby="pills-lang-tab">
-                        <label class="radio-inline">
-                            <input type="radio" [value]=1 formControlName="language_id">{{"Arabic"|translate}}</label>
-                        <label class="radio-inline">
-                            <input type="radio" [value]=2 formControlName="language_id">{{"English"|translate}}</label>
-                        <label class="radio-inline">
-                            <input type="radio" [value]=0 formControlName="language_id">{{"both"|translate}}</label>
-                    </div>
+
                 </div>
             </div>
         </form>

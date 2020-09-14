@@ -22,10 +22,11 @@ import { AdminConfirmCoursesComponent } from './admin-confirm-courses/admin-conf
 import { RestrictedUsersComponent } from './restricted-users/restricted-users.component';
 import { AdvancedSearchPaymentStudentComponent } from './advanced-search-payment-student/advanced-search-payment-student.component';
 import { ManagmentUserComponent } from './managment-user/managment-user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent, RestrictedUsersComponent, AdvancedSearchPaymentStudentComponent, ManagmentUserComponent],
+  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent, RestrictedUsersComponent, AdvancedSearchPaymentStudentComponent, ManagmentUserComponent, EditUserComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
