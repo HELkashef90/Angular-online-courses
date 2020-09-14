@@ -16394,6 +16394,9 @@ select:invalid { color: #e5e5e5; }
   justify-content: center;
 
 }
+label.togglebuttn{
+  margin: 0px !important;
+}
 	.modal-backdrop.show {
 		opacity: .1;
 		opacity: 0;
