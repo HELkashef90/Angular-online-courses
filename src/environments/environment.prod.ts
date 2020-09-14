@@ -55,6 +55,7 @@ export const environment = {
   _advancedSearchGetChaptersByCourse : `${serverUrl}course-chapter/all/lookup/`,
   _getCoursesByInstructor: `${serverUrl}course/all/lookup/by-instructor`,
   _deleteEnrolmentRequest: `${serverUrl}enrollment-request/delete/`,
+  _getAllCourses:`${serverUrl}student-view/courses/published/search`
 
 
 

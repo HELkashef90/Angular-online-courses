@@ -26,5 +26,8 @@ export class CourseService {
   getStudyCourse(id) {
     return this.httpClient.get(environment._getStudyCourse + id)
   }
-
+  getAllCourses(page, size,body = {}) {
+    return this.httpClient.post(environment._getAllCourses + '?page=' + page + '&size=' + size , body)
+  }
+  
 }
