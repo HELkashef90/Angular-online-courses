@@ -147,7 +147,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("blocked Successfully"), 'success');
 
-      // this.resetTable(true, false)
+      this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
 
@@ -218,7 +218,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("deactivated Successfully"), 'success');
 
-      this.resetTable(true, false)
+      // this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
       ev.target.checked = true
