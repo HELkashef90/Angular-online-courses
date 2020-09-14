@@ -82,7 +82,7 @@ export class ManagmentUserComponent implements OnInit {
   }
 
 
-
+//actions
   onUnblockClick(user) {
     this.modalRef = this.modalService.show(ConfirmComponent, {
 
@@ -125,7 +125,7 @@ export class ManagmentUserComponent implements OnInit {
         prompt: this.translate.instant('Are you sure you want to block this user? '),
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
-          `${this.translate.instant('user mobile number:')} ${user.mobile_no}`,
+          `${this.translate.instant('user mobile number:')} ${user.mobile}`,
           `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
@@ -153,7 +153,147 @@ export class ManagmentUserComponent implements OnInit {
 
     })
   }
+  onActiveUserClick(user) {
+    this.modalRef = this.modalService.show(ConfirmComponent, {
 
+      initialState: {
+        prompt: this.translate.instant('Are you sure you want to active this user? '),
+        list: [
+          `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
+          `${this.translate.instant('user mobile number:')} ${user.mobile}`,
+          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          `${this.translate.instant('user email:')} ${user.email}`
+        ],
+        callback: (result) => {
+          if (result) {
+            this.activeUser(user.user_id)
+          } else {
+            console.log('cancel');
+
+          }
+        }
+      }
+    });
+  }
+  activeUser(id: any) {
+    this._student.activeUser(id).subscribe(res => {
+      console.log(res);
+      this._toast.showToast(this.translate.instant("activated Successfully"), 'success');
+
+      this.resetTable(true,false)
+    }, err => {
+      this._toast.showToast(this.translate.instant("please try again"), 'error');
+
+      console.log(err);
+
+    })
+  }
+  onDeactivateUserClick(user) {
+    this.modalRef = this.modalService.show(ConfirmComponent, {
+
+      initialState: {
+        prompt: this.translate.instant('Are you sure you want to deactivate this user? '),
+        list: [
+          `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
+          `${this.translate.instant('user mobile number:')} ${user.mobile}`,
+          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          `${this.translate.instant('user email:')} ${user.email}`
+        ],
+        callback: (result) => {
+          if (result) {
+            this.deactivateUser(user.user_id)
+          } else {
+            console.log('cancel');
+
+          }
+        }
+      }
+    });
+  }
+  deactivateUser(id: any) {
+    this._student.deActivateUser(id).subscribe(res => {
+      console.log(res);
+      this._toast.showToast(this.translate.instant("deactivated Successfully"), 'success');
+
+      this.resetTable(true,false)
+    }, err => {
+      this._toast.showToast(this.translate.instant("please try again"), 'error');
+
+      console.log(err);
+
+    })
+  }
+  onResetUserPasswordClick(user) {
+    this.modalRef = this.modalService.show(ConfirmComponent, {
+
+      initialState: {
+        prompt: this.translate.instant('Are you sure you want to reset password to this user? '),
+        list: [
+          `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
+          `${this.translate.instant('user mobile number:')} ${user.mobile}`,
+          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          `${this.translate.instant('user email:')} ${user.email}`
+        ],
+        callback: (result) => {
+          if (result) {
+            this.resetUserPassword(user.user_id)
+          } else {
+            console.log('cancel');
+
+          }
+        }
+      }
+    });
+  }
+  resetUserPassword(id: any) {
+    this._student.resetPassword(id).subscribe(res => {
+      console.log(res);
+      this._toast.showToast(this.translate.instant("Reset Email sent Successfully"), 'success');
+
+      this.resetTable(true,false)
+    }, err => {
+      this._toast.showToast(this.translate.instant("please try again"), 'error');
+
+      console.log(err);
+
+    })
+  }
+  onResetUserDeviceClick(user) {
+    this.modalRef = this.modalService.show(ConfirmComponent, {
+
+      initialState: {
+        prompt: this.translate.instant('Are you sure you want to reset device to this user? '),
+        list: [
+          `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
+          `${this.translate.instant('user mobile number:')} ${user.mobile}`,
+          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          `${this.translate.instant('user email:')} ${user.email}`
+        ],
+        callback: (result) => {
+          if (result) {
+            this.resetUserDevice(user.user_id)
+          } else {
+            console.log('cancel');
+
+          }
+        }
+      }
+    });
+  }
+  resetUserDevice(id: any) {
+    this._student.resetDevice(id).subscribe(res => {
+      console.log(res);
+      this._toast.showToast(this.translate.instant("Device reset Successfully"), 'success');
+
+      this.resetTable(true,false)
+    }, err => {
+      this._toast.showToast(this.translate.instant("please try again"), 'error');
+
+      console.log(err);
+
+    })
+  }
+//end of actions
 
   resetTable(getAllEnrollment = true, closeSearchSection = true) {
     this.totalPages = 0;
