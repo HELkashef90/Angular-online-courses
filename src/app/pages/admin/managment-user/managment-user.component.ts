@@ -91,7 +91,7 @@ export class ManagmentUserComponent implements OnInit {
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
           `${this.translate.instant('user mobile number:')} ${user.mobile_no}`,
-          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
         callback: (result) => {
@@ -126,7 +126,7 @@ export class ManagmentUserComponent implements OnInit {
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
           `${this.translate.instant('user mobile number:')} ${user.mobile}`,
-          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
         callback: (result) => {
@@ -161,7 +161,7 @@ export class ManagmentUserComponent implements OnInit {
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
           `${this.translate.instant('user mobile number:')} ${user.mobile}`,
-          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
         callback: (result) => {
@@ -196,7 +196,7 @@ export class ManagmentUserComponent implements OnInit {
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
           `${this.translate.instant('user mobile number:')} ${user.mobile}`,
-          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
         callback: (result) => {
@@ -231,7 +231,7 @@ export class ManagmentUserComponent implements OnInit {
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
           `${this.translate.instant('user mobile number:')} ${user.mobile}`,
-          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
         callback: (result) => {
@@ -266,7 +266,7 @@ export class ManagmentUserComponent implements OnInit {
         list: [
           `${this.translate.instant('user name:')} ${user.first_name} ${user.last_name}`,
           `${this.translate.instant('user mobile number:')} ${user.mobile}`,
-          `${this.translate.instant('user ip:')} ${user.ip_address}`,
+          // `${this.translate.instant('user ip:')} ${user.ip_address}`,
           `${this.translate.instant('user email:')} ${user.email}`
         ],
         callback: (result) => {
