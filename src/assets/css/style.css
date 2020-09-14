@@ -16605,6 +16605,9 @@ margin-bottom: 20px;
   right: 102px;
 
 }
+.StudentSearch{
+  text-align: center;
+}
 /* .rtl .StudentSearch .search-panel{
   position: relative;
   left: 105px;
@@ -16642,7 +16645,21 @@ right: auto;
   */-webkit-border-bottom-right-radius: 500rem !important;
 }
 .StudentSearch .formButtn{
-  display: contents;
+  /* display: contents; */
+  display: inline-block;
+    padding:6px 26px 0px 26px;
+
+}
+.StudentSearch .formButtn button{
+  font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', 'helvetica',sans-serif;
+    color: #fff;
+    background: #c8302f;
+    border-radius: 20px;
+}
+.StudentSearch .form-control {
+  margin: 0px 5px;
 
 }
 .rtl .StudentSearch .form-control{
@@ -16686,13 +16703,14 @@ right: auto;
     left: 0px;
 }
 .StudentSearch .formButtn {
-  position: relative;
+/* display: block; */
 }
 .StudentSearch .formButtn button{
   margin: 0;
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 50%;
+  top: 29px;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -17130,7 +17148,9 @@ nav.chapter-list{
 }
 @media (min-width: 768px)
 {
-
+  .StudentSearch {
+    text-align: unset;
+}
   div.col-md-6.socialMedia {
 
     max-width: 100%;
