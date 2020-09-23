@@ -1,51 +1,68 @@
 <!-- <div class="wrapper"> -->
-  <div class="modal-body edit-user">
-    <!-- <div class="container"> -->
+<div class="modal-body edit-user">
+  <!-- <div class="container"> -->
 
-    <div class="row first">
-        <div class="col-lg-12">
-            <button type="button" class="close" (click)="decline()" aria-label="Close">
-                <i class="uil uil-times"></i>
-            </button>
-            <h2 class="st_title"><i class="uil uil-plus-circle"></i> {{"Edit Data Of User "| translate}} :
+  <div class="row first">
+    <div class="col-lg-12">
+      <button type="button" class="close" (click)="decline()" aria-label="Close">
+        <i class="uil uil-times"></i>
+      </button>
+      <h2 class="st_title"><i class="uil uil-plus-circle"></i> {{"Edit Data Of User "| translate}} :
 
-            {{"StudentName"|translate}}
-            </h2>
-        </div>
-        <form class="course__form">
-          <div class="general_info10">
-          <div class="row">
-            <div class="col-lg-6 col-md-6">
+        {{user.first_name + ' ' + user.last_name }}
+      </h2>
+    </div>
+    <form class="course__form" [formGroup]="editForm">
+      <div class="alert alert-danger" role="alert" *ngIf="showErrors && (editForm.invalid)">
+        <span *ngIf="editForm.get('firstName').invalid">
+          {{"*Please enter a valid first name (ex. Hossam)" | translate}} </span><br>
+        <span *ngIf="editForm.get('lastName').invalid">
+          {{"*Please enter a valid last name (ex.  Elkashef)" | translate}} </span><br>
+        <span *ngIf="editForm.get('email').invalid">
+          {{"*Please enter a valid Email (ex. example@gmail.com" | translate}} </span><br>
+        <span *ngIf="editForm.get('mobile').invalid">
+          {{"*Please enter a valid Mobile (ex. 01xxxxxxxxx)" | translate}} </span><br>
+      </div>
+      <div class="general_info10">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
             <div class="ui search focus mt-30 lbel25">
               <label>{{"First Name"|translate}}</label>
               <div class="ui left icon input swdh19">
 
-              <input maxlength="120" type="text" class="prompt srch_explore ng-untouched ng-pristine ng-valid form-control" placeholder="{{"FirstName"|translate}}">
-              <div class="badge_num2">
-                {{ 120}} </div>
-        </div>
+                <input formControlName="firstName" maxlength="120" type="text"
+                  class="prompt srch_explore ng-untouched ng-pristine ng-valid form-control"
+                  placeholder="{{'FirstName'|translate}}">
+                <div class="badge_num2">
+                  {{120- editForm.get('firstName')?.value?.length  }} </div>
+              </div>
             </div>
           </div>
-            <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">
             <div class="ui search focus mt-30 lbel25">
               <label>{{"Last Name"|translate}}</label>
               <div class="ui left icon input swdh19">
 
-              <input maxlength="120" type="text" class="prompt srch_explore ng-untouched ng-pristine ng-valid form-control" placeholder="{{"LastName"|translate}}">
-              <div class="badge_num2">
-                {{ 120}} </div>
-        </div>
+                <input formControlName="lastName" maxlength="120" type="text"
+                  class="prompt srch_explore ng-untouched ng-pristine ng-valid form-control"
+                  placeholder="{{'LastName' |translate}}">
+                <div class="badge_num2">
+                  {{120- editForm.get('lastName')?.value?.length  }} </div>
+
+              </div>
             </div>
           </div>
-            <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6">
             <div class="ui search focus mt-30 lbel25">
               <label>{{"Email"|translate}}</label>
               <div class="ui left icon input swdh19">
 
-              <input maxlength="120" type="text" class="prompt srch_explore ng-untouched ng-pristine ng-valid form-control" placeholder="Email">
-              <div class="badge_num2">
-                {{ 120}} </div>
-        </div>
+                <input formControlName="email" maxlength="120" type="text"
+                  class="prompt srch_explore ng-untouched ng-pristine ng-valid form-control" placeholder="Email">
+                <div class="badge_num2">
+                  {{120- editForm.get('email')?.value?.length  }} </div>
+
+              </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -54,19 +71,21 @@
               <label>{{"Mobile Number"|translate}}</label>
               <div class="ui left icon input swdh19">
 
-              <input maxlength="120" type="text" class=" prompt srch_explore ng-untouched ng-pristine ng-valid form-control" placeholder="Mobile">
-              <div class="badge_num2">
-                {{ 120}} </div>
+                <input formControlName="mobile" maxlength="11" type="text"
+                  class=" prompt srch_explore ng-untouched ng-pristine ng-valid form-control" placeholder="Mobile">
+                <div class="badge_num2">
+                  {{11- editForm.get('mobile')?.value?.length  }} </div>
+
+              </div>
+            </div>
+          </div>
         </div>
-            </div>
-            </div>
-            </div>
-          </div>
-          <div class="buttn">
-<button class="btn btn-default steps_btn">{{"Update"|translate}}</button>
-          </div>
-          </form>
       </div>
+      <div class="buttn">
+        <button (click)="onUpdateClick($event)" class="btn btn-default steps_btn">{{"Update"|translate}}</button>
+						<ngx-loading [show]="loading"></ngx-loading>
+
       </div>
-
-
+    </form>
+  </div>
+</div>

@@ -332,11 +332,12 @@ export class ManagmentUserComponent implements OnInit {
     }
   }
   onEditClick(user) {
-
+    console.log(user);
+    
     this.modalRef = this.modalService.show(EditUserComponent, {
-      // initialState: {
-      //   selectedCourseToEdit: course
-      // },
+      initialState: {
+        user
+      },
       class: 'modal-lg',
       backdrop: 'static',
       keyboard: false
