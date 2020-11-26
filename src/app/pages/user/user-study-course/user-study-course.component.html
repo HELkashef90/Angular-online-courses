@@ -32,7 +32,8 @@
             <li *ngFor="let lecture of chapter.studentEnrolledContent"
               (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
               class="sub_menu--item " [ngClass]="{'disabled': !lecture.is_Active}">
-              <a class="sub_menu--link">{{lecture.content_title}}<span>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span>
+              <!-- <p  class="icon-clock"></p> -->
+              <a class="sub_menu--link">{{lecture.content_title}}<span class="icon-clock">{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}}</span>
                 <p *ngIf="!lecture.is_Active" class="lock"></p>
               </a>
               <!-- <p class="lock"></p>
@@ -84,11 +85,16 @@
           <div class="card" *ngFor="let chapter of chaptersArray; let index = index">
             <div class="card-header" id="heading{{chapter.studentEnrolledChapter.chapter_Id}}">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{chapter.studentEnrolledChapter.chapter_Id}}"
+
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" attr.data-target="#collapse{{chapter.studentEnrolledChapter.chapter_Id}}"
                   aria-expanded="true" attr.aria-controls="{{chapter.studentEnrolledChapter.chapter_Id}}">
-                  {{chapter.studentEnrolledChapter.chapter_title}}
+                  {{"Chapter" | translate}} {{index +1 }}
                   <span class="arrowDown"></span>
-                  <!-- <span class="arrowRight"></span> -->
+                  <!-- <span class="chapterName">
+                    {{chapter.studentEnrolledChapter.chapter_title}}
+                  </span> -->
+
+                  <span class="arrowRight"></span>
                 </button>
               </h2>
             </div>
@@ -100,7 +106,9 @@
                   <li class="list-group-item" *ngFor="let lecture of chapter.studentEnrolledContent"
                   (click)="onLectureClick(chapter.studentEnrolledChapter.chapter_title,chapter.studentEnrolledChapter.course_title,lecture.content_title,lecture.content_description,lecture.content_Id)"
                   [ngClass]="{'disabled': !lecture.is_Active}"
-                  >{{lecture.content_title}}<a>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}} <span *ngIf="!lecture.is_Active" class="lock"></span> </a></li>
+                  >
+                  <!-- <span class="icon-play"></span> -->
+                  {{lecture.content_title}}<a>{{lecture.content_time_required_in_sec / 60}}{{"m" | translate}} <span *ngIf="!lecture.is_Active" class="lock"></span> </a></li>
                 </ul>
               </div>
             </div>

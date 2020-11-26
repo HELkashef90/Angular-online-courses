@@ -10,115 +10,244 @@
 			</div>
 
 			<div class="col-lg-6 col-md-8">
-				<div class="sign_form">
-					<h2> {{"Welcome to Smart Academy" | translate}} </h2>
-					<p>{{"Sign Up and Start Learning!" | translate}} </p>
-					<div class="alert alert-danger" role="alert" *ngIf="showErrors && (registrationForm.invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value)">
-						<span *ngIf="registrationForm.get('firstName').invalid">
-							{{"*Please enter a valid first name (ex. Hossam)" | translate}} </span><br>
-						<span *ngIf="registrationForm.get('lastName').invalid">
-							{{"*Please enter a valid last name (ex.  Elkashef)" | translate}} </span><br>
-						<span *ngIf="registrationForm.get('email').invalid">
-							{{"*Please enter a valid Email (ex. example@gmail.com" | translate}} </span><br>
-						<span *ngIf="registrationForm.get('mobile').invalid">
-							{{"*Please enter a valid Mobile (ex. 01xxxxxxxxx)" | translate}} </span><br>
-						<!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
-						<span *ngIf="registrationForm.get('password').invalid">
-							{{"*Please enter a valid password (minimum length = 8 characters)" | translate}} </span><br>
-							<span
-							*ngIf="registrationForm.get('confirmPassword').invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value">
-							{{"password doesn't match" | translate}}</span><br>
-						<!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
-						<span *ngIf="registrationForm.get('signAs').invalid">
-							{{"*Please enter select your account type (student, instructor?)" | translate}} </span><br>
-						<span *ngIf="registrationForm.get('reCaptcha').invalid">
-							{{"*Please check the reCaptcha box" | translate}} </span><br>
-					</div>
-					<form [formGroup]="registrationForm">
-						<div class="ui search focus">
-							<label>{{"first Name" | translate}}</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="text" formControlName="firstName" value=""
-									id="id_fullname" required="" maxlength="64"
-									placeholder="{{'example: Hossam' | translate}}">
-							</div>
-						</div>
-						<div class="ui search focus mt-15">
-							<label>{{"last Name" | translate}}</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="text" formControlName="lastName" value=""
-									id="id_fullname" required="" maxlength="64"
-									placeholder="{{'example: Elkashef' | translate}}">
-							</div>
-						</div>
-						<div class="ui search focus mt-15">
-							<label>{{"email" | translate}}</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="email" formControlName="email" value=""
-									id="id_email" required="" maxlength="64">
-							</div>
-						</div>
-						<div class="ui search focus mt-15">
-							<label>{{"phone number" | translate}}</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="text" formControlName="mobile" value=""
-									id="id_phonenumber" required="">
-							</div>
-						</div>
-						<div class="ui search focus mt-15">
-							<label>{{"password" | translate}}</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="password" formControlName="password" value=""
-									id="id_password">
-							</div>
-						</div>
-						<div class="ui search focus mt-15">
-							<label>{{"confirm password" | translate}}</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="password" formControlName="confirmPassword" value=""
-									id="id_password">
-							</div>
-						</div>
-						<!-- <div class="ui search focus mt-15">
-							<label>Address</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="text" formControlName="address" value=""
-									id="id_Address">
-							</div>
-						</div> -->
-						<!-- <div class="ui search focus mt-15">
-							<label>city</label>
-							<div class="ui left icon input swdh11 swdh19">
-								<input class="prompt srch_explore" type="text" formControlName="city" value=""
-									id="id_city">
-							</div>
-						</div> -->
-						<div class="ui grouped fields mt-15">
-							<div class="field">
-								<label> {{"sign Up as" | translate}} </label>
-								<div class="ui radio">
-									<input value="1" type="radio" formControlName="signAs"
-										(click)="onSignUpAsClick($event)">
-									<label> {{"student" | translate}} </label>
-								</div>
-								<div class="ui radio">
-									<input value="2" type="radio" formControlName="signAs"
-										(click)="onSignUpAsClick($event)">
-									<label> {{"instructor" | translate}} </label>
-								</div>
-							</div>
-            </div>
-            <div>
-              						<div class="recaptcha mt-15">
-							<ngx-recaptcha2 #reCaptchaElm [hl]="userLang" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
 
-								formControlName="reCaptcha"></ngx-recaptcha2>
+				<div class="sign_form">
+					<h2> {{"SignUp" | translate}} </h2>
+          <ul class="nav nav-tabs signUpTabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="student-tab" data-toggle="tab" href="#student" role="tab" aria-controls="student" aria-selected="true">Student</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " id="instrucor-tab" data-toggle="tab" href="#instrucor" role="tab" aria-controls="instrucor" aria-selected="false">Instructor</a>
+            </li>
+
+          </ul>
+          <div class="signUpTabsContent tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
+              <!-- <p>{{"Sign Up and Start Learning!" | translate}} </p> -->
+
+              <div class="alert alert-danger" role="alert" *ngIf="showErrors && (registrationForm.invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value)">
+                <span *ngIf="registrationForm.get('firstName').invalid">
+                  {{"*Please enter a valid first name (ex. Hossam)" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('lastName').invalid">
+                  {{"*Please enter a valid last name (ex.  Elkashef)" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('email').invalid">
+                  {{"*Please enter a valid Email (ex. example@gmail.com" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('mobile').invalid">
+                  {{"*Please enter a valid Mobile (ex. 01xxxxxxxxx)" | translate}} </span><br>
+                <!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
+                <span *ngIf="registrationForm.get('password').invalid">
+                  {{"*Please enter a valid password (minimum length = 8 characters)" | translate}} </span><br>
+                  <span
+                  *ngIf="registrationForm.get('confirmPassword').invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value">
+                  {{"password doesn't match" | translate}}</span><br>
+                <!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
+                <span *ngIf="registrationForm.get('signAs').invalid">
+                  {{"*Please enter select your account type (student, instructor?)" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('reCaptcha').invalid">
+                  {{"*Please check the reCaptcha box" | translate}} </span><br>
+              </div>
+              <form [formGroup]="registrationForm">
+                <div class="ui search focus">
+                  <label>{{"first Name" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="firstName" value=""
+                      id="id_fullname" required="" maxlength="64"
+                      placeholder="{{'example: Hossam' | translate}}">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"last Name" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="lastName" value=""
+                      id="id_fullname" required="" maxlength="64"
+                      placeholder="{{'example: Elkashef' | translate}}">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"email" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="email" formControlName="email" value=""
+                      id="id_email" required="" maxlength="64">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"phone number" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="mobile" value=""
+                      id="id_phonenumber" required="">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"password" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="password" formControlName="password" value=""
+                      id="id_password">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"confirm password" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="password" formControlName="confirmPassword" value=""
+                      id="id_password">
+                  </div>
+                </div>
+                <!-- <div class="ui search focus mt-15">
+                  <label>Address</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="address" value=""
+                      id="id_Address">
+                  </div>
+                </div> -->
+                <!-- <div class="ui search focus mt-15">
+                  <label>city</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="city" value=""
+                      id="id_city">
+                  </div>
+                </div> -->
+                <!-- ///////
+                <div class="ui grouped fields mt-15">
+                  <div class="field">
+                    <label> {{"sign Up as" | translate}} </label>
+                    <div class="ui radio">
+                      <input value="1" type="radio" formControlName="signAs"
+                        (click)="onSignUpAsClick($event)">
+                      <label> {{"student" | translate}} </label>
+                    </div>
+                    <div class="ui radio">
+                      <input value="2" type="radio" formControlName="signAs"
+                        (click)="onSignUpAsClick($event)">
+                      <label> {{"instructor" | translate}} </label>
+                    </div>
+                  </div>
+                </div> -->
+                <div>
+                              <div class="recaptcha mt-15">
+                  <ngx-recaptcha2 #reCaptchaElm [hl]="userLang" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
+
+                    formControlName="reCaptcha"></ngx-recaptcha2>
+                </div>
+              </div>
+
+                <button class="login-btn" (click)="onSignUpClick($event)">{{"sign Up" | translate}}</button>
+                <ngx-loading [show]="loading"></ngx-loading>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="instrucor" role="tabpanel" aria-labelledby="instrucor-tab">
+              <!-- <p>{{"Sign Up and Create Course!" | translate}} </p> -->
+              <div class="alert alert-danger" role="alert" *ngIf="showErrors && (registrationForm.invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value)">
+                <span *ngIf="registrationForm.get('firstName').invalid">
+                  {{"*Please enter a valid first name (ex. Hossam)" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('lastName').invalid">
+                  {{"*Please enter a valid last name (ex.  Elkashef)" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('email').invalid">
+                  {{"*Please enter a valid Email (ex. example@gmail.com" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('mobile').invalid">
+                  {{"*Please enter a valid Mobile (ex. 01xxxxxxxxx)" | translate}} </span><br>
+                <!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
+                <span *ngIf="registrationForm.get('password').invalid">
+                  {{"*Please enter a valid password (minimum length = 8 characters)" | translate}} </span><br>
+                  <span
+                  *ngIf="registrationForm.get('confirmPassword').invalid || registrationForm.get('confirmPassword').value !== registrationForm.get('password').value">
+                  {{"password doesn't match" | translate}}</span><br>
+                <!-- <span *ngIf="registrationForm.get('city').invalid"> *Please enter a valid City</span><br> -->
+                <span *ngIf="registrationForm.get('signAs').invalid">
+                  {{"*Please enter select your account type (student, instructor?)" | translate}} </span><br>
+                <span *ngIf="registrationForm.get('reCaptcha').invalid">
+                  {{"*Please check the reCaptcha box" | translate}} </span><br>
+              </div>
+              <form [formGroup]="registrationForm">
+                <div class="ui search focus">
+                  <label>{{"first Name" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="firstName" value=""
+                      id="id_fullname" required="" maxlength="64"
+                      placeholder="{{'example: Hossam' | translate}}">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"last Name" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="lastName" value=""
+                      id="id_fullname" required="" maxlength="64"
+                      placeholder="{{'example: Elkashef' | translate}}">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"email" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="email" formControlName="email" value=""
+                      id="id_email" required="" maxlength="64">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"phone number" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="mobile" value=""
+                      id="id_phonenumber" required="">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"password" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="password" formControlName="password" value=""
+                      id="id_password">
+                  </div>
+                </div>
+                <div class="ui search focus mt-15">
+                  <label>{{"confirm password" | translate}}</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="password" formControlName="confirmPassword" value=""
+                      id="id_password">
+                  </div>
+                </div>
+                <!-- <div class="ui search focus mt-15">
+                  <label>Address</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="address" value=""
+                      id="id_Address">
+                  </div>
+                </div> -->
+                <!-- <div class="ui search focus mt-15">
+                  <label>city</label>
+                  <div class="ui left icon input swdh11 swdh19">
+                    <input class="prompt srch_explore" type="text" formControlName="city" value=""
+                      id="id_city">
+                  </div>
+                </div> -->
+
+                <!-- ///////
+                <div class="ui grouped fields mt-15">
+                  <div class="field">
+                    <label> {{"sign Up as" | translate}} </label>
+                    <div class="ui radio">
+                      <input value="1" type="radio" formControlName="signAs"
+                        (click)="onSignUpAsClick($event)">
+                      <label> {{"student" | translate}} </label>
+                    </div>
+                    <div class="ui radio">
+                      <input value="2" type="radio" formControlName="signAs"
+                        (click)="onSignUpAsClick($event)">
+                      <label> {{"instructor" | translate}} </label>
+                    </div>
+                  </div>
+                </div> -->
+                <div>
+                              <div class="recaptcha mt-15">
+                  <ngx-recaptcha2 #reCaptchaElm [hl]="userLang" [siteKey]="reCaptchaKey" (load)="onReCapLoad()"
+
+                    formControlName="reCaptcha"></ngx-recaptcha2>
+                </div>
+              </div>
+
+                <button class="login-btn" (click)="onSignUpClick($event)">{{"sign Up" | translate}}</button>
+                <ngx-loading [show]="loading"></ngx-loading>
+              </form>
             </div>
           </div>
 
-						<button class="login-btn" (click)="onSignUpClick($event)">{{"sign Up" | translate}}</button>
-						<ngx-loading [show]="loading"></ngx-loading>
-					</form>
+
 					<p class="sgntrm145">{{"By signing up, you agree to our" | translate}}
 						<a>{{"Terms of Use" | translate}}</a>
 						{{"and" | translate}} <a>{{"Privacy Policy" | translate}}</a>.</p>

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?evb1d');
-  src:  url('fonts/icomoon.eot?evb1d#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?evb1d') format('truetype'),
-    url('fonts/icomoon.woff?evb1d') format('woff'),
-    url('fonts/icomoon.svg?evb1d#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?v9k1ww');
+  src:  url('fonts/icomoon.eot?v9k1ww#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?v9k1ww') format('truetype'),
+    url('fonts/icomoon.woff?v9k1ww') format('woff'),
+    url('fonts/icomoon.svg?v9k1ww#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-play:before {
+  content: "\e90d";
+}
+.icon-clock:before {
+  content: "\e90c";
+}
+.icon-time:before {
+  content: "\e90c";
+}
+.icon-schedule:before {
+  content: "\e90c";
+}
 .icon-loop:before {
   content: "\e908";
 }
@@ -46,6 +58,12 @@
 .icon-notification:before {
   content: "\ea08";
 }
+.icon-pencil:before {
+  content: "\e90a";
+}
+.icon-pencil2:before {
+  content: "\e90b";
+}
 .icon-library:before {
   content: "\e921";
 }
@@ -60,6 +78,9 @@
 }
 .icon-filter:before {
   content: "\ea5b";
+}
+.icon-cloud-upload:before {
+  content: "\e909";
 }
 .icon-check-circle:before {
   content: "\e903";

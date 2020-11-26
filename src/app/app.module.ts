@@ -45,6 +45,7 @@ import { ExportAsModule } from 'ngx-export-as';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SuccessComponent } from './pages/success/success.component';
 import { FailedPageComponent } from './pages/failed-page/failed-page.component';
+// import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -64,6 +65,7 @@ export function createTranslateLoader(http: HttpClient) {
     ExportConfirmationComponent,
     SuccessComponent,
     FailedPageComponent,
+    // AllCoursesComponent,
   ],
   imports: [
     RouterModule,

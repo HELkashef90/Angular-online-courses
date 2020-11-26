@@ -1,0 +1,116 @@
+<!-- <div class="wrapper"> -->
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="st_title"><i class="uil uil-swatchbook"></i> {{"Add New Chapter" | translate}}</h2>
+        </div>
+    </div>
+    <div class="step-tab-panel step-tab-location" id="tab_step3">
+        <div class="tab-from-content">
+            <form [formGroup]="chapterForm">
+                <div class="course__form">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="view_info10">
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="alert alert-danger" role="alert"
+                                            *ngIf="showInfoErrors && chapterForm.invalid">
+                                            <span *ngIf="chapterForm.get('course').invalid"> {{"*Please select a course" | translate}}</span><br>
+                                            <span *ngIf="chapterForm.get('chapterTitle').invalid"> {{"*Please enter chapter Title" | translate}}</span><br>
+                                            <span *ngIf="chapterForm.get('sort').invalid"> {{"*Please enter sort (1-100)" | translate}}</span><br>
+                                            <span *ngIf="chapterForm.get('description').invalid"> {{"*Please enter description" | translate}}</span><br>
+                                            <span *ngIf="chapterForm.get('price').invalid"> {{"*Please enter price" | translate}}</span><br>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                      <div class="ui search focus mt-30 lbel25">
+                                          <label>{{'instructor Name*' | translate}}</label>
+                                      </div>
+                                      <select formControlName="course">
+                                          <option disabled selected value="">{{'Select Instructor' | translate}}
+                                          </option>
+                                          <option value="1">{{'Mohamed Ahmed' | translate}}</option>
+                                          <option value="2">{{'Mazen Mahmoud' | translate}}</option>
+
+                                      </select>
+                                  </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="ui search focus mt-30 lbel25">
+                                            <label>{{"Course*" | translate}}</label>
+                                        </div>
+                                        <select formControlName="course">
+                                            <option disabled selected value="">{{"Select Course" | translate}}</option>
+                                            <option *ngFor="let course of instructorCourses" value="{{course.id}}">{{course.name}}</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="ui search focus mt-30 lbel25">
+                                            <label>{{"Chapter Title*" | translate}}</label>
+                                            <div class="ui left icon input swdh19">
+                                                <input formControlName="chapterTitle" class="prompt srch_explore"
+                                                    type="text" placeholder="{{'Insert your Chapter title.' | translate}}"
+                                                    name="title" data-purpose="edit-course-title" maxlength="120"
+                                                    id="lecture[title]" value="">
+                                                <div class="badge_num2">
+                                                    {{ 120 - chapterForm.get('chapterTitle')?.value?.length}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="ui search focus mt-30 lbel25">
+                                            <label>{{"Sort" | translate}}</label>
+                                            <div class="ui left icon input swdh19">
+                                                <input formControlName="sort" class="prompt srch_explore"
+                                                    type="number" name="sort" min="0" max="100" placeholder="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="ui search focus mt-30 lbel25">
+                                            <label>{{"Chapter Description*" | translate}}</label>
+                                            <div class="course_des_bg">
+                                                <div class="textarea_dt">
+                                                    <div class="ui form swdh339">
+                                                        <div class="field">
+                                                            <textarea maxlength="500" formControlName="description" rows="5"
+                                                                name="description" id="id_part_description"
+                                                                placeholder="{{'Insert your course part description' | translate}}"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="ui search focus mt-30 lbel25">
+                                            <label><i class="uil uil-dollar-sign-alt"></i>{{" Price" | translate}}</label>
+                                            <div class="ui left icon input swdh19">
+                                                <input formControlName="price" class="prompt srch_explore"
+                                                    type="number" name="sort" min="0" max="100" placeholder="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <button (click)="onSaveChapterClick()" class="part_btn_save prt-sv">
+                                           {{editMode? ('Save Chapter' | translate) : ('Create Chapter' | translate)}}</button>
+                                           <button *ngIf="editMode" (click)="onCancelEditChapterClick()" class="part_btn_save prt-sv">
+                                            {{"cancel edit" | translate}}</button>
+
+                                    </div>
+
+
+                                </div>
+                                <ngx-loading [show]="loading"></ngx-loading>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- </div> -->

@@ -1,0 +1,262 @@
+<!-- <div class="wrapper"> -->
+  <div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="st_title"><i class="uil uil-plus-circle"></i> {{'Create New Course' | translate}}</h2>
+        </div>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="showInfoErrors && infoForm.invalid">
+        <span *ngIf="infoForm.get('courseTitle').invalid">
+            {{'*Please enter a valid Course Title' | translate}}</span><br>
+        <span *ngIf="infoForm.get('courseSubTitle').invalid">
+            {{'*Please enter a valid course title' | translate}}</span><br>
+        <span *ngIf="infoForm.get('courseDescription').invalid">
+            {{'*Please enter a valid course description' | translate}}</span><br>
+        <!-- <p *ngIf="registrationForm.get('address').invalid"> Please enter a valid Address (minimum length = 11)</p> -->
+        <span *ngIf="infoForm.get('language').invalid"> {{'*Please select language' | translate}}</span><br>
+        <span *ngIf="infoForm.get('grade').invalid"> {{'*Please select grade' | translate}}</span><br>
+        <span *ngIf="infoForm.get('subject').invalid"> {{'*Please select subject' | translate}}</span><br>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="showPromoErrors && promoForm.invalid">
+        <span *ngIf="promoForm.get('coverImage').invalid"> {{'*Please select cover image' | translate}}</span><br>
+        <span *ngIf="promoForm.get('promoVideo').invalid"> {{'*Please select promo video' | translate}}</span><br>
+    </div>
+    <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button> -->
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <div class="step-content">
+            <mat-step [stepControl]="infoForm">
+                <!-- {{'instructor.createCourse.step1title' | translate }} -->
+                <ng-template matStepLabel>{{'General Information' | translate}}</ng-template>
+                <form [formGroup]="infoForm">
+                    <div class="step-tab-panel step-tab-info active" id="tab_step1">
+                        <div class="tab-from-content">
+                            <div class="course__form">
+                                <div class="general_info10">
+
+                                    <div class="row">
+
+                                    <div class="col-md-12">
+                                      <div class="ui search focus mt-30 lbel25">
+                                          <label>{{'instructor Name*' | translate}}</label>
+                                      </div>
+                                      <select formControlName="language">
+                                          <option disabled selected value="">{{'Select Instructor' | translate}}
+                                          </option>
+                                          <option value="1">{{'Mohamed Ahmed' | translate}}</option>
+                                          <option value="2">{{'Mazen Mahmoud' | translate}}</option>
+
+                                      </select>
+                                  </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'Course Title*' | translate}}</label>
+                                                <div class="ui left icon input swdh19">
+                                                    <input formControlName="courseTitle" class="prompt srch_explore"
+                                                        type="text"
+                                                        placeholder="{{'Insert your course title.' | translate}}"
+                                                        name="title" data-purpose="edit-course-title" maxlength="120"
+                                                        id="main[title]" value="">
+                                                    <div class="badge_num2">
+                                                        {{ 120 - infoForm.get('courseTitle')?.value?.length}} </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'Course Subtitle*' | translate}}</label>
+                                                <div class="ui left icon input swdh19">
+                                                    <input formControlName="courseSubTitle" class="prompt srch_explore"
+                                                        type="text"
+                                                        placeholder="{{'Insert your course Subtitle.' | translate}}"
+                                                        name="subtitle" data-purpose="edit-course-title" maxlength="120"
+                                                        id="sub[title]" value="">
+                                                    <div class="badge_num2">
+                                                        {{ 120 - infoForm.get('courseSubTitle')?.value?.length}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'Course Description*' | translate}}</label>
+                                                <div class="course_des_bg">
+                                                    <div class="textarea_dt">
+                                                        <div class="ui form swdh339">
+                                                            <div class="field">
+                                                                <textarea maxlength="500"
+                                                                    formControlName="courseDescription" rows="5"
+                                                                    name="description" id="id_course_description"
+                                                                    placeholder="{{'Insert your course description' | translate}}"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'Language*' | translate}}</label>
+                                            </div>
+                                            <select formControlName="language">
+                                                <option disabled selected value="">{{'Select Language' | translate}}
+                                                </option>
+                                                <option value="1">{{'Arabic' | translate}}</option>
+                                                <option value="2">{{'English' | translate}}</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'Grades*' | translate}}</label>
+                                            </div>
+                                            <select formControlName="grade">
+                                                <option disabled selected value="">{{'Select Grade' | translate}}
+                                                </option>
+                                                <option value="1">{{'Grade 1' | translate}}</option>
+                                                <option value="2">{{'Grade 2' | translate}}</option>
+                                                <option value="3">{{'Grade 3' | translate}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'Subjects*' | translate}}</label>
+                                            </div>
+                                            <select formControlName="subject">
+                                                <option disabled selected value="">{{'Select Subjects' | translate}}
+                                                </option>
+                                                <option value="1">{{'Physics' | translate}}</option>
+                                                <option value="2">{{'Math' | translate}}</option>
+                                                <option value="3">{{'Science' | translate}}</option>
+                                                <option value="4">{{'Arabic Language' | translate}}</option>
+                                                <option value="5">{{'English Language' | translate}}</option>
+                                                <option value="6">{{'Chemistry' | translate}}</option>
+                                                <option value="7">{{'Italian' | translate}}</option>
+                                                <option value="8">{{'French' | translate}}</option>
+                                                <option value="9">{{'Philosophy' | translate}}</option>
+                                                <option value="10">{{'Psychology' | translate}}</option>
+                                                <option value="11">{{'History' | translate}}</option>
+                                                <option value="12">{{'Geography' | translate}}</option>
+                                                <option value="13">{{'German' | translate}}</option>
+                                                <option value="14">{{'Geology' | translate}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttn">
+                        <button mat-button (click)="onInfoFormNext(stepper)"
+                            class="btn btn-default steps_btn">{{'Next' | translate}}</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <form [formGroup]="promoForm">
+                    <ng-template matStepLabel>{{'Promotional Video' | translate}}</ng-template>
+                    <div class="step-tab-panel step-tab-gallery" id="tab_step2">
+                        <div class="tab-from-content">
+                            <div class="course__form">
+                                <div class="view_info10">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="view_all_dt">
+                                                <div class="view_img_left">
+                                                    <div class="view__img">
+                                                        <img (click)="cover.click()"
+                                                            src="{{selectedCoverImagePrev || 'assets/images/courses/add_img.jpg' }}"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="view_img_right">
+                                                    <h4>{{'Cover Image' | translate}}</h4>
+                                                    <p>{{"'Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 493*352 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'" | translate}}
+                                                    </p>
+                                                    <div class="upload__input">
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input #cover (change)="coverImageChange($event)"
+                                                                    formControlName="coverImage" type="file"
+                                                                    class="custom-file-input" id="inputGroupFile04">
+                                                                <label class="custom-file-label"
+                                                                    for="inputGroupFile04">{{ selectedCoverImage?.name || 'No Choose file' | translate }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="view_all_dt">
+                                                <div class="view_img_left">
+                                                    <div (click)="video.click()" *ngIf="!selectedVideoPrev"
+                                                        class="view__img">
+                                                        <img src="assets/images/courses/add_video.jpg" alt="">
+                                                    </div>
+                                                    <div *ngIf="selectedVideoPrev" class="view__img">
+                                                        <video class="view__img" controls>
+                                                            <source src="{{selectedVideoPrev}}">
+                                                            {{'Your browser does not support the video tag.' | translate}}
+                                                        </video>
+                                                    </div>
+                                                </div>
+                                                <div class="view_img_right">
+                                                    <h4>{{'Promotional Video' | translate}}</h4>
+                                                    <p>{{"'Students who watch a well-made promo video are 5X more likely
+                                                            to enroll in your course. We've seen that statistic go up to
+                                                            10X for exceptionally awesome videos. Learn how to make
+                                                            yours awesome!'" | translate}}</p>
+                                                    <div class="upload__input">
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input #video (change)="promoVideoChange($event)"
+                                                                    formControlName="promoVideo" type="file"
+                                                                    class="custom-file-input" id="inputGroupFile05">
+                                                                <label class="custom-file-label"
+                                                                    for="inputGroupFile05">{{ selectedVideo?.name || 'No Choose file' }}</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ngx-loading [show]="loading"></ngx-loading>
+                                            <ngx-loading [show]="uploading" [template]="customLoadingTemplate">
+                                            </ngx-loading>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class=" buttn step-footer step-tab-pager">
+                            <button mat-button matStepperPrevious
+                                class="btn btn-default steps_btn">{{'Back' | translate}}</button>
+                            <!-- <button mat-button (click)="stepper.reset()"
+                                    class="btn btn-default steps_btn">Reset</button> -->
+                            <button class="btn btn-default steps_btn" (click)="onSubmitForm(stepper)">{{'Submit for
+                                    Review' | translate}}</button>
+                        </div>
+                    </div>
+
+                </form>
+            </mat-step>
+        </div>
+
+    </mat-horizontal-stepper>
+
+</div>
+
+<!-- </div>
+ -->
+
+<ng-template #customLoadingTemplate>
+    <div class="uploadingTemplate">
+        <h3>
+            {{'Loading...' | translate}}
+        </h3>
+        <h4>{{uploadingPercentage}} %</h4>
+        <button class="btn btn-default steps_btn" (click)="onCancelUploadClick()">{{'cancel' | translate}}</button>
+    </div>
+</ng-template>
