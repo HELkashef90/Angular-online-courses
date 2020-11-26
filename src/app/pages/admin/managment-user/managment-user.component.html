@@ -79,11 +79,11 @@
                 <td *ngIf="user._blocked" class="text-center" style="color: red;">{{"Blocked" | translate}}</td>
 
                 <td class="text-center">
-                  <a *ngIf="!user._blocked" (click)="onBlockClick(user)" title="Block" class="reject-btn noborder  mx-2"><i class="uil uil-times"></i></a>
-                  <a *ngIf="user._blocked" (click)="onUnblockClick(user)" title="Unblock" class="accept-btn noborder mx-2"><i class="uil uil-check"></i></a>
-                  <a  (click)="onResetUserPasswordClick(user)" title="Reset Password" class="gray-s"><i class="icon-resetPassword"></i></a>
-                  <a (click)="onResetUserDeviceClick(user)" title="Reset Device Student " class="gray-s"><i class="icon-resetDevice"></i></a>
-                  <!-- <a (click)="onEditClick(user)" title="Edit" class="gray-s"><i class="uil uil-edit-alt"></i></a> -->
+                  <a *ngIf="!user._blocked" (click)="onBlockClick(user)" title="{{'Block' | translate}}" class="reject-btn noborder  mx-2"><i class="uil uil-times"></i></a>
+                  <a *ngIf="user._blocked" (click)="onUnblockClick(user)" title="{{'Unblock' | translate}}" class="accept-btn noborder mx-2"><i class="uil uil-check"></i></a>
+                  <a  (click)="onResetUserPasswordClick(user)" title="{{'Reset Password' | translate}}" class="gray-s"><i class="icon-resetPassword"></i></a>
+                  <a (click)="onResetUserDeviceClick(user)" title="{{'Reset Device Student' | translate}} " class="gray-s"><i class="icon-resetDevice"></i></a>
+                  <a (click)="onEditClick(user)" title="Edit" class="gray-s"><i class="uil uil-edit-alt"></i></a>
                  
                  <a >
                     <label class="switch togglebuttn">

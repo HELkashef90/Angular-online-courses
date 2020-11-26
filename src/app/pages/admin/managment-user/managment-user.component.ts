@@ -182,7 +182,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("activated Successfully"), 'success');
 
-      this.resetTable(true, false)
+      // this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
       ev.target.checked = false
@@ -218,7 +218,7 @@ export class ManagmentUserComponent implements OnInit {
       console.log(res);
       this._toast.showToast(this.translate.instant("deactivated Successfully"), 'success');
 
-      this.resetTable(true, false)
+      // this.resetTable(true, false)
     }, err => {
       this._toast.showToast(this.translate.instant("please try again"), 'error');
       ev.target.checked = true
@@ -332,11 +332,12 @@ export class ManagmentUserComponent implements OnInit {
     }
   }
   onEditClick(user) {
-
+    console.log(user);
+    
     this.modalRef = this.modalService.show(EditUserComponent, {
-      // initialState: {
-      //   selectedCourseToEdit: course
-      // },
+      initialState: {
+        user
+      },
       class: 'modal-lg',
       backdrop: 'static',
       keyboard: false

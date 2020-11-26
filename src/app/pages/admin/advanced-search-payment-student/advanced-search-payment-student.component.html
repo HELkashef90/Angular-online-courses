@@ -137,6 +137,7 @@
                 <th class="text-center" scope="col">{{"Chapter Name" |translate}}</th>
                 <th class="text-center" scope="col">{{"Instructor Name" |translate}}</th>
                 <th class="text-center" scope="col">{{"Price" |translate}}</th>
+                <th class="text-center" scope="col">{{"Status" |translate}}</th>
                 <th class="text-center" scope="col">{{"Action" |translate}}</th>
               </tr>
             </thead>
@@ -150,6 +151,7 @@
                 <td class="text-center">{{student.chapter_title}}</td>
                 <td class="text-center">{{student.instrcutor_name}}</td>
                 <td class="text-center">{{student.chapter_fee}}</td>
+                <td class="text-center" [ngStyle]="{'color':student.is_active_subscription? 'green' : '#ff9800'}">{{student.is_active_subscription ? ('Active' | translate) : ('Pending' | translate) }}</td>
                 <td class="text-center">
                   <a *ngIf="!student.is_active_subscription" (click)="onApproveClick(student,'')" title="{{'Approve' | translate}}"
                     class="accept-btn noborder mx-2"><i class="uil uil-check"></i>
