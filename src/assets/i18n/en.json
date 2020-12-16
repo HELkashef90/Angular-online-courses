@@ -333,7 +333,6 @@
 	"Student Name": "Student Name",
 	"Student Payment": "Student Payment",
 	"Student Payment Advanced Search": "Student Payment Advanced Search",
-	"StudentName": "StudentName",
 	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
 			" Learn how to make yours awesome!": "Students who watch a well-made promo video are 5X more likely to enroll in your course. We've seen that statistic go up to 10X for exceptionally awesome videos. Learn how to make yours awesome!"
@@ -356,6 +355,9 @@
 	"Unexpected error occurred, please try again": "Unexpected error occurred, please try again",
 	"Update": "Update",
 	"Upload Video or File*": "Upload Video or File*",
+	"User Info": {
+		" Updated Successfully": "User Info. Updated Successfully"
+	},
 	"User Name": "User Name",
 	"View Saved Chapters": "View Saved Chapters",
 	"View Saved Lecture": "View Saved Lecture",

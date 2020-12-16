@@ -333,7 +333,6 @@
 	"Student Name": "اسم الطالب",
 	"Student Payment": "دفع الطالب",
 	"Student Payment Advanced Search": "Student Payment Advanced Search",
-	"StudentName": "StudentName",
 	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
 			" Learn how to make yours awesome!": "  الطلاب التى تشاهد فيديوهات توضيحية ذات جودة تقوم بالأشتراك 5 أضعاف عن الطلاب الأخرين. تشير الأحصائيات الى زيادة عدد المشاهدات عشر اضعاف . ."
@@ -356,6 +355,9 @@
 	"Unexpected error occurred, please try again": "حدث خطأ غير متوقع, يرجى المحاولة مرة اخرى",
 	"Update": "Update",
 	"Upload Video or File*": "حمل فيديو / ملف*",
+	"User Info": {
+		" Updated Successfully": "User Info. Updated Successfully"
+	},
 	"User Name": "User Name",
 	"View Saved Chapters": "عرض الفصول المسجلة",
 	"View Saved Lecture": "عرض المحاضرات المسجلة",
