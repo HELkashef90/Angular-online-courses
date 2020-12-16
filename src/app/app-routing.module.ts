@@ -12,6 +12,7 @@ import { InstructorCoursesComponent } from './pages/instructor/instructor-course
 import { InstructorComponent } from './pages/instructor/instructor.component';
 import { CreateCourseComponent } from './pages/instructor/create-course/create-course.component';
 import { SignupComponent } from './pages/signup/signup.component';
+// import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { NgModule } from '@angular/core';
@@ -82,6 +83,7 @@ const routes: Routes = [
     path:'failed',
     component:FailedPageComponent
   },
+
   {
     path: '**',
     redirectTo: '', //404
