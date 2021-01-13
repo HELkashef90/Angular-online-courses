@@ -15,7 +15,7 @@
 <!-- <p class="moreButton"  (click)="collapse()" ></p> -->
 <!-- Left Sidebar Start -->
 <!-- <nav class="vertical_nav chapter-list "> -->
-<nav class="vertical_nav chapter-list vertical_nav__minify">
+<nav class="vertical_nav chapter-list subvideo vertical_nav__minify">
   <div class="left_section menu_left" id="js-menu">
     <h4 class=header>{{"Table of content" | translate}}<a class="right"><i [routerLink]="['/user/dashboard']"
           routerLinkActive="router-link-active" class="uil uil-home-alt"></i></a></h4>
@@ -77,18 +77,18 @@
       </div>
 
 
-      <div class="contentList">
+      <div class="contentList studentContentList">
         <h4 class=header>{{"Course content" | translate}}</h4>
         <div class="accordion" id="accordionExample">
 
           <div class="card" *ngFor="let chapter of chaptersArray; let index = index">
             <div class="card-header" id="heading{{chapter.studentEnrolledChapter.chapter_Id}}">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{chapter.studentEnrolledChapter.chapter_Id}}"
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" attr.data-target="#collapse{{chapter.studentEnrolledChapter.chapter_Id}}"
                   aria-expanded="true" attr.aria-controls="{{chapter.studentEnrolledChapter.chapter_Id}}">
                   {{chapter.studentEnrolledChapter.chapter_title}}
                   <span class="arrowDown"></span>
-                  <!-- <span class="arrowRight"></span> -->
+                  <span class="arrowRight"></span>
                 </button>
               </h2>
             </div>
