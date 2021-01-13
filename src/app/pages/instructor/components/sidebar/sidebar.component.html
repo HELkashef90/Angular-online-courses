@@ -39,16 +39,17 @@
     <span class="collapse_menu--label"></span>
 </label> -->
 <header class="db-header clearfix">
-    <button (click)="collapse()" id="collapse_menu" class="collapse_menu">
-        <i class="uil uil-bars collapse_menu--icon "></i>
-        <span class="collapse_menu--label"></span>
-    </button>
-    <div class="main_logo" id="logo">
-        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img src="assets/images/logo-inner.png" alt=""></a>
-        <a [routerLink]="['']" routerLinkActive="router-link-active" ><img class="logo-inverse" src="assets/images/logo-inner.png" alt=""></a>
-        <span>Smart Academy</span>
-    </div>
-    <!-- <div class="search120">
+  <button (click)="collapse()" id="collapse_menu" class="collapse_menu">
+    <i class="uil uil-bars collapse_menu--icon "></i>
+    <span class="collapse_menu--label"></span>
+  </button>
+  <div class="main_logo" id="logo">
+    <a [routerLink]="['']" routerLinkActive="router-link-active"><img src="assets/images/logo-inner.png" alt=""></a>
+    <a [routerLink]="['']" routerLinkActive="router-link-active"><img class="logo-inverse"
+        src="assets/images/logo-inner.png" alt=""></a>
+    <span>Smart Academy</span>
+  </div>
+  <!-- <div class="search120">
         <div class="ui search">
             <div class="ui left icon input swdh10">
                 <input class="prompt srch10" type="text" placeholder="Search for Tuts Videos, Tutors, Tests and more..">
@@ -56,13 +57,13 @@
             </div>
         </div>
     </div> -->
-    <div class="header_right">
-        <ul>
-            <!-- <li class="ui">
+  <div class="header_right">
+    <ul>
+      <!-- <li class="ui">
                 <a href="#" class="option_links"><i class="uil uil-shopping-cart-alt"></i><span
                         class="noti_count">5</span></a>
             </li> -->
-            <!-- <li id="message-dropdown" class="ui">
+      <!-- <li id="message-dropdown" class="ui">
                 <a href="#" class="option_links"><i class='uil uil-envelope-alt'></i><span
                         class="noti_count">3</span></a>
                 <div class="menu drop-menu">
@@ -136,37 +137,38 @@
                 </div>
             </li> -->
 
-            <li>
-                <a [routerLink]="['create/course']" routerLinkActive="router-link-active"  class="upload_btn">{{"Create New Course" | translate}}</a>
-            </li>
-            <li id="language" class="ui">
-                <a  class="option_links"><i class="uil uil-globe"></i></a>
-                <div class="menu drop-menu">
-                    <a (click)="changeLang('en')" class="item channel_item">{{"English" | translate}}</a>
-                    <a (click)="changeLang('ar')" class="item channel_item">{{"Arabic" | translate}}</a>
+      <li>
+        <a [routerLink]="['create/course']" routerLinkActive="router-link-active" class="upload_btn">{{"Create New
+          Course" | translate}}</a>
+      </li>
+      <li id="language" class="ui">
+        <a class="option_links"><i class="uil uil-globe"></i></a>
+        <div class="menu drop-menu">
+          <a (click)="changeLang('en')" class="item channel_item">{{"English" | translate}}</a>
+          <a (click)="changeLang('ar')" class="item channel_item">{{"Arabic" | translate}}</a>
+        </div>
+      </li>
+      <li id="account-dropdown" class="ui">
+        <a class="opts_account">
+          <img src="assets/images/hd_dp.jpg" alt="">
+        </a>
+        <div class="menu drop-menu">
+          <div class="channel_my">
+            <div class="profile_link">
+              <!-- <img src="assets/images/hd_dp.jpg" alt=""> -->
+              <div class="pd_content">
+                <div class="rhte85">
+                  <h6>{{getName() || ""}}</h6>
+                  <div class="mef78" title="Verify">
+                    <i class='uil uil-check-circle'></i>
+                  </div>
                 </div>
-            </li>
-            <li id="account-dropdown" class="ui">
-                <a class="opts_account">
-                    <img src="assets/images/hd_dp.jpg" alt="">
-                </a>
-                <div class="menu drop-menu">
-                    <div class="channel_my">
-                        <div class="profile_link">
-                            <!-- <img src="assets/images/hd_dp.jpg" alt=""> -->
-                            <div class="pd_content">
-                                <div class="rhte85">
-                                    <h6>{{getName() || ""}}</h6>
-                                    <div class="mef78" title="Verify">
-                                        <i class='uil uil-check-circle'></i>
-                                    </div>
-                                </div>
-                                <span>{{getEmail() || ""}}</span>
-                            </div>
-                        </div>
-                        <!-- <a href="my_instructor_profile_view.html" class="dp_link_12">View Instructor Profile</a> -->
-                    </div>
-                    <!-- <div class="night_mode_switch__btn">
+                <span>{{getEmail() || ""}}</span>
+              </div>
+            </div>
+            <!-- <a href="my_instructor_profile_view.html" class="dp_link_12">View Instructor Profile</a> -->
+          </div>
+          <!-- <div class="night_mode_switch__btn">
                         <a href="#" id="night-mode" class="btn-night-mode">
                             <i class="uil uil-moon"></i> Night mode
                             <span class="btn-night-mode-switch">
@@ -174,110 +176,138 @@
                             </span>
                         </a>
                     </div> -->
-                    <!-- <a href="help.html" class="item channel_item">Help</a>
+          <!-- <a href="help.html" class="item channel_item">Help</a>
                     <a href="feedback.html" class="item channel_item">Send Feedback</a> -->
-                    <a (click)="logOut()" class="item channel_item">{{'Sign Out' | translate}}</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+          <a (click)="logOut()" class="item channel_item">{{'Sign Out' | translate}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </header>
 <!-- Header End -->
 <!-- Left Sidebar Start -->
 <!-- Left Sidebar Start -->
 
-<nav id="mySidebar"  class="  vertical_nav vertical_nav__minify">
+<nav id="mySidebar" class="  vertical_nav vertical_nav__minify">
   <div class="left_section menu_left" id="js-menu">
-      <div class="left_section">
-          <ul>
-              <li class="menu--item" (click)="close()">
-                  <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true"
-                      class="menu--link " title="Dashboard">
-                      <i class='uil uil-home-alt menu--icon'></i>
-                      <span class="menu--label">{{'Dashboard' | translate}}</span>
-                  </a>
-              </li>
-              <li class="menu--item"  (click)="close()" >
-                  <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
-                      <i class="uil uil-book-alt menu--icon"></i>
-                      <span class="menu--label">{{'Courses' | translate}}</span>
-                  </a>
-              </li>
-              <li class="menu--item  menu--item__has_sub_menu" >
-                  <input type="checkbox" id="menu-collapse" class="menu-collapse">
-                  <label class="menu--link" for="menu-collapse" >
-                      <i class="uil uil-plus-circle menu--icon"></i>
-                      <span class="menu--label">{{'Add New Course' | translate}}</span>
-                  </label>
+    <div class="left_section">
+      <ul>
+        <li class="menu--item" (click)="close()">
+          <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true" class="menu--link "
+            title="Dashboard">
+            <i class='uil uil-home-alt menu--icon'></i>
+            <span class="menu--label">{{'Dashboard' | translate}}</span>
+          </a>
+        </li>
+        <li class="menu--item" (click)="close()">
+          <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
+            <i class="uil uil-book-alt menu--icon"></i>
+            <span class="menu--label">{{'Courses' | translate}}</span>
+          </a>
+        </li>
+        <li class="menu--item  menu--item__has_sub_menu">
+          <input type="checkbox" id="menu-collapse" class="menu-collapse">
+          <label class="menu--link" for="menu-collapse">
+            <i class="uil uil-plus-circle menu--icon"></i>
+            <span class="menu--label">{{'Add New Course' | translate}}</span>
+          </label>
 
-                  <ul class="sub_menu show">
-                      <li class="sub_menu--item"  (click)="close()">
-                          <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
-                              <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
-                      </li>
-                      <li class="sub_menu--item"  (click)="close()">
-                          <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
-                              <i class="uil uil-swatchbook"></i>
-                              {{'Add
-                              Chapter' | translate}}</a>
-                      </li>
-                      <li class="sub_menu--item"  (click)="close()">
-                          <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
-                              <i class="uil uil-file-plus-alt"></i>
-                              {{'Add
-                              Lecture' | translate}}</a>
-                      </li>
-                  </ul>
-              </li>
+          <ul class="sub_menu show">
+            <li class="sub_menu--item" (click)="close()">
+              <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
+                <i class="uil uil-book"></i> {{'Add Course' | translate}}</a>
+            </li>
+            <li class="sub_menu--item" (click)="close()">
+              <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
+                <i class="uil uil-swatchbook"></i>
+                {{'Add
+                Chapter' | translate}}</a>
+            </li>
+            <li class="sub_menu--item" (click)="close()">
+              <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
+                <i class="uil uil-file-plus-alt"></i>
+                {{'Add
+                Lecture' | translate}}</a>
+            </li>
           </ul>
-      </div>
+        </li>
+        <li class="menu--item" (click)="close()">
+          <a [routerLink]="['PurchaseHistory']" routerLinkActive="active" class="menu--link" title="PurchaseHistory">
+            <i class="uil uil-file-alt menu--icon"></i>
+            <span class="menu--label">{{'Purchase history' | translate}}</span>
+          </a>
+        </li>
+        <li class="menu--item" (click)="close()">
+          <a [routerLink]="['intructorFeedback']" routerLinkActive="active" class="menu--link"
+            title="intructorFeedback">
+            <i class="uil uil-comment-alt-exclamation menu--icon"></i>
+                        <span class="menu--label">{{'Send Feedback' | translate}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <nav class=" vertical_nav vertical_nav__minify">
   <div class="left_section menu_left" id="js-menu">
-      <div class="left_section">
-          <ul>
-              <li class="menu--item">
-                  <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true"
-                      class="menu--link " title="Dashboard">
-                      <i class='uil uil-home-alt menu--icon'></i>
-                      <span class="menu--label">{{'Dashboard' | translate}}</span>
-                  </a>
-              </li>
-              <li class="menu--item">
-                  <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
-                      <i class="uil uil-book-alt menu--icon"></i>
-                      <span class="menu--label">{{'Courses' | translate}}</span>
-                  </a>
-              </li>
-              <li class="menu--item  menu--item__has_sub_menu" >
-                  <input type="checkbox" id="menu-collapses" class="menu-collapse menu-collapses">
-                  <label class="menu--link" for="menu-collapses">
-                      <i class="uil uil-plus-circle menu--icon"></i>
-                      <span class="menu--label">{{'Add New Course' | translate}}</span>
-                  </label>
+    <div class="left_section">
+      <ul>
+        <li class="menu--item">
+          <a [routerLink]="['./dashboard']" routerLinkActive="active" replaceUrl="true" class="menu--link "
+            title="Dashboard">
+            <i class='uil uil-home-alt menu--icon'></i>
+            <span class="menu--label">{{'Dashboard' | translate}}</span>
+          </a>
+        </li>
+        <li class="menu--item">
+          <a [routerLink]="['courses']" routerLinkActive="active" class="menu--link" title="Courses">
+            <i class="uil uil-book-alt menu--icon"></i>
+            <span class="menu--label">{{'Courses' | translate}}</span>
+          </a>
+        </li>
 
-                  <ul class="sub_menu show">
-                      <li class="sub_menu--item">
-                          <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
-                              <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
-                      </li>
-                      <li class="sub_menu--item" >
-                          <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
-                              <i class="uil uil-swatchbook"></i>
-                              {{'Add
-                              Chapter' | translate}}</a>
-                      </li>
-                      <li class="sub_menu--item" >
-                          <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
-                              <i class="uil uil-file-plus-alt"></i>
-                              {{'Add
-                              Lecture' | translate}}</a>
-                      </li>
-                  </ul>
-              </li>
+        <li class="menu--item  menu--item__has_sub_menu">
+          <input type="checkbox" id="menu-collapses" class="menu-collapse menu-collapses">
+          <label class="menu--link" for="menu-collapses">
+            <i class="uil uil-plus-circle menu--icon"></i>
+            <span class="menu--label">{{'Add New Course' | translate}}</span>
+          </label>
+
+          <ul class="sub_menu show">
+            <li class="sub_menu--item">
+              <a [routerLink]="['create/course']" routerLinkActive="active" class="sub_menu--link">
+                <i class="uil uil-book"></i> {{'Add Course' | translate}}</a>
+            </li>
+            <li class="sub_menu--item">
+              <a [routerLink]="['create/chapter']" routerLinkActive="active" class="sub_menu--link">
+                <i class="uil uil-swatchbook"></i>
+                {{'Add
+                Chapter' | translate}}</a>
+            </li>
+            <li class="sub_menu--item">
+              <a [routerLink]="['create/lecture']" routerLinkActive="active" class="sub_menu--link">
+                <i class="uil uil-file-plus-alt"></i>
+                {{'Add
+                Lecture' | translate}}</a>
+            </li>
           </ul>
-      </div>
+        </li>
+
+        <li class="menu--item">
+          <a [routerLink]="['PurchaseHistory']" routerLinkActive="active" class="menu--link" title="PurchaseHistory">
+            <i class="uil uil-file-alt menu--icon"></i> <span class="menu--label">{{'purchase history' |
+              translate}}</span>
+          </a>
+        </li>
+        <li class="menu--item">
+          <a [routerLink]="['intructorFeedback']" routerLinkActive="active" class="menu--link"
+            title="intructorFeedback">
+            <i class="uil uil-comment-alt-exclamation menu--icon"></i> <span class="menu--label">{{'Send Feedback' | translate}}</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
   </div>
 </nav>
 <!-- Left Sidebar End -->

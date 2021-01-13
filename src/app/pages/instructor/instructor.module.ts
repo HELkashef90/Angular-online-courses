@@ -1,4 +1,3 @@
-import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -29,13 +28,17 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { MatIconModule } from '@angular/material/icon';
+import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 @NgModule({
   declarations: [
     InstructorComponent,
     InstructorCoursesComponent,
+    FeedbackComponent,
     HeaderComponent,
+    CoursesPurchaseHistoryComponent,
     SidebarComponent,
     CreateCourseComponent,
     InstructorDashboardComponent,
@@ -44,7 +47,6 @@ import { MatIconModule } from '@angular/material/icon';
     InstructorAddLectureComponent,
     EditCourseComponent,
     ViewCourseComponent,
-    CoursesPurchaseHistoryComponent
   ],
   imports: [
     CommonModule,
