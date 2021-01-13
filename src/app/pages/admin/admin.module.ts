@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { MatIconModule } from '@angular/material/icon';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { RouterModule } from '@angular/router';
@@ -23,10 +23,14 @@ import { RestrictedUsersComponent } from './restricted-users/restricted-users.co
 import { AdvancedSearchPaymentStudentComponent } from './advanced-search-payment-student/advanced-search-payment-student.component';
 import { ManagmentUserComponent } from './managment-user/managment-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
-
+import{AddChapterComponent}from './add-chapter/add-chapter.component';
+import{AddLectureComponent}from './add-lecture/add-lecture.component';
+import{CreateCourseComponent}from './create-course/create-course.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
-  declarations: [AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent, RestrictedUsersComponent, AdvancedSearchPaymentStudentComponent, ManagmentUserComponent, EditUserComponent],
+  declarations: [AddLectureComponent,AddChapterComponent,CreateCourseComponent,AdminComponent, AdminSidebarComponent, AdminFooterComponent, AdminStudentsAllCoursesComponent, ConfirmComponent, AdminInstructorsListComponent, AdminConfirmCoursesComponent, RestrictedUsersComponent, AdvancedSearchPaymentStudentComponent, ManagmentUserComponent, EditUserComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -44,7 +48,11 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     ToastrModule,
     NgxConfirmBoxModule,
     ModalModule,
-    SharedModule
+    SharedModule,
+    MatSliderModule,
+    MatStepperModule,
+    MatIconModule,
+
   ]
 })
 export class AdminModule { }

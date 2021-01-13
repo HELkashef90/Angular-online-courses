@@ -17829,7 +17829,7 @@ scroll
   left: 23px;
 }
 } */
-=======
+/* ======= */
 /*===================== TABLE OF CONTENT =======================
 /*
 Table Of Content
@@ -31974,9 +31974,12 @@ a.rmv-btn i {
 .main-tabs {
     width: 100%;
 }
-
+.sign_form .main-tabs{
+  margin-bottom: 30px;
+}
 .main-tabs {
     margin-bottom: 50px;
+
 }
 
 .main-tabs .nav-tabs{
@@ -32020,6 +32023,7 @@ a.rmv-btn i {
 	border:0;
 	text-overflow: ellipsis;
     white-space: nowrap;
+    text-align: center;
     overflow: hidden;
 }
 
@@ -33312,7 +33316,8 @@ max-width: 100%;
 
 .sign_form p {
     font-size: 14px;
-    margin-bottom: 47px;
+    margin-bottom: 30px;
+    /* margin-bottom: 47px; */
     font-weight: 400;
     font-family: 'Roboto', 'helvetica',sans-serif;
     color: #686f7a;

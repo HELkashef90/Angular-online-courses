@@ -182,6 +182,34 @@
                         <span class="menu--label">{{"Management Users" | translate}}</span>
                     </a>
                 </li>
+
+
+                <li class="menu--item  menu--item__has_sub_menu" >
+                  <input type="checkbox" id="menu-collapse" class="menu-collapse">
+                  <label class="menu--link" for="menu-collapse" >
+                      <i class="uil uil-plus-circle menu--icon"></i>
+                      <span class="menu--label">{{'Add New Course' | translate}}</span>
+                  </label>
+
+                  <ul class="sub_menu show">
+                      <li class="sub_menu--item"  (click)="close()">
+                          <a [routerLink]="['course']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
+                      </li>
+                      <li class="sub_menu--item"  (click)="close()">
+                          <a [routerLink]="['chapter']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-swatchbook"></i>
+                              {{'Add
+                              Chapter' | translate}}</a>
+                      </li>
+                      <li class="sub_menu--item"  (click)="close()">
+                          <a [routerLink]="['lecture']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-file-plus-alt"></i>
+                              {{'Add
+                              Lecture' | translate}}</a>
+                      </li>
+                  </ul>
+              </li>
             </ul>
         </div>
     </div>
@@ -226,6 +254,32 @@
                         <span class="menu--label">{{"Management Users" | translate}}</span>
                     </a>
                 </li>
+                <li class="menu--item  menu--item__has_sub_menu" >
+                  <input type="checkbox" id="menu-collapses" class="menu-collapse menu-collapses">
+                  <label class="menu--link" for="menu-collapses">
+                      <i class="uil uil-plus-circle menu--icon"></i>
+                      <span class="menu--label">{{'Add New Course' | translate}}</span>
+                  </label>
+
+                  <ul class="sub_menu show">
+                      <li class="sub_menu--item">
+                          <a [routerLink]="['course']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-book"></i>  {{'Add Course' | translate}}</a>
+                      </li>
+                      <li class="sub_menu--item" >
+                          <a [routerLink]="['chapter']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-swatchbook"></i>
+                              {{'Add
+                              Chapter' | translate}}</a>
+                      </li>
+                      <li class="sub_menu--item" >
+                          <a [routerLink]="['lecture']" routerLinkActive="active" class="sub_menu--link">
+                              <i class="uil uil-file-plus-alt"></i>
+                              {{'Add
+                              Lecture' | translate}}</a>
+                      </li>
+                  </ul>
+              </li>
             </ul>
         </div>
     </div>

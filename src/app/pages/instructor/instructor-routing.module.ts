@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InstructorComponent } from './instructor.component';
 import { InstructorCoursesComponent } from './instructor-courses/instructor-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
+import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,11 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: InstructorDashboardComponent
+      }
+      ,
+      {
+        path: 'PurchaseHistory',
+        component: CoursesPurchaseHistoryComponent
       }
     ],
 

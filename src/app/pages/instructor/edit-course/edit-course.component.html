@@ -10,6 +10,7 @@
             <h2 class="st_title"><i class="uil uil-plus-circle"></i> {{"Edit Course "| translate}} :
                 {{infoForm.get('courseTitle').value}}</h2>
         </div>
+
     </div>
     <div class="alert alert-danger" role="alert" *ngIf="showInfoErrors && infoForm.invalid">
         <span *ngIf="infoForm.get('courseTitle').invalid">
