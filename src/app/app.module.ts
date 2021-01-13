@@ -31,7 +31,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SaveUrlPipe } from './pipes/saveUrl/save-url.pipe';
 import { NgxConfirmBoxModule, NgxConfirmBoxService } from 'ngx-confirm-box';
-import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsModalRef, ModalModule } from 'ngx-bootstrap/modal';
 import { AfterSignupComponent } from './pages/after-signup/after-signup.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
@@ -45,7 +45,6 @@ import { ExportAsModule } from 'ngx-export-as';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SuccessComponent } from './pages/success/success.component';
 import { FailedPageComponent } from './pages/failed-page/failed-page.component';
-// import { AllCoursesComponent } from './pages/all-courses/all-courses.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -65,7 +64,6 @@ export function createTranslateLoader(http: HttpClient) {
     ExportConfirmationComponent,
     SuccessComponent,
     FailedPageComponent,
-    // AllCoursesComponent,
   ],
   imports: [
     RouterModule,
@@ -110,7 +108,8 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
     ConfirmLeaveGuard,
-    NgxConfirmBoxService
+    NgxConfirmBoxService,
+    BsModalRef
   ],
   bootstrap: [AppComponent],
 })

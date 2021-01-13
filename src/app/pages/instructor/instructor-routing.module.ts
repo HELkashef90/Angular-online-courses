@@ -9,9 +9,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { InstructorComponent } from './instructor.component';
 import { InstructorCoursesComponent } from './instructor-courses/instructor-courses.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
-import { InstructorProfileComponent } from './instructor-profile/instructor-profile.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
 
 
 const routes: Routes = [
@@ -28,18 +25,6 @@ const routes: Routes = [
       {
         path: 'courses',
         component: InstructorCoursesComponent,
-      },
-      {
-        path: 'instructorProfile',
-        component: InstructorProfileComponent
-      },
-      {
-        path: 'feedback',
-        component: FeedbackComponent
-      },
-      {
-        path: 'PurchaseHistory',
-        component: CoursesPurchaseHistoryComponent
       },
       {
         path: 'viewCourse/:id',
@@ -67,7 +52,6 @@ const routes: Routes = [
             canDeactivate: [ConfirmLeaveGuard],
 
           },
-
           {
             path: '',
             redirectTo: 'course',
@@ -86,7 +70,6 @@ const routes: Routes = [
     path: 'editCourse',
     component: EditCourseComponent
   }
-
 ];
 
 @NgModule({

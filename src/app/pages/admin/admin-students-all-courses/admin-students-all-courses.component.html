@@ -28,9 +28,7 @@
             <div class="col-md-12">
                 <div class="table-responsive mt-30">
                     <p>All available result {{totalStudents}}, showing result {{enrollmentStudentsArray.length}}
-                        <a
-                        *ngIf="enrollmentStudentsArray.length"
-                            style="color: blue;"
+                        <a *ngIf="enrollmentStudentsArray.length" style="color: blue;"
                             (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}}({{enrollmentStudentsArray.length}})</a>
                     </p>
                     <table class="table ucp-table" id="studentsTablePayments">
@@ -44,6 +42,7 @@
                                 <th class="text-center" scope="col">{{"Chapter Name" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Instructor Name" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Price" |translate}}</th>
+                                <th class="text-center" scope="col">{{"Status" |translate}}</th>
                                 <th class="text-center" scope="col">{{"Action" |translate}}</th>
                             </tr>
                         </thead>
@@ -57,19 +56,25 @@
                                 <td class="text-center">{{student.chapter_title}}</td>
                                 <td class="text-center">{{student.instrcutor_name}}</td>
                                 <td class="text-center">{{student.chapter_fee}}</td>
+                                <td class="text-center"
+                                    [ngStyle]="{'color':student.is_active_subscription? 'green' : '#ff9800'}">
+                                    {{student.is_active_subscription ? ('Active' | translate) : ('Pending' | translate) }}
+                                </td>
+
                                 <td class="text-center">
                                     <a *ngIf="!student.is_active_subscription"
                                         (click)="onApproveClick(student,search.value)" title="{{'Approve'|translate}}"
                                         class="accept-btn noborder mx-2"><i class="uil uil-check"></i>
-                                        </a>
+                                    </a>
                                     <a *ngIf="student.is_active_subscription"
                                         (click)="onRejectClick(student,search.value)" title="{{'Reject'|translate}}"
                                         class="reject-btn noborder mx-2"><i class="uil uil-times"></i>
-                                       </a>
-<!-- deleteEnrollment request -->
-                                   <a (click)="onDeleteClick(student,search.value)" title="{{'delete enrollment request'|translate}}"
-                                       class="reject-btn noborder mx-2"><i class="uil delete-btn"></i>
-                                      </a>
+                                    </a>
+                                    <!-- deleteEnrollment request -->
+                                    <a (click)="onDeleteClick(student,search.value)"
+                                        title="{{'delete enrollment request'|translate}}"
+                                        class="reject-btn noborder mx-2"><i class="uil delete-btn"></i>
+                                    </a>
                                 </td>
                             </tr>
 
@@ -102,11 +107,14 @@
                                 </td>
                             </tr> -->
                         </tbody>
-                        <button *ngIf="enrollmentStudentsArray.length" class="float accept-btn mx-2" (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}} {{enrollmentStudentsArray.length}} </button>
+                        <button *ngIf="enrollmentStudentsArray.length" class="float accept-btn mx-2"
+                            (click)="onExportClick('studentsTablePayments','xlsx')">{{"Export" | translate}}
+                            {{enrollmentStudentsArray.length}} </button>
 
                     </table>
 
-                     <a *ngIf="enrollmentStudentsArray.length < totalStudents" (click)="onScroll(search.value)" style="color: blue;">{{"load more..." | translate}}</a>
+                    <a *ngIf="enrollmentStudentsArray.length < totalStudents" (click)="onScroll(search.value)"
+                        style="color: blue;">{{"load more..." | translate}}</a>
 
                     <p *ngIf="!enrollmentStudentsArray.length && !loading">{{"No result found" | translate}}</p>
                     <div *ngIf="loading" class="col-md-12">

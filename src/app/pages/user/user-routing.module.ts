@@ -6,9 +6,6 @@ import { UserViewCourseComponent } from './user-view-course/user-view-course.com
 import { UserAllCoursesComponent } from './user-all-courses/user-all-courses.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
-import { FeedbackComponent } from './feedback/feedback.component';
 import { UserComponent } from './user.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -52,19 +49,7 @@ const routes: Routes = [
         path:'searchResult',
         component:SearchResultComponent
       },
-      {
-        path:'user-profile',
-        component:UserProfileComponent
-      },
-      {
-        path:'feedback',
-        component:FeedbackComponent
-      }
-      ,
-      {
-        path:'PurchaseHistory',
-        component:PurchaseHistoryComponent
-      }
+
     ]
   },
   {

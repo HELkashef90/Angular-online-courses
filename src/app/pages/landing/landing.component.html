@@ -1,8 +1,8 @@
 <!-- navbar-->
 <div class="home">
   <header class="lp-header">
-    <nav class=" landingNav navbar navbar-expand-lg">
-      <div class="landing container">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
         <!-- Navbar brand-->
         <a class="navbar-brand font-weight-bold"><img src="assets/images/main-logo.png" alt="..." class="img-fluid"></a>
         <!-- <a class="navbar-brand font-weight-bold"><img src="assets/images/logo.jpeg" alt="..." class="img-fluid"></a> -->
@@ -12,9 +12,8 @@
           class="navbar-toggler navbar-toggler-right">{{"Menu" | translate}}<i
             class="icon ion-md-list ml-2"></i></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
-          <ul class="navbar-nav options mx-auto ml-auto">
+          <ul class="navbar-nav mx-auto ml-auto">
             <!-- Link-->
-
             <!-- <li class="nav-item"> <a  class="nav-link">{{"About Us" | translate}}</a></li> -->
             <!--
             <li class="nav-item dropdown"><a id="pages"  data-toggle="dropdown" aria-haspopup="true"
@@ -40,12 +39,8 @@
             <li class="nav-item"> <a [routerLink]="['/mission']" routerLinkActive="router-link-active"
                 class="nav-link">{{"Mission / Vision" | translate}}</a></li> -->
 
-            <li class="nav-item active"> <a href="#Home" class="nav-link">{{"Home" | translate}}</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#ABOUT">{{"About" | translate}}</a></li>
-            <li class="nav-item"> <a href="#Course" class="nav-link">{{"Courses" | translate}}</a></li>
-            <li class="nav-item"> <a href="#Teachers" class="nav-link">{{"Teachers" | translate}}</a></li>
-            <li class="nav-item"> <a href="Content" class="nav-link">{{"Contact Us" | translate}}</a></li>
+            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"
+                class="nav-link">{{"Contact Us" | translate}}</a></li>
           </ul>
           <ul *ngIf="!_auth.isLoggedIn" class="navbar-nav">
 
@@ -67,12 +62,12 @@
           <ul *ngIf="_auth.isLoggedIn" class="navbar-nav">
 
             <li class="nav-item dropdown"><a id="pages" href="#" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false" class="nav-link dropdown-toggle"><i class="uil uil-globe"></i></a>
-              <div class="dropdown-menu">
-                <a (click)="changeLang('ar')" class="dropdown-item">{{"Arabic" | translate}}</a>
-                <a (click)="changeLang('en')" class="dropdown-item">{{"English" | translate}}</a>
-              </div>
-            </li>
+              aria-expanded="false" class="nav-link dropdown-toggle"><i class="uil uil-globe"></i></a>
+            <div class="dropdown-menu">
+              <a (click)="changeLang('ar')" class="dropdown-item">{{"Arabic" | translate}}</a>
+              <a (click)="changeLang('en')" class="dropdown-item">{{"English" | translate}}</a>
+            </div>
+          </li>
 
             <li (click)="goToDashboard()" class="nav-item"><a
                 class="navbar-btn btn btn-primary">{{"My Dashboard" | translate}}</a>
@@ -83,634 +78,157 @@
       </div>
     </nav>
   </header>
-  <div class="overlay">
-    <div class="page-holder SlideOfLanding " id="Home">
-      <!-- intro Section-->
-      <section class="hero bannerHero shape-1">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="firstCol col-lg-6  col-sm-6 ">
-              <h1 class="hero-heading">{{'Explore our schools to find your perfect course' | translate}}
-              </h1>
-              <p class="lead mt-5 font-weight-light">
-                {{"Match your goals to our classes, explore your options, and map out your path to success." | translate}}
-              </p>
-              <!-- Subscription form-->
-              <!-- <form action="#" class="subscription-form mt-5">
+
+  <div class="page-holder SlideOfLanding " id="home">
+    <!-- intro Section-->
+    <section class="hero shape-1">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="firstCol col-lg-6  col-sm-6 ">
+            <h1 class="hero-heading">{{'Explore our schools to find your perfect course' | translate}}
+            </h1>
+            <p class="lead mt-5 font-weight-light">{{"Match your goals to our classes, explore your options, and map out your path to success." | translate}}</p>
+            <!-- Subscription form-->
+            <!-- <form action="#" class="subscription-form mt-5">
               <div class="form-group">
                 <input type="search" name="seaech" placeholder="what do you want to learn?" class="form-control">
                 <button type="submit" class="btn btn-primary">{{"Search" | translate}}</button>
               </div>
             </form> -->
-            </div>
-            <div class="SecondCol col-lg-6  col-sm-6 ">
-              <div class="wrapper mx-auto">
+          </div>
+          <div class="SecondCol col-lg-6  col-sm-6 ">
+            <div class="wrapper mx-auto">
 
-                <div class="img"><img src="assets/images/Image2.png" alt="..." class="img-fluid"></div>
+              <div class="img"><img src="assets/images/Image2.png" alt="..." class="img-fluid"></div>
 
-              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
 
-  <section class="whyUS" id="ABOUT">
-
-
-    <div class="row row-cols-1 row-cols-md-2">
-      <div class="col-12 col-md-6 mb-4">
-        <div class="row">
-
-
-          <div class="col firstCol">
-            <div>
-              <h5>
-                <i class="number">01</i>
-                {{"Mission"|translate}}
-              </h5>
-            </div>
-            <!-- <h5 class="card-title">Card title</h5> -->
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci porro distinctio
-              laudantium beatae saepe ducimus vel ea. Consectetur expedita blanditiis quisquam sequi nulla hic veniam
-              odio quas eaque! Voluptate, temporibus!</p>
+    <!-- <section class="sectionOfCourses" id="course">
+      <h4>{{"Latest Courses"|translate}}</h4>
+      <a>{{"All Courses"|translate}}</a>
+      <div class="row content">
+        <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{"History"|translate}}</h5>
+            <p class="card-text">{{"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."|translate}}</p>
           </div>
-          <div class="col">
-            <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-left" alt="...">
+          <div class="card-footer">
+            <small class="text-muted">{{"Mohamed Ahmed"}}</small>
+
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 mb-4">
-        <div class="row">
-
-
-          <div class="col firstCol">
-            <div>
-              <h5>
-                <i class="number">02</i>
-                {{"Vission"|translate}}
-              </h5>
-            </div>
-            <!-- <h5 class="card-title">Card title</h5> -->
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci porro distinctio
-              laudantium beatae saepe ducimus vel ea. Consectetur expedita blanditiis quisquam sequi nulla hic veniam
-              odio quas eaque! Voluptate, temporibus!</p>
+        <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
-          <div class="col">
-            <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-left" alt="...">
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
           </div>
         </div>
       </div>
-
-
-
-    </div>
-
-    <!-- </section> -->
-    <!-- <section class="aboutUS"> -->
-    <section>
-      <h4>{{"Start Your Jounry With Us"|translate}}</h4>
-
-      <div class="why row row-cols-1 row-cols-md-2">
-        <div class="col-12 col-md-6 mb-4">
-          <!-- <h4>{{"Why Us"|translate}}</h4> -->
-          <div class="row whyUsRow">
-
-
-            <div class="col">
-<div class="list">
-  <i class="number">1</i>
-<div class="info">
-  <h6> Professional Trainers</h6>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-</div>
-</div>
-<div class="list">
-  <i class="number">2</i>
-<div class="info">
-  <h6> Professional Trainers</h6>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-</div>
-</div>
-<div class="list">
-  <i class="number">3</i>
-<div class="info">
-  <h6> Professional Trainers</h6>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-</div>
-</div>
-
-
-            </div>
-            <!-- <div class="col">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-left" alt="...">
-       </div> -->
+        <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
           </div>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="row signUP">
-
-            <div class="singUpSection">
-              <h5>Signup today
-              </h5>
-              <form class="">
-                <input class="col-5  form-control" type="text" placeholder="{{'Full Name'|translate}}">
-                <input class="col-5  form-control" type="text" placeholder="{{'Email address'|translate}}">
-                <input class="col-5  form-control" type="text" placeholder="{{'Mobile Number '|translate}}">
-                <input class="col-5  form-control" type="text" placeholder="{{'Password'|translate}}">
-                <div class="formButtn">
-
-                  <button class="btn btn-primary">{{"Get Start"|translate}}</button>
-
-                </div>
-              </form>
-            </div>
+      </div>
+      <div class=" col-sm-6 col-md-3">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
           </div>
         </div>
-
+      </div>
 
 
       </div>
     </section>
 
-  </section>
-
-
-  <section class="sectionOfTeachersList" id="Teachers">
-    <h4>{{"Teachers"|translate}}</h4>
-    <a data-toggle="modal" data-target="#exampleModal">{{"See all"|translate}}</a>
-    <div class="row content">
-      <div class=" col-6 col-md-3">
+    <section class="sectionOfTeachersList" id="Teachers">
+      <h4>{{"Latest Courses"|translate}}</h4>
+      <a>{{"All Teachers"|translate}}</a>
+      <div class="row content">
+        <div class="col-sm-3 col-6 col-md-2">
         <div class="card">
-          <div class="image">
           <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-        </div>
           <div class="card-body">
             <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-            <p>English</p>
-          </div>
-          <div class="card-footer">
-
-            <ul class="social list-inline-item">
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-twitter"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-facebook"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-youtube"></i></a>
-              </li>
-            </ul>
           </div>
 
         </div>
       </div>
-      <div class=" col-6 col-md-3">
+        <div class="col-6 col-sm-3 col-md-2">
         <div class="card">
-          <div class="image">
           <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-        </div>
           <div class="card-body">
-            <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-            <p>English</p>
-          </div>
-          <div class="card-footer">
-
-            <ul class="social list-inline-item">
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-twitter"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-facebook"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-youtube"></i></a>
-              </li>
-            </ul>
+            <h5 class="card-title">{{"Mohamed Karim"|translate}}</h5>
           </div>
 
         </div>
       </div>
-      <div class=" col-6 col-md-3">
+        <div class="col-sm-3 col-6 col-md-2">
         <div class="card">
-          <div class="image">
           <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-        </div>
           <div class="card-body">
-            <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-            <p>English</p>
+            <h5 class="card-title">{{"Moazen mohsen"|translate}}</h5>
           </div>
-          <div class="card-footer">
-
-            <ul class="social list-inline-item">
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-twitter"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-facebook"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-youtube"></i></a>
-              </li>
-            </ul>
-          </div>
-
         </div>
       </div>
-      <div class=" col-6 col-md-3">
+      <div class="col-sm-3 col-6 col-md-2">
         <div class="card">
-          <div class="image">
           <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-        </div>
           <div class="card-body">
-            <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-            <p>English</p>
+            <h5 class="card-title">{{"Moustafa Ahmed"|translate}}</h5>
           </div>
-          <div class="card-footer">
-
-            <ul class="social list-inline-item">
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-twitter"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-facebook"></i></a>
-              </li>
-              <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                    class="icon ion-logo-youtube"></i></a>
-              </li>
-            </ul>
-          </div>
-
         </div>
       </div>
 
 
-
-
-
-    </div>
-  </section>
-  <!-- instructorModal Start -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{"All Teachers"|translate}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body sectionOfTeachersList">
-
-          <form class="StudentSearch">
-            <input class="col-8  form-control" type="text" placeholder="{{'Instructor Name'|translate}}"
-              aria-label="Search">
-
-
-          </form>
-          <div class="row content">
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <div class=" col-6 col-md-2">
-              <div class="card">
-                <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-                  <p>English</p>
-                </div>
-                <div class="card-footer">
-
-                  <ul class="social list-inline-item">
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a target="_blank" class="social-link"><i
-                          class="icon ion-logo-youtube"></i></a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
-    </div>
-  </div>
-  <!-- instructorModal End -->
-
-
-  <section class="sectionOfCourses" id="Course">
-    <h4>{{"Latest Courses"|translate}}</h4>
-    <a>{{"All Courses"|translate}}</a>
-    <div class="row content">
-      <div class=" col-12 col-sm-6 col-md-4">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"History"|translate}}</h5>
-            <p>{{"First"}}</p>
-            <p>{{"Arabic"}}</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{"BY : "|translate}}{{"Mohamed Ahmed"}}</small>
-            <div class="price"><span>300 EGP</span></div>
-          </div>
-        </div>
-      </div>
-      <div class=" col-12 col-sm-6 col-md-4">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"History"|translate}}</h5>
-            <p>{{"First"}}</p>
-            <p>{{"Arabic"}}</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{"BY : "|translate}}{{"Mohamed Ahmed"}}</small>
-            <div class="price"><span>300 EGP</span></div>
-          </div>
-        </div>
-      </div>
-      <div class=" col-12 col-sm-6 col-md-4">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"History"|translate}}</h5>
-            <p>{{"First"}}</p>
-            <p>{{"Arabic"}}</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{"BY : "|translate}}{{"Mohamed Ahmed"}}</small>
-            <div class="price"><span>300 EGP</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class=" col-6 col-md-3">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"History"|translate}}</h5>
-            <p>{{"First"}}</p>
-            <p>{{"Arabic"}}</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{"BY : "|translate}}{{"Mohamed Ahmed"}}</small>
-            <div class="price"><span>300 EGP</span></div>
-          </div>
-        </div>
-      </div> -->
-
-
-
-
-    </div>
-  </section>
-
-
-
-
+    </section> -->
 
 
 
   <!-- </div> -->
-  <section class="contentUS" id="Content">
-    <h4>Contact Us</h4>
-    <div class="container">
-      <div class="row">
-
-
-        <div class="col-12 col-md-6 SendMssg">
-          <!-- <h4>Contact Us</h4> -->
-
-          <form class="">
-            <input class="  form-control" type="text" placeholder="{{'Full Name'|translate}}">
-            <input class=" form-control" type="text" placeholder="{{'Email address'|translate}}">
-            <!-- <input class="col-5  form-control" type="text" placeholder="{{'Subject Name'|translate}}">
-            <input class="col-5  form-control" type="text" placeholder="{{'Mobile Number '|translate}}"> -->
-            <textarea class="col-12 form-control" placeholder="{{'Comment'|translate}}" rows="5"></textarea>
-            <div class="formButtn">
-
-              <button class="btn btn-primary">{{"Send"|translate}}</button>
-
-            </div>
-          </form>
-        </div>
-        <div class="col-12 col-md-6 addres">
-
-          <!-- <div class="maps" style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
-              marginheight="0" marginwidth="0"
-              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
-              href="https://www.maps.ie/route-planner.htm"></a></div>
-        </div> -->
-      </div>
-    </div>
-    </div>
-  </section>
-
 
   <footer class="landing-footer">
-    <div class="container ">
-
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <h5>Headquarter</h5>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing eli</p>
-                <!-- Copyrights-->
-      <div class="copyrights large">
+    <div class="container text-center">
+      <!-- Copyrights-->
+      <div class="copyrights">
         <!-- Social menu-->
         <ul class="social list-inline-item">
-          <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-twitter"></i></a>
+          <!-- <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-twitter"></i></a>
           </li>
           <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-facebook"></i></a>
           </li>
           <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-youtube"></i></a>
-          </li>
+          </li> -->
         </ul>
         <p class="copyrights-text mb-0"><strong>{{"Smart Academy" | translate}}</strong>. {{"All
           Rights Reserved" | translate}}. v{{version}}</p>
       </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="addres">
-            <h5>contact info
-            </h5>
-         <p>address: fdkkfkf</p>
-              <p><i class="fa fa-mobile"></i>
-                Mobile: 012454878</p>
-              <p>Email: admin@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 ">
-          <h5>Newsletter Signup
-          </h5>
-          <input placeholder="Enter your Mail">
-<button>Send me</button>
-<p class="sendMail">* Please note -we do not spam your email.</p>
-<div class="copyrights Small">
-  <p class="copyrights-text mb-0"><strong>{{"Smart Academy" | translate}}</strong>. {{"All
-    Rights Reserved" | translate}}. v{{version}}</p>
-</div>
-  </div>
-      </div>
-
     </div>
   </footer>
 </div>

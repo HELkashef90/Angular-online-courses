@@ -28,9 +28,6 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { NgxConfirmBoxModule } from 'ngx-confirm-box';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { MatIconModule } from '@angular/material/icon';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { InstructorProfileComponent } from './instructor-profile/instructor-profile.component';
-import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
 
 
 @NgModule({
@@ -46,9 +43,6 @@ import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/cour
     InstructorAddLectureComponent,
     EditCourseComponent,
     ViewCourseComponent,
-    FeedbackComponent,
-    InstructorProfileComponent,
-    CoursesPurchaseHistoryComponent,
   ],
   imports: [
     CommonModule,
