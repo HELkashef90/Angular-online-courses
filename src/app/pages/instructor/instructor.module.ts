@@ -1,3 +1,4 @@
+import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -43,6 +44,7 @@ import { MatIconModule } from '@angular/material/icon';
     InstructorAddLectureComponent,
     EditCourseComponent,
     ViewCourseComponent,
+    CoursesPurchaseHistoryComponent
   ],
   imports: [
     CommonModule,
