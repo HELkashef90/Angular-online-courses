@@ -27,14 +27,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 
 
 @NgModule({
   declarations: [UserComponent, UserHeaderComponent, UserSidebarComponent, UserFooterComponent, UserDashboardComponent, UserAllCoursesComponent, UserViewCourseComponent, CartComponent, CheckoutComponent, UserStudyCourseComponent
-  , ConfirmComponent, MyCoursesComponent, SearchResultComponent, UserProfileComponent, FeedbackComponent, PurchaseHistoryComponent],
+  , ConfirmComponent, MyCoursesComponent, SearchResultComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

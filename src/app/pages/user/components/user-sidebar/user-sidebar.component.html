@@ -117,7 +117,7 @@
                 <div class="menu drop-menu">
                     <div class="channel_my">
                         <div class="profile_link">
-                            <img src="assets/images/hd_dp.jpg" alt="">
+                            <!-- <img src="assets/images/hd_dp.jpg" alt=""> -->
                             <div class="pd_content">
                                 <div class="rhte85">
                                     <h6>{{getName() || ""}}</h6>
@@ -126,9 +126,8 @@
                                     </div>
                                 </div>
                                 <span>{{getEmail() || ""}}</span>
-                              </div>
                             </div>
-                            <a [routerLink]="['user-profile']"  class="dp_link_12">{{"View My Profile"|translate}}</a>
+                        </div>
                         <!-- <a href="my_instructor_profile_view.html" class="dp_link_12">View Instructor Profile</a> -->
                     </div>
                     <!-- <div class="night_mode_switch__btn">
@@ -171,19 +170,6 @@
                       <span class="menu--label">{{"My Courses" | translate}}</span>
                   </a>
               </li>
-              <li class="menu--item" (click)="close()">
-                <a [routerLink]="['PurchaseHistory']" routerLinkActive="active"  class="menu--link" data-toggle="collapse" title="Purchase History">
-                  <i class="uil uil-file-alt menu--icon"></i>
-                  <span class="menu--label">{{"Purchase History"|translate}}</span>
-                </a>
-              </li>
-              <li class="menu--item" (click)="close()">
-                <a [routerLink]="['feedback']" routerLinkActive="active"  class="menu--link" data-toggle="collapse" title="Send Feedback">
-                  <i class="uil uil-comment-alt-exclamation menu--icon"></i>
-                  <span class="menu--label">{{"Send Feedback"|translate}}</span>
-                </a>
-              </li>
-
             <!--   <li class="menu--item  menu--item__has_sub_menu">
                   <label class="menu--link" title="Pages">
                       <i class='uil uil-file menu--icon'></i>
@@ -346,19 +332,6 @@
                         <span class="menu--label">{{"My Courses" | translate}}</span>
                     </a>
                 </li>
-
-                <li class="menu--item">
-                    <a [routerLink]="['PurchaseHistory']" routerLinkActive="active"  class="menu--link" title="Purchase History">
-                      <i class="uil uil-file-alt menu--icon"></i>
-                      <span class="menu--label">{{"Purchase History"|translate}}</span>
-                    </a>
-                </li>
-                <li class="menu--item">
-                  <a [routerLink]="['feedback']" routerLinkActive="active"  class="menu--link" title="Send Feedback">
-                    <i class="uil uil-comment-alt-exclamation menu--icon"></i>
-                    <span class="menu--label">{{"Send Feedback"|translate}}</span>
-                  </a>
-              </li>
               <!--   <li class="menu--item  menu--item__has_sub_menu">
                     <label class="menu--link" title="Pages">
                         <i class='uil uil-file menu--icon'></i>
