@@ -16748,6 +16748,10 @@ right: auto;
   text-align: center;
   border-right: 1px solid #efefef;
 }
+
+.paymentMethod .tabs .nav-tabs .nav-item.active {
+background-color: transparent !important;
+}
 .paymentMethod .tabs .nav-tabs .nav-item:last-child {
   border-right: 0;
 }

@@ -1,33 +1,33 @@
 <!-- Body Start -->
 <!-- <div class="wrapper _bg4586 _new89">		 -->
-    <div class="_215b15">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title125">
-                        <div class="titleleft">
-                            <div class="ttl121">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <!-- <li class="breadcrumb-item"><a href="index.html">{{'Home' | translate}}</a></li> -->
-                                        <li class="breadcrumb-item active" aria-current="page">{{'Checkout' | translate}}</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="title126">
-                        <h2>{{'Checkout' | translate}}</h2>
-                    </div>
-                </div>
+<div class="_215b15">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="title125">
+          <div class="titleleft">
+            <div class="ttl121">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <!-- <li class="breadcrumb-item"><a href="index.html">{{'Home' | translate}}</a></li> -->
+                  <li class="breadcrumb-item active" aria-current="page">{{'Checkout' | translate}}</li>
+                </ol>
+              </nav>
             </div>
+          </div>
         </div>
+        <div class="title126">
+          <h2>{{'Checkout' | translate}}</h2>
+        </div>
+      </div>
     </div>
-    <div class="mb4d25">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- <div class="membership_chk_bg">
+  </div>
+</div>
+<div class="mb4d25">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- <div class="membership_chk_bg">
                         <div class="checkout_title">
                             <h4>{{'Student Information' | translate}}</h4>
                             <img src="assets/images/line.svg" alt="">
@@ -92,17 +92,69 @@
                             0192848473839
                         </div>
                     </div> -->
-                    <!-- <div class="membership_chk_bg paymentMethod">
-                      <div class="checkout_title">
-                          <h4>{{"Select Payment Method" | translate}}</h4>
-                          <img src="assets/images/line.svg" alt="">
+        <div class="membership_chk_bg paymentMethod">
+          <div class="checkout_title">
+            <h4>{{"Select Payment Method" | translate}}</h4>
+            <img src="assets/images/line.svg" alt="">
+          </div>
+          <div class="order_dt_section">
+            <div>
+              <tabset class="tabs">
+                <tab heading="Credit/Debit Card" id="tab1">
+
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>{{"card Number"|translate}}</label>
+                        <input type="text" class="form-control" placeholder="card Number">
                       </div>
-                      <div class="order_dt_section">
-                        <div>
-                          <tabset class="tabs">
-                            <tab heading="Credit/Debit Card" id="tab1">
+                      <div class="col-md-6">
+                        <label>{{"Holder Name"|translate}}</label>
 
-                              <form>
+                        <input type="text" class="form-control" placeholder="Holder Name">
+                      </div>
+                      <div class="col-md-4">
+                        <label>{{"Expiration Month"|translate}}</label>
+                        <select>
+                          <option value="{{'Expiration Month'|translate}}" disabled>{{"Expiration Month"|translate}}
+                          </option>
+                          <option value="{{'January'|translate}}">{{"January"|translate}}</option>
+                          <option value="{{'February'|translate}}">{{"February"|translate}}</option>
+                          <option value="{{'March'|translate}}">{{"March"|translate}}</option>
+                          <option value="{{'April'|translate}}">{{"April"|translate}}</option>
+                          <option value="{{'May'|translate}}">{{"May"|translate}}</option>
+                          <option value="{{'June'|translate}}">{{"June"|translate}}</option>
+                          <option value="{{'July'|translate}}">{{"July"|translate}}</option>
+                          <option value="{{'August'|translate}}">{{"August"|translate}}</option>
+                          <option value="{{'September'|translate}}">{{"September"|translate}}</option>
+                          <option value="{{'october'|translate}}">{{"october"|translate}}</option>
+                          <option value="{{'november'|translate}}">{{"november"|translate}}</option>
+                          <option value="{{'December'|translate}}">{{"December"|translate}}</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label>{{"Expiration Day"|translate}}
+                        </label>
+
+                        <input type="text" class="form-control" placeholder="Expiration Day">
+                      </div>
+                      <div class="col-md-4">
+                        <label>{{"CVC"|translate}}
+                        </label>
+
+                        <input type="text" class="form-control" placeholder="CVC">
+                      </div>
+                    </div>
+                  </form>
+
+
+                </tab>
+
+
+
+
+                <tab heading="Fawery">
+                  <!-- <form>
                                 <div class="row">
                                   <div class="col-md-6">
                                     <label>{{"Holder Name"|translate}}</label>
@@ -138,55 +190,11 @@
                                     <input type="text" class="form-control" placeholder="Last name">
                                   </div>
                                 </div>
-                              </form>
+                              </form> -->
 
-
-                            </tab>
-
-
-
-
-                            <tab heading="Fawery">
-                              <form>
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <label>{{"Holder Name"|translate}}</label>
-                                    <input type="text" class="form-control" placeholder="Holder Name">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <label>{{"Card Name"|translate}}</label>
-
-                                    <input type="text" class="form-control" placeholder="Card Name">
-                                  </div>
-                                  <div class="col-md-4">
-                                    <label>{{"Expiration Month"|translate}}</label>
-                                  <select>
-                                    <option value="{{'Expiration Month'|translate}}" disabled>{{"Expiration Month"|translate}}</option>
-                                    <option value="{{'saturday'|translate}}">{{"saturday"|translate}}</option>
-                                    <option value="{{'sunday'|translate}}">{{"sunday"|translate}}</option>
-                                    <option value="{{'Monday'|translate}}">{{"Monday"|translate}}</option>
-                                    <option value="{{'Tuesday'|translate}}">{{"Tuesday"|translate}}</option>
-                                    <option value="{{'Wednesday'|translate}}">{{"Wednesday"|translate}}</option>
-                                    <option value="{{'Thursday'|translate}}">{{"Thursday"|translate}}</option>
-                                  </select>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <label>{{"Expiration Year"|translate}}
-                                    </label>
-
-                                    <input type="text" class="form-control" placeholder="Last name">
-                                  </div>
-                                  <div class="col-md-4">
-                                    <label>Expiration Year
-                                     </label>
-
-                                    <input type="text" class="form-control" placeholder="Last name">
-                                  </div>
-                                </div>
-                              </form>
-
-                            </tab>
-                            <tab heading="offline Payment">                              <form>
+                </tab>
+                <tab heading="offline Payment">
+                  <!-- <form>
                               <div class="row">
                                 <div class="col-md-6">
                                   <label>{{"Holder Name"|translate}}</label>
@@ -217,61 +225,66 @@
                                 </div>
 
                               </div>
-                            </form></tab>
-                          </tabset>
-                        </div>
-                      </div>
-
-                  </div> -->
-                    <div class="membership_chk_bg orderDetails">
-                        <div class="chckout_order_dt">
-                            <div class="checkout_title">
-                                <h4>{{'Order Details' | translate}}</h4>
-                                <img src="assets/images/line.svg" alt="">
-                            </div>
-                            <div class="order_dt_section">
-                                <!-- / {{cart.getNumOfChaptersBySubject(1)}} {{'chapter' | translate}} -->
-                                <div *ngFor="let chapter of cart.cart" class="order_title">
-                                    <h4> <span> {{chapter.course_title}} / {{chapter.chapter_title}} </span></h4>
-                                    <div class="order_price">{{chapter.chapter_fee}} {{'EGP' | translate}}</div>
-                                </div>
-
-                                <button [ngStyle]="{'background-color':!cart.cart.length ? 'darkgray' : null}" [disabled]="!cart.cart.length" class="chckot_btn" (click)="onConfirmCheckOut()">{{'Confirm Checkout' | translate}}</button>
-                            </div>
-                        </div>
-                        <ngx-loading [show]="loading"></ngx-loading>
-
-                    </div>
-
-
-
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="membership_chk_bg rght1528">
-                            <div class="checkout_title">
-                                <h4>{{"Order Summary" | translate}}</h4>
-                                <img src="assets/images/line.svg" alt="">
-                            </div>
-                            <div class="order_dt_section">
-                                <div class="order_title">
-                                    <h4>{{'Total Chapters' | translate}}</h4>
-                                    <div class="order_price">{{cart.cart.length}}</div>
-                                </div>
-                                <div class="order_title">
-                                    <h2>{{'Total Cost' |  translate}}</h2>
-                                    <div class="order_price5">{{cart.getCartTotalPrice()}}  {{ 'EGP'| translate}}</div>
-                                </div>
-                                <div class="scr_text"><i class="uil uil-lock-alt"></i>{{'Secure checkout' | translate}}</div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
+                            </form> -->
+                </tab>
+              </tabset>
             </div>
+          </div>
+
+        </div>
+
+
+        <div class="membership_chk_bg orderDetails">
+          <div class="chckout_order_dt">
+            <div class="checkout_title">
+              <h4>{{'Order Details' | translate}}</h4>
+              <img src="assets/images/line.svg" alt="">
+            </div>
+            <div class="order_dt_section">
+              <!-- / {{cart.getNumOfChaptersBySubject(1)}} {{'chapter' | translate}} -->
+              <div *ngFor="let chapter of cart.cart" class="order_title">
+                <h4> <span> {{chapter.course_title}} / {{chapter.chapter_title}} </span></h4>
+                <div class="order_price">{{chapter.chapter_fee}} {{'EGP' | translate}}</div>
+              </div>
+
+              <button [ngStyle]="{'background-color':!cart.cart.length ? 'darkgray' : null}"
+                [disabled]="!cart.cart.length" class="chckot_btn" (click)="onConfirmCheckOut()">{{'Confirm Checkout' |
+                translate}}</button>
+            </div>
+          </div>
+          <ngx-loading [show]="loading"></ngx-loading>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-lg-4">
+        <div class="membership_chk_bg rght1528">
+          <div class="checkout_title">
+            <h4>{{"Order Summary" | translate}}</h4>
+            <img src="assets/images/line.svg" alt="">
+          </div>
+          <div class="order_dt_section">
+            <div class="order_title">
+              <h4>{{'Total Chapters' | translate}}</h4>
+              <div class="order_price">{{cart.cart.length}}</div>
+            </div>
+            <div class="order_title">
+              <h2>{{'Total Cost' | translate}}</h2>
+              <div class="order_price5">{{cart.getCartTotalPrice()}} {{ 'EGP'| translate}}</div>
+            </div>
+            <div class="scr_text"><i class="uil uil-lock-alt"></i>{{'Secure checkout' | translate}}</div>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+
+  </div>
+</div>
 
 <!-- </div> -->
 <!-- Body End -->
