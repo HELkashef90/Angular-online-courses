@@ -1,7 +1,7 @@
 <!-- navbar-->
 <div class="home">
   <header class="lp-header">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar landingNav navbar-expand-lg">
       <div class="container">
         <!-- Navbar brand-->
         <a class="navbar-brand font-weight-bold"><img src="assets/images/main-logo.png" alt="..." class="img-fluid"></a>
@@ -11,8 +11,8 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
           class="navbar-toggler navbar-toggler-right">{{"Menu" | translate}}<i
             class="icon ion-md-list ml-2"></i></button>
-        <div id="navbarSupportedContent" class="collapse navbar-collapse">
-          <ul class="navbar-nav mx-auto ml-auto">
+        <div id="navbarSupportedContent" class="collapse landing navbar-collapse">
+          <ul class="navbar-nav options mx-auto ml-auto">
             <!-- Link-->
             <!-- <li class="nav-item"> <a  class="nav-link">{{"About Us" | translate}}</a></li> -->
             <!--
@@ -24,22 +24,19 @@
                 <a  class="dropdown-item">{{"math" | translate}}</a></div>
             </li> -->
             <!-- Link-->
-            <!-- <li class="nav-item"> <a #home [routerLink]="['/Home']" routerLinkActive="router-link-active"
+            <li class="nav-item active"> <a href="#home"
                 class="nav-link">{{"Home" | translate}}</a></li>
 
-            <li class="nav-item"> <a #course [routerLink]="['/Courses']" routerLinkActive="router-link-active"
+            <li class="nav-item"> <a href="#About"
+                class="nav-link">{{"About" | translate}}</a></li>
+
+            <li class="nav-item"> <a href="#Courses"
                 class="nav-link">{{"Courses" | translate}}</a></li>
 
-            <li class="nav-item"> <a #Teachers [routerLink]="['/Teachers']" routerLinkActive="router-link-active"
+            <li class="nav-item"> <a href="#Teachers"
                 class="nav-link">{{"Teachers" | translate}}</a></li>
 
-            <li class="nav-item"> <a [routerLink]="['/WhyUs']" routerLinkActive="router-link-active"
-                class="nav-link">{{"Why us" | translate}}</a></li>
-
-            <li class="nav-item"> <a [routerLink]="['/mission']" routerLinkActive="router-link-active"
-                class="nav-link">{{"Mission / Vision" | translate}}</a></li> -->
-
-            <li class="nav-item"> <a [routerLink]="['/contactUs']" routerLinkActive="router-link-active"
+            <li class="nav-item"> <a href="#ContactUS"
                 class="nav-link">{{"Contact Us" | translate}}</a></li>
           </ul>
           <ul *ngIf="!_auth.isLoggedIn" class="navbar-nav">
@@ -107,128 +104,281 @@
       </div>
     </section>
   </div>
+<section class="aboutUS why" id="About">
+<div class="row">
+  <div class="col-md-6">
+    <div class="SecondryRow row">
+      <div class="col-sm-6">
+<div class="number">01</div>
+<h4>Mission</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, magni odio repudiandae recusandae fugiat quae adipisci mollitia debitis atque delectus? Cum ab ipsa nobis tenetur consequatur sequi aspernatur dolores non.</p>
+      </div>
+      <div class="col-sm-6">
+        <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row SecondryRow">
+      <div class="col-sm-6">
+        <div class="number">02</div>
+        <h4>Vision</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, magni odio repudiandae recusandae fugiat quae adipisci mollitia debitis atque delectus? Cum ab ipsa nobis tenetur consequatur sequi aspernatur dolores non.</p>
+              </div>
+      <div class="col-sm-6">
+        <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
 
-    <!-- <section class="sectionOfCourses" id="course">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row  thirdRow">
+  <div class="col-md-6">
+    <h4>Start Your Jounry With us</h4>
+    <div class="jounry">
+      <div class="number ">1</div>
+      <div><h6>Professional Tranies</h6>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></div>
+    </div>
+    <div class="jounry">
+      <div class="number ">2</div>
+      <div><h6>Professional Tranies</h6>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></div>
+    </div>
+    <div class="jounry">
+      <div class="number ">3</div>
+      <div><h6>Professional Tranies</h6>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></div>
+    </div>
+  </div>
+  <div class=" signUpForm col-md-6">
+    <div class="form-data">
+      <h4>Signup today</h4>
+      <form action="">
+          <div class="form-group">
+                  <input type="text" placeholder="Full Name ">
+          </div>
+          <div class="form-group">
+                  <input type="email" placeholder=" Email address ">
+          </div>
+          <div class="form-group">
+                  <input type="email" placeholder="Mobile Number ">
+          </div>
+          <div class="form-group">
+                  <input  placeholder=" password ">
+          </div>
+          <div class="form-group">
+                  <button >Get start</button>
+          </div>
+
+      </form>
+  </div>
+  </div>
+</div>
+</section>
+
+<section class="sectionOfTeachersList" id="Teachers">
+  <h4>{{"Teachers"|translate}}</h4>
+  <a>{{"All Teachers"|translate}}</a>
+  <div class="row content">
+    <div class="col-sm-4 col-md-3">
+    <div class="card">
+      <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
+        <p>English</p>
+      </div>
+      <div class="card-footer">
+        <div class="social">
+          <span> <i class="icon ion-logo-twitter"></i></span>
+          <span> <i class="icon ion-logo-facebook"></i></span>
+          <span> <i class="icon ion-logo-youtube"></i></span>
+  </div>
+      </div>
+    </div>
+  </div>
+    <div class=" col-sm-4 col-md-3">
+    <div class="card">
+      <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
+        <p>English</p>
+      </div>
+      <div class="card-footer">
+        <div class="social">
+          <span> <i class="icon ion-logo-twitter"></i></span>
+          <span> <i class="icon ion-logo-facebook"></i></span>
+          <span> <i class="icon ion-logo-youtube"></i></span>
+  </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4 col-md-3">
+    <div class="card">
+      <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
+        <p>English</p>
+      </div>
+      <div class="card-footer">
+        <div class="social">
+          <span> <i class="icon ion-logo-twitter"></i></span>
+          <span> <i class="icon ion-logo-facebook"></i></span>
+          <span> <i class="icon ion-logo-youtube"></i></span>
+  </div>
+      </div>
+    </div>
+  </div>
+    <div class=" col-sm-4 col-md-3">
+    <div class="card">
+      <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
+        <p>English</p>
+      </div>
+      <div class="card-footer">
+        <div class="social">
+          <span> <i class="icon ion-logo-twitter"></i></span>
+          <span> <i class="icon ion-logo-facebook"></i></span>
+          <span> <i class="icon ion-logo-youtube"></i></span>
+  </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</section>
+
+  <section class="sectionOfCourses" id="Courses">
       <h4>{{"Latest Courses"|translate}}</h4>
       <a>{{"All Courses"|translate}}</a>
       <div class="row content">
-        <div class=" col-sm-6 col-md-3">
+        <div class=" col-sm-6 col-md-4">
         <div class="card">
           <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{"History"|translate}}</h5>
-            <p class="card-text">{{"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."|translate}}</p>
+            <h5 class="card-title">History</h5>
+            <p class="card-text">First</p>
+            <p class="card-text">Arabic</p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">{{"Mohamed Ahmed"}}</small>
+            <small class="text-muted">By: Mohamed Ahmed</small>
+            <div class="price">
+              <span>250 EGP</span>
+          </div>
+          </div>
+        </div>
+      </div>
+        <div class=" col-sm-6 col-md-4">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">History</h5>
+            <p class="card-text">First</p>
+            <p class="card-text">Arabic</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">By: Mohamed Ahmed</small>
+            <div class="price">
+              <span>250 EGP</span>
+          </div>
+          </div>
+        </div>
+      </div>
+        <div class=" col-sm-6 col-md-4">
+        <div class="card">
+          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">History</h5>
+            <p class="card-text">First</p>
+            <p class="card-text">Arabic</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">By: Mohamed Ahmed</small>
+            <div class="price">
+              <span>250 EGP</span>
+          </div>
+          </div>
+        </div>
+      </div>
 
-          </div>
-        </div>
-      </div>
-        <div class=" col-sm-6 col-md-3">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-        <div class=" col-sm-6 col-md-3">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
-      <div class=" col-sm-6 col-md-3">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/ImgOfCourse.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
+
 
 
       </div>
     </section>
 
-    <section class="sectionOfTeachersList" id="Teachers">
-      <h4>{{"Latest Courses"|translate}}</h4>
-      <a>{{"All Teachers"|translate}}</a>
-      <div class="row content">
-        <div class="col-sm-3 col-6 col-md-2">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"Mohamed Ahmed"|translate}}</h5>
-          </div>
-
-        </div>
-      </div>
-        <div class="col-6 col-sm-3 col-md-2">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"Mohamed Karim"|translate}}</h5>
-          </div>
-
-        </div>
-      </div>
-        <div class="col-sm-3 col-6 col-md-2">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"Moazen mohsen"|translate}}</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3 col-6 col-md-2">
-        <div class="card">
-          <img src="../../../assets/images/Phase2/teacher.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{"Moustafa Ahmed"|translate}}</h5>
-          </div>
-        </div>
-      </div>
 
 
-      </div>
-    </section> -->
+    <section class="contentUS" id="ContactUS">
+
+            <h4>Contact us</h4>
+            <form class="col-lg-6 col-md-8">
+                    <div class="form-group">
+                            <input type="text" placeholder="Enter Full name ">
+                    </div>
+                    <div class="form-group">
+                            <input type="email" placeholder=" Enter email address ">
+                    </div>
+                    <div class="form-group ">
+                        <textarea name="message" placeholder="Tell us about your message " rows="6"></textarea>
+
+                    </div>
+                    <div class="form-group formButtn ">
+                            <button type="submit" >Send Message</button>
+                    </div>
+
+                </form>
 
 
+    </section>
 
   <!-- </div> -->
 
   <footer class="landing-footer">
-    <div class="container text-center">
-      <!-- Copyrights-->
-      <div class="copyrights">
-        <!-- Social menu-->
-        <ul class="social list-inline-item">
-          <!-- <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-twitter"></i></a>
-          </li>
-          <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-facebook"></i></a>
-          </li>
-          <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-youtube"></i></a>
-          </li> -->
-        </ul>
-        <p class="copyrights-text mb-0"><strong>{{"Smart Academy" | translate}}</strong>. {{"All
-          Rights Reserved" | translate}}. v{{version}}</p>
-      </div>
+    <div class="container ">
+      <div class="row">
+        <div class="info col-md-4">
+                <h2>Headquarter</h2>
+            <p>18000 daibils a torto pikpik ,jhikhiohml <br> kmlknvgh,ABC12000</p>
+           <div class="copyrights">
+            <!-- Social menu-->
+            <ul class="social list-inline-item">
+              <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-twitter"></i></a>
+              </li>
+              <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-facebook"></i></a>
+              </li>
+              <li class="list-inline-item"><a target="_blank" class="social-link"><i class="icon ion-logo-youtube"></i></a>
+              </li>
+            </ul>
+            <p class="copyrights-text mb-0"><strong>{{"Smart Academy" | translate}}</strong>. {{"All
+              Rights Reserved" | translate}}. v{{version}}</p>
+          </div>
+        </div>
+
+        <div class="info col-md-4">
+                     <h2>contact info</h2>
+                     <p>address :fdfdfdfdfdf</p>
+                     <p>Mobile:012545544</p>
+                     <p>Email :jhkjhkj@gmail.com</p>
+
+             </div>
+             <div class="info col-md-4">
+                         <h2>Newsletter Signup</h2>
+                          <input type="email" placeholder="Enter your email">
+                          <br><button type="submit" value="Send me">Send me</button>
+                          <p>* Please note -we do not spam your email.</p>
+                        </div>
+
+
+    </div>
+
+
+
+
+
     </div>
   </footer>
 </div>

@@ -16505,8 +16505,8 @@ margin-bottom: 20px;
   margin: 0px 5px;
 }
 .sectionOfTeachersList div{
-  text-align: center;
-  padding: 0px;
+  /* text-align: center; */
+  /* padding: 0px; */
 }
 .sectionOfTeachersList div h5{
   font-size: 1.2rem;
@@ -16570,6 +16570,7 @@ margin-bottom: 20px;
     width: 25%;}
    .idmPage h4 ,.success h4 ,.failed h4{
     font-size: 1.3rem;
+
   }
 }
 @media (max-width: 480px){
@@ -34351,11 +34352,11 @@ label.togglebuttn{
   margin: 0 0.1rem;
 }
 .whyUS ,.sectionOfCourses ,.sectionOfTeachersList,.contentUS{
-  padding: 20px 40px !important;
+  padding: 20px 20px !important;
 }
-.sectionOfTeachersList,.contentUS {
+/* .sectionOfTeachersList,.contentUS {
   background: #eee;
-}
+} */
 .whyUS,.sectionOfCourses{
   background: #ffffff;
 
@@ -34400,10 +34401,10 @@ margin-bottom: 20px;
     padding: 5px 30px !important;
     font-weight: 600 !important;
     margin-bottom: 10px !important;
-    -webkit-border-radius: 25px !important;
-    -moz-border-radius: 25px !important;
-    -ms-border-radius: 25px !important;
-    -o-border-radius: 25px !important;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
 }
 /* .sectionOfTeachersList{
   margin: 0px 5px;
@@ -34524,15 +34525,51 @@ padding: 0px;
     -o-border-radius: 10px;
     display: inline-block;
 }
+.contentUS form {
+  padding: 0px 20px;
+}
+.contentUS form input{
+  background: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  color: #333 !important;
+  border-radius: 500rem;
+  max-width: 100%;
+  padding: .67857143em 1em;
+  width: 100%;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+  -webkit-border-radius: 500rem;
+  -moz-border-radius: 500rem;
+  -ms-border-radius: 500rem;
+  -o-border-radius: 500rem;
+}
+.contentUS textarea{
+  background: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
+  width: 100%;
+  padding: .67857143em 1em;
+
+  border-radius: 1rem !important;
+  color: #333 !important;
+  -webkit-border-radius: 1rem !important;
+  -moz-border-radius: 1rem !important;
+  -ms-border-radius: 1rem !important;
+  -o-border-radius: 1rem !important;
+}
 .contentUS input{
-  display: inline-block;
+  display: inline-block ;
     margin: 0px 20px 20px 0px;
+}
+.rtl .contentUS input{
+  display: inline-block ;
+    margin: 0px 0px 20px 20px;
 }
 .contentUS .addres{
   margin-bottom: 25px;
   padding: 0px 20px;
 
 }
+
 .contentUS .sendMssg{
   padding: 0px;
 }
@@ -34547,6 +34584,15 @@ padding: 0px;
 .contentUS .formButtn{
   margin-top: 20px;
   text-align: end;
+  /* background: #cc2d37; */
+
+}
+.contentUS .form-group button{
+  color: #fff;
+  background: #c8302f;
+  border-radius: 20px;
+  padding: 10px;
+  border-width: 0px;
 }
 .contentUS .container{
   max-width: 100% !important;
@@ -34624,6 +34670,16 @@ margin: 10px;
 .whyUS .why .row{
   border: 0px;
 }
+.aboutUS{
+  padding: 20px 35px;
+
+}
+.aboutUS .SecondryRow{
+  margin: 0px;
+  border: 1px solid rgb(209 , 209 ,209);
+  padding: 15px 0px;
+  margin-bottom: 15px;
+  }
 nav .landing .options li.active{
   background-color: #c8302f;
   /* border-bottom-right-radius: 9px;
@@ -34670,17 +34726,26 @@ color:#fff
 .sectionOfTeachersList .card-footer,.sectionOfTeachersList .card{
   background-color: #ffffff ;
 }
-.sectionOfCourses .card-footer,.sectionOfCourses .card{
+/* .sectionOfCourses .card-footer{
   background-color: #eee !important;
-}
+} */
 .landing-footer{
   background-color: #333;
+}
+.landing-footer .container h2{ font-size: 16px;}
+.landing-footer .container p{ font-size: 14px;}
+.landing-footer .container{
+  text-align: justify;
 }
 .landing-footer .container{
   margin-bottom: 0px;
 }
 .whyUS .why .whyUsRow{
   margin-left: 4px;
+}
+.aboutUS{
+  background: #ffffff;
+
 }
 .rtl .whyUS .why  .whyUsRow{
   margin-right: 4px;
@@ -34692,16 +34757,81 @@ color:#fff
   background: #c8302f;
   display: inline-block;
   color: #fff;
-  padding: 1px 9px;
-  width: 25px;
-  height: 25px;
-  bottom: 15px;
+  padding: 1px 7px;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  bottom: 5px;
   margin-right: 10px;
+  font-weight: bolder;
+}
+.why .jounry .number{
+    position: relative;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: #c8302f;
+    display: inline-block;
+    color: #fff;
+    padding: 1px 7px;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    bottom: 15px;
+    margin-right: 10px;
+    /*font-weight: bolder;
+     */:;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.why .signUpForm .form-data .form-group input{
+  display: block;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    color: #aaa;
+    padding: 5px;
+}
+.why .signUpForm .form-data .form-group{
+  padding: 5px 50px;
+  margin-bottom: 0rem;
+
+}
+.why .signUpForm .form-group button{
+  padding: 10px 30px;
+    border: none;
+    text-align: center;
+    border-radius: 25px;
+}
+.why .signUpForm .form-data h4{
+  color: #fff;
+    margin: 30px 0 15px 0;
+}
+.why .signUpForm .form-data{
+  background-color: #333;
+  width: 350px;
+  height: 350px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 50%;
+}
+.why .thirdRow h4{
+margin: 30px 0px 30px 0px;
+}
+.why .jounry div{
+  display: inline-block;
+}
+.why .jounry{
+  margin-bottom: 25px;
 }
 .why .row p {
   display: inline-block;
   /* margin: 0px 25px; */
   margin-bottom: 10px;
+
 }
 .landingNav .landing{
   margin-bottom: 0px;
@@ -34824,6 +34954,26 @@ color:#ffffff
    .idmPage h4 ,.success h4 ,.failed h4{
     font-size: 1.3rem;
   }
+  .why .signUpForm{
+
+    padding: 0px;
+  }
+  .why .signUpForm .form-data {
+    background-color: #333;
+    width: 280px;
+    height: 280px;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.why .signUpForm .form-data h4 {
+  color: #fff;
+  margin: 0px 0 6px 0;
+}
 }
 @media (max-width: 480px){
   .firstCol{
@@ -34835,6 +34985,9 @@ display: contents
   .firstCol p{
     padding: 0px 15px;
 
+  }
+  .why .row p {
+    font-size: 14px;
   }
 }
 @media (max-width: 480px){
@@ -35627,6 +35780,9 @@ span.chapterName{
 .whyUS, .sectionOfCourses, .sectionOfTeachersList, .contentUS {
   padding: 20px 0px !important;
 }
+.aboutUS {
+  padding: 16px 15px;
+}
 }
 @media (max-width: 576px) {
   .why .row .number {
@@ -35699,6 +35855,18 @@ margin: 0px 0px 0px 10px;
 @media (max-width: 400px) {
   .ui .menu.drop-menu{
     z-index: 11111;
+}
+.why .jounry .number {
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  bottom: 15px;}
+  .why .row p {
+    font-size: 10px;
+}
+.jounry h6{
+  font-size: 13px;
+
 }
 }
 @media (max-width: 300px) {
