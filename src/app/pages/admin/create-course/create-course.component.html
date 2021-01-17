@@ -46,7 +46,7 @@
                                       <mat-form-field class="col-md-12"> 
                                         <mat-select [formControl]="infoForm.get('instructorId')" placeholder="{{'Select the instructor' | translate}}" #singleSelect>
                                           <mat-option>
-                                            <ngx-mat-select-search [formControl]="instructorFilterCtrl"></ngx-mat-select-search>
+                                            <ngx-mat-select-search [formControl]="instructorFilterCtrl" noEntriesFoundLabel="{{'No Instructors found' | translate}}"></ngx-mat-select-search>
                                           </mat-option>
                                           <mat-option *ngFor="let instructor of  filteredInstructors | async " [value]="instructor.id">
                                             {{instructor.name}}
