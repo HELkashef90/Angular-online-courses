@@ -16139,7 +16139,7 @@ table .table-img {
 .btn-link:hover {
 	color: #333;
 }
-select {
+select mat-form-field {
     border: 1px solid #e5e5e5 !important;
     border-radius: 500rem !important;
     box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1) !important;
@@ -16621,7 +16621,7 @@ right: auto;
   -ms-border-radius:500rem;
   -o-border-radius:500rem;
 }
-.StudentSearch select{
+.StudentSearch select mat-form-field {
   background: #fff;
   border-radius: 0px !important;
   border-bottom-right-radius: 500rem !important;
@@ -16665,7 +16665,7 @@ right: auto;
 .rtl .StudentSearch .form-control{
   height: calc(1.7em + 0.75rem + 2px);
 }
-.rtl .StudentSearch select{
+.rtl .StudentSearch select mat-form-field { 
  border-bottom-left-radius: 17px !important;
  border-top-left-radius: 17px !important;
  border-top-right-radius: 0px !important;

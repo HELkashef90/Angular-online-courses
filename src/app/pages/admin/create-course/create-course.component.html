@@ -17,6 +17,7 @@
         <span *ngIf="infoForm.get('language').invalid"> {{'*Please select language' | translate}}</span><br>
         <span *ngIf="infoForm.get('grade').invalid"> {{'*Please select grade' | translate}}</span><br>
         <span *ngIf="infoForm.get('subject').invalid"> {{'*Please select subject' | translate}}</span><br>
+        <span *ngIf="infoForm.get('instructorId').invalid"> {{'*Please select instructor' | translate}}</span><br>
     </div>
     <div class="alert alert-danger" role="alert" *ngIf="showPromoErrors && promoForm.invalid">
         <span *ngIf="promoForm.get('coverImage').invalid"> {{'*Please select cover image' | translate}}</span><br>
@@ -42,8 +43,8 @@
                                       <div class="ui search focus mt-30 lbel25">
                                           <label>{{'instructor Name*' | translate}}</label>
                                       </div>
-                                      <mat-form-field>
-                                        <mat-select [formControl]="infoForm.get('instructorId')" placeholder="instructor" #singleSelect>
+                                      <mat-form-field class="col-md-12"> 
+                                        <mat-select [formControl]="infoForm.get('instructorId')" placeholder="{{'Select the instructor' | translate}}" #singleSelect>
                                           <mat-option>
                                             <ngx-mat-select-search [formControl]="instructorFilterCtrl"></ngx-mat-select-search>
                                           </mat-option>
