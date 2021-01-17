@@ -42,13 +42,23 @@
                                       <div class="ui search focus mt-30 lbel25">
                                           <label>{{'instructor Name*' | translate}}</label>
                                       </div>
-                                      <select formControlName="language">
+                                      <mat-form-field>
+                                        <mat-select [formControl]="infoForm.get('instructorId')" placeholder="instructor" #singleSelect>
+                                          <mat-option>
+                                            <ngx-mat-select-search [formControl]="instructorFilterCtrl"></ngx-mat-select-search>
+                                          </mat-option>
+                                          <mat-option *ngFor="let instructor of  filteredInstructors | async " [value]="instructor.id">
+                                            {{instructor.name}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                      <!-- <select formControlName="instructor">
                                           <option disabled selected value="">{{'Select Instructor' | translate}}
                                           </option>
                                           <option value="1">{{'Mohamed Ahmed' | translate}}</option>
                                           <option value="2">{{'Mazen Mahmoud' | translate}}</option>
 
-                                      </select>
+                                      </select> -->
                                   </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="ui search focus mt-30 lbel25">

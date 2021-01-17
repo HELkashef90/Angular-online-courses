@@ -45,6 +45,7 @@ import { ExportAsModule } from 'ngx-export-as';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SuccessComponent } from './pages/success/success.component';
 import { FailedPageComponent } from './pages/failed-page/failed-page.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -103,7 +104,8 @@ export function createTranslateLoader(http: HttpClient) {
     NgProgressModule,
     NgProgressHttpModule,
     ExportAsModule,
-    NgbModule
+    NgbModule,
+    NgxMatSelectSearchModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     Location, { provide: LocationStrategy, useClass: HashLocationStrategy },
