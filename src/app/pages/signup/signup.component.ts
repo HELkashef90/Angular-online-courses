@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit {
     "lastname": "Osama",
     "usertype": "2"
   }
+  
   ngOnInit(): void {
     // this._authService.authUser()
     // this.signUp(this.userData)
@@ -99,7 +100,10 @@ export class SignupComponent implements OnInit {
   onSignUpAsClick(event) {
     this.userType = event.target.value
   }
-
+  userTypeClick(id){
+    //1 student 2 instructor
+    this.registrationForm.get('signAs').setValue(id)
+  }
   initForm() {
     this.registrationForm = new FormGroup({
       firstName: new FormControl(null, [Validators.required]),
