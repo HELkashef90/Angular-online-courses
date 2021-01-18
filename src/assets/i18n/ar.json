@@ -49,7 +49,6 @@
 	"*Please enter chapter Title": "*يرجى إدخال عنوان الفصل",
 	"*Please enter description": "*يرجى إدخال الوصف",
 	"*Please enter price": "*يرجى إدخال السعر",
-	"*Please enter select your account type (student, instructor?)": "*يرجى إختيار نوع الحساب (طالب, محاضر?)",
 	"*Please enter sort (1-100)": "*يرجى إدخال رقم الترتيب (1-100)",
 	"*Please select a course": "*يرجى اختيار الكورس",
 	"*Please select chapter": "*يرجى اختيار الفصل",
@@ -235,6 +234,7 @@
 	"Instractors Request List": "قائمة طلبات المحاضرين",
 	"Instructor Dashboard": "واجهة عرض المحاضر",
 	"Instructor Name": "إسم المحاضر",
+	"Instructor Sign Up": "Instructor Sign Up",
 	"Instructors Request List": "طلبات المدرسين",
 	"Invalid reset password link": "رابط استعادة كلمة المرور غير صحيح",
 	"Italian": "إيطالي",
@@ -288,6 +288,7 @@
 	"Next": "التالى",
 	"No": "رفض",
 	"No Description": "No Description",
+	"No Instructors found": "No Instructors found",
 	"No Results Found": "No Results Found",
 	"No result found": "لا توجد نتائج",
 	"Or": "أو",
@@ -370,6 +371,7 @@
 	"Student Name": "اسم الطالب",
 	"Student Payment": "دفع الطالب",
 	"Student Payment Advanced Search": "Student Payment Advanced Search",
+	"Student Sign Up": "Student Sign Up",
 	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
 			" Learn how to make yours awesome!": "  الطلاب التى تشاهد فيديوهات توضيحية ذات جودة تقوم بالأشتراك 5 أضعاف عن الطلاب الأخرين. تشير الأحصائيات الى زيادة عدد المشاهدات عشر اضعاف . ."

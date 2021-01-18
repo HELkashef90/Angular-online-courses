@@ -49,7 +49,6 @@
 	"*Please enter chapter Title": "*Please enter chapter Title",
 	"*Please enter description": "*Please enter description",
 	"*Please enter price": "*Please enter price",
-	"*Please enter select your account type (student, instructor?)": "*Please enter select your account type (student, instructor?)",
 	"*Please enter sort (1-100)": "*Please enter sort (1-100)",
 	"*Please select a course": "*Please select a course",
 	"*Please select chapter": "*Please select chapter",
@@ -235,6 +234,7 @@
 	"Instractors Request List": "Instractors Request List",
 	"Instructor Dashboard": "Instructor Dashboard",
 	"Instructor Name": "Instructor Name",
+	"Instructor Sign Up": "Instructor Sign Up",
 	"Instructors Request List": "Instructors Request List",
 	"Invalid reset password link": "Invalid reset password link",
 	"Italian": "Italian",
@@ -288,6 +288,7 @@
 	"Next": "Next",
 	"No": "No",
 	"No Description": "No Description",
+	"No Instructors found": "No Instructors found",
 	"No Results Found": "No Results Found",
 	"No result found": "No result found",
 	"Or": "Or",
@@ -370,6 +371,7 @@
 	"Student Name": "Student Name",
 	"Student Payment": "Student Payment",
 	"Student Payment Advanced Search": "Student Payment Advanced Search",
+	"Student Sign Up": "Student Sign Up",
 	"Students who watch a well-made promo video are 5X more likely to enroll in your course": {
 		" We've seen that statistic go up to 10X for exceptionally awesome videos": {
 			" Learn how to make yours awesome!": "Students who watch a well-made promo video are 5X more likely to enroll in your course. We've seen that statistic go up to 10X for exceptionally awesome videos. Learn how to make yours awesome!"
