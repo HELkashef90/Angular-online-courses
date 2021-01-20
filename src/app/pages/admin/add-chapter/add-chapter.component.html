@@ -28,13 +28,27 @@
                                       <div class="ui search focus mt-30 lbel25">
                                           <label>{{'instructor Name*' | translate}}</label>
                                       </div>
-                                      <select formControlName="course">
+                                      <mat-form-field class="col-md-12">
+                                        <mat-select [formControl]="chapterForm.get('instructorId')"
+                                            placeholder="{{'Select the instructor' | translate}}" #singleSelect>
+                                            <mat-option>
+                                                <ngx-mat-select-search [formControl]="instructorFilterCtrl"
+                                                    noEntriesFoundLabel="{{'No Instructors found' | translate}}">
+                                                </ngx-mat-select-search>
+                                            </mat-option>
+                                            <mat-option *ngFor="let instructor of  filteredInstructors | async "
+                                                [value]="instructor.id" (onSelectionChange)="onSelectInstructor($event)">
+                                                {{instructor.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                      <!-- <select formControlName="course">
                                           <option disabled selected value="">{{'Select Instructor' | translate}}
                                           </option>
                                           <option value="1">{{'Mohamed Ahmed' | translate}}</option>
                                           <option value="2">{{'Mazen Mahmoud' | translate}}</option>
 
-                                      </select>
+                                      </select> -->
                                   </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="ui search focus mt-30 lbel25">
@@ -42,7 +56,7 @@
                                         </div>
                                         <select formControlName="course">
                                             <option disabled selected value="">{{"Select Course" | translate}}</option>
-                                            <option *ngFor="let course of instructorCourses" value="{{course.id}}">{{course.name}}</option>
+                                            <option *ngFor="let course of instructorCourses" value="{{course.course_id}}">{{course.course_title}}</option>
 
                                         </select>
                                     </div>

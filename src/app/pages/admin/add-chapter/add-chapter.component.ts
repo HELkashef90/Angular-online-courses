@@ -1,9 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CreateCourseService } from './../../instructor/services/createCourse/create-course.service';
 import { CreateChapterService } from './../../instructor/services/createChapter/create-chapter.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ToastService } from 'src/app/services/toast/toast.service';
+import { StudentsService } from '../services/students/students.service';
+import { MatSelect } from '@angular/material/select';
+import { ReplaySubject, Subject } from 'rxjs';
+import { takeUntil, take } from 'rxjs/operators';
+import { MatOptionSelectionChange } from '@angular/material/core/option';
+interface Instructor {
+  id: String;
+  name: String;
+}
 @Component({
   selector: 'app-add-chapter',
   templateUrl: './add-chapter.component.html',
@@ -17,15 +26,44 @@ export class AddChapterComponent implements OnInit {
   chapters = [];
   editMode: boolean;
   selectedChapterToEdit: any;
+  instructorsArray: Instructor[];
+
   constructor(private _formBuilder: FormBuilder, private _createChapterService: CreateChapterService, private _courseService: CreateCourseService,
     private _toastService: ToastService,
-    private translate : TranslateService) { }
+    private translate: TranslateService, private _student: StudentsService) { }
 
   ngOnInit(): void {
-        //get instructor courses
-        this.getCourses()
-        // this.getChaptersByInstructor()
-        this.initForm()
+    //get instructor courses
+    // this.getCourses()
+    // this.getChaptersByInstructor()
+    this.initForm()
+    this.getAllIInstructors()
+    this.initSearchDropMenu()
+  }
+  getAllIInstructors() {
+    this.loading = true;
+    this._student.advancedSearchGetInstructors().subscribe(res => {
+      console.log(res);
+      this.instructorsArray = res as Array<Instructor>
+      // load the initial bank list
+      console.log(this.instructorsArray);
+
+      this.filteredInstructors.next(this.instructorsArray.slice());
+      this.loading = false;
+    },
+      err => {
+        console.log(err);
+        this.loading = false;
+
+      })
+
+  }
+  onSelectInstructor(event: MatOptionSelectionChange) {
+    // console.log(this.chapterForm.get('instructorId')?.value);
+    // console.log(event);
+    event.isUserInput ? this.getCourses(event.source.value.toString()) : null;
+
+    // this.getCourses(id.toString());
   }
   getChaptersByInstructor() {
     this.loading = true;
@@ -43,9 +81,9 @@ export class AddChapterComponent implements OnInit {
 
     })
   }
-  getCourses() {
+  getCourses(id) {
     this.loading = true;
-    this._courseService.getCoursesByInstructor().subscribe(res => {
+    this._courseService.getAllCoursesByInstructorId(id).subscribe(res => {
       this.loading = false
       this.instructorCourses = res
       console.log(res);
@@ -79,7 +117,9 @@ export class AddChapterComponent implements OnInit {
       "chapter_title": this.chapterForm.get('chapterTitle').value,
       "chapter_description": this.chapterForm.get('description').value,
       "chapter_fee": this.chapterForm.get('price').value,
-      "chapter_sort_number" : this.chapterForm.get('sort').value
+      "chapter_sort_number": this.chapterForm.get('sort').value,
+      "instructorId": this.chapterForm.get('instructorId')?.value,
+
 
     }
     this._createChapterService.createChapter(chapterForm).subscribe(res => {
@@ -105,7 +145,7 @@ export class AddChapterComponent implements OnInit {
       "chapter_title": this.chapterForm.get('chapterTitle').value,
       "chapter_description": this.chapterForm.get('description').value,
       "chapter_fee": this.chapterForm.get('price').value,
-      "chapter_sort_number" : this.chapterForm.get('sort').value
+      "chapter_sort_number": this.chapterForm.get('sort').value
     }
     this._createChapterService.updateChapter(chapterForm).subscribe(res => {
       console.log(res);
@@ -131,6 +171,7 @@ export class AddChapterComponent implements OnInit {
       sort: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
       description: ['', [Validators.required]],
       price: ['', [Validators.required]],
+      instructorId: ['', [Validators.required]],
     });
   }
   onEditChapterClick(chapter) {
@@ -151,8 +192,8 @@ export class AddChapterComponent implements OnInit {
         this.getChaptersByInstructor()
       }, err => {
         console.log(err);
-        if(err.status === 400){
-          this._toastService.showToast(this.translate.instant("this chapter contains lectures, can't be deleted"),"warning")
+        if (err.status === 400) {
+          this._toastService.showToast(this.translate.instant("this chapter contains lectures, can't be deleted"), "warning")
 
         }
       })
@@ -162,4 +203,71 @@ export class AddChapterComponent implements OnInit {
     this.editMode = false;
     this.chapterForm.reset()
   }
+  //search dropdown
+  /** control for the MatSelect filter keyword */
+  public instructorFilterCtrl: FormControl = new FormControl();
+  @ViewChild('singleSelect', { static: true }) singleSelect: MatSelect;
+
+  /** list of banks filtered by search keyword */
+  public filteredInstructors: ReplaySubject<Instructor[]> = new ReplaySubject<Instructor[]>(1);
+  /** Subject that emits when the component has been destroyed. */
+  protected _onDestroy = new Subject<void>();
+  initSearchDropMenu() {
+    // set initial selection
+
+
+    // listen for search field value changes
+    this.instructorFilterCtrl.valueChanges
+      .pipe(takeUntil(this._onDestroy))
+      .subscribe(() => {
+        this.filterInstructors();
+      });
+  }
+  ngAfterViewInit() {
+    this.setInitialValue();
+  }
+
+  ngOnDestroy() {
+    this._onDestroy.next();
+    this._onDestroy.complete();
+  }
+
+  /**
+   * Sets the initial value after the filteredBanks are loaded initially
+   */
+  protected setInitialValue() {
+    this.filteredInstructors
+      .pipe(take(1), takeUntil(this._onDestroy))
+      .subscribe(() => {
+        // setting the compareWith property to a comparison function
+        // triggers initializing the selection according to the initial value of
+        // the form control (i.e. _initializeSelection())
+        // this needs to be done after the filteredBanks are loaded initially
+        // and after the mat-option elements are available
+        this.singleSelect.compareWith = (a: Instructor, b: Instructor) => a && b && a.id === b.id;
+      });
+  }
+
+  protected filterInstructors() {
+    // console.log(this.instructorFilterCtrl.value);
+
+    if (!this.instructorsArray) {
+      return;
+    }
+    // get the search keyword
+    let search = this.instructorFilterCtrl.value;
+    if (!search) {
+      this.filteredInstructors.next(this.instructorsArray.slice());
+      return;
+    } else {
+      search = search.toLowerCase();
+    }
+    // filter the banks
+    this.filteredInstructors.next(
+      this.instructorsArray.filter(instructor => instructor.name.toLowerCase().indexOf(search) > -1)
+    );
+  }
+
+  ///end of search dropdown
+
 }

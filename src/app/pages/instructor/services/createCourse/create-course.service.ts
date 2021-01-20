@@ -17,14 +17,14 @@ export class CreateCourseService {
     })
   }
   getCourses(page, size) {
-    return this.httpClient.get(environment._getCourses  + '?page=' + page + '&size=' + size)
+    return this.httpClient.get(environment._getCourses + '?page=' + page + '&size=' + size)
   }
 
   deleteCourse(id: any) {
     return this.httpClient.delete(environment._deleteCourse + id)
   }
   updateCourse(courseForm: FormData) {
-    return this.httpClient.put(environment._updateCourse, courseForm,{
+    return this.httpClient.put(environment._updateCourse, courseForm, {
       reportProgress: true,
       observe: 'events'
     })
@@ -36,7 +36,11 @@ export class CreateCourseService {
     return this.httpClient.get(environment._getCourseChaptersByCourseIdStudent + courseId)
   }
 
-  getCoursesByInstructor(){
+  getCoursesByInstructor() {
     return this.httpClient.get(environment._getCoursesByInstructor)
+  }
+  getAllCoursesByInstructorId(id) {
+    return this.httpClient.get(environment._getAllCoursesByInstructorId + id)
+
   }
 }

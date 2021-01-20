@@ -50,7 +50,7 @@ export class CreateCourseComponent implements OnInit {
   }
 
   getAllIInstructors() {
-
+    this.loading = true;
     this._student.advancedSearchGetInstructors().subscribe(res => {
       console.log(res);
       this.instructorsArray = res as Array<Instructor>
@@ -58,10 +58,11 @@ export class CreateCourseComponent implements OnInit {
       console.log(this.instructorsArray );
       
       this.filteredInstructors.next(this.instructorsArray.slice());
-
+      // this.loading = false;
     },
       err => {
         console.log(err);
+        // this.loading = false;
 
       })
 

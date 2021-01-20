@@ -1,5 +1,5 @@
 <!-- <div class="wrapper"> -->
-  <div class="container">
+<div class="container">
 
     <div class="row">
         <div class="col-lg-12">
@@ -39,28 +39,32 @@
 
                                     <div class="row">
 
-                                    <div class="col-md-12">
-                                      <div class="ui search focus mt-30 lbel25">
-                                          <label>{{'instructor Name*' | translate}}</label>
-                                      </div>
-                                      <mat-form-field class="col-md-12"> 
-                                        <mat-select [formControl]="infoForm.get('instructorId')" placeholder="{{'Select the instructor' | translate}}" #singleSelect>
-                                          <mat-option>
-                                            <ngx-mat-select-search [formControl]="instructorFilterCtrl" noEntriesFoundLabel="{{'No Instructors found' | translate}}"></ngx-mat-select-search>
-                                          </mat-option>
-                                          <mat-option *ngFor="let instructor of  filteredInstructors | async " [value]="instructor.id">
-                                            {{instructor.name}}
-                                          </mat-option>
-                                        </mat-select>
-                                      </mat-form-field>
-                                      <!-- <select formControlName="instructor">
+                                        <div class="col-md-12">
+                                            <div class="ui search focus mt-30 lbel25">
+                                                <label>{{'instructor Name*' | translate}}</label>
+                                            </div>
+                                            <mat-form-field class="col-md-12">
+                                                <mat-select [formControl]="infoForm.get('instructorId')"
+                                                    placeholder="{{'Select the instructor' | translate}}" #singleSelect>
+                                                    <mat-option>
+                                                        <ngx-mat-select-search [formControl]="instructorFilterCtrl"
+                                                            noEntriesFoundLabel="{{'No Instructors found' | translate}}">
+                                                        </ngx-mat-select-search>
+                                                    </mat-option>
+                                                    <mat-option *ngFor="let instructor of  filteredInstructors | async "
+                                                        [value]="instructor.id">
+                                                        {{instructor.name}}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <!-- <select formControlName="instructor">
                                           <option disabled selected value="">{{'Select Instructor' | translate}}
                                           </option>
                                           <option value="1">{{'Mohamed Ahmed' | translate}}</option>
                                           <option value="2">{{'Mazen Mahmoud' | translate}}</option>
 
                                       </select> -->
-                                  </div>
+                                        </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="ui search focus mt-30 lbel25">
                                                 <label>{{'Course Title*' | translate}}</label>
@@ -158,12 +162,16 @@
 
                             </div>
                         </div>
+
                     </div>
                     <div class="buttn">
-                        <button mat-button (click)="onInfoFormNext(stepper)"
-                            class="btn btn-default steps_btn">{{'Next' | translate}}</button>
+                        <button mat-button (click)="onInfoFormNext(stepper)" class="btn btn-default steps_btn">{{'Next'
+                            | translate}}
+                        </button>
+
                     </div>
                 </form>
+
             </mat-step>
             <mat-step>
                 <form [formGroup]="promoForm">
@@ -184,7 +192,10 @@
                                                 </div>
                                                 <div class="view_img_right">
                                                     <h4>{{'Cover Image' | translate}}</h4>
-                                                    <p>{{"'Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 493*352 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'" | translate}}
+                                                    <p>{{"'Upload your course image here. It must meet our course image
+                                                        quality standards to be accepted. Important guidelines: 493*352
+                                                        pixels; .jpg, .jpeg,. gif, or .png. no text on the image.'" |
+                                                        translate}}
                                                     </p>
                                                     <div class="upload__input">
                                                         <div class="input-group">
@@ -193,7 +204,8 @@
                                                                     formControlName="coverImage" type="file"
                                                                     class="custom-file-input" id="inputGroupFile04">
                                                                 <label class="custom-file-label"
-                                                                    for="inputGroupFile04">{{ selectedCoverImage?.name || 'No Choose file' | translate }}</label>
+                                                                    for="inputGroupFile04">{{ selectedCoverImage?.name
+                                                                    || 'No Choose file' | translate }}</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -208,16 +220,17 @@
                                                     <div *ngIf="selectedVideoPrev" class="view__img">
                                                         <video class="view__img" controls>
                                                             <source src="{{selectedVideoPrev}}">
-                                                            {{'Your browser does not support the video tag.' | translate}}
+                                                            {{'Your browser does not support the video tag.' |
+                                                            translate}}
                                                         </video>
                                                     </div>
                                                 </div>
                                                 <div class="view_img_right">
                                                     <h4>{{'Promotional Video' | translate}}</h4>
                                                     <p>{{"'Students who watch a well-made promo video are 5X more likely
-                                                            to enroll in your course. We've seen that statistic go up to
-                                                            10X for exceptionally awesome videos. Learn how to make
-                                                            yours awesome!'" | translate}}</p>
+                                                        to enroll in your course. We've seen that statistic go up to
+                                                        10X for exceptionally awesome videos. Learn how to make
+                                                        yours awesome!'" | translate}}</p>
                                                     <div class="upload__input">
                                                         <div class="input-group">
                                                             <div class="custom-file">
@@ -225,13 +238,14 @@
                                                                     formControlName="promoVideo" type="file"
                                                                     class="custom-file-input" id="inputGroupFile05">
                                                                 <label class="custom-file-label"
-                                                                    for="inputGroupFile05">{{ selectedVideo?.name || 'No Choose file' }}</label>
+                                                                    for="inputGroupFile05">{{ selectedVideo?.name || 'No
+                                                                    Choose file' }}</label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <ngx-loading [show]="loading"></ngx-loading>
+                                            <!-- <ngx-loading [show]="loading"></ngx-loading> -->
                                             <ngx-loading [show]="uploading" [template]="customLoadingTemplate">
                                             </ngx-loading>
                                         </div>
@@ -242,12 +256,12 @@
                     </div>
                     <div>
                         <div class=" buttn step-footer step-tab-pager">
-                            <button mat-button matStepperPrevious
-                                class="btn btn-default steps_btn">{{'Back' | translate}}</button>
+                            <button mat-button matStepperPrevious class="btn btn-default steps_btn">{{'Back' |
+                                translate}}</button>
                             <!-- <button mat-button (click)="stepper.reset()"
                                     class="btn btn-default steps_btn">Reset</button> -->
                             <button class="btn btn-default steps_btn" (click)="onSubmitForm(stepper)">{{'Submit for
-                                    Review' | translate}}</button>
+                                Review' | translate}}</button>
                         </div>
                     </div>
 
