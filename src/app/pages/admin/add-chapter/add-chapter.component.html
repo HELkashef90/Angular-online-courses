@@ -113,9 +113,61 @@
                                            {{editMode? ('Save Chapter' | translate) : ('Create Chapter' | translate)}}</button>
                                            <button *ngIf="editMode" (click)="onCancelEditChapterClick()" class="part_btn_save prt-sv">
                                             {{"cancel edit" | translate}}</button>
-
+                                            <!-- <button (click)="getChaptersByInstructor()" class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#chapter" aria-expanded="false" aria-controls="chapter">
+                                            {{"View Saved Chapters" | translate}}
+                                        </button> -->
                                     </div>
+                                    <div class="col-lg-12">
+                                        <div class="accordion mt-3" id="saved-chapter">
+                                            <div id="chapter" class="collapse" aria-labelledby="headingTwo"
+                                                data-parent="#saved-chapter">
+                                                <div class="table-responsive ">
+                                                    <table class="table ucp-table">
+                                                        <thead class="thead-s">
+                                                            <tr>
+                                                                <th class="text-center" scope="col">{{"Chapters" | translate}}
+                                                                </th>
+                                                                <th class="cell-ta">{{"Title" | translate}}</th>
+                                                                <th class="cell-ta">{{"Course" | translate}}</th>
+                                                                <th class="cell-ta">{{"lectures" | translate}}</th>
+                                                                <th class="cell-ta">{{"sort" | translate}}</th>
+                                                                <th class="cell-ta">{{"count" | translate}}</th>
+                                                                <th class="cell-ta">{{"fee" | translate}}</th>
+                                                                <!-- <th class="text-center" scope="col">videos
+                                                                </th> -->
+                                                                <!-- <th class="text-center" scope="col">File
+                                                                </th> -->
+                                                                <th class="text-center" scope="col">{{"Controls" | translate}}
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let chapter of chapters; let index = index">
+                                                                <td class="text-center">{{index + 1}}</td>
+                                                                <td class="cell-ta">{{chapter.chapter_title}}</td>
 
+                                                                <td class="cell-ta">{{chapter.course_title}}</td>
+                                                                <td class="cell-ta">{{chapter.chapter_num_of_video}}</td>
+                                                                <td class="cell-ta">{{chapter.chapter_sort_number}}</td>
+                                                                <td class="cell-ta">{{chapter.content_count}}</td>
+                                                                <td class="cell-ta">{{chapter.chapter_fee}}</td>
+                                                                <!-- <td class="text-center">{{chapter.num_of_video || 'null'}}</td> -->
+                                                                <!-- <td class="text-center">0</td> -->
+                                                                <td class="text-center">
+                                                                    <a (click)="onEditChapterClick(chapter)" title="Edit" class="gray-s"><i
+                                                                            class="uil uil-edit-alt"></i></a>
+                                                                    <a (click)="onDeleteChapterClick(chapter)" title="Delete" class="gray-s"><i
+                                                                            class="uil uil-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                          
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <ngx-loading [show]="loading"></ngx-loading>

@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CreateLectureService } from './../../instructor/services/createLecture/create-lecture.service';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { HttpEventType } from '@angular/common/http';
 import { CreateCourseService } from './../../instructor/services/createCourse/create-course.service';
-
+import { StudentsService } from '../services/students/students.service';
+import { MatSelect } from '@angular/material/select';
+import { ReplaySubject, Subject } from 'rxjs';
+import { takeUntil, take } from 'rxjs/operators';
+import { MatOptionSelectionChange } from '@angular/material/core/option';
+interface Instructor {
+  id: String;
+  name: String;
+}
 @Component({
   selector: 'app-add-lecture',
   templateUrl: './add-lecture.component.html',
@@ -23,24 +31,46 @@ export class AddLectureComponent implements OnInit {
   selectedVideo: any;
   uploading: boolean = false;
   uploadingPercentage = 0;
-  instructorCourses :any
+  instructorCourses: any
   createLecture: any;
   lectures: any;
   editMode: boolean;
   selectedLectureToEdit: any;
+  instructorsArray: Instructor[];
+
   constructor(private _formBuilder: FormBuilder, private sanitizer: DomSanitizer, private _createLectureService: CreateLectureService,
     private _toastService: ToastService,
     private _courseService: CreateCourseService,
-    private translate: TranslateService) { }
+    private translate: TranslateService, private _student: StudentsService) { }
 
   ngOnInit(): void {
     this.initForm();
     //get courses
-    this.getCourses();
+    // this.getCourses();
+    this.getAllIInstructors()
+    this.initSearchDropMenu()
   }
-  getCourses() {
+  getAllIInstructors() {
     this.loading = true;
-    this._courseService.getCoursesByInstructor().subscribe(res => {
+    this._student.advancedSearchGetInstructors().subscribe(res => {
+      console.log(res);
+      this.instructorsArray = res as Array<Instructor>
+      // load the initial bank list
+      console.log(this.instructorsArray);
+
+      this.filteredInstructors.next(this.instructorsArray.slice());
+      this.loading = false;
+    },
+      err => {
+        console.log(err);
+        this.loading = false;
+
+      })
+
+  }
+  getCourses(id) {
+    this.loading = true;
+    this._courseService.getAllCoursesByInstructorId(id).subscribe(res => {
       this.loading = false
       this.instructorCourses = res
       console.log(res);
@@ -96,6 +126,8 @@ export class AddLectureComponent implements OnInit {
       course: ['', [Validators.required]],
       chapter: ['', [Validators.required]],
       active: [true, [Validators.required]],
+      instructorId: ['', [Validators.required]],
+
 
     });
   }
@@ -144,6 +176,8 @@ export class AddLectureComponent implements OnInit {
         "content_description": this.lectureForm.get('description').value,
         "content_sort_number": this.lectureForm.get('sort').value,
         "is_active": this.lectureForm.get('active').value,
+        "instructorId": this.lectureForm.get('instructorId')?.value,
+
 
       })
     )
@@ -279,5 +313,76 @@ export class AddLectureComponent implements OnInit {
         })
     }
   }
+  //search dropdown
+  /** control for the MatSelect filter keyword */
+  public instructorFilterCtrl: FormControl = new FormControl();
+  @ViewChild('singleSelect', { static: true }) singleSelect: MatSelect;
 
+  /** list of banks filtered by search keyword */
+  public filteredInstructors: ReplaySubject<Instructor[]> = new ReplaySubject<Instructor[]>(1);
+  /** Subject that emits when the component has been destroyed. */
+  protected _onDestroy = new Subject<void>();
+  initSearchDropMenu() {
+    // set initial selection
+
+
+    // listen for search field value changes
+    this.instructorFilterCtrl.valueChanges
+      .pipe(takeUntil(this._onDestroy))
+      .subscribe(() => {
+        this.filterInstructors();
+      });
+  }
+  ngAfterViewInit() {
+    this.setInitialValue();
+  }
+
+  ngOnDestroy() {
+    this._onDestroy.next();
+    this._onDestroy.complete();
+  }
+
+  /**
+   * Sets the initial value after the filteredBanks are loaded initially
+   */
+  protected setInitialValue() {
+    this.filteredInstructors
+      .pipe(take(1), takeUntil(this._onDestroy))
+      .subscribe(() => {
+        // setting the compareWith property to a comparison function
+        // triggers initializing the selection according to the initial value of
+        // the form control (i.e. _initializeSelection())
+        // this needs to be done after the filteredBanks are loaded initially
+        // and after the mat-option elements are available
+        this.singleSelect.compareWith = (a: Instructor, b: Instructor) => a && b && a.id === b.id;
+      });
+  }
+
+  protected filterInstructors() {
+    // console.log(this.instructorFilterCtrl.value);
+
+    if (!this.instructorsArray) {
+      return;
+    }
+    // get the search keyword
+    let search = this.instructorFilterCtrl.value;
+    if (!search) {
+      this.filteredInstructors.next(this.instructorsArray.slice());
+      return;
+    } else {
+      search = search.toLowerCase();
+    }
+    // filter the banks
+    this.filteredInstructors.next(
+      this.instructorsArray.filter(instructor => instructor.name.toLowerCase().indexOf(search) > -1)
+    );
+  }
+  onSelectInstructor(event: MatOptionSelectionChange) {
+    // console.log(this.chapterForm.get('instructorId')?.value);
+    // console.log(event);
+    event.isUserInput ? this.getCourses(event.source.value.toString()) : null;
+
+    // this.getCourses(id.toString());
+  }
+  ///end of search dropdown
 }
