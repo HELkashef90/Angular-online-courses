@@ -1,0 +1,61 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+    <!-- information step  -->
+    <mat-step [stepControl]="quizInfoForm">
+        <form [formGroup]="quizInfoForm">
+            <ng-template matStepLabel>{{'quiz information' | translate}}</ng-template>
+
+            <select formControlName="course">
+                <option disabled selected value="">{{'Select course' | translate}}
+                </option>
+                <option value="3">course</option>
+                <option value="3">course</option>
+            </select>
+
+            <input class="col-lg-3 col-md-6" type="text" placeholder="{{'title' | translate}}"
+                formControlName="title" maxlength="120">
+            <input class="col-lg-3 col-md-6" type="text" placeholder="{{'sort' | translate}}"
+                formControlName="sort">
+            <input class="col-lg-3 col-md-6" type="text" placeholder="{{'pass score %' | translate}}"
+            formControlName="passScore">
+            <input class="col-lg-3 col-md-6" type="text" placeholder="{{'time (minuets)' | translate}}"
+            formControlName="time">
+            <textarea class="col-lg-12 col-md-12" name="" id="" cols="30" rows="10"
+                placeholder="{{'description' | translate}}"
+                formControlName="description"
+                ></textarea>
+
+
+
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- questions step -->
+    <mat-step  label="{{'questions' | translate}}">
+
+       <h1>{{'instructions' | translate}}</h1>
+
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ex consequuntur ut repellendus illum adipisci reprehenderit voluptates vero! Esse fugiat maiores magnam sunt voluptate labore, eveniet beatae repellendus! Culpa, porro.
+        </p>
+
+        <button (click)="openAddQuestionsModal()">{{'Start add questions' | translate}}</button>
+        <div>
+            <button mat-button matStepperPrevious>{{"Back" | translate}}</button>
+            <!-- <button mat-button matStepperNext>Next</button> -->
+        </div>
+    </mat-step>
+
+    <!-- <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step> -->
+
+</mat-horizontal-stepper>

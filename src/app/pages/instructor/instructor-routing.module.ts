@@ -1,3 +1,4 @@
+import { CreateQuizComponent } from './createQuiz/create-quiz/create-quiz.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { InstructorAddLectureComponent } from './instructor-add-lecture/instructor-add-lecture.component';
@@ -28,6 +29,11 @@ const routes: Routes = [
         path: 'PurchaseHistory',
         component: CoursesPurchaseHistoryComponent
       },
+      {
+        path: 'createQuiz',
+        component: CreateQuizComponent
+      },
+
 
       {
         path: 'intructorFeedback',

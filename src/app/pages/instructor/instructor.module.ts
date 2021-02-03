@@ -30,6 +30,8 @@ import { ViewCourseComponent } from './view-course/view-course.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CoursesPurchaseHistoryComponent } from './courses-purchase-history/courses-purchase-history.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { CreateQuizComponent } from './createQuiz/create-quiz/create-quiz.component';
+import { AddQuestionsComponent } from './createQuiz/add-questions/add-questions.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     InstructorAddLectureComponent,
     EditCourseComponent,
     ViewCourseComponent,
+    CreateQuizComponent,
+    AddQuestionsComponent,
   ],
   imports: [
     CommonModule,

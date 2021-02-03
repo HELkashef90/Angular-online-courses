@@ -232,6 +232,13 @@
           </ul>
         </li>
         <li class="menu--item" (click)="close()">
+          <a [routerLink]="['createQuiz']" routerLinkActive="active" class="menu--link"
+            title="intructorFeedback">
+            <i class="uil uil-comment-alt-exclamation menu--icon"></i>
+                        <span class="menu--label">{{'Create New Quiz' | translate}}</span>
+          </a>
+        </li>
+        <li class="menu--item" (click)="close()">
           <a [routerLink]="['PurchaseHistory']" routerLinkActive="active" class="menu--link" title="PurchaseHistory">
             <i class="uil uil-file-alt menu--icon"></i>
             <span class="menu--label">{{'Purchase history' | translate}}</span>
