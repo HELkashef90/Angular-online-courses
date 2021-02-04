@@ -59,7 +59,7 @@ export class AddQuestionsComponent implements OnInit {
   createQuiz(quizInfo: any) {
     console.error('please return the quiz id')
     this._quiz.createNewQuiz(quizInfo).subscribe(res => {
-      this.quizId = res
+      // this.quizId = res
       this.loading = false;
 
     },
