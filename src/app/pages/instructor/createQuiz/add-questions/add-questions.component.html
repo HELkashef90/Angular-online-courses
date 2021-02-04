@@ -1,50 +1,45 @@
 <button type="button" class="close" (click)="decline()" aria-label="Close">
     <i class="uil uil-times"></i>
-  </button>
+</button>
 
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
+
+    <mat-step *ngFor="let q of questionFormArray; let i = index; let last = last; let first = first" [stepControl]="q">
+
+        <form [formGroup]="q">
+            <ng-template matStepLabel> {{'question No.'}} {{i+1}}</ng-template>
+            <input formControlName="questionTxt" placeholder="{{'Question' | translate}}">
+            <input (change)="onQuestionImgChange($event,i)" #qImg [hidden]=true type="file">
+            <button (click)="qImg.click()">{{'Add question Image' | translate}}</button>
+            <img style="width: 8rem;"  (click)="qImg.click()" 
+            src="{{questionsImgPrevOBj[i] || 'assets/images/courses/add_img.jpg' }}"
+            alt="">
+            <button (click)="console()">console</button>
+            <div formGroupName="answers">
+                <div formArrayName='options'>
+                    <div *ngFor="let a of q.get('answers.options').controls; let j=index">
+
+                        <div [formGroupName]="j">
+                            <input formControlName="txt" type="text">
+                            <input (change)="onAnswerChange($event,i,j)" #aImg [hidden]=true type="file">
+                            <label for="">{{'Mark as correct' | translate}}</label>
+                            <input type="checkbox" formControlName="isCorrect">
+                            <button (click)="aImg.click()">{{'Add image'}}</button>
+                            <button (click)="removeAnswer(i,j)">X</button>
+                            
+                            <img style="width: 8rem;" (click)="aImg.click()"
+                            src="{{answersImgPrevOBj[i][j] || 'assets/images/courses/add_img.jpg' }}"
+                            alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <button (click)="addNewAnswer(i)">{{'Add new answer' | translate}}</button>
+        <button *ngIf="last" (click)="addQuestion(i)">{{"Add New Question" | translate}}</button>
+        <button *ngIf="this.questionFormArray.length > 1" (click)="removeQuestion(i)">{{'Remove this uestion'}}</button>
     </mat-step>
-    <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step>
-    <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step>
-    <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae inventore rem temporibus nemo numquam debitis ipsa, quisquam illum officiis veniam reiciendis nobis odio dicta voluptas iusto earum atque nam labore?</p>
-    </mat-step> <mat-step>
-        3
-    </mat-step> <mat-step>
-        3
-    </mat-step> <mat-step>
-        3
-    </mat-step> <mat-step>
-        3
-    </mat-step> <mat-step>
-        3
-    </mat-step> <mat-step>
-        3
-    </mat-step>
+
 </mat-horizontal-stepper>
