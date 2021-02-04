@@ -68,7 +68,19 @@ export const environment = {
   _userManagementResetDevice: `${serverUrl}student/resetdevice/`,
   _userManagementUpdateInfo: `${serverUrl}user/update`,
   _getAllCoursesByInstructorId: `${serverUrl}course/instructor/`,
-  _updateProfile: `${serverUrl}user/update`
+  _updateProfile: `${serverUrl}user/update`,
+
+  //quiz
+  _createNewQuiz: `${serverUrl}createNewQuiz`,
+  _saveQuestion: `${serverUrl}saveQuestion`,
+  _saveQuestionImg: `${serverUrl}saveQuestionImg`,
+  _saveAnswerImg: `${serverUrl}saveAnswerImg`,
+  _removeQuestion: `${serverUrl}removeQuestion`,
+  _removeAnswer: `${serverUrl}removeAnswer`,
+  _publishQuiz: `${serverUrl}publishQuiz`,
+  
+  
+
 
 }
 /*

@@ -1,4 +1,4 @@
-<button type="button" class="close" (click)="decline()" aria-label="Close">
+<button type="button" class="close" (click)="close()" aria-label="Close">
     <i class="uil uil-times"></i>
 </button>
 
@@ -11,10 +11,9 @@
             <input formControlName="questionTxt" placeholder="{{'Question' | translate}}">
             <input (change)="onQuestionImgChange($event,i)" #qImg [hidden]=true type="file">
             <button (click)="qImg.click()">{{'Add question Image' | translate}}</button>
-            <img style="width: 8rem;"  (click)="qImg.click()" 
-            src="{{questionsImgPrevOBj[i] || 'assets/images/courses/add_img.jpg' }}"
-            alt="">
-            <button (click)="console()">console</button>
+            <img style="width: 8rem;" (click)="qImg.click()"
+                src="{{questionsImgPrevOBj[i] || 'assets/images/courses/add_img.jpg' }}" alt="">
+            <button (click)="publishQuiz()">{{'publish the quiz' | translate}}</button>
             <div formGroupName="answers">
                 <div formArrayName='options'>
                     <div *ngFor="let a of q.get('answers.options').controls; let j=index">
@@ -26,10 +25,9 @@
                             <input type="checkbox" formControlName="isCorrect">
                             <button (click)="aImg.click()">{{'Add image'}}</button>
                             <button (click)="removeAnswer(i,j)">X</button>
-                            
+
                             <img style="width: 8rem;" (click)="aImg.click()"
-                            src="{{answersImgPrevOBj[i][j] || 'assets/images/courses/add_img.jpg' }}"
-                            alt="">
+                                src="{{answersImgPrevOBj[i][j] || 'assets/images/courses/add_img.jpg' }}" alt="">
                         </div>
 
                     </div>
@@ -38,8 +36,9 @@
             </div>
         </form>
         <button (click)="addNewAnswer(i)">{{'Add new answer' | translate}}</button>
-        <button *ngIf="last" (click)="addQuestion(i)">{{"Add New Question" | translate}}</button>
+        <button *ngIf="last" (click)="addQuestion(i)">{{"Save this question and Add new one" | translate}}</button>
         <button *ngIf="this.questionFormArray.length > 1" (click)="removeQuestion(i)">{{'Remove this uestion'}}</button>
+        <ngx-loading [show]="loading"></ngx-loading>
     </mat-step>
 
 </mat-horizontal-stepper>

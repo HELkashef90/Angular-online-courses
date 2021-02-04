@@ -1,3 +1,4 @@
+import { AddQuestionsComponent } from './createQuiz/add-questions/add-questions.component';
 import { CreateQuizComponent } from './createQuiz/create-quiz/create-quiz.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path: 'editCourse',
     component: EditCourseComponent
+  },
+  {
+    path:'addQ',
+    component:AddQuestionsComponent
   }
 ];
 
