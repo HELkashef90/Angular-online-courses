@@ -5,7 +5,7 @@
         <form [formGroup]="quizInfoForm">
             <ng-template matStepLabel>{{'quiz information' | translate}}</ng-template>
 
-            <select formControlName="course">
+            <select formControlName="courseId">
                 <option disabled selected value="">{{"Select Course" | translate}}</option>
                 <option *ngFor="let course of instructorCourses" value="{{course.id}}">{{course.name}}</option>
 
@@ -17,7 +17,7 @@
             <input class="col-lg-3 col-md-6" type="number" placeholder="{{'pass score %' | translate}}"
                 formControlName="passScore">
             <input class="col-lg-3 col-md-6" type="number" placeholder="{{'time (minuets)' | translate}}"
-                formControlName="time">
+                formControlName="time_of_exam">
             <textarea class="col-lg-12 col-md-12" name="" id="" cols="30" rows="10"
                 placeholder="{{'description' | translate}}" formControlName="description"></textarea>
 

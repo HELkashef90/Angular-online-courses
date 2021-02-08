@@ -71,15 +71,13 @@ export const environment = {
   _updateProfile: `${serverUrl}user/update`,
 
   //quiz
-  _createNewQuiz: `${serverUrl}createNewQuiz`,
-  _saveQuestion: `${serverUrl}saveQuestion`,
-  _saveQuestionImg: `${serverUrl}saveQuestionImg`,
-  _saveAnswerImg: `${serverUrl}saveAnswerImg`,
-  _removeQuestion: `${serverUrl}removeQuestion`,
-  _removeAnswer: `${serverUrl}removeAnswer`,
-  _publishQuiz: `${serverUrl}publishQuiz`,
-  
-  
+  _createNewQuiz: `${serverUrl}quiz/create`,
+  _saveQuestion: `${serverUrl}question/save`,
+  _saveQuestionImg: `${serverUrl}question/saveImg`,
+  _saveAnswerImg: `${serverUrl}answer/saveImg`,
+  _removeQuestion: `${serverUrl}question/remove`,
+  _removeAnswer: `${serverUrl}answer/remove`,
+  _publishQuiz: `${serverUrl}quiz/publish`,
 
 
 }
