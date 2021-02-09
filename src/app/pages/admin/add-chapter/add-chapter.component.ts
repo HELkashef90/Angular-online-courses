@@ -170,7 +170,7 @@ export class AddChapterComponent implements OnInit {
       chapterTitle: ['', [Validators.required, Validators.maxLength(120)]],
       sort: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
       description: ['', [Validators.required]],
-      price: ['', [Validators.required]],
+      price: ['', [Validators.required, Validators.min(0)]],
       instructorId: ['', [Validators.required]],
     });
   }
