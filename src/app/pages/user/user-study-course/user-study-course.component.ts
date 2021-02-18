@@ -137,6 +137,7 @@ export class UserStudyCourseComponent implements OnInit {
     let options = {
       id: 76979871,
       responsive: true,
+      quality:'360p'
     }
     this.player = new Player('lectureContainer', options)
 
