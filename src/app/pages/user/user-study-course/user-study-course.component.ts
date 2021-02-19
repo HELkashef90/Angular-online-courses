@@ -137,11 +137,11 @@ export class UserStudyCourseComponent implements OnInit {
     let options = {
       id: 76979871,
       responsive: true,
-      quality:'360p'
+      quality: '360p',
+      // controls:false
     }
     this.player = new Player('lectureContainer', options)
-
-
+    this.forceQuality()
 
 
 
@@ -158,6 +158,38 @@ export class UserStudyCourseComponent implements OnInit {
     //   sidekickToggle.classList.toggle("minify");
     // }
   }
+  forceQuality() {
+    this.player.on('qualitychange', (data) => {
+      // data is an object containing properties specific to that event
+      console.log(data);
+
+      setTimeout(() => {
+      if (data.quality !== '360p') {
+        console.log('force to 360');
+        console.log(this.player);
+        
+        this.player.setQuality('360p').then((quality) => {
+          // quality was successfully set
+          this._toastService.showToast(this.translate.instant("Sorry the only available quality is 360p"), 'warning')
+        }).catch(function (error) {
+          switch (error.name) {
+            case 'TypeError':
+              // the quality selected is not valid
+              console.log('force to error' + error);
+
+              break;
+
+            default:
+              // some other error occurred
+              console.log('force to error' + error);
+
+              break;
+          }
+        });
+      }
+      }, 1000);
+    });
+  }
 
   collapse() {
     var verticalSideBar = document.querySelector(".vertical_nav");
@@ -172,8 +204,8 @@ export class UserStudyCourseComponent implements OnInit {
 
   getUserData() {
     return localStorage.getItem('email')
- }
-  openListOfLec(){
+  }
+  openListOfLec() {
     var verticalSideBar = document.querySelector(".contentOfChapter");
     verticalSideBar.classList.toggle("all");
   }
