@@ -1,12 +1,12 @@
 {
   "name": "smart-academy",
-  "version": "2.8.1",
+  "version": "2.8.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href / --proxy-config proxy.conf.json",
     "start:prod": "ng serve --prod --base-href / ",
     "build:prod": "ng build --prod  --base-href /",
-    "postbuild:prod": "git checkout master && git merge develop && git push && git push --tags && git checkout develop",
+    "postbuild:prod": "git checkout master && git merge develop && git push && git push --tags && npm run compressRelease && git checkout develop",
     "test": "ng test",
     "prebuild:stg": "git checkout develop && git pull",
     "build:stg": "npm version",
@@ -17,7 +17,8 @@
     "i18n:extract": "ngx-translate-extract --input ./src --output ./src/assets/i18n/en.json --clean --format json",
     "extract-translations": "npm run extract-ar-translation && extract-en-translation",
     "extract-ar-translation": "ngx-translate-extract --input  ./src --output -o ./src/assets/i18n/ar.json -k --clean --sort --format namespaced-json --marker _",
-    "extract-en-translation": "ngx-translate-extract --input  ./src --output -o ./src/assets/i18n/en.json  -k  --clean --sort --format namespaced-json --marker _"
+    "extract-en-translation": "ngx-translate-extract --input  ./src --output -o ./src/assets/i18n/en.json  -k  --clean --sort --format namespaced-json --marker _",
+    "compressRelease":"zip -r ./release/smartAcademy$version.zip dist"
   },
   "private": true,
   "dependencies": {
