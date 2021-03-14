@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { CourseService } from '../services/course/course.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { quality } from 'src/assets/quality_conf/qualityConf';
 
 @Component({
   selector: 'app-user-study-course',
@@ -23,7 +25,9 @@ export class UserStudyCourseComponent implements OnInit {
   player: any;
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService, private translate: TranslateService,
-    private _courses: CourseService, private router: Router) {
+    private _courses: CourseService, private router: Router,
+    private deviceService: DeviceDetectorService
+  ) {
     console.log('study constructor');
 
   }
@@ -137,7 +141,7 @@ export class UserStudyCourseComponent implements OnInit {
     let options = {
       id: 76979871,
       responsive: true,
-      quality: '360p',
+      quality: this.deviceService.isMobile() ? quality.mobileQuality : quality.desktopQuality,
       // controls:false
     }
     this.player = new Player('lectureContainer', options)
@@ -164,29 +168,57 @@ export class UserStudyCourseComponent implements OnInit {
       console.log(data);
 
       setTimeout(() => {
-      if (data.quality !== '360p') {
-        console.log('force to 360');
-        console.log(this.player);
-        
-        this.player.setQuality('360p').then((quality) => {
-          // quality was successfully set
-          this._toastService.showToast(this.translate.instant("Sorry the only available quality is 360p"), 'warning')
-        }).catch(function (error) {
-          switch (error.name) {
-            case 'TypeError':
-              // the quality selected is not valid
-              console.log('force to error' + error);
-
-              break;
-
-            default:
-              // some other error occurred
-              console.log('force to error' + error);
-
-              break;
+        if (this.deviceService.isMobile()) {
+          if (data.quality !== quality.mobileQuality) {
+            console.log('force to 360');
+            console.log(this.player);
+  
+            this.player.setQuality(quality.mobileQuality).then((quality) => {
+              // quality was successfully set
+              this._toastService.showToast(this.translate.instant(`Sorry the only available quality is ${quality.mobileQuality}`), 'warning')
+            }).catch(function (error) {
+              switch (error.name) {
+                case 'TypeError':
+                  // the quality selected is not valid
+                  console.log('force to error' + error);
+  
+                  break;
+  
+                default:
+                  // some other error occurred
+                  console.log('force to error' + error);
+  
+                  break;
+              }
+            });
           }
-        });
-      }
+        }
+        if (this.deviceService.isDesktop()) {
+          if (data.quality !== quality.desktopQuality) {
+            console.log('force to 360');
+            console.log(this.player);
+  
+            this.player.setQuality(quality.desktopQuality).then((quality) => {
+              // quality was successfully set
+              this._toastService.showToast(this.translate.instant(`Sorry the only available quality is ${quality.desktopQuality}`), 'warning')
+            }).catch(function (error) {
+              switch (error.name) {
+                case 'TypeError':
+                  // the quality selected is not valid
+                  console.log('force to error' + error);
+  
+                  break;
+  
+                default:
+                  // some other error occurred
+                  console.log('force to error' + error);
+  
+                  break;
+              }
+            });
+          }
+        }
+     
       }, 1000);
     });
   }
