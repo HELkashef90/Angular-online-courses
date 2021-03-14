@@ -1,6 +1,6 @@
 {
   "name": "smart-academy",
-  "version": "1.19.1",
+  "version": "1.19.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href / --proxy-config proxy.conf.json",
@@ -18,8 +18,8 @@
     "extract-translations": "npm run extract-ar-translation && extract-en-translation",
     "extract-ar-translation": "ngx-translate-extract --input  ./src --output -o ./src/assets/i18n/ar.json -k --clean --sort --format namespaced-json --marker _",
     "extract-en-translation": "ngx-translate-extract --input  ./src --output -o ./src/assets/i18n/en.json  -k  --clean --sort --format namespaced-json --marker _",
-    "compressRelease":"rm -r ./release/*.zip && zip -r ./release/smartAcademy_v$npm_package_version.zip dist && npm run createRemoteRelease",
-    "createRemoteRelease":"gh release create $npm_package_version ./release/*.zip --title $npm_package_version --notes $npm_package_version"
+    "compressRelease": "rm -r ./release/*.zip && zip -r ./release/smartAcademy_v$npm_package_version.zip dist && npm run createRemoteRelease",
+    "createRemoteRelease": "gh release create $npm_package_version ./release/*.zip --title $npm_package_version --notes $npm_package_version"
   },
   "private": true,
   "dependencies": {
