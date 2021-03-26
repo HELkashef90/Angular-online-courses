@@ -65,7 +65,7 @@ export const environment = {
   _userManagementResetPassword:`${serverUrl}user/resetpassword/`,
   _userManagementResetDevice:`${serverUrl}student/resetdevice/`,
   _userManagementUpdateInfo:`${serverUrl}user/update`,
-
+  _getVideoQuality : `${serverUrl}user/getvideoquality`
 
 
 
