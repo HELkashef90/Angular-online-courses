@@ -68,6 +68,7 @@ export const environment = {
   _userManagementResetDevice:`${serverUrl}student/resetdevice/`,
   _userManagementUpdateInfo:`${serverUrl}user/update`,
 
+  _getVideoQuality : `${serverUrl}user/getvideoquality`
 
 }
 /*

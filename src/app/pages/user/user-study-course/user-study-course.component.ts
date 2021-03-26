@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 import Player from '@vimeo/player';
 import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -7,7 +9,6 @@ import { ToastService } from 'src/app/services/toast/toast.service';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { CourseService } from '../services/course/course.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
-import { quality } from 'src/assets/quality_conf/qualityConf';
 
 @Component({
   selector: 'app-user-study-course',
@@ -26,7 +27,8 @@ export class UserStudyCourseComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private _auth: AuthService,
     private _toastService: ToastService, private _spinner: SpinnerService, private translate: TranslateService,
     private _courses: CourseService, private router: Router,
-    private deviceService: DeviceDetectorService
+    private deviceService: DeviceDetectorService,
+    private http: HttpClient
   ) {
     console.log('study constructor');
 
@@ -35,7 +37,6 @@ export class UserStudyCourseComponent implements OnInit {
   ngOnInit(): void {
     this.courseId = this.activatedRoute.snapshot.paramMap.get('courseId');
     console.log(this.courseId);
-    this.getStudyCourse(this.courseId)
   }
   getStudyCourse(id) {
     this._spinner.showFullScreenSpinner()
@@ -133,92 +134,67 @@ export class UserStudyCourseComponent implements OnInit {
     });
   }
 
-
-
-
-
   ngAfterViewInit() {
+    this.getQuality()
+  }
+  getQuality() {
+    this.http.get(environment._getVideoQuality).subscribe(res => {
+      console.log(">>>"+res);
+
+      this.initPlayer(res['quality'])
+      this.getStudyCourse(this.courseId)
+
+    }, (err) => {
+      console.log(err);
+      this.initPlayer('360p')
+      this.getStudyCourse(this.courseId)
+    })
+  }
+
+  initPlayer(quality) {
+
     let options = {
       id: 76979871,
       responsive: true,
-      quality: this.deviceService.isMobile() ? quality.mobileQuality : quality.desktopQuality,
-      // controls:false
+      quality: quality
     }
     this.player = new Player('lectureContainer', options)
-    this.forceQuality()
+    this.forceQuality(quality)
 
-
-
-    //sidebar
-    // var sidebarBtn = document.getElementById('collapse_menu');
-
-    // sidebarBtn.onclick = function menuAnimation() {
-    //   //alert('working')
-    //   var verticalSideBar = document.querySelector(".vertical_nav");
-    //   verticalSideBar.classList.toggle("vertical_nav__minify");
-    //   var wrapper = document.querySelector(".wrapper");
-    //   wrapper.classList.toggle("wrapper__minify");
-    //   var sidekickToggle = document.querySelector(".chapterListToggle");
-    //   sidekickToggle.classList.toggle("minify");
-    // }
   }
-  forceQuality() {
+  forceQuality(quality) {
     this.player.on('qualitychange', (data) => {
       // data is an object containing properties specific to that event
       console.log(data);
 
       setTimeout(() => {
-        if (this.deviceService.isMobile()) {
-          if (data.quality !== quality.mobileQuality) {
-            console.log('force to 360');
-            console.log(this.player);
-  
-            this.player.setQuality(quality.mobileQuality).then((quality) => {
-              // quality was successfully set
-              this._toastService.showToast(this.translate.instant(`Sorry the only available quality is ${quality.mobileQuality}`), 'warning')
-            }).catch(function (error) {
-              switch (error.name) {
-                case 'TypeError':
-                  // the quality selected is not valid
-                  console.log('force to error' + error);
-  
-                  break;
-  
-                default:
-                  // some other error occurred
-                  console.log('force to error' + error);
-  
-                  break;
-              }
-            });
-          }
+        // if (this.deviceService.isMobile()) {
+        if (data.quality !== quality) {
+          console.log('force to 360');
+          console.log(this.player);
+
+          this.player.setQuality(quality).then((quality) => {
+            // quality was successfully set
+            this._toastService.showToast(this.translate.instant(`Sorry the only available quality is ${quality}`), 'warning')
+          }).catch(function (error) {
+            switch (error.name) {
+              case 'TypeError':
+                // the quality selected is not valid
+                console.log('force to error' + error);
+
+                break;
+
+              default:
+                // some other error occurred
+                console.log('force to error' + error);
+
+                break;
+            }
+          });
         }
-        if (this.deviceService.isDesktop()) {
-          if (data.quality !== quality.desktopQuality) {
-            console.log('force to 360');
-            console.log(this.player);
-  
-            this.player.setQuality(quality.desktopQuality).then((quality) => {
-              // quality was successfully set
-              this._toastService.showToast(this.translate.instant(`Sorry the only available quality is ${quality.desktopQuality}`), 'warning')
-            }).catch(function (error) {
-              switch (error.name) {
-                case 'TypeError':
-                  // the quality selected is not valid
-                  console.log('force to error' + error);
-  
-                  break;
-  
-                default:
-                  // some other error occurred
-                  console.log('force to error' + error);
-  
-                  break;
-              }
-            });
-          }
-        }
-     
+        // }
+
+
       }, 1000);
     });
   }
