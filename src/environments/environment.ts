@@ -79,6 +79,7 @@ export const environment = {
   _removeAnswer: `${serverUrl}answer/remove`,
   _publishQuiz: `${serverUrl}quiz/publish`,
 
+  _getVideoQuality : `${serverUrl}user/getvideoquality`
 
 }
 /*
